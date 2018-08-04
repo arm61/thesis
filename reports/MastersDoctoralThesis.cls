@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Masters/Doctoral Thesis 
+% Masters/Doctoral Thesis
 % Class File
 % Version 1.4 (25/3/16)
 %
@@ -58,7 +58,7 @@
 %	CLASS OPTIONS
 %----------------------------------------------------------------------------------------
 
-\ifbool{parskip}{\RequirePackage{parskip}} % If the parskip option is passed to the class, require the parskip package 
+\ifbool{parskip}{\RequirePackage{parskip}} % If the parskip option is passed to the class, require the parskip package
 
 \newcommand{\abovechapterspace}{\vspace*{50pt}}
 \patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\abovechapterspace}{}{}
@@ -174,7 +174,7 @@
 
 %----------------------------------------------------------------------------------------
 
-\newcommand{\checktoopen}{% New command to move content to the next page which prints to the next odd page if twosided mode is active  
+\newcommand{\checktoopen}{% New command to move content to the next page which prints to the next odd page if twosided mode is active
 \if@openright\cleardoublepage\else\clearpage\fi
 \ifdef{\phantomsection}{\phantomsection}{}% The \phantomsection command is necessary for hyperref to jump to the correct page
 }
@@ -239,8 +239,8 @@
 \pagestyle{thesis}
 \ifbool{headsepline}{\KOMAoption{headsepline}{true}}{}
 \PreventPackageFromLoading[\ClassError{\classname}{Package `fancyhdr' is
-incompatible\MessageBreak with this class}{The pagesyles are defined 
-using package `scrlayer-scrpage', please consult the\MessageBreak 
+incompatible\MessageBreak with this class}{The pagesyles are defined
+using package `scrlayer-scrpage', please consult the\MessageBreak
 KOMA-script documentation for details.}]{fancyhdr}
 
 
@@ -406,7 +406,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 %----------------------------------------------------------------------------------------
 
 \ifbool{hyperrefsupport}{% If the nohyperref class option has not been specified
-\AfterPackage{biblatex}{ % Load the hyperref package after the biblatex package for compatibility 
+\AfterPackage{biblatex}{ % Load the hyperref package after the biblatex package for compatibility
 \RequirePackage{hyperref} % Required for customising links and the PDF
 \hypersetup{pdfpagemode={UseOutlines},
 bookmarksopen=true,

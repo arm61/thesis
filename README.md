@@ -1,4 +1,4 @@
-thesis
+Thesis
 ==============================
 
 ARM's PhD thesis.
@@ -9,6 +9,7 @@ Project Organization
     .
     ├── AUTHORS.md
     ├── LICENSE
+    ├── Makefile 
     ├── README.md
     ├── bin
     ├── config

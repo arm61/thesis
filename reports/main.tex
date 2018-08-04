@@ -1,6 +1,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Masters/Doctoral Thesis 
+% Masters/Doctoral Thesis
 % LaTeX Template
 % Version 2.3 (25/3/16)
 %
@@ -28,7 +28,7 @@
 %oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
 chapterinoneline,% Have the chapter title next to the number in one single line
 english, % ngerman for German
-singlespacing, % Single line spacing, alternatives: 
+singlespacing, % Single line spacing, alternatives:
 %onehalfspacing
 %doublespacing,
 %draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
@@ -45,15 +45,6 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage{palatino} % Use the Palatino font by default
 
-\usepackage{tikz}
-%\usepackage{tkz-euclide}
-\usetikzlibrary{angles,quotes,calc,shapes.geometric, arrows}
-\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm, text centered, text width=3cm, draw=black, fill=red!30]
-\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=2cm, minimum height=1cm, text centered, text width=3cm, draw=black, fill=blue!30]
-\tikzstyle{process} = [rectangle, minimum width=2cm, minimum height=1cm, text centered, text width=3cm, draw=black, fill=orange!30]
-\tikzstyle{processspe} = [rectangle, minimum width=2cm, minimum height=1cm, text centered, text width=4cm, draw=black, fill=orange!30]
-\tikzstyle{decision} = [diamond, minimum width=2cm, minimum height=1cm, text centered, text width=3cm, draw=black, fill=green!30]
-\tikzstyle{arrow} = [thick,->,>=stealth]
 %\usepackage[backend=bibtex,style=authoryear]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
 %\makeatletter
 %\def\blx@maxline{77}
@@ -68,6 +59,7 @@ headsepline, % Uncomment to get a line under the header
 \usepackage[version=4]{mhchem}
 
 \usepackage{amssymb}
+\usepackage{amsmath}
 \usepackage{xfrac}
 
 \newcommand{\MONTH}{%
@@ -147,7 +139,7 @@ headsepline, % Uncomment to get a line under the header
 \vspace{0.4cm} % Thesis title
 submitted by \\
 \vspace{0.1cm}
-\text{\huge \authorname} \\ 
+\text{\huge \authorname} \\
 \vspace{0.2cm}
 for the degree of \degreename \\
 \vspace{0.1cm}
@@ -178,7 +170,7 @@ This thesis may be made available for consultation within the University Library
 \end{flushright}
 \end{minipage}\\[2cm]
 
- 
+
 \vfill
 \end{center}
 \end{titlepage}
@@ -192,14 +184,14 @@ This thesis may be made available for consultation within the University Library
 \doublespacing
 \noindent I, \authorname, declare that this thesis titled, \enquote{\ttitle} and the work presented in it are my own. I confirm that:
 
-\begin{itemize} 
+\begin{itemize}
 \item where the thesis or any part of the thesis such as a published paper, has been produced jointly with others, that a substantial part is the original work of myself, and
 \item where the thesis incorporates material already submitted for another degree, the extent of that material and the degree, if any, obtained. \\
 \end{itemize}
- 
+
 \noindent Signed:\\
 \rule[0.5em]{25em}{0.5pt} % This prints a line for the signature
- 
+
 \noindent Date:\\
 \rule[0.5em]{25em}{0.5pt} % This prints a line to write the date
 \end{declaration}
@@ -309,7 +301,7 @@ Boltzmann's constant & $k_B$ & \SI{1.380648e-23}{\joule\per\kelvin} \\
 \begin{symbols}{lll} % Include a list of Symbols (a three column table)
 
 $a_0$ & optimum head-group area & \si{\meter\squared} \\
-$b$ & scattering length & \si{\meter} \\ 
+$b$ & scattering length & \si{\meter} \\
 $b$ & bond length & \si{\meter} \\
 $b_0$ & equilibrium bond length & \si{\meter} \\
 $c_{\alpha /\beta}$ & atom concentrations & \si{\meter^{-3}} \\
@@ -322,7 +314,7 @@ $i$ & atom type & \\
 $k_n$ & wavevector for layer $n$ & \\
 $k_N$ & dissociation constant from aggregate of $N$ & \si{\second^{-1}} \\
 $l_0$ & chain length & \si{\meter} \\
-$m$ & mass & \si{\kilo\gram} \\ 
+$m$ & mass & \si{\kilo\gram} \\
 $n$ & number of scattering vectors & \\
 $n_i$ & refractive index & \\
 $q_i$ & charge of atom $i$ & $k_e$ \\
@@ -333,14 +325,14 @@ $r_{n,n+1}$ & Fresnel equation coefficient & \\
 $r_{12}$ & distance between surfactant centres-of-mass & \si{\angstrom} \\
 $s$ & surfactant number & \\
 $t$ & timestep & \si{\second} \\
-$t_F$ & time-of-flight & \si{\second} \\ 
+$t_F$ & time-of-flight & \si{\second} \\
 $u$ & potential energy & \si{\kilo\joule.\mol^{-1}} \\
-$v$ & velocity & \si{\meter.\second^{-1}} \\ 
+$v$ & velocity & \si{\meter.\second^{-1}} \\
 
 
 
 $A$ & illuminated surface & \si{\meter^2} \\
-$A_{1,2,3}$ & dihedral angle parameters & \si{kcal.mol^{-1}} \\ 
+$A_{1,2,3}$ & dihedral angle parameters & \si{kcal.mol^{-1}} \\
 $B$ & resultant matrix & \\
 $C$ & total solute concentration & \si{\mol.\deci\meter^{-3}} \\
 \ce{C_{$s$}} & tail carbon atom in surfactant $s$ & \\
@@ -348,9 +340,9 @@ $D$ & number density of particles & \si{\meter^{-3}} \\
 $E_k$ & kinetic energy & \si{\joule} \\
 $E_{\text{new}}$ & new energy & \si{\kilo\joule} \\
 $E_{\text{tot}}$ & total energy & \si{\kilo\joule} \\
-$F(\mathbf{Q})$ & diffuse scattering factors & \\ 
+$F(\mathbf{Q})$ & diffuse scattering factors & \\
 $G(r)$ & radial distribution function & \\
-$I^(Q)$ & scattering intensity & \si{\centi\meter^{-1}} \\ 
+$I^(Q)$ & scattering intensity & \si{\centi\meter^{-1}} \\
 $K$ & equilibrium constant & \\
 $K_b$ & bond force constant & \si{kcal.\mol^{-1}.\angstrom^{-1}} \\
 $K_\theta$ & angle force constant & \si{kcal.\mol^{-1}} \\
@@ -366,16 +358,16 @@ $P$ & probability & \\
 $P(Q)$ & particle form factor & \\
 $Q$ & scattering vector magnitude & \si{\meter^{-1}} \\
 $R$ & radius & \si{\meter} \\
-$R_g$ & radius of gyration & \si{\meter} \\ 
+$R_g$ & radius of gyration & \si{\meter} \\
 $R(Q)$ & reflectivity & \\
 $Res(Q)$ & resolution function & \\
 $S$ & nuclear spin quantum number &  \\
 $S_a$ & surface area & \si{\meter^2} \\
-$S(Q)$ & system structure factor & \\ 
-$T$ & temperature & \si{\kelvin} \\ 
-$T_{\text{inst}}$ & instantaneous temperature & \si{\kelvin} \\ 
+$S(Q)$ & system structure factor & \\
+$T$ & temperature & \si{\kelvin} \\
+$T_{\text{inst}}$ & instantaneous temperature & \si{\kelvin} \\
 $T_{i,f}$ & Fresnal transmission factor & \\
-$V$ & volume & \si{\meter^3} \\ 
+$V$ & volume & \si{\meter^3} \\
 $V_c$ & chain volume & \si{\meter\cubed} \\
 $V_p$ & particle volume & \si{meter^3} \\
 $X_N$ & concentrationof molecules in aggregate of $N$ & \si{\mol.\deci\meter^{-3}} \\
@@ -397,7 +389,7 @@ $\beta$ & phase factor & \\
 $\beta_c$ & fraction of $c$ & \\
 $\delta_{\alpha\beta}$ & Kronecker $\delta$-function & \\
 $\epsilon_{ij}$ & L-J well depth & \si{kcal.\mol^{-1}} \\
-$\theta$ & polar angle & \si{rad} \\ 
+$\theta$ & polar angle & \si{rad} \\
 $\theta$ & angle & \si{deg} \\
 $\theta_{1/2}$ & surfactant-$r_{12}$ angle & \si{deg} \\
 $\theta_c$ & critical angle & \si{rad} \\
@@ -414,14 +406,14 @@ $\rho_0$ & atomic density & \si{\meter^{-3}} \\
 $\sigma$ & interfacial roughness & \si{\meter} \\
 $\sigma_i$ & statistical uncertainty in $I^{\text{exp}}(Q)$ & \si{\centi\meter^{-1}} \\
 $\sigma_{ij}$ & distance of L-J minima & \si{\angstrom} \\
-$\sigma_{\text{coh}}$ & coherent scattering cross section & \si{\meter^{2}} \\  
-$\sigma_{\text{incoh}}$ & incoherent scattering cross section & \si{\meter^{2}} \\  
-$\phi$ &  azimuthal angle  & \si{rad} \\  
-$\phi$ &  dihedral angle  & \si{rad} \\  
+$\sigma_{\text{coh}}$ & coherent scattering cross section & \si{\meter^{2}} \\
+$\sigma_{\text{incoh}}$ & incoherent scattering cross section & \si{\meter^{2}} \\
+$\phi$ &  azimuthal angle  & \si{rad} \\
+$\phi$ &  dihedral angle  & \si{rad} \\
 $\chi^2$ & chi-squared & \\
 $\omega$ & neutron frequency & \si{\second^{-1}} \\
 $\omega_i$ & incident frequency & \si{\hertz} \\
-$\omega_f$ & final frequency & \si{\hertz} \\ 
+$\omega_f$ & final frequency & \si{\hertz} \\
 ${\text{d}\sigma}/{\text{d}{\omega}}$ & differential cross-section & \si{\meter^2} \\
 
 $\Lambda$ & temperature factor & \\
@@ -432,7 +424,7 @@ $\Lambda$ & temperature factor & \\
 %	DEDICATION
 %----------------------------------------------------------------------------------------
 
-%\dedicatory{For/Dedicated to/To my\ldots} 
+%\dedicatory{For/Dedicated to/To my\ldots}
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
@@ -445,14 +437,12 @@ $\Lambda$ & temperature factor & \\
 % Include the chapters of the thesis as separate files from the Chapters folder
 % Uncomment the lines as you write the chapters
 
-\include{chapters/aims}
+%\include{chapters/aims}
 \mainmatter
-\include{chapters/introduction}
-\include{chapters/simulation_methods} 
-\include{chapters/lipid_ref}
-\include{chapters/ctab_sas} 
-\include{chapters/fluoro_gisas} 
-\include{chapters/conclusions} 
+%\include{chapters/introduction}
+\include{chapters/theory}
+
+%\include{chapters/conclusions}
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
@@ -463,17 +453,17 @@ $\Lambda$ & temperature factor & \\
 % Include the appendices of the thesis as separate files from the Appendices folder
 % Uncomment the lines as you write the Appendices
 
-\include{appendices/AppendixTemplate}
+%\include{appendices/AppendixTemplate}
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
-\mainmatter 
+\mainmatter
 \listoffigures % Prints the list of figures
 
 \listoftables % Prints the list of tables
 
-\listofalgorithms % Prints the list of algorithms 
+\listofalgorithms % Prints the list of algorithms
 
 \bibliographystyle{rsc}
 \bibliography{main}
@@ -482,4 +472,4 @@ $\Lambda$ & temperature factor & \\
 
 %----------------------------------------------------------------------------------------
 
-\end{document}  
+\end{document}
