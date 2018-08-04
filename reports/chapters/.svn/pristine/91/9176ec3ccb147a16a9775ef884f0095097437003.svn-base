@@ -1,0 +1,857 @@
+% Chapter Template
+
+\chapter{Introduction} % Main chapter title
+
+\label{introduction} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Soft matter}
+\label{intro:soft_matter}
+
+Soft matter is an umbrella term for many different types of material. These include micelles; sub-micron sized, dynamic agglomerates of amphiphilic molecules such as surfactants or block co-polymers, colloidal solutions; where the interaction between the colloids can be controlled by modifying their chemical nature, or proteins; where the polar nature of different amino acid residues leads to the protein folding into a highly organised, and biologically relevant shape, examples of these are shown in Figure \ref{fig:soft_matter_examples}. \\
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{soft_matter_examples.png}
+\caption{Three examples of soft matter species: (a) A 43 \ce{C_{10}TAB} surfactant micelle from Ref. \cite{Hargreaves2011}, (b) the tunable interactions of colloids from Ref. \cite{Kraft2011}, and (c) the crystal structure of T4-lysozyme from Ref. \cite{Rose1988}.}
+\label{fig:soft_matter_examples}
+\end{figure}
+
+While these species may appear rather disparate, there are in fact a few important commonalities among soft materials \cite{Jones2002}:
+\begin{itemize}
+\item The length scales are intermediate between atomic and macroscopic; with colloidal particles typically sub-micron in size, while polymer chains, including proteins, and micellar species having an overall size in the range of tens of nanometres. This is important, in terms of this report, as it allows for the coarse-graining of soft matter specieswithout sacrificing information of the overall structure. 
+\item The importance of thermal motion; typically for soft matter systems, the energy of structural distortion is similar to that of thermal energy. This means that in solution, soft matter species will be in a continual state of flux; constantly rotating and flexing. 
+\item The ability to self-assemble; the thermal motion which soft matter undergoes can lead to the formation of a complex, hierarchical structure due to the balance between enthalpy and entropy in the system. This can lead to highly intricate structures -- however, as we will find out, it is also a significant hurdle which must be overcome in order to sucessfully simulate such systems.  
+\end{itemize}
+
+
+\subsection{Self-assembly}
+\label{intro:soft_matter:self_ass}
+
+The concept of self-assembly for soft matter was briefly introduced above; this is the ability for soft matter to from organised, hierarchical structures in solution. These structures are of particular interest industrially, where surfactant and polymer self-assembly plays in important role in food stuffs, commodity and speciality chemicals, \cite{Schramm2003}. They are also important from a biological prespective as it is phospholipids, a form of surfactant, that make up the bilayers which protect cells while allowing for processes such as the signal transduction necessary for cell life. \cite{Simons2000} \\
+
+The self-assembled structures which result from the assembly of soft matter species have \emph{fluid-like} properties. This is due to the fact that the subunits are not held together by weak van der Waals, hydrophobic, hydrogen-bonding, and screened electrostatic interactions. \cite{Israelachvili2011} This means that the structure of such self-assembled species is susceptible to changes in the local chemical environment, such as pH or salt concentration. \cite{Schmaljohann2006,Sammalkorpi2009} \\
+
+\subsection{Surfactant self-assembly}
+\label{intro:soft_matter:self_ass:thermo}
+
+The focus of this work is on the self-assembly of surfactant molecules. Surfactant is a general term of a molecule which is \emph{surface-active}, that is it will interact at an interface. Surfactants are generally made up of two components; one part is highly soluble in one of the interfacial phases while the other is not. \cite{Goodwin2009} Surfactants usually consist of a hydrocarbon tail, which is hydrophobic, and some hydrophilic head group, which can be ionic or non-ionic. The surfactant which will be used most frequently in this work is the ionic surfactant decyltrimethylammonium bromide (\ce{C_{10}TAB}), shown in Figure \ref{fig:surfactants}. \\
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{surfactants.png}
+\caption{Schematic and graphical representations of \ce{C_{10}TAB}.}
+\label{fig:surfactants}
+\end{figure}
+
+When surfactants, such as \ce{C_{10}TAB}, is present in water, the two components of the surfactant will interact differently with the solvent. A hydration sphere of water molecules will form around the hydrophilic head group, effectively allowing the head group to take part in the hydrogen-bonding network of the water. Whereas, the hydrophobic tail has a structure-breaking effect on the hydrogen-bonding network, termed the `hydrophobic effect'. The free energy deficit of this structure-breaking can be reduced by the aggregation of many of these hydrophobic groups together -- additionally the van der Waals attraction between the tail groups larger than between the tail groups and water molecules. There is an decrease in the entropy from the cluster of the tails together, however this is offset by the entropic increase from the water structure breakup. Finally we must consider the effect of the, often charged, head-groups being close together, it is believed that the majority of the charge can be screened by the presence of a counter-ion bound to the head-group. \cite{Goodwin2009} This means that at low concentrations, where it is statistically unlikely for an agglomerate to form the majority of the surfactants will sit at the water-air interface of a system, as the concentration is increased, assuming the system in above the Krafft temperature (the lowest temperature at which agglomerates will form), organised structures will begin to form. \\
+
+\subsection{Packing parameters}
+\label{intro:soft_matter:pack}
+
+The structures formed from self-assembled surfactant systems are diverse; featuring micellar, hexagonal, cubic, and lamellar, including inverted forms of each. These mesophases have a significant impact on the macroscopic properties of the system, for example the liquid crystalline hexagonal phase. \cite{Jurasin2013} The mesophase that is formed is dependent on the shape of the underlying surfactants, Israelachvili \cite{Israelachvili2011} described this dependency in terms of the surfactant packing parameter. \\
+
+The surfactant packing parameter is a dimensionless quantity defined as 
+\begin{equation}
+p = \frac{v_c}{a_0l_0},
+\end{equation}
+where $v_c$ is the volume of the hydrophobic tail, $l_0$ is the length of the tail, and $a_0$ si the optimum head-group area. This parameter can be used to estimate the geometry of the resulting mesophase, these are shown in Figure \ref{fig:surf_pack}. 
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{surf_pack.png}
+\caption{A graphical representation of the different packing parameters and infromation of their resulting mesophase, adapted from Ref.\cite{Israelachvili2011}.}
+\label{fig:surf_pack}
+\end{figure}
+It is important to note that the optimum head-group area is heavily affected by the head group charge, as a more changed head group will have a larger hydration sphere. This means that a surfactant such as \ce{C_{10}TAB} can be thought of as having a very small packing parameters -- hence giving rise to small spherical micelles. While a two-tailed phospholipid, such as DMPC, will have a larger packing parameter due to the larger tail volume and length, this results in these lipids forming lamellar bilayers. \\
+
+\subsection{Thermodynamics of self-assembly}
+This rationalisation of the thermodynamics of the system discussed here is based on the work of Tanford, \cite{Tanford1980} which has been applied to a vast number of systems, such as micelles, bilayers, and microemulsions. For any system which is self-assembling in solution it is necessary that all identical molecules have the same chemical potential. This can be expressed as 
+\begin{equation}
+\label{equ:thermo}
+\mu = \mu_N = \mu_N^\circ + \frac{k_BT}{N}\log{\bigg(\frac{X_N}{N}\bigg)} = \text{constant,} \;\;\;\;\; N=1, 2, 3,\ldots
+\end{equation}
+where $\mu_N$ is the mean chemical potential of a molecule in an aggregate of aggregation number, $N$, $\mu_N^\circ$ is the mean interaction free energy per molecule in aggregates of aggregation number $N$, and $X_N$ is the concentration of molecules in aggregates of number $N$. From Figure \ref{fig:surf_thermo} it is possible to describe the rates of association and dissociation of monomers as follows
+\begin{equation*}
+\begin{aligned}
+\text{rate of association} & = k_1X_1^N \\
+\text{rate of dissociation} & = k_N(\sfrac{X_N}{N}).
+\end{aligned}
+\end{equation*}
+\begin{figure}
+\centering
+\includegraphics[width = 0.7\textwidth]{surf_thermo.pdf}
+\caption{Definitions of parameters from the thermodynamic description of self-assembly, from Ref. \cite{Israelachvili2011}.}
+\label{fig:surf_thermo}
+\end{figure}
+From these rates, it is possible to have an equilibrium constant, $K$, for the self-assembly, 
+\begin{equation}
+K = \frac{k_1}{k_N} = \exp\bigg[\frac{N(\mu_N^\circ - \mu_1^\circ)}{k_BT}\bigg].
+\end{equation}
+This allows for Eqn. \ref{equ:thermo} to be written in the more useful from 
+\begin{equation}
+\label{equ:conve}
+X_N = N\Bigg\{X_1\exp{\bigg[\frac{(\mu_1^\circ - \mu_N^\circ)}{k_BT}}\bigg]\Bigg\}^N,
+\end{equation}
+between Eqn. \ref{equ:conve} and the conservation relation for the total solute concentration $C$,
+\begin{equation}
+C = \displaystyle\sum_{N=1}^{\infty}X_N,
+\end{equation}
+the system is completely defined. It should however be noted that this assumes that there is no inter-particle interaction, e.g. no interaction between different micelles. \\
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 2 SCATTERING
+%----------------------------------------------------------------------------------------
+
+\section{Scattering}
+\label{intro:scat_tech}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{length.png}
+\caption{A representation of how different techniques can be used to probe various lengthscales, from Ref. \cite{Sivia2011q}.}
+\label{fig:length}
+\end{figure}
+This work focusses on the use of scattering techniques to study soft condensed matter, due to the length-scales covered by such systems and the desire to probe the equilibrium structure of the sample; small angle scattering (SAS), reflectivity, and grazing incidence small angle scattering (GISAS) will be covered. These techniques all cover the length scale ranging from about \SI{1}{\nano\meter} to \SI{100}{\nano\meter}, and as is shown in Figure \ref{fig:length}, this includes many aspects of soft matter discussed in Section \ref{intro:soft_matter}. Since it is the equilibrium structure under study, there in no interest in the dynamical nature of the system. This leads to the measurement of the system using elastic scattering techniques, these are techniques where the energy of the interacting particle does not change during the scattering event. This is in contrast to inelastic scattering where the energy will change; which allows for the measurement of system dynamics, such as the dynamical modes of polymers or lipid bilayers. \cite{Sakai2009} The techniques mentioned above all involve the use of elastic scattering and therefore probe system equilibrium structure. \\
+
+Both X-ray and neutron scattering techniques will discussed herein, from the experimental point of view there are significant difference between an X-ray scattering and a neutron scattering experiment. However, from the analysis point of view there is actually very few differences; these are essentially differences in the scattering depending on the probing radiation, and the case that with neutron scattering the background is much higher. The reasons for these two factors will be discussed in Section \ref{intro:scat_tech:con_var}. Since the focus of this work is on the analysis, there will be no further mention of the practical differences between X-ray and neutron scattering. 
+
+\subsection{The scattering vector}
+\label{intro:scat_tech:scat_vec}
+Regardless of if the incident radiation is an X-ray or a neutron, the scattering of a particle by some sample can be represented by Figure \ref{fig:sample}. 
+\begin{figure}
+\centering
+\begin{tikzpicture}
+\coordinate (A) at (0,0);
+\coordinate (B) at (-5,0);
+\coordinate (C) at (-1,0);
+\coordinate (D) at (4.583, 2);
+\draw [->,thick] (B) -- (C) node[midway,above,sloped] {$\mathbf{k}_i,\omega_i$};
+\draw [->,thick] (A) -- (D) node[midway,above,sloped] {$\mathbf{k}_f,\omega_f$};
+\filldraw[color=blue] (A) circle (1);
+\end{tikzpicture}
+%\includegraphics[width=0.5\textwidth]{sample.png}
+\caption{A schematic of the scattering of some radiation by a sample (blue circle), adapted from Ref. \cite{Sivia2011q}.}
+\label{fig:sample}
+\end{figure}
+Since we will only be considering elastic scattering, there will be no change in the frequency, $\omega_i = \omega_f$. This means that only the wavevector, $\mathbf{k}$ can change, $\mathbf{k}_i \neq \mathbf{k}_f$. 
+The difference between the incident and final wavevectors is the momentum transfer -- or scattering vector, $\mathbf{Q}$. 
+\begin{equation}
+\mathbf{Q} = \mathbf{k}_i - \mathbf{k}_f
+\end{equation}
+The scattering vector strictly has units of \si{m^{-1}}, however it is often more practical to use \si{nm^{-1}} or \si{\angstrom^{-1}} within this work units of reciprocal \AA ngstr\"{o}m will be used wherever possible. Since the energy of the radiation particle does not change during an elastic scattering event, the wavelength, $\lambda$, will also not change, meaning that the moduli of the incident and final wavevectors are:
+\begin{equation}
+|\mathbf{k}_i| = |\mathbf{k}_f| = \frac{2\pi}{\lambda}
+\label{equ:val}
+\end{equation}
+This means that only the angle will change during a scattering event. The vector diagram in Figure \ref{fig:vector} can be used to describe an elastic scattering event. 
+\begin{figure}
+\centering
+\begin{tikzpicture}
+\coordinate (A) at (0,0);
+\coordinate (B) at (4,3);
+\coordinate (C) at (-4,-3);
+\coordinate (D) at (-5,0);
+\coordinate (E) at (-4.5,-1.5); 
+\coordinate (F) at (2,0);
+\draw [->, thick] (A) -- (B) node[midway,above,sloped] {$\mathbf{k}_f$};
+\draw [->, dashed] (A) -- (C) node[midway, below, sloped] {$-\mathbf{k}_f$};
+\draw [->, thick] (D) -- (A) node[midway, above] {$\mathbf{k}_i$};
+\draw [->, blue] (D) -- (C) node[midway, below,sloped] {$\mathbf{Q}$};
+\draw [dotted] (A) -- (E);
+\draw (A) -- (F);
+\pic [draw, -, "$2\theta$", angle eccentricity=1.5, angle radius=1.0cm] {angle = F--A--B};
+\pic [draw, -, "$\theta$", angle eccentricity=1.3, angle radius=1.0cm] {angle = D--A--E};
+\pic [draw, -, "$\theta$", angle eccentricity=1.3, angle radius=1.0cm] {angle = E--A--C};
+\pic [draw, -, "$\cdot$", angle eccentricity=0.6, angle radius=0.3cm] {angle = C--E--A};
+\pic [draw, -, "$\cdot$", angle eccentricity=0.6, angle radius=0.3cm] {angle = A--E--D};
+\end{tikzpicture}
+\caption{A vector diagram describing an elastic scattering event, adapted from Ref. \cite{Sivia2011q}.}
+\label{fig:vector}
+\end{figure}
+From this, and Equation \ref{equ:val}, the value of $Q$, where $Q = |\mathbf{Q}|$ can be shown as:
+\begin{equation}
+Q = \frac{4\pi\sin{\theta}}{\lambda}
+\label{equ:scatvec}
+\end{equation}
+However, this fails to fully capture the three-dimensional nature of the scattering. Hence, it is necessary to describe the scattering radiation with polar coordinates, $2\theta$ and $\phi$, such that the incoming and outgoing radiation can be described as, 
+\begin{equation}
+\begin{aligned}
+\mathbf{k}_i & = \bigg(0,\;0,\;\frac{2\pi}{\lambda}\bigg) \\ 
+\mathbf{k}_f & = \frac{2\pi}{\lambda}(\sin{2\theta}\cos{\phi},\;\sin{2\theta}\sin{\phi},\;\cos{2\theta}),
+\end{aligned}
+\end{equation}
+where $|\mathbf{k}_f| = 2\pi/\lambda$. This allows the scattering vector to be written,
+\begin{equation}
+\mathbf{Q} = \frac{4\pi\sin{\theta}}{\lambda}(-\cos{\theta}\cos{\phi},\;-\cos{\theta}\sin{\phi},\;\sin{\theta})
+\end{equation}
+For an isotropic scattering pattern, it is the magnitude of the scattering vector, $Q$, which is measured. In practical terms the scattering vector allows for easy comparison of measurement made at different wavelengths of radiation. \\
+
+\subsection{Generation of X-rays and neutrons}
+\label{intro:scat_tech:xandn}
+
+For each of the three techniques mentioned at the start of this section, there are two commonly used probe particles; namely the X-ray and the neutron -- this gives rise to the respective abbreviations of SAXS, XRR, and GISAXS for the X-ray and SANS, NR, and GISANS for the neutron. Each of the two particles offers different advantages and disadvantages and obviously require different methods in order to produce these interaction particles. \\
+
+\subsubsection{X-rays}
+
+X-rays are a form of electromagnetic radiation similar to visible light, albeit with a much shorter wavelength -- from 0.01 to 10 \si{\nano\meter}. There are three common ways to produce X-rays; two are available within laboratory sources and the other is exclusively available at large scale facilities.  \\
+
+The two laboratory source X-ray generation techniques are an X-ray tube and a rotating anode. An X-ray tube consists of a filament and an anode within a vacuum chamber. Passing a high voltage electrical current across the filament causing the emittance of electrons which are accelerated towards the anode. When they hit the anode, the rapid deceleration results in the emission of X-rays of a characteristic wavelength based on the anode material. The most common material for an X-ray tube anode is copper which gives off radiation of about $\SI{8}{\kilo eV}$. \cite{Schnablegger2006a} \\
+
+The other common laboratory method for the generation of X-rays is the rotating anode, this is similar to the X-ray tube. In the X-ray tube, each time that an electron contacts the anode there is some energy transfer, this means that over many millions of interactions, the temperature of the anode can raise significantly -- resulting in a reduction of the flux available to the X-ray. This lead to the development of the rotating anode, this is simply where the anode is made from a rotating wheel, so that the bombardment is spread across the whole wheel reducing the energy locallisation. This allows an increase in photon flux of about an order of magnitude (Table \ref{tab:flux}). \cite{Schnablegger2006a}\\
+
+The third method of X-ray generation is at a synchrotron facility, this method has the major drawback that it requires access to a major national or international facility; such as Diamond Light Source (DLS) or the European Synchrotron Radiation Facility (ESRF). The way in which X-rays are generated at a synchrotron involves the acceleration of an electron, rather than the deceleration as above. This is achieved by having an relativistic electrons travel in round a curve, from Newtonian mechanics it is known that traveling on a curve at a constant speed is equivalent to acceleration. This is achieved by firstly accelerating the electrons, produced in a linear accelerator (Linac), to near the speed of light in a boost synchrotron before injecting them into the storage ring. In the storage ring, the electrons are kept at relativistic speeds with bending magnets and straight sections making up at ring (Figure \ref{fig:syn}). 
+\begin{figure}
+\centering 
+\includegraphics[width=0.6\textwidth]{syn.png}
+\caption{A schematic representation of a synchrotron radiation source, identifying the Linac, the booster ring, the radiofrequency cavities (rf), the bending magnet (BM), and the insertion device (ID), from Ref. \cite{Garcia-Gutierrez2009}.}
+\label{fig:syn}
+\end{figure}
+The circularity of the ring is dependent on the number of bending magnets which make it up; for example Diamond Light Source has 48 bending magnets with 48 straight sections. \\
+
+When an electron accelerates (or travels on a curve) Cherenkov radiation is emitted in accordance with the Cherenkov relation, 
+\begin{equation}
+n\beta\cos\theta = 1,
+\end{equation}
+where $n$ is the refractive index for the dielectric medium, $\beta$ is the fraction of the speed of light at which the electron is travelling, and $\theta$ is the angle between the electron trajectory and the trajectory of the resulting photon. \cite{Garcia-Gutierrez2009} This travelling on a curve is resultant of a bending magnet, meaning that at each bending magnet there can be a beamline which takes the synchrotron light. The light that is given of from a bending magnet is continuous and broad, covering a wide range of the electromagnetic spectrum. The alternative to a bending magnet beamline is a beamline which it the result of an insertion device. An insertion device is able to offer more specific radiation characteristics (photon energy, narrow band) than the bending magnets, and are placed on the magnet-free, straight sections of the synchrotron. Common insertion devices include wavelength shifters, wigglers, and undulators. \\
+
+The type of insertion device which is present at both I07 and I22 at the Diamond Light Source is an undulator. An undulator is a series of magnets of opposing polarity that causes the electromagnetic radiation to 'wiggle' back and forth due to the interaction between the radiation and the magnetic field (Figure \ref{fig:wiggle}). 
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{undulator.png}
+\caption{A diagram of an undulator insertion device such as that on I07 or I22 where $\lambda_P$ is the period length between opposing magnets, from Ref. \cite{Garcia-Gutierrez2009}}
+\label{fig:wiggle}
+\end{figure}
+This results in a superposition of radiation from $N_P$ sources, where $N_P$ is the number of magnets, which yields quasi-monochromatic radiation. The brilliance of different X-ray sources are compared in Table \ref{tab:brill}, this shows the significant benefit which an undulator offers in terms of photon brilliance. \\
+\begin{table}
+\centering
+\caption{A comparison of the photon brilliance from different light sources, adapted from Ref \cite{Sivia2011q}.}
+\label{tab:brill}
+\begin{tabular}{l | c} 
+\toprule 
+\multirow{2}{*}{Light source } & Approximate brilliance \\
+ & (\si{s^{-1}.mrad^{-2}.mm^{-2}.0.1\% bandwidth^{-1}}) \\
+\midrule
+Candle & $10^5$ \\
+X-ray tube & $10^8$ \\
+Sun & $10^{10}$ \\
+Bending magnet & $10^{15}$ \\
+Undulator & $10^{20}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Neutrons}
+
+Neutrons hold a significant advantage over X-rays, in the form of the ability to utilise contrast variation to increase the information from a system, this will be discussed in detail in Section \ref{intro:scat_tech:con_var}. However they cannot be produced safely on a laboratory scale -- therefore it is always necessary to visit a large scale facilities to utilise neutrons for scattering experiments. These facilities come in two types; the reactor source and the spallation source -- each offering unique benefits. \\
+
+Neutron reactor sources, such as the ILL in Grenoble, France, are the most common format of neutron source, and are currently capable of producing the highest average flux -- that is the number of neutrons per second per area. For example, the High-Flux Reactor at the ILL is capable of producing a neutron flux of \SI{1.5e15}{neutrons.s^{-1}.cm^{-2}}. \cite{illflux} A reactor source operates on the principle of nuclear fission, where an atomic nucleus is capable of breaking down into smaller nuclei -- overcoming the strong nuclear force. This involves using uranium enriched with the fissile isotope, \ce{^{235}U}, which after the initial absorption of a stray neutron, from a cosmic ray, or spontaneous fission, will undergo fission to release, on average, 2.5 daughter neutrons -- an example of a fission mechanism is:
+\begin{equation*}
+\ce{n + ^{235}U -> ^{236}U -> ^{134}Xe + ^{100}Sr + 2n}.
+\end{equation*}
+This type of mechanism is the basis for research reactors. \cite{Sivia2011q} One of the major drawbacks for reactor neutron sources is a side-effect of public opinion towards such facilities. Major safety concerns, such as runaway reactions and ``nuclear meltdown'', mean that reactor sources are often unpopular and therefore struggle to obtain necessary funding to remain available. \\
+
+The other form of neutron source is a spallation source, this is a much less controversial as it does not require fissile materials and hence there is no risk of nuclear disaster. The ISIS neutron and muon source (Oxfordshire, UK) is an example of a spallation source, where high energy protons (\SI{800}{\mega eV} \cite{isise}) are accelerated towards a target of tungsten target. When the protons strike the target, they can cause the release of a series of neutrons, the first `batch' of neutrons that are given off are of too high energy to be useful, however, less excited neutrons are given off by secondary emissions. In addition to the image benefit of spallation sources -- they also have a technological advantage -- the time-of-flight technique. The time-of-flight (ToF) technique is based of the fact that at a spallation source, it is possible to know the exact time at which the neutron was ejected by the target material, and hence the time taken for the neutron to reach the instrument can be measured. Since the neutron is a particle of finite mass, $m$, it is possible to correlate the velocity, $v$, of the particle with the kinetic energy, $E_k$:
+\begin{equation}
+E_k = \frac{mv^2}{2},
+\end{equation}
+and with knowledge of the energy of the particle, its wavelength, $\lambda$, can be determined by the de Broglie relation:
+\begin{equation}
+E = h\omega = \frac{hv}{\lambda},
+\end{equation}
+where, $h$ is Planck's constant, and $\omega$ is the neutron frequency, this allows the wavelength to be shown to be proportional to the inverse squared of the particle's velocity, and hence the time of flight, $t_F$,
+\begin{equation}
+\lambda = \frac{h}{mv} = \frac{ht_F}{mL}, 
+\end{equation}
+where $L$ is the distance between target and instrument. \\
+
+A problem that is present for both reactor and spallation sources is the the energy of the neutrons given off is usually too high to be used to study condensed materials, such as soft matter. This means that moderation must be used to reduce the energy, and hence wavelength, of the neutrons passing through the sample. The neutrons which are considered to be optimal for the study of condensed matter are thermal neutrons -- named because there thermal energy is approximately that of ambiance. Thermal neutrons are achieved by allowing the neutrons to pass through a large volume of moderator material, usually graphite or heavy water (\ce{D2O}), at \SI{300}{\kelvin} before they reach the instrument.\cite{Sivia2011q} \\
+
+
+\subsection{Contrast variation}
+\label{intro:scat_tech:con_var}
+
+The scattering profile generated by the incidence of some system with radiation, depends on three factors:
+\begin{itemize}
+\item The spatial arrangement of the atoms in the system 
+\item The instrument being used to measure the pattern -- instrumental resolution function
+\item The interaction between the radiation and the matter under investigation
+\end{itemize}
+This final factor is perhaps better known as the `scattering contrast', this is an extremely important factor in the study of soft materials -- particularly when the probing radiation in the neutron. It is this scattering contrast which makes it possible to select individual components of the system and investigate their structural properties. \cite{Schurtenberger2002} The differential cross-section, $\text{d}\sigma/\text{d}\Omega$ of a point scatterer varies only with respect to the scattering length of the species, $b$;
+\begin{equation}
+\frac{\text{d}\sigma}{\text{d}\Omega} = b^2
+\end{equation}
+However, when studying an ensemble of particles, it is easier to use the scattering length density, $\rho$,
+\begin{equation}
+\rho = \frac{1}{V_1}\sum_j{b_j},
+\end{equation}
+where $b_j$ is the coherent scattering lengths of all atoms in some volume $V_1$. \\
+
+In the study of neutron scattering, the scattering length varies unsystematically with respect to the atomic number of a species, this variation is shown in Figure \ref{fig:scatlen}. 
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{scatlen.png}
+\caption{The variation of the average neutron scattering length, $\langle b\rangle$ (indicated by points), with atomic mass, $\mu$. The standard deviation, $\Delta b$, is indicated with shaded regions, from Ref. \cite{Sivia2011q}}
+\label{fig:scatlen}
+\end{figure}
+Further to the apparently random variation with changes in atomic number, there is also significant variation with mass number, e.g. between isotopes of the same atom, this is extremely useful with respect to soft matter scattering. There is also dependence due to the magnetic state of the atom, however this is less important for soft matter. The scattering lengths very with the nuclear spin energy level, leading to an average scattering length, $\langle b\rangle$, for  isotopes where the nuclear spin is non-zero ($S \neq 0$). This leads to two forms of scattering, coherent and incoherent, for which the scattering cross-section, $\sigma$, are determined by: 
+\begin{equation}
+\begin{aligned}
+\sigma_{\text{coh}} & = 4\pi\langle b\rangle^2 \\
+\sigma_{\text{incoh}} & = 4\pi(\langle b^2\rangle - \langle b\rangle^2)
+\end{aligned}
+\end{equation}
+The coherent scattering is the scattering from nuclei which all have the same value of $\langle b\rangle$, and leads to the measured, useful scattering pattern. Whereas, the incoherent scattering is caused by the `disorder' between the isotopes, and is the cause of the background present in the measurement. Examples of these scattering cross-sections for soft matter relevant nuclei are shown in Table \ref{tab:cross}. 
+\begin{table}
+\centering
+\caption{Examples of coherent and incoherent cross-sections, from Ref. \cite{Schurtenberger2002}}
+\label{tab:cross}
+\begin{tabular}{l | c c c}
+\toprule
+Isotope & $S$ & $\sigma_{\text{coh}}$ (\SI{e-28}{\meter^{2}}) & $\sigma_{\text{incoh}}$ (\SI{e-28}{\meter^{2}}) \\
+\midrule
+\ce{^1H} & 1/2 & 1.8 & 79.7 \\
+\ce{^2H} & 1 & 5.6 & 2.0 \\
+\ce{^{12}C} & 0 & 5.6 & -- \\
+\ce{^{14}N} & 1 & 11.6 & 0.3 \\
+\ce{^{16}O} & 0 & 4.2 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+As can be seen the incoherent scattering from the hydrogen nuclei is more than forty time the coherent scattering. This leads to large, intrusive backgrounds from the measurement of hydrogenous samples. \\
+
+The difference between the scattering of hydrogen and deuterium, evident in Table \ref{tab:cross}, can lead to a very useful technique in neutron scattering, known as contrast variation. The idea of contrast variation is based on the substitution of one isotope of an atom for another, which does not introduce a significant change to the properties of the material. Traditionally the benefit of this came in terms of contrast matching out a part of the system to reduce the dimensionality of the problem. For example by matching the solvent contrast length density to that of the tails of the surfactants at the centre of the micelle there would only be scattering from the heads, and similarly there would only be scattering from the tails if the solvent had the same scattering length density as the head groups. This means that the problem becomes more straightforward as there are less variables to fit the data to. This idea is represented graphically in Figure \ref{fig:convar}. 
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{convar.png}
+\caption{The effect of varying the scattering length density of the solvent in a micelle system, where (a) is the system in pure solvent, while (b) has the solvent scattering matched to the surfactant tails, and (c) has the solvent matched to surfactant head.}
+\label{fig:convar}
+\end{figure}
+Within this work, the technique of contrast variation will also be used in terms of data analysis. By increasing the number of data sets corresponding to a single system -- at different contrasts,the solution of the true structure from the scattering pattern becomes more straightforward. By having `more contrasts' of the same system can reduce the dimensionality of the problem. This is because each different contrast can in essence be thought of as an individual experiment, and hence each scattering profile of the different contrasts can be used to constrain the data analysis procedure. This leads to the co-refinement of different experiments simultaneously, including across neutron and X-ray. \cite{Nelson2006} \\\\
+
+There is also the possiblility of using contrast variation when the probing radiation is an X-ray, through the use of anomalous scattering. This is where different wavelengths of radiation given different scattering, when the wavelengths are on opposing sides on an absorption edge. This is not frequently utilised for soft materials as the X-ray absorption edges for common soft matter elements (H, C, N, O, etc.) are at very low X-ray energies so generally outside of the accessible range.\cite{Schurtenberger2002} \\
+
+\subsection{Model-dependent analysis}
+\label{intro:scat_tech:mda}
+All types of scattering patterns discuss herein can be analysed by one of two methods; model independent and model-dependent. This work will focus on the use of model-dependent methods, which require the inclusion of \emph{a priori} information, which may bias the analysis, however they offer significant benefits over model-independent analysis, such as greater resolution and more straight-forward, less mathematically intensive analysis. Despite the fact that assumptions much be made, these assumptions can, and should, be educated -- such as that a surfactant with a large head group and small tail will form a spherical micelle, as indicated by the packing parameters discussed in Section \ref{intro:soft_matter:pack}. \\
+
+The scattering from the model system is determined, using technique specific methods discussed below, and this is then compared with the experimental scattering, it is important that the experimental data is reduced before analysis to remove the presence of background scattering and other artefacts. The `goodness-of-fit' between the two scattering patterns can be quantified by considering the \emph{chi-squared} ($\chi^2$) value, which is calculated from the least-squares method as follows:
+\begin{equation}
+\chi^2 = \displaystyle\sum^{N}_{i=1}\Bigg[\frac{I^{\text{exp}}(Q_i) - I^{\text{mod}}(Q_i)}{\sigma_i}\Bigg],
+\end{equation}
+where $I^{\text{exp}}(Q_i)$, $i = 1,\ldots,N$ are the experimental intensities for each $Q$, $I^{\text{mod}}(Q_i)$ the model intensities, and $\sigma_i$ the statistical uncertainty in the measurement of $I(Q_i)$. \cite{Pedersen2002} If the model fits the experimental scattering perfectly, the $\chi^2$-value will be zero. In order to accurately reproduce the measurement it is necessary to include some instrumental resolution function , $R(Q)$, into the modelling procedure -- this accounts for instrumental smearing, which is instrument specific although may be approximated with a Gaussian. This modelled intensity can then be determined from, 
+\begin{equation}
+I^{\text{mod}}(Q) = \int R(Q) \frac{\text{d}\sigma(Q)}{\text{d}\Omega} \text{d}Q, 
+\end{equation}
+where $\text{d}\sigma(Q) / \text{d}\Omega$ is the differential cross-section, a measure of the number of scattered particles hitting a region of the detector. \\
+
+The aim of the model-dependent method is to find a model for the scattering which minimises the $\chi^2$-value, while producing something which is chemically, and physically relevant. This means that the iterative minimisation algorithms can be applied; these are present in many common software packages for the analysis of scattering patterns. \cite{sasview, Nelson2006}
+
+\subsection{Small angle scattering}
+\label{intro:scat_tech:sas}
+
+A small angle scattering experiment generally involves some sample being placed in the path of the probing radiation, and the scattering pattern being measured at some distance, this is shown for the D22 SANS instrument from ILL in Figure \ref{fig:d22}. 
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{d22.png}
+\caption{A schematic of D22 from the ILL, for D22 the distance of the detector is variable, from Ref. \cite{Grillo2008}.}
+\label{fig:d22}
+\end{figure}
+Small angle scattering instruments are usually very large, this is due to the fact that in order to reach the small angles used in SAS it is important to have a long flight path after the sample interaction -- a longer flight path will allow for more time for angular divergence. This is an elastic scattering technique which provides information about the size, shape and orientation of the sample components. \cite{Willis2009} The $Q$-range which SAS covers as usually around \SIrange{5e-3}{0.5}{\angstrom^{-1}}, which covers \SIrange{10}{1000}{\angstrom} in real-space. The detector on a small angle scattering instrument is usually two-dimensional, such as that shown in Figure \ref{fig:2ddect}a. In the processing of the data, if the scattering is isotropic, the scattering is radially averaged in order to give the familiar scattering profile (Figure \ref{fig:2ddect}b). 
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{2ddect.png}
+\caption{(a) A simulated two-dimensional neutron scattering pattern of fully deuterated \ce{C_{10}TAB} in \ce{H_2O} where the micelles were \SI[separate-uncertainty = true]{44\pm2}{\angstrom} in diameter, (b) is the matching one-dimensional scattering, where the 2D pattern has be radial averaged. Both patterns were generated with SASView \cite{sasview}.}
+\label{fig:2ddect}
+\end{figure}
+Having pairs of detectors in order to provide a wider $Q$-range on a single instrument is being more commonplace, this is achieved by having wide $Q$-detectors close to the sample and smaller $Q$-detectors further away. This allows Sans2d, at the ISIS Neutron and Muon Source, a $Q$-range of \SIrange{2e-3}{2}{\angstrom^{-1}} \cite{sans2d}. \\
+
+\subsubsection{Analysis}
+
+A small angle scattering pattern can be thought of as consisting of two sections, these arise from the form and structure factors of the scattering species. The form factor gives the average shape of the scattering species, while the structure factor is a measure of the interactions between the scattering object in the solvent. It is often possible to control the presence of the structure factor by changing the concentration of the sample, eventually the concentration will be so low that there will be effectively no interactions between the different particles. \cite{Edler2015} The however, is not always possible -- such as in the study of micelles, the critical micelle concentration may be higher then the minimum concentration for a structure factor to be present. It is possible to assess which part of the scattering pattern belongs to the structure factor and which to the form factor by studying the system at different concentrations, however this requires that the form (shape) of the scattering particle does not change with concentration. \\
+
+The rigorous, model-independent method for studying SAS involves taking the Fourier transform of the scattering, to give an auto-correlation function of the average particle in the system, which following a deconvolution procedure can give a radial scattering length density profile. There are two other, more common, model-independent techniques which can be used to give and understanding of the scattering profile of a species. The first is the Guinier approximation, this is a straightforward method for determining the radius of gyration, $R_g$, of the scattering species -- at ``infinite'' dilution. This is a `scattering law' which is valid at very small values of $Q$, where $Q < R_g$ \cite{Sivia2011q}. 
+\begin{equation}
+\ln{[I(Q)]} = \ln{[I(0)]}-\Bigg(\frac{R_g^2}{3}\Bigg)Q^2
+\end{equation}
+This Guinier relationship allows the radius of gyration to be found by charting the scattering profile with axes $\ln{[I(Q)]}$ vs. $Q^2$, and evaluating the gradient at low $Q$. For the scattering profile in Figure \ref{fig:2ddect}b, the Guinier plot has been generated in Figure \ref{fig:guinier}b, as is alluded to in this figure the radius of gyration correlates with the radius of the sphere ($R$) by the following relation:
+\begin{equation}
+R_g = \sqrt{\frac{3}{5}}R
+\end{equation}
+This Guinier analyses is very common in the studying of proteins by SAS, as it allows for the determination of the radius of gyration for the protein the native, solution state. \cite{Skou2014} The other common, straight-forward analysis of a small angle scattering curve comes from Porod's law, this is the fact that for large values of $Q$, the scattering intensity of a sample becomes proportional to $SQ^{-4}$, where $S$ is the surface area of the same. This means that by plotting $Q^4I(Q)$ against $Q$ and extrapolating to $Q \rightarrow \infty$, it is possible to determine the external surface area of the system. \cite{Willis2009} From this it is then possible to qualitatively discuss the `roughness' of the surface of the system.  \\
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{guinier.png}
+\caption{The effect of a Guinier plot, (a) show the curve from Figure \ref{fig:2ddect} of a micelle, while (b) gives the associated Guinier plot, with the straight line (dotted) at low-$Q$ showing the radius of gyration, $R_g$.}
+\label{fig:guinier}
+\end{figure}
+
+It was mentioned above that the SAS pattern consists essentially of two parts, the structure and form factors. This means that when calculating the scattering pattern for a model system -- both factors will contribute. In the most common method of modelling the small angle scattering pattern, the differential cross-section can be written, 
+\begin{equation}
+\frac{\text{d}\sigma(Q)}{\text{d}\Omega} = n\Delta\rho^2V^2P(Q)S(Q),
+\end{equation}
+where $n$ is the number density of particles, $\Delta\rho$ is the different in scattering length density between the particles and the solvent, $V$ is the particle volume, $P(Q)$ is the particle form factor, and $S(Q)$ is the system structure factor. \cite{Pedersen2002} Therefore it is necessary to understand how the function of the form factor and structure factor come about. \\
+
+The most common method for modelling the form-factor is by using very coarse shapes; such as spheres, cylinders, or ellipses. This involves the determination of an analytical or quasi-analytical solution for the scattering of the probing radiation by the shape of choice, these have been determined for many common shapes. For a sphere, this was solved in the early 19th century by Lord Rayleigh \cite{Pedersen2002}: 
+\begin{equation}
+P(Q) = \Bigg\{\frac{3[\sin{(QR)} - QR\cos{(QR)}]}{(QR)^3}\Bigg\}^2,
+\label{equ:sphform}
+\end{equation}
+where $R$ is the radius of the sphere. A comparison between a possible experimental scattering pattern and the scattering generated from Equation \ref{equ:sphform} is shown in Figure \ref{fig:sphform}. 
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{form.png}
+\caption{The small angle scattering profile of a micelle of \ce{C_{16}TAB} of radius \SI[separate-uncertainty = true]{50\pm3}{\angstrom} (black circles, generated using SASView \cite{sasview}, with instrumental smearing) compared with a curve of Equation \ref{equ:sphform} where $R = \SI{50}{\angstrom}$ (blue line).}
+\label{fig:sphform}
+\end{figure}
+Analytical form factors exist for a wide variety of shapes; these can be found in software such as SASView \cite{sasview}. \\
+
+The structure factor accounts for the scattering interference which arises from the interaction of different particles. This will be discussed in greater detail in terms of total scattering in Section \ref{intro:scat_tech:ts}. In terms of SAS there are expressions which can be used to model the structure factor of different types of species; hard-sphere, sticky hard-sphere, screened Coulomb, etc. These structure factor functions are generated as solutions to the Ornstein-Zernike equation \cite{Klein2002}. The most relevant structure factor in terms of micelle modelling is the Hayter-Penfold \cite{Hayter1981}, this is where the micelles are modelled as like-charged, soft spheres -- similar to a charged micelle. Again, a whole range of these structure factor functions are built into the SASView package. \cite{sasview} \\
+
+It is also possible to determine the scattering pattern of an atomic system analytically, this approach is also applicable to a coarse-grained system. It was determined by Debye \cite{Debye1915} that the scattering intensity can be calculated as a summation over all of the interatomic distances within the system, 
+\begin{equation}
+I(Q) = \displaystyle\sum_j^N\displaystyle\sum_k^N b_j b_k \frac{\sin{(Q|\mathbf{r}_j - \mathbf{r}_k|)}}{Q|\mathbf{r}_j - \mathbf{r}_k}
+\label{equ:debye}
+\end{equation}
+where $b_j$ and $b_k$ are the scattering lengths of atoms $j$ and $k$, $\mathbf{r}_j$ and $\mathbf{r}_k$ are the atomic positions, $N$ is the number of atoms and $\mathbf{Q}$ is the scattering vector. The problem with this method is that it is very computationally intensive due to the double summation, and as a result scales as $\mathcal{O}(N^2)$. Despite this, this method is still utilised in many \emph{ab initio} small angle scattering calculation and fitting packages. One such example, which is very commonly used within the field of biological scattering is DAMMIF, developed by the Svergun group. \cite{Franke2009} The software uses large `beads' on a lattice structure to represent the particles and solvent, beads are added or removed and the scattering pattern generated. In this why the system undergoes a statistical Monte Carlo simulation is conducted to lead towards a general structure (Figure \ref{fig:dammif}). This results in a highly coarse-grained image of the system with no chemical information included, as all beads have the same scattering, approximately that of an average amino acid. \cite{JensenBio}
+\begin{figure}
+	\centering
+	\includegraphics[width = 0.5\textwidth]{dammif.png}
+	\caption{An example of a structure arising from a DAMMIF simulation, from Ref. \cite{JensenBio}.}
+	\label{fig:dammif}
+\end{figure}
+Due to the large size of the beads, there are relatively few double summations required to calculate the scattering, meaning that the use of Equation \ref{equ:debye} is suitable. \\
+
+In order to calculate the scattering from a larger number of atoms, and the method used for the simulation of SAS patterns within this work comes from the work of Watson \& Curtis \cite{Watson2013}. Where the amplitude of the scattering is calculated numerically first, before the intensity is found, 
+\begin{equation}
+I(\mathbf{Q}) = \Bigg[\displaystyle\sum_j^N b_j \cos{(\mathbf{Q} \cdot \mathbf{r}_j)}\Bigg]^2 + \Bigg[\displaystyle\sum_j^N b_j \sin{(\mathbf{Q} \cdot \mathbf{r}_j)}\Bigg]^2, 
+\label{equ:curtis}
+\end{equation}
+This scales as $\mathcal{O}(N)$ if the summations within the brackets are calculated before they are squared. However, the result of Equation \ref{equ:curtis} does not give the orientationally averaged scattering of the system, as is the case for Equation \ref{equ:debye}. Therefore it is instead necessary to calculate $I(\mathbf{Q})$ over all scattering directions. This can be thought of as; in the Debye equation the system is rotated through all possible orientations while the scattering vector comes from one direction -- similar to how it would work in an actual experiment, where the system rotates freely in solution. However, for the method used by Watson \& Curtis, the scattering system is kept in one orientation, while the scattering vector is averaged over all possible directions -- this is analogous to measuring the SAS from a motion-free sample by moving the radiation source and detector over the total surface of a sphere.  \\
+
+It is necessary to approximate to the orientationally averaged $I(Q)$ by solving Equation \ref{equ:curtis} for $n$ scattering vectors, of magnitude $q$. In order to obtain a orientationally average rage of scattering vectors, these are drawn from a quasi-uniform lattice on a sphere. \cite{Gonzalez2010} This was first developed such that $n$ is a number from the Fibonacci sequence \cite{Grishaev2010}, however for the method of Watson \& Curtis $n$ many be any positive odd integer. This lead to the scattering vectors being calculated as,
+\begin{equation}
+\begin{aligned}
+Q_x^{(k)} & = Q\cos\Bigg[\sin^{-1}\bigg(\frac{2k}{n}\bigg)\Bigg]\cos\bigg(\frac{2\pi k}{\Phi}\bigg) \\
+Q_y^{(k)} & = Q\cos\Bigg[\sin^{-1}\bigg(\frac{2k}{n}\bigg)\Bigg]\sin\bigg(\frac{2\pi k}{\Phi}\bigg) \\ 
+Q_z^{(k)} & = \frac{2kQ}{n},
+\end{aligned}
+\label{equ:gold}
+\end{equation}
+where, $k$ runs over ${-(n-1)/2, \ldots, 0, \ldots, (n-1)/2}$ and $\Phi$ is the golden ratio, 
+\begin{equation}
+\Phi = \frac{(1+\sqrt{5})}{2}
+\end{equation}
+The vectors, $\mathbf{Q}^(k)$, generates from a variety of values of $n$ using the Equations \ref{equ:gold} are shown in Figure \ref{fig:gold}.
+\begin{figure}
+\centering
+\includegraphics[width = 0.45\textwidth]{gold.png}
+\caption{The scattering vector directions are shown as point (blue circles) on a sphere, for $n = \{15,\;19,\;51,\;201\}$, from Ref. \cite{Watson2013}.}
+\label{fig:gold}
+\end{figure}
+The approximate orientationally averaged scattering is then found as an average of the scattering from each vector, 
+\begin{equation}
+I(Q) = \frac{1}{n} \Bigg\{\displaystyle\sum_{k = (1-n)/2}^{(n-1)/2} I[\mathbf{Q}^{(k)}] \Bigg\}
+\end{equation} 
+This means that the Watson \& Curtis method will scale as $\mathcal{O}(nN)$, the precision of the calculation increases with $n$, however good agreement between experiment and simulation was found for $n < 100$ \cite{Watson2013} even for highly anisotropic systems. This means that this method will be significantly more efficient then the Debye calculation discussed previously. This method has been applied heavily to the study of biological molecules \cite{Green2016,Castaneda2016}, however for reasons that will become clear in Section \ref{intro:sim:mdsm} these have not be used for soft matter extensively. 
+
+\subsection{Total scattering}
+\label{intro:scat_tech:ts}
+Total scattering can in many ways be thought of as an extension of small angle scattering, into higher $Q$-regions. Total scattering instruments, such as NIMROD at ISIS, are capable of carry out combined small- and wide- angle scattering experiments, resulting in a total $Q$-range of \SIrange{0.01}{100}{\angstrom^{-1}} \cite{Edler2015} corresponding to distances in the hundred of nanometers to sub angstrom. Traditionally total scattering has been used to study liquid and amorphous glass materials, meaning that the majority of the focus has been on the wide-angle scattering. However, with the development of NIMROD, which extended the small $Q$-range compared to previous instruments, it has been possible to study materials which would be considered soft matter. \cite{Hargreaves2011}
+
+\subsubsection{Analysis}
+The majority of the work associated with a total scattering experiment is in the analysis of the scattering. The analysis of a total scattering experiment is challenging due to the fact that no simple model exists for liquid or amorphous species -- at large distances the atomic positions will be completely uncorrelated. \cite{Willis2009} A total scattering experiment measures the total structure factor, $S(Q)$, which was introduced in the previous section. This total structure factor is defined in terms of the atomic structure as, \cite{Keen2001} 
+\begin{equation}
+S(Q)-1 = \frac{1}{(\displaystyle\sum_{\alpha}c_{\alpha}\langle b_{\alpha}\rangle)^2}\displaystyle\sum_{\alpha}\displaystyle\sum_{\beta\geq\alpha} (2-\delta_{\alpha\beta})c_{\alpha}c_{\beta}\langle b_{\alpha}\rangle \langle b_{\beta}\rangle [S_{\alpha\beta}(Q)-1].
+\label{equ:struc}
+\end{equation}
+The concentrations of atoms $\alpha$ and $\beta$ are denoted, $c_\alpha$ and $c_\beta$ respectively, and $\langle b_{\alpha}\rangle$ and $\langle b_\beta \rangle$ are their average coherent scattering lengths. The par correlation functions between $\alpha$ and $\beta$ are described by Faber-Ziman partial structure factors, $S_{\alpha\beta}(Q)$. \cite{Faber1965} The $\delta_{\alpha\beta}$ is a Kronecker $\delta$-function present to ensure that double counting of the like-atom correlations does not occur. It is then possible to obtain the  total radial distribution function, $G(r)$, from the total structure factor above by a Fourier transformation, 
+\begin{equation}
+G(r) - 1 = \frac{1}{(2\pi)^3\rho_0} \int_0^{\infty}4\pi Q^2[S(Q)-1]\frac{\sin Qr}{Qr}\text{d}Q
+\end{equation}
+where $\rho_0$ is the atomic density of the sample. This total pair distribution function is formed from a sum of atomic partial pair distribution functions, $g_{\alpha\beta}$, in the same fashion as for the structure factors in Equation \ref{equ:struc}. \cite{Edler2015} \\
+
+Since there is no long-range correlation in the systems investigated by total scattering, it is necessary for models built in the analysis to be atomistic.  This means that it is possible to utilise the modern computational techniques which are discussed in Section \ref{intro:soft_matter_sim} in order to construct these models. It is then possible to calculate the partial atomic pair correlation functions, $S_{\alpha\beta}(Q)$ and $g_{\alpha\beta}(r)$. One of the most successful techniques marries Monte Carlo simulation with the above discussed mathematics is Emperical Potential Structure Refinement (EPSR). \cite{Soper2005} EPSR uses classical potential models, discussed in Section \ref{intro:soft_matter_sim:pot}, and performs a short Monte Carlo simulation before assessing the partial atomic pair correlation functions. These are then compared with the experimental system before the potential models are modified to better reproduce the experiment. This process is repeated until the $\chi^2$-value between the experiment and simulation are minimised, then a short molecular dynamics simulation is run using the potential model which correlates to the real system. \cite{Edler2015}
+
+
+\subsection{Reflectivity}
+\label{intro:scat_tech:r}
+
+Reflectivity involves the interaction of the probing radiation with an interface, where the radiation is reflected. The geometry of a reflectivity experiment is shown in Figure \ref{fig:reflectgeo}, in this figure the reflectometer is in the horizontal configuration. 
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{reflectgeo.png}
+\caption{A schematic of specular reflectivity from a layered sample, from Ref. \cite{Sivia2011q}.}
+\label{fig:reflectgeo}
+\end{figure}
+Reflectivity gives information about the structure lateral to the interface, in Figure \ref{fig:reflectgeo} the $z$-direction, therefore it works on the assumption that the layers will be completely homogeneous in the plane of the interface, the $xy$-plane in Figure \ref{fig:reflectgeo}. In reality, since the layers are usually not completely homogeneous, an average is obtained for the area under the beam of radiation. \\
+
+A reflectometer operates by measuring the intensity of specular radiation at different angles, $\theta$, or wavelengths, $\lambda$, in the case of a spallation neutron source. The reflectivity, $R$, is described in terms of $Q$ (by Equation \ref{equ:scatvec}), and is defined by the following equation,
+\begin{equation}
+R = \frac{\text{rate of specular reflective scattering}}{\text{rate of incidence}}
+\label{equ:reflectivity}
+\end{equation}
+It is clear from Equation \ref{equ:reflectivity} that the value of the measured reflectivity cannot be greater than one, as this would mean that more particles of probing radiation were being reflected than were incident. The different angles are usually achieved by having a detector which can move through a series of angles, such as that on I07 at Diamond Light Source. \cite{Arnold2012} \\
+
+\subsubsection{Analysis}
+There are two modelling based techniques which can applied to the analysis of a reflectivity profile. The first is the kinematic approach, \cite{Sivia2011q} where the reflectivity profile can be modelled in terms of the scattering length density profile in the $z$-direction, $\rho(z)$, as follows:
+\begin{equation}
+R(Q) \approx \frac{16\pi^2}{Q^4}\Bigg|\int^{\infty}_{-\infty} \frac{\text{d}\rho(z)}{\text{d}z} \exp{(-\text{i} zQ)}\text{d}z\Bigg|^2, 
+\label{equ:reflectint}
+\end{equation}
+where, $\text{d}\rho(z) / \text{d}z$ is the first derivative of the scattering length density profile. It is possible to apply Equation \ref{equ:reflectint} to the scattering length density profile of a bare silicon substrate, which will be modelled as a Heaviside function (Figure \ref{fig:kine}a):
+\begin{equation}
+\rho(z) = 
+	\begin{cases}
+	\rho_{\text{Si}} & \text{for } z< 0 \\
+	0 & \text{for } z> 0 \\
+	\end{cases}
+\end{equation}
+where, $\rho_{\text{Si}}$ is the scattering length density of pure silicon (\SI{2.1e-6}{\angstrom^{-2}} for neutrons). The derivative of a stepwise Heaviside function is a scaled $\delta$-function (Figure \ref{fig:kine}b),
+\begin{equation}
+\frac{\text{d}\rho(z)}{\text{d}z} = -\rho_{\text{Si}}\delta(z)
+\end{equation}
+Then, as in Equation \ref{equ:reflectint}, the Fourier transform of this $\delta$-function is taken, 
+\begin{equation}
+\rho_{\text{Si}}\int^{\infty}_{-\infty}{\delta(z)\exp{(-\text{i}zQ)}}\text{d}z = \rho_{\text{Si}}\exp{(0)} = \rho_{\text{Si}}
+\end{equation}
+This means that the reflectivity can be modelled with the following relationship. 
+\begin{equation}
+R(Q) \approx \frac{16\pi^2\rho_{\text{Si}}^2}{Q^4}
+\label{equ:kine}
+\end{equation}
+The curve from this relationship is compared to the experimental curve in Figure \ref{fig:kine}c. It is clear that while there is very good agreement in the high $Q$ region, where there is a $Q^4$ decay, the function fails to accurately model the reflectivity at low $Q$. This is because at low $Q$ Equation \ref{equ:kine} voilates the physical constraint of reflectivity discussed above, that as $Q\rightarrow 0$, $R\leq1$. \\
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{kine.png}
+\caption{A graphical representation of the kinematic appproach: (a) the Heaviside function describing the scattering length density profile of a bare silicon substrate, (b) the $\delta$-function arising from the first derivative of the function in (a), (c) the reflectivity profile resulting from Equation \ref{equ:kine}, with the black line at $R=1$ showing where there is the break down between experiment and theory, adapted from \cite{Sivia2011q}.}
+\label{fig:kine}
+\end{figure}
+
+This breakdown of the kinematic method has lead to the application of the Abeles, or Parratt, method (also known as the dynamical theory) \cite{Abeles1948,Parratt1954} which is based on the mathematics traditionally associated with optics. This method involves considering the system as a layered structure from which the probing radiation waves can either be reflected or refracted, with some refractive index, $n_x$. Figure \ref{fig:reflectvec} shows this process for a system of two layers, where layer 0 is the air or vacuum above the sample, this also helps in the understanding of the interference pattern which arises as it is clear to see how the two waves labeled $r$ could interference constructively or destructively depending on the thickness, $d$, of layer 1.
+\begin{figure}
+\centering
+\begin{tikzpicture}
+\coordinate (A) at (5,0);
+\coordinate (B) at (-5,0);
+\coordinate (C) at (-1,0);
+\coordinate (D) at (1,-2);
+\coordinate (E) at (0,-1);
+\coordinate (F) at (-5,2);
+\coordinate (G) at (-3,1);
+\coordinate (H) at (2, 1.5);
+\coordinate (I) at (5, -2);
+\coordinate (J) at (5, 3);
+\coordinate (K) at (-5,-2);
+\coordinate (L) at (3,0);
+\coordinate (M) at (2,-1);
+\coordinate (N) at (5,1);
+\coordinate (O) at (5, -3);
+\coordinate (P) at (3, -2.5);
+\filldraw[color = blue!30!white] (B) rectangle (I);
+\draw[<->,thick] (A) -- (I) node [right,midway] {$d$};
+\draw[->, dotted] (C) -- (E);
+\draw[dotted] (E) -- (D);
+\draw[very thick] (A) -- (B) node [xshift = 0.9cm, yshift = -1cm] {$n_1$} node [xshift = 0.9cm, yshift = 0.7cm] {$n_0$};
+\draw[->] (F) -- (G) node [xshift = -2.2cm, yshift = 1.1cm] {$i$};
+\draw (G) -- (C);
+\draw[->] (C) -- (H);
+\draw (H) -- (J) node [xshift = 0.2cm] {$r$};
+\draw[very thick] (I) -- (K) node [xshift = 0.9cm, yshift = -0.5cm] {$n_2$};
+\draw[->,dotted] (D) -- (M);
+\draw[dotted] (M) -- (L);
+\draw[->] (L) -- (N) node [xshift = 0.2cm] {$r$};
+\draw[->] (D) -- (P);
+\draw (P) -- (O) node [xshift = 0.2cm] {$t$};
+\pic [draw, -, "$\theta_1$", angle eccentricity=1.5, angle radius=1.0cm] {angle = E--C--A};
+\pic [draw, -, "$\theta_1$", angle eccentricity=1.5, angle radius=1.0cm] {angle = I--D--L};
+\pic [draw, -, "$\theta_0$", angle eccentricity=1.5, angle radius=1.0cm] {angle = F--C--B};
+\pic [draw, -, "$\theta_0$", angle eccentricity=1.5, angle radius=1.0cm] {angle = A--L--N};
+\pic [draw, -, "$\theta_0$", angle eccentricity=1.5, angle radius=1.0cm] {angle = A--C--J};
+\pic [draw, -, "$\theta_2$", angle eccentricity=1.8, angle radius=1.0cm] {angle = O--D--I};
+\end{tikzpicture}
+\caption{A schematic diagram showing the reflected ($r$) and transmitted ($t$) waves when an incident ($i$) wave enters an interface of thickness $d$, where the refractive indices of each layer are $n_0$, $n_1$, and $n_2$, adapted from Ref. \cite{Foglia2015}.}
+\label{fig:reflectvec}
+\end{figure}
+This means that for a single interface, such as that between layers 0 and 1 in Figure \ref{fig:reflectvec}, the reflectivity can be described by the Fresnel equation \cite{Titmusslec1}, 
+\begin{equation}
+R(Q) = \Bigg|\frac{n_o\sin{\theta_0} - n_1\sin{\theta_1}}{n_o\sin{\theta_0} - n_1\sin{\theta_1}}\Bigg|^2
+\end{equation}
+This means that at the point of total reflection, where $\theta_0 = \theta_c$, the critical angle, there will be no transmitted wave so, 
+\begin{equation}
+n_1\sin{\theta_1} = 0,
+\end{equation}
+therefore; the reflectivity will never be greater than 1, and the critical angle can be defined as, 
+\begin{equation}
+n_1^2 = n_0^2 \cos^2{\theta_c}
+\end{equation}
+The critical angle is the angle below which incidence angle should be in order to measure the reflectivity of a system. \\
+
+This above method can then be generalised to a structure of many layers, using matrices, this is described in Algorithm \ref{algo:abeles}. 
+\begin{algorithm}
+	\caption{The algorithm of the Abeles method for the calculation of reflectivity. This algorithm was adapted from Ref. \cite{refl1d}.}
+	\label{algo:abeles}
+	\begin{algorithmic}
+		\FOR{$Q = Q_{\text{min}}\text{ to }Q_{\text{max}}$}
+			\STATE{$k_0 = Q/2$}
+			\STATE{$k_n = k_0$}
+			\STATE{$k_0^2 = k_0^2 + 4\pi\rho_0$}
+			\STATE{$B_n = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$}
+			\FOR{$n = 0 \text{ to } n_{\text{max}}$}
+				\STATE{$k_{n+1} = [k_0^2 - 4\pi\rho_{n+1}^2 ]^{1/2}$}
+				\STATE{$r_{n,n+1} = {(k_n - k_{n+1})}/{(k_n + k_{n+1})}$}
+				\STATE{$\beta_n = k_nd_n$}
+				\IF{$n > 0$}
+					\STATE{$M_n = \begin{bmatrix} \exp(\beta_n) & r_{n,n+1}\exp(-\beta_n) \\ r_{n,n+1}\exp(\beta_n) & \exp(-\beta_n) \end{bmatrix}$}
+				\ELSE
+					\STATE{$M_n = \begin{bmatrix} 1 & r_{n,n+1} \\ r_{n,n+1} & 1 \end{bmatrix}$}
+				\ENDIF
+				\STATE{$B_{n+1} = M_n \cdot B_n$}
+				\STATE{$B_n = B_{n+1}$}
+				\STATE{$k_n = k_{n+1}$}
+			\ENDFOR
+			\STATE{$R(Q) = {B_{n1,2}}/{B_{n1,1}}$}
+		\ENDFOR		
+	\end{algorithmic}
+\end{algorithm}
+For each value of $Q $ for which the reflectivity is to be calculated, the system is considered in terms of $n_{\text{max}}$ layers. The incident radiation beam will be refracted by each of the layers, giving wavevector values for each layer, $k_n$,
+\begin{equation}
+k_n = [k_0^2 + 4\pi(\rho_n^2 - \rho_0)]^{1/2}
+\end{equation}
+The Frensel equation coefficient between layers $n$ and $n+1$, $r_{n,n+1}$ can then be found along with the phase factor, $\beta_n$, which is dependent on the thickness of the layer, $d_n$,
+\begin{equation}
+r_{n,n+1} = \frac{k_n - k_{n+1}}{k_n + k_{n+1}},
+\label{equ:coefffres}
+\end{equation}
+\begin{equation}
+\beta_n = k_nd_n.
+\end{equation}
+The means that a matrix can be evaluated for each layer, $M_n$,
+\begin{equation}
+M_n = \begin{bmatrix} \exp(\beta_n) & r_{n,n+1}\exp(-\beta_n) \\ r_{n,n+1}\exp(\beta_n) & \exp(-\beta_n) \end{bmatrix}.
+\end{equation}
+The resultant matrix, $B$, is then found as a product of the matrix from each layer, 
+\begin{equation}
+B = \prod_{n=0}^{n_{\text{max}}} M_n,
+\end{equation}
+and from this the reflectivity of the system is found for that particular $Q$-value,
+\begin{equation}
+R(Q) = \frac{B_{1,2}}{B_{1,1}}
+\end{equation}
+The above algorithm models the layers as perfectly flat layers, which will not strictly be the case for soft matter species such as a bilayer. This resulted in a correction term being added to Equation \ref{equ:coefffres} to account for the roughness of the layers. This gives Equation \ref{equ:coefffres} the form, 
+\begin{equation}
+r_{n,n+1} = \frac{k_n - k_{n+1}}{k_n + k_{n+1}}\exp{(-2k_nk_{n+1}\sigma_{n.n+1}^2)},
+\end{equation}
+where $\sigma_{n,n+1}$ is the interfacial roughness between layers $n$ and $n+1$. This has the effect of Gaussian broadening the layers into each other, as a result this roughnesss should be less than \SI{20}{\percent} of the thickness of the layer. \cite{Nevot1980} Algorithm \ref{algo:abeles} is currently implemented in a variety of reflectivity modelling software packages, such as RasCAL, MOTOFIT, and Aurore. \cite{rascal,Nelson2006,Gerelli2016} \\ 
+
+In practical terms, this means that essentially reflectivity can be considered as a coarse-graining of the system into a series of layers -- similar in many ways to the spheres used in traditional SAS analysis. However, it is more straight-forward, and less computationally intensive to calculate the reflectivity from some arbitrary all-atom molecular dynamics simulation than for a SAS counterpart. \cite{Darre2015,Dabkowska2014,Anderson2004} This involves the sectioning of the molecular dynamics simulation box into layers along a given axis, usually the $z$-axis, from this it is then possible to determine the number densities, $D$, of different atom types, $k$, within each layer. The average scattering length density for each layer, $\bar{\rho}_n$, can then be found, 
+\begin{equation}
+\bar{\rho}_n = \sum_{k} \frac{D_kb_k}{V_n},
+\end{equation}
+where $b_k$ is the scattering length (neutron or X-ray) of the atom $k$, and $V_n$ is the volume of layer $n$. Using this method, since the system is resolved with atomistic detail there is no need for the roughness Gaussian mentioned above, and the process will scale $\mathcal{O}(n_{\text{max}})$, rather than as $\mathcal{O}(N^2)$, where $n_{\text{max}}$ is the number of layers and $N$ is the number of atoms, as is the case for the SAS calculation. Currently no software exist which easily allows for the simulation of reflectivity patterns from a molecular dynamics simulation -- all previous work has involved the use of `home-grown' code, which has not to date been actively shared. 
+
+\subsection{Grazing incidence small angle scattering}
+\label{intro:scat_tech:gisas}
+While reflectivity is the study of specular reflections from a layer structure, grazing incidence small angle scattering (GISAS) is the study of the off-specular reflections, those where the scattering vector has a $x$- and $y$-component in addition to the $z$-component. The geometry of a GISAS experiment on a thin film is shown in Figure \ref{fig:gisasgeo}, this also shows a typical GISAS pattern. 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{gisasgeo.png}
+	\caption{A schematic of the geometry of a GISAS experiment, where $\alpha_i$ is the incident angle, $\alpha_f$ is the exit angle, and $\psi$ is the out-of-plane angle, from Ref. \cite{Mueller-Buschbaum2009}.}
+	\label{fig:gisasgeo}
+\end{figure}
+While reflectivity probes the structure lateral to the interface, GISAS is capable to giving information about the structure of the material in the plane of the interface. This means that it is ideal for studying nanostructured-layered materials, such as organic semiconducting materials. \cite{Muller-Buschbaum2005}. \\
+
+In terms of the instrument required to measure a GISAS pattern, it is essentially an amalgamation of a reflectivity instrument and a SAS instrument. Where the sample stage is that from a reflectivity measurement, while the 2D-detector used is borrowed from SAS. Often it is the case that a GISAS experiment is conducted by adapting the sample environment on an existing SAS instrument or the detector set-up of an existing reflectivity instrument. However, as GISAS has grown in popularity GISAS specific instruments have been installed, such as  MiNaXS at DESY in Hamburg or Beamline 7.3.3 at the ALS in San Francisco. Recently I22 at Diamond Light Source has underwent a significant upgrade to introduce the facility to perform GISAXS measurements. \\
+
+\subsubsection{Analysis}
+The analysis of a GISAS pattern is substantially more complex than for either the SAS or reflectivity counterparts. This is due to the fact that, in both SAS and reflectivity, the systems can be considered in terms of singular scattering or reflectivity events. However, this is not the case for GISAS, since in order to obtain off-specular reflectivity the probing radiation must undergo at least a scattering event and a reflectivity event. Further to that, within the standard distorted wave Born approximation (DWBA) there are four possible ways in which the probing radiation can interact the the sample, these are shown in Figure \ref{fig:dwba}. 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{dwba.png}
+	\caption{The four possible ways in which the probing radiation can interact with a sample; scattering, reflection-then-scattering, scattering-then-reflection, and reflection-then-scattering-then-reflection, from Ref. \cite{Hexemer2015}.}
+	\label{fig:dwba}
+\end{figure}
+This has lead to rather simplistic approaches to analysing the results of a GISAS experiment. \\
+
+One of the most common methods of analysis for GISAS is Bragg peak analysis. his is where peaks in the GISAS pattern are picked out and analysed in terms of Bragg's and Snell's laws to account for the effects of the surface and substrate, this allows the dependence of $Q_z$ to be determined. \cite{Lee2007,Busch2006} While useful, the application of this analysis method is limit to near-crystalline interactions, such as stacked lamellae, \cite{Busch2007} as these give rise to the Bragg peaks required. This method cannot be applied to understand less organised, arrangement in the soft materials -- as these give rise to broad smeared peaks with no identifiable centre. \\
+
+Another simplified method of analysing a GISAS pattern involves the effective surface approximation. 
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3
+%----------------------------------------------------------------------------------------
+
+\section{Soft matter simulation}
+\label{intro:soft_matter_sim}
+
+The use of simulation technique to study soft matter systems is well developed. This has mostly come from biomolecular modelling, with the development of software and force fields which are widely applicable. \cite{VanderKamp2008, Dror2012} However there has also been developments in the area of more traditional soft matter, e.g. polymers and surfactants which have been driven by industry where these materials are applicable -- an example of such is the polymer consistent force field (PCFF), \cite{Sun1994} which has been developed specifically for use in polymer systems. In this section, the most common methods for the simulation of soft materials will be discussed, in addition to the use of coarse-graining to increase the computational efficiency of the simulation being conducted. 
+
+\subsection{Periodic boundary conditions}
+\label{intro:soft_matter_sim:pbc}
+In the simulation of a soft matter system, there is an attempt to reproduce the properties of a macroscopic system. However, current computational systems cannot efficiently simulate such large systems -- limited at about the 10s of millions of particles. \cite{Sanbonmatsu2007} Therefore simplifications must be made, the most major of which is that of the periodic box. This is where a boundary condition is applied to the edges of the simulation box in order to mimic an infinite system-- by having an infinite periodic lattice of identical cells. \cite{Frenkel2002}
+\begin{figure}
+	\centering
+	\includegraphics[width = 0.8\textwidth]{pbd.png}
+	\caption{A two-dimensional periodic boundary condition example, from Ref. \cite{Rapaport2004}.}
+	\label{fig:pbc}
+\end{figure}
+In practice, this is achieved by having it that if an atom reaches the edge of the simulation box, it will appear on the other side of the box, such that it came in from the adjacent periodic image. It is important that the interaction measurement cut-off, discussed in Section \ref{intro:soft_matter_sim:md}, is less than half of the size of the periodic box, this is present to ensure that interactions across more than one periodic image are not calculated. 
+
+\subsection{Potential models}
+\label{intro:soft_matter_sim:pot}
+It is the case that in both molecular dynamics and Monte Carlo simulation techniques do not explicitly determine the interaction between to atoms based on the number and type of electron orbitals, as is the case in quantum mechanical calculations. This approximation presents itself as a mathematical function to describe an interaction in the system, and parameters for that function -- which depend on the underlying chemistry of the atom. \\ 
+
+For this work there are two broad categories of interaction, bonded and non-bonded. The bonded interactions only occur between atoms considered to be within the same molecule. These usually consist of bonds stretches, angle bends, and dihedral flexes; within the OPLS2005 potential model, used widely in this work, these interactions have the following mathematical function, 
+\begin{equation}
+E_{\text{bonded}} = \displaystyle\sum_{\text{bonds}}K_b(b - b_0)^2 + \displaystyle\sum_{\text{angles}}K_\theta(\theta - \theta_0)^2 + \displaystyle\sum_{\text{dihedrals}}K_{\phi}(\phi- \phi_0)^2,
+\end{equation}
+where $K_b$ and $b_0$, $K_\theta$ and $\theta_0$, and $K_\phi$ and $\phi_0$ are potential model dependent parameters for the bonds, angles, and dihedrals respectively, while $b$, $\theta$, and $\phi$ are the bond length and size of the angles and dihedrals contributing to the system -- and therefore the energy. The non-bonded interactions occur between all atoms in the system, these usually consist of the van der Waals' interaction and the electrostatic interaction, modelled as, 
+\begin{equation}
+E_{\text{non-bonded}} = \displaystyle\sum_{ij}\Bigg(4\epsilon_{ij}\Bigg[\bigg(\frac{\sigma_{ij}}{r_{ij}}\bigg)^{12} - \bigg(\frac{\sigma_{ij}}{r_{ij}}\bigg)^6\Bigg] + k_e\frac{q_iq_j}{r_{ij}^2}\Bigg). 
+\end{equation}
+$\epsilon_{ij}$ and $\sigma_{ij}$ are parameters specific to the interaction so that the van der Waals interaction varies with distance between atoms, $r_{ij}$, while $q_i$ and $q_j$ are the charges on the atoms, with $k_e$ being a conversion factors, from elementary charge to SI units. The parameters for the above equations are optimised by adjusting them until the potential model is able to reproduce some target data. This data can be either experimental; spectroscopic, thermodynamic, crystallographic, etc. or computed using quantum mechanical methods. \cite{Guvench2008}
+
+
+\subsection{Molecular dynamics}
+\label{intro:soft_matter_sim:md}
+Molecular dynamics (MD) involves applying classical Newtonian mechanics to a system of many `hard-spheres', and from this simulation obtaining information about the dynamical nature of the system -- including things such as equilibrium properties. A molecular dynamics simulation can be thought of as being similar to a `real' experiment, in that the a sample is prepared, and allowed to equilibrate before some part of the system is measured. That may be a property such as surface tension,\cite{Alejandre1995} or viscosity \cite{Ashurst1975} of the system, however in this work the equilibrium property that is being studied if the structure of the system -- by the generation of SAS, reflectivity, or GISAS patterns. \\
+
+\subsubsection{Typical MD program}
+
+A typical molecular dynamics program will have the procedure shown in Algorithm \ref{algo:md}, \cite{Frenkel2002} where $t$ is the timestep, $t_{\text{max}}$ is the maximum timestep to be probed, and $\Delta t$ is the length of each timestep -- usually in the range of femtoseconds. 
+\begin{algorithm}
+\caption{A typical molecular dynamics program.}
+\label{algo:md}
+\begin{algorithmic}
+\STATE{run \textbf{initialisation}}
+\WHILE{$t<t_{\text{max}}$} 
+	\STATE{run \textbf{force}}
+	\STATE{run \textbf{integrate}}
+	\STATE{$t = t + \Delta t$}
+	\STATE{run \textbf{sample}}
+\ENDWHILE
+\end{algorithmic}
+\end{algorithm}
+Essentially the procedure consists of four steps, with steps 2 to 4 being repeated until the maximum timestep is reached:
+\begin{enumerate}
+\item The initialisation, where the initial particle velocities are selected. 
+\item The forces on each of the particles is then calculated -- this is the most computationally intensive stage. 
+\item The Newtonian equations of motions are then integrated -- using some integrator algorithm. 
+\item Finally at the end of the loop the average quantities (position, temperature, pressure, etc.) are calculated and printed to disc.
+\end{enumerate}
+In order to give a clearer picture on how molecular dynamics works I will now discuss each of these four steps individually. \\
+
+\begin{algorithm}
+\caption{An example of the initialisation routine within a typical molecule dynamics program.}
+\label{algo:init}
+\begin{algorithmic}
+\STATE{$\sum{v(t)} = 0$}
+\STATE{$\sum{v(t)^2} = 0$}
+\FOR{$i = 1 \text{ to } N_{\text{particles}}$}
+	\STATE{$v(i, t) = (R - 0.5)$, where $R \in \mathbb{R} \cap [0, 1)$}
+	\STATE{$\sum{v(t)} = \sum{v(t)} + v(i,t)$}
+	\STATE{$\sum{v(t)^2} = \sum{v(t)^2} + v(i,t)^2$}
+\ENDFOR
+\STATE{$\langle{v(t)}\rangle = {\sum{v(t)}}/{N_{\text{particles}}}$}
+\STATE{$\langle{v(t)^2}\rangle = {\sum{v(t)^2}}/{N_{\text{particles}}}$}
+\STATE{$f_s = \sqrt{{3T}/{\langle{v^2}\rangle}}$}
+\FOR{$i = 1 \text{ to } N_{\text{particles}}$}
+	\STATE{$v(i,t) = [v(i,t) - \langle{v(t)}\rangle]f_s$}
+	\STATE{$x(i, t-\Delta t) = x(i, t) - v(i, t) \times\Delta t$}
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+It is necessary to assign initial velocities to all of the particles in the system, there positions are described by the input files. The velocity, $v(i)$, of each particle, $i$, is taken taken randomly from a uniform, non-Maxwellian distribution, where $-0.5 \leq v(i) < 0.5$. Then all of the velocities are then scaled by a factor, $f_s$, which is dependent on the desired temperature, $T$, with respect to the average velocities of all of the particles. Rather than use the velocities to solve the equations of motion, current and previous positions are used. This means that pseudo-positions for the timestep before initial timestep, $x_{t-\Delta t}(i)$, must be approximated. This is described algorithmically in Algorithm \ref{algo:init}. \\
+
+This is the most time-consuming stage of a molecular dynamics simulation procedure, where the force of each particle on each other particle must be determined. The time needed to evaluate this scales $\mathcal{O}(N_{\text{particles}}^2)$, although there are many methods to increase the efficiency of this calculation within this algorithm (Algorithm \ref{algo:force}) we will only include the introduction of a cut-off distance ($r_c$) for the interaction of two particles. 
+\begin{algorithm}
+\caption{A method by which the forces can be determined in a molecular dynamics program.}
+\label{algo:force}
+\begin{algorithmic}
+\STATE{$u = 0$}
+\STATE{$u_{\text{c}} = 4[(1/r_c^{12}) - (1/r_c^6)]$}
+\FOR{$i = 1 \text{ to } N_{\text{particles}}$}
+	\STATE{f(i) = 0}
+\ENDFOR
+\FOR{$i = 1 \text{ to } N_{\text{particles}-1}$}
+	\FOR{$j = i+1 \text{ to } N_{\text{particles}}$}
+		\STATE{$r_{ij} = (x(i) - x(j))$}
+		\STATE{$r_{ij} = r_{ij} - box \times \text{round}(r_{ij}/box)$, where $box$ is the cell lengths}
+		\STATE{$r_{ij}^2 = r_{ij}^2$}
+		\IF{$r_{ij}^2 < r_c^2$}
+			\STATE{$f_{ij} = 24\epsilon_{ij}[2({\sigma_{ij}^{12}}/{r_{ij}^{13}}) - (\sigma_{ij}^{6}/r_{ij}^{7})]$}
+			\STATE{$f(i) = f(i) + f_{ij} \times r_{ij}$}
+			\STATE{$f(j) = f(j) + f_{ij} \times r_{ij}$}
+			\STATE{$u = u + 4\epsilon_{ij}[(\sigma_{ij}/r_{ij})^{12} - (\sigma_{ij}/r_{ij})^6] - u_{\text{c}}$}
+		\ENDIF
+	\ENDFOR
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+It is first necessary to determine the distances between each particle ($r_{ij}$), and then utilise the periodic boundary conditions, discussed in detail in Section \ref{intro:soft_matter_sim:pbc}. The vector distance between $i$ and $j$ is then computed as $r_{ij}^2$, and it is assessed if this distance is greater than the cut-off distance. If the distance between particles $i$ and $j$ is greater than the cut-off then the forces are considered to be zero and are not calculated. If the two particles are close enough to then it is necessary to determine the forces between the two particles. In Algorithm \ref{algo:force} only the Lennard-Jones van der Waals energy is considered, however in general a large number of different interactions must be taken into account; bonds, angles, torsions, van der Waals, Coulombic, etc. This leads to a large number of parameters which must be considered pairwise. These interactions are considered in terms of potential energy, $u$, therefore is it necessary to determine the force, this is the negative of first derivative of energy with respect to distance, so for the Lennard-Jones potential the following holds, 
+\begin{equation}
+\begin{aligned}
+u(r_{ij}) & = 4\epsilon_{ij}\Bigg[\Bigg(\frac{\sigma_{ij}}{r_{ij}}\Bigg)^{12}-\Bigg(\frac{\sigma_{ij}}{r_{\ij}}\Bigg)^6\Bigg] \\
+f_{ij} & = -\frac{\partial}{\partial r_{ij}} u(r_{ij}) \\
+f_{ij} & = 24\epsilon_{ij}\Bigg[2\Bigg(\frac{{\sigma_{ij}^{12}}}{r_{ij}^{13}}\Bigg) - \Bigg(\frac{\sigma_{ij}^{6}}{r_{ij}^{7}}\Bigg)\Bigg].
+\label{equ:der}
+\end{aligned}
+\end{equation}
+The $\epsilon_{ij}$ and $\sigma_{ij}$ are related to the potential model and are discussed in Section \ref{intro:soft_matter_sim:pot}. Using the relation defined in Equation \ref{equ:der} it is possible to calculate the force on each atom and the total potential energy of the system. \\
+
+Having determined the forces on each of the particles, it is now possible to integrate Newton's equations of motion. There are a variety of algorithms to perform this integration -- the algorithm used within this work is usually the Velocity-Verlet Nos\'{e}-Hoover integration. A simplified version of this is described in Algorithm \ref{algo:vvnh}. 
+\begin{algorithm}
+\caption{A simplified version of the Velocity-Verlet integration algorithm used in DLPOLY.}
+\label{algo:vvnh}
+\begin{algorithmic}
+\STATE{$\sum v(t) = 0$}
+\STATE{$\sum v(t)^2 = 0$}
+\FOR{$i = 1 \text{ to }N_{\text{particles}}$}
+	\STATE{$x(i, t+\Delta t) = 2x(i,t) - x(i, t-\Delta t) + f(i,t)\Delta t^2$}
+	\STATE{$v(i, t) = [x(i, t+\Delta t) - x(i, t-\Delta t)] / [2\Delta t]$}
+	\STATE{$\sum v(t) = \sum v + v(i, t)$}
+	\STATE{$\sum v(t)^2 = \sum v(t)^2 + v(i,t)$}
+	\STATE{$x(i, t-\Delta t) = x(i,t)$}
+	\STATE{$x(i, t) = x(i, t+\Delta t)$}
+\ENDFOR
+\STATE{$T_{\text{inst}}(t) = \sum v(t)^2 / (3N_{\text{particles}})$}
+\STATE{$E_{\text{tot}}(t) = [u(t) + 0.5\sum v(t)^2] / N_{\text{particles}}$}
+\end{algorithmic}
+\end{algorithm}
+The Velocity-Verlet algorithm has the following form, 
+\begin{equation}
+x(i, t+\Delta t) = 2x(i,t) - x(i, t-\Delta t) + f(i,t)\Delta t^2, 
+\end{equation}
+while the algorithm does not directly utilise the velocity it is possible to determine this by considering the previous and new positions of the particle, 
+\begin{equation}
+v(i,t) = \frac{x(i, t+\Delta t) - r(i, t-\Delta t)}{2\Delta t}. 
+\end{equation}
+Since the new positions have been calculated the previous positions can be overwritten. Using this velocity relationship it is then possible to determine the instantaneous temperature, $T_{\text{inst}}$, and total energy of the system, $E_{\text{tot}}$. Other quantities of the system can also be determined at this stage of the process -- such as the radial distribution functions of each of the particles. 
+
+\subsection{Monte Carlo}
+\label{intro:soft_matter_sim:mc}
+Another common atomistic simulation technique is a Monte Carlo (MC) simulation, this method was first developed my Metropolis in the early 1950s. \cite{Metropolis1953} In practice this means randomly changing the system and assessing the value of some characteristic, most commonly energy, then accepting or rejecting the change depending on the value of the comparison characteristic. This simulation technique is less realistic than molecular dynamics however it can often be useful in overcoming energy barriers in the simulation landscape -- as the simulation can `pass through' the barrier rather than have to go over it. \\
+
+\subsubsection{Typical MC program}
+
+
+\subsection{Coarse-graining}
+\label{intro:coarse_grain}
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 4
+%----------------------------------------------------------------------------------------
+
+\section{Software design \& development}
+\label{intro:soft}
+
+
+
+
+
