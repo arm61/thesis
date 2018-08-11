@@ -5,8 +5,14 @@
 \contentsline {chapter}{\numberline {1}Theory}{1}
 \contentsline {section}{\numberline {1.1}Scattering}{1}
 \contentsline {subsection}{\numberline {1.1.1}The scattering vector}{1}
-\contentsline {section}{\numberline {1.2}Probing radiation}{3}
-\contentsline {subsection}{\numberline {1.2.1}The generation of X-ray and neutrons}{3}
-\contentsline {subsubsection}{X-rays}{3}
-\contentsline {subsubsection}{Neutrons}{6}
-\contentsline {subsection}{\numberline {1.2.2}Contrast variation}{7}
+\contentsline {subsection}{\numberline {1.1.2}Model-dependent analysis}{3}
+\contentsline {subsection}{\numberline {1.1.3}Reflectometry}{4}
+\contentsline {subsubsection}{Analysis}{5}
+\contentsline {subsection}{\numberline {1.1.4}Small angle scattering}{7}
+\contentsline {subsection}{\numberline {1.1.5}Grazing incidence small angle scattering}{7}
+\contentsline {section}{\numberline {1.2}Probing radiation}{7}
+\contentsline {subsection}{\numberline {1.2.1}The generation of X-ray and neutrons}{7}
+\contentsline {subsubsection}{X-rays}{7}
+\contentsline {subsubsection}{Neutrons}{8}
+\contentsline {subsection}{\numberline {1.2.2}Contrast variation}{11}
+\contentsline {section}{\numberline {1.3}Optimisation \& Sampling}{13}
