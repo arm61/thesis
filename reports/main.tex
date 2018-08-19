@@ -51,9 +51,19 @@ headsepline, % Uncomment to get a line under the header
 %\makeatother
 
 \usepackage[super=false]{rsc}
+\usepackage{courier}
 
-\usepackage[chapter]{algorithm}
-\usepackage{algorithmic}
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\scriptsize\ttfamily,
+  breaklines=false,
+  frame=single,
+  tabsize=4
+}
+
+\renewcommand{\lstlistingname}{Code Block}
+\renewcommand{\lstlistlistingname}{List of \lstlistingname s}
 
 \usepackage{multirow}
 \usepackage[version=4]{mhchem}
@@ -469,7 +479,7 @@ $\Lambda$ & temperature factor & \\
 
 \listoftables % Prints the list of tables
 
-\listofalgorithms % Prints the list of algorithms
+%\listofalgorithms % Prints the list of algorithms
 
 \bibliographystyle{rsc}
 \bibliography{main}

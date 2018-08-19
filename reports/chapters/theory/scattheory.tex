@@ -35,7 +35,7 @@ The scattering vector strictly has units of \si{\per\meter}, however it is often
 	\label{equ:wavevec}
 \end{equation}
 %
-This means that only the angle will change during the elastic scattering event. The vector diagram in Figure \ref{fig:scatvec} can be used to describe the geometry of an elastic scattering event. From this, and Equation \ref{equ:wavevec}, the value of $q$, where $q = |\mathbf{q}|$ can be shown as,
+This means that only the angle will change during the elastic scattering event. The vector diagram in Figure \ref{fig:scatvec} can be used to describe the geometry of an elastic scattering event. From this, and Eqn \ref{equ:wavevec}, the value of $q$, where $q = |\mathbf{q}|$ can be shown as,
 %
 \begin{equation}
 	q = \frac{4\pi\sin{\theta}}{\lambda}.
@@ -97,7 +97,7 @@ A reflectometry instrument operates by measuring the intensity of specular radia
 	\label{equ:refl}
 \end{equation}
 %
-It is clear from Equation \ref{equ:refl} that the value of the measured reflectometry cannot be greater than one, as this would mean that more particles of probing radiation were being reflected than were incident.
+It is clear from Eqn \ref{equ:refl} that the value of the measured reflectometry cannot be greater than one, as this would mean that more particles of probing radiation were being reflected than were incident.
 
 \subsubsection{Analysis}
 
@@ -136,13 +136,96 @@ This means that the reflectometry profile could be calculated from the following
 	R(q)\approx \frac{16\pi^2\rho_{\text{Si}}^2}{q^4}.
 \end{equation}
 %
-The curve from this relationship is shown in Figure \ref{fig:kine}, where it is clear that the agreement with an experimental profile would be poor as $q \rightarrow 0$. It can be seen that for low values of $q$ the calculated reflectometry is greater than 1, which voilates the physical constraint imposed with Eqn \ref{equ:refl}. This break down of the kinematic approach is due to the assumption present in this approach that the Born approximation will hold, that is that each particle of probing radiation will only be scattered once. However, in the reflectometry scattering geometry, this is no longer true rendering the kinematic approach invalid. 
+The curve from this relationship is shown in Figure \ref{fig:kine}, where it is clear that the agreement with an experimental profile would be poor as $q \rightarrow 0$. It can be seen that for low values of $q$ the calculated reflectometry is greater than 1, which voilates the physical constraint imposed with Eqn \ref{equ:refl}. This break down of the kinematic approach is due to the assumption present in this approach that the Born approximation will hold, that is that each particle of probing radiation will only be scattered once. However, in the reflectometry scattering geometry, this is no longer true rendering the kinematic approach invalid.
 %
 \begin{figure}
 	\centering
-	\includegraphics{theory/kine}
+	\includegraphics[width=0.75\textwidth]{theory/kine}
 	\caption{A graphical representation of the kinematic approach; (a) the Heaviside function describing the scattering length density profile of a bare silicon substrate, (b) the $\delta$-function arising from the first derivative of the function in (a), and (c) the reflectometry profile resulting from Eqn \ref{equ:kine}, where the orange line at $R=1$ identifies the break down between experimental and theory in the kinematic approach, adapted from Ref \cite{Sivia2011}.}
 	\label{fig:kine}
+\end{figure}
+%
+
+This breakdown of the kinematic approach has lead to the application of the Abel\`{e}s, or Parratt, model for the reflection of light at a given number of stratified inferfaces (also known as dynamical theory). \cite{Abeles1948,Parratt1954} This methods involves considering the system as a layered structure at the interfaces of which the probing radiation can either be reflected or refracted, by some refractive index, $n_i$. Figure \ref{fig:reflrefr} shows this process for a system of two layers, where the layer $0$ is the air or vacuum above the sample, tit is clear to see how the two waves labelled $r$ could interfere constructively or destructively depending on the thickness of layer $1$, $d$. This means that for a single interface, suhc as that between layers $0$ and $1$ in Figure \ref{fig:reflrefr}, the reflectometry can be described by the Fresnel equation,
+%
+\begin{equation}
+	R(q) = \bigg| \frac{n_0\sin{\theta_0} - n_1\sin{\theta_1}}{n_0\sin{\theta_0} + n_1\sin{\theta_1}} \bigg|^2.
+\end{equation}
+%
+Additionally at the point of total reflection, where $\theta_0 = \theta_{\text{c}}$, the critical angle, there will be no transmitted wave so,
+%
+\begin{equation}
+	n_1\sin{\theta_1} = 0,
+\end{equation}
+%
+and therefore the reflected radiation will never be greater than 1, while the critical angle can be defined as,
+%
+\begin{equation}
+	\cos^2{\theta_{\text{c}}} = \frac{n_1^2}{n_0^2}.
+\end{equation}
+%
+This is the angle below which a reflectometry profile will be measured.
+%
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{theory/reflrefr}
+	\caption{A schematic diagram showing the reflected ($r$) and transmitted ($t$) waves when an incident ($i$) wave enters an interface of thickness $d$, where the refractive indices of each layer are $n_0$, $n_1$, and $n_2$, adapted from Ref. \cite{Foglia2015}.}
+	\label{fig:reflrefr}
+\end{figure}
+%
+
+The above method can then be generalised to a structure of an arbitrary number of layers, as shown in Code Block \ref{cb:refl}. For each value of $q$ for which the reflectometry is to be calculated, the system is considered in terms of $n_{\text{max}}$ layers. The incident radiation beam will be refracted by each of the layers, giving wavevectors values for each layer, $k_n$,
+%
+\begin{equation}
+	k_n = \sqrt{k_0^2 + 4\pi (\rho_n - \rho_0)},
+\end{equation}
+%
+where, $k_o=\sfrac{q}{2}$. The Fresnel equation coefficient between layers $n$ and $n+1$, $r_{n,n+1}$ can then be found along with the phase factor, $\beta_n$, which is dependent on the thickness of the layer, $d_n$,
+%
+\begin{equation}
+	r_{n,n+1} = \frac{k_n - k_{n+1}}{k_n + k_{n+1}},
+	\label{equ:fres}
+\end{equation}
+%
+%
+\begin{equation}
+	\beta_n = k_n d_n.
+\end{equation}
+%
+The means that a matrix can be evaluated for each layer, $M_n$,
+%
+\begin{equation}
+	M_n =
+	\begin{bmatrix}
+		\exp{\beta_n} & r_{n,n+1}\exp{-\beta_n} \\ r_{n,n+1}\exp{\beta_n} & \exp{-\beta_n}
+	\end{bmatrix}
+\end{equation}
+%
+The resultant matrix, $B_n$, is then found as a product of the matrix from each layer,
+%
+\begin{equation}
+	B = \prod_{n=0}^{n_{\text{max}}} Mn,
+\end{equation}
+%
+and from this the reflected intensity at the given value of $q$ can be found,
+%
+\begin{equation}
+	r(q) = \frac{B_{1,2}}{B_{1,1}}.
+\end{equation}
+%
+This algorithm models the layers as perfectly flat layers, which will not be strictly true in the case of soft matter systems such as a bilayer. This resulted in the correction term being added to Eqn \ref{equ:fres} to account for the roughness of the layers. This adapts Eqn \ref{equ:fres} to the form,
+%
+\begin{equation}
+	r_{n,n+1} = \frac{k_n - k_{n+1}}{k_n + k_{n+1}}\exp{(-2k_nk_{n+1}\sigma^2_{n,n+1})},
+\end{equation}
+%
+where, $\sigma^2_{n,n+1}$ is the interfacial roughness between layers $n$ and $n+1$. This has the effect of Gaussian broadening the layers into each other, as a result. Code Block \ref{cd:refl} is currently implemented in a variety of reflectometry modelling software packages, such as refnx, MOTOFIT, RasCAL, and Aurore.\cite{refnx2018,Nelson2006,rascal2016,Gerelli2016,Gerelli2016a}
+%
+\begin{figure}
+	\centering
+	\begin{minipage}{0.9\textwidth}
+		\lstinputlisting[caption={An example code block for the Abel\`{e}s method for the calculation of reflectometry.},label={cb:refl},language=python]{code_blocks/reflectometry.py}
+	\end{minipage}
 \end{figure}
 %
 

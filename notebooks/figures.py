@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 import numpy as np
@@ -10,7 +10,7 @@ import seaborn as sns
 sns.set(palette='colorblind')
 
 
-# In[75]:
+# In[ ]:
 
 
 import matplotlib as mpl
@@ -19,8 +19,8 @@ mpl.rcParams['xtick.labelsize'] = 8
 mpl.rcParams['ytick.labelsize'] = 8
 mpl.rcParams['axes.facecolor'] = 'w'
 mpl.rcParams['lines.linewidth'] = 2
-mpl.rcParams['axes.grid'] = True
-mpl.rcParams['grid.color'] = (0.8, 0.8, 0.8)
+#mpl.rcParams['axes.grid'] = True
+#mpl.rcParams['grid.color'] = (0.8, 0.8, 0.8)
 mpl.rcParams['xtick.top'] = False
 mpl.rcParams['xtick.bottom'] = True
 mpl.rcParams['ytick.left'] = True
@@ -33,7 +33,7 @@ mpl.rcParams['axes.linewidth'] = 1
 mpl.rcParams['axes.edgecolor'] = 'k'
 
 
-# In[76]:
+# In[ ]:
 
 
 x = np.arange(-10, 10, 0.01)
@@ -43,7 +43,7 @@ for i in range(0, len(x)):
         y[i] = 0
 
 
-# In[77]:
+# In[ ]:
 
 
 x2 = np.array(x[:-1])
@@ -52,7 +52,7 @@ for i in range(0, len(x)-1):
     y2[i] = (y[i+1] - y[i]) / (x[i+1] - x[i])
 
 
-# In[78]:
+# In[ ]:
 
 
 q = np.arange(0.0001, 0.6001, 0.0001)
@@ -63,7 +63,7 @@ for i in range(0, len(q)):
     r[i] /= q[i] ** 4
 
 
-# In[95]:
+# In[ ]:
 
 
 import matplotlib.gridspec as gridspec
@@ -101,5 +101,6 @@ ax.text(0.05, 0.92, '(c)',
 ax.set_yscale('log')
 ax.set_xlim([0, 0.6])
 plt.tight_layout()
-plt.savefig('reports/figures/theory/kine.png', dpi=600)
+plt.savefig('reports/figures/theory/kine.pdf')
+plt.close()
 

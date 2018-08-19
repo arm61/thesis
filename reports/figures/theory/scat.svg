@@ -84,15 +84,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="775.27033"
+     inkscape:cx="343.9352"
      inkscape:cy="663.94415"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1855"
      inkscape:window-height="1056"
-     inkscape:window-x="65"
-     inkscape:window-y="24"
+     inkscape:window-x="1145"
+     inkscape:window-y="1380"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
@@ -102,6 +102,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -181,5 +182,5 @@
            height="1004.0916"
            x="-579.82758"
            y="-129.51627" /></flowRegion><flowPara
-         id="flowPara6665"></flowPara></flowRoot>  </g>
+         id="flowPara6665" /></flowRoot>  </g>
 </svg>
