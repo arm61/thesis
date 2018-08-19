@@ -21,6 +21,9 @@ Project Organization
     ├── docs
     ├── notebooks
     ├── reports
+    │   └── appendices
+    │   └── chapters
+    │   └── code_blocks
     │   └── figures
     └── src
         ├── data
