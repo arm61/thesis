@@ -259,35 +259,16 @@ This thesis may be made available for consultation within the University Library
 
 \begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
 
-\textbf{MD} & molecular dynamics \\
-\textbf{\ce{C_{10}TAB}} & decyltrimethylammonium bromide \\
-\textbf{DPPC} & dipalmitoylphosphatidylcholine \\
-\textbf{SAS} & small angle scattering \\
-\textbf{GISAS} & grazing-incidence small angle scattering \\
-\textbf{SAXS} & small angle X-ray scattering \\
-\textbf{XRR} & X-ray reflectivity \\
-\textbf{GISAXS} & grazing-incidence small angle X-ray scattering \\
-\textbf{SANS} & small angle neutron scattering \\
-\textbf{NR} & neutron reflectivity \\
-\textbf{GISANS} & grazing-incidence small angle neutron scattering \\
+\textbf{BM} & bending magnet \\
 \textbf{DLS} & Diamond Light Source \\
 \textbf{ESRF} & European Synchrotron Radiation Facility \\
-\textbf{Linac} & linear accelerator \\
-\textbf{BM} & bending magnet \\
-\textbf{rf} & radio-frequency cavity \\
+\textbf{ESS} & European Spallation Source \\
+\textbf{GiSAS} & grazing incidence small angle scattering \\
 \textbf{ID} & insertion device \\
 \textbf{ILL} & Institut Laue-Langevin \\
-\textbf{ESS} & European Spallation Source \\
-\textbf{EPSR} & emperical potential structure refinement \\
-\textbf{DWBA} & distorted wave Born approximation \\
-\textbf{PCFF} & poly consistent force field \\
-\textbf{PBC} & periodic boundary condition \\
-\textbf{OPLS} & optimized potentials for liquid simulations \\
-\textbf{NVE} & constant number of particles, volume, and energy \\
-\textbf{NPT} & constant number of particles, pressure, and temperature \\
-\textbf{NVT} & constant number of particles, volume, and temperature \\
-\textbf{WPEP} & whole particle effective potential \\
-\textbf{\ce{C_{10}TANO_3}} & decyltrimethylammonium nitrate \\
+\textbf{SAS} & small angle scattering \\
+\textbf{ToF} & time-of-flight \\
+
 
 \end{abbreviations}
 
@@ -299,12 +280,8 @@ This thesis may be made available for consultation within the University Library
 
 % The \SI{}{} command is provided by the siunitx package, see its documentation for instructions on how to use it
 
-
- & $\pi$ & $3.14159\ldots$ \\
-Speed of light & $c$ & \SI{2.998e8}{\meter.\second^{-1}} \\
-Planck's constant & $h$ & \SI{6.626e-34}{\joule.\second} \\
-Golden ratio & $\Phi$ & $1.61803\ldots$ \\
-Boltzmann's constant & $k_B$ & \SI{1.380648e-23}{\joule\per\kelvin} \\
+ & $\pi$ & $3.1415\dots$ \\
+Planck constant & $h$ & \SI{6.626\dots e-34}{\joule\second} \\
 
 %Constant Name & $Symbol$ & $Constant Value$ with units\\
 
@@ -318,121 +295,51 @@ Boltzmann's constant & $k_B$ & \SI{1.380648e-23}{\joule\per\kelvin} \\
 
 $a_0$ & optimum head-group area & \si{\meter\squared} \\
 $b$ & scattering length & \si{\meter} \\
-$b$ & bond length & \si{\meter} \\
-$b_0$ & equilibrium bond length & \si{\meter} \\
-$c_{\alpha /\beta}$ & atom concentrations & \si{\meter^{-3}} \\
-$d_n$ & thickness of layer $n$ & \si{\meter} \\
-$f$ & force & \si{\kilo\gram.\meter.\second^{-2}} \\
-$f_s$ & scale factor & \\
-$g_{\alpha \beta}$ & partial pair distribution function & \\
-$g(X)$ & probability density function & \\
-$i$ & atom type & \\
-$k_n$ & wavevector for layer $n$ & \\
-$k_N$ & dissociation constant from aggregate of $N$ & \si{\second^{-1}} \\
-$l_0$ & chain length & \si{\meter} \\
 $m$ & mass & \si{\kilo\gram} \\
-$n$ & number of scattering vectors & \\
 $n_i$ & refractive index & \\
-$q_i$ & charge of atom $i$ & $k_e$ \\
-$p$ & surfactant packing parameter & \\
-$r_c$ & cut-off distance & \si{\meter} \\
-$r_{ij}$ & atomic distance & \si{\angstrom} \\
+$q$ & scattering vector magnitude & \si{\per\meter} \\
 $r_{n,n+1}$ & Fresnel equation coefficient & \\
-$r_{12}$ & distance between surfactant centres-of-mass & \si{\angstrom} \\
-$s$ & surfactant number & \\
-$t$ & timestep & \si{\second} \\
-$t_F$ & time-of-flight & \si{\second} \\
-$u$ & potential energy & \si{\kilo\joule.\mol^{-1}} \\
-$v$ & velocity & \si{\meter.\second^{-1}} \\
+$res(q)$ & resolution function & \\
+$t_F$ & time of flight & \si{\second} \\
+$v$ & velocity & \si{\meter\per\second} \\
 
-
-
-$A$ & illuminated surface & \si{\meter^2} \\
-$A_{1,2,3}$ & dihedral angle parameters & \si{kcal.mol^{-1}} \\
 $B$ & resultant matrix & \\
-$C$ & total solute concentration & \si{\mol.\deci\meter^{-3}} \\
-\ce{C_{$s$}} & tail carbon atom in surfactant $s$ & \\
-$D$ & number density of particles & \si{\meter^{-3}} \\
 $E_k$ & kinetic energy & \si{\joule} \\
-$E_{\text{new}}$ & new energy & \si{\kilo\joule} \\
-$E_{\text{tot}}$ & total energy & \si{\kilo\joule} \\
-$F(\mathbf{Q})$ & diffuse scattering factors & \\
-$G(r)$ & radial distribution function & \\
-$I^(Q)$ & scattering intensity & \si{\centi\meter^{-1}} \\
-$K$ & equilibrium constant & \\
-$K_b$ & bond force constant & \si{kcal.\mol^{-1}.\angstrom^{-1}} \\
-$K_\theta$ & angle force constant & \si{kcal.\mol^{-1}} \\
-$L_F$ & distance of neutron flight & \si{\meter} \\
+$I$ & intensity &  \\
+$L_F$ & distance of flight & \si{\meter} \\
 $M$ & layer matrix & \\
-$N$ & aggregation number & \si{molecule} \\
-$N_{\text{at}}$ & number of atoms & \\
-$N_{\text{cycles}}$ & number of cycles & \\
-$N_{\text{particles}}$ & number of particles & \\
-$N_P$ & number of undulator magnets & \\
-\ce{N_{$s$}} & head nitrogen atom in surfactant $s$ & \\
-$P$ & probability & \\
-$P(Q)$ & particle form factor & \\
-$Q$ & scattering vector magnitude & \si{\meter^{-1}} \\
-$R$ & radius & \si{\meter} \\
-$R_g$ & radius of gyration & \si{\meter} \\
-$R(Q)$ & reflectivity & \\
-$Res(Q)$ & resolution function & \\
-$S$ & nuclear spin quantum number &  \\
-$S_a$ & surface area & \si{\meter^2} \\
-$S(Q)$ & system structure factor & \\
-$T$ & temperature & \si{\kelvin} \\
-$T_{\text{inst}}$ & instantaneous temperature & \si{\kelvin} \\
-$T_{i,f}$ & Fresnal transmission factor & \\
-$V$ & volume & \si{\meter^3} \\
-$V_c$ & chain volume & \si{\meter\cubed} \\
-$V_p$ & particle volume & \si{meter^3} \\
-$X_N$ & concentrationof molecules in aggregate of $N$ & \si{\mol.\deci\meter^{-3}} \\
+$N_P$ & number of magnets & \\
+$R$ & reflected intensity & \\
+$S$ & nuclear spin & \\
+$V$ & volume & \si{\cubic\meter} \\
 
-
-$\mathbf{k}_i$ &  incident wavevector & \si{\meter^{-1}} \\
-$\mathbf{k}_f$ &  final wavevector & \si{\meter^{-1}} \\
-$\mathbf{r}$ & atomic position & \\
-$\mathbf{Q}$ & scattering vector & \si{\meter^{-1}} \\
-
-
+$\mathbf{k}_i$ &  incident wavevector & \si{\per\meter} \\
+$\mathbf{k}_f$ &  final wavevector & \si{\per\meter} \\
+$\mathbf{q}$ & scattering vector & \si{\per\meter} \\
 
 
 %Symbol & Name & Unit \\
 
 \addlinespace % Gap to separate the Roman symbols from the Greek
 
-$\beta$ & phase factor & \\
-$\beta_c$ & fraction of $c$ & \\
-$\delta_{\alpha\beta}$ & Kronecker $\delta$-function & \\
-$\epsilon_{ij}$ & L-J well depth & \si{kcal.\mol^{-1}} \\
-$\theta$ & polar angle & \si{rad} \\
-$\theta$ & angle & \si{deg} \\
-$\theta_{1/2}$ & surfactant-$r_{12}$ angle & \si{deg} \\
-$\theta_c$ & critical angle & \si{rad} \\
-$\theta_e$ & electron-photon angle & \si{rad} \\
-$\theta_0$ & equilibrium angle & \si{deg} \\
+$\beta_c$ & fraction of the speed of light & \\
+$\beta_n$ & phase factor & \\
+$\theta$ & scattering angle & \si{\radian} \\
+$\theta_c$ & critical angle & \si{\radian} \\
+$\theta_e$ & angle between electron and photon & \si{\radian} \\
 $\lambda$ & wavelength & \si{\meter} \\
-$\lambda_P$ & magnetic period length & \si{\meter} \\
-$\mu$ & atomic mass & \si{amu} \\
-$\mu_N$ & mean chemical potential of aggregate of $N$ & \si{\joule.molecule^{-1}} \\
-$\mu_N^{\circ}$ & mean interaction energy of aggregate of $N$ & \si{\joule.molecule^{-1}} \\
-$\nu_{\text{samp}}$ & sampling frequency & \\
-$\rho$ & scattering length density & \si{\meter^{-2}} \\
-$\rho_0$ & atomic density & \si{\meter^{-3}} \\
+$\rho$ & scattering lenght density & \si{\per\square\meter} \\
 $\sigma$ & interfacial roughness & \si{\meter} \\
-$\sigma_i$ & statistical uncertainty in $I^{\text{exp}}(Q)$ & \si{\centi\meter^{-1}} \\
-$\sigma_{ij}$ & distance of L-J minima & \si{\angstrom} \\
-$\sigma_{\text{coh}}$ & coherent scattering cross section & \si{\meter^{2}} \\
-$\sigma_{\text{incoh}}$ & incoherent scattering cross section & \si{\meter^{2}} \\
-$\phi$ &  azimuthal angle  & \si{rad} \\
-$\phi$ &  dihedral angle  & \si{rad} \\
-$\chi^2$ & chi-squared & \\
-$\omega$ & neutron frequency & \si{\second^{-1}} \\
-$\omega_i$ & incident frequency & \si{\hertz} \\
-$\omega_f$ & final frequency & \si{\hertz} \\
-${\text{d}\sigma}/{\text{d}{\omega}}$ & differential cross-section & \si{\meter^2} \\
+$\sigma_{\text{coh}}$ & coherent cross-section & \si{\square\meter} \\
+$\sigma_{\text{incoh}}$ & incoherent cross-section & \si{\square\meter} \\
+$\phi$ & scattering angle & \si{\radian} \\
+$\omega$ & frequency & \si{\per\second} \\
+$\omega_i$ & initial frequency & \si{\per\second} \\
+$\omega_f$ & final frequency &  \si{\per\second} \\
 
 $\Lambda$ & temperature factor & \\
+
+$\sfrac{\text{d}\sigma(q)}{\text{d}\Omega}$ & differential cross-section & \\
 
 \end{symbols}
 
@@ -479,7 +386,7 @@ $\Lambda$ & temperature factor & \\
 
 \listoftables % Prints the list of tables
 
-%\listofalgorithms % Prints the list of algorithms
+\lstlistoflistings % Prints the list of algorithms \lstlistlistingname
 
 \bibliographystyle{rsc}
 \bibliography{main}

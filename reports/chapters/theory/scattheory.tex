@@ -4,7 +4,7 @@ The use of scattering techniques to probe soft condensed matter systems is commo
 %
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\textwidth]{theory/length}
+	\includegraphics[width=0.9\textwidth]{theory/length}
 	\caption{A representation of how different techniques can be used to probe various length scales, from Ref \cite{Sivia2011}.}
 	\label{fig:lengths}
 \end{figure}
@@ -180,7 +180,7 @@ The above method can then be generalised to a structure of an arbitrary number o
 	k_n = \sqrt{k_0^2 + 4\pi (\rho_n - \rho_0)},
 \end{equation}
 %
-where, $k_o=\sfrac{q}{2}$. The Fresnel equation coefficient between layers $n$ and $n+1$, $r_{n,n+1}$ can then be found along with the phase factor, $\beta_n$, which is dependent on the thickness of the layer, $d_n$,
+where, $k_0=\sfrac{q}{2}$. The Fresnel equation coefficient between layers $n$ and $n+1$, $r_{n,n+1}$ can then be found along with the phase factor, $\beta_n$, which is dependent on the thickness of the layer, $d_n$,
 %
 \begin{equation}
 	r_{n,n+1} = \frac{k_n - k_{n+1}}{k_n + k_{n+1}},
@@ -204,13 +204,13 @@ The means that a matrix can be evaluated for each layer, $M_n$,
 The resultant matrix, $B_n$, is then found as a product of the matrix from each layer,
 %
 \begin{equation}
-	B = \prod_{n=0}^{n_{\text{max}}} Mn,
+	B = \prod_{n=0}^{n_{\text{max}}} M_n,
 \end{equation}
 %
 and from this the reflected intensity at the given value of $q$ can be found,
 %
 \begin{equation}
-	r(q) = \frac{B_{1,2}}{B_{1,1}}.
+	R(q) = \frac{B_{1,2}}{B_{1,1}}.
 \end{equation}
 %
 This algorithm models the layers as perfectly flat layers, which will not be strictly true in the case of soft matter systems such as a bilayer. This resulted in the correction term being added to Eqn \ref{equ:fres} to account for the roughness of the layers. This adapts Eqn \ref{equ:fres} to the form,
@@ -219,7 +219,7 @@ This algorithm models the layers as perfectly flat layers, which will not be str
 	r_{n,n+1} = \frac{k_n - k_{n+1}}{k_n + k_{n+1}}\exp{(-2k_nk_{n+1}\sigma^2_{n,n+1})},
 \end{equation}
 %
-where, $\sigma^2_{n,n+1}$ is the interfacial roughness between layers $n$ and $n+1$. This has the effect of Gaussian broadening the layers into each other, as a result. Code Block \ref{cd:refl} is currently implemented in a variety of reflectometry modelling software packages, such as refnx, MOTOFIT, RasCAL, and Aurore.\cite{refnx2018,Nelson2006,rascal2016,Gerelli2016,Gerelli2016a}
+where, $\sigma_{n,n+1}$ is the interfacial roughness between layers $n$ and $n+1$. This has the effect of Gaussian broadening the layers into each other, as a result. Code Block \ref{cb:refl} is currently implemented in a variety of reflectometry modelling software packages, such as refnx, MOTOFIT, RasCAL, and Aurore.\cite{refnx2018,Nelson2006,rascal2016,Gerelli2016,Gerelli2016a}
 %
 \begin{figure}
 	\centering
