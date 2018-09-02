@@ -42,6 +42,7 @@ This means that only the angle will change during the elastic scattering event. 
 	\label{equ:theq}
 \end{equation}
 %
+%
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{theory/scatvec}
@@ -66,6 +67,116 @@ where, $|\mathbf{k}_f| = \sfrac{2\pi}{\lambda}$. This allows the scattering vect
 %
 For an isotropic scattering pattern, it is the magnitude of the scattering vector, $q$, that is measured. In partical terms, the scattering vector allows for easy comparison of measurements made at different radiation wavelengths.
 
+The basic quantity measured in a scattering experiment is the differential cross section, $\sfrac{\text{d}\sigma(q)}{\text{d}\Omega}$. This is the fraction of particles of probing radiation that are scattered with a particular set of polar coordinates, $2\theta$ and $\phi$,
+%
+\begin{equation}
+	\frac{\text{d}\sigma(q)}{\text{d}\Omega} = \frac{R(2\theta,\phi)}{NV\Phi\Delta \Omega},
+	\label{equ:dsc}
+\end{equation}
+%
+where, $R(2\theta,\phi)$ is the rate of arrival of the scattered particles at the position $2\theta$, $\phi$, $V$ is the volume of the sample, $\Phi$ is incident flux, $\Delta \Omega$ is some small solid angle, and $N$ is the number of scattering particles of interest, in the case of elastically scattering particles, $N = N\%_{\text{el}}$, where $\%_{\text{el}}$ is the fraction of elastically scattered particles.
+
+\subsection{Scattering from a single fixed particle}
+
+It is possible to describe a steady stream of particles of wavelength, $\lambda$, travelling through space as follows,
+%
+\begin{equation}
+	\psi_i = \psi_o \exp{(\mathbf{i} kz)},
+	\label{equ:wave}
+\end{equation}
+%
+where, $z$ is the direction of travel, and the incident flux is the magnitude of the wave squared, $\Phi = |\psi_o|^2$. This wave then interacts with a single fixed particle elastically, propagating the wave radially outwards (Figure \ref{fig:singleatom}). This propagation is centred on the atom, therefore the wavevector, $\mathbf{k_f}$ is parallel to the displacement vector, $\mathbf{r}$, and the following holds,
+%
+\begin{equation}
+	\exp{(\mathbf{i}\mathbf{k}_f\cdot \mathbf{r})} = \exp{(\mathbf{i}kr)}.
+\end{equation}
+%
+This final wave is no longer collimated and therefore deminishes with distance, $r$. Hence the final scattered wave has the form,
+%
+\begin{equation}
+	\psi_f = \psi_o b\frac{\exp{(\mathbf{i}kr)}}{r},
+\end{equation}
+%
+where, $b$ is the scattering length discussed in Section \ref{convar}.
+%
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{theory/singleatom}
+	\caption{A schematic of the interaction between a single particle and a wave of probing radiation (green lines), adapted from Ref \cite{Sivia2011}.}
+	\label{fig:singleatom}
+\end{figure}
+%
+
+\subsection{Scattering from multiple particles}
+\label{sec:multiscat}
+
+It is important to consider how the probing radiation would interact with a real system, consisting of many particles. If the incident beam has the form of Eqn. \ref{equ:wave}, with the wavevector $\mathbf{k}_i = (0, 0, k)$, each particle, $j$, will contribute the following to the total scattered wave, $psi_f$, made up of the scattering from all, $N$, atoms,
+%
+\begin{equation}
+	[\delta\psi_f]_j = \psi_o\exp{(\mathbf{ik}_i\cdot \mathbf{R}_j)}b_j\frac{\exp{\big\{\mathbf{ik}_f\cdot (\mathbf{r}-\mathbf{R}_j)\big\}}}{|\mathbf{r}-\mathbf{R}_j|},
+\end{equation}
+%
+where, $\mathbf{R}_j$ is the position of particle $j$, $\mathbf{r}$ is some arbitrary position, and $\mathbf{k}_f$ is the wavevector of the scattered wave (Figure \ref{fig:multiatom}). This allows the total scattered wave to be defined as a summation of the contributions from the individual waves,
+%
+\begin{equation}
+	\psi_f = \psi_o \exp{(\mathbf{ik}_f\cdot\mathbf{r})}\sum_{j=1}^{N}\bigg\{b_j \frac{\exp{(\mathbf{iq}\cdot \mathbf{R}_j)}}{|\mathbf{r}-\mathbf{R}_j|}\bigg\}.
+	\label{equ:scatter}
+\end{equation}
+%
+Eqn. \ref{equ:scatter} holds true, within the Born approximation, where the scattered wave has no impact on the incident wave and each wave is scattered only once.
+%
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{theory/multiatom}
+	\caption{A schematic of the interaction between a particle, $j$, at position $\mathbf{R}_j$ and a wave of probing radiation (green lines), adapted from Ref \cite{Sivia2011}.}
+	\label{fig:multiatom}
+\end{figure}
+%
+
+The sample-detector distance is usually much larger than the typical particle size, allowing for the following approximation,
+%
+\begin{equation}
+	|\mathbf{r} - \mathbf{R}_j| = |\mathbf{r}| = r.
+\end{equation}
+%
+This is termed the Fraunhofer, or far-field limit, and allows Eqn. \ref{equ:scatter} to be simplified,
+%
+\begin{equation}
+	|\psi_f|^2 = \frac{\Phi}{r^2}\Bigg|\sum_{j=1}^{N}b_j\exp{(\mathbf{iq}\cdot\mathbf{R}_j)}\Bigg|^2.
+\end{equation}
+%
+In the scattering experiment, particles are deflected elastically into a detector with a small area, $\delta A$, with the polar coordinates, $2\theta$ and $\phi$, at a rate of $R_{\text{el}}$,
+%
+\begin{equation}
+	R_{\text{el}}(2\theta,\phi) = |\psi_f|^2\delta A = \Phi\delta\Omega\Bigg|\sum_{j=1}^{N}b_j\exp{(\mathbf{iq}\cdot\mathbf{R}_j)}\Bigg|^2,
+\end{equation}
+%
+where, $\delta\Omega = \sfrac{\delta A}{r^2}$. Therefore, the differential cross section, defined in Eqn. \ref{equ:dsc} can be related to the scattering from the sample as,
+%
+\begin{equation}
+	\bigg(\frac{\text{d}\sigma(q)}{\text{d}\Omega}\bigg)_{\text{el}} = \frac{1}{V} \Bigg|\sum_{j=1}^{N}b_j\exp{(\mathbf{iq}\cdot\mathbf{R}_j)}\Bigg|^2.
+	\label{equ:sca}
+\end{equation}
+%
+
+\subsection{Scattering length density}
+\label{sec:sld}
+
+While it may be helpful to consider the scattering of multiple particles individually, where each particle has a scattering length, $b$. In practice, it is more common to consider the scattering length density, $\rho$, of the system,
+%
+\begin{equation}
+	\rho = \frac{1}{V}\sum_{i=0}^{N} b_i,
+\end{equation}
+%
+where $N$ is the total number of particles in the volume $V$. A result of this equation is the ability to rewrite \ref{equ:sca} as,
+%
+\begin{equation}
+	\bigg(\frac{\text{d}\sigma(q)}{\text{d}\Omega}\bigg)_{\text{el}} = \frac{1}{V} \Bigg|\iiint \limits_V \rho\exp{(\mathbf{iq}\cdot\mathbf{R})}\text{d}^3\mathbf{R}\Bigg|^2.
+	\label{equ:sldsca}
+\end{equation}
+%
+This above equation shows that the scattering differential cross-section from some object is related to the scattering length density profile of that object by a Fourier transform.
+
 \subsection{Model-dependent analysis}
 
 All types of scattering patterns can be analysed by one of two methods; model independent and model-dependent. The nature of this work means that it will focus on model-dependent analysis methods, often where the model is derived from some atomistic, or coarse-grained simulation. Model-dependent analysis, has significant benefits over model-independent methods, such as improved resoution and more detailed information of the structure. However, the necessisty of the inclusion of \emph{a priori} information within model-dependent analysis may act to bias the result, while this is undesirable, these assumptions can, and should, be educated based on the chemical information present -- such as the propensity for twin-tailed lipid molecules to for monolayers at an air-water interface.\cite{McCluskey2018}
@@ -81,6 +192,7 @@ where, $\sfrac{\text{d}\sigma(q)}{\text{d}\Omega}$ is the differential cross-sec
 The aim of model-dependent analysis is to obtain a model for the system which agrees will with the experimentally measured scattering data, while producing something that is chemically, and physically relevant. This means that optimisation algorithm are often applied to these analysis problems, which are discussed, in detail, in Section \ref{sec:optimisation}.
 
 \subsection{Reflectometry}
+
 Reflectometry involves the interaction of the probing radiation with some interface, from which the radiation is reflected. The geometry of a reflectometry experiment is shown in Figure \ref{fig:refgeo}, where the reflectometry instrument is in the horizontal configuration, ideal for the study of liquid interfaces. Reflectometry measurements give information about the structure perpendicular to the interface, the \emph{z}-dimension in Figure \ref{fig:refgeo}, and therefore the analysis of refllectometry data is founding on the assumption that the layers will be completely homogenous in the plane of the interface, the \emph{xy}-plane in Figure \ref{fig:refgeo}. In reality, since the layers are usually not completely homogeneous, an average is obtained for the area in the radiation beam.
 %
 \begin{figure}
@@ -101,10 +213,10 @@ It is clear from Eqn \ref{equ:refl} that the value of the measured reflectometry
 
 \subsubsection{Analysis}
 
-There are two model-dependent analysis techniques that can be applied to the rationalisation of a reflectometry dataset. The first is the kinematic approach,\cite{Sivia2011} where the reflectometry profile is modelled in terms of the scattering length density profile in the \emph{z}-dimension, $\rho(z)$,
+There are two model-dependent analysis techniques that can be applied to the rationalisation of a reflectometry dataset. The first is the kinematic approach, which can be obtained from Eqn. \ref{equ:sca}, from the assumption that $q_x = 0$ and $q_y = 0$, as we are only measuring the specular scattering. This approach models the reflectometry as a function of the scattering length density profile in the \emph{z}-dimension, $\rho(z)$,
 %
 \begin{equation}
-	R(q) \approx \frac{16\pi^2}{q^4}\bigg|\int_{-\infty}^{+\infty}\frac{\text{d}\rho(z)}{\text{d}z}\exp{(-izq)}\text{d}z\bigg|^2,
+	R(q) \approx \frac{16\pi^2}{q^4}\bigg|\int_{-\infty}^{+\infty}\frac{\text{d}\rho(z)}{\text{d}z}\exp{(-\mathbf{i}zq_z)}\text{d}z\bigg|^2,
 	\label{equ:kine}
 \end{equation}
 %
@@ -127,16 +239,16 @@ where, $\rho_{\text{Si}}$ is the scattering length denisty of pure silicon (\SI{
 Then, as in Eqn \ref{equ:kine}, the Fourier transform of this $\delta$-function is taken,
 %
 \begin{equation}
-	\rho_{\text{Si}}\int_{-\infty}^{+\infty}\delta(z)\exp{(-izq)}\text{d}z = \rho_{\text{Si}}\exp(0) = \rho_{\text{Si}}.
+	\rho_{\text{Si}}\int_{-\infty}^{+\infty}\delta(z)\exp{(-\mathbf{i}zq_z)}\text{d}z = \rho_{\text{Si}}\exp(0) = \rho_{\text{Si}}.
 \end{equation}
 %
 This means that the reflectometry profile could be calculated from the following relationship,
 %
 \begin{equation}
-	R(q)\approx \frac{16\pi^2\rho_{\text{Si}}^2}{q^4}.
+	R(q)\approx \frac{16\pi^2\rho_{\text{Si}}^2}{q_z^4}.
 \end{equation}
 %
-The curve from this relationship is shown in Figure \ref{fig:kine}, where it is clear that the agreement with an experimental profile would be poor as $q \rightarrow 0$. It can be seen that for low values of $q$ the calculated reflectometry is greater than 1, which voilates the physical constraint imposed with Eqn \ref{equ:refl}. This break down of the kinematic approach is due to the assumption present in this approach that the Born approximation will hold, that is that each particle of probing radiation will only be scattered once. However, in the reflectometry scattering geometry, this is no longer true rendering the kinematic approach invalid.
+The curve from this relationship is shown in Figure \ref{fig:kine}, where it is clear that the agreement with an experimental profile would be poor as $q \rightarrow 0$. It can be seen that for low values of $q$ the calculated reflectometry is greater than 1, which voilates the physical constraint imposed with Eqn \ref{equ:refl}. This break down of the kinematic approach is due to the assumption present in this approach that the Born approximation (mentioned in Section \ref{sec:multiscat}) will hold. However, in the reflectometry scattering geometry, this is no longer true rendering the kinematic approach invalid.
 %
 \begin{figure}
 	\centering
@@ -210,7 +322,7 @@ The resultant matrix, $B_n$, is then found as a product of the matrix from each 
 and from this the reflected intensity at the given value of $q$ can be found,
 %
 \begin{equation}
-	R(q) = \frac{B_{1,2}}{B_{1,1}}.
+	R(q_z) = \frac{B_{1,2}}{B_{1,1}}.
 \end{equation}
 %
 This algorithm models the layers as perfectly flat layers, which will not be strictly true in the case of soft matter systems such as a bilayer. This resulted in the correction term being added to Eqn \ref{equ:fres} to account for the roughness of the layers. This adapts Eqn \ref{equ:fres} to the form,
@@ -219,16 +331,35 @@ This algorithm models the layers as perfectly flat layers, which will not be str
 	r_{n,n+1} = \frac{k_n - k_{n+1}}{k_n + k_{n+1}}\exp{(-2k_nk_{n+1}\sigma^2_{n,n+1})},
 \end{equation}
 %
-where, $\sigma_{n,n+1}$ is the interfacial roughness between layers $n$ and $n+1$. This has the effect of Gaussian broadening the layers into each other, as a result. Code Block \ref{cb:refl} is currently implemented in a variety of reflectometry modelling software packages, such as refnx, MOTOFIT, RasCAL, and Aurore.\cite{refnx2018,Nelson2006,rascal2016,Gerelli2016,Gerelli2016a}
+where, $\sigma_{n,n+1}$ is the interfacial roughness between layers $n$ and $n+1$. This has the effect of Gaussian broadening the layers into each other, as a result. Code Block \ref{cb:refl} is currently implemented in a variety of reflectometry modelling software packages, such as refnx, MOTOFIT, RasCAL, and Aurore.\cite{refnx2018,Nelson2006,rascal2016,Gerelli2016,Gerelli2016a} Applying this method to the scattering length density profile shown in Figure \ref{fig:kine} gives the reflectometry profile shown with the dashed green line in Figure \ref{fig:dyna}.
 %
 \begin{figure}
 	\centering
-	\begin{minipage}{0.9\textwidth}
-		\lstinputlisting[caption={An example code block for the Abel\`{e}s method for the calculation of reflectometry.},label={cb:refl},language=python]{code_blocks/reflectometry.py}
+	\begin{minipage}{0.915\textwidth}
+		\lstinputlisting[caption={An example code block for the Abel\`{e}s method for the calculation of reflectometry, adapted from Ref. \cite{refnx2018}.},label={cb:refl},language=python]{code_blocks/reflectometry.py}
 	\end{minipage}
 \end{figure}
 %
+%
+\begin{figure}
+	\centering
+	\includegraphics[width=0.75\textwidth]{theory/dyna}
+	\caption{A comparison of the kinematic approach (blue solid line), and the dynamical approach (green dashed line), to determine the reflected intensity from the material with the scattering length density profile given in Figure \ref{fig:kine}(a). It is clear that at low $q$, there is a noticable deviation between the two.}
+	\label{fig:dyna}
+\end{figure}
+%
+
 
 \subsection{Small angle scattering}
+
+Eqn. \ref{equ:sldsca} identified that the scattering differential cross-section for some object was related to the scattering length density by a Fourier transform, which is shown graphically in Figure \ref{fig:scales}. This figure shows that there is a reciprocal relationship between the size of the object and the scattered intensity, decaying significantly up to values of $\sfrac{2\pi}{d_x}$, where $d_x$ is the size of the object. This means that in order to probe the large-scale structural features that are of interest in the study of soft materials, it is necessary to consider small values of $q$. When considering the nature of $q$ in Eqn. \label{equ:theq}, it is clear that such experiments would benefit from small values of $\theta$ and large values of $\lambda$. Hence, the appication of small angle scattering (SAS). 
+%
+\begin{figure}
+	\centering
+	\includegraphics[width=0.75\textwidth]{theory/scales}
+	\caption{The effect of a Fourier transform (a) the scattering length density profile for some object with a width of \SI{10}{\angstrom}, (b) the Fourier transform of this object showing the minima in the differential cross section at values of $\sfrac{2n\pi}{10}$, where $n$ is some integer.}
+	\label{fig:scales}
+\end{figure}
+%
 
 \subsection{Grazing incidence small angle scattering}

@@ -1,16 +1,21 @@
 
 # coding: utf-8
 
-# In[ ]:
+# In[37]:
 
 
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import sys
+import matplotlib.gridspec as gridspec
+
 sns.set(palette='colorblind')
+sys.path.insert(0, 'reports/code_blocks/')
+import reflectometry as refl
 
 
-# In[ ]:
+# In[38]:
 
 
 import matplotlib as mpl
@@ -33,7 +38,7 @@ mpl.rcParams['axes.linewidth'] = 1
 mpl.rcParams['axes.edgecolor'] = 'k'
 
 
-# In[ ]:
+# In[39]:
 
 
 x = np.arange(-10, 10, 0.01)
@@ -43,7 +48,7 @@ for i in range(0, len(x)):
         y[i] = 0
 
 
-# In[ ]:
+# In[40]:
 
 
 x2 = np.array(x[:-1])
@@ -52,10 +57,10 @@ for i in range(0, len(x)-1):
     y2[i] = (y[i+1] - y[i]) / (x[i+1] - x[i])
 
 
-# In[ ]:
+# In[41]:
 
 
-q = np.arange(0.0001, 0.6001, 0.0001)
+q = np.arange(0.0005, 0.101, 0.0005)
 r = np.zeros_like(q)
 for i in range(0, len(q)):
     r[i] = np.sum((y2 * np.exp(-1j * x2 * q[i])) ** 2)
@@ -66,7 +71,6 @@ for i in range(0, len(q)):
 # In[ ]:
 
 
-import matplotlib.gridspec as gridspec
 plt.figure(figsize=(5, 25/6))
 gs = gridspec.GridSpec(2, 2)
 ax = plt.subplot(gs[0, 0])
@@ -90,8 +94,9 @@ ax.text(0.1, 0.92, '(b)',
         verticalalignment='center',
         transform=ax.transAxes, size=8)
 ax = plt.subplot(gs[1, :])
-ax.plot(q, r)
-ax.plot(q, np.ones_like(q))
+ra = refl.abeles(q, np.array([0, 2.0719e-6]), np.array([10, 10]))
+ax.plot(q, r * ra[-1]/r[-1], zorder=10)
+ax.plot(q, np.ones_like(q), lw=1)
 ax.set_xlabel(r'$q$/Å$^{-1}$')
 ax.set_ylabel(r'$R(q)$')
 ax.text(0.05, 0.92, '(c)',
@@ -99,8 +104,81 @@ ax.text(0.05, 0.92, '(c)',
         verticalalignment='center',
         transform=ax.transAxes, size=8)
 ax.set_yscale('log')
-ax.set_xlim([0, 0.6])
+ax.set_xlim([0, 0.1])
 plt.tight_layout()
 plt.savefig('reports/figures/theory/kine.pdf')
 plt.close()
+
+
+# In[ ]:
+
+
+x = np.arange(-10, 10, 0.01)
+y = np.ones_like(x) * 2.0719e-6
+for i in range(0, len(x)):
+    if x[i] < 0:
+        y[i] = 0
+        
+x2 = np.array(x[:-1])
+y2 = np.array(x[:-1])
+for i in range(0, len(x)-1):
+    y2[i] = (y[i+1] - y[i]) / (x[i+1] - x[i])
+    
+q = np.arange(0.0005, 0.101, 0.0005)
+r = np.zeros_like(q)
+for i in range(0, len(q)):
+    r[i] = np.sum((y2 * np.exp(-1j * x2 * q[i])) ** 2)
+    r[i] *= 16 * np.pi ** 2
+    r[i] /= q[i] ** 4
+
+plt.figure(figsize=(5, 25/11))
+gs = gridspec.GridSpec(1, 2)
+ax = plt.subplot(gs[0, :])
+ra = refl.abeles(q, np.array([0, 2.0719e-6]), np.array([10, 10]))
+ax.plot(q, ra, '--', zorder=10, c='#029E73')
+ax.plot(q, r * ra[-1]/r[-1], zorder=9, c='#0173B2')
+ax.plot(q, np.ones_like(q), c='#DE8F05', lw=1)
+ax.set_xlabel(r'$q$/Å$^{-1}$')
+ax.set_ylabel(r'$R(q)$')
+ax.set_yscale('log')
+ax.set_xlim([0, 0.1])
+plt.tight_layout()
+plt.savefig('reports/figures/theory/dyna.pdf')
+plt.close()
+
+
+# In[77]:
+
+
+x = np.arange(-10, 10, 0.005)
+beta = np.zeros_like(x)
+beta[np.where((x >= -5) & (x < 5))] = 1
+qx = np.arange(-1.5, 1.5, 0.001)
+dsc = np.zeros_like(qx)
+for i, q in enumerate(qx):
+    dsc[i] = np.sum(beta * np.exp(1j * q * x)) ** 2
+plt.figure(figsize=(5, 25/11))
+gs = gridspec.GridSpec(1, 2)
+ax = plt.subplot(gs[0, 0])
+ax.plot(x,beta)
+ax.set_yticks([0])
+ax.set_xlabel(r'x/Å')
+ax.set_ylabel(r'$\beta/$Å$^{-2}$')
+ax.text(0.075, 0.92, '(a)',
+        horizontalalignment='center',
+        verticalalignment='center',
+        transform=ax.transAxes, size=8)
+ax = plt.subplot(gs[0, 1])
+ax.plot(qx, dsc)
+ax.set_yticks([0])
+ax.set_xticks([-1.2566, -0.6283, 0, 0.6283, 1.2566])
+ax.set_xticklabels([r'$\frac{-4\pi}{d_x}$', r'$\frac{-2\pi}{d_x}$', 0, r'$\frac{2\pi}{d_x}$', r'$\frac{4\pi}{d_x}$'])
+ax.set_xlabel(r'$q_x$/Å$^{-1}$')
+ax.set_ylabel(r'$\frac{d\sigma}{d\Omega}$/Å$^{2}$')
+ax.text(0.075, 0.92, '(b)',
+        horizontalalignment='center',
+        verticalalignment='center',
+        transform=ax.transAxes, size=8)
+plt.tight_layout()
+plt.savefig('reports/figures/theory/scales.pdf')
 
