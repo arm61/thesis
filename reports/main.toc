@@ -1,4 +1,4 @@
-\select@language {english}
+\babel@toc {english}{}
 \contentsline {chapter}{Declaration of Authorship}{iii}
 \contentsline {chapter}{Abstract}{vii}
 \contentsline {chapter}{Acknowledgements}{ix}
@@ -12,11 +12,12 @@
 \contentsline {subsection}{\numberline {1.1.6}Reflectometry}{6}
 \contentsline {subsubsection}{Analysis}{7}
 \contentsline {subsection}{\numberline {1.1.7}Small angle scattering}{10}
+\contentsline {subsubsection}{Analysis}{12}
 \contentsline {subsection}{\numberline {1.1.8}Grazing incidence small angle scattering}{12}
 \contentsline {section}{\numberline {1.2}Probing radiation}{12}
 \contentsline {subsection}{\numberline {1.2.1}The generation of X-ray and neutrons}{12}
 \contentsline {subsubsection}{X-rays}{12}
-\contentsline {subsubsection}{Neutrons}{14}
-\contentsline {subsection}{\numberline {1.2.2}Contrast variation}{15}
-\contentsline {section}{\numberline {1.3}Classical simulation}{17}
-\contentsline {section}{\numberline {1.4}Optimisation \& Sampling}{17}
+\contentsline {subsubsection}{Neutrons}{15}
+\contentsline {subsection}{\numberline {1.2.2}Contrast variation}{16}
+\contentsline {section}{\numberline {1.3}Classical simulation}{18}
+\contentsline {section}{\numberline {1.4}Optimisation \& Sampling}{18}

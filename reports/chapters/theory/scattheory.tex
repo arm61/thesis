@@ -1,6 +1,13 @@
 \section{Scattering}
 
-The use of scattering techniques to probe soft condensed matter systems is commonplace. In this work, we have focussed on the use of small angle scattering (SAS), reflectometry, and grazing incidence small angle scattering (GiSAS) techniques. These are particularly appropriate for application to soft condensed matter systems due to the length scales capable of being probed being similar to the persistence length of the soft condensed matter systems. The length scales covered for such techniques is from around \SI{1}{\nano\metre} to \SI{100}{\nano\metre}, as is shown in Figure \ref{fig:lengths}. Since it is the equilibrium structures(s) under study, there is no interest in the system dynamics. Therefore, the system can be studied using exclusively elastic scattering techniques, where there is no energy transfer between the probing radiation and the system. This is in contrast to inelastic scattering where energy transfer occurs; facilitating the measurement of system dynamics, such as the dynamical modes of polymers of lipid bilayers.\cite{Sakai2009, Farago2009} The techniques mentioned above all involve the use of elastic scattering and therefore probe the system equilibrium structure.
+The use of scattering techniques to probe soft condensed matter systems is commonplace.
+In this work, we have focussed on the use of small angle scattering (SAS), reflectometry, and grazing incidence small angle scattering (GiSAS) techniques.
+These are particularly appropriate for application to soft condensed matter systems due to the length scales capable of being probed being similar to the persistence length of the soft condensed matter systems.
+The length scales covered for such techniques is from around \SI{1}{\nano\metre} to \SI{100}{\nano\metre}, as is shown in Figure \ref{fig:lengths}.
+Since it is the equilibrium structures(s) under study, there is no interest in the system dynamics.
+Therefore, the system can be studied using exclusively elastic scattering techniques, where there is no energy transfer between the probing radiation and the system.
+This is in contrast to inelastic scattering where energy transfer occurs; facilitating the measurement of system dynamics, such as the dynamical modes of polymers of lipid bilayers \cite{Sakai2009, Farago2009}.
+The techniques mentioned above all involve the use of elastic scattering and therefore probe the system equilibrium structure.
 %
 \begin{figure}
 	\centering
@@ -10,11 +17,16 @@ The use of scattering techniques to probe soft condensed matter systems is commo
 \end{figure}
 %
 
-Both X-ray and neutron scattering techniques are discussed and used in this work. From an experimental viewpoint, there are significant differences between an X-ray scattering and a neutron scattering experiment. However, there is little variation in terms of the data analysis, where the differences are limited to; the nature of the scattering lengths, and the higher background that is present in the neutron scattering experiments.
+Both X-ray and neutron scattering techniques are discussed and used in this work.
+From an experimental viewpoint, there are significant differences between an X-ray scattering and a neutron scattering experiment.
+However, there is little variation in terms of the data analysis, where the differences are limited to; the nature of the scattering lengths, and the higher background that is present in the neutron scattering experiments.
 
 \subsection{The scattering vector}
 
-The scattering of some probing radiation, by some sample can be represented as shown in Figure \ref{fig:scat}. Since only elastic scattering is being considered, there will be no change in the frequency of the radiation, $\omega_i = \omega_f$. This means that only the wavevector, $\mathbf{k}$, can change, $\mathbf{k}_i\neq \mathbf{k}_f$. The difference between the incident and final wavevectors is the scattering vector, $\mathbf{q}$, where,
+The scattering of some probing radiation, by some sample can be represented as shown in Figure \ref{fig:scat}.
+Since only elastic scattering is being considered, there will be no change in the frequency of the radiation, $\omega_i = \omega_f$.
+This means that only the wavevector, $\mathbf{k}$, can change, $\mathbf{k}_i\neq \mathbf{k}_f$.
+The difference between the incident and final wavevectors is the scattering vector, $\mathbf{q}$, where,
 %
 \begin{equation}
 	\mathbf{q} = \mathbf{k}_i - \mathbf{k}_f.
@@ -28,14 +40,18 @@ The scattering of some probing radiation, by some sample can be represented as s
 	\label{fig:scat}
 \end{figure}
 %
-The scattering vector strictly has units of \si{\per\meter}, however it is often more practical to use \si{\per\nano\meter} or \si{\per\angstrom}. Throughout this work, units of reciprocal \AA ngstrom will be wherever possible. Since the frequency of the probing radiation does not change during an elastic scattering event, the wavelength, $\lambda$, will also not change, meaning that the moduli of the incident and final wavevectors are,
+The scattering vector strictly has units of \si{\per\meter}, however it is often more practical to use \si{\per\nano\meter} or \si{\per\angstrom}.
+Throughout this work, units of reciprocal \AA ngstrom will be wherever possible.
+Since the frequency of the probing radiation does not change during an elastic scattering event, the wavelength, $\lambda$, will also not change, meaning that the moduli of the incident and final wavevectors are,
 %
 \begin{equation}
 	|\mathbf{k}_i| = |\mathbf{k}_f|=\frac{2\pi}{\lambda}.
 	\label{equ:wavevec}
 \end{equation}
 %
-This means that only the angle will change during the elastic scattering event. The vector diagram in Figure \ref{fig:scatvec} can be used to describe the geometry of an elastic scattering event. From this, and Eqn \ref{equ:wavevec}, the value of $q$, where $q = |\mathbf{q}|$ can be shown as,
+This means that only the angle will change during the elastic scattering event.
+The vector diagram in Figure \ref{fig:scatvec} can be used to describe the geometry of an elastic scattering event.
+From this, and Eqn \ref{equ:wavevec}, the value of $q$, where $q = |\mathbf{q}|$ can be shown as,
 %
 \begin{equation}
 	q = \frac{4\pi\sin{\theta}}{\lambda}.
@@ -50,7 +66,8 @@ This means that only the angle will change during the elastic scattering event. 
 	\label{fig:scatvec}
 \end{figure}
 %
-However, this fails to fully capture the three dimensional nature of the scattering event. Hence, it is necessary to describe the scattering with spherical coordinates, $2\theta$, and $\phi$, such that the incoming and outgoing radiation can be described as,
+However, this fails to fully capture the three dimensional nature of the scattering event.
+Hence, it is necessary to describe the scattering with spherical coordinates, $2\theta$, and $\phi$, such that the incoming and outgoing radiation can be described as,
 %
 \begin{equation}
 	\begin{aligned}
@@ -65,9 +82,11 @@ where, $|\mathbf{k}_f| = \sfrac{2\pi}{\lambda}$. This allows the scattering vect
 	\mathbf{q} = \frac{4\pi\sin{\theta}}{\lambda}(-\cos{\theta}\cos{\phi}, -\cos{\theta}\sin{\phi},\sin{\theta}).
 \end{equation}
 %
-For an isotropic scattering pattern, it is the magnitude of the scattering vector, $q$, that is measured. In partical terms, the scattering vector allows for easy comparison of measurements made at different radiation wavelengths.
+For an isotropic scattering pattern, it is the magnitude of the scattering vector, $q$, that is measured.
+In partical terms, the scattering vector allows for easy comparison of measurements made at different radiation wavelengths.
 
-The basic quantity measured in a scattering experiment is the differential cross section, $\sfrac{\text{d}\sigma(q)}{\text{d}\Omega}$. This is the fraction of particles of probing radiation that are scattered with a particular set of polar coordinates, $2\theta$ and $\phi$,
+The basic quantity measured in a scattering experiment is the differential cross section, $\sfrac{\text{d}\sigma(q)}{\text{d}\Omega}$.
+This is the fraction of particles of probing radiation that are scattered with a particular set of polar coordinates, $2\theta$ and $\phi$,
 %
 \begin{equation}
 	\frac{\text{d}\sigma(q)}{\text{d}\Omega} = \frac{R(2\theta,\phi)}{NV\Phi\Delta \Omega},
@@ -85,13 +104,16 @@ It is possible to describe a steady stream of particles of wavelength, $\lambda$
 	\label{equ:wave}
 \end{equation}
 %
-where, $z$ is the direction of travel, and the incident flux is the magnitude of the wave squared, $\Phi = |\psi_o|^2$. This wave then interacts with a single fixed particle elastically, propagating the wave radially outwards (Figure \ref{fig:singleatom}). This propagation is centred on the atom, therefore the wavevector, $\mathbf{k_f}$ is parallel to the displacement vector, $\mathbf{r}$, and the following holds,
+where, $z$ is the direction of travel, and the incident flux is the magnitude of the wave squared, $\Phi = |\psi_o|^2$.
+This wave then interacts with a single fixed particle elastically, propagating the wave radially outwards (Figure \ref{fig:singleatom}).
+This propagation is centred on the atom, therefore the wavevector, $\mathbf{k_f}$ is parallel to the displacement vector, $\mathbf{r}$, and the following holds,
 %
 \begin{equation}
 	\exp{(\mathbf{i}\mathbf{k}_f\cdot \mathbf{r})} = \exp{(\mathbf{i}kr)}.
 \end{equation}
 %
-This final wave is no longer collimated and therefore deminishes with distance, $r$. Hence the final scattered wave has the form,
+This final wave is no longer collimated and therefore deminishes with distance, $r$.
+Hence the final scattered wave has the form,
 %
 \begin{equation}
 	\psi_f = \psi_o b\frac{\exp{(\mathbf{i}kr)}}{r},
@@ -110,13 +132,15 @@ where, $b$ is the scattering length discussed in Section \ref{convar}.
 \subsection{Scattering from multiple particles}
 \label{sec:multiscat}
 
-It is important to consider how the probing radiation would interact with a real system, consisting of many particles. If the incident beam has the form of Eqn. \ref{equ:wave}, with the wavevector $\mathbf{k}_i = (0, 0, k)$, each particle, $j$, will contribute the following to the total scattered wave, $psi_f$, made up of the scattering from all, $N$, atoms,
+It is important to consider how the probing radiation would interact with a real system, consisting of many particles.
+If the incident beam has the form of Eqn. \ref{equ:wave}, with the wavevector $\mathbf{k}_i = (0, 0, k)$, each particle, $j$, will contribute the following to the total scattered wave, $psi_f$, made up of the scattering from all, $N$, atoms,
 %
 \begin{equation}
 	[\delta\psi_f]_j = \psi_o\exp{(\mathbf{ik}_i\cdot \mathbf{R}_j)}b_j\frac{\exp{\big\{\mathbf{ik}_f\cdot (\mathbf{r}-\mathbf{R}_j)\big\}}}{|\mathbf{r}-\mathbf{R}_j|},
 \end{equation}
 %
-where, $\mathbf{R}_j$ is the position of particle $j$, $\mathbf{r}$ is some arbitrary position, and $\mathbf{k}_f$ is the wavevector of the scattered wave (Figure \ref{fig:multiatom}). This allows the total scattered wave to be defined as a summation of the contributions from the individual waves,
+where, $\mathbf{R}_j$ is the position of particle $j$, $\mathbf{r}$ is some arbitrary position, and $\mathbf{k}_f$ is the wavevector of the scattered wave (Figure \ref{fig:multiatom}).
+This allows the total scattered wave to be defined as a summation of the contributions from the individual waves,
 %
 \begin{equation}
 	\psi_f = \psi_o \exp{(\mathbf{ik}_f\cdot\mathbf{r})}\sum_{j=1}^{N}\bigg\{b_j \frac{\exp{(\mathbf{iq}\cdot \mathbf{R}_j)}}{|\mathbf{r}-\mathbf{R}_j|}\bigg\}.
@@ -151,7 +175,8 @@ In the scattering experiment, particles are deflected elastically into a detecto
 	R_{\text{el}}(2\theta,\phi) = |\psi_f|^2\delta A = \Phi\delta\Omega\Bigg|\sum_{j=1}^{N}b_j\exp{(\mathbf{iq}\cdot\mathbf{R}_j)}\Bigg|^2,
 \end{equation}
 %
-where, $\delta\Omega = \sfrac{\delta A}{r^2}$. Therefore, the differential cross section, defined in Eqn. \ref{equ:dsc} can be related to the scattering from the sample as,
+where, $\delta\Omega = \sfrac{\delta A}{r^2}$.
+Therefore, the differential cross section, defined in Eqn. \ref{equ:dsc} can be related to the scattering from the sample as,
 %
 \begin{equation}
 	\bigg(\frac{\text{d}\sigma(q)}{\text{d}\Omega}\bigg)_{\text{el}} = \frac{1}{V} \Bigg|\sum_{j=1}^{N}b_j\exp{(\mathbf{iq}\cdot\mathbf{R}_j)}\Bigg|^2.
@@ -162,13 +187,15 @@ where, $\delta\Omega = \sfrac{\delta A}{r^2}$. Therefore, the differential cross
 \subsection{Scattering length density}
 \label{sec:sld}
 
-While it may be helpful to consider the scattering of multiple particles individually, where each particle has a scattering length, $b$. In practice, it is more common to consider the scattering length density, $\rho$, of the system,
+While it may be helpful to consider the scattering of multiple particles individually, where each particle has a scattering length, $b$.
+In practice, it is more common to consider the scattering length density, $\rho$, of the system,
 %
 \begin{equation}
 	\rho = \frac{1}{V}\sum_{i=0}^{N} b_i,
 \end{equation}
 %
-where $N$ is the total number of particles in the volume $V$. A result of this equation is the ability to rewrite \ref{equ:sca} as,
+where $N$ is the total number of particles in the volume $V$.
+A result of this equation is the ability to rewrite \ref{equ:sca} as,
 %
 \begin{equation}
 	\bigg(\frac{\text{d}\sigma(q)}{\text{d}\Omega}\bigg)_{\text{el}} = \frac{1}{V} \Bigg|\iiint \limits_V \rho\exp{(\mathbf{iq}\cdot\mathbf{R})}\text{d}^3\mathbf{R}\Bigg|^2.
@@ -179,9 +206,14 @@ This above equation shows that the scattering differential cross-section from so
 
 \subsection{Model-dependent analysis}
 
-All types of scattering patterns can be analysed by one of two methods; model independent and model-dependent. The nature of this work means that it will focus on model-dependent analysis methods, often where the model is derived from some atomistic, or coarse-grained simulation. Model-dependent analysis, has significant benefits over model-independent methods, such as improved resoution and more detailed information of the structure. However, the necessisty of the inclusion of \emph{a priori} information within model-dependent analysis may act to bias the result, while this is undesirable, these assumptions can, and should, be educated based on the chemical information present -- such as the propensity for twin-tailed lipid molecules to for monolayers at an air-water interface.\cite{McCluskey2018}
+All types of scattering patterns can be analysed by one of two methods; model independent and model-dependent.
+The nature of this work means that it will focus on model-dependent analysis methods, often where the model is derived from some atomistic, or coarse-grained simulation. Model-dependent analysis, has significant benefits over model-independent methods, such as improved resoution and more detailed information of the structure.
+However, the necessisty of the inclusion of \emph{a priori} information within model-dependent analysis may act to bias the result, while this is undesirable, these assumptions can, and should, be educated based on the chemical information present -- such as the propensity for twin-tailed lipid molecules to for monolayers at an air-water interface \cite{McCluskey2018}.
 
-The scattering from the model system is determined, using technique specific methods that are discuess in detail in laeter sections. This is then compared with the experimental data using some goodness-of-fit metric, as this the model is varied the quality of the fit, and therefore the value of the metric, will improve. In order to accurately reproduce the experimental measurement, it is necessary to include some instrumental resolution function, $res(q)$, in the modelling procedure. This is instrument specific, although it may be approximated by convolving the experimental dataset with some Gaussian smearing function, the modelled intensity can then be determined from,
+The scattering from the model system is determined, using technique specific methods that are discuess in detail in laeter sections.
+This is then compared with the experimental data using some goodness-of-fit metric, as this the model is varied the quality of the fit, and therefore the value of the metric, will improve.
+In order to accurately reproduce the experimental measurement, it is necessary to include some instrumental resolution function, $res(q)$, in the modelling procedure.
+This is instrument specific, although it may be approximated by convolving the experimental dataset with some Gaussian smearing function, the modelled intensity can then be determined from,
 %
 \begin{equation}
 	I(q) = res(q) * \frac{\text{d}\sigma(q)}{\text{d}\Omega},
@@ -189,11 +221,15 @@ The scattering from the model system is determined, using technique specific met
 %
 where, $\sfrac{\text{d}\sigma(q)}{\text{d}\Omega}$ is the differential cross-section, a measure of the number of scattering particles hitting a given solid angle of the detector.
 
-The aim of model-dependent analysis is to obtain a model for the system which agrees will with the experimentally measured scattering data, while producing something that is chemically, and physically relevant. This means that optimisation algorithm are often applied to these analysis problems, which are discussed, in detail, in Section \ref{sec:optimisation}.
+The aim of model-dependent analysis is to obtain a model for the system which agrees will with the experimentally measured scattering data, while producing something that is chemically, and physically relevant.
+This means that optimisation algorithm are often applied to these analysis problems, which are discussed, in detail, in Section \ref{sec:optimisation}.
 
 \subsection{Reflectometry}
 
-Reflectometry involves the interaction of the probing radiation with some interface, from which the radiation is reflected. The geometry of a reflectometry experiment is shown in Figure \ref{fig:refgeo}, where the reflectometry instrument is in the horizontal configuration, ideal for the study of liquid interfaces. Reflectometry measurements give information about the structure perpendicular to the interface, the \emph{z}-dimension in Figure \ref{fig:refgeo}, and therefore the analysis of refllectometry data is founding on the assumption that the layers will be completely homogenous in the plane of the interface, the \emph{xy}-plane in Figure \ref{fig:refgeo}. In reality, since the layers are usually not completely homogeneous, an average is obtained for the area in the radiation beam.
+Reflectometry involves the interaction of the probing radiation with some interface, from which the radiation is reflected.
+The geometry of a reflectometry experiment is shown in Figure \ref{fig:refgeo}, where the reflectometry instrument is in the horizontal configuration, ideal for the study of liquid interfaces.
+Reflectometry measurements give information about the structure perpendicular to the interface, the \emph{z}-dimension in Figure \ref{fig:refgeo}, and therefore the analysis of refllectometry data is founding on the assumption that the layers will be completely homogenous in the plane of the interface, the \emph{xy}-plane in Figure \ref{fig:refgeo}.
+In reality, since the layers are usually not completely homogeneous, an average is obtained for the area in the radiation beam.
 %
 \begin{figure}
 	\centering
@@ -202,7 +238,8 @@ Reflectometry involves the interaction of the probing radiation with some interf
 	\label{fig:refgeo}
 \end{figure}
 %
-A reflectometry instrument operates by measuring the intensity of specular radiation at a series of different angles, $\theta$, or wavelengths, $\lambda$. The reflected intensity is defined in terms of $q$ (by Eqn \ref{equ:theq}), and is defined as follows,
+A reflectometry instrument operates by measuring the intensity of specular radiation at a series of different angles, $\theta$, or wavelengths, $\lambda$.
+The reflected intensity is defined in terms of $q$ (by Eqn \ref{equ:theq}), and is defined as follows,
 %
 \begin{equation}
 	R(q) = \frac{\text{rate of specular reflective scattering}}{\text{rate of incidence}}.
@@ -213,14 +250,17 @@ It is clear from Eqn \ref{equ:refl} that the value of the measured reflectometry
 
 \subsubsection{Analysis}
 
-There are two model-dependent analysis techniques that can be applied to the rationalisation of a reflectometry dataset. The first is the kinematic approach, which can be obtained from Eqn. \ref{equ:sca}, from the assumption that $q_x = 0$ and $q_y = 0$, as we are only measuring the specular scattering. This approach models the reflectometry as a function of the scattering length density profile in the \emph{z}-dimension, $\rho(z)$,
+There are two model-dependent analysis techniques that can be applied to the rationalisation of a reflectometry dataset.
+The first is the kinematic approach, which can be obtained from Eqn. \ref{equ:sca}, from the assumption that $q_x = 0$ and $q_y = 0$, as we are only measuring the specular scattering.
+This approach models the reflectometry as a function of the scattering length density profile in the \emph{z}-dimension, $\rho(z)$,
 %
 \begin{equation}
 	R(q) \approx \frac{16\pi^2}{q^4}\bigg|\int_{-\infty}^{+\infty}\frac{\text{d}\rho(z)}{\text{d}z}\exp{(-\mathbf{i}zq_z)}\text{d}z\bigg|^2,
 	\label{equ:kine}
 \end{equation}
 %
-where, $\sfrac{\text{d}\rho(z)}{\text{d}z}$ is the first derivative of the scattering length density profile. However, this method has a significant problem, which can be described by applying Eqn \ref{equ:kine} to the scatteirng length density profile of a bare silicon substrate, which can be modelled as a Heaviside function (Figure \ref{fig:kine}a),
+where, $\sfrac{\text{d}\rho(z)}{\text{d}z}$ is the first derivative of the scattering length density profile.
+However, this method has a significant problem, which can be described by applying Eqn \ref{equ:kine} to the scatteirng length density profile of a bare silicon substrate, which can be modelled as a Heaviside function (Figure \ref{fig:kine}a),
 %
 \begin{equation}
 	\rho(z) =
@@ -230,7 +270,8 @@ where, $\sfrac{\text{d}\rho(z)}{\text{d}z}$ is the first derivative of the scatt
   \end{cases}
 \end{equation}
 %
-where, $\rho_{\text{Si}}$ is the scattering length denisty of pure silicon (\SI{2.1e-6}{\angstrom^{-2}} for neutrons). The derivated of a stepwise Heaviside function is a scaled $\delta$-function (Figure \ref{fig:kine}b),
+where, $\rho_{\text{Si}}$ is the scattering length denisty of pure silicon (\SI{2.1e-6}{\angstrom^{-2}} for neutrons).
+The derivated of a stepwise Heaviside function is a scaled $\delta$-function (Figure \ref{fig:kine}b),
 %
 \begin{equation}
 	\rho'(z) = \rho_{\text{Si}}\delta(z).
@@ -248,7 +289,10 @@ This means that the reflectometry profile could be calculated from the following
 	R(q)\approx \frac{16\pi^2\rho_{\text{Si}}^2}{q_z^4}.
 \end{equation}
 %
-The curve from this relationship is shown in Figure \ref{fig:kine}, where it is clear that the agreement with an experimental profile would be poor as $q \rightarrow 0$. It can be seen that for low values of $q$ the calculated reflectometry is greater than 1, which voilates the physical constraint imposed with Eqn \ref{equ:refl}. This break down of the kinematic approach is due to the assumption present in this approach that the Born approximation (mentioned in Section \ref{sec:multiscat}) will hold. However, in the reflectometry scattering geometry, this is no longer true rendering the kinematic approach invalid.
+The curve from this relationship is shown in Figure \ref{fig:kine}, where it is clear that the agreement with an experimental profile would be poor as $q \rightarrow 0$.
+It can be seen that for low values of $q$ the calculated reflectometry is greater than 1, which violates the physical constraint imposed with Eqn \ref{equ:refl}.
+This break down of the kinematic approach is due to the assumption present in this approach that the Born approximation (mentioned in Section \ref{sec:multiscat}) will hold.
+However, in the reflectometry scattering geometry, this is no longer true rendering the kinematic approach invalid.
 %
 \begin{figure}
 	\centering
@@ -258,7 +302,10 @@ The curve from this relationship is shown in Figure \ref{fig:kine}, where it is 
 \end{figure}
 %
 
-This breakdown of the kinematic approach has lead to the application of the Abel\`{e}s, or Parratt, model for the reflection of light at a given number of stratified inferfaces (also known as dynamical theory). \cite{Abeles1948,Parratt1954} This methods involves considering the system as a layered structure at the interfaces of which the probing radiation can either be reflected or refracted, by some refractive index, $n_i$. Figure \ref{fig:reflrefr} shows this process for a system of two layers, where the layer $0$ is the air or vacuum above the sample, tit is clear to see how the two waves labelled $r$ could interfere constructively or destructively depending on the thickness of layer $1$, $d$. This means that for a single interface, suhc as that between layers $0$ and $1$ in Figure \ref{fig:reflrefr}, the reflectometry can be described by the Fresnel equation,
+This breakdown of the kinematic approach has lead to the application of the Abel\`{e}s, or Parratt, model for the reflection of light at a given number of stratified inferfaces (also known as dynamical theory) \cite{Abeles1948,Parratt1954}.
+This methods involves considering the system as a layered structure at the interfaces of which the probing radiation can either be reflected or refracted, by some refractive index, $n_i$.
+Figure \ref{fig:reflrefr} shows this process for a system of two layers, where the layer $0$ is the air or vacuum above the sample, it is clear to see how the two waves labelled $r$ could interfere constructively or destructively depending on the thickness of layer $1$, $d$.
+This means that for a single interface, suhc as that between layers $0$ and $1$ in Figure \ref{fig:reflrefr}, the reflectometry can be described by the Fresnel equation,
 %
 \begin{equation}
 	R(q) = \bigg| \frac{n_0\sin{\theta_0} - n_1\sin{\theta_1}}{n_0\sin{\theta_0} + n_1\sin{\theta_1}} \bigg|^2.
@@ -286,13 +333,16 @@ This is the angle below which a reflectometry profile will be measured.
 \end{figure}
 %
 
-The above method can then be generalised to a structure of an arbitrary number of layers, as shown in Code Block \ref{cb:refl}. For each value of $q$ for which the reflectometry is to be calculated, the system is considered in terms of $n_{\text{max}}$ layers. The incident radiation beam will be refracted by each of the layers, giving wavevectors values for each layer, $k_n$,
+The above method can then be generalised to a structure of an arbitrary number of layers, as shown in Code Block \ref{cb:refl}.
+For each value of $q$ for which the reflectometry is to be calculated, the system is considered in terms of $n_{\text{max}}$ layers.
+The incident radiation beam will be refracted by each of the layers, giving wavevectors values for each layer, $k_n$,
 %
 \begin{equation}
 	k_n = \sqrt{k_0^2 + 4\pi (\rho_n - \rho_0)},
 \end{equation}
 %
-where, $k_0=\sfrac{q}{2}$. The Fresnel equation coefficient between layers $n$ and $n+1$, $r_{n,n+1}$ can then be found along with the phase factor, $\beta_n$, which is dependent on the thickness of the layer, $d_n$,
+where, $k_0=\sfrac{q}{2}$.
+The Fresnel equation coefficient between layers $n$ and $n+1$, $r_{n,n+1}$ can then be found along with the phase factor, $\beta_n$, which is dependent on the thickness of the layer, $d_n$,
 %
 \begin{equation}
 	r_{n,n+1} = \frac{k_n - k_{n+1}}{k_n + k_{n+1}},
@@ -325,13 +375,17 @@ and from this the reflected intensity at the given value of $q$ can be found,
 	R(q_z) = \frac{B_{1,2}}{B_{1,1}}.
 \end{equation}
 %
-This algorithm models the layers as perfectly flat layers, which will not be strictly true in the case of soft matter systems such as a bilayer. This resulted in the correction term being added to Eqn \ref{equ:fres} to account for the roughness of the layers. This adapts Eqn \ref{equ:fres} to the form,
+This algorithm models the layers as perfectly flat layers, which will not be strictly true in the case of soft matter systems such as a bilayer.
+This resulted in the correction term being added to Eqn \ref{equ:fres} to account for the roughness of the layers.
+This adapts Eqn \ref{equ:fres} to the form,
 %
 \begin{equation}
 	r_{n,n+1} = \frac{k_n - k_{n+1}}{k_n + k_{n+1}}\exp{(-2k_nk_{n+1}\sigma^2_{n,n+1})},
 \end{equation}
 %
-where, $\sigma_{n,n+1}$ is the interfacial roughness between layers $n$ and $n+1$. This has the effect of Gaussian broadening the layers into each other, as a result. Code Block \ref{cb:refl} is currently implemented in a variety of reflectometry modelling software packages, such as refnx, MOTOFIT, RasCAL, and Aurore.\cite{refnx2018,Nelson2006,rascal2016,Gerelli2016,Gerelli2016a} Applying this method to the scattering length density profile shown in Figure \ref{fig:kine} gives the reflectometry profile shown with the dashed green line in Figure \ref{fig:dyna}.
+where, $\sigma_{n,n+1}$ is the interfacial roughness between layers $n$ and $n+1$.
+This has the effect of Gaussian broadening the layers into each other, as a result. Code Block \ref{cb:refl} is currently implemented in a variety of reflectometry modelling software packages, such as refnx, MOTOFIT, RasCAL, and Aurore \cite{refnx2018,Nelson2006,rascal2016,Gerelli2016,Gerelli2016a}.
+Applying this method to the scattering length density profile shown in Figure \ref{fig:kine} gives the reflectometry profile shown with the dashed green line in Figure \ref{fig:dyna}.
 %
 \begin{figure}
 	\centering
@@ -352,7 +406,11 @@ where, $\sigma_{n,n+1}$ is the interfacial roughness between layers $n$ and $n+1
 
 \subsection{Small angle scattering}
 
-Eqn. \ref{equ:sldsca} identified that the scattering differential cross-section for some object was related to the scattering length density by a Fourier transform, which is shown graphically in Figure \ref{fig:scales}. This figure shows that there is a reciprocal relationship between the size of the object and the scattered intensity, decaying significantly up to values of $\sfrac{2\pi}{d_x}$, where $d_x$ is the size of the object. This means that in order to probe the large-scale structural features that are of interest in the study of soft materials, it is necessary to consider small values of $q$. When considering the nature of $q$ in Eqn. \label{equ:theq}, it is clear that such experiments would benefit from small values of $\theta$ and large values of $\lambda$. Hence, the appication of small angle scattering (SAS). 
+Eqn. \ref{equ:sldsca} identified that the scattering differential cross-section for some object was related to the scattering length density by a Fourier transform, which is shown graphically in Figure \ref{fig:scales}.
+This figure shows that there is a reciprocal relationship between the size of the object and the scattered intensity, decaying significantly up to values of $\sfrac{2\pi}{d_x}$, where $d_x$ is the size of the object.
+This means that in order to probe the large-scale structural features that are of interest in the study of soft materials, it is necessary to consider small values of $q$.
+When considering the nature of $q$ in Eqn. \label{equ:theq}, it is clear that such experiments would benefit from small values of $\theta$ and large values of $\lambda$.
+Hence, the appication of small angle scattering (SAS).
 %
 \begin{figure}
 	\centering
@@ -361,5 +419,22 @@ Eqn. \ref{equ:sldsca} identified that the scattering differential cross-section 
 	\label{fig:scales}
 \end{figure}
 %
+
+A SAS experiment generally involves some sample being placed in the path of the probing radiation; and the scattering pattern that results from this tranmission is measured at some distance, as is shown in Figure \ref{fig:sasgeo} for the D22 SANS instrument of the ILL.
+SAS instruments are usually very large, due to the large post sample flight path that is necessary to reach the small angles being measured; a longer flight path allows more space for angular divergence.
+Transmission SAS can provide information about the size, shape and orientation of the sample's components \cite{Willis2009}.
+The range in $q$ that is typically covered by a SAS instrument is usually around \SIrange{5e-3}{0.5}{\per\angstrom}, which corresponds to \SIrange{10}{1000}{\angstrom} in real-space. The neutron or X-ray detector of a SAS instrument is often two-dimensional, meaning that for an isotropic scattering profile, the detector image is radially averaged to give an $I(q)$ scattering profile. It is possible to increase the $q$-range of a SAS instrument through the introduction of wide-$q$ detector banks close to the sample or small-$q$ detector banks further away. This allows the SANS2D instrument, at the ISIS Neutron and Muon Source, to have a total range from \SIrange{2e-3}{2}{\angstrom} \cite{sans2d2016}.
+%
+\begin{figure}
+	\centering
+	\includegraphics[width=0.75\textwidth]{theory/d22}
+	\caption{A schematic of the D22 instrument of the ILL, from Ref. \cite{Grillo2008}.}
+	\label{fig:sasgeo}
+\end{figure}
+%
+
+\subsubsection{Analysis}
+
+
 
 \subsection{Grazing incidence small angle scattering}
