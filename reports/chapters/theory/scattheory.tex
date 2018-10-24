@@ -423,7 +423,9 @@ Hence, the appication of small angle scattering (SAS).
 A SAS experiment generally involves some sample being placed in the path of the probing radiation; and the scattering pattern that results from this tranmission is measured at some distance, as is shown in Figure \ref{fig:sasgeo} for the D22 SANS instrument of the ILL.
 SAS instruments are usually very large, due to the large post sample flight path that is necessary to reach the small angles being measured; a longer flight path allows more space for angular divergence.
 Transmission SAS can provide information about the size, shape and orientation of the sample's components \cite{Willis2009}.
-The range in $q$ that is typically covered by a SAS instrument is usually around \SIrange{5e-3}{0.5}{\per\angstrom}, which corresponds to \SIrange{10}{1000}{\angstrom} in real-space. The neutron or X-ray detector of a SAS instrument is often two-dimensional, meaning that for an isotropic scattering profile, the detector image is radially averaged to give an $I(q)$ scattering profile. It is possible to increase the $q$-range of a SAS instrument through the introduction of wide-$q$ detector banks close to the sample or small-$q$ detector banks further away. This allows the SANS2D instrument, at the ISIS Neutron and Muon Source, to have a total range from \SIrange{2e-3}{2}{\angstrom} \cite{sans2d2016}.
+The range in $q$ that is typically covered by a SAS instrument is usually around \SIrange{5e-3}{0.5}{\per\angstrom}, which corresponds to \SIrange{10}{1000}{\angstrom} in real-space. The neutron or X-ray detector of a SAS instrument is often two-dimensional, meaning that for an isotropic scattering profile, the detector image is radially averaged to give an $I(q)$ scattering profile.
+It is possible to increase the $q$-range of a SAS instrument through the introduction of wide-$q$ detector banks close to the sample or small-$q$ detector banks further away.
+This allows the SANS2D instrument, at the ISIS Neutron and Muon Source, to have a total range from \SIrange{2e-3}{2}{\angstrom} \cite{sans2d2016}.
 %
 \begin{figure}
 	\centering
@@ -434,6 +436,27 @@ The range in $q$ that is typically covered by a SAS instrument is usually around
 %
 
 \subsubsection{Analysis}
+
+A radially averaged SAS pattern can be considered as consisting of two section that arise from the form and structure factors for the scattering species.
+The form factor gives information about the average shape of the scattering particle, while the structure factor is a measaure of the interaction present between the objects.
+It is often possible to control the presence of the structure factor by changing the concentration of the sample, eventually the concentration will be so low that all interparticle interaction is screened by the solvent \cite{Edler2015}.
+This method is frequency applied in BioSAXS applications, where the interactions between the protein molecules are of less interest than the overall structure of the complex.
+However, with micelles it is not always possible to remove the structure factor, as the critical micelle concentation may be higher than the minimum concentration at which the structure factor is present.
+It is possible to deconvolvute the structure and form factors for a micellar solution by studying different concentrations, assuming that the form of the micelle is concentration independent.
+
+The rigorous, model-independent method for the analysis of SAS involves taking the inverse Fourier transform of the scattering, to give an auto-correlation functionss of the average particle in the system, which following a deconvolution procedure will resolve the radially averaged scattering length density profile.
+However, this is often cumbersome and has a low information density, when compared to model-dependent techniques.
+
+There are two common, and straight-forward analysis procedures that can be used to give an understanding of the scattering species.
+The first is the Guiner approximation, which is used in the determination of the radius of gyration, $R_g$, of the scattering species -- at ``infinite dilution''.
+This scattering law is only valid at very small values of $q$, where $q < R_g^{-1}$ \cite{Sivia2011},
+%
+\begin{equation}
+	\ln[I(q)] = \ln[I(0)] - \bigg(\frac{R_g^2}{3}\bigg)q^2.
+\end{equation}
+%
+This relationship allows the radius of gyration to be found by plotting the scattering profile transformed into $\ln[I(q)]$ vs. $q^2$, and evaluating the gradient at low $q$.
+
 
 
 
