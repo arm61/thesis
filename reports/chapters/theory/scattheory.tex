@@ -452,12 +452,37 @@ The first is the Guiner approximation, which is used in the determination of the
 This scattering law is only valid at very small values of $q$, where $q < R_g^{-1}$ \cite{Sivia2011},
 %
 \begin{equation}
-	\ln[I(q)] = \ln[I(0)] - \bigg(\frac{R_g^2}{3}\bigg)q^2.
+	\ln[I(q)] = \ln[I(0)] - \Bigg(\frac{R_g^2}{3}\Bigg)q^2.
 \end{equation}
 %
 This relationship allows the radius of gyration to be found by plotting the scattering profile transformed into $\ln[I(q)]$ vs. $q^2$, and evaluating the gradient at low $q$.
+The Guinier plot for the scattering from a sphere with a radius of \SI{20}{\angstrom} is shown in Figure \ref{fig:rg}, where the radius of gyration correlates with the radius of the sphere, $R$, as follows,
+%
+\begin{equation}
+	R_g = \sqrt{\frac{3}{5}}R.
+\end{equation}
+%
+The Guinier analysis is very common in the study of proteins by SAS, as it allows for the determination of the protein size in the native, solution phase \cite{Skou2014}.
+Another common analysis of SAS data comes in the form of Porod's law, which states that for large values of $q$, the scattering intensity becomes proportional to $Sq^{-4}$, where $S$ is the surface area of the sample.
+This mens that by plotting $I(q)q^4$ vs. $q$ and extrapolating to $q \rightarrow \infty$, it is possible to determine the external surface area of the system \cite{Willis2009}.
+Using the surface area it is then possible to qualitatively determine the `roughness' of the system.
+%
+\begin{figure}
+	\centering
+	\includegraphics[width=0.75\textwidth]{theory/rg}
+	\caption{The Guinier plot, (a) the ideal scattering profile from a sphere of radius \SI{20}{\angstrom}, (b) the associated Guinier plot, with a straight line (orange) at low-$q$ showing the radius of gyration to be \SI{\sim15.5}{\angstrom}.}
+	\label{fig:rg}
+\end{figure}
+%
 
-
+In the calculation of a SAS pattern, both the structure and form factors will contribute.
+Therefore, when we model the pattern, the differential cross-section has the following form, when the system is centro-symmetric.
+%
+\begin{equation}
+	\frac{\text{d}\sigma(q)}{\text{d}\Omega} = N_\rho\Delta\rho^2V_p^2 P(q)S(q),
+\end{equation}
+%
+where $N_\rho$ is the number density of the particles, $\Delta\rho$ is the difference in scattering length density between the particles and the solvent, $V_p$ is the particle volume, $P(q)$ is the particle form factor, and $S(q)$ is the structure factor \cite{Pedersen2002}. 
 
 
 \subsection{Grazing incidence small angle scattering}

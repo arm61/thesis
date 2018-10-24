@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[37]:
+# In[1]:
 
 
 import numpy as np
@@ -15,7 +15,7 @@ sys.path.insert(0, 'reports/code_blocks/')
 import reflectometry as refl
 
 
-# In[38]:
+# In[15]:
 
 
 import matplotlib as mpl
@@ -181,4 +181,51 @@ ax.text(0.075, 0.92, '(b)',
         transform=ax.transAxes, size=8)
 plt.tight_layout()
 plt.savefig('reports/figures/theory/scales.pdf')
+
+
+# In[12]:
+
+
+def sphere(r, q):
+     return np.square(np.divide((3 * (np.sin(q * r) - q * r * np.cos(q * r))), np.power((q * r), 3)))
+
+
+# In[91]:
+
+
+q = np.linspace(0.001, 0.75, 100)
+i = sphere(20, q)
+i[np.where(i<0.0001)] = 0.0001
+plt.figure(figsize=(5, 25/6))
+gs = gridspec.GridSpec(2, 1)
+ax = plt.subplot(gs[0, 0])
+ax.plot(q, i)
+ax.set_xscale('log')
+ax.set_yscale('log')
+ax.set_xlabel(r'$q$/Å$^{-1}$')
+ax.set_ylabel(r'$I(q)$')
+ax.set_xlim(0.01, 0.75)
+ax.text(0.05, 0.08, '(a)',
+        horizontalalignment='center',
+        verticalalignment='center',
+        transform=ax.transAxes, size=8)
+ax1 = plt.subplot(gs[1, 0])
+ax1.plot(q * q, np.log(i))
+ax1.plot(q[:40] * q[:40], -((20 * np.sqrt(3 / 5)) ** 2 / 3) * q[:40] * q[:40])
+ax1.set_xlim(0.0, 0.25)
+ax1.set_xlabel(r'$q^2$/Å$^{-2}$')
+ax1.set_ylabel(r'ln[$I(q)$]')
+ax1.text(0.05, 0.08, '(b)',
+        horizontalalignment='center',
+        verticalalignment='center',
+        transform=ax1.transAxes, size=8)
+plt.tight_layout()
+plt.savefig('reports/figures/theory/rg.pdf')
+
+
+# In[1]:
+
+
+import numpy as np
+20 * np.sqrt(3/5)
 
