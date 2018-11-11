@@ -485,6 +485,29 @@ Therefore, when we model the pattern, the differential cross-section has the fol
 where $N_\rho$ is the number density of the particles, $\Delta\rho$ is the difference in scattering length density between the particles and the solvent, $V_p$ is the particle volume, $P(q)$ is the particle form factor, and $S(q)$ is the structure factor \cite{Pedersen2002a}.
 Therefore is it necessary to understand how the function of the form factor and structure factor come about.
 
+The most common method for the modelling of the form-factor is by using very coarse shapes; such as spheres, cylinders, or ellipses.
+This involves the evaulation of analytical or quasi-analytical solutions for the scattering, which have been derived for many common shapes.
+The solution for a sphere, was solved in the early 19th century by Lord Rayleigh \cite{Pedersen2002a}.
+%
+\begin{equation}
+	P(q) = \Bigg\{\frac{3\big\{\sin(qR) - qR\cos(qR)\big\}}{(qR)^3}\Bigg\}^2,
+	\label{equ:sphere}
+\end{equation}
+%
+where $R$ is the radius of the sphere. A comparison between a possible experimental scattering pattern and the scattering generated from Equation \ref{equ:sphere} is shown in Figure \ref{fig:sphere}. Analytical form factors exist for a wide variety of shapes; these can be found in software such as SASView and SASFit \cite{sasview2018, sasfit2018}.
+%
+\begin{figure}
+	\centering
+	\includegraphics[width=0.75\textwidth]{theory/sphere}
+	\caption{The SANS profile of a micelle of \ce{C_{16}TAB} with radius $\SI{50(3)}{\angstrom}$ (circles, generated using SASView \cite{sasview2018}, with instrumental smearing) compared with a curve of equation \ref{equ:sphere}, where $R = \SI{50}{\angstrom}$ (solid line).}
+	\label{fig:sphere}
+\end{figure}
+%
 
+The structure factor accounts for the scattering interference that arises from the interaction of different particles.
+This is modelled using expressions which depend on the nature of the scattering particles; hard-sphere, sticky hard-spheres, screened Coulomb, etc.
+Structure factor expressions are generated as solutions to the Ornstein-Zernike equation \cite{Klein2002}.
+The most relevant sturcture factor in terms of micelle modelling is probably the Hayter-Penfold \cite{Hayter1981}, this is where the micelles are modelled as like-charged, soft spheres. 
+Again, a whole range of these strucuture factor functions are built into the SASView package \cite{sasview2018}.
 
 \subsection{Grazing incidence small angle scattering}

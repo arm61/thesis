@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python
 # coding: utf-8
 
 # In[1]:
@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import sys
 import matplotlib.gridspec as gridspec
+import pandas as pd
 
 sns.set(palette='colorblind')
 sys.path.insert(0, 'reports/code_blocks/')
@@ -183,7 +184,7 @@ plt.tight_layout()
 plt.savefig('reports/figures/theory/scales.pdf')
 
 
-# In[12]:
+# In[19]:
 
 
 def sphere(r, q):
@@ -223,9 +224,40 @@ plt.tight_layout()
 plt.savefig('reports/figures/theory/rg.pdf')
 
 
-# In[1]:
+# In[7]:
 
 
-import numpy as np
-20 * np.sqrt(3/5)
+data = pd.read_csv('data/theory/Experimental-sphere.txt', delim_whitespace=True)
+data.head
+
+
+# In[36]:
+
+
+plt.figure(figsize=(5, 25/11))
+plt.errorbar(data['<X>'], data['<Y>'], yerr=data['<Y>']*0.1, marker='o', ls='')
+plt.yscale('log')
+r = 50
+q = np.linspace(data['<X>'].iloc[0], data['<X>'].iloc[-1], 1000)
+a = sphere(r, q)
+a *= data['<Y>'][0] / a[0]
+plt.plot(q, a)
+plt.ylim([0.1, 10000])
+plt.xlim([0, 0.5])
+plt.ylabel('$I(q)$/cm$^{-1}$')
+plt.xlabel('$q$/Å$^{-1}$')
+plt.tight_layout()
+plt.savefig('reports/figures/theory/sphere.pdf')
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
 

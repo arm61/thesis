@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{24}
+\begin{mcitethebibliography}{28}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -137,7 +137,35 @@ S.~Skou, R.~E. Gillilan and N.~Ando, \emph{Nat. Protoc.}, 2014, \textbf{9},
 \bibitem[Pedersen(2002)]{Pedersen2002a}
 J.~S. Pedersen, in \emph{Neutrons, X-rays and Light: Scattering Methods Applied
   to Soft Condensed Matter}, ed. P.~Linder and T.~Zemb, Elsevier, Amsterdam,
-  The Netherlands, 1st edn., 2002, ch.~15, pp. 381--390\relax
+  The Netherlands, 1st edn., 2002, ch.~14, pp. 381--390\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[sas()]{sasview2018}
+\emph{SASView}, \url{https://www.sasview.org/}, Accessed: 2018-11-11\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[sas()]{sasfit2018}
+\emph{SASfit}, \url{https://kur.web.psi.ch/sans1/SANSSoft/sasfit.html},
+  Accessed: 2018-11-11\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kelin(2002)]{Klein2002}
+R.~Kelin, in \emph{Neutrons, X-rays and Light: Scattering Methods Applied to
+  Soft Condensed Matter}, ed. P.~Linder and T.~Zemb, Elsevier, Amsterdam, The
+  Netherlands, 1st edn., 2002, ch.~13, pp. 351--380\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hayter and Penfold(1981)]{Hayter1981}
+J.~B. Hayter and J.~Penfold, \emph{Mol. Phys.}, 1981, \textbf{42},
+  109--118\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
