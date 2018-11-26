@@ -12,22 +12,17 @@
 \contentsline {subsection}{\numberline {2.1.5}Model-dependent analysis}{8}
 \contentsline {subsection}{\numberline {2.1.6}Reflectometry}{9}
 \contentsline {subsubsection}{Analysis}{9}
-\contentsline {subsection}{\numberline {2.1.7}Small angle scattering}{13}
+\contentsline {subsection}{\numberline {2.1.7}Small angle scattering}{12}
 \contentsline {subsubsection}{Analysis}{15}
-\contentsline {subsection}{\numberline {2.1.8}Grazing incidence small angle scattering}{19}
-\contentsline {section}{\numberline {2.2}Probing radiation}{19}
-\contentsline {subsection}{\numberline {2.2.1}The generation of X-ray and neutrons}{19}
-\contentsline {subsubsection}{X-rays}{19}
-\contentsline {subsubsection}{Neutrons}{22}
-\contentsline {subsection}{\numberline {2.2.2}Contrast variation}{23}
-\contentsline {section}{\numberline {2.3}Classical simulation}{25}
-\contentsline {section}{\numberline {2.4}Simulation methods}{25}
-\contentsline {chapter}{\numberline {3}Reflectometry}{27}
-\contentsline {chapter}{\numberline {4}Small angle scattering}{29}
-\contentsline {chapter}{\numberline {5}Grazing incidence small angle scattering}{31}
-\contentsline {chapter}{\numberline {6}Teaching}{33}
-\contentsline {chapter}{\numberline {7}Conclusions}{35}
-\contentsline {section}{\numberline {7.1}Main Section 1}{35}
-\contentsline {subsection}{\numberline {7.1.1}Subsection 1}{35}
-\contentsline {subsection}{\numberline {7.1.2}Subsection 2}{35}
-\contentsline {section}{\numberline {7.2}Main Section 2}{35}
+\contentsline {subsection}{\numberline {2.1.8}Grazing incidence small angle scattering}{18}
+\contentsline {section}{\numberline {2.2}Probing radiation}{18}
+\contentsline {subsection}{\numberline {2.2.1}Generation of X-rays}{18}
+\contentsline {subsection}{\numberline {2.2.2}Generation of neutrons}{20}
+\contentsline {subsection}{\numberline {2.2.3}Contrast variation}{22}
+\contentsline {section}{\numberline {2.3}Classical simulation}{24}
+\contentsline {section}{\numberline {2.4}Simulation methods}{24}
+\contentsline {chapter}{\numberline {3}Reflectometry}{25}
+\contentsline {chapter}{\numberline {4}Small angle scattering}{27}
+\contentsline {chapter}{\numberline {5}Grazing incidence small angle scattering}{29}
+\contentsline {chapter}{\numberline {6}Teaching}{31}
+\contentsline {chapter}{\numberline {7}Conclusions}{33}
