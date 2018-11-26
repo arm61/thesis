@@ -2,22 +2,32 @@
 \contentsline {chapter}{Declaration of Authorship}{iii}
 \contentsline {chapter}{Abstract}{vii}
 \contentsline {chapter}{Acknowledgements}{ix}
-\contentsline {chapter}{\numberline {1}Theory}{1}
-\contentsline {section}{\numberline {1.1}Scattering}{1}
-\contentsline {subsection}{\numberline {1.1.1}The scattering vector}{1}
-\contentsline {subsection}{\numberline {1.1.2}Scattering from a single fixed particle}{3}
-\contentsline {subsection}{\numberline {1.1.3}Scattering from multiple particles}{4}
-\contentsline {subsection}{\numberline {1.1.4}Scattering length density}{5}
-\contentsline {subsection}{\numberline {1.1.5}Model-dependent analysis}{6}
-\contentsline {subsection}{\numberline {1.1.6}Reflectometry}{6}
-\contentsline {subsubsection}{Analysis}{7}
-\contentsline {subsection}{\numberline {1.1.7}Small angle scattering}{10}
-\contentsline {subsubsection}{Analysis}{12}
-\contentsline {subsection}{\numberline {1.1.8}Grazing incidence small angle scattering}{14}
-\contentsline {section}{\numberline {1.2}Probing radiation}{14}
-\contentsline {subsection}{\numberline {1.2.1}The generation of X-ray and neutrons}{15}
-\contentsline {subsubsection}{X-rays}{15}
-\contentsline {subsubsection}{Neutrons}{16}
-\contentsline {subsection}{\numberline {1.2.2}Contrast variation}{18}
-\contentsline {section}{\numberline {1.3}Classical simulation}{20}
-\contentsline {section}{\numberline {1.4}Optimisation \& Sampling}{20}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {chapter}{\numberline {2}Theory}{3}
+\contentsline {section}{\numberline {2.1}Scattering}{3}
+\contentsline {subsection}{\numberline {2.1.1}The scattering vector}{3}
+\contentsline {subsection}{\numberline {2.1.2}Scattering from a single fixed particle}{6}
+\contentsline {subsection}{\numberline {2.1.3}Scattering from multiple particles}{6}
+\contentsline {subsection}{\numberline {2.1.4}Scattering length density}{8}
+\contentsline {subsection}{\numberline {2.1.5}Model-dependent analysis}{8}
+\contentsline {subsection}{\numberline {2.1.6}Reflectometry}{9}
+\contentsline {subsubsection}{Analysis}{9}
+\contentsline {subsection}{\numberline {2.1.7}Small angle scattering}{13}
+\contentsline {subsubsection}{Analysis}{15}
+\contentsline {subsection}{\numberline {2.1.8}Grazing incidence small angle scattering}{19}
+\contentsline {section}{\numberline {2.2}Probing radiation}{19}
+\contentsline {subsection}{\numberline {2.2.1}The generation of X-ray and neutrons}{19}
+\contentsline {subsubsection}{X-rays}{19}
+\contentsline {subsubsection}{Neutrons}{22}
+\contentsline {subsection}{\numberline {2.2.2}Contrast variation}{23}
+\contentsline {section}{\numberline {2.3}Classical simulation}{25}
+\contentsline {section}{\numberline {2.4}Simulation methods}{25}
+\contentsline {chapter}{\numberline {3}Reflectometry}{27}
+\contentsline {chapter}{\numberline {4}Small angle scattering}{29}
+\contentsline {chapter}{\numberline {5}Grazing incidence small angle scattering}{31}
+\contentsline {chapter}{\numberline {6}Teaching}{33}
+\contentsline {chapter}{\numberline {7}Conclusions}{35}
+\contentsline {section}{\numberline {7.1}Main Section 1}{35}
+\contentsline {subsection}{\numberline {7.1.1}Subsection 1}{35}
+\contentsline {subsection}{\numberline {7.1.2}Subsection 2}{35}
+\contentsline {section}{\numberline {7.2}Main Section 2}{35}

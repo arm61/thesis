@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{28}
+\begin{mcitethebibliography}{31}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -166,6 +166,25 @@ R.~Kelin, in \emph{Neutrons, X-rays and Light: Scattering Methods Applied to
 \bibitem[Hayter and Penfold(1981)]{Hayter1981}
 J.~B. Hayter and J.~Penfold, \emph{Mol. Phys.}, 1981, \textbf{42},
   109--118\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[W.(1915)]{Debye1915}
+D.~P.~J. W., \emph{Ann. Phys.}, 1915, \textbf{351}, 809--823\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[I.(1994)]{Svergun1994}
+S.~D. I., \emph{Acta. Crsyt.}, 1994, \textbf{A50}, 391--402\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[C. and E.(2013)]{Watson2013}
+W.~M. C. and C.~J. E., \emph{J. Appl. Crystallogr.}, 2013, \textbf{46},
+  1171--1177\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

@@ -1,51 +1,57 @@
 This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
+A level-1 auxiliary file: chapters/introduction.aux
 A level-1 auxiliary file: chapters/theory.aux
+A level-1 auxiliary file: chapters/reflectometry.aux
+A level-1 auxiliary file: chapters/smallangle.aux
+A level-1 auxiliary file: chapters/gisas.aux
+A level-1 auxiliary file: chapters/teaching.aux
+A level-1 auxiliary file: chapters/conclusions.aux
 The style file: rsc.bst
 Database file #1: rsc-main.bib
 Database file #2: main.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 rsc 2016/08/22 v3.1f
-You've used 28 entries,
+You've used 31 entries,
             3113 wiz_defined-function locations,
-            853 strings with 9151 characters,
-and the built_in function-call counts, 8515 in all, are:
-= -- 727
-> -- 352
-< -- 37
-+ -- 113
-- -- 89
-* -- 691
-:= -- 1142
-add.period$ -- 27
-call.type$ -- 28
+            884 strings with 9655 characters,
+and the built_in function-call counts, 9399 in all, are:
+= -- 807
+> -- 387
+< -- 40
++ -- 124
+- -- 97
+* -- 765
+:= -- 1270
+add.period$ -- 30
+call.type$ -- 31
 change.case$ -- 9
-chr.to.int$ -- 33
-cite$ -- 34
-duplicate$ -- 488
-empty$ -- 724
-format.name$ -- 117
-if$ -- 1845
+chr.to.int$ -- 36
+cite$ -- 37
+duplicate$ -- 530
+empty$ -- 795
+format.name$ -- 130
+if$ -- 2032
 int.to.chr$ -- 3
 int.to.str$ -- 1
 missing$ -- 6
-newline$ -- 183
-num.names$ -- 68
-pop$ -- 171
+newline$ -- 201
+num.names$ -- 77
+pop$ -- 180
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 274
+skip$ -- 299
 stack$ -- 0
-substring$ -- 421
-swap$ -- 192
-text.length$ -- 65
+substring$ -- 490
+swap$ -- 204
+text.length$ -- 71
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 184
+type$ -- 205
 warning$ -- 0
-while$ -- 85
+while$ -- 94
 width$ -- 0
-write$ -- 404
+write$ -- 446
