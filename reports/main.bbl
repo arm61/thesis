@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{31}
+\begin{mcitethebibliography}{38}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -185,6 +185,67 @@ S.~D. I., \emph{Acta. Crsyt.}, 1994, \textbf{A50}, 391--402\relax
 \bibitem[C. and E.(2013)]{Watson2013}
 W.~M. C. and C.~J. E., \emph{J. Appl. Crystallogr.}, 2013, \textbf{46},
   1171--1177\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[M\"{u}ller-Buschbaum \emph{et~al.}(2005)M\"{u}ller-Buschbaum, Roth,
+  Burghammer, Bauer, Pfister, David, and Riekel]{MullerBuschbaum2005}
+P.~M\"{u}ller-Buschbaum, S.~V. Roth, M.~Burghammer, E.~Bauer, S.~Pfister,
+  C.~David and C.~Riekel, \emph{Physica B Condens. Matter}, 2005, \textbf{357},
+  148--151\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Zhang \emph{et~al.}(2017)Zhang, Wang, Mallapragada, Travesset, and
+  Vaknin]{Zhang2017}
+H.~Zhang, W.~Wang, S.~Mallapragada, A.~Travesset and D.~Vaknin, \emph{J. Phys.
+  Chem. C}, 2017, \textbf{121}, 15424--15429\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[M\"{u}ller-Buschbaum(2009)]{MuellerBuschbaum2009}
+P.~M\"{u}ller-Buschbaum, in \emph{Applications of Synchrotron Light to
+  Scattering and Diffraction in Materials and Life Sciences}, ed. T.~A.
+  Ezquerra, M.~C. Garcia-Gutierrez, A.~Nogales and M.~Gomez, Springer-Verlag,
+  Berlin, Germany, 2009, ch.~3, pp. 61--89\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[M\"{u}ller-Buschbaum \emph{et~al.}(2004)M\"{u}ller-Buschbaum, Gutmann,
+  Cubitt, and Petry]{MullerBuschbaum2004}
+P.~M\"{u}ller-Buschbaum, J.~S. Gutmann, R.~Cubitt and W.~Petry, \emph{Physica B
+  Condens. Matter}, 2004, \textbf{350}, 207--210\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Nicklin \emph{et~al.}(2016)Nicklin, Arnold, Rawle, and
+  Warne]{Nicklin2016}
+C.~Nicklin, T.~Arnold, a.~J. Rawle and A.~Warne, \emph{J. Synchrotron Rad.},
+  2016, \textbf{23}, 1245--1253\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Buffet \emph{et~al.}(2012)Buffet, Rothkirch, D\"{o}hrmann,
+  K\"{o}rstgens, Abul~Kashem, Perlich, Herzog, Schwartzkopf, Gehrke,
+  M\"{u}ller-Buschbaum, and Roth]{Buffet2012}
+A.~Buffet, A.~Rothkirch, R.~D\"{o}hrmann, V.~K\"{o}rstgens, M.~M. Abul~Kashem,
+  J.~Perlich, G.~Herzog, M.~Schwartzkopf, R.~Gehrke, P.~M\"{u}ller-Buschbaum
+  and S.~V. Roth, \emph{J. Synchrotron Rad.}, 2012, \textbf{19}, 647--653\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hexemer \emph{et~al.}(2010)Hexemer, Bras, Glossinger, Schaible, Gann,
+  Kirian, MacDowell, Church, Rude, and Padmore]{Hexemer2010}
+A.~Hexemer, W.~Bras, J.~Glossinger, E.~Schaible, E.~Gann, R.~Kirian,
+  A.~MacDowell, M.~Church, B.~Rude and H.~Padmore, \emph{J. Phys. Conf. Ser.},
+  2010, \textbf{247}, 012007\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
