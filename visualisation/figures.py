@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+
 # coding: utf-8
 
 # In[1]:
@@ -248,16 +248,4 @@ plt.ylabel('$I(q)$/cm$^{-1}$')
 plt.xlabel('$q$/Å$^{-1}$')
 plt.tight_layout()
 plt.savefig('reports/figures/theory/sphere.pdf')
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 

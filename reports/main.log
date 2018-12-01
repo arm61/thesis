@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.28)  1 DEC 2018 12:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.28)  1 DEC 2018 12:38
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
@@ -1601,12 +1600,12 @@ Overfull \hbox (1.70967pt too wide) in paragraph at lines 31--32
  []
 
 )
-<figures/theory/dyna.pdf, id=209, 361.35pt x 164.25pt>
+<figures/theory/dyna.pdf, id=220, 361.35pt x 164.25pt>
 File: figures/theory/dyna.pdf Graphic file (type pdf)
 <use figures/theory/dyna.pdf>
 Package pdftex.def Info: figures/theory/dyna.pdf  used on input line 400.
 (pdftex.def)             Requested size: 350.68275pt x 159.4025pt.
-<figures/theory/scales.pdf, id=210, 361.35pt x 164.25pt>
+<figures/theory/scales.pdf, id=221, 361.35pt x 164.25pt>
 File: figures/theory/scales.pdf Graphic file (type pdf)
 <use figures/theory/scales.pdf>
 Package pdftex.def Info: figures/theory/scales.pdf  used on input line 417.
@@ -1639,7 +1638,7 @@ LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <3.49998> not available
 (Font)              size <5> substituted on input line 418.
 
 [12] [13 <./figures/theory/dyna.pdf>]
-<figures/theory/d22.pdf, id=244, 949.29657pt x 413.2941pt>
+<figures/theory/d22.pdf, id=261, 949.29657pt x 413.2941pt>
 File: figures/theory/d22.pdf Graphic file (type pdf)
 <use figures/theory/d22.pdf>
 Package pdftex.def Info: figures/theory/d22.pdf  used on input line 432.
@@ -1649,24 +1648,24 @@ Package pdftex.def Info: figures/theory/d22.pdf  used on input line 432.
 pdfTeX warning: pdflatex (file ./figures/theory/d22.pdf): PDF inclusion: multip
 le pdfs with page group included in a single page
 >]
-<figures/theory/rg.pdf, id=281, 361.35pt x 301.125pt>
+<figures/theory/rg.pdf, id=305, 361.35pt x 301.125pt>
 File: figures/theory/rg.pdf Graphic file (type pdf)
 <use figures/theory/rg.pdf>
 Package pdftex.def Info: figures/theory/rg.pdf  used on input line 472.
 (pdftex.def)             Requested size: 350.68275pt x 292.23792pt.
  [15]
-<figures/theory/sphere.pdf, id=285, 361.35pt x 164.25pt>
+<figures/theory/sphere.pdf, id=309, 361.35pt x 164.25pt>
 File: figures/theory/sphere.pdf Graphic file (type pdf)
 <use figures/theory/sphere.pdf>
 Package pdftex.def Info: figures/theory/sphere.pdf  used on input line 501.
 (pdftex.def)             Requested size: 350.68275pt x 159.4025pt.
  [16 <./figures/theory/rg.pdf>] [17 <./figures/theory/sphere.pdf>]
-<figures/theory/gisas.png, id=350, 669.50125pt x 539.01375pt>
+<figures/theory/gisas.png, id=389, 669.50125pt x 539.01375pt>
 File: figures/theory/gisas.png Graphic file (type png)
 <use figures/theory/gisas.png>
 Package pdftex.def Info: figures/theory/gisas.png  used on input line 566.
 (pdftex.def)             Requested size: 350.68275pt x 282.34492pt.
-<figures/theory/dwba.png, id=351, 910.40125pt x 160.6pt>
+<figures/theory/dwba.png, id=390, 910.40125pt x 160.6pt>
 File: figures/theory/dwba.png Graphic file (type png)
 <use figures/theory/dwba.png>
 Package pdftex.def Info: figures/theory/dwba.png  used on input line 588.
@@ -1674,24 +1673,24 @@ Package pdftex.def Info: figures/theory/dwba.png  used on input line 588.
 )
 (./chapters/theory/probing.tex [18] [19 <./figures/theory/gisas.png> <./figures
 /theory/dwba.png>]
-<figures/theory/syn.png, id=361, 745.78625pt x 669.50125pt>
+<figures/theory/syn.png, id=400, 745.78625pt x 669.50125pt>
 File: figures/theory/syn.png Graphic file (type png)
 <use figures/theory/syn.png>
 Package pdftex.def Info: figures/theory/syn.png  used on input line 17.
 (pdftex.def)             Requested size: 350.68275pt x 314.80865pt.
  [20] [21 <./figures/theory/syn.png>]
-<figures/theory/undulator.png, id=369, 487.8225pt x 280.04625pt>
+<figures/theory/undulator.png, id=408, 487.8225pt x 280.04625pt>
 File: figures/theory/undulator.png Graphic file (type png)
 <use figures/theory/undulator.png>
 Package pdftex.def Info: figures/theory/undulator.png  used on input line 35.
 (pdftex.def)             Requested size: 350.68275pt x 201.32118pt.
  [22 <./figures/theory/undulator.png>] [23] [24]
-<figures/theory/scatlen.png, id=380, 1136.245pt x 520.94624pt>
+<figures/theory/scatlen.png, id=419, 1136.245pt x 520.94624pt>
 File: figures/theory/scatlen.png Graphic file (type png)
 <use figures/theory/scatlen.png>
 Package pdftex.def Info: figures/theory/scatlen.png  used on input line 127.
 (pdftex.def)             Requested size: 350.68275pt x 160.78421pt.
-<figures/theory/convar.pdf, id=381, 2758.76913pt x 749.20319pt>
+<figures/theory/convar.pdf, id=420, 2758.76913pt x 749.20319pt>
 File: figures/theory/convar.pdf Graphic file (type pdf)
 <use figures/theory/convar.pdf>
 Package pdftex.def Info: figures/theory/convar.pdf  used on input line 153.
@@ -1882,10 +1881,10 @@ palatino/uplb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/palatin
 o/uplr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/palatino/uplr8
 a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
 
-Output written on main.pdf (62 pages, 1631784 bytes).
+Output written on main.pdf (62 pages, 1638712 bytes).
 PDF statistics:
- 516 PDF objects out of 1000 (max. 8388607)
- 296 compressed objects within 3 object streams
+ 556 PDF objects out of 1000 (max. 8388607)
+ 316 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
