@@ -5,10 +5,7 @@
 [a.r.mccluskey@bath.ac.uk](mailto:a.r.mccluskey@bath.ac.uk)
 
 Supervisors:
-- [Karen J. Edler](https://orcid.org/0000-0001-5822-0127)
-- [Stephen C. Parker](https://orcid.org/0000-0003-3804-0975)
-- [Andrew J. Smith](https://orcid.org/0000-0003-3745-7082)
-- [Jonathan L. Rawle](https://orcid.org/0000-0001-8767-4443)
+  [Karen J. Edler](https://orcid.org/0000-0001-5822-0127), [Stephen C. Parker](https://orcid.org/0000-0003-3804-0975), [Andrew J. Smith](https://orcid.org/0000-0003-3745-7082), and [Jonathan L. Rawle](https://orcid.org/0000-0001-8767-4443)
 
 This is the electronic supplementary information (ESI) associated with the Ph.D. thesis of Andrew R. McCluskey.
 The thesis title is "Coarse-graining for the Analysis of Soft Matter Scattering".
