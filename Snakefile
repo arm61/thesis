@@ -18,9 +18,10 @@ FIGURES = [FIG_DIR + 'bath.pdf', FIG_DIR + 'diamond.pdf',
            FIG_THEO + 'dwba.png']
 LATEX = [REP + 'main.tex', REP + 'main.bib',
          REP + CHAP + 'introduction.tex', REP + CHAP + 'theory.tex',
-         REP + CHAP + 'reflectometry.tex', REP + CHAP + 'smallangle.tex',
-         REP + CHAP + 'gisas.tex', REP + CHAP + 'teaching.tex',
-         REP + CHAP + 'conclusions.tex', REP + CHAP + THEO + 'scattheory.tex',
+         REP + CHAP + 'reflectometry1.tex', REP + CHAP + 'reflectometry2.tex',
+         REP + CHAP + 'smallangle.tex', REP + CHAP + 'gisas.tex',
+         REP + CHAP + 'teaching.tex', REP + CHAP + 'conclusions.tex',
+         REP + CHAP + THEO + 'scattheory.tex',
          REP + CHAP + THEO + 'probing.tex',
          REP + CHAP + THEO + 'classical.tex',
          REP + CHAP + THEO + 'simulation.tex']
@@ -50,7 +51,8 @@ rule latexclean:
         rm -f reports/chapters/conclusions.aux
         rm -f reports/chapters/gisas.aux
         rm -f reports/chapters/introduction.aux
-        rm -f reports/chapters/reflectometry.aux
+        rm -f reports/chapters/reflectometry1.aux
+        rm -f reports/chapters/reflectometry2.aux
         rm -f reports/chapters/smallangle.aux
         rm -f reports/chapters/teaching.aux
         rm -f reports/chapters/theory.aux
@@ -76,7 +78,8 @@ rule clean:
         shell("rm -f reports/chapters/conclusions.aux")
         shell("rm -f reports/chapters/gisas.aux")
         shell("rm -f reports/chapters/introduction.aux")
-        shell("rm -f reports/chapters/reflectometry.aux")
+        shell("rm -f reports/chapters/reflectometry1.aux")
+        shell("rm -f reports/chapters/reflectometry2.aux")
         shell("rm -f reports/chapters/smallangle.aux")
         shell("rm -f reports/chapters/teaching.aux")
         shell("rm -f reports/chapters/theory.aux")
