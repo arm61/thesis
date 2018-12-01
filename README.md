@@ -38,21 +38,22 @@ snakemake
 ## Project Organization
 
     .
-    ├── config            # For configuration details
-    ├── data
-    │   └── theory        # Theoretical data
-    ├── docs              # Some documentation
-    ├── models            # Python code related to different models applied
-    ├── notebooks         # Jupyter notebooks for clarity of analysis
-    ├── reports           
-    │   └── appendices    # Appendices to the thesis
-    │   └── chapters      
-    │   │   └── theory    # Theory chapter
-    │   └── code_blocks   # Code blocks that are included in the thesis
-    │   └── figures       
-    │       └── theory    # Plots and figures in the theory chapter
-    ├── tools             # Tool scripts used
-    ├── visualisation     # Plotting scripts
+    ├── config/           # For configuration details
+    ├── data/
+    │   └── theory/       # Theoretical data
+    ├── docs/             # Some documentation
+    ├── models/           # Python code related to different models applied
+    ├── notebooks/        # Jupyter notebooks for clarity of analysis
+    ├── reports/        
+    │   └── appendices/   # Appendices to the thesis
+    │   └── chapters/     
+    │   │   └── theory/   # Theory chapter
+    │   └── code_blocks/  # Code blocks that are included in the thesis
+    │   └── figures/      
+    │       └── theory/   # Plots and figures in the theory chapter
+    ├── tools/            # Tool scripts used
+    ├── visualisation/    # Plotting scripts
+    ├── .gitignore        # gitignore details
     ├── LICENSE           # This work is shared under a CC-BY-SA-4.0 Licence
     ├── README.md         # You are here
     └── Snakefile         # The snakemake configuration file
