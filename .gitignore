@@ -18,3 +18,4 @@ reports/main.lot
 reports/main.out
 reports/main.toc
 reports/rsc-main.bib
+visualisation/theory.py

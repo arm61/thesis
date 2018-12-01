@@ -25,7 +25,7 @@ LATEX = [REP + 'main.tex', REP + 'main.bib',
          REP + CHAP + THEO + 'classical.tex',
          REP + CHAP + THEO + 'simulation.tex']
 
-SCRIPTS = ['visualisation/figures.py']
+SCRIPTS = ['visualisation/theory.py']
 
 rule all:
     input:
@@ -80,6 +80,7 @@ rule clean:
         shell("rm -f reports/chapters/smallangle.aux")
         shell("rm -f reports/chapters/teaching.aux")
         shell("rm -f reports/chapters/theory.aux")
+        shell("rm -f visualisation/theory.py")
 
 rule make_thesis:
     input:
@@ -101,23 +102,23 @@ rule make_thesis:
 
 rule make_figues:
     input:
-        'visualisation/figures.py',
+        'visualisation/theory.py',
         'data/theory/Experimental-sphere.txt'
     output:
         FIGURES_PLOT
     shell:
         """
-        python visualisation/figures.py
+        python visualisation/theory.py
         """
 
 rule make_figures_script:
     input:
-        'notebooks/figures.ipynb'
+        'notebooks/theory.ipynb'
     output:
-        'visualisation/figures.py'
+        'visualisation/theory.py'
     shell:
         """
-        jupyter-nbconvert --to script --output-dir=visualisation/ notebooks/figures.ipynb
+        jupyter-nbconvert --to script --output-dir=visualisation/ notebooks/theory.ipynb
         """
 
 rule install_packages:
