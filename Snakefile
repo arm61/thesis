@@ -83,6 +83,7 @@ rule clean:
 
 rule make_thesis:
     input:
+        'reports/MastersDoctoralThesis.cls',
         LATEX,
         FIGURES,
         FIGURES_PLOT,

@@ -386,6 +386,24 @@ KOMA-script documentation for details.}]{fancyhdr}
 }
 
 %----------------------------------------------------------------------------------------
+%	USAGE PAGE DESIGN
+%----------------------------------------------------------------------------------------
+
+\newcommand{\usagename}{Reproducibility Statement}
+\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish} {\usagename}{Reproducibility Statement} % Acknowledgement text for English countries
+\providecaptionname{german,ngerman,austrian,naustrian}{\acknowledgementname}{Danksagung} % Acknowledgement text for Germanic countries
+
+\NewDocumentEnvironment{usagestatement}{}{%
+\checktoopen
+\tttypeout{\usagename}
+\thispagestyle{plain}
+\begin{center}{\huge\textit{\usagename}\par}\end{center}
+}
+{
+\vfil\vfil\null
+}
+
+%----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
