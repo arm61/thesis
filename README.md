@@ -35,14 +35,9 @@ snakemake clean # this will remove all of the output from previous runs
 snakemake
 ```
 
-
-Project Organization
---------------------
+## Project Organization
 
     .
-    ├── LICENSE           # This work is shared under a CC-BY-SA-4.0 Licence
-    ├── README.md         # You are here
-    ├── Snakefile         # The snakemake configuration file
     ├── config            # For configuration details
     ├── data
     │   └── theory        # Theoretical data
@@ -57,4 +52,7 @@ Project Organization
     │   └── figures       
     │       └── theory    # Plots and figures in the theory chapter
     ├── tools             # Tool scripts used
-    └── visualisation     # Plotting scripts
+    ├── visualisation     # Plotting scripts
+    ├── LICENSE           # This work is shared under a CC-BY-SA-4.0 Licence
+    ├── README.md         # You are here
+    └── Snakefile         # The snakemake configuration file
