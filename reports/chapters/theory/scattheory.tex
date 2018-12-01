@@ -507,59 +507,59 @@ where $R$ is the radius of the sphere. A comparison between a possible experimen
 The structure factor accounts for the scattering interference that arises from the interaction of different particles.
 This is modelled using expressions which depend on the nature of the scattering particles; hard-sphere, sticky hard-spheres, screened Coulomb, etc.
 Structure factor expressions are generated as solutions to the Ornstein-Zernike Eqn.~\cite{Klein2002}.
-The most relevant sturcture factor in terms of micelle modelling is probably the Hayter-Penfold \cite{Hayter1981}, this is where the micelles are modelled as like-charged, soft spheres. 
+The most relevant sturcture factor in terms of micelle modelling is probably the Hayter-Penfold \cite{Hayter1981}, this is where the micelles are modelled as like-charged, soft spheres.
 Again, a whole range of these strucuture factor functions are built into the SASView package \cite{sasview2018}.
 
-In order to evalute the scattering profile from an atomic, or coarse-grained system, it is possible to use the Deybe equation \cite{Debye1915}. 
+In order to evalute the scattering profile from an atomic, or coarse-grained system, it is possible to use the Deybe equation \cite{Debye1915}.
 This is an analysis relation for the determination of the scattering profile based on the atomic positions, $\mathbf{r}_i$,
 %
 \begin{equation}
 	I(q) = \sum_{i}^{N}\sum_{j}^{N} b_ib_j\frac{\sin{(q|\mathbf{r}_i-\mathbf{r}_j|)}}{q|\mathbf{r}_i-\mathbf{r}_j|},
 \end{equation}
 %
-where, $N$ is the number of particles, $q$ is the scattering vector, and $b_i$ and $b_j$ are the scattering lengths of particles $i$ and $j$ respectively, for a coarse-grained particle this can be obtained from summing the scattering lengths of the constituent atoms. 
-The Debye equation is powerful, however it is not intrinsically parellisible and as a result scales as $\mathcal{O}(N^2)$. 
+where, $N$ is the number of particles, $q$ is the scattering vector, and $b_i$ and $b_j$ are the scattering lengths of particles $i$ and $j$ respectively, for a coarse-grained particle this can be obtained from summing the scattering lengths of the constituent atoms.
+The Debye equation is powerful, however it is not intrinsically parellisible and as a result scales as $\mathcal{O}(N^2)$.
 In order to improve the efficiency of the calculation of the scattering profile, a variety of methods have been developed that offer a sufficiently accurate approximation \cite{Svergun1994,Watson2013}.
-The Golden Vector method, developed by Watson and Curtis \cite{Watson2013} scales as $\mathcal{O}(Nn)$, where $n$ is the number of scattering vectors used in the calculation. 
-In this method, the scattering amplitude is calculated numerically for a single $\mathbf{q}$-vector, 
+The Golden Vector method, developed by Watson and Curtis \cite{Watson2013} scales as $\mathcal{O}(Nn)$, where $n$ is the number of scattering vectors used in the calculation.
+In this method, the scattering amplitude is calculated numerically for a single $\mathbf{q}$-vector,
 %
 \begin{equation}
 	I(\mathbf{q}) = \Bigg[\sum_{i}^{N}b_i\cos{(\mathbf{q}\cdot\mathbf{r}_i)}\Bigg]^2 + \Bigg[\sum_{i}^{N}b_i\sin{(\mathbf{q}\cdot\mathbf{r}_i)}\Bigg]^2.
 \end{equation}
 %
-This is carried out for $n$ scattering vectors that are selected in an orientationally averaged fashion from a quasi-uniform lattice on a sphere. 
-This was first developed such that $n$ is a number from the Fibonacci sequence \cite{Svergun1994}, however for the Golden Vector method, $n$ may be any positive integer. 
-This leads to the scattering vectors being calculated as, 
+This is carried out for $n$ scattering vectors that are selected in an orientationally averaged fashion from a quasi-uniform lattice on a sphere.
+This was first developed such that $n$ is a number from the Fibonacci sequence \cite{Svergun1994}, however for the Golden Vector method, $n$ may be any positive integer.
+This leads to the scattering vectors being calculated as,
 %
 \begin{equation}
 	\begin{aligned}
 		q_x^{(k)} & = q\cos\Bigg[\sin^{-1}\bigg(\frac{2k}{n}\bigg)\Bigg]\cos\bigg(\frac{2\pi k}{\Phi}\bigg), \\
 		q_y^{(k)} & = q\cos\Bigg[\sin^{-1}\bigg(\frac{2k}{n}\bigg)\Bigg]\sin\bigg(\frac{2\pi k}{\Phi}\bigg), \\
-		q_z^{(k)} & = \frac{2 k q}{n}, 
+		q_z^{(k)} & = \frac{2 k q}{n},
 	\end{aligned}
 \end{equation}
 %
-where, $k$ runs from $-(n-1)/2,\ldots,0,\ldots,(n-1)/2$ and $\Phi$ is the golden ratio, 
+where, $k$ runs from $-(n-1)/2,\ldots,0,\ldots,(n-1)/2$ and $\Phi$ is the golden ratio,
 %
 \begin{equation}
 	\Phi = \frac{1+\sqrt{5}}{2}.
 \end{equation}
 %
-The approximate orientationally averaged scattering is then found as an average of the scattering from each of ther individual $q$-vectors, 
+The approximate orientationally averaged scattering is then found as an average of the scattering from each of ther individual $q$-vectors,
 %
 \begin{equation}
 	I(q) = \frac{1}{n}\Bigg\{\sum_{k=(1-n)/2}^{(n-1)/2} I[\mathbf{q}^{(k)}]\Bigg\}.
 \end{equation}
 %
-The accuracy of this calculation increases with $n$, however good agreement between experiment and simulation has been shown for $n < 100$ even for highly anisotropic systems \cite{Watson2013}. 
+The accuracy of this calculation increases with $n$, however good agreement between experiment and simulation has been shown for $n < 100$ even for highly anisotropic systems \cite{Watson2013}.
 
 
 \subsection{Grazing incidence small angle scattering}
 
-While reflectometry is the study of specular reflections from a layer structure, grazing incidence small angle scattering (GISAS) is the study of the off-specular reflections, those where the scattering vector has $x$- and $y$-components in addition to the $z$-component. 
-This off-specular scattering is that which arises from the heterogeneity present at the interface. 
+While reflectometry is the study of specular reflections from a layer structure, grazing incidence small angle scattering (GISAS) is the study of the off-specular reflections, those where the scattering vector has $x$- and $y$-components in addition to the $z$-component.
+This off-specular scattering is that which arises from the heterogeneity present at the interface.
 This means that GISAS is ideal for the study of material with nanostructure in the plane of the interface, such as organic semiconducting matierals or polyerm-grafted nanoparticles at an interface \cite{MullerBuschbaum2005,Zhang2017}.
-The geometry of a GISAS experiment on a thin film material is shown in Fig.~\ref{fig:gisas}, which also shows a typical GISAS pattern. 
+The geometry of a GISAS experiment on a thin film material is shown in Fig.~\ref{fig:gisas}, which also shows a typical GISAS pattern.
 %
 \begin{figure}
 	\centering
@@ -569,7 +569,24 @@ The geometry of a GISAS experiment on a thin film material is shown in Fig.~\ref
 \end{figure}
 %
 
-In terms of GISAS instrumentation, it can be consider as an amalgamation of a reflectometry instrument and a small angle scattering instrument. 
-The sample environment is that from a reflectometry instrument, while the two-dimensional detector required is that commonly associated with small angle scattering. 
+In terms of GISAS instrumentation, it can be consider as an amalgamation of a reflectometry instrument and a small angle scattering instrument.
+The sample environment is that from a reflectometry instrument, while the two-dimensional detector required is that commonly associated with small angle scattering.
 Commonly, GISAS is found as an additional capability of another instrument, such as the grazing incidence small angle neutron scattering (GISANS) capability of D22 at the ILL or the GISAS setup at I07 of the Diamond Light Source \cite{MullerBuschbaum2004,Nicklin2016}.
 However, as GISAS has grown in popularity as a technique, GISAS focused instruments have been installed, such as MiNaXS at DESY in Hamburg and Beamline 7.3.3 at the ALS in San Francisco \cite{Buffet2012,Hexemer2010}.
+
+\subsubsection{Analysis}
+
+The analysis process for a GISAS profile is substanially more complex than for either the SAS or reflectometry counterparts.
+This is due to the fact that for SAS, the Born approximation is conserved, and only a single scattering event is considered.
+While for reflectometry, there is a well defined theoretical background that enables the analysis were the Born approximation is not valid.
+This is not the case for GISAS, since for off-specular reflectometry to occur, the probing radiation will undergo both scattering and reflectometry events simultaneously.
+In order to account for this, generally, the distorted wave Born approximation (DWBA) is envoked.
+This is an extension of the Born approximation, wherein there are four possible ways in which the probing radition may interact with the, these are shown in Fig.~\ref{fig:dwba}.
+%
+\begin{figure}
+	\centering
+	\includegraphics[width=0.85\textwidth]{theory/dwba}
+	\caption{the four possible way in which some probing radiation may interact with a sample within the DWBA; scattering, reflection-then-scattering, scattering-then-reflection, and reflection-then-scattering-then-reflection, from Ref.~\cite{Hexemer2015}.}
+	\label{fig:dwba}
+\end{figure}
+%

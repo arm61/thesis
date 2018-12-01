@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{38}
+\begin{mcitethebibliography}{39}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -246,6 +246,14 @@ A.~Buffet, A.~Rothkirch, R.~D\"{o}hrmann, V.~K\"{o}rstgens, M.~M. Abul~Kashem,
 A.~Hexemer, W.~Bras, J.~Glossinger, E.~Schaible, E.~Gann, R.~Kirian,
   A.~MacDowell, M.~Church, B.~Rude and H.~Padmore, \emph{J. Phys. Conf. Ser.},
   2010, \textbf{247}, 012007\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hexemer \emph{et~al.}(2015)Hexemer, , and
+  M\"{u}ller-Buschbaum]{Hexemer2015}
+A.~Hexemer,  and P.~M\"{u}ller-Buschbaum, \emph{IUCrJ}, 2015, \textbf{2},
+  106--125\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

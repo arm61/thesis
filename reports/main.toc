@@ -15,12 +15,13 @@
 \contentsline {subsection}{\numberline {2.1.7}Small angle scattering}{12}
 \contentsline {subsubsection}{Analysis}{15}
 \contentsline {subsection}{\numberline {2.1.8}Grazing incidence small angle scattering}{18}
-\contentsline {section}{\numberline {2.2}Probing radiation}{18}
-\contentsline {subsection}{\numberline {2.2.1}Generation of X-rays}{18}
-\contentsline {subsection}{\numberline {2.2.2}Generation of neutrons}{21}
-\contentsline {subsection}{\numberline {2.2.3}Contrast variation}{23}
-\contentsline {section}{\numberline {2.3}Classical simulation}{25}
-\contentsline {section}{\numberline {2.4}Simulation methods}{25}
+\contentsline {subsubsection}{Analysis}{18}
+\contentsline {section}{\numberline {2.2}Probing radiation}{20}
+\contentsline {subsection}{\numberline {2.2.1}Generation of X-rays}{20}
+\contentsline {subsection}{\numberline {2.2.2}Generation of neutrons}{22}
+\contentsline {subsection}{\numberline {2.2.3}Contrast variation}{24}
+\contentsline {section}{\numberline {2.3}Classical simulation}{26}
+\contentsline {section}{\numberline {2.4}Simulation methods}{26}
 \contentsline {chapter}{\numberline {3}Reflectometry}{27}
 \contentsline {chapter}{\numberline {4}Small angle scattering}{29}
 \contentsline {chapter}{\numberline {5}Grazing incidence small angle scattering}{31}
