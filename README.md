@@ -35,6 +35,10 @@ snakemake clean # this will remove all of the output from previous runs
 snakemake
 ```
 
+## Acknowledgements
+
+ARM is grateful to the University of Bath and Diamond Light Source for co-funding a studentship (Studentship No. STU0149). 
+
 ## Project Organization
 
     .
