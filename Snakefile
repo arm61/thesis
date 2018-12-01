@@ -1,6 +1,7 @@
 REP = 'reports/'
 CHAP = 'chapters/'
 THEO = 'theory/'
+APP = 'appendices/'
 FIG_DIR = REP + 'figures/'
 FIG_THEO = FIG_DIR + 'theory/'
 FIGURES_PLOT = [FIG_THEO + 'dyna.pdf', FIG_THEO + 'kine.pdf',
@@ -50,6 +51,7 @@ rule latexclean:
         rm reports/chapters/smallangle.aux
         rm reports/chapters/teaching.aux
         rm reports/chapters/theory.aux
+        rm reports/appendices/license.aux
         """
 
 rule make_thesis:

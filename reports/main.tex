@@ -39,7 +39,11 @@ singlespacing, % Single line spacing, alternatives:
 %nohyperref, % Uncomment to not load the hyperref package
 headsepline, % Uncomment to get a line under the header
 ]{MastersDoctoralThesis} % The class file specifying the document structure
-
+\usepackage{textcomp}
+\usepackage[
+    type={CC},
+    modifier={by-sa},
+    version={4.0},]{doclicense}
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 
@@ -166,12 +170,10 @@ of the \\
 \deptname \\
 \vspace{0.5cm}
 \MONTH, \the\year \\
-\vspace{1.cm}
+\vspace{8.cm}
 {\scshape \bfseries copyright} \\
-Attention is drawn to the fact that copyright of this thesis rests with the author. A copy of this thesis has been supplied on condition that anyone who consults it is understood to recognise that its copyright rests with the author and that they must not copy it or use material from it except as permitted by law or with the consent of the author. \\
-\vspace{0.5cm}
-This thesis may be made available for consultation within the University Library and may be photocopied or lent to other libraries for the purposes of consulation.
-\vspace{1.5cm} \\
+\doclicenseThis
+\vspace{1.5cm}
 \rule[0.5em]{25em}{0.5pt} \\
 \vspace{1.cm}
 
@@ -231,6 +233,8 @@ This thesis may be made available for consultation within the University Library
 \begin{abstract}
 \addchaptertocentry{\abstractname} % Add the abstract to the table of contents
 
+The abstract will go here.
+This will be a brief description of the work in the thesis.
 
 
 \end{abstract}
@@ -242,7 +246,8 @@ This thesis may be made available for consultation within the University Library
 \begin{acknowledgements}
 \addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
 
-
+This is where I will acknowledge people.
+Need to remember everyone...
 
 \end{acknowledgements}
 
@@ -251,7 +256,6 @@ This thesis may be made available for consultation within the University Library
 %----------------------------------------------------------------------------------------
 
 \tableofcontents % Prints the main table of contents
-
 
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
@@ -383,7 +387,7 @@ $\sfrac{\text{d}\sigma(q)}{\text{d}\Omega}$ & differential cross-section & \\
 % Include the appendices of the thesis as separate files from the Appendices folder
 % Uncomment the lines as you write the Appendices
 
-%\include{appendices/AppendixTemplate}
+%\include{appendices/license}
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
