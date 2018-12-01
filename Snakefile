@@ -12,7 +12,8 @@ FIGURES = [FIG_DIR + 'bath.pdf', FIG_DIR + 'diamond.pdf',
            FIG_THEO + 'scales.pdf', FIG_THEO + 'scat.pdf',
            FIG_THEO + 'scatlen.png', FIG_THEO + 'scatvec.pdf',
            FIG_THEO + 'singleatom.pdf', FIG_THEO + 'sphere.pdf',
-           FIG_THEO + 'syn.png', FIG_THEO + 'undulator.png']
+           FIG_THEO + 'syn.png', FIG_THEO + 'undulator.png',
+           FIG_THEO + 'dwba.png']
 LATEX = [REP + 'main.tex', REP + 'main.bib',
          REP + CHAP + 'introduction.tex', REP + CHAP + 'theory.tex',
          REP + CHAP + 'reflectometry.tex', REP + CHAP + 'smallangle.tex',
@@ -52,7 +53,7 @@ rule make_thesis:
     input:
         LATEX,
         FIGURES,
-        'requirements.out'
+        'config/requirements.out'
     output:
         'reports/main.pdf'
     shell:
@@ -66,10 +67,10 @@ rule make_thesis:
 
 rule install_packages:
     input:
-        'requirements.txt'
+        'config/requirements.txt'
     output:
-        'requirements.out'
+        'config/requirements.out'
     shell:
         """
-        conda install --yes --file requirements.txt > requirements.out
+        conda install --yes --file config/requirements.txt > config/requirements.out
         """
