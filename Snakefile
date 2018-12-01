@@ -34,25 +34,52 @@ rule all:
 rule latexclean:
     shell:
         """
-        rm reports/main.aux
-        rm reports/main.bbl
-        rm reports/main.blg
-        rm reports/main.lof
-        rm reports/main.log
-        rm reports/main.lol
-        rm reports/main.lot
-        rm reports/main.pdf
-        rm reports/main.toc
-        rm reports/rsc-main.bib
-        rm reports/chapters/conclusions.aux
-        rm reports/chapters/gisas.aux
-        rm reports/chapters/introduction.aux
-        rm reports/chapters/reflectometry.aux
-        rm reports/chapters/smallangle.aux
-        rm reports/chapters/teaching.aux
-        rm reports/chapters/theory.aux
-        rm reports/appendices/license.aux
+        rm -f reports/main.aux
+        rm -f reports/main.bbl
+        rm -f reports/main.blg
+        rm -f reports/main.fdb_latexmk
+        rm -f reports/main.fls
+        rm -f reports/main.lof
+        rm -f reports/main.log
+        rm -f reports/main.lol
+        rm -f reports/main.lot
+        rm -f reports/main.out
+        rm -f reports/main.pdf
+        rm -f reports/main.toc
+        rm -f reports/rsc-main.bib
+        rm -f reports/chapters/conclusions.aux
+        rm -f reports/chapters/gisas.aux
+        rm -f reports/chapters/introduction.aux
+        rm -f reports/chapters/reflectometry.aux
+        rm -f reports/chapters/smallangle.aux
+        rm -f reports/chapters/teaching.aux
+        rm -f reports/chapters/theory.aux
         """
+
+rule clean:
+    run:
+        for i in FIGURES_PLOT:
+            shell("rm -f {i}")
+        shell("rm -f reports/main.aux")
+        shell("rm -f reports/main.bbl")
+        shell("rm -f reports/main.blg")
+        shell("rm -f reports/main.fdb_latexmk")
+        shell("rm -f reports/main.fls")
+        shell("rm -f reports/main.lof")
+        shell("rm -f reports/main.log")
+        shell("rm -f reports/main.lol")
+        shell("rm -f reports/main.lot")
+        shell("rm -f reports/main.out")
+        shell("rm -f reports/main.pdf")
+        shell("rm -f reports/main.toc")
+        shell("rm -f reports/rsc-main.bib")
+        shell("rm -f reports/chapters/conclusions.aux")
+        shell("rm -f reports/chapters/gisas.aux")
+        shell("rm -f reports/chapters/introduction.aux")
+        shell("rm -f reports/chapters/reflectometry.aux")
+        shell("rm -f reports/chapters/smallangle.aux")
+        shell("rm -f reports/chapters/teaching.aux")
+        shell("rm -f reports/chapters/theory.aux")
 
 rule make_thesis:
     input:
