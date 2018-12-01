@@ -24,7 +24,8 @@ LATEX = [REP + 'main.tex', REP + 'main.bib',
          REP + CHAP + THEO + 'scattheory.tex',
          REP + CHAP + THEO + 'probing.tex',
          REP + CHAP + THEO + 'classical.tex',
-         REP + CHAP + THEO + 'simulation.tex']
+         REP + CHAP + THEO + 'simulation.tex',
+         REP + CHAP + THEO + 'optimisation.tex']
 
 SCRIPTS = ['visualisation/theory.py']
 
