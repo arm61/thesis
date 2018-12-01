@@ -2,6 +2,7 @@
 config/requirements.out
 notebooks/.ipynb_checkpoints
 reports/appendices/AppendixTemplate.tex
+reports/appendices/*.aux
 reports/chapters/chapter_example.tex
 reports/chapters/*.aux
 reports/code_blocks/__pycache__
@@ -14,5 +15,6 @@ reports/main.lof
 reports/main.log
 reports/main.lol
 reports/main.lot
+reports/main.out
 reports/main.toc
 reports/rsc-main.bib
