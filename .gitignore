@@ -1,5 +1,6 @@
 .snakemake
 config/requirements.out
+config/requirements_pip.out
 notebooks/.ipynb_checkpoints
 reports/appendices/AppendixTemplate.tex
 reports/appendices/*.aux

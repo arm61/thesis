@@ -133,4 +133,5 @@ rule install_packages:
     shell:
         """
         conda install --yes --file config/requirements.txt > config/requirements.out
+        pip install -r config/requirements_pip.txt > config/requirements_pip.out
         """
