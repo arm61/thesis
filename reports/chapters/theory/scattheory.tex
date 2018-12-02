@@ -596,3 +596,19 @@ One of the most common methods for the analysis of a GISAS pattern is Bragg peak
 This is where Bragg peaks of crystallinity in the GISAS pattern are selected and analysed in terms of Bragg's and Snell's laws to account for the effects of the surface and substrate, this allows the dependence of $q_z$ to be determined \cite{Lee2007, Busch2006}.
 While useful, this analysis approach is limited to systems with high crystallinity, such as stacked lamellae \cite{Busch2007}.
 This method cannot be easily applied to understand less organised arrangements in soft matter systems, as these give rise to broad, smeared peaks with no clear centre.
+
+Another simplified method for the analysis of a GISAS pattern involves the effective surface approximation.
+This is where, from the two-dimensional GISAS pattern, selected cuts are taken and analysed only as a function of $q_y$.
+This can be used to probe depth dependent properties, as taking such a cut effectively considered the lateral structure at a given depth, rather than the both the lateral structure and that normal to the interface.
+For incident angles $\alpha_i \gg \alpha_c$ and at constant $q_z$, the scattering intensity in the DWBA simplifies and the differential cross section is given by \cite{Naudon2000},
+%
+\begin{equation}
+	\frac{\text{d}\sigma}{\text{d}\Omega} = \frac{A\pi^2}{\lambda^4}\big[(1 - n^2)T_iT_f\big]^2F(\mathbf{q}),
+\end{equation}
+%
+where $A$ is the iluminated surface area, $T_{i,f}$ are the Fresnel transmission factors for incidence and reflectance, and $F(\mathbf{q})$ is the diffuse-scattering factors, which are dependent on the form and structure factors of the lateral structure.
+
+Currently there exists a handful of software packages that are designed to aid in the structural analysis by GISAS.
+These include, but are not limited to, IsGISAXS, BornAgain, and HipGISAXS \cite{Lazsari2002,BornAgain2018,Chourou2013}.
+These software packages generally impliment analytical solutions to the DWBA by considering different form and structure factors for some system.
+In order to have some understanding of the structure that should be fitted to the experimental data, it is often necessary to perform electron microscopy measurements to educate the analysis process. 
