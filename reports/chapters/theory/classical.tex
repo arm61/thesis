@@ -70,9 +70,25 @@ While the short-range interactions are accounted for by a function such as the L
 \end{equation}
 %
 where, $r$ is the distance between the two particles, $\varepsilon_0$ is the dielectric permittivity of the vacuum, $e$ is the charge of the electron, and $q_i$ and $q_j$ are the electronic charges on each of the particles.
+It is clear that when $q_i$ and $q_j$ have the opposite signs Coulomb's law is always attractive.
 
+\subsubsection{Periodic boundary conditions}
 
-
+An example of a very large classical simulation would be $\sim3$ million atoms \cite{Gumbart2009}.
+However, this is still only \SI{1.8e-16}{\mol} which is not remotely realistic as a simulation of a \emph{real} system.
+A common method to allow for the apparent simulation of a much larger system is the use of periodic boundary conditions.
+This is where a boundary condition is applied to the edges of the simulation cell, such as to mimic an infinite system, assuming that the simulation cell is surrounded by identical images of itself (Fig.~\ref{fig:pbc}).
+Using the periodic boundary condition means that atomic diffusion is conserved as when an atom reaches the edge of the simulation cell, it will apear on the other side such that it came from the adjacent periodic time.
+The use of a periodic boundary condition is particularly powerful in the simulation of homogenous systems, such as liquids.
+However, periodicity may result in unexpected results for particular systems, as is discussed in Chapter \ref{reflectometry2}. 
+%
+\begin{figure}
+	\centering
+	\includegraphics[width=0.85\textwidth]{theory/pbc}
+	\caption{A graphical representation of the periodic boundary conditions. Reprinted by permission from Elsevier\textsuperscript{\textcopyright} from Ref.~\cite{Frenkel1996}.}
+	\label{fig:pbc}
+\end{figure}
+%
 
 
 \subsection{Parameterisation}
