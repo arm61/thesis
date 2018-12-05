@@ -21,7 +21,6 @@ Broadly, these interactions can be split into bonded and non-bonded, such that t
 %
 The total potential energy is then the sum of the potential energy for each of the individual atoms.
 
-\subsubsection{Bonded terms}
 The bonded terms are used to describe different aspects of chemical bonds.
 These typically consist of bond stretchs, angle bends and dihedral torsions; within the OPLS2005 potential model \cite{Banks2005}, these interactions have the following mathematical form,
 %
@@ -36,7 +35,6 @@ where, $K_b$ and $b_0$, $K_{\theta}$, $\theta_0$, and $A_1$, $A_2$, and $A_3$ ar
 It can be seen that both the bond stretch and angle bend have harmonic functions, whereas the dihedral consists of a more complex multiple cosine function.
 The values of the potential model dependent parameters are determined as outlined in Section \ref{sec:parameterisation}.
 
-\subsubsection{Non-bonded terms}
 The non-bonded terms are a series of functions that describe the potential energy of intermolecular interactions, such as eletrostatics and London dispersion forces.
 The potential energy of the short-range interactions are usually modelled as a combination of the attractive London dispersion interaction and the repulsive exchange forces that arise from the Pauli exclusions principle \cite{Leach1996}.
 These often forms such as shown below for the Lennard-Jones potential model \cite{LennardJones1924},
@@ -72,15 +70,13 @@ While the short-range interactions are accounted for by a function such as the L
 where, $r$ is the distance between the two particles, $\varepsilon_0$ is the dielectric permittivity of the vacuum, $e$ is the charge of the electron, and $q_i$ and $q_j$ are the electronic charges on each of the particles.
 It is clear that when $q_i$ and $q_j$ have the opposite signs Coulomb's law is always attractive.
 
-\subsubsection{Periodic boundary conditions}
-
 An example of a very large classical simulation would be $\sim3$ million atoms \cite{Gumbart2009}.
 However, this is still only \SI{1.8e-16}{\mol} which is not remotely realistic as a simulation of a \emph{real} system.
 A common method to allow for the apparent simulation of a much larger system is the use of periodic boundary conditions.
 This is where a boundary condition is applied to the edges of the simulation cell, such as to mimic an infinite system, assuming that the simulation cell is surrounded by identical images of itself (Fig.~\ref{fig:pbc}).
 Using the periodic boundary condition means that atomic diffusion is conserved as when an atom reaches the edge of the simulation cell, it will apear on the other side such that it came from the adjacent periodic time.
 The use of a periodic boundary condition is particularly powerful in the simulation of homogenous systems, such as liquids.
-However, periodicity may result in unexpected results for particular systems, as is discussed in Chapter \ref{reflectometry2}. 
+However, periodicity may result in unexpected results for particular systems, as is discussed in Chapter \ref{reflectometry2}.
 %
 \begin{figure}
 	\centering
@@ -89,6 +85,7 @@ However, periodicity may result in unexpected results for particular systems, as
 	\label{fig:pbc}
 \end{figure}
 %
+
 
 
 \subsection{Parameterisation}
