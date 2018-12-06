@@ -92,11 +92,13 @@ rule make_thesis:
         LATEX,
         FIGURES,
         FIGURES_PLOT,
-        'config/requirements.out'
+        'config/requirements.out',
+        'config/requirements_pip.out'
     output:
         'reports/main.pdf'
     shell:
         """
+        black reports/code_blocks/*
         cd reports
         pdflatex main.tex
         bibtex main.aux
@@ -127,9 +129,11 @@ rule make_figures_script:
 
 rule install_packages:
     input:
-        'config/requirements.txt'
+        'config/requirements.txt',
+        'config/requirements_pip.txt'
     output:
-        'config/requirements.out'
+        'config/requirements.out',
+        'config/requirements_pip.out'
     shell:
         """
         conda install --yes --file config/requirements.txt > config/requirements.out

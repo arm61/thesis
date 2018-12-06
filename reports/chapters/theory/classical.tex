@@ -92,11 +92,17 @@ The cut-off is an important component of simulation that must be considered, as 
 This multiple counting would arise from counting between particles in different periodic images that have already been accounted for elsewhere.
 As a result, the energy cut-off distance should always be less than half the shortest simulation cell vector.
 An additional benefit of the energy cut-off distance is that is means that it is not necessary to calculate the energy between every particle, as once the distance has been found to be greater then the cut-off distance the energy for this interaction is immediately taken as zero, increasing computational efficiency.
+Code Block~\ref{cb:lj} gives an example of some code that could be used to calculate the Lennard-Jones energy of an atomistic system, where both the periodic boundary condition and the energy cut-off distance are considered.
+%
+\begin{figure}
+	\centering
+	\begin{minipage}{0.86\textwidth}
+		\lstinputlisting[caption={An example of some code that may be used to generate the Lennard-Jones energy for a given atomistic system, which accounts for the periodic boundary condition and the energy cut-off distance.},label={cb:lj},language=python]{code_blocks/lennardjones.py}
+	\end{minipage}
+\end{figure}
+%
 
 TALK ABOUT THE EWALD SUMMATION.
-
-
-
 
 \subsection{Parameterisation}
 \label{sec:parameterisation}
