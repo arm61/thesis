@@ -56,7 +56,7 @@ However, the Lennard-Jones model has been used heavily in this work.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.85\textwidth]{theory/lj}
-	\caption{The form of each component; attractive (blue), repulsive (orange), of the Lennard-Jones potential model (green) for argon, using parameters from Rahman \cite{Rahman1964}}
+	\caption{The form of each component; attractive (blue), repulsive (orange), of the Lennard-Jones potential model (green) for argon, using parameters from Rahman \cite{Rahman1964}.}
 	\label{fig:lj}
 \end{figure}
 %
@@ -85,6 +85,16 @@ However, periodicity may result in unexpected results for particular systems, as
 	\label{fig:pbc}
 \end{figure}
 %
+
+The periodic boundary condition leads to the necessity to consider another important factor from classical simulation.
+This is the cut-off, the distance after which the energy between to particles is considered to be zero.
+The cut-off is an important component of simulation that must be considered, as if there was no energy cut-off distance it would be possible for multiple counting of particle-particle interactions to occur.
+This multiple counting would arise from counting between particles in different periodic images that have already been accounted for elsewhere.
+As a result, the energy cut-off distance should always be less than half the shortest simulation cell vector.
+An additional benefit of the energy cut-off distance is that is means that it is not necessary to calculate the energy between every particle, as once the distance has been found to be greater then the cut-off distance the energy for this interaction is immediately taken as zero, increasing computational efficiency.
+
+TALK ABOUT THE EWALD SUMMATION.
+
 
 
 
