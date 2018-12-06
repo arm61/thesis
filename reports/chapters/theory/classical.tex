@@ -10,6 +10,7 @@ Classical simulations is used substantially in this work, in terms of both molec
 Therefore, it is necessary to introduce the underlying theory on which this method is defined.
 
 \subsection{Potential models}
+\label{sec:potentmodels}
 Potential modelling is a more computationally efficient method for the calcution of the potential energy of a chemical system.
 A potential model consists of a series of mathematical functions that depend on the atomic positions, $\mathbf{r}$.
 Each of the functions represents the potential energy of a different interaction for a given atom.
@@ -31,9 +32,9 @@ These typically consist of bond stretchs, angle bends and dihedral torsions; wit
 \end{aligned}
 \end{equation}
 %
-where, $K_b$ and $b_0$, $K_{\theta}$, $\theta_0$, and $A_1$, $A_2$, and $A_3$ are potential model dependent parameters for the bonds, angles, and dihedrals respectively, while $b$, $\theta$, and $\phi$ are the bond lengths, the size of the angles, and the size of the dihedrals that depend on the atom positions.
+where, $K_b$ and $b_0$, $K_{\theta}$, $\theta_0$, and $A_1$, $A_2$, and $A_3$ are interaction dependent parameters for the bonds, angles, and dihedrals respectively, while $b$, $\theta$, and $\phi$ are the bond lengths, the size of the angles, and the size of the dihedrals that depend on the atom positions.
 It can be seen that both the bond stretch and angle bend have harmonic functions, whereas the dihedral consists of a more complex multiple cosine function.
-The values of the potential model dependent parameters are determined as outlined in Section \ref{sec:parameterisation}.
+The values of the interaction dependent parameters are determined as outlined in Section \ref{sec:parameterisation}.
 
 The non-bonded terms are a series of functions that describe the potential energy of intermolecular interactions, such as eletrostatics and London dispersion forces.
 The potential energy of the short-range interactions are usually modelled as a combination of the attractive London dispersion interaction and the repulsive exchange forces that arise from the Pauli exclusions principle \cite{Leach1996}.
@@ -43,7 +44,7 @@ These often forms such as shown below for the Lennard-Jones potential model \cit
   E_{\text{non-boned}}(r) = E_{\text{repulsive}} + E_{\text{attractive}} = \frac{A}{r^{12}} - \frac{B}{r^6} = 4\varepsilon\Bigg[\bigg(\frac{\sigma}{r}\bigg)^{12} - \bigg(\frac{\sigma}{r}\bigg)^6\Bigg]
 \end{equation}
 %
-where, $r$ is the distance between two particles, $A$ and $B$ are potential model dependent parameters, and $\sigma$ and $\epsilon$ are simple reformations of these parameters,
+where, $r$ is the distance between two particles, $A$ and $B$ are interaction dependent parameters, and $\sigma$ and $\epsilon$ are simple reformations of these parameters,
 %
 \begin{equation}
   A = 4\varepsilon\sigma^{12} \;\;\;\; B = 4\varepsilon\sigma^6.
@@ -97,13 +98,27 @@ Code Block~\ref{cb:lj} gives an example of some code that could be used to calcu
 \begin{figure}
 	\centering
 	\begin{minipage}{0.86\textwidth}
-		\lstinputlisting[caption={An example of some code that may be used to generate the Lennard-Jones energy for a given atomistic system, which accounts for the periodic boundary condition and the energy cut-off distance.},label={cb:lj},language=python]{code_blocks/lennardjones.py}
+		\lstinputlisting[caption={Code that may be used to generate the Lennard-Jones energy for a given atomistic system, which accounts for the periodic boundary condition and the energy cut-off distance.},label={cb:lj},language=python]{code_blocks/lennardjones.py}
 	\end{minipage}
 \end{figure}
 %
 
-TALK ABOUT THE EWALD SUMMATION.
+The use of the periodic boundary condition may be problematic for systems containing long-range interactions, such as classical electrostatics.
+Due to the fact that the range of the electrostatic interaction may be much greater than the size of half of the simulation cell, which is usually taken to be the energy cut-off distance.
+In order to avoid truncation artifacts, the Ewald summation is often used for the calculation of the electrostatic contribution to the potential energy \cite{Ewald1921}.
+The Ewald summation involves performing the summation of the contributing interaction energies in reciprocal space rather than in real space as is the case for the short-range interactions.
+Most modern molecular dynamics simulation software packages implement the Ewald summation using a particle mesh Ewald (PME) method \cite{Essmann1995}.
 
 \subsection{Parameterisation}
 \label{sec:parameterisation}
+Section \ref{sec:potentmodels} introduced the idea of potential models that may be used to evaluate the potential energy of a given system, much quicker than methods that rely on the use of quantum mechanics.
+However, for these methods to be effective, it is important the that potential models used are able to model the system understudy accurately.
+This is achieved initially by selecting the correct potential model for a given interaction, and then by ensuring that the interaction dependent parameters are accurate for a given interactions.
+The method of obtaining such parameters is referred to as \emph{parameterising} the model.
+Model parameterisation is important for all types of potential models, for example it is necessary to determine the equilibrium bond length $b_0$ and the force constant $K_b$ for a given covalent bonds, or the partial electrostatic charge that is present on a carbonyl oxygen atom when it interacts with the hydrogen atom from a neighbouring hydroxyl group. 
+
+Parameterisation of a potential model is usually achieved by comparison of fitting the potential model functions to energetic data obtained using a higher accuracy technique, such as quantum mechanical calculations or experimental methods.
+
+
+
 \subsection{Coarse-graining}
