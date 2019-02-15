@@ -32,6 +32,7 @@ output/reflectometry2/dspc_30/*
 output/reflectometry2/dspc_40/*
 output/reflectometry2/dspc_50/*
 data.zip
+rsc-main.bib
 
 !output/reflectometry1/dlpc_xray/.gitkeep
 !output/reflectometry1/dmpc_xray/.gitkeep
