@@ -1,0 +1,69 @@
+\section{Introduction}
+\label{sec:ref1intro}
+\subsection{Deep eutectic solvents}
+Deep eutectic solvents (DES) are a class of green, sustainable liquids that may be obtained from the combination of ionic species with compounds capable of acting as hydrogen bond donors, such as sugar, alcohols, amines, and carboxylic acids \cite{smith_deep_2014,dai_natural_2013}.
+The resulting extensive hydrogen bonding network is capable of stabilising the ionic species such that the eutectic mixture will remain liquid at room temperature \cite{hammond_liquid_2016,hammond_resilience_2017,araujo_inelastic_2017}.
+Using different precursor materials can allow for the ability to tune the resulting solvent's physicochemical properties, such as polarity \cite{pandey_how_2014}, viscosity and surface tension \cite{smith_deep_2014}, network charge \cite{zahn_charge_2016}, and hydrophobicity \cite{ribeiro_menthol-based_2015,van_osch_hydrophobic_2015}.
+Recently DES have also been shown to exhibit a ``solvophobic'' effect through the promotion of surfactant micelle formation \cite{sanchez-fernandez_micellization_2016,arnold_surfactant_2015,hsieh_micelle_2018,banjare_self-assembly_2018}, phospholipid bilayer formation \cite{bryant_spontaneous_2016,bryant_effect_2017,gutierrez_freeze-drying_2009}, and the ability to stability non-ionin polymer \cite{sapir_properties_2016} and protein conformations \cite{sanchez-fernandez_protein_2017}.
+
+Phospholipid monolayers at the air/water interface have been widely studied as simplistic models for biological membranes.
+As such, they have been used to gain insight into many biological processes that are technologically and medically relevant.
+For example, investigations at the air/salt-water interface have identified the importance that interactions between charged phospholipid head groups and ions present in solution have on the structure, monolayer packing and stability \cite{mohwald_phospholipid_1990,kewalramani_effects_2010}.
+However, the native environment for lipids in-vivo is far from simple aqueous solutions.
+In fact, it has been suggested \cite{dai_natural_2013,hammond_resilience_2017} that DES might form within the crowded cellular environment and could assist in solubilizing biological species in an intermediate environment between that of the hydrophobic phospholipid tail groups and the highly polar water-rich regions, thereby assisting survival under extreme conditions such as freezing temperatures and drought where the water content of the cells is restricted.
+
+This chapter presents the first observation of phospholipid monolayer at an air-DES interface.
+Furthermore, this is one of a few examples of a phospholipid monolayer at the interface between air and a non-aqueous solvent, with only formamide noted previously \cite{graner_phospholipidic_1995}.
+Langmuir monol;ayers of non-phospholipidic surfactant molecules have also been noted at air-formamide and air-mercury interfaces \cite{weinbach_self-assembled_1993,magnussen_self-assembly_1996,kraack_structure_2002}.
+In these works, the authors noted that the non-aqueous surface had an effect on the overall structure of the monolayer, but little was said about the underlying mechanism.
+
+\subsection{Optimisation and sampling in reflectometry analysis}
+The analysis of reflectometry data usually involves the use of some model-dependency.
+Therefore it is necessary to optimise the difference between our model, and the experimental dataset.
+An analytic method, such as the gradient descent method (Section~\ref{sec:singlecan}) is not usually suitable for application to the optimisation of a reflectometry model, as these are very capable at optimisation to local minima, which would require accurate prior knowledge of the model structure \cite{lovell_analysis_1999}.
+Despite the analytic nature of the Maximum entropy (MaxEnt) optimisation method, this showed some success in the optimisation of reflectometry models, due in part to the immunity that optimisation carries to the production of a large number of solutions as it is able to determine the most likely model \cite{geoghegan_experimental_1996,bucknall_neutron_1997}.
+This approach is computationally intensive and therefore become unusual to apply over other more efficient methods.
+Some aspects of the MaxEnt methods were replicated in the work of Sivia \emph{et al.}, which employed Bayesian probability theory to rationalise the model selection \cite{geoghegan_experimental_1996,sivia_introduction_1993,sivia_bayesian_1998,sivia_analysis_1991}.
+
+The use of analytic methods became less favourable as more frequently stochastic methods were used as these offers a more pragmatic solution to the local minima problem.
+These are methods that utilise inherently random behaviour to determine a global minimum.
+The groove tracking method of Zhou and Chen \cite{zhou_model-independent_1993,zhou_theoretical_1995}, was one of the first instances of a stochastic optimisation process applied to the analysis of reflectometry data.
+This randomly varied the scattering length density (SLD) of the layers in the model using a Monte Carlo approach.
+A similar approach used a simulated annealing approach, with a ``temperature'' factor that decreased as the number of iterations increases \cite{kunz_model-free_1993}, however, this approach is still subject to the local minima problem as the probability of move acceptance decreased over time.
+
+Both this Monte Carlo based approaches and the analytic methods previously discuss make same perturbations to the fitted parameters during processing.
+However, this the cause of the propensity to converge to a local minimum.
+This lead to the application of genetic algorithm derived methods for the optimisation of reflectometry models.
+Beginning with the works of de Haan and Drijkoningen \cite{de_haan_genetic_1994} and Dane \emph{et al.} \cite{dane_application_1998}, who first applied this methods to reflectometry analysis.
+These methods are designed stochastically sample an entire given search-space, and therefore are more able to overcome the local minima issue and determine the vicinity of a global minimum.
+Following this initial application, genetic algorithm were used frequently in the optimisation of reflectometry models \cite{ulyanenkov_genetic_2000,ulyanenkov_extended_2005,politsch_unbiased_2002,wormington_characterization_1999}.
+In particular, the work of Wormington \emph{et al.} \cite{wormington_characterization_1999} showed the applicability for the differential evolution method towards reflectometry model optimisation, which resulted in the inclusion of such method in many common reflectometry analysis software packages \cite{bjorck_fitting_2011,bjorck_genx_2007,nelson_co-refinement_2006,nelson_refnx_2019,ott_simulreflec_2008,kienzle_ncnr_2006}.
+
+The use of Markov chain Monte Carlo (MCMC) methods to probe the probability distribution functions of the fitting parameters of a reflectometry model have grown in popularity \cite{gil_limitations_2012,hoogerheide_structure_2018,owejan_solid_2012,heinrich_myristoylation_2014}.
+This is due to the inclusion of MCMC methods in common analysis software packages such as Refl1D \cite{kienzle_ncnr_2006}.
+These methods enable the user to better understand the inverse uncertainty of a given parameter.
+Additionally, they enable the quantification of the correlation between parameters, important in ensuring that the model applied is suitably constrained such as to reduce the cross-correlation present between parameters \cite{nelson_co-refinement_2006}.
+
+This work applies a differential algorithm \cite{storn_differential_1997,jones_scipy_2001} for the optimisation of the reflectometry model.
+The search-space, available within the experimental uncertainty of the data is then sampled using MCMC, as implemented in \texttt{emcee} \cite{foreman-mackey_emcee_2013}, to understand the parameter probability distributions and quantify the inter-parameter correlations.
+
+\subsection{Chemically-consistent modelling}
+The use of chemically-consistent modelling is common in the understanding of X-ray and neutron reflectometry measurements from phospholipid monolayers, the history of this modelling is introduced well by Campbell \emph{et al.} \cite{campbell_structure_2018}.
+While it is possible to model the neutron reflectometry from a phospholipid monolayers with a single layer model \cite{wojciechowski_interaction_2016,wojciechowski_complexation_2016}, the use of at least two layers; representing the head and tail groups is more commonplace \cite{foglia_interaction_2014,bello_influence_2016}.
+Even when two layers are utilised, it is often the case that the volumes of the head and tail groups, $V_i$, are used at constraints in the modelling process, as the scattering length density ($\text{SLD}$) of a layer may be determined as follows,
+%
+\begin{equation}
+\text{SLD}_i = \frac{b_i}{V_i}(1-\phi_i)+\text{SLD}_s(\phi_s)
+\label{equ:sld}
+\end{equation}
+%
+where, $b_i$ is the scattering length of the head or tail, $\phi_i$ is the volume fraction of solvation by the solvent, $\text{SLD}_s$ is the solvent scattering length density, and $i$ indicates either the head or tail layer.
+However, as noted by Campbell \emph{et al.} \cite{campbell_structure_2018}, this method often fails to account for the compaction of the carbon chains under elevated surface pressures \cite{mcconlogue_close_1997,small_lateral_1984}, which may lead to a volume reduction of upto \SI{\sim 15}{\percent}.
+Furthermore, as discussed in Section~\ref{refl1:anal}, the use of a constrained head group volume may also impact the modelling process in situations where the volume is poorly defined.
+
+Equation~\ref{equ:sld} enables the use of chemical-inference in the modelling approach for reflectometry data.
+This allows for the co-refinement of neutron reflectometry data where different isotopic-contrasts of the phospholipid species or solvent have been used.
+This is possible based on the expectation that the effect of contrast variation on the structure and chemistry of the monolayer will be negligible, and therefore the same values of all parameters in the fitting, except $b_i$ and $\text{SLD}_s$ may be constrained between the different measurements \cite{hollinshead_effects_2009}.
+In this work, similar logic was applied, with the assumption that the volume of the head and tail groups is constant across different surface pressures, while the lipid phase is the same, to XRR
+This means that, for this system, all of the fitted parameters may be constrained aside from the tail thickness, and head solvation, and interfacial roughness, across the different surface pressure measurements.
+This is the first time that such a methodology has been applied to the analysis of XRR and NR, additionally, it is believed that this ability to co-refine XRR measurements enables a greater understanding of the structure than what is possible from a single measurement.

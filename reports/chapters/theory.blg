@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: reports/chapters/theory.aux
+The style file: rsc.bst
+Database file #1: rsc-main.bib
+Database file #2: reports/main.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+rsc 2016/08/22 v3.1f
+You've used 94 entries,
+            3113 wiz_defined-function locations,
+            1256 strings with 22502 characters,
+and the built_in function-call counts, 30550 in all, are:
+= -- 2416
+> -- 1829
+< -- 69
++ -- 583
+- -- 487
+* -- 2812
+:= -- 4518
+add.period$ -- 94
+call.type$ -- 94
+change.case$ -- 3
+chr.to.int$ -- 92
+cite$ -- 102
+duplicate$ -- 1425
+empty$ -- 2284
+format.name$ -- 612
+if$ -- 6361
+int.to.chr$ -- 6
+int.to.str$ -- 1
+missing$ -- 3
+newline$ -- 585
+num.names$ -- 264
+pop$ -- 403
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 867
+stack$ -- 0
+substring$ -- 1653
+swap$ -- 562
+text.length$ -- 196
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 631
+warning$ -- 0
+while$ -- 265
+width$ -- 0
+write$ -- 1331

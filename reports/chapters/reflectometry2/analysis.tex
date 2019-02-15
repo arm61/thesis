@@ -1,0 +1,44 @@
+\section{Data analysis}
+\subsection{Traditional layer-model analysis}
+In order to provide a point of comparison for the simulation-derived methods, the chemically-consistent reflectometry model developed in Chapter~\ref{reflectometry1} was used for the analysis of the experimental data.
+The only modification that was made to the methodology described in Chapter~\ref{reflectometry1} was that the volume of the phospholipid tail group, $V_t$ was constrained based on the APM (taken from the surface pressure-isotherm data),
+%
+\begin{equation}
+V_t = d_t\text{APM},
+\end{equation}
+%
+where, $d_t$ is the tail layer thickness. The result of this constraint is that both the monolayer model and the simulation-derived models were constrained equally by this measured surface coverage.
+
+\subsection{Simulation-dervied analysis}
+A custom-class, \texttt{md\_simulation}, was developed for \texttt{refnx} \cite{nelson_refnx_2019,nelson_refnx_2019-1} at enabled the determination of a reflectometry profile from simulation, using a similar method to that employ in previous work, such as Dabkowska \emph{et al.} \cite{dabkowska_modulation_2014}.
+The Abel\`{e}s layer model formalism is applied to layers, the SLD of which is drawn directly from the simulation, and the thickness of which is defined.
+The layer thickness used was \SI{1}{\angstrom} for the Slipid and Berger potential model simulations, with an interfacial roughness between these layers of \SI{0}{\angstrom}.
+For the MARTINI potential model, a layer thickness of \SI{4}{\angstrom} was used, with an interfacial roughness of \SI{0.2}{\angstrom}. Each of the \SI{50}{\nano\second} production simulations were analysed each \SI{0.1}{\nano\second}, and the SLD profiles were determined by summing the scattering lengths, $b_j$, for each fo the atoms in a given layer.
+%
+\begin{equation}
+\text{SLD}_n = \frac{\sum_j b_j}{V_n},
+\end{equation}
+%
+where, $V_n$ is the volume of the layer $n$, obtains from the simulation cell parameters in the plane of the interface and the defined layer thickness.
+A uniform background was assigned based on the intensity at the highest $q$-vector and scale factor were then determined using \texttt{refnx} to offer the best agreement between the calculated reflectometry profile and that measured experimentally.
+
+\subsection{Comparison between monolayer model and simulation-derived analysis}
+In order to assess the agreement between the model from each method, the following goodness-of-fit metric was used, following the transformation of the data into $Rq^4$ space,
+%
+\begin{equation}
+\chi^2 = \sum_{i=1}^{N_{\text{data}}}{\frac{[R_{\text{exp}}(q_i) - R_{\text{sim}}(q_i)]^2}{[\delta R_{\text{exp}}(q_i)]^2}},
+\end{equation}
+%
+where, $q_i$ is a given $q$-vector, $R_{\text{exp}}(q_i)$ is the experimental reflected intensity, $R_{\text{sim}}(q_i)$ is the simulation-derived/traditionally-developed reflected intensity, and $\delta R_{\text{exp}}(q_i)$ is the resolution function of the experimental data.
+
+Parametric outcomes from the different analysis methods were also compared, such as the number of water molecules per head group, wph.
+This was obtained from the monolayer model by considering the solvent fraction in the head-layer, $\phi_h$, the volume of the head group, $V_h$, and taking the volume of a single water molecule to be \SI{29.9}{\angstrom\cubed} (from the density of water as \SI{997}{\kg\per\meter\cubed}),
+%
+\begin{equation}
+\text{wph}=\frac{\phi_h V_h}{29.9 - 29.9\phi_h}.
+\label{equ:wph}
+\end{equation}
+%
+In MD simulations, the number density for each component in the system are obtained directly from the trajectory.
+The ratio of the lipid heads and the water then give the wph.
+The range for this was taken as between the \SI{20}{\percent} and \SI{80}{\percent} quantiles of the lipid head layers.

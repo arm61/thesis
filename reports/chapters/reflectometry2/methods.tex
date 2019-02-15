@@ -1,0 +1,82 @@
+\section{Methods}
+\subsection{Neutron reflectometry measurements}
+The neutron reflectometry measurements analysed in this chapter were published previously by Hollinshead \emph{et al.} \cite{hollinshead_effects_2009}, and full details of the experiemtnal methods usd can be found in that publication.
+The measurements conducted involved seven contrasts fo 1,2-distearoyl-\emph{sn}-phosphatidylcholine (DSPC) at the air-water interface (Table~\ref{tab:dspc}), at four different surface pressures; \SIrange{20}{50}{\milli\newton\per\meter}.
+%
+\begin{table}
+    \centering
+    \small
+    \caption{The different contrasts of phospholipid and water investigated. ACMW is air-contrast matched water, where \ce{D2O} and \ce{H2O} are mixed so as to give water with a SLD of zero.}
+    \label{tab:dspc}
+    \begin{tabular}{l | l l}
+        \toprule
+        Shorthand & Phospholipid contrast & Water contrast \\
+        \midrule
+        h-\ce{D2O} & h-DSPC & \ce{D2O} \\
+        d$_{13}$-\ce{D2O} & d$_{13}$-DSPC & \ce{D2O} \\
+        d$_{13}$-ACMW & d$_{13}$-DSPC & ACMW \\
+        d$_{70}$-\ce{D2O} & d$_{70}$-DSPC & \ce{D2O} \\
+        d$_{70}$-ACMW & d$_{70}$-DSPC & ACMW \\
+        d$_{83}$-\ce{D2O} & d$_{83}$-DSPC & \ce{D2O} \\
+        d$_{83}$-ACMW & d$_{83}$-DSPC & ACMW \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+%
+
+\subsection{Molecular dynamics simulations}
+The DSPC monolayer simulations were made up of lipid molecules modelled with three potential models, each with a different degree of coarse-graining.
+The Slipids potential model is an all-atom representation of the lipids molecules \cite{jambeck_derivation_2012}, which was used alongside the single point charge (SPC) water model \cite{berendsen_missing_1987}, with a timestep of \SI{0.5}{\femto\second}.
+The Berger potential model is obtained by the integration of the hydrogen atoms into the heavy atoms to which they are bound, producing a united-atom potential model \cite{berger_molecular_1997}; again the SPC water molecules were used.
+The removal of the high frequency \ce{C-H} bonds allows the timestep to be increased to \SI{1}{\femto\second}.
+Finally, the lowest resolution potential model used was the MARTINI \cite{marrink_martini_2007} alongside the polarisable MARTINI water model \cite{yesylevskyy_polarizable_2010}, to avoid the freezing issues observed previously \cite{koutsioubas_combined_2016}.
+The MARTINI 4-to-1 heavy atom beading allows for the used to a \SI{20}{\femto\second} timestep.
+All simulations were conducted with temperature coupling to a heat bath at \SI{300}{\kelvin} and a leapfrog integrator, and run using GROMACS 5.0.5 \cite{berendsen_gromacs_1995,lindahl_gromacs_2001,van_der_spoel_gromacs_2005,hess_gromacs_2008} on 32 cores of the STFC Scientific Computing resource SCARF.
+The simulations were of monolayers, therefore the Ewald 3DC correction was applied to allow for the use of \emph{x}/\emph{y}-only periodic boundary condition \cite{yeh_ewald_1999}.
+A close-packed ``wall'' of non-interacting dummy atoms was placed at each side of the simulation cell in the \emph{z}-direction, to ensure that the atoms could not leave the simulation cell.
+
+The starting simulation structure was generated using the molecular packing software Packmol \cite{martinez_packmol_2009}.
+This was used to produce a monolayer of \num{100} DSPC molecules, with the head group oriented to the bottom of the simulation cell.
+A \SI{6}{\angstrom} layer of water was then added such that it overlapped the head groups, this was achieved with the \texttt{solvate} functionality in GROMACS 5.0.5.
+Examples, of the dry and wet monolayer for the Berger potential model can be seen in Figure~\ref{fig:drywet}.
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=0.80\textwidth]{reflectometry2/dspcdrywet}
+    \caption{The DSPC monolayer; (a) without water layer and (b) with water layer, visuallised using VMD \cite{humphrey_vmd_1996}.}
+    \label{fig:drywet}
+\end{figure}
+%
+
+A general protocal was then used to relax the system at the desired surface coverage, reproducing the effects of a Langmuir trough \emph{in-silico}.
+This involved subjecting the system to a semi-isotropic barostat, with a compressibility of \SI{4.5e-5}{\per\bar} of the Slipids and Berger simulations and \SI{3.0e-4}{\per\bar} for the MARTINI simulations.
+The pressure is in the \emph{z}-dimension was kept constant at \SI{1}{\bar}, while it was increased in the \emph{x}- and \emph{y}-dimensions isotropically.
+When the \emph{xy}-area is reached that is associated with the area per molecule (APM) for each surface pressure, described by the experimental surface pressure-isotherm (Figure~\ref{fig:surfiso}), given in Table\ref{tab:apm}, the coordinates were saved and used as the starting structure for the equilibration simulation.
+This involved continuing the use of the semi-isotropic barostat, with the \emph{xy}-area of the box fixed, allowing the system to relax at a pressure of \SI{1}{\bar} in the \emph{z}-dimension.
+The equilibration period was \SI{1}{\nano\second}, following which the \SI{50}{\nano\second} NVT ensemble production simulations were run, on which all analyses were conducted.
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=0.80\textwidth]{reflectometry2/apm}
+    \caption{The experimental surface pressure isotherm for DSPC, taken from the work of Kubo \emph{et al.} \cite{kubo_phosphatidylcholine_2001}.}
+    \label{fig:surfiso}
+\end{figure}
+%
+%
+\begin{table}
+    \centering
+    \small
+    \caption{The areas per molecule (APMs) associated with particular surface pressures and the size of the \emph{x}- and \emph{y}-cell dimension for a simulation of 100 phospholipid molecules.}
+    \label{tab:apm}
+    \begin{tabular}{l | l l}
+        \toprule
+        $\pi$/\si{\milli\newton\per\meter} & APM/\si{\angstrom\squared} & \emph{xy}-cell length/\si{\angstrom} \\
+        \midrule
+        \num{20} & \num{47.9} & \num{69.1} \\
+        \num{30} & \num{46.4} & \num{68.1} \\
+        \num{40} & \num{45.0} & \num{67.1} \\
+        \num{50} & \num{44.6} & \num{66.0} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+%

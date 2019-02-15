@@ -1,0 +1,56 @@
+\section{Introduction}
+The use of a traditional, layer model, approach as outlined in Chapter~\ref{reflectometry1}, may not be sufficient for the study of complex systems such as biomimetic bacterial membranes \cite{barker_neutron_2016} and polymeric energy materials \cite{khodakarimi_x-ray_2016}.
+A commonly suggested method for the multi-modal analysis of reflectometry measurements is the use of molecular dynamics (MD) simulation.
+MD-driven multi-modal analysis has been applied previously, either by the calculation of the scattering length density (SLD) profile from the simulaiton of by the full determination fo the reflectometry profile.
+In the formar case, the calculated SLD profile may be compared with the SLD profile determined from the use of a traditional analysis method.
+Bobone \emph{et al.} used such a method to study the antimicrobial peptide trichogin GA-IV within a supported lipid bilayer \cite{bobone_membrane_2013}.
+A four layer model consisting of the hydrated \ce{SiO2} layer, an inner lipid head-region, a lipid tail-region, and an outer lipid head region was used in the Abel\`{e}s matrix formalism.
+The SLD profile from the MD simulations agreed well with that fitted to the reflectometry data from the layer model.
+
+The reflectometry profile was determined explicitly from the classical simulaiton in the works of Miller \emph{et al.} and Anderson and Wilson \cite{miller_monte_2003,anderson_molecular_2004}.
+In these works, an amphphilic polymer at the oil-water interface was simulated by Monte Carlo and MD respectively, and the neutron reflectometry profile was found by splitting the simulation cell into a series of small layers and treating these layers with the Abel\`{e}s formalism.
+There was good agreement between the experimental and calculated reflectometry, for low iterfacial coverages of the polymer.
+Another work that has made direct comparison between the atomistic simulation-derived reflectometry data and those measured experimentally includes that of Darr\'{e} \emph{et al.} \cite{darre_molecular_2015}.
+In this work, NeutronRefTools was developed to produce the neutron reflectometry profile from a given MD simulation.
+The particular system studied was a supported 1,2-dimyristoyl-\emph{2n}-glycero-3-phosphocholine (DMPC) lipid bilayer, with good agreement found between the simulation-derived profile and the associated experimental measurements.
+However, the nature of the support required that a correction for the head group hydration be imposed to acheive this agreement.
+
+Koutsioubas used the MARTINI coarse-grained representation of a 1,2-dipalmitoyl-\emph{sn}-glycero-3-phosphocholine (DPPC) lipid bilayer to compare with experimental reflectometry \cite{koutsioubas_combined_2016}.
+This work shows that the parameterisation of the MARTINI water bead was extremely important in the reproduction of the reflectometry data, as the non-polarisable water bead would freeze into crystalline sheets resulting in artefacts in the reflectometry profiles calculated.
+The work of Hughes \emph{et al.} studied again a DPPC lipid bilayer system \cite{hughes_interpretation_2016}, albeit an all-atom representation, that was compared with a supported DPPC lipid bilayer system measured with polarised neutron reflectometry.
+The SLD profile found from MD simulation was varied to better fit the experimental measurement, resulting in good agreement.
+Additionally, the ability to vary the SLD profile was used to remove artefact that arose when the MD simulations were merged with an Abel\`{e}s layer model.
+This was done to account for regions present in the experiment that were not modelled explicitly.
+
+In all the examples discussed so far there is no direct comparison between the reflectometry profile determined from simulation and that from the application of a traditional modelling approach.
+Indeed, the only example, to the authors' knowledge, where direct comparison was drawn is the work of Dabkowska \emph{et al.} \cite{dabkowska_modulation_2014}.
+This work compares the reflectometry profile from a DPPC monolayer at the air-water interface containing dimethyl sulfoxide molecules with a similar molecular dynamics simulation using the CHARMM potential model.
+The use of multimodal analysis allowed the determination of the position and orientation of DMSO molecules at a particular region within the monolayer.
+
+The previously mentioned work of Koutsioubas, involved the use of the MARTINI coarse-grained force field to simulations the DPPC bulayer system \cite{koutsioubas_combined_2016}.
+The use of atomistic simulation for soft matter systems, such as a lipid bilayer, is undesirable as this requires a huge number of atoms to be simulated, due to the large lengths scales involved.
+The prupose of simulation corase-graining is to reduce the number of particles over which the forces must be integrated, additionally by removing the higher frequency bond vibrations, the simulation timestep can also be increased \cite{pluhackova_biomembranes_2015}.
+Together, these two factors enable an increase in both simulation size and lenght.
+The use of the MARTINI 4-to-1 coarse-grained and the Berger united atom, where hydrogen atoms are integrated into the heavier atoms to which they are bound, potential models are particularly pertinent for the application to lipid simulations as both were developed with this specific application in mind \cite{marrink_martini_2007,berger_molecular_1997}.
+
+The MARTINI potential model involves integrating the interactions of every four heavy atoms, e.g. larger than hydrogen, into beads of different chemical nature.
+This potential model attempts to simplify the interactions of lipid and protein molecules significantly by allowing for only eighteen particle types, defined by their polarity, charge, and hydrogen-bond acceptor/donor character, which are discussed in detail in the work of Marrink \emph{et al.} \cite{marrink_martini_2007}.
+This coarse-grained potential model was initially developed for the simulation of a lipid bilayer, and proteins held within, and therefore is parameterised well under these conditions.
+It has successfully been used to simulate a wide range of systems, such as DNA nucleotides \cite{uusitalo_martini_2015}, the micellisation of zwitterionic and nonionic surfactants \cite{sanders_micellization_2010}, and the self-assembly of ionic surfactants \cite{wang_coarse-grained_2015}.
+
+Increasing the simulation resolution gives an united-atom potential mode, where all of the hydrogen atoms are integrated into the heavier atoms to which they are bound.
+One of the most popular united-atom potential models for lipid simulations is that developed by Berger \emph{et al.} \cite{berger_molecular_1997}.
+The Berger parameters were optimised to reproduce lipid density and area per lipid, the latter of which is often an important parameter for the understanding of reflectometry profiles.
+Since it's inception, this potential model has proven one of the most commonly used and resilient set of lipid parameters, with the original paper being cited 1500 times at time of writing.
+Applications of this potential model have mostly been focussed on the simulation of membrane bound proteins in a lipid bilayer \cite{tieleman_membrane_2006,cordomi_membrane_2012}.
+
+The Slipid (Stockholm Lipids) potential model was developed in 2012 by J\"{a}mbeck and Lyubartsev \cite{jambeck_derivation_2012}, where the potential model was again designed to reproduce the structure of a lipid bilayer.
+The authors optimised the average area per lipid, the thermal expansivity, and contractivity, amoung other structural and thermodynamic parameters.
+This included comparing the X-ray reflectometry profiles of the lipid bilayers with those measured experimentally.
+In later work, additional parameters were optimised to agree well with experimental values \cite{jambeck_extension_2012,jambeck_another_2013}.
+Similar to the application of the Berger potential model, the Slipid potential model has been applied to the study of membrane-protein bound systems, such as the modulation of ion transfer \cite{segala_controlling_2016}.
+However, it has also been used to the study of water diffusion within lipid membranes \cite{von_hansen_anomalous_2013}.
+
+This chapter present the comparison of three MD simulations of different potential models, with different degree of coarse-graining; namely the Slipid all-atom \cite{jambeck_derivation_2012}, Berger united-atom \cite{berger_molecular_1997}, and MARTINI coarse-grained potential models \cite{marrink_martini_2007}.
+This comparison offers a fundemental insight into the simulation resolution that is necessary toi reproduce experimental neutorn reflectometry measurements.
+Furthermore, we suggest some adjustments that may be made to the traditional, layer mdoels that are commonly used to analyse these measurements.

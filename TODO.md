@@ -1,0 +1,33 @@
+# TODO List
+
+- [ ] First Draft
+  - [ ] Introduction
+  - [ ] Theory
+    - [x] Scattering
+    - [x] Probing radiation
+    - [x] Classical simulation
+    - [x] Simulation techniques
+      - [x] Optimisation methods
+      - [x] Molecular dynamics
+  - [x] Chemically consistent modelling of X-ray and neutron reflectometry
+    - [x] Abstract
+    - [x] Context
+    - [x] Introduction
+    - [x] Methods
+    - [x] Data analysis
+    - [x] Results and Discussion
+    - [x] Conclusions
+  - [ ] Applying atomistic and coarse-grained simulation to reflectometry analysis
+    - [ ] Abstract
+    - [ ] Context
+    - [ ] Introduction
+      - Need to add the review paper from soppola and schneck
+    - [x] Methods
+    - [ ] Data analysis
+    - [ ] Results and Discussion
+      - Need to mention the periodicity effect when there is a vacuum above the monolayer.
+    - [ ] Conclusions
+  - [ ] Assessing the applicability of particle swarm methods to fitting coarse-grained small angle scattering data
+  - [ ] Parameterisation of accurate forcefields for the analysis of GISAS measurements
+  - [ ] Developing open-source teaching resources for classical simulation and scattering
+  - [ ] Conclusions

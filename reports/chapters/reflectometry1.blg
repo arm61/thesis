@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: reports/chapters/reflectometry1.aux
+The style file: rsc.bst
+Database file #1: rsc-main.bib
+Database file #2: reports/main.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+rsc 2016/08/22 v3.1f
+You've used 88 entries,
+            3113 wiz_defined-function locations,
+            1262 strings with 24785 characters,
+and the built_in function-call counts, 32978 in all, are:
+= -- 2400
+> -- 2501
+< -- 28
++ -- 783
+- -- 695
+* -- 3614
+:= -- 5111
+add.period$ -- 88
+call.type$ -- 88
+change.case$ -- 1
+chr.to.int$ -- 88
+cite$ -- 88
+duplicate$ -- 1297
+empty$ -- 2155
+format.name$ -- 814
+if$ -- 6551
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 549
+num.names$ -- 264
+pop$ -- 295
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 666
+stack$ -- 0
+substring$ -- 1958
+swap$ -- 636
+text.length$ -- 176
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 613
+warning$ -- 0
+while$ -- 260
+width$ -- 0
+write$ -- 1253

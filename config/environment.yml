@@ -1,0 +1,20 @@
+name: thesis
+channels:
+  - bioconda
+  - defaults
+dependencies:
+  - cython=0.29.2
+  - matplotlib=3.0.1
+  - numpy=1.15.4
+  - pandas=0.23.4
+  - pip=18.1
+  - scipy=1.1.0
+  - seaborn=0.9.0
+  - snakemake=3.13.3
+  - pip:
+    - black==18.9b0
+    - corner==2.0.1
+    - periodictable==1.5.0
+    - refnx==0.1.2
+prefix: /Users/andrew/miniconda3/envs/thesis
+
