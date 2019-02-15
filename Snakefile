@@ -278,7 +278,10 @@ rule dppc_xray_plotting:
         FIG_REFL1 + 'dppc_xray_sp_25_pdf.pdf',
         FIG_REFL1 + 'dppc_xray_sp_30_pdf.pdf',
         FIG_REFL1 + 'dppc_xray_ref_sld.pdf',
-        FIG_REFL1 + 'dppc_xray_dt_phi.pdf'
+        FIG_REFL1 + 'dppc_xray_dt_phi.pdf',
+        'output/reflectometry1/dppc_xray/dppc_xray-d_h.tex',
+        'output/reflectometry1/dppc_xray/dppc_xray-V_t.tex',
+        'output/reflectometry1/dppc_xray/dppc_xray-V_h.tex'
     shell:
         """
         cd visualisation && python XRR_plotting.py dppc 15 15 20 25 30 0
@@ -293,7 +296,10 @@ rule dmpc_xray_plotting:
         FIG_REFL1 + 'dmpc_xray_sp_30_pdf.pdf',
         FIG_REFL1 + 'dmpc_xray_sp_40_pdf.pdf',
         FIG_REFL1 + 'dmpc_xray_ref_sld.pdf',
-        FIG_REFL1 + 'dmpc_xray_dt_phi.pdf'
+        FIG_REFL1 + 'dmpc_xray_dt_phi.pdf',
+        'output/reflectometry1/dmpc_xray/dmpc_xray-d_h.tex',
+        'output/reflectometry1/dmpc_xray/dmpc_xray-V_t.tex',
+        'output/reflectometry1/dmpc_xray/dmpc_xray-V_h.tex'
     shell:
         """
         cd visualisation && python XRR_plotting.py dmpc 13 20 25 30 40 0
@@ -309,7 +315,10 @@ rule dlpc_xray_plotting:
         FIG_REFL1 + 'dlpc_xray_sp_30_pdf.pdf',
         FIG_REFL1 + 'dlpc_xray_sp_35_pdf.pdf',
         FIG_REFL1 + 'dlpc_xray_ref_sld.pdf',
-        FIG_REFL1 + 'dlpc_xray_dt_phi.pdf'
+        FIG_REFL1 + 'dlpc_xray_dt_phi.pdf',
+        'output/reflectometry1/dlpc_xray/dlpc_xray-d_h.tex',
+        'output/reflectometry1/dlpc_xray/dlpc_xray-V_t.tex',
+        'output/reflectometry1/dlpc_xray/dlpc_xray-V_h.tex'
     shell:
         """
         cd visualisation && python XRR_plotting.py dlpc 11 20 25 30 35 0
@@ -325,7 +334,10 @@ rule dmpg_xray_plotting:
         FIG_REFL1 + 'dmpg_xray_sp_25_pdf.pdf',
         FIG_REFL1 + 'dmpg_xray_sp_30_pdf.pdf',
         FIG_REFL1 + 'dmpg_xray_ref_sld.pdf',
-        FIG_REFL1 + 'dmpg_xray_dt_phi.pdf'
+        FIG_REFL1 + 'dmpg_xray_dt_phi.pdf',
+        'output/reflectometry1/dmpg_xray/dmpg_xray-d_h.tex',
+        'output/reflectometry1/dmpg_xray/dmpg_xray-V_t.tex',
+        'output/reflectometry1/dmpg_xray/dmpg_xray-V_h.tex'
     shell:
         """
         cd visualisation && python XRR_plotting.py dmpg 13 15 20 25 30 0
@@ -337,7 +349,10 @@ rule dppc_neutron_15_analysis:
         'reports/code_blocks/ref_help.py',
         'tools/chemically_consistent.py',
         'data/reflectometry1/dppc_neutron/dppc_neutron_h_sp_15.dat',
-        'data/reflectometry1/dppc_neutron/dppc_neutron_hd_sp_15.dat'
+        'data/reflectometry1/dppc_neutron/dppc_neutron_hd_sp_15.dat',
+        'output/reflectometry1/dppc_xray/dppc_xray-d_h.tex',
+        'output/reflectometry1/dppc_xray/dppc_xray-V_t.tex',
+        'output/reflectometry1/dppc_xray/dppc_xray-V_h.tex'
     output:
         'output/reflectometry1/dppc_neutron/dppc_neutron_15_chain.txt'
     shell:
@@ -351,7 +366,10 @@ rule dppc_neutron_20_analysis:
         'reports/code_blocks/ref_help.py',
         'tools/chemically_consistent.py',
         'data/reflectometry1/dppc_neutron/dppc_neutron_h_sp_20.dat',
-        'data/reflectometry1/dppc_neutron/dppc_neutron_hd_sp_20.dat'
+        'data/reflectometry1/dppc_neutron/dppc_neutron_hd_sp_20.dat',
+        'output/reflectometry1/dppc_xray/dppc_xray-d_h.tex',
+        'output/reflectometry1/dppc_xray/dppc_xray-V_t.tex',
+        'output/reflectometry1/dppc_xray/dppc_xray-V_h.tex'
     output:
         'output/reflectometry1/dppc_neutron/dppc_neutron_20_chain.txt'
     shell:
@@ -365,7 +383,10 @@ rule dmpc_neutron_20_analysis:
         'reports/code_blocks/ref_help.py',
         'tools/chemically_consistent.py',
         'data/reflectometry1/dmpc_neutron/dmpc_neutron_h_sp_20.dat',
-        'data/reflectometry1/dmpc_neutron/dmpc_neutron_hd_sp_20.dat'
+        'data/reflectometry1/dmpc_neutron/dmpc_neutron_hd_sp_20.dat',
+        'output/reflectometry1/dmpc_xray/dmpc_xray-d_h.tex',
+        'output/reflectometry1/dmpc_xray/dmpc_xray-V_t.tex',
+        'output/reflectometry1/dmpc_xray/dmpc_xray-V_h.tex'
     output:
         'output/reflectometry1/dmpc_neutron/dmpc_neutron_20_chain.txt'
     shell:
@@ -379,7 +400,10 @@ rule dmpc_neutron_25_analysis:
         'reports/code_blocks/ref_help.py',
         'tools/chemically_consistent.py',
         'data/reflectometry1/dmpc_neutron/dmpc_neutron_h_sp_25.dat',
-        'data/reflectometry1/dmpc_neutron/dmpc_neutron_hd_sp_25.dat'
+        'data/reflectometry1/dmpc_neutron/dmpc_neutron_hd_sp_25.dat',
+        'output/reflectometry1/dmpc_xray/dmpc_xray-d_h.tex',
+        'output/reflectometry1/dmpc_xray/dmpc_xray-V_t.tex',
+        'output/reflectometry1/dmpc_xray/dmpc_xray-V_h.tex'
     output:
         'output/reflectometry1/dmpc_neutron/dmpc_neutron_25_chain.txt'
     shell:
