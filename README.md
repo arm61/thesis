@@ -58,6 +58,6 @@ ARM is grateful to the University of Bath and Diamond Light Source for co-fundin
     ├── tools/            # Tool scripts used
     ├── visualisation/    # Plotting scripts
     ├── .gitignore        # gitignore details
-    ├── LICENSE           # This work is shared under a CC-BY-SA-4.0 Licence
+    ├── LICENSE           # This work is shared under a CC BY-4.0 Licence
     ├── README.md         # You are here
     └── Snakefile         # The snakemake configuration file
