@@ -16,5 +16,6 @@ dependencies:
     - corner==2.0.1
     - periodictable==1.5.0
     - refnx==0.1.2
+    - tqdm==4.24.0
 prefix: /Users/andrew/miniconda3/envs/thesis
 
