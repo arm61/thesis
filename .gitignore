@@ -21,3 +21,14 @@ visualisation/theory.py
 bibfun.py
 data
 **/.DS_Store
+output/reflectometry1/dlpc_xray/*
+output/reflectometry1/dmpc_xray/*
+output/reflectometry1/dppc_xray/*
+output/reflectometry1/dmpg_xray/*
+output/reflectometry1/dppc_neutron/*
+output/reflectometry1/dmpc_neutron/*
+output/reflectometry2/dspc_20/*
+output/reflectometry2/dspc_30/*
+output/reflectometry2/dspc_40/*
+output/reflectometry2/dspc_50/*
+data.zip
