@@ -583,7 +583,7 @@ rule martini_dspc_20_analysis:
         FIG_REFL2 + 'dspc_martini_20_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py martini 20
+        cd tools && python sim_analysis.py martini 20 4 0.8
         """
 
 rule martini_dspc_30_analysis:
@@ -610,7 +610,7 @@ rule martini_dspc_30_analysis:
         FIG_REFL2 + 'dspc_martini_30_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py martini 30
+        cd tools && python sim_analysis.py martini 30 4 0.8
         """
 
 rule martini_dspc_40_analysis:
@@ -637,7 +637,7 @@ rule martini_dspc_40_analysis:
         FIG_REFL2 + 'dspc_martini_40_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py martini 40
+        cd tools && python sim_analysis.py martini 40 4 0.8
         """
 
 rule martini_dspc_50_analysis:
@@ -664,7 +664,7 @@ rule martini_dspc_50_analysis:
         FIG_REFL2 + 'dspc_martini_50_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py martini 50
+        cd tools && python sim_analysis.py martini 50 4 0.8
         """
 
 rule berger_dspc_20_analysis:
@@ -691,7 +691,7 @@ rule berger_dspc_20_analysis:
         FIG_REFL2 + 'dspc_berger_20_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py berger 20
+        cd tools && python sim_analysis.py berger 20 1 0
         """
 
 rule berger_dspc_30_analysis:
@@ -718,7 +718,7 @@ rule berger_dspc_30_analysis:
         FIG_REFL2 + 'dspc_berger_30_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py berger 30
+        cd tools && python sim_analysis.py berger 30 1 0
         """
 
 rule berger_dspc_40_analysis:
@@ -745,7 +745,7 @@ rule berger_dspc_40_analysis:
         FIG_REFL2 + 'dspc_berger_40_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py berger 40
+        cd tools && python sim_analysis.py berger 40 1 0
         """
 
 rule berger_dspc_50_analysis:
@@ -772,7 +772,7 @@ rule berger_dspc_50_analysis:
         FIG_REFL2 + 'dspc_berger_50_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py berger 50
+        cd tools && python sim_analysis.py berger 50 1 0
         """
 
 rule slipids_dspc_20_analysis:
@@ -799,7 +799,7 @@ rule slipids_dspc_20_analysis:
         FIG_REFL2 + 'dspc_slipids_20_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py slipids 20
+        cd tools && python sim_analysis.py slipids 20 1 0
         """
 
 rule slipids_dspc_30_analysis:
@@ -826,7 +826,7 @@ rule slipids_dspc_30_analysis:
         FIG_REFL2 + 'dspc_slipids_30_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py slipids 30
+        cd tools && python sim_analysis.py slipids 30 1 0
         """
 
 rule slipids_dspc_40_analysis:
@@ -853,7 +853,7 @@ rule slipids_dspc_40_analysis:
         FIG_REFL2 + 'dspc_slipids_40_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py slipids 40
+        cd tools && python sim_analysis.py slipids 40 1 0
         """
 
 rule slipids_dspc_50_analysis:
@@ -880,7 +880,7 @@ rule slipids_dspc_50_analysis:
         FIG_REFL2 + 'dspc_slipids_50_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py slipids 50
+        cd tools && python sim_analysis.py slipids 50 1 0
         """
 
 rule pear_plotting:

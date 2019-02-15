@@ -41,6 +41,8 @@ import md_simulation as md
 
 forcefield = sys.argv[1]
 surface_pressure = sys.argv[2]
+lt = float(sys.argv[3])
+rough = float(sys.argv[4])
 traj_dir = '../data/reflectometry2/dspc_{}/{}'.format(surface_pressure, forcefield)
 anal_dir = "../output/reflectometry2/dspc_{}/".format(surface_pressure)
 print('{} {}'.format(forcefield, surface_pressure))
@@ -75,12 +77,8 @@ for ci, contrast in enumerate(contrasts):
         except:
             pass
         if forcefield == 'martini':
-            lt = 4
-            rough = 0.8
             co = 30
         else:
-            lt = 1
-            rough = 0.
             co = 15
         sim = md.MDSimulation(traj_dir + '_frame{}.pdb'.format(i), flip=True,
                               verbose=True, layer_thickness=lt, roughness=rough)
