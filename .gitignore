@@ -19,3 +19,5 @@ reports/main.toc
 reports/rsc-main.bib
 visualisation/theory.py
 bibfun.py
+data
+**/.DS_Store
