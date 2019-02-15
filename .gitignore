@@ -32,3 +32,14 @@ output/reflectometry2/dspc_30/*
 output/reflectometry2/dspc_40/*
 output/reflectometry2/dspc_50/*
 data.zip
+
+!output/reflectometry1/dlpc_xray/.gitkeep
+!output/reflectometry1/dmpc_xray/.gitkeep
+!output/reflectometry1/dppc_xray/.gitkeep
+!output/reflectometry1/dmpg_xray/.gitkeep
+!output/reflectometry1/dppc_neutron/.gitkeep
+!output/reflectometry1/dmpc_neutron/.gitkeep
+!output/reflectometry2/dspc_20/.gitkeep
+!output/reflectometry2/dspc_30/.gitkeep
+!output/reflectometry2/dspc_40/.gitkeep
+!output/reflectometry2/dspc_50/.gitkeep
