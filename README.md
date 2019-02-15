@@ -43,11 +43,7 @@ ARM is grateful to the University of Bath and Diamond Light Source for co-fundin
 
     .
     ├── config/           # For configuration details
-    ├── data/
-    │   └── theory/       # Theoretical data
     ├── docs/             # Some documentation
-    ├── models/           # Python code related to different models applied
-    ├── notebooks/        # Jupyter notebooks for clarity of analysis
     ├── reports/        
     │   └── appendices/   # Appendices to the thesis
     │   └── chapters/     
