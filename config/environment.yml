@@ -14,6 +14,7 @@ dependencies:
   - pip:
     - black==18.9b0
     - corner==2.0.1
+    - MDAnalysis==0.19.2
     - periodictable==1.5.0
     - refnx==0.1.2
     - tqdm==4.24.0
