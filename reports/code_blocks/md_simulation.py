@@ -2,9 +2,9 @@ from __future__ import print_function, division
 import numpy as np
 
 try:
-    from Bio.PDB import PDBParser
+    import MDAnalysis as mda
 except ImportError:
-    print("biopython must be installed to use MDSimulation")
+    print("MDAnalysis must be installed to use MDSimulation")
     pass
 try:
     import periodictable as pt
@@ -72,20 +72,22 @@ class MDSimulation(Component):
         verbose=False,
     ):
         self.pdbfile = pdbfile
-        self.structure, self.dimensions = read_pdb(self.pdbfile)
+        self.u = read_pdb(self.pdbfile)
         self.verbose = verbose
         if self.verbose:
             print("PDB file read.")
         self.av_layers = np.zeros(
             (
-                int(np.floor(self.dimensions[2] / layer_thickness))
+                int(np.floor(self.u.dimensions[2] / layer_thickness))
                 + 1,
                 5,
             )
         )
         self.av_layers[:, 0] = layer_thickness
         self.av_layers[:, 3] = layer_thickness * roughness
-        self.layers = np.array([self.av_layers] * len(self.structure))
+        self.layers = np.array(
+            [self.av_layers] * len(self.u.trajectory)
+        )
         self.flip = flip
         self.cut_off = cut_off
 
@@ -157,19 +159,22 @@ class MDSimulation(Component):
             self.lgtfile = lgtfile
             self.read_lgt()
         else:
-            if radiation == "neutron":
-                self.neutron = True
-            else:
-                if not xray_energy:
-                    raise ValueError(
-                        "If the probing radiation is the X-ray"
-                        " it is necessary to define an "
-                        "xray_energy (in keV)."
-                    )
-                else:
-                    self.neutron = False
-                    self.xray_energy = xray_energy
-            self.get_lgts_from_pt()
+            raise ValueError(
+                "Currently you need to give a set of scattering lengths."
+            )
+            # if radiation == "neutron":
+            #    self.neutron = True
+            # else:
+            #    if not xray_energy:
+            #        raise ValueError(
+            #            "If the probing radiation is the X-ray"
+            #            " it is necessary to define an "
+            #            "xray_energy (in keV)."
+            #        )
+            #    else:
+            #        self.neutron = False
+            #        self.xray_energy = xray_energy
+            # self.get_lgts_from_pt()
         if self.verbose:
             print("Scattering lengths found.")
 
@@ -201,20 +206,22 @@ class MDSimulation(Component):
         """
         import scipy.constants as const
 
+        u = self.u
+        atoms = u.atoms
         cre = (
             const.physical_constants["classical electron radius"][0]
             * 1e15
         )
-        for atom in self.structure.get_atoms():
-            if atom.name not in self.scatlens:
+        for atom in range(0, len(atoms)):
+            if atoms[atom].name not in self.scatlens:
                 scattering_length = [0, 0]
                 if self.neutron:
                     scattering_length[0] = pt.elements.symbol(
-                        atom.element
+                        atoms[atom].type
                     ).neutron.b_c
                     if pt.elements.symbol(atom.element).neutron.b_c_i:
                         inc = pt.elements.symbol(
-                            atom.element
+                            atoms[atom].type
                         ).neutron.b_c_i
                     else:
                         inc = 0
@@ -222,11 +229,11 @@ class MDSimulation(Component):
                 else:
                     scattering_length = np.multiply(
                         pt.elements.symbol(
-                            atom.element
+                            atoms[atom].type
                         ).xray.scattering_factors(energy=12),
                         cre,
                     )
-                self.scatlens[atom.name] = scattering_length
+                self.scatlens[atoms[atom].name] = scattering_length
 
     def set_atom_scattering(self, name, scattering_length):
         """
@@ -282,18 +289,21 @@ class MDSimulation(Component):
         of the layer. This is completed for each timestep and the average
         taken.
         """
-        structure = self.structure
+        u = self.u
         # loop through each timestep in the simulation trajectory
-        for k, models in enumerate(structure):
+        for k, ts in enumerate(u.trajectory):
+            atoms = u.atoms
             # loop across all atoms in the current timestep
-            for atom in models.get_atoms():
+            for atom in range(0, len(atoms)):
                 # assign scattering length based on atom type, if there is a
                 # lgtfile use this, if not use periodictable
-                scattering_length = self.scatlens[atom.name]
+                scattering_length = self.scatlens[atoms[atom].name]
                 # with the system split into a series of layer, select the
                 # appropriate layer based on the atom's z coordinate
                 layer_choose = int(
-                    np.floor(atom.coord[2] / self.layers[k, 0, 0])
+                    np.floor(
+                        atoms[atom].position[2] / self.layers[k, 0, 0]
+                    )
                 )
                 # add the real and imaginary scattering lengths to this layer
                 self.layers[k, layer_choose, 1] += (
@@ -304,14 +314,10 @@ class MDSimulation(Component):
                 )
         # get a scattering length density
         self.layers[:, :, 1] /= (
-            self.dimensions[0]
-            * self.dimensions[1]
-            * self.layers[0, 0, 0]
+            u.dimensions[0] * u.dimensions[1] * self.layers[0, 0, 0]
         )
         self.layers[:, :, 2] /= (
-            self.dimensions[0]
-            * self.dimensions[1]
-            * self.layers[0, 0, 0]
+            u.dimensions[0] * u.dimensions[1] * self.layers[0, 0, 0]
         )
         if self.flip:
             self.layers = self.layers[:, ::-1, :]
@@ -377,16 +383,8 @@ def read_pdb(pdbfile):
     dimensions: float, array_like, attribute
         An array of 3 floats containing the simulation cell dimensions.
     """
-    parser = PDBParser()
-    structure = parser.get_structure("model", pdbfile)
-    dimensions = np.zeros(3)
-    with possibly_open_file(pdbfile, "r") as f:
-        for line in f:
-            if line.startswith("CRYST1") and not np.any(dimensions):
-                line_list = line.split()
-                dimensions[0] = float(line_list[1])
-                dimensions[1] = float(line_list[2])
-                dimensions[2] = float(line_list[3])
-                break
-        f.close()
-    return structure, dimensions
+    if isinstance(pdbfile, mda.Universe):
+        u = pdbfile
+    else:
+        u = mda.Universe(pdbfile)
+    return u

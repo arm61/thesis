@@ -1,52 +1,50 @@
-This is BibTeX, Version 0.99d (TeX Live 2018)
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: reports/chapters/reflectometry2.aux
 The style file: rsc.bst
 Database file #1: rsc-main.bib
 Database file #2: reports/main.bib
-Warning--I didn't find a database entry for "jambeck"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 rsc 2016/08/22 v3.1f
-You've used 33 entries,
+You've used 37 entries,
             3113 wiz_defined-function locations,
-            911 strings with 12947 characters,
-and the built_in function-call counts, 12767 in all, are:
-= -- 919
-> -- 977
-< -- 11
-+ -- 304
-- -- 272
-* -- 1408
-:= -- 1978
-add.period$ -- 33
-call.type$ -- 33
+            931 strings with 13864 characters,
+and the built_in function-call counts, 14409 in all, are:
+= -- 1039
+> -- 1105
+< -- 13
++ -- 345
+- -- 308
+* -- 1592
+:= -- 2231
+add.period$ -- 37
+call.type$ -- 37
 change.case$ -- 1
-chr.to.int$ -- 34
-cite$ -- 33
-duplicate$ -- 504
-empty$ -- 826
-format.name$ -- 318
-if$ -- 2530
-int.to.chr$ -- 1
+chr.to.int$ -- 37
+cite$ -- 37
+duplicate$ -- 562
+empty$ -- 930
+format.name$ -- 362
+if$ -- 2856
+int.to.chr$ -- 2
 int.to.str$ -- 1
 missing$ -- 1
-newline$ -- 219
-num.names$ -- 100
-pop$ -- 113
+newline$ -- 243
+num.names$ -- 112
+pop$ -- 125
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 262
+skip$ -- 294
 stack$ -- 0
-substring$ -- 744
-swap$ -- 263
-text.length$ -- 67
+substring$ -- 858
+swap$ -- 295
+text.length$ -- 75
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 228
+type$ -- 256
 warning$ -- 0
-while$ -- 101
+while$ -- 113
 width$ -- 0
-write$ -- 484
-(There was 1 warning)
+write$ -- 540

@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{33}
+\begin{mcitethebibliography}{37}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -156,6 +156,38 @@ A.~Cordom\'i, G.~Caltabiano and L.~Pardo, \emph{J. Chem. Theory Comput.}, 2012,
 \bibitem[J\"ambeck and Lyubartsev(2012)]{jambeck_derivation_2012}
 J.~P.~M. J\"ambeck and A.~P. Lyubartsev, \emph{J. Phys. Chem. B}, 2012,
   \textbf{116}, 3164--3179\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[J\"ambeck and Lyubartsev(2012)]{jambeck_extension_2012}
+J.~P.~M. J\"ambeck and A.~P. Lyubartsev, \emph{J. Chem. Theory Comput.}, 2012,
+  \textbf{8}, 2938--2948\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[J\"ambeck and Lyubartsev(2013)]{jambeck_another_2013}
+J.~P.~M. J\"ambeck and A.~P. Lyubartsev, \emph{J. Chem. Theory Comput.}, 2013,
+  \textbf{9}, 774--784\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Segala \emph{et~al.}(2016)Segala, Guo, Cheng, Bortolato, Deflorian,
+  Dor\'e, Errey, Heitman, IJzerman, Marshall, and
+  Cooke]{segala_controlling_2016}
+E.~Segala, D.~Guo, R.~K.~Y. Cheng, A.~Bortolato, F.~Deflorian, A.~S. Dor\'e,
+  J.~C. Errey, L.~H. Heitman, A.~P. IJzerman, F.~H. Marshall and R.~M. Cooke,
+  \emph{J. Med. Chem.}, 2016, \textbf{59}, 6470--6479\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[{von Hansen} \emph{et~al.}(2013){von Hansen}, Gekle, and
+  Netz]{von_hansen_anomalous_2013}
+Y.~{von Hansen}, S.~Gekle and R.~R. Netz, \emph{Phys. Rev. Lett.}, 2013,
+  \textbf{111}, 118103--118105\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

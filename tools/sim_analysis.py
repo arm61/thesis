@@ -146,3 +146,4 @@ ax2.set_ylabel(r'SLD/$10^{-6}$Å$^{-2}$')
 plt.tight_layout()
 fig_dir = "../reports/figures/reflectometry2/"
 plt.savefig('{}dspc_{}_{}_ref_sld.pdf'.format(fig_dir, forcefield, surface_pressure))
+plt.close()

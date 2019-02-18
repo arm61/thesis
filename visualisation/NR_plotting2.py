@@ -275,6 +275,28 @@ file_open = open('{}/{}_p_all_sp{}.txt'.format(anal_dir, lipid, sp), 'w')
 file_open.write('{:.2f}'.format(np.sum(np.abs(p_all))))
 file_open.close()
 
+para_labels = ['{}-wph_{}'.format(label, sp)]
+
+wph = pchain[1].chain.flatten() * solh / (29.9 - 29.9 * solh)
+alpha = 0.05
+file_open = open('{}/{}.tex'.format(anal_dir, para_labels[i]), 'w')
+stat, p = scipy.stats.shapiro(wph[::5000])
+if p > alpha:
+    quats = mquantiles(wph, prob=[0.025, 0.5, 0.975])
+    a = '{:.2f}'.format(quats[1])
+    b = '{:.2f}'.format(quats[1]-quats[0])
+    string = '$' + str(a) + '\pm{' + str(b) + '}$'
+    file_open.write(string)
+    file_open.close()
+else:
+    quats = mquantiles(wph, prob=[0.025, 0.5, 0.975])
+    a = '{:.2f}'.format(quats[1])
+    b = '{:.2f}'.format(quats[2]-quats[1])
+    c = '{:.2f}'.format(quats[1]-quats[0])
+    string = '$' + str(a) + '^{+' + str(b) + '}_{-' + str(c) + '}$'
+    file_open.write(string)
+    file_open.close()
+
 para_labels = ['{}-V_t_{}'.format(label, sp)]
 
 for i in range(len(para_labels)):

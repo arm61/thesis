@@ -75,7 +75,9 @@ FIGURES = [FIG_DIR + 'bath.pdf', FIG_DIR + 'diamond.pdf',
            FIG_REFL2 + 'dspc_slipids_20_ref_sld.pdf',
            FIG_REFL2 + 'dspc_slipids_30_ref_sld.pdf',
            FIG_REFL2 + 'dspc_slipids_40_ref_sld.pdf',
-           FIG_REFL2 + 'dspc_slipids_50_ref_sld.pdf']
+           FIG_REFL2 + 'dspc_slipids_50_ref_sld.pdf',
+           FIG_REFL2 + 'martini_order.pdf',
+           FIG_REFL2 + 'number_density.pdf']
 #CHAPTERS = [REP + CHAP + 'introduction.tex', REP + CHAP + 'theory.tex',
 #            REP + CHAP + 'reflectometry1.tex', REP + CHAP + 'reflectometry2.tex',
 #            REP + CHAP + 'smallangle.tex', REP + CHAP + 'gisas.tex',
@@ -180,7 +182,31 @@ rule thesis:
         CHAPTERS,
         FIGURES,
         FIGURES_PLOT,
-        CODE_BLOCKS
+        CODE_BLOCKS,
+        'output/reflectometry2/dspc_20/dspc_martini_20_dt.txt',
+        'output/reflectometry2/dspc_30/dspc_martini_30_dt.txt',
+        'output/reflectometry2/dspc_40/dspc_martini_40_dt.txt',
+        'output/reflectometry2/dspc_50/dspc_martini_50_dt.txt',
+        'output/reflectometry2/dspc_20/dspc_berger_20_dt.txt',
+        'output/reflectometry2/dspc_30/dspc_berger_30_dt.txt',
+        'output/reflectometry2/dspc_40/dspc_berger_40_dt.txt',
+        'output/reflectometry2/dspc_50/dspc_berger_50_dt.txt',
+        'output/reflectometry2/dspc_20/dspc_slipids_20_dt.txt',
+        'output/reflectometry2/dspc_30/dspc_slipids_30_dt.txt',
+        'output/reflectometry2/dspc_40/dspc_slipids_40_dt.txt',
+        'output/reflectometry2/dspc_50/dspc_slipids_50_dt.txt',
+        'output/reflectometry2/dspc_20/dspc_martini_20_wph.txt',
+        'output/reflectometry2/dspc_30/dspc_martini_30_wph.txt',
+        'output/reflectometry2/dspc_40/dspc_martini_40_wph.txt',
+        'output/reflectometry2/dspc_50/dspc_martini_50_wph.txt',
+        'output/reflectometry2/dspc_20/dspc_berger_20_wph.txt',
+        'output/reflectometry2/dspc_30/dspc_berger_30_wph.txt',
+        'output/reflectometry2/dspc_40/dspc_berger_40_wph.txt',
+        'output/reflectometry2/dspc_50/dspc_berger_50_wph.txt',
+        'output/reflectometry2/dspc_20/dspc_slipids_20_wph.txt',
+        'output/reflectometry2/dspc_30/dspc_slipids_30_wph.txt',
+        'output/reflectometry2/dspc_40/dspc_slipids_40_wph.txt',
+        'output/reflectometry2/dspc_50/dspc_slipids_50_wph.txt',
     output:
         'reports/main.pdf'
     run:
@@ -525,7 +551,7 @@ rule dspc_neutron_40_plotting:
 
 rule dspc_neutron_50_plotting:
     input:
-        'visualisation/NR_plotting.py2',
+        'visualisation/NR_plotting2.py',
         'output/reflectometry2/dspc_50/dspc_50_chain.txt'
     output:
         FIG_REFL2 + 'dspc_50_pdf.pdf',
@@ -607,7 +633,7 @@ rule martini_dspc_20_analysis:
         FIG_REFL2 + 'dspc_martini_20_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py martini 20 4 0.8
+        cd tools && python sim_analysis.py martini 20 4 0.2
         """
 
 rule martini_dspc_30_analysis:
@@ -634,7 +660,7 @@ rule martini_dspc_30_analysis:
         FIG_REFL2 + 'dspc_martini_30_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py martini 30 4 0.8
+        cd tools && python sim_analysis.py martini 30 4 0.2
         """
 
 rule martini_dspc_40_analysis:
@@ -661,7 +687,7 @@ rule martini_dspc_40_analysis:
         FIG_REFL2 + 'dspc_martini_40_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py martini 40 4 0.8
+        cd tools && python sim_analysis.py martini 40 4 0.2
         """
 
 rule martini_dspc_50_analysis:
@@ -688,7 +714,7 @@ rule martini_dspc_50_analysis:
         FIG_REFL2 + 'dspc_martini_50_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py martini 50 4 0.8
+        cd tools && python sim_analysis.py martini 50 4 0.2
         """
 
 rule berger_dspc_20_analysis:
@@ -907,6 +933,506 @@ rule slipids_dspc_50_analysis:
         cd tools && python sim_analysis.py slipids 50 1 0
         """
 
+rule martini_dspc_20_tail:
+    input:
+        'tools/tail_length.py',
+        'data/reflectometry2/dspc_20/martini_frame1.pdb',
+        'data/reflectometry2/dspc_20/martini_frame2.pdb',
+        'data/reflectometry2/dspc_20/martini_frame3.pdb',
+        'data/reflectometry2/dspc_20/martini_frame4.pdb',
+        'data/reflectometry2/dspc_20/martini_frame5.pdb',
+        'data/reflectometry2/dspc_20/martini_frame6.pdb',
+        'data/reflectometry2/dspc_20/martini_frame7.pdb',
+        'data/reflectometry2/dspc_20/martini_frame8.pdb',
+        'data/reflectometry2/dspc_20/martini_frame9.pdb',
+        'data/reflectometry2/dspc_20/martini_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_20/dspc_martini_20_dt.txt'
+    shell:
+        """
+        cd tools && python tail_length.py martini 20
+        """
+
+rule martini_dspc_30_tail:
+    input:
+        'tools/tail_length.py',
+        'data/reflectometry2/dspc_30/martini_frame1.pdb',
+        'data/reflectometry2/dspc_30/martini_frame2.pdb',
+        'data/reflectometry2/dspc_30/martini_frame3.pdb',
+        'data/reflectometry2/dspc_30/martini_frame4.pdb',
+        'data/reflectometry2/dspc_30/martini_frame5.pdb',
+        'data/reflectometry2/dspc_30/martini_frame6.pdb',
+        'data/reflectometry2/dspc_30/martini_frame7.pdb',
+        'data/reflectometry2/dspc_30/martini_frame8.pdb',
+        'data/reflectometry2/dspc_30/martini_frame9.pdb',
+        'data/reflectometry2/dspc_30/martini_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_30/dspc_martini_30_dt.txt'
+    shell:
+        """
+        cd tools && python tail_length.py martini 30
+        """
+
+rule martini_dspc_40_tail:
+    input:
+        'tools/tail_length.py',
+        'data/reflectometry2/dspc_40/martini_frame1.pdb',
+        'data/reflectometry2/dspc_40/martini_frame2.pdb',
+        'data/reflectometry2/dspc_40/martini_frame3.pdb',
+        'data/reflectometry2/dspc_40/martini_frame4.pdb',
+        'data/reflectometry2/dspc_40/martini_frame5.pdb',
+        'data/reflectometry2/dspc_40/martini_frame6.pdb',
+        'data/reflectometry2/dspc_40/martini_frame7.pdb',
+        'data/reflectometry2/dspc_40/martini_frame8.pdb',
+        'data/reflectometry2/dspc_40/martini_frame9.pdb',
+        'data/reflectometry2/dspc_40/martini_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_40/dspc_martini_40_dt.txt'
+    shell:
+        """
+        cd tools && python tail_length.py martini 40
+        """
+
+rule martini_dspc_50_tail:
+    input:
+        'tools/tail_length.py',
+        'data/reflectometry2/dspc_50/martini_frame1.pdb',
+        'data/reflectometry2/dspc_50/martini_frame2.pdb',
+        'data/reflectometry2/dspc_50/martini_frame3.pdb',
+        'data/reflectometry2/dspc_50/martini_frame4.pdb',
+        'data/reflectometry2/dspc_50/martini_frame5.pdb',
+        'data/reflectometry2/dspc_50/martini_frame6.pdb',
+        'data/reflectometry2/dspc_50/martini_frame7.pdb',
+        'data/reflectometry2/dspc_50/martini_frame8.pdb',
+        'data/reflectometry2/dspc_50/martini_frame9.pdb',
+        'data/reflectometry2/dspc_50/martini_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_50/dspc_martini_50_dt.txt'
+    shell:
+        """
+        cd tools && python tail_length.py martini 50
+        """
+
+rule berger_dspc_20_tail:
+    input:
+        'tools/tail_length.py',
+        'data/reflectometry2/dspc_20/berger_frame1.pdb',
+        'data/reflectometry2/dspc_20/berger_frame2.pdb',
+        'data/reflectometry2/dspc_20/berger_frame3.pdb',
+        'data/reflectometry2/dspc_20/berger_frame4.pdb',
+        'data/reflectometry2/dspc_20/berger_frame5.pdb',
+        'data/reflectometry2/dspc_20/berger_frame6.pdb',
+        'data/reflectometry2/dspc_20/berger_frame7.pdb',
+        'data/reflectometry2/dspc_20/berger_frame8.pdb',
+        'data/reflectometry2/dspc_20/berger_frame9.pdb',
+        'data/reflectometry2/dspc_20/berger_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_20/dspc_berger_20_dt.txt'
+    shell:
+        """
+        cd tools && python tail_length.py berger 20
+        """
+
+rule berger_dspc_30_tail:
+    input:
+        'tools/tail_length.py',
+        'data/reflectometry2/dspc_30/berger_frame1.pdb',
+        'data/reflectometry2/dspc_30/berger_frame2.pdb',
+        'data/reflectometry2/dspc_30/berger_frame3.pdb',
+        'data/reflectometry2/dspc_30/berger_frame4.pdb',
+        'data/reflectometry2/dspc_30/berger_frame5.pdb',
+        'data/reflectometry2/dspc_30/berger_frame6.pdb',
+        'data/reflectometry2/dspc_30/berger_frame7.pdb',
+        'data/reflectometry2/dspc_30/berger_frame8.pdb',
+        'data/reflectometry2/dspc_30/berger_frame9.pdb',
+        'data/reflectometry2/dspc_30/berger_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_30/dspc_berger_30_dt.txt'
+    shell:
+        """
+        cd tools && python tail_length.py berger 30
+        """
+
+rule berger_dspc_40_tail:
+    input:
+        'tools/tail_length.py',
+        'data/reflectometry2/dspc_40/berger_frame1.pdb',
+        'data/reflectometry2/dspc_40/berger_frame2.pdb',
+        'data/reflectometry2/dspc_40/berger_frame3.pdb',
+        'data/reflectometry2/dspc_40/berger_frame4.pdb',
+        'data/reflectometry2/dspc_40/berger_frame5.pdb',
+        'data/reflectometry2/dspc_40/berger_frame6.pdb',
+        'data/reflectometry2/dspc_40/berger_frame7.pdb',
+        'data/reflectometry2/dspc_40/berger_frame8.pdb',
+        'data/reflectometry2/dspc_40/berger_frame9.pdb',
+        'data/reflectometry2/dspc_40/berger_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_40/dspc_berger_40_dt.txt'
+    shell:
+        """
+        cd tools && python tail_length.py berger 40
+        """
+
+rule berger_dspc_50_tail:
+    input:
+        'tools/tail_length.py',
+        'data/reflectometry2/dspc_50/berger_frame1.pdb',
+        'data/reflectometry2/dspc_50/berger_frame2.pdb',
+        'data/reflectometry2/dspc_50/berger_frame3.pdb',
+        'data/reflectometry2/dspc_50/berger_frame4.pdb',
+        'data/reflectometry2/dspc_50/berger_frame5.pdb',
+        'data/reflectometry2/dspc_50/berger_frame6.pdb',
+        'data/reflectometry2/dspc_50/berger_frame7.pdb',
+        'data/reflectometry2/dspc_50/berger_frame8.pdb',
+        'data/reflectometry2/dspc_50/berger_frame9.pdb',
+        'data/reflectometry2/dspc_50/berger_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_50/dspc_berger_50_dt.txt'
+    shell:
+        """
+        cd tools && python tail_length.py berger 50
+        """
+
+rule slipids_dspc_20_tail:
+    input:
+        'tools/tail_length.py',
+        'data/reflectometry2/dspc_20/slipids_frame1.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame2.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame3.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame4.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame5.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame6.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame7.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame8.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame9.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_20/dspc_slipids_20_dt.txt'
+    shell:
+        """
+        cd tools && python tail_length.py slipids 20
+        """
+
+rule slipids_dspc_30_tail:
+    input:
+        'tools/tail_length.py',
+        'data/reflectometry2/dspc_30/slipids_frame1.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame2.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame3.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame4.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame5.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame6.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame7.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame8.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame9.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_30/dspc_slipids_30_dt.txt'
+    shell:
+        """
+        cd tools && python tail_length.py slipids 30
+        """
+
+rule slipids_dspc_40_tail:
+    input:
+        'tools/tail_length.py',
+        'data/reflectometry2/dspc_40/slipids_frame1.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame2.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame3.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame4.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame5.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame6.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame7.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame8.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame9.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_40/dspc_slipids_40_dt.txt'
+    shell:
+        """
+        cd tools && python tail_length.py slipids 40
+        """
+
+rule slipids_dspc_50_tail:
+    input:
+        'tools/tail_length.py',
+        'data/reflectometry2/dspc_50/slipids_frame1.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame2.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame3.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame4.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame5.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame6.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame7.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame8.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame9.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_50/dspc_slipids_50_dt.txt'
+    shell:
+        """
+        cd tools && python tail_length.py slipids 50
+        """
+
+rule martini_dspc_20_wph:
+    input:
+        'tools/waters.py',
+        'data/reflectometry2/dspc_20/martini_frame1.pdb',
+        'data/reflectometry2/dspc_20/martini_frame2.pdb',
+        'data/reflectometry2/dspc_20/martini_frame3.pdb',
+        'data/reflectometry2/dspc_20/martini_frame4.pdb',
+        'data/reflectometry2/dspc_20/martini_frame5.pdb',
+        'data/reflectometry2/dspc_20/martini_frame6.pdb',
+        'data/reflectometry2/dspc_20/martini_frame7.pdb',
+        'data/reflectometry2/dspc_20/martini_frame8.pdb',
+        'data/reflectometry2/dspc_20/martini_frame9.pdb',
+        'data/reflectometry2/dspc_20/martini_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_20/dspc_martini_20_wph.txt'
+    shell:
+        """
+        cd tools && python waters.py martini 20
+        """
+
+rule martini_dspc_30_wph:
+    input:
+        'tools/waters.py',
+        'data/reflectometry2/dspc_30/martini_frame1.pdb',
+        'data/reflectometry2/dspc_30/martini_frame2.pdb',
+        'data/reflectometry2/dspc_30/martini_frame3.pdb',
+        'data/reflectometry2/dspc_30/martini_frame4.pdb',
+        'data/reflectometry2/dspc_30/martini_frame5.pdb',
+        'data/reflectometry2/dspc_30/martini_frame6.pdb',
+        'data/reflectometry2/dspc_30/martini_frame7.pdb',
+        'data/reflectometry2/dspc_30/martini_frame8.pdb',
+        'data/reflectometry2/dspc_30/martini_frame9.pdb',
+        'data/reflectometry2/dspc_30/martini_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_30/dspc_martini_30_wph.txt'
+    shell:
+        """
+        cd tools && python waters.py martini 30
+        """
+
+rule martini_dspc_40_wph:
+    input:
+        'tools/waters.py',
+        'data/reflectometry2/dspc_40/martini_frame1.pdb',
+        'data/reflectometry2/dspc_40/martini_frame2.pdb',
+        'data/reflectometry2/dspc_40/martini_frame3.pdb',
+        'data/reflectometry2/dspc_40/martini_frame4.pdb',
+        'data/reflectometry2/dspc_40/martini_frame5.pdb',
+        'data/reflectometry2/dspc_40/martini_frame6.pdb',
+        'data/reflectometry2/dspc_40/martini_frame7.pdb',
+        'data/reflectometry2/dspc_40/martini_frame8.pdb',
+        'data/reflectometry2/dspc_40/martini_frame9.pdb',
+        'data/reflectometry2/dspc_40/martini_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_40/dspc_martini_40_wph.txt'
+    shell:
+        """
+        cd tools && python waters.py martini 40
+        """
+
+rule martini_dspc_50_wph:
+    input:
+        'tools/waters.py',
+        'data/reflectometry2/dspc_50/martini_frame1.pdb',
+        'data/reflectometry2/dspc_50/martini_frame2.pdb',
+        'data/reflectometry2/dspc_50/martini_frame3.pdb',
+        'data/reflectometry2/dspc_50/martini_frame4.pdb',
+        'data/reflectometry2/dspc_50/martini_frame5.pdb',
+        'data/reflectometry2/dspc_50/martini_frame6.pdb',
+        'data/reflectometry2/dspc_50/martini_frame7.pdb',
+        'data/reflectometry2/dspc_50/martini_frame8.pdb',
+        'data/reflectometry2/dspc_50/martini_frame9.pdb',
+        'data/reflectometry2/dspc_50/martini_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_50/dspc_martini_50_wph.txt'
+    shell:
+        """
+        cd tools && python waters.py martini 50
+        """
+
+rule berger_dspc_20_wph:
+    input:
+        'tools/waters.py',
+        'data/reflectometry2/dspc_20/berger_frame1.pdb',
+        'data/reflectometry2/dspc_20/berger_frame2.pdb',
+        'data/reflectometry2/dspc_20/berger_frame3.pdb',
+        'data/reflectometry2/dspc_20/berger_frame4.pdb',
+        'data/reflectometry2/dspc_20/berger_frame5.pdb',
+        'data/reflectometry2/dspc_20/berger_frame6.pdb',
+        'data/reflectometry2/dspc_20/berger_frame7.pdb',
+        'data/reflectometry2/dspc_20/berger_frame8.pdb',
+        'data/reflectometry2/dspc_20/berger_frame9.pdb',
+        'data/reflectometry2/dspc_20/berger_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_20/dspc_berger_20_wph.txt'
+    shell:
+        """
+        cd tools && python waters.py berger 20
+        """
+
+rule berger_dspc_30_wph:
+    input:
+        'tools/waters.py',
+        'data/reflectometry2/dspc_30/berger_frame1.pdb',
+        'data/reflectometry2/dspc_30/berger_frame2.pdb',
+        'data/reflectometry2/dspc_30/berger_frame3.pdb',
+        'data/reflectometry2/dspc_30/berger_frame4.pdb',
+        'data/reflectometry2/dspc_30/berger_frame5.pdb',
+        'data/reflectometry2/dspc_30/berger_frame6.pdb',
+        'data/reflectometry2/dspc_30/berger_frame7.pdb',
+        'data/reflectometry2/dspc_30/berger_frame8.pdb',
+        'data/reflectometry2/dspc_30/berger_frame9.pdb',
+        'data/reflectometry2/dspc_30/berger_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_30/dspc_berger_30_wph.txt'
+    shell:
+        """
+        cd tools && python waters.py berger 30
+        """
+
+rule berger_dspc_40_wph:
+    input:
+        'tools/waters.py',
+        'data/reflectometry2/dspc_40/berger_frame1.pdb',
+        'data/reflectometry2/dspc_40/berger_frame2.pdb',
+        'data/reflectometry2/dspc_40/berger_frame3.pdb',
+        'data/reflectometry2/dspc_40/berger_frame4.pdb',
+        'data/reflectometry2/dspc_40/berger_frame5.pdb',
+        'data/reflectometry2/dspc_40/berger_frame6.pdb',
+        'data/reflectometry2/dspc_40/berger_frame7.pdb',
+        'data/reflectometry2/dspc_40/berger_frame8.pdb',
+        'data/reflectometry2/dspc_40/berger_frame9.pdb',
+        'data/reflectometry2/dspc_40/berger_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_40/dspc_berger_40_wph.txt'
+    shell:
+        """
+        cd tools && python waters.py berger 40
+        """
+
+rule berger_dspc_50_wph:
+    input:
+        'tools/waters.py',
+        'data/reflectometry2/dspc_50/berger_frame1.pdb',
+        'data/reflectometry2/dspc_50/berger_frame2.pdb',
+        'data/reflectometry2/dspc_50/berger_frame3.pdb',
+        'data/reflectometry2/dspc_50/berger_frame4.pdb',
+        'data/reflectometry2/dspc_50/berger_frame5.pdb',
+        'data/reflectometry2/dspc_50/berger_frame6.pdb',
+        'data/reflectometry2/dspc_50/berger_frame7.pdb',
+        'data/reflectometry2/dspc_50/berger_frame8.pdb',
+        'data/reflectometry2/dspc_50/berger_frame9.pdb',
+        'data/reflectometry2/dspc_50/berger_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_50/dspc_berger_50_wph.txt'
+    shell:
+        """
+        cd tools && python waters.py berger 50
+        """
+
+rule slipids_dspc_20_wph:
+    input:
+        'tools/waters.py',
+        'data/reflectometry2/dspc_20/slipids_frame1.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame2.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame3.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame4.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame5.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame6.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame7.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame8.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame9.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_20/dspc_slipids_20_wph.txt'
+    shell:
+        """
+        cd tools && python waters.py slipids 20
+        """
+
+rule slipids_dspc_30_wph:
+    input:
+        'tools/waters.py',
+        'data/reflectometry2/dspc_30/slipids_frame1.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame2.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame3.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame4.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame5.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame6.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame7.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame8.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame9.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_30/dspc_slipids_30_wph.txt'
+    shell:
+        """
+        cd tools && python waters.py slipids 30
+        """
+
+rule slipids_dspc_40_wph:
+    input:
+        'tools/waters.py',
+        'data/reflectometry2/dspc_40/slipids_frame1.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame2.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame3.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame4.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame5.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame6.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame7.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame8.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame9.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_40/dspc_slipids_40_wph.txt'
+    shell:
+        """
+        cd tools && python waters.py slipids 40
+        """
+
+rule slipids_dspc_50_wph:
+    input:
+        'tools/waters.py',
+        'data/reflectometry2/dspc_50/slipids_frame1.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame2.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame3.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame4.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame5.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame6.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame7.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame8.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame9.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_50/dspc_slipids_50_wph.txt'
+    shell:
+        """
+        cd tools && python waters.py slipids 50
+        """
+
+rule slipids_dspc_30_nd:
+    input:
+        'visualisation/number_density.py',
+        'data/reflectometry2/dspc_30/slipids_frame1.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame2.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame3.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame4.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame5.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame6.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame7.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame8.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame9.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame10.pdb'
+    output:
+        'reports/figures/reflectometry2/number_density.pdf'
+    shell:
+        """
+        cd visualisation && python number_density.py slipids 30
+        """
+
 rule pear_plotting:
     input:
         'visualisation/pear_plotting.py',
@@ -927,6 +1453,26 @@ rule pear_plotting:
     shell:
         """
         cd visualisation && python pear_plotting.py
+        """
+
+rule martini_order:
+    input:
+        'visualisation/martini_order.py',
+        'data/reflectometry2/dspc_30/martini_frame1.pdb',
+        'data/reflectometry2/dspc_30/martini_frame2.pdb',
+        'data/reflectometry2/dspc_30/martini_frame3.pdb',
+        'data/reflectometry2/dspc_30/martini_frame4.pdb',
+        'data/reflectometry2/dspc_30/martini_frame5.pdb',
+        'data/reflectometry2/dspc_30/martini_frame6.pdb',
+        'data/reflectometry2/dspc_30/martini_frame7.pdb',
+        'data/reflectometry2/dspc_30/martini_frame8.pdb',
+        'data/reflectometry2/dspc_30/martini_frame9.pdb',
+        'data/reflectometry2/dspc_30/martini_frame10.pdb'
+    output:
+        FIG_REFL2 + 'martini_order.pdf',
+    shell:
+        """
+        cd visualisation && python martini_order.py
         """
 
 rule apm_plotting:
