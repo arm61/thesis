@@ -20,6 +20,7 @@ visualisation/theory.py
 bibfun.py
 data
 **/.DS_Store
+**/__pycache__
 output/reflectometry1/dlpc_xray/*
 output/reflectometry1/dmpc_xray/*
 output/reflectometry1/dppc_xray/*
