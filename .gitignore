@@ -16,7 +16,7 @@ reports/main.lol
 reports/main.lot
 reports/main.out
 reports/main.toc
-visualisation/theory.py
+reports/figures
 bibfun.py
 data
 **/.DS_Store
