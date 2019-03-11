@@ -1,6 +1,12 @@
 \section{Classical simulation}
 \label{sec:classical}
 
+While the currently applied traditional methods for the analysis of experimental scattering data discussed previously are popular.
+There is growing interest in the use of multi-modal analysis methods that leverage classical simulation to assist in the analysis of scattering data \cite{ivanovic_temperature-dependent_2018,scoppola_combining_2018,dabkowska_modulation_2014,hub_interpreting_2018}.
+This would involve the simulation of the chemical system in order to educate the analysis of the experimental data.
+These systems, especially when the materials being simulated are soft in nature, are often highly complex and typically cover large length scales.
+Classical simulation, particularly in combination with coarse-grained potential models, can feasibly enable the simulation of these methods.
+
 In order to simulate a real chemical system, it is necessary to model the electrons of the molecules and their interactions.
 This is usually achieved using quantum mechanical calculations, where the energy of the system is calculated by finding some approximate solution to the Schr\"{o}dinger equation.
 However, quantum mechanical calculations are very computationally expensive and are realistically limited to hundreds of atoms.
@@ -38,7 +44,7 @@ The values of the interaction dependent parameters are determined as outlined in
 
 The non-bonded terms are a series of functions that describe the potential energy of intermolecular interactions, such as electrostatics and London dispersion forces.
 The potential energies of the short-range interactions are usually modelled as a combination of the attractive London dispersion interaction and the repulsive exchange forces that arise from the Pauli exclusions principle \cite{leach_molecular_1996}.
-These areoften forms such as shown below for the Lennard-Jones potential model \cite{lennard-jones_determination_1924},
+These are often forms such as shown below for the Lennard-Jones potential model \cite{lennard-jones_determination_1924},
 %
 \begin{equation}
   E_{\text{non-boned}}(r) = E_{\text{repulsive}} + E_{\text{attractive}} = \frac{A}{r^{12}} - \frac{B}{r^6} = 4\varepsilon\Bigg[\bigg(\frac{\sigma}{r}\bigg)^{12} - \bigg(\frac{\sigma}{r}\bigg)^6\Bigg]
@@ -87,12 +93,8 @@ However, the periodicity may result in unexpected results for particular systems
 \end{figure}
 %
 
-The periodic boundary condition leads to the necessity to consider another important factor from a classical simulation.
-This is the cut-off, the distance after which the energy between to particles is considered to be zero.
-The cut-off is an important component of simulation that must be considered as if there was no energy cut-off distance it would be possible for multiple counting of particle-particle interactions to occur.
-This multiple counting would arise from counting between particles in different periodic images that have already been accounted for elsewhere.
-As a result, the energy cut-off distance should always be less than half the shortest simulation cell vector.
-An additional benefit of the energy cut-off distance is that means that it is not necessary to calculate the energy between every particle, as once the distance has been found to be greater than the cut-off distance the energy for this interaction is immediately taken as zero, increasing computational efficiency.
+The cut-off is another important factor for classical simulation, this is the distance after which the energy between two particles is considered to be zeros.
+Therfore for distances greater than the cut-off, it is not necessary to calculate the energy between the two particles as it is taken to be zero, increasing the computational efficiency.
 Code Block~\ref{cb:lj} gives an example of some code that could be used to calculate the Lennard-Jones energy of an atomistic system, where both the periodic boundary condition and the energy cut-off distance are considered.
 %
 \begin{figure}
@@ -101,8 +103,7 @@ Code Block~\ref{cb:lj} gives an example of some code that could be used to calcu
 \end{figure}
 %
 
-The use of the periodic boundary condition may be problematic for systems containing long-range interactions, such as classical electrostatics.
-Due to the fact that the range of the electrostatic interaction may be much greater than the size of half of the simulation cell, which is usually taken to be the energy cut-off distance.
+The use of the periodic boundary condition may be problematic for systems containing long-range interactions, such as classical electrostatics, due to the fact that the range of the electrostatic interaction may be much greater than the size of half of the simulation cell, which is usually taken to be the energy cut-off distance.
 In order to avoid truncation artefacts, the Ewald summation is often used for the calculation of the electrostatic contribution to the potential energy \cite{ewald_berechnung_1921}.
 The Ewald summation involves performing the summation of the contributing interaction energies in reciprocal space rather than in real space as is the case for the short-range interactions.
 Most modern molecular dynamics simulation software packages implement the Ewald summation using a particle mesh Ewald (PME) method \cite{essmann_smooth_1995}.
@@ -110,29 +111,30 @@ Most modern molecular dynamics simulation software packages implement the Ewald 
 \subsection{Parameterisation}
 \label{sec:parameterisation}
 Section~\ref{sec:potentmodels} introduced the idea of potential models that may be used to evaluate the potential energy of a given system, much quicker than methods that rely on the use of quantum mechanics.
-However, for these methods to be effective, it is important that the potential models used are able to model the system understudy accurately.
-This is achieved initially by selecting the correct potential model for a given interaction, and then by ensuring that the interaction dependent parameters are accurate for a given interaction.
+However, for these methods to be effective, it is important that the potential models used are able to model the system under study accurately.
+This is achieved initially by selecting the correct potential model for a given interaction, and then by ensuring that the interaction-dependent parameters are accurate for a given interaction.
 The method of obtaining such parameters is referred to as \emph{parameterising} the model.
 Model parameterisation is important for all types of potential models, for example it is necessary to determine the equilibrium bond length $b_0$ and the force constant $K_b$ for a given covalent bonds, or the partial electrostatic charge that is present on a carbonyl oxygen atom when it interacts with the hydrogen atom from a neighbouring hydroxyl group.
 
 Parameterisation of a potential model is usually achieved by comparison of fitting the potential model functions to energetic data obtained using a higher accuracy technique, such as quantum mechanical calculations or experimental methods.
-We will not dwell on the details of potential model parameterisation, however, it is important to note that the parameters used on molecular dynamics simulation are not absolute and depended heavily on the merits of the parameterisation method.
+We will not dwell on the details of potential model parameterisation, however, it is important to note that the parameters used in molecular dynamics simulation are not absolute and depended heavily on the merits of the parameterisation method.
 
 In the work, we focused heavily on the use of off-the-shelf potential models.
 The was done to ensure the easy reproducibility of the work.
-Off-the-shelf potential models are those that are determined to be applied to a wide range of chemical systems, examples include the OPLS potential mode which was parameterised by comparison to quantum mechanical measurements and crystallographic data \cite{jorgensen_opls_1988}.
-While these off-the-shelf potential models are useful for their ease-of-use, it is noted that often these forcefields may require to be optimised for the particular system.
+Off-the-shelf potential models are those that are determined to be applied to a wide range of chemical systems.
+An example includes the OPLS potential mode which was parameterised by comparison to quantum mechanical measurements and crystallographic data \cite{jorgensen_opls_1988}.
+While these off-the-shelf potential models are useful for their ease-of-use, it is noted that often these forcefields may require optimisation for the particular system.
 
 \subsection{Coarse-graining}
 \label{sec:coarsegraining}
 The atomistic simulation of very large systems, such as multiple surfactant micelles or large lipid monolayers, require a huge number of atoms.
-While computational efficiency improvements such as the periodic boundary condition or the energy cut-off distance are able to improve the time taken to simulate these systems.
-However, it is still not possible to produce physically meaningful simulations without including some other efficiency improvements.
+While computational efficiency improvements such as the periodic boundary condition or the energy cut-off distance are able to improve the time taken to simulate these systems, it is still not possible to produce physically meaningful simulations without including some other efficiency improvements.
 
-This has lead to the use of coarse-graining of molecules in simulations.
+This has led to the use of coarse-graining of molecules in simulations.
 This is the definition of super-atoms, in the place of groups of atoms, known as `beading', some examples are shown for the MARTINI force field in Figure~\ref{fig:cg}.
 Each of the super-atoms must correspond to the chemistry of the underlying atoms.
-For example in the MARTINI potential model, there are five different carbon-like super-atoms that may be used dependent on the polarity of the carbon atoms that make up the super-atom.
+For example in the MARTINI potential model, there are five different apolar, carbon-like super-atoms that may be used dependent on the polarity of the carbon atoms that make up the super-atom.
+Additionally, there are thirteen other super-atom types that can be use to model polar, nonpolar, and charged atomic groups.
 %
 \begin{figure}
     \centering
@@ -142,10 +144,9 @@ For example in the MARTINI potential model, there are five different carbon-like
 \end{figure}
 %
 
-In addition to the computational benefit of having fewer particles in the simulation, and therefore the equations of motion must be integrated fewer times.
-There is also the opportunity to increase the timestep length for the simulation \cite{pluhackova_biomembranes_2015}.
+In addition to the computational benefit of having fewer particles in the simulation, and therefore requiring fewer integrations of the equations of motion, there is also the opportunity to increase the timestep length for the simulation \cite{pluhackova_biomembranes_2015}.
 This can be achieved as the highest frequency vibrations that must be modelled in the system are integrated out.
-For example, the use of a united atom potential model, where the hydrogen atoms have been integrated out, the time step may be larger than for the same all-atom system as it is no longer necessary to model the high-frequency \ce{C-H} bond.
+For example, using a united atom potential model, where the hydrogen atoms have been integrated out, the time step may be larger than for the same all-atom system as it is no longer necessary to model the high-frequency \ce{C-H} bond.
 
 The technique of coarse-graining a molecule is a continuum, it can range from the integration of the hydrogen atoms into the heavier atoms to which they are bound, all the way to the treatment of entire molecules as a single `bead', with the inclusion of an implicit solvent.
 The parameterisation of a coarse-grained potential model is carried out in much the same way as discussed in Section~\ref{sec:parameterisation} for all-atom potential models.

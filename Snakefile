@@ -3,11 +3,13 @@ CHAP = 'chapters/'
 THEO = 'theory/'
 REFL1 = 'reflectometry1/'
 REFL2 = 'reflectometry2/'
+TEACH = 'teaching/'
 APP = 'appendices/'
 FIG_DIR = REP + 'figures/'
 FIG_THEO = FIG_DIR + 'theory/'
-FIG_REFL1 = FIG_DIR + 'reflectometry1/'
-FIG_REFL2 = FIG_DIR + 'reflectometry2/'
+FIG_REFL1 = FIG_DIR + REFL1
+FIG_REFL2 = FIG_DIR + REFL2
+FIG_TEACH = FIG_DIR + TEACH
 FIGURES_PLOT = [FIG_THEO + 'dyna.pdf', FIG_THEO + 'kine.pdf',
                 FIG_THEO + 'scales.pdf', FIG_THEO + 'rg.pdf',
                 FIG_THEO + 'sphere.pdf', FIG_THEO + 'grad.pdf',
@@ -77,13 +79,14 @@ FIGURES = [FIG_DIR + 'bath.pdf', FIG_DIR + 'diamond.pdf',
            FIG_REFL2 + 'dspc_slipids_40_ref_sld.pdf',
            FIG_REFL2 + 'dspc_slipids_50_ref_sld.pdf',
            FIG_REFL2 + 'martini_order.pdf',
-           FIG_REFL2 + 'number_density.pdf']
+           FIG_REFL2 + 'number_density.pdf',
+           FIG_TEACH + 'chem_data_py.pdf']
 #CHAPTERS = [REP + CHAP + 'introduction.tex', REP + CHAP + 'theory.tex',
 #            REP + CHAP + 'reflectometry1.tex', REP + CHAP + 'reflectometry2.tex',
 #            REP + CHAP + 'smallangle.tex', REP + CHAP + 'gisas.tex',
 #            REP + CHAP + 'teaching.tex', REP + CHAP + 'summary.tex']
 CHAPTERS = [REP + CHAP + 'theory.tex', REP + CHAP + 'reflectometry1.tex',
-            REP + CHAP + 'reflectometry2.tex']
+            REP + CHAP + 'reflectometry2.tex', REP + CHAP + 'teaching.tex']
 LATEX = [REP + CHAP + THEO + 'scattheory.tex',
          REP + CHAP + THEO + 'probing.tex',
          REP + CHAP + THEO + 'classical.tex',
@@ -102,6 +105,12 @@ LATEX = [REP + CHAP + THEO + 'scattheory.tex',
          REP + CHAP + REFL2 + 'analysis.tex',
          REP + CHAP + REFL2 + 'discussion.tex',
          REP + CHAP + REFL2 + 'conclusions.tex',
+         REP + CHAP + TEACH + 'abstract.tex',
+         REP + CHAP + TEACH + 'context.tex',
+         REP + CHAP + TEACH + 'intro.tex',
+         REP + CHAP + TEACH + 'pylj.tex',
+         REP + CHAP + TEACH + 'sim_and_scat.tex',
+         REP + CHAP + TEACH + 'conclusions.tex',
          REP + 'appendices/papers.tex']
 CODE_BLOCKS = [REP + 'code_blocks/' + 'reflectometry.py',
                REP + 'code_blocks/' + 'lennardjones.py',
@@ -111,10 +120,12 @@ CODE_BLOCKS = [REP + 'code_blocks/' + 'reflectometry.py',
                REP + 'code_blocks/' + 'part_swarm.py',
                REP + 'code_blocks/' + 'recombination.py',
                REP + 'code_blocks/' + 'grad.py',
+               REP + 'code_blocks/' + 'pyljmd.py',
+               REP + 'code_blocks/' + 'pyljlj.py',
                REP + 'code_blocks/' + 'mol_vol.py']
 
-SCRIPTS = ['visualisation/theory.py', 'visualisation/XRR_plotting.py',
-           'tools/chemically_consistent.py']
+SCRIPTS = ['scripts/theory.py', 'scripts/XRR_plotting.py',
+           'scripts/chemically_consistent.py']
 
 rule all:
     input:
@@ -171,7 +182,7 @@ rule clean:
         shell("rm -f reports/chapters/smallangle.aux")
         shell("rm -f reports/chapters/teaching.aux")
         shell("rm -f reports/chapters/theory.aux")
-        shell("rm -f visualisation/theory.py")
+        shell("rm -f scripts/theory.py")
 
 rule thesis:
     input:
@@ -220,21 +231,21 @@ rule thesis:
 
 rule theory_figues:
     input:
-        'visualisation/theory.py',
+        'scripts/theory.py',
         'data/theory/Experimental-sphere.txt',
         CODE_BLOCKS
     output:
         FIGURES_PLOT
     shell:
         """
-        cd visualisation && python theory.py
+        cd scripts && python theory.py
         """
 
 rule dppc_xray_analysis:
     input:
         'reports/code_blocks/mol_vol.py',
         'reports/code_blocks/ref_help.py',
-        'tools/chemically_consistent.py',
+        'scripts/chemically_consistent.py',
         'data/reflectometry1/dppc_xray/dppc_xray_sp_15.dat',
         'data/reflectometry1/dppc_xray/dppc_xray_sp_20.dat',
         'data/reflectometry1/dppc_xray/dppc_xray_sp_25.dat',
@@ -243,14 +254,14 @@ rule dppc_xray_analysis:
         'output/reflectometry1/dppc_xray/dppc_xray_chain.txt'
     shell:
         """
-        cd tools && python chemically_consistent.py dppc 15 15 20 25 30 0
+        cd scripts && python chemically_consistent.py dppc 15 15 20 25 30 0
         """
 
 rule dmpc_xray_analysis:
     input:
         'reports/code_blocks/mol_vol.py',
         'reports/code_blocks/ref_help.py',
-        'tools/chemically_consistent.py',
+        'scripts/chemically_consistent.py',
         'data/reflectometry1/dmpc_xray/dmpc_xray_sp_20.dat',
         'data/reflectometry1/dmpc_xray/dmpc_xray_sp_25.dat',
         'data/reflectometry1/dmpc_xray/dmpc_xray_sp_30.dat',
@@ -259,14 +270,14 @@ rule dmpc_xray_analysis:
         'output/reflectometry1/dmpc_xray/dmpc_xray_chain.txt'
     shell:
         """
-        cd tools && python chemically_consistent.py dmpc 13 20 25 30 40 0
+        cd scripts && python chemically_consistent.py dmpc 13 20 25 30 40 0
         """
 
 rule dlpc_xray_analysis:
     input:
         'reports/code_blocks/mol_vol.py',
         'reports/code_blocks/ref_help.py',
-        'tools/chemically_consistent.py',
+        'scripts/chemically_consistent.py',
         'data/reflectometry1/dlpc_xray/dlpc_xray_sp_20.dat',
         'data/reflectometry1/dlpc_xray/dlpc_xray_sp_25.dat',
         'data/reflectometry1/dlpc_xray/dlpc_xray_sp_30.dat',
@@ -275,14 +286,14 @@ rule dlpc_xray_analysis:
         'output/reflectometry1/dlpc_xray/dlpc_xray_chain.txt'
     shell:
         """
-        cd tools && python chemically_consistent.py dlpc 11 20 25 30 35 0
+        cd scripts && python chemically_consistent.py dlpc 11 20 25 30 35 0
         """
 
 rule dmpg_xray_analysis:
     input:
         'reports/code_blocks/mol_vol.py',
         'reports/code_blocks/ref_help.py',
-        'tools/chemically_consistent.py',
+        'scripts/chemically_consistent.py',
         'data/reflectometry1/dmpg_xray/dmpg_xray_sp_15.dat',
         'data/reflectometry1/dmpg_xray/dmpg_xray_sp_20.dat',
         'data/reflectometry1/dmpg_xray/dmpg_xray_sp_25.dat',
@@ -291,12 +302,12 @@ rule dmpg_xray_analysis:
         'output/reflectometry1/dmpg_xray/dmpg_xray_chain.txt'
     shell:
         """
-        cd tools && python chemically_consistent.py dmpg 13 15 20 25 30 0
+        cd scripts && python chemically_consistent.py dmpg 13 15 20 25 30 0
         """
 
 rule dppc_xray_plotting:
     input:
-        'visualisation/XRR_plotting.py',
+        'scripts/XRR_plotting.py',
         'output/reflectometry1/dppc_xray/dppc_xray_chain.txt'
     output:
         FIG_REFL1 + 'dppc_xray_sp_15_pdf.pdf',
@@ -310,11 +321,11 @@ rule dppc_xray_plotting:
         'output/reflectometry1/dppc_xray/dppc_xray-V_h.tex'
     shell:
         """
-        cd visualisation && python XRR_plotting.py dppc 15 15 20 25 30 0
+        cd scripts && python XRR_plotting.py dppc 15 15 20 25 30 0
         """
 rule dmpc_xray_plotting:
     input:
-        'visualisation/XRR_plotting.py',
+        'scripts/XRR_plotting.py',
         'output/reflectometry1/dmpc_xray/dmpc_xray_chain.txt'
     output:
         FIG_REFL1 + 'dmpc_xray_sp_20_pdf.pdf',
@@ -328,12 +339,12 @@ rule dmpc_xray_plotting:
         'output/reflectometry1/dmpc_xray/dmpc_xray-V_h.tex'
     shell:
         """
-        cd visualisation && python XRR_plotting.py dmpc 13 20 25 30 40 0
+        cd scripts && python XRR_plotting.py dmpc 13 20 25 30 40 0
         """
 
 rule dlpc_xray_plotting:
     input:
-        'visualisation/XRR_plotting.py',
+        'scripts/XRR_plotting.py',
         'output/reflectometry1/dlpc_xray/dlpc_xray_chain.txt'
     output:
         FIG_REFL1 + 'dlpc_xray_sp_20_pdf.pdf',
@@ -347,12 +358,12 @@ rule dlpc_xray_plotting:
         'output/reflectometry1/dlpc_xray/dlpc_xray-V_h.tex'
     shell:
         """
-        cd visualisation && python XRR_plotting.py dlpc 11 20 25 30 35 0
+        cd scripts && python XRR_plotting.py dlpc 11 20 25 30 35 0
         """
 
 rule dmpg_xray_plotting:
     input:
-        'visualisation/XRR_plotting.py',
+        'scripts/XRR_plotting.py',
         'output/reflectometry1/dmpg_xray/dmpg_xray_chain.txt'
     output:
         FIG_REFL1 + 'dmpg_xray_sp_15_pdf.pdf',
@@ -366,14 +377,14 @@ rule dmpg_xray_plotting:
         'output/reflectometry1/dmpg_xray/dmpg_xray-V_h.tex'
     shell:
         """
-        cd visualisation && python XRR_plotting.py dmpg 13 15 20 25 30 0
+        cd scripts && python XRR_plotting.py dmpg 13 15 20 25 30 0
         """
 
 rule dppc_neutron_15_analysis:
     input:
         'reports/code_blocks/mol_vol.py',
         'reports/code_blocks/ref_help.py',
-        'tools/chemically_consistent.py',
+        'scripts/chemically_consistent.py',
         'data/reflectometry1/dppc_neutron/dppc_neutron_h_sp_15.dat',
         'data/reflectometry1/dppc_neutron/dppc_neutron_hd_sp_15.dat',
         'output/reflectometry1/dppc_xray/dppc_xray-d_h.tex',
@@ -383,14 +394,14 @@ rule dppc_neutron_15_analysis:
         'output/reflectometry1/dppc_neutron/dppc_neutron_15_chain.txt'
     shell:
         """
-        cd tools && python chemically_consistent.py dppc 15 15 h hd 30 1
+        cd scripts && python chemically_consistent.py dppc 15 15 h hd 30 1
         """
 
 rule dppc_neutron_20_analysis:
     input:
         'reports/code_blocks/mol_vol.py',
         'reports/code_blocks/ref_help.py',
-        'tools/chemically_consistent.py',
+        'scripts/chemically_consistent.py',
         'data/reflectometry1/dppc_neutron/dppc_neutron_h_sp_20.dat',
         'data/reflectometry1/dppc_neutron/dppc_neutron_hd_sp_20.dat',
         'output/reflectometry1/dppc_xray/dppc_xray-d_h.tex',
@@ -400,14 +411,14 @@ rule dppc_neutron_20_analysis:
         'output/reflectometry1/dppc_neutron/dppc_neutron_20_chain.txt'
     shell:
         """
-        cd tools && python chemically_consistent.py dppc 15 20 h hd 30 1
+        cd scripts && python chemically_consistent.py dppc 15 20 h hd 30 1
         """
 
 rule dmpc_neutron_20_analysis:
     input:
         'reports/code_blocks/mol_vol.py',
         'reports/code_blocks/ref_help.py',
-        'tools/chemically_consistent.py',
+        'scripts/chemically_consistent.py',
         'data/reflectometry1/dmpc_neutron/dmpc_neutron_h_sp_20.dat',
         'data/reflectometry1/dmpc_neutron/dmpc_neutron_hd_sp_20.dat',
         'output/reflectometry1/dmpc_xray/dmpc_xray-d_h.tex',
@@ -417,14 +428,14 @@ rule dmpc_neutron_20_analysis:
         'output/reflectometry1/dmpc_neutron/dmpc_neutron_20_chain.txt'
     shell:
         """
-        cd tools && python chemically_consistent.py dmpc 13 20 h hd 30 1
+        cd scripts && python chemically_consistent.py dmpc 13 20 h hd 30 1
         """
 
 rule dmpc_neutron_25_analysis:
     input:
         'reports/code_blocks/mol_vol.py',
         'reports/code_blocks/ref_help.py',
-        'tools/chemically_consistent.py',
+        'scripts/chemically_consistent.py',
         'data/reflectometry1/dmpc_neutron/dmpc_neutron_h_sp_25.dat',
         'data/reflectometry1/dmpc_neutron/dmpc_neutron_hd_sp_25.dat',
         'output/reflectometry1/dmpc_xray/dmpc_xray-d_h.tex',
@@ -434,14 +445,14 @@ rule dmpc_neutron_25_analysis:
         'output/reflectometry1/dmpc_neutron/dmpc_neutron_25_chain.txt'
     shell:
         """
-        cd tools && python chemically_consistent.py dmpc 13 25 h hd 30 1
+        cd scripts && python chemically_consistent.py dmpc 13 25 h hd 30 1
         """
 
 rule dspc_neutron_20_analysis:
     input:
         'reports/code_blocks/mol_vol.py',
         'reports/code_blocks/ref_help.py',
-        'tools/chemically_consistent.py',
+        'scripts/chemically_consistent.py',
         'data/reflectometry2/dspc_20/d13acmw20.dat',
         'data/reflectometry2/dspc_20/d13d2o20.dat',
         'data/reflectometry2/dspc_20/d70acmw20.dat',
@@ -453,14 +464,14 @@ rule dspc_neutron_20_analysis:
         'output/reflectometry2/dspc_20/dspc_20_chain.txt'
     shell:
         """
-        cd tools && python chemically_consistent.py dspc 17 20 47.9 2 3 1
+        cd scripts && python chemically_consistent.py dspc 17 20 47.9 2 3 1
         """
 
 rule dspc_neutron_30_analysis:
     input:
         'reports/code_blocks/mol_vol.py',
         'reports/code_blocks/ref_help.py',
-        'tools/chemically_consistent.py',
+        'scripts/chemically_consistent.py',
         'data/reflectometry2/dspc_30/d13acmw30.dat',
         'data/reflectometry2/dspc_30/d13d2o30.dat',
         'data/reflectometry2/dspc_30/d70acmw30.dat',
@@ -472,14 +483,14 @@ rule dspc_neutron_30_analysis:
         'output/reflectometry2/dspc_30/dspc_30_chain.txt'
     shell:
         """
-        cd tools && python chemically_consistent.py dspc 17 30 46.4 2 3 1
+        cd scripts && python chemically_consistent.py dspc 17 30 46.4 2 3 1
         """
 
 rule dspc_neutron_40_analysis:
     input:
         'reports/code_blocks/mol_vol.py',
         'reports/code_blocks/ref_help.py',
-        'tools/chemically_consistent.py',
+        'scripts/chemically_consistent.py',
         'data/reflectometry2/dspc_40/d13acmw40.dat',
         'data/reflectometry2/dspc_40/d13d2o40.dat',
         'data/reflectometry2/dspc_40/d70acmw40.dat',
@@ -491,14 +502,14 @@ rule dspc_neutron_40_analysis:
         'output/reflectometry2/dspc_40/dspc_40_chain.txt'
     shell:
         """
-        cd tools && python chemically_consistent.py dspc 17 40 45.0 2 3 1
+        cd scripts && python chemically_consistent.py dspc 17 40 45.0 2 3 1
         """
 
 rule dspc_neutron_50_analysis:
     input:
         'reports/code_blocks/mol_vol.py',
         'reports/code_blocks/ref_help.py',
-        'tools/chemically_consistent.py',
+        'scripts/chemically_consistent.py',
         'data/reflectometry2/dspc_50/d13acmw50.dat',
         'data/reflectometry2/dspc_50/d13d2o50.dat',
         'data/reflectometry2/dspc_50/d70acmw50.dat',
@@ -510,108 +521,108 @@ rule dspc_neutron_50_analysis:
         'output/reflectometry2/dspc_50/dspc_50_chain.txt'
     shell:
         """
-        cd tools && python chemically_consistent.py dspc 17 50 44.6 2 3 1
+        cd scripts && python chemically_consistent.py dspc 17 50 44.6 2 3 1
         """
 
 rule dspc_neutron_20_plotting:
     input:
-        'visualisation/NR_plotting2.py',
+        'scripts/NR_plotting2.py',
         'output/reflectometry2/dspc_20/dspc_20_chain.txt'
     output:
         FIG_REFL2 + 'dspc_20_pdf.pdf',
         FIG_REFL2 + 'dspc_20_ref_sld.pdf'
     shell:
         """
-        cd visualisation && python NR_plotting2.py dspc 17 20 47.9
+        cd scripts && python NR_plotting2.py dspc 17 20 47.9
         """
 
 rule dspc_neutron_30_plotting:
     input:
-        'visualisation/NR_plotting2.py',
+        'scripts/NR_plotting2.py',
         'output/reflectometry2/dspc_30/dspc_30_chain.txt'
     output:
         FIG_REFL2 + 'dspc_30_pdf.pdf',
         FIG_REFL2 + 'dspc_30_ref_sld.pdf'
     shell:
         """
-        cd visualisation && python NR_plotting2.py dspc 17 30 46.4
+        cd scripts && python NR_plotting2.py dspc 17 30 46.4
         """
 
 rule dspc_neutron_40_plotting:
     input:
-        'visualisation/NR_plotting2.py',
+        'scripts/NR_plotting2.py',
         'output/reflectometry2/dspc_40/dspc_40_chain.txt'
     output:
         FIG_REFL2 + 'dspc_40_pdf.pdf',
         FIG_REFL2 + 'dspc_40_ref_sld.pdf'
     shell:
         """
-        cd visualisation && python NR_plotting2.py dspc 17 40 45.0
+        cd scripts && python NR_plotting2.py dspc 17 40 45.0
         """
 
 rule dspc_neutron_50_plotting:
     input:
-        'visualisation/NR_plotting2.py',
+        'scripts/NR_plotting2.py',
         'output/reflectometry2/dspc_50/dspc_50_chain.txt'
     output:
         FIG_REFL2 + 'dspc_50_pdf.pdf',
         FIG_REFL2 + 'dspc_50_ref_sld.pdf'
     shell:
         """
-        cd visualisation && python NR_plotting2.py dspc 17 50 44.6
+        cd scripts && python NR_plotting2.py dspc 17 50 44.6
         """
 
 rule dppc_neutron_15_plotting:
     input:
-        'visualisation/NR_plotting.py',
+        'scripts/NR_plotting.py',
         'output/reflectometry1/dppc_neutron/dppc_neutron_15_chain.txt'
     output:
         FIG_REFL1 + 'dppc_neutron_15_pdf.pdf',
         FIG_REFL1 + 'dppc_neutron_15_ref_sld.pdf'
     shell:
         """
-        cd visualisation && python NR_plotting.py dppc 15 15 h hd 30 1
+        cd scripts && python NR_plotting.py dppc 15 15 h hd 30 1
         """
 
 rule dppc_neutron_20_plotting:
     input:
-        'visualisation/NR_plotting.py',
+        'scripts/NR_plotting.py',
         'output/reflectometry1/dppc_neutron/dppc_neutron_20_chain.txt'
     output:
         FIG_REFL1 + 'dppc_neutron_20_pdf.pdf',
         FIG_REFL1 + 'dppc_neutron_20_ref_sld.pdf'
     shell:
         """
-        cd visualisation && python NR_plotting.py dppc 15 20 h hd 30 1
+        cd scripts && python NR_plotting.py dppc 15 20 h hd 30 1
         """
 
 rule dmpc_neutron_20_plotting:
     input:
-        'visualisation/NR_plotting.py',
+        'scripts/NR_plotting.py',
         'output/reflectometry1/dmpc_neutron/dmpc_neutron_20_chain.txt'
     output:
         FIG_REFL1 + 'dmpc_neutron_20_pdf.pdf',
         FIG_REFL1 + 'dmpc_neutron_20_ref_sld.pdf'
     shell:
         """
-        cd visualisation && python NR_plotting.py dmpc 13 20 h hd 30 1
+        cd scripts && python NR_plotting.py dmpc 13 20 h hd 30 1
         """
 
 rule dmpc_neutron_25_plotting:
     input:
-        'visualisation/NR_plotting.py',
+        'scripts/NR_plotting.py',
         'output/reflectometry1/dmpc_neutron/dmpc_neutron_25_chain.txt'
     output:
         FIG_REFL1 + 'dmpc_neutron_25_pdf.pdf',
         FIG_REFL1 + 'dmpc_neutron_25_ref_sld.pdf'
     shell:
         """
-        cd visualisation && python NR_plotting.py dmpc 13 25 h hd 30 1
+        cd scripts && python NR_plotting.py dmpc 13 25 h hd 30 1
         """
 
 rule martini_dspc_20_analysis:
     input:
-        'tools/sim_analysis.py',
+        'scripts/sim_analysis.py',
         'data/reflectometry2/dspc_20/martini_frame1.pdb',
         'data/reflectometry2/dspc_20/martini_frame2.pdb',
         'data/reflectometry2/dspc_20/martini_frame3.pdb',
@@ -633,12 +644,12 @@ rule martini_dspc_20_analysis:
         FIG_REFL2 + 'dspc_martini_20_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py martini 20 4 0.2
+        cd scripts && python sim_analysis.py martini 20 4 0.2
         """
 
 rule martini_dspc_30_analysis:
     input:
-        'tools/sim_analysis.py',
+        'scripts/sim_analysis.py',
         'data/reflectometry2/dspc_30/martini_frame1.pdb',
         'data/reflectometry2/dspc_30/martini_frame2.pdb',
         'data/reflectometry2/dspc_30/martini_frame3.pdb',
@@ -660,12 +671,12 @@ rule martini_dspc_30_analysis:
         FIG_REFL2 + 'dspc_martini_30_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py martini 30 4 0.2
+        cd scripts && python sim_analysis.py martini 30 4 0.2
         """
 
 rule martini_dspc_40_analysis:
     input:
-        'tools/sim_analysis.py',
+        'scripts/sim_analysis.py',
         'data/reflectometry2/dspc_40/martini_frame1.pdb',
         'data/reflectometry2/dspc_40/martini_frame2.pdb',
         'data/reflectometry2/dspc_40/martini_frame3.pdb',
@@ -687,12 +698,12 @@ rule martini_dspc_40_analysis:
         FIG_REFL2 + 'dspc_martini_40_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py martini 40 4 0.2
+        cd scripts && python sim_analysis.py martini 40 4 0.2
         """
 
 rule martini_dspc_50_analysis:
     input:
-        'tools/sim_analysis.py',
+        'scripts/sim_analysis.py',
         'data/reflectometry2/dspc_50/martini_frame1.pdb',
         'data/reflectometry2/dspc_50/martini_frame2.pdb',
         'data/reflectometry2/dspc_50/martini_frame3.pdb',
@@ -714,12 +725,12 @@ rule martini_dspc_50_analysis:
         FIG_REFL2 + 'dspc_martini_50_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py martini 50 4 0.2
+        cd scripts && python sim_analysis.py martini 50 4 0.2
         """
 
 rule berger_dspc_20_analysis:
     input:
-        'tools/sim_analysis.py',
+        'scripts/sim_analysis.py',
         'data/reflectometry2/dspc_20/berger_frame1.pdb',
         'data/reflectometry2/dspc_20/berger_frame2.pdb',
         'data/reflectometry2/dspc_20/berger_frame3.pdb',
@@ -741,12 +752,12 @@ rule berger_dspc_20_analysis:
         FIG_REFL2 + 'dspc_berger_20_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py berger 20 1 0
+        cd scripts && python sim_analysis.py berger 20 1 0
         """
 
 rule berger_dspc_30_analysis:
     input:
-        'tools/sim_analysis.py',
+        'scripts/sim_analysis.py',
         'data/reflectometry2/dspc_30/berger_frame1.pdb',
         'data/reflectometry2/dspc_30/berger_frame2.pdb',
         'data/reflectometry2/dspc_30/berger_frame3.pdb',
@@ -768,12 +779,12 @@ rule berger_dspc_30_analysis:
         FIG_REFL2 + 'dspc_berger_30_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py berger 30 1 0
+        cd scripts && python sim_analysis.py berger 30 1 0
         """
 
 rule berger_dspc_40_analysis:
     input:
-        'tools/sim_analysis.py',
+        'scripts/sim_analysis.py',
         'data/reflectometry2/dspc_40/berger_frame1.pdb',
         'data/reflectometry2/dspc_40/berger_frame2.pdb',
         'data/reflectometry2/dspc_40/berger_frame3.pdb',
@@ -795,12 +806,12 @@ rule berger_dspc_40_analysis:
         FIG_REFL2 + 'dspc_berger_40_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py berger 40 1 0
+        cd scripts && python sim_analysis.py berger 40 1 0
         """
 
 rule berger_dspc_50_analysis:
     input:
-        'tools/sim_analysis.py',
+        'scripts/sim_analysis.py',
         'data/reflectometry2/dspc_50/berger_frame1.pdb',
         'data/reflectometry2/dspc_50/berger_frame2.pdb',
         'data/reflectometry2/dspc_50/berger_frame3.pdb',
@@ -822,12 +833,12 @@ rule berger_dspc_50_analysis:
         FIG_REFL2 + 'dspc_berger_50_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py berger 50 1 0
+        cd scripts && python sim_analysis.py berger 50 1 0
         """
 
 rule slipids_dspc_20_analysis:
     input:
-        'tools/sim_analysis.py',
+        'scripts/sim_analysis.py',
         'data/reflectometry2/dspc_20/slipids_frame1.pdb',
         'data/reflectometry2/dspc_20/slipids_frame2.pdb',
         'data/reflectometry2/dspc_20/slipids_frame3.pdb',
@@ -849,12 +860,12 @@ rule slipids_dspc_20_analysis:
         FIG_REFL2 + 'dspc_slipids_20_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py slipids 20 1 0
+        cd scripts && python sim_analysis.py slipids 20 1 0
         """
 
 rule slipids_dspc_30_analysis:
     input:
-        'tools/sim_analysis.py',
+        'scripts/sim_analysis.py',
         'data/reflectometry2/dspc_30/slipids_frame1.pdb',
         'data/reflectometry2/dspc_30/slipids_frame2.pdb',
         'data/reflectometry2/dspc_30/slipids_frame3.pdb',
@@ -876,12 +887,12 @@ rule slipids_dspc_30_analysis:
         FIG_REFL2 + 'dspc_slipids_30_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py slipids 30 1 0
+        cd scripts && python sim_analysis.py slipids 30 1 0
         """
 
 rule slipids_dspc_40_analysis:
     input:
-        'tools/sim_analysis.py',
+        'scripts/sim_analysis.py',
         'data/reflectometry2/dspc_40/slipids_frame1.pdb',
         'data/reflectometry2/dspc_40/slipids_frame2.pdb',
         'data/reflectometry2/dspc_40/slipids_frame3.pdb',
@@ -903,12 +914,12 @@ rule slipids_dspc_40_analysis:
         FIG_REFL2 + 'dspc_slipids_40_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py slipids 40 1 0
+        cd scripts && python sim_analysis.py slipids 40 1 0
         """
 
 rule slipids_dspc_50_analysis:
     input:
-        'tools/sim_analysis.py',
+        'scripts/sim_analysis.py',
         'data/reflectometry2/dspc_50/slipids_frame1.pdb',
         'data/reflectometry2/dspc_50/slipids_frame2.pdb',
         'data/reflectometry2/dspc_50/slipids_frame3.pdb',
@@ -930,12 +941,12 @@ rule slipids_dspc_50_analysis:
         FIG_REFL2 + 'dspc_slipids_50_ref_sld.pdf',
     shell:
         """
-        cd tools && python sim_analysis.py slipids 50 1 0
+        cd scripts && python sim_analysis.py slipids 50 1 0
         """
 
 rule martini_dspc_20_tail:
     input:
-        'tools/tail_length.py',
+        'scripts/tail_length.py',
         'data/reflectometry2/dspc_20/martini_frame1.pdb',
         'data/reflectometry2/dspc_20/martini_frame2.pdb',
         'data/reflectometry2/dspc_20/martini_frame3.pdb',
@@ -950,12 +961,12 @@ rule martini_dspc_20_tail:
         'output/reflectometry2/dspc_20/dspc_martini_20_dt.txt'
     shell:
         """
-        cd tools && python tail_length.py martini 20
+        cd scripts && python tail_length.py martini 20
         """
 
 rule martini_dspc_30_tail:
     input:
-        'tools/tail_length.py',
+        'scripts/tail_length.py',
         'data/reflectometry2/dspc_30/martini_frame1.pdb',
         'data/reflectometry2/dspc_30/martini_frame2.pdb',
         'data/reflectometry2/dspc_30/martini_frame3.pdb',
@@ -970,12 +981,12 @@ rule martini_dspc_30_tail:
         'output/reflectometry2/dspc_30/dspc_martini_30_dt.txt'
     shell:
         """
-        cd tools && python tail_length.py martini 30
+        cd scripts && python tail_length.py martini 30
         """
 
 rule martini_dspc_40_tail:
     input:
-        'tools/tail_length.py',
+        'scripts/tail_length.py',
         'data/reflectometry2/dspc_40/martini_frame1.pdb',
         'data/reflectometry2/dspc_40/martini_frame2.pdb',
         'data/reflectometry2/dspc_40/martini_frame3.pdb',
@@ -990,12 +1001,12 @@ rule martini_dspc_40_tail:
         'output/reflectometry2/dspc_40/dspc_martini_40_dt.txt'
     shell:
         """
-        cd tools && python tail_length.py martini 40
+        cd scripts && python tail_length.py martini 40
         """
 
 rule martini_dspc_50_tail:
     input:
-        'tools/tail_length.py',
+        'scripts/tail_length.py',
         'data/reflectometry2/dspc_50/martini_frame1.pdb',
         'data/reflectometry2/dspc_50/martini_frame2.pdb',
         'data/reflectometry2/dspc_50/martini_frame3.pdb',
@@ -1010,12 +1021,12 @@ rule martini_dspc_50_tail:
         'output/reflectometry2/dspc_50/dspc_martini_50_dt.txt'
     shell:
         """
-        cd tools && python tail_length.py martini 50
+        cd scripts && python tail_length.py martini 50
         """
 
 rule berger_dspc_20_tail:
     input:
-        'tools/tail_length.py',
+        'scripts/tail_length.py',
         'data/reflectometry2/dspc_20/berger_frame1.pdb',
         'data/reflectometry2/dspc_20/berger_frame2.pdb',
         'data/reflectometry2/dspc_20/berger_frame3.pdb',
@@ -1030,12 +1041,12 @@ rule berger_dspc_20_tail:
         'output/reflectometry2/dspc_20/dspc_berger_20_dt.txt'
     shell:
         """
-        cd tools && python tail_length.py berger 20
+        cd scripts && python tail_length.py berger 20
         """
 
 rule berger_dspc_30_tail:
     input:
-        'tools/tail_length.py',
+        'scripts/tail_length.py',
         'data/reflectometry2/dspc_30/berger_frame1.pdb',
         'data/reflectometry2/dspc_30/berger_frame2.pdb',
         'data/reflectometry2/dspc_30/berger_frame3.pdb',
@@ -1050,12 +1061,12 @@ rule berger_dspc_30_tail:
         'output/reflectometry2/dspc_30/dspc_berger_30_dt.txt'
     shell:
         """
-        cd tools && python tail_length.py berger 30
+        cd scripts && python tail_length.py berger 30
         """
 
 rule berger_dspc_40_tail:
     input:
-        'tools/tail_length.py',
+        'scripts/tail_length.py',
         'data/reflectometry2/dspc_40/berger_frame1.pdb',
         'data/reflectometry2/dspc_40/berger_frame2.pdb',
         'data/reflectometry2/dspc_40/berger_frame3.pdb',
@@ -1070,12 +1081,12 @@ rule berger_dspc_40_tail:
         'output/reflectometry2/dspc_40/dspc_berger_40_dt.txt'
     shell:
         """
-        cd tools && python tail_length.py berger 40
+        cd scripts && python tail_length.py berger 40
         """
 
 rule berger_dspc_50_tail:
     input:
-        'tools/tail_length.py',
+        'scripts/tail_length.py',
         'data/reflectometry2/dspc_50/berger_frame1.pdb',
         'data/reflectometry2/dspc_50/berger_frame2.pdb',
         'data/reflectometry2/dspc_50/berger_frame3.pdb',
@@ -1090,12 +1101,12 @@ rule berger_dspc_50_tail:
         'output/reflectometry2/dspc_50/dspc_berger_50_dt.txt'
     shell:
         """
-        cd tools && python tail_length.py berger 50
+        cd scripts && python tail_length.py berger 50
         """
 
 rule slipids_dspc_20_tail:
     input:
-        'tools/tail_length.py',
+        'scripts/tail_length.py',
         'data/reflectometry2/dspc_20/slipids_frame1.pdb',
         'data/reflectometry2/dspc_20/slipids_frame2.pdb',
         'data/reflectometry2/dspc_20/slipids_frame3.pdb',
@@ -1110,12 +1121,12 @@ rule slipids_dspc_20_tail:
         'output/reflectometry2/dspc_20/dspc_slipids_20_dt.txt'
     shell:
         """
-        cd tools && python tail_length.py slipids 20
+        cd scripts && python tail_length.py slipids 20
         """
 
 rule slipids_dspc_30_tail:
     input:
-        'tools/tail_length.py',
+        'scripts/tail_length.py',
         'data/reflectometry2/dspc_30/slipids_frame1.pdb',
         'data/reflectometry2/dspc_30/slipids_frame2.pdb',
         'data/reflectometry2/dspc_30/slipids_frame3.pdb',
@@ -1130,12 +1141,12 @@ rule slipids_dspc_30_tail:
         'output/reflectometry2/dspc_30/dspc_slipids_30_dt.txt'
     shell:
         """
-        cd tools && python tail_length.py slipids 30
+        cd scripts && python tail_length.py slipids 30
         """
 
 rule slipids_dspc_40_tail:
     input:
-        'tools/tail_length.py',
+        'scripts/tail_length.py',
         'data/reflectometry2/dspc_40/slipids_frame1.pdb',
         'data/reflectometry2/dspc_40/slipids_frame2.pdb',
         'data/reflectometry2/dspc_40/slipids_frame3.pdb',
@@ -1150,12 +1161,12 @@ rule slipids_dspc_40_tail:
         'output/reflectometry2/dspc_40/dspc_slipids_40_dt.txt'
     shell:
         """
-        cd tools && python tail_length.py slipids 40
+        cd scripts && python tail_length.py slipids 40
         """
 
 rule slipids_dspc_50_tail:
     input:
-        'tools/tail_length.py',
+        'scripts/tail_length.py',
         'data/reflectometry2/dspc_50/slipids_frame1.pdb',
         'data/reflectometry2/dspc_50/slipids_frame2.pdb',
         'data/reflectometry2/dspc_50/slipids_frame3.pdb',
@@ -1170,12 +1181,12 @@ rule slipids_dspc_50_tail:
         'output/reflectometry2/dspc_50/dspc_slipids_50_dt.txt'
     shell:
         """
-        cd tools && python tail_length.py slipids 50
+        cd scripts && python tail_length.py slipids 50
         """
 
 rule martini_dspc_20_wph:
     input:
-        'tools/waters.py',
+        'scripts/waters.py',
         'data/reflectometry2/dspc_20/martini_frame1.pdb',
         'data/reflectometry2/dspc_20/martini_frame2.pdb',
         'data/reflectometry2/dspc_20/martini_frame3.pdb',
@@ -1190,12 +1201,12 @@ rule martini_dspc_20_wph:
         'output/reflectometry2/dspc_20/dspc_martini_20_wph.txt'
     shell:
         """
-        cd tools && python waters.py martini 20
+        cd scripts && python waters.py martini 20
         """
 
 rule martini_dspc_30_wph:
     input:
-        'tools/waters.py',
+        'scripts/waters.py',
         'data/reflectometry2/dspc_30/martini_frame1.pdb',
         'data/reflectometry2/dspc_30/martini_frame2.pdb',
         'data/reflectometry2/dspc_30/martini_frame3.pdb',
@@ -1210,12 +1221,12 @@ rule martini_dspc_30_wph:
         'output/reflectometry2/dspc_30/dspc_martini_30_wph.txt'
     shell:
         """
-        cd tools && python waters.py martini 30
+        cd scripts && python waters.py martini 30
         """
 
 rule martini_dspc_40_wph:
     input:
-        'tools/waters.py',
+        'scripts/waters.py',
         'data/reflectometry2/dspc_40/martini_frame1.pdb',
         'data/reflectometry2/dspc_40/martini_frame2.pdb',
         'data/reflectometry2/dspc_40/martini_frame3.pdb',
@@ -1230,12 +1241,12 @@ rule martini_dspc_40_wph:
         'output/reflectometry2/dspc_40/dspc_martini_40_wph.txt'
     shell:
         """
-        cd tools && python waters.py martini 40
+        cd scripts && python waters.py martini 40
         """
 
 rule martini_dspc_50_wph:
     input:
-        'tools/waters.py',
+        'scripts/waters.py',
         'data/reflectometry2/dspc_50/martini_frame1.pdb',
         'data/reflectometry2/dspc_50/martini_frame2.pdb',
         'data/reflectometry2/dspc_50/martini_frame3.pdb',
@@ -1250,12 +1261,12 @@ rule martini_dspc_50_wph:
         'output/reflectometry2/dspc_50/dspc_martini_50_wph.txt'
     shell:
         """
-        cd tools && python waters.py martini 50
+        cd scripts && python waters.py martini 50
         """
 
 rule berger_dspc_20_wph:
     input:
-        'tools/waters.py',
+        'scripts/waters.py',
         'data/reflectometry2/dspc_20/berger_frame1.pdb',
         'data/reflectometry2/dspc_20/berger_frame2.pdb',
         'data/reflectometry2/dspc_20/berger_frame3.pdb',
@@ -1270,12 +1281,12 @@ rule berger_dspc_20_wph:
         'output/reflectometry2/dspc_20/dspc_berger_20_wph.txt'
     shell:
         """
-        cd tools && python waters.py berger 20
+        cd scripts && python waters.py berger 20
         """
 
 rule berger_dspc_30_wph:
     input:
-        'tools/waters.py',
+        'scripts/waters.py',
         'data/reflectometry2/dspc_30/berger_frame1.pdb',
         'data/reflectometry2/dspc_30/berger_frame2.pdb',
         'data/reflectometry2/dspc_30/berger_frame3.pdb',
@@ -1290,12 +1301,12 @@ rule berger_dspc_30_wph:
         'output/reflectometry2/dspc_30/dspc_berger_30_wph.txt'
     shell:
         """
-        cd tools && python waters.py berger 30
+        cd scripts && python waters.py berger 30
         """
 
 rule berger_dspc_40_wph:
     input:
-        'tools/waters.py',
+        'scripts/waters.py',
         'data/reflectometry2/dspc_40/berger_frame1.pdb',
         'data/reflectometry2/dspc_40/berger_frame2.pdb',
         'data/reflectometry2/dspc_40/berger_frame3.pdb',
@@ -1310,12 +1321,12 @@ rule berger_dspc_40_wph:
         'output/reflectometry2/dspc_40/dspc_berger_40_wph.txt'
     shell:
         """
-        cd tools && python waters.py berger 40
+        cd scripts && python waters.py berger 40
         """
 
 rule berger_dspc_50_wph:
     input:
-        'tools/waters.py',
+        'scripts/waters.py',
         'data/reflectometry2/dspc_50/berger_frame1.pdb',
         'data/reflectometry2/dspc_50/berger_frame2.pdb',
         'data/reflectometry2/dspc_50/berger_frame3.pdb',
@@ -1330,12 +1341,12 @@ rule berger_dspc_50_wph:
         'output/reflectometry2/dspc_50/dspc_berger_50_wph.txt'
     shell:
         """
-        cd tools && python waters.py berger 50
+        cd scripts && python waters.py berger 50
         """
 
 rule slipids_dspc_20_wph:
     input:
-        'tools/waters.py',
+        'scripts/waters.py',
         'data/reflectometry2/dspc_20/slipids_frame1.pdb',
         'data/reflectometry2/dspc_20/slipids_frame2.pdb',
         'data/reflectometry2/dspc_20/slipids_frame3.pdb',
@@ -1350,12 +1361,12 @@ rule slipids_dspc_20_wph:
         'output/reflectometry2/dspc_20/dspc_slipids_20_wph.txt'
     shell:
         """
-        cd tools && python waters.py slipids 20
+        cd scripts && python waters.py slipids 20
         """
 
 rule slipids_dspc_30_wph:
     input:
-        'tools/waters.py',
+        'scripts/waters.py',
         'data/reflectometry2/dspc_30/slipids_frame1.pdb',
         'data/reflectometry2/dspc_30/slipids_frame2.pdb',
         'data/reflectometry2/dspc_30/slipids_frame3.pdb',
@@ -1370,12 +1381,12 @@ rule slipids_dspc_30_wph:
         'output/reflectometry2/dspc_30/dspc_slipids_30_wph.txt'
     shell:
         """
-        cd tools && python waters.py slipids 30
+        cd scripts && python waters.py slipids 30
         """
 
 rule slipids_dspc_40_wph:
     input:
-        'tools/waters.py',
+        'scripts/waters.py',
         'data/reflectometry2/dspc_40/slipids_frame1.pdb',
         'data/reflectometry2/dspc_40/slipids_frame2.pdb',
         'data/reflectometry2/dspc_40/slipids_frame3.pdb',
@@ -1390,12 +1401,12 @@ rule slipids_dspc_40_wph:
         'output/reflectometry2/dspc_40/dspc_slipids_40_wph.txt'
     shell:
         """
-        cd tools && python waters.py slipids 40
+        cd scripts && python waters.py slipids 40
         """
 
 rule slipids_dspc_50_wph:
     input:
-        'tools/waters.py',
+        'scripts/waters.py',
         'data/reflectometry2/dspc_50/slipids_frame1.pdb',
         'data/reflectometry2/dspc_50/slipids_frame2.pdb',
         'data/reflectometry2/dspc_50/slipids_frame3.pdb',
@@ -1410,12 +1421,12 @@ rule slipids_dspc_50_wph:
         'output/reflectometry2/dspc_50/dspc_slipids_50_wph.txt'
     shell:
         """
-        cd tools && python waters.py slipids 50
+        cd scripts && python waters.py slipids 50
         """
 
 rule slipids_dspc_30_nd:
     input:
-        'visualisation/number_density.py',
+        'scripts/number_density.py',
         'data/reflectometry2/dspc_30/slipids_frame1.pdb',
         'data/reflectometry2/dspc_30/slipids_frame2.pdb',
         'data/reflectometry2/dspc_30/slipids_frame3.pdb',
@@ -1430,12 +1441,12 @@ rule slipids_dspc_30_nd:
         'reports/figures/reflectometry2/number_density.pdf'
     shell:
         """
-        cd visualisation && python number_density.py slipids 30
+        cd scripts && python number_density.py slipids 30
         """
 
 rule pear_plotting:
     input:
-        'visualisation/pear_plotting.py',
+        'scripts/pear_plotting.py',
         'output/reflectometry1/dlpc_xray/dlpc_p_sum_sp20.txt',
         'output/reflectometry1/dlpc_xray/dlpc_p_sum_sp25.txt',
         'output/reflectometry1/dlpc_xray/dlpc_p_sum_sp30.txt',
@@ -1452,12 +1463,12 @@ rule pear_plotting:
         FIG_REFL1 + 'pear.pdf',
     shell:
         """
-        cd visualisation && python pear_plotting.py
+        cd scripts && python pear_plotting.py
         """
 
 rule martini_order:
     input:
-        'visualisation/martini_order.py',
+        'scripts/martini_order.py',
         'data/reflectometry2/dspc_30/martini_frame1.pdb',
         'data/reflectometry2/dspc_30/martini_frame2.pdb',
         'data/reflectometry2/dspc_30/martini_frame3.pdb',
@@ -1472,16 +1483,26 @@ rule martini_order:
         FIG_REFL2 + 'martini_order.pdf',
     shell:
         """
-        cd visualisation && python martini_order.py
+        cd scripts && python martini_order.py
         """
 
 rule apm_plotting:
     input:
-        'visualisation/apm.py',
+        'scripts/apm.py',
         'data/reflectometry2/surf_iso.csv'
     output:
         FIG_REFL2 + 'apm.pdf',
     shell:
         """
-        cd visualisation && python apm.py
+        cd scripts && python apm.py
+        """
+
+rule growth_plot:
+    input:
+        'scripts/growth.py'
+    output:
+        FIG_TEACH + 'chem_data_py.pdf'
+    shell:
+        """
+        cd scripts && python growth.py
         """

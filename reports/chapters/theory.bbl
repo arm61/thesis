@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{94}
+\begin{mcitethebibliography}{98}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -18,6 +18,53 @@
 \mciteSetBstSublistLabelBeginEnd{\mcitemaxwidthsubitemform\space}
 {\relax}{\relax}
 
+\bibitem[Schnablegger and Singh(2017)]{schnablegger_saxs_2017}
+H.~Schnablegger and Y.~Singh, \emph{The {{SAXS Guide}}: {{Getting}} Acquainted
+  with the Principles}, {Anton Paar GmbH}, Graz, AT, 4th edn., 2017\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[noa()]{noauthor_metaljet_nodate}
+\emph{{{MetalJet X}}-{{Ray Source Technology}}},
+  \url{https://www.excillum.com/technology/}, (accessed 2018-12-06)\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[{Garcia-Gutierrez} and Rueda(2009)]{garcia-gutierrez_bases_2009}
+M.~C. {Garcia-Gutierrez} and D.~R. Rueda, in \emph{Applications of
+  {{Synchrotron Light}} to {{Scattering}} and {{Diffraction}} in {{Materials}}
+  and {{Life Sciences}}}, ed. M.~Gomez, A.~Nogales, M.~C. {Garcia-Gutierrez}
+  and T.~A. Ezquerra, {Springer-Verlag Berlin Heidelberg}, Berlin, DE, 2009,
+  pp. 1--22\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Sivia(2011)]{sivia_elementary_2011}
+D.~S. Sivia, \emph{Elementary {{Scattering Theory}}: {{For X}}-Ray and
+  {{Neutron Users}}}, {Oxford University Press}, Oxford, UK, 2011\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[noa()]{noauthor_ill_nodate}
+\emph{{{ILL}}: {{Neutron}} for {{Science}}: {{Technical}} Characteristics},
+  \url{https://www.ill.eu/reactor-environment-safety/high-flux-reactor/technical-characteristics/},
+  (accessed 2016-08-08)\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[noa()]{noauthor_isis_nodate-1}
+\emph{{{ISIS}} -- {{How ISIS}} Works},
+  \url{https://www.isis.stfc.ac.uk/Pages/What-does-ISIS-Neutron-Muon-Source-do.aspx},
+  (accessed 2018-09-25)\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
 \bibitem[Garcia~Sakai and Arbe(2009)]{garcia_sakai_quasielastic_2009}
 V.~Garcia~Sakai and A.~Arbe, \emph{Curr. Opin. Colloid Interface Sci.}, 2009,
   \textbf{14}, 381--390\relax
@@ -28,13 +75,6 @@ V.~Garcia~Sakai and A.~Arbe, \emph{Curr. Opin. Colloid Interface Sci.}, 2009,
 \bibitem[Farago(2009)]{farago_recent_2009}
 B.~Farago, \emph{Curr. Opin. Colloid Interface Sci.}, 2009, \textbf{14},
   391--395\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Sivia(2011)]{sivia_elementary_2011}
-D.~S. Sivia, \emph{Elementary {{Scattering Theory}}: {{For X}}-Ray and
-  {{Neutron Users}}}, {Oxford University Press}, Oxford, UK, 2011\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -80,8 +120,9 @@ A.~R.~J. Nelson, \emph{J. Appl. Crystallogr.}, 2006, \textbf{39},
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
-\bibitem[Hughes()]{hughes_rascal_nodate}
-A.~V. Hughes, \emph{{{RasCAL}}}, https://sourceforge.net/projects/rscl/\relax
+\bibitem[Hughes(2010)]{hughes_rascal_2010}
+A.~V. Hughes, \emph{{{RasCAL}}}, \url{https://sourceforge.net/projects/rscl/},
+  2010, (accessed 2016-08-08)\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -107,7 +148,8 @@ B.~T.~M. Willis and C.~J. Carlile, \emph{Experimental {{Neutron Scattering}}},
 \EndOfBibitem
 \bibitem[noa()]{noauthor_isis_nodate}
 \emph{{{ISIS}} -- {{SANS2D}}},
-  https://www.isis.stfc.ac.uk/Pages/Sans2d.aspx\relax
+  \url{https://www.isis.stfc.ac.uk/Pages/Sans2d.aspx}, (accessed
+  2018-09-25)\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -143,13 +185,15 @@ J.~S. Pedersen, in \emph{Neutron, {{X}}-Rays and {{Light}}. {{Scattering
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
 \bibitem[noa()]{noauthor_sasview_nodate}
-\emph{{{SASview}} for {{Small Angle Scattering}}}, http://www.sasview.org\relax
+\emph{{{SASview}} for {{Small Angle Scattering}}},
+  \url{http://www.sasview.org}, (accessed 2016-10-26)\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
 \bibitem[noa()]{noauthor_sasfit_nodate}
-\emph{{{SASfit}}}, https://kur.web.psi.ch/sans1/SANSSoft/sasfit.html\relax
+\emph{{{SASfit}}}, \url{https://kur.web.psi.ch/sans1/SANSSoft/sasfit.html},
+  (accessed 2018-11-11)\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -299,7 +343,7 @@ R.~Lazzari, \emph{J. Appl. Crystallogr.}, 2002, \textbf{35}, 406--421\relax
 J.~Burle, C.~Durniak, J.~M. Fisher, M.~Ganeva, G.~Pospelov, W.~{van Herck} and
   J.~Wuttke, \emph{{{BornAgain}} - {{Software}} for Simulating and Fitting
   {{X}}-Ray and Neutron Small-Angle Scattering at Grazing Incidence.},
-  www.bornagainproject.com, 2018\relax
+  \url{www.bornagainproject.com}, 2018\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -312,48 +356,40 @@ S.~T. Chourou, A.~Sarje, X.~S. Li, E.~R. Chan and A.~Hexemer, \emph{J. Appl.
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
-\bibitem[Schnablegger and Singh(2017)]{schnablegger_saxs_2017}
-H.~Schnablegger and Y.~Singh, \emph{The {{SAXS Guide}}: {{Getting}} Acquainted
-  with the Principles}, {Anton Paar GmbH}, Graz, AT, 4th edn., 2017\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[noa()]{noauthor_metaljet_nodate}
-\emph{{{MetalJet X}}-{{Ray Source Technology}}},
-  https://www.excillum.com/technology/\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[{Garcia-Gutierrez} and Rueda(2009)]{garcia-gutierrez_bases_2009}
-M.~C. {Garcia-Gutierrez} and D.~R. Rueda, in \emph{Applications of
-  {{Synchrotron Light}} to {{Scattering}} and {{Diffraction}} in {{Materials}}
-  and {{Life Sciences}}}, ed. M.~Gomez, A.~Nogales, M.~C. {Garcia-Gutierrez}
-  and T.~A. Ezquerra, {Springer-Verlag Berlin Heidelberg}, Berlin, DE, 2009,
-  pp. 1--22\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[noa()]{noauthor_ill_nodate}
-\emph{{{ILL}}: {{Neutron}} for {{Science}}: {{Technical}} Characteristics},
-  https://www.ill.eu/reactor-environment-safety/high-flux-reactor/technical-characteristics/\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[noa()]{noauthor_isis_nodate-1}
-\emph{{{ISIS}} -- {{How ISIS}} Works},
-  https://www.isis.stfc.ac.uk/Pages/What-does-ISIS-Neutron-Muon-Source-do.aspx\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
 \bibitem[Schurtenberger(2002)]{schurtenberger_contrast_2002}
 P.~Schurtenberger, in \emph{Neutron, {{X}}-Rays and {{Light}}. {{Scattering
   Methods Applied}} to {{Soft Condensed Matter}}}, ed. T.~Zemb and P.~Lindner,
   {Elsevier Science B.V.}, Amsterdam, NL, 2002, pp. 145--170\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Ivanovi\'c \emph{et~al.}(2018)Ivanovi\'c, Bruetzel, Lipfert, and
+  Hub]{ivanovic_temperature-dependent_2018}
+M.~T. Ivanovi\'c, L.~K. Bruetzel, J.~Lipfert and J.~S. Hub, \emph{Angew. Chemie
+  Int. Ed.}, 2018, \textbf{57}, 5635--5639\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Scoppola and Schneck(2018)]{scoppola_combining_2018}
+E.~Scoppola and E.~Schneck, \emph{Curr. Opin. Colloid Interface Sci.}, 2018,
+  \textbf{37}, 88--100\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Dabkowska \emph{et~al.}(2014)Dabkowska, Collins, Barlow, Barker,
+  McLain, Lawrence, and Lorenz]{dabkowska_modulation_2014}
+A.~P. Dabkowska, L.~E. Collins, D.~J. Barlow, R.~Barker, S.~E. McLain, M.~J.
+  Lawrence and C.~D. Lorenz, \emph{Langmuir}, 2014, \textbf{30},
+  8803--8811\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hub(2018)]{hub_interpreting_2018}
+J.~S. Hub, \emph{Curr. Opin. Struct. Biol.}, 2018, \textbf{49}, 18--26\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -496,7 +532,8 @@ M.~Bj\"orck and G.~Andersson, \emph{J. Appl. Crystallogr.}, 2007, \textbf{40},
 \EndOfBibitem
 \bibitem[Ott(2008)]{ott_simulreflec_2008}
 F.~Ott, \emph{{{SimulReflec}}},
-  http://www-llb.cea.fr/prism/programs/simulreflec/simulreflec.html, 2008\relax
+  \url{http://www-llb.cea.fr/prism/programs/simulreflec/simulreflec.html},
+  2008\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -505,7 +542,7 @@ F.~Ott, \emph{{{SimulReflec}}},
   Berk, and Majkrzak]{kienzle_ncnr_2006}
 P.~A. Kienzle, M.~Douchet, D.~J. McGilivray, K.~V. O'Donovan, N.~K. Berk and
   C.~F. Majkrzak, \emph{{{NCNR Reflectometry Software}}},
-  http://www.ncnr.nist.gov/reflpak, 2006\relax
+  \url{http://www.ncnr.nist.gov/reflpak}, 2006\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -624,14 +661,15 @@ E.~Brini, E.~A. Algaer, P.~Ganguly, C.~Li, F.~{Rodr\'iguez-Ropero} and N.~F.~A.
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
 \bibitem[noa()]{noauthor_rcsb_nodate}
-\emph{{{RCSB PDB}}: {{Protein Data Bank}}}, http://www.rcsb.org\relax
+\emph{{{RCSB PDB}}: {{Protein Data Bank}}}, \url{http://www.rcsb.org},
+  (accessed 2018-01-28)\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
 \bibitem[noa()]{noauthor_jmol_nodate}
 \emph{Jmol: An Open-Source {{Java}} Viewer for Chemical Structures in {{3D}}},
-  http://www.jmol.org/\relax
+  \url{http://www.jmol.org/}, (accessed 2018-01-28)\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -678,9 +716,10 @@ A.~R. McCluskey, B.~J. Morgan, K.~J. Edler and S.~C. Parker, \emph{J. Open
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
-\bibitem[McCluskey and Symington(2018)]{mccluskey_arm61/pylj_2018}
-A.~R. McCluskey and A.~R. Symington, \emph{Arm61/Pylj: Pylj-1.2.1},
-  http://doi.org/10.5281/zenodo.2423866, 2018\relax
+\bibitem[McCluskey \emph{et~al.}(2018)McCluskey, Morgan, Edler, and
+  Parker]{mccluskey_arm61/pylj_2018}
+A.~R. McCluskey, B.~J. Morgan, K.~J. Edler and S.~C. Parker, \emph{Arm61/Pylj:
+  Pylj-1.1.0}, \url{http://doi.org/10.5281/zenodo.1403828}, 2018\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

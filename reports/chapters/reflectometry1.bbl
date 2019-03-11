@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{88}
+\begin{mcitethebibliography}{89}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -353,7 +353,8 @@ A.~R.~J. Nelson and S.~W. Prescott, \emph{J. Appl. Crystallogr.}, 2019,
 \EndOfBibitem
 \bibitem[Ott(2008)]{ott_simulreflec_2008}
 F.~Ott, \emph{{{SimulReflec}}},
-  http://www-llb.cea.fr/prism/programs/simulreflec/simulreflec.html, 2008\relax
+  \url{http://www-llb.cea.fr/prism/programs/simulreflec/simulreflec.html},
+  2008\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -362,7 +363,7 @@ F.~Ott, \emph{{{SimulReflec}}},
   Berk, and Majkrzak]{kienzle_ncnr_2006}
 P.~A. Kienzle, M.~Douchet, D.~J. McGilivray, K.~V. O'Donovan, N.~K. Berk and
   C.~F. Majkrzak, \emph{{{NCNR Reflectometry Software}}},
-  http://www.ncnr.nist.gov/reflpak, 2006\relax
+  \url{http://www.ncnr.nist.gov/reflpak}, 2006\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -401,7 +402,8 @@ F.~Heinrich, H.~Nanda, H.~Z. Goh, C.~Bachert, M.~L\"osche and A.~D. Linstedt,
 \bibitem[Jones \emph{et~al.}(2001)Jones, Oliphant, Peterson, and
   {others}]{jones_scipy_2001}
 E.~Jones, T.~Oliphant, P.~Peterson and {others}, \emph{{{SciPy}}: {{Open}}
-  Source Scientific Tools for {{Python}}}, http://www.scipy.org, 2001\relax
+  Source Scientific Tools for {{Python}}}, \url{http://www.scipy.org},
+  2001\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -610,7 +612,7 @@ D.~Marsh, \emph{Chem. Phy. Lipids}, 2010, \textbf{163}, 667--677\relax
 \bibitem[Nelson \emph{et~al.}(2019)Nelson, Prescott, Gresham, and
   McCluskey]{nelson_refnx_2019-1}
 A.~R.~J. Nelson, S.~W. Prescott, I.~Gresham and A.~R. McCluskey, \emph{Refnx
-  v0.1.2}, http://doi.org/10.5281/zenodo.2552023, 2019\relax
+  v0.1.2}, \url{http://doi.org/10.5281/zenodo.2552023}, 2019\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -627,9 +629,11 @@ L.~G. Parratt, \emph{Phys. Rev.}, 1954, \textbf{95}, 359--369\relax
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
-\bibitem[McCluskey and Jackson(2019)]{mccluskey_arm61/lipids_at_airdes_2019}
-A.~R. McCluskey and A.~J. Jackson, \emph{Arm61/Lipids\_at\_airdes:
-  Preprint-0.2}, http://doi.org/10.5281/zenodo.2538002, 2019\relax
+\bibitem[McCluskey \emph{et~al.}(2019)McCluskey, {Sanchez-Fernandez}, Edler,
+  Parker, Jackson, Campbell, and Arnold]{mccluskey_lipids_at_airdes_2019}
+A.~R. McCluskey, A.~{Sanchez-Fernandez}, K.~J. Edler, S.~C. Parker, A.~J.
+  Jackson, R.~A. Campbell and T.~Arnold, \emph{Lipids\_at\_airdes ({{Version}}
+  1.0)}, \url{http://doi.org/10.5281/zenodo.2577796}, 2019\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -692,10 +696,20 @@ D.~Vaknin, K.~Kjaer, J.~{Als-Nielsen} and M.~L\"osche, \emph{Biophys. J.},
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
-\bibitem[Gillams \emph{et~al.}(2016)Gillams, Lorenz, and
-  McLain]{gillams_comparative_2016}
-R.~J. Gillams, C.~D. Lorenz and S.~E. McLain, \emph{J. Chem. Phys.}, 2016,
-  \textbf{144}, 225101\relax
+\bibitem[Grigoriev \emph{et~al.}(1999)Grigoriev, Krustev, Miller, and
+  Pison]{grigoriev_effect_1999}
+D.~Grigoriev, R.~Krustev, R.~Miller and U.~Pison, \emph{J. Phys. Chem. B},
+  1999, \textbf{103}, 1013--1018\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[{Sanchez-Fernandez} \emph{et~al.}(2018){Sanchez-Fernandez}, Hammond,
+  Edler, Arnold, Doutch, Dalgliesh, Li, Ma, and
+  Jackson]{sanchez-fernandez_counterion_2018}
+A.~{Sanchez-Fernandez}, O.~S. Hammond, K.~J. Edler, T.~Arnold, J.~Doutch, R.~M.
+  Dalgliesh, P.~Li, K.~Ma and A.~J. Jackson, \emph{Phys. Chem. Chem. Phys.},
+  2018, \textbf{20}, 13952--13961\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

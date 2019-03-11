@@ -1,0 +1,87 @@
+\section{\texttt{pylj}: an open-source teaching tool for classical atomistic simulation}
+
+\texttt{pylj} (PYthon Lennard-Jones) \cite{mccluskey_pylj_2018,mccluskey_arm61/pylj_2019} is an educational software and molecular dynamics engine designed to introduce students to the details of classical simulation.
+Initially, \texttt{pylj} was only able to utilise a Lennard-Jones potential model \cite{lennard-jones_determination_1924}, however, recently (as of version 1.1.0 \cite{mccluskey_arm61/pylj_2018}) there is the ability to include any custom forcefield, with a Buckingham potential packaged with the software \cite{buckingham_classical_1938}.
+In an effort to reduce the complexity and visual subtely of typical molecular dynamics simulations, pylj performs two-dimension molecular dynamics or Monte-Carlo simulation.
+From the beginning this software was designed to operate in the Jupyter Notebook framework and therefore eliminate the need for the learner to interact with the command line interface, as is the case with common molecular dynamics packages like Gromacs \cite{berendsen_gromacs_1995}, LAMMPS \cite{plimpton_fast_1995}, or DL\_POLY \cite{smith_dl_poly_2002}.
+
+\subsection{Software design}
+\texttt{pylj} was designed such that it may be operated at a series of different levels of astraction.
+For example, an educator could write a simple function to allow the running of a molecular dynamics simulation (Code Block~\ref{cb:pyljmd}) or an interested student could manually interact with the source code.
+This abstraction is achieved through the modular design of pylj, where the \texttt{md.py} or \texttt{mc.py} modules implement all of the functionality related to a particular simulation method.
+The simulation controlled by an overarching \texttt{System} class, which contains all of the information regarding the simulation that has been/is running.
+%
+\begin{figure}
+    \centering
+        \lstinputlisting[caption={An example of an NVT ensemble molecular dynamics algorithm as implemented in \texttt{pylj}.},label={cb:pyljmd}]{reports/code_blocks/pyljmd.py}
+\end{figure}
+%
+
+The computational intensive nature of the pairwise force and energy calculations necessary for molecular dynamics and Monte Carlo simulation necessitated the use of Cython, a method of including compiled C language code within a Python pacakge \cite{noauthor_cython_nodate}.
+This enabled a \num{\sim10} times speed up in the determination of the pairwise interactions when compared with the use of a pure Python implementation.
+From version 1.2.1 \cite{mccluskey_arm61/pylj_2019-1}, the pure Python versions of the pairwise interactions built using \texttt{numba} just-in-time compilation \cite{noauthor_numba_nodate}, which enabled a \num{5} times speed up.
+This means that a \texttt{pylj} simulation without the compile C functions is now just twice as slow than the compiled version.
+Furthermore, this speed is now comparable to the length of time taken to render the visualisation, meaning that the pairwise interactions is no longer the rate determing step in the use of \texttt{pylj}.
+
+The \texttt{sample.py} module is integral to the utility of \texttt{pylj}, as this allows educators to easily create custom visualisation environments.
+Using this module, is it possible to create a molecular dynamics simulation that enables for the plotting of a huge variety of outputs.
+Plots such as instanteous pressure against time, radial distribution function, and instanteous temperature histogram are included in \texttt{pylj} and it is easy for the users to create custom plots or build visualisations where multiple plots can be presented together.
+
+Currently, the \texttt{forcefield.py} module is the location where the potential model may be defined.
+This involves the definition of a single function that describes the potential model (Code Block~\ref{cb:pyljlj} gives the function for the Lennard-Jones potential model), with a boolean flag that defines where the force or energy should be returned.
+In future, for a planned \texttt{pylj} \num{2.0}, the potential model definition will be adapted such that each model is an individual class containing functions for each of the different parameters to be calculated.
+This will more easily allow the growth of \texttt{pylj} to enable features such as the simulation or particles with different potential model parameterisations and the inclusion of mixing rules.
+%
+\begin{figure}
+    \centering
+        \lstinputlisting[caption={The Lennard Jones potential model as implemented in \texttt{pylj}.},label={cb:pyljlj}]{reports/code_blocks/pyljlj.py}
+\end{figure}
+%
+
+\subsection{Applications}
+In order to give an idea of the capabilities of the \texttt{pylj} software, three typical applications are discussed, a further application is evident in Section~\ref{sec:sim_and_scat}.
+
+\subsubsection{States of matter}
+States of matter (solid, liquid, and gas) is a common high school level science subject.
+Where the different states of matter are rationalised in terms of the atomic density and interactions.
+Often this is introduced with pictorial examples showing a two dimensional representation of a hexagonally close packed crystal, a disordered liquid, and a low density gas with the atoms represented as circular particles.
+\texttt{pylj} is capable of easily reproducing these diagram (Figure~\ref{fig:matter}), while increasing student engagement by representing a ``real'' chemical system in thermal motion.
+\texttt{pylj} was recently used by Dr Benjamin Morgan for a demonstration such as this in a seminar introducing chemical simulation to a cohort of mathematicians.
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=0.32\textwidth]{teaching/pyljsolid}
+    \includegraphics[width=0.32\textwidth]{teaching/pyljliquid}
+    \includegraphics[width=0.32\textwidth]{teaching/pyljgas}
+    \caption{A snapshot of a \texttt{pylj} molecular dynamics simulation for: (a) a solid, (b) a liquid, and (c) a gas.}
+    \label{fig:matter}
+\end{figure}
+%
+
+\subsubsection{Ideal gas law}
+When \texttt{pylj} was originally published \cite{mccluskey_pylj_2018}, the repository included an example of a possible laboratory exercise where the ideal gas law was modelled using molecular dynamics simulation.
+This was achieved by varying the particle density and measuring the time-averaged pressure of the simulation.
+At low particle densities, where the interactions of the particles are unlikely, the \texttt{pylj} molecular dynamics simulation agrees well with the ideal gas law.
+However, as the particle density increases such that the interparticle interactions are more frequent, deviations are observed in agreement with the van der Waals equation (Figure~\ref{fig:vdw}).
+Using this exercise, it is possible to introduce a cohort of students to the insight available from chemical simulation, without a significant focus on the simulation methods increasing the accessibility to students in the first or second year of their undergraduate.
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{teaching/pyljvdw}
+    \caption{The deviation from the ideal gas law observed using \SI{0.1}{\nano\second} \texttt{pylj} simulations (blue circle), the ideal gas law is shown with a solid orange line, which the van der Waals equation of state is shown with a solid green line.}
+    \label{fig:vdw}
+\end{figure}
+%
+
+\subsubsection{Molecular dynamics \& Monte Carlo}
+The final application of \texttt{pylj} is the use for it in teaching molecular dynamics or Monte Carlo methods.
+The framework of \texttt{pylj} means that it is straightforward, and does not necessarily require substantial familiarity with the Python programming language.
+Code Block~\ref{cb:pyljmd} shows a molecular dynamics algorithm, while Code Block~\ref{cb:pyljmc} gives that for canonical Monte Carlo.
+It is clear that both of this algorithm as simple and clear to implement, allowing the focus of the laboratory exercise to be on the students' understanding of the methodology.
+\texttt{pylj} has been applied in this way in a third year undergraduate laboratory exercise at the University of Bath which introduced students to molecular dynamics simulations.
+%
+\begin{figure}
+    \centering
+        \lstinputlisting[caption={An example of an canonical Monte Carlo algorithm as implemented in \texttt{pylj}.},label={cb:pyljmc}]{reports/code_blocks/pyljmc.py}
+\end{figure}
+%

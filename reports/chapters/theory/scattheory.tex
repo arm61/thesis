@@ -4,9 +4,9 @@
 The use of scattering techniques to probe soft condensed matter systems is commonplace.
 In this work, we have focussed on the use of small angle scattering (SAS), reflectometry, and grazing incidence small angle scattering (GiSAS) techniques.
 These are particularly appropriate for application to soft condensed matter systems due to the length scales capable of being probed being similar to the persistence length of the soft condensed matter systems.
-The length scales covered for such techniques is from around \SI{1}{\nano\metre} to \SI{300}{\nano\metre}, as is shown in Figure~\ref{fig:lengths}.
+The length scale covered for such techniques is from around \SI{1}{\nano\metre} to \SI{300}{\nano\metre}, as is shown in Figure~\ref{fig:lengths}.
 The focus is on the equilibrium structure(s) of a material, and therefore there is no interest in the system dynamics, meaning that exclusively elastic scattering techniques may be used, where there is no energy transfer between the probing radiation and the material.
-This is in contrast to inelastic scattering where energy transfer occurs; facilitating the measurement of system dynamics, such as the dynamical modes of polymers of lipid bilayers \cite{garcia_sakai_quasielastic_2009, farago_recent_2009}.
+This is in contrast to inelastic scattering where energy transfer occurs; facilitating the measurement of system dynamics, such as the dynamical modes of polymers and lipid bilayers \cite{garcia_sakai_quasielastic_2009, farago_recent_2009}.
 %
 \begin{figure}
     \centering
@@ -92,11 +92,11 @@ This is the fraction of particles of probing radiation that is scattered with a 
     \label{equ:dsc}
 \end{equation}
 %
-where, $R(2\theta,\phi)$ is the rate of arrival of the scattered particles at the position $2\theta$, $\phi$, $V$ is the volume of the sample, $\Phi$ is incident flux, $\Delta \Omega$ is some small solid angle, and $N$ is the number of scattering particles of interest, in the case of elastically scattering particles, $N = N\%_{\text{el}}$, where $\%_{\text{el}}$ is the fraction of elastically scattered particles.
+where, $R(2\theta,\phi)$ is the rate of arrival of the scattered particles at the position $2\theta$, $\phi$, $V$ is the illuminated volume of the sample, $\Phi$ is incident flux, $\Delta \Omega$ is some small solid angle, and $N$ is the number of scattering particles of interest, in the case of elastically scattered radiation, $N = N\%_{\text{el}}$, where $\%_{\text{el}}$ is the fraction of elastically scattered radiation.
 
 \subsection{Scattering from a single fixed particle}
 
-It is possible to describe a steady stream of particles of wavelength, $\lambda$, travelling through space as follows,
+It is possible to describe a steady stream X-ray photons or neutrons of wavelength, $\lambda$, travelling through space as follows,
 %
 \begin{equation}
     \psi_i = \psi_o \exp{(\mathbf{i} kz)},
@@ -168,7 +168,7 @@ This is termed the Fraunhofer, or far-field limit, and allows Equation~\ref{equ:
     |\psi_f|^2 = \frac{\Phi}{r^2}\Bigg|\sum_{j=1}^{N}b_j\exp{(\mathbf{iq}\cdot\mathbf{R}_j)}\Bigg|^2.
 \end{equation}
 %
-In the scattering experiment, particles are deflected elastically into a detector with a small area, $\delta A$, with the polar coordinates, $2\theta$ and $\phi$, at a rate of $R_{\text{el}}$,
+In the scattering experiment, radiation is deflected elastically into a detector with a small area, $\delta A$, with the polar coordinates, $2\theta$ and $\phi$, at a rate of $R_{\text{el}}$,
 %
 \begin{equation}
     R_{\text{el}}(2\theta,\phi) = |\psi_f|^2\delta A = \Phi\delta\Omega\Bigg|\sum_{j=1}^{N}b_j\exp{(\mathbf{iq}\cdot\mathbf{R}_j)}\Bigg|^2,
@@ -187,7 +187,7 @@ Therefore, the differential cross section, defined in Equation~\ref{equ:dsc} can
 \label{sec:sld}
 
 While it may be helpful to consider the scattering of multiple particles individually, where each particle has a scattering length, $b$.
-In practice, it is more common to consider the scattering length density, $\rho$, of the system,
+In practice, due to the low experimental resolution at small angles, it is more common to consider the scattering length density, $\rho$, of the system,
 %
 \begin{equation}
     \rho = \frac{1}{V}\sum_{i=0}^{N} b_i,
@@ -207,7 +207,8 @@ This above equation shows that the scattering differential cross-section from so
 
 All types of scattering patterns can be analysed by one of two methods; model independent and model-dependent.
 The nature of this work means that it will focus on model-dependent analysis methods, often where the model is derived from some atomistic, or coarse-grained simulation. Model-dependent analysis has significant benefits over model-independent methods, such as improved resolution and more detailed information about the structure.
-However, the necessity of the inclusion of \emph{a priori} information within model-dependent analysis may act to bias the result, while this is undesirable, these assumptions can, and should, be educated based on the chemical information present, such as the propensity for twin-tailed lipid molecules to form monolayers at an air-water interface \cite{mccluskey_model-dependent_2018}.
+However, the necessity of the inclusion of \emph{a priori} information within model-dependent analysis may act to bias the result.
+While this is undesirable, these assumptions can, and should, be educated based on the chemical information present, such as the propensity for twin-tailed lipid molecules to form monolayers at an air-water interface \cite{mccluskey_model-dependent_2018}.
 
 The scattering from the model system is determined, using technique specific methods that are discussed in detail in later sections.
 This is then compared with the experimental data using some goodness-of-fit metric, the model is then varied to find the best possible model for the data provided using some optimisation algorithm.
@@ -228,7 +229,7 @@ This means that an optimisation algorithm must be applied to these problems, spe
 
 Reflectometry involves the interaction of the probing radiation with some interface, from which the radiation is reflected.
 The geometry of a reflectometry experiment is shown in Figure~\ref{fig:refgeo}, where the reflectometry instrument is in the horizontal configuration, ideal for the study of liquid interfaces.
-Reflectometry measurements give information about the structure perpendicular to the interface, the \emph{z}-dimension in Figure~\ref{fig:refgeo}, and therefore the analysis of reflectometry data is founding on the assumption that the layers will be completely homogenous in the plane of the interface, the \emph{xy}-plane in Figure~\ref{fig:refgeo}.
+Reflectometry measurements give information about the structure perpendicular to the interface, the \emph{z}-dimension in Figure~\ref{fig:refgeo}, and therefore the analysis of reflectometry data is founded on the assumption that the layers will be completely homogenous in the plane of the interface, the \emph{xy}-plane in Figure~\ref{fig:refgeo}.
 In reality, since the layers are usually not completely homogeneous, an average is obtained for the area in the radiation beam.
 %
 \begin{figure}
@@ -242,7 +243,7 @@ A reflectometry instrument operates by measuring the intensity of specular radia
 The reflected intensity is defined in terms of $q$ (by Equation~\ref{equ:theq}), and is defined as follows,
 %
 \begin{equation}
-    R(q) = \frac{\text{rate of specular reflective scattering}}{\text{rate of incidence}}.
+    R(q) = \frac{\text{specular reflected radiation at }q}{\text{incident radiation}}.
     \label{equ:refl}
 \end{equation}
 %
@@ -384,7 +385,7 @@ This adapts Equation~\ref{equ:fres} to the form,
 \end{equation}
 %
 where, $\sigma_{n,n+1}$ is the interfacial roughness between layers $n$ and $n+1$.
-This has the effect of Gaussian broadening the layers into each other, as a result. Code Block~\ref{cb:refl} is currently implemented in a variety of reflectometry modelling software packages, such as \texttt{refnx}, MOTOFIT, RasCAL, and Aurore \cite{nelson_refnx_2019,nelson_co-refinement_2006,hughes_rascal_nodate,gerelli_aurore_2016-1,gerelli_aurore_2016}.
+This has the effect of Gaussian broadening the layers into each other, as a result. Code Block~\ref{cb:refl} is currently implemented in a variety of reflectometry modelling software packages, such as \texttt{refnx}, MOTOFIT, RasCAL, and Aurore \cite{nelson_refnx_2019,nelson_co-refinement_2006,hughes_rascal_2010,gerelli_aurore_2016-1,gerelli_aurore_2016}.
 Applying this method to the scattering length density profile shown in Figure~\ref{fig:kine} gives the reflectometry profile shown with the dashed green line in Figure~\ref{fig:dyna}.
 %
 \begin{figure}
@@ -424,6 +425,7 @@ Transmission SAS can provide information about the size, shape and orientation o
 The range in $q$ that is typically covered by a SAS instrument is usually around \SIrange{2e-3}{0.5}{\per\angstrom}, which corresponds to \SIrange{10}{3000}{\angstrom} in real-space. The neutron or X-ray detector of a SAS instrument is often two-dimensional, meaning that for an isotropic scattering profile, the detector image is radially averaged to give an $I(q)$ scattering profile.
 It is possible to increase the $q$-range of a SAS instrument through the introduction of wide-$q$ detector banks close to the sample or small-$q$ detector banks further away.
 This allows the SANS2D instrument, at the ISIS Neutron and Muon Source, to have a total range from \SIrange{2e-3}{2}{\per\angstrom} \cite{noauthor_isis_nodate}.
+Furthermore, the SANS2D instrument may leverage the time-of-flight method discussed in Section \ref{sec:neutrons} to allow for a much shorter post sample flight path than is present at D22.
 %
 \begin{figure}
     \centering
@@ -440,10 +442,11 @@ The form factor gives information about the average shape of the scattering part
 It is often possible to control the presence of the structure factor by changing the concentration of the sample, eventually, the concentration will be so low that all interparticle interaction is screened by the solvent \cite{edler_combining_2015}.
 This method is frequency applied in BioSAXS applications, where the interactions between the protein molecules are of less interest than the overall structure of the complex.
 However, with micelles, it is not always possible to remove the structure factor, as the critical micelle concentration may be higher than the minimum concentration at which the structure factor is present.
-It is possible to deconvolute the structure and form factors for a micellar solution by studying different concentrations, assuming that the form of the micelle is concentration independent.
+It is possible to deconvolute the structure and form factors for a micellar solution by studying different concentrations, assuming that the form of the micelle is concentration independent, over the measured concentration range.
 
 The rigorous, model-independent method for the analysis of SAS involves taking the inverse Fourier transform of the scattering, to give an auto-correlation function of the average particle in the system, which following a deconvolution procedure will resolve the radially averaged scattering length density profile.
 However, this is often cumbersome and has a low information density, when compared to model-dependent techniques.
+Additionally, if the experimental data lacks information at wide enough $q$ to cover all features of the sample artefacts may be present in the inverse Fourier transform of the scattering.
 
 There are two common and straight-forward analysis procedures that can be used to give an understanding of the scattering species.
 The first is the Guinier approximation, which is used in the determination of the radius of gyration, $R_g$, of the scattering species, at ``infinite dilution''.
@@ -505,7 +508,7 @@ where $R$ is the radius of the sphere. A comparison between a possible experimen
 The structure factor accounts for the scattering interference that arises from the interaction of different particles.
 This is modelled using expressions which depend on the nature of the scattering particles; hard-sphere, sticky hard-spheres, screened Coulomb, etc.
 Structure factor expressions are generated as solutions to the Ornstein-Zernike Equation~\cite{klein_interacting_2002}.
-The most relevant structure factor in terms of micelle modelling is probably the Hayter-Penfold \cite{hayter_analytic_1981}, this is where the micelles are modelled as like-charged, soft spheres.
+The most relevant structure factor in terms of micelle modelling is probably the Hayter-Penfold Mean Spherical Approximation \cite{hayter_analytic_1981}, this is where the micelles are modelled as like-charged, soft spheres and is valid for dilute solutions.
 Again, a whole range of these structure factor functions are built into the SASView package \cite{noauthor_sasview_nodate}.
 
 In order to evaluate the scattering profile from an atomic, or coarse-grained system, it is possible to use the Debye equation \cite{debye_zerstreuung_1915}.
@@ -576,7 +579,7 @@ However, as GISAS has grown in popularity as a technique, GISAS focused instrume
 
 The analysis process for a GISAS pattern is substantially more complex than for either the SAS or reflectometry counterparts.
 This is due to the fact that for SAS, the Born approximation is conserved, and only a single scattering event is considered.
-While for reflectometry, there is a well defined theoretical background that enables the analysis were the Born approximation is not valid.
+While for reflectometry, there is a well defined theoretical background that enables the analysis where the Born approximation is not valid.
 This is not the case for GISAS since for off-specular reflectometry to occur, the probing radiation will undergo both scattering and reflectometry events simultaneously.
 In order to account for this, generally, the distorted wave Born approximation (DWBA) is invoked.
 This is an extension of the Born approximation, wherein there are four possible ways in which the probing radiation may interact with the material, these are shown in Figure~\ref{fig:dwba}.
@@ -603,9 +606,101 @@ For incident angles $\alpha_i \gg \alpha_c$ and at constant $q_z$, the scatterin
     \frac{\text{d}\sigma}{\text{d}\Omega} = \frac{A\pi^2}{\lambda^4}\big[(1 - n^2)T_iT_f\big]^2F(\mathbf{q}),
 \end{equation}
 %
-where $A$ is the iluminated surface area, $T_{i,f}$ are the Fresnel transmission factors for incidence and reflectance, and $F(\mathbf{q})$ is the diffuse-scattering factors, which are dependent on the form and structure factors of the lateral structure.
+where $A$ is the iluminated surface area, $T_{i,f}$ are the Fresnel transmission factors for incidence and reflectance, and $F(\mathbf{q})$ is the diffuse-scattering factor, which is dependent on the form and structure factors of the lateral structure.
 
 Currently, there exists a handful of software packages that are designed to aid in the structural analysis by GISAS.
 These include, but are not limited to, IsGISAXS, BornAgain, and HipGISAXS \cite{lazzari_isgisaxs_2002,burle_bornagain_2018,chourou_hipgisaxs_2013}.
 These software packages generally implement analytical solutions to the DWBA by considering different form and structure factors for some system.
 In order to have some understanding of the structure that should be fitted to the experimental data, it is often necessary to perform electron microscopy measurements to educate the analysis process.
+
+
+\subsection{Contrast variation}
+\label{convar}
+
+The scattering profile generated by the interaction of some system with radiation depends on three factors:
+%
+\begin{itemize}
+    \item the spatial arrangement of the atoms in the system,
+    \item the instrument being used to measure the pattern; instrumental resolution function, and
+    \item the interaction between the radiation and the matter under investigation.
+\end{itemize}
+%
+This final factor is perhaps better known as the `scattering contrast', this is an extremely important factor in the study of soft matter, particularly when the probing radiation is the neutron.
+The scattering contrast makes it possible to select individual components of the system and investigate their structural properties \cite{schurtenberger_contrast_2002}.
+The differential cross-section, $\sfrac{\text{d}\sigma}{\text{d}\Omega}$ of a point scatterer, as shown in Equation~\ref{equ:sca}, varies only with respect to the scattering length of the species, $b$,
+%
+\begin{equation}
+    \frac{\text{d}\sigma}{\text{d}\Omega} \propto b^2.
+\end{equation}
+%
+However, as discussed in Section~\ref{sec:sld}, it is often easier to use the scattering length density, $\rho$.
+
+When an X-ray interacts with an atom, it is scattered by the interaction with the electrons, this is due to the X-ray being a form of electromagnetic radiation.
+Furthermore, it means that the scattering length of an atom by an X-ray is directly proportional to the number of electrons in the atom, so it is therefore difficult to discern between the scattering from a carbon atom (6 electrons) and a nitrogen atom (7 electrons), furthermore the scattering from hydrogen atoms is practically non-existent.
+
+The scattering length a neutron by an atom varies unsystematically with respect to the atomic number of a species, this is shown in Figure~\ref{fig:scatlen}.
+Furthermore to the apparently random variation with changes in atomic number, there is also significant variation with mass number, e.g. between isotopes of the same atom.
+There is also dependence due to the magnetic state of the atom, however, this is normally unimportant for soft matter.
+The scattering lengths differ with the nuclear spin energy level, this leads to an average scattering length, $\langle b \rangle$, for isotopes where the nuclear spin is non-zero ($S\neq 0$).
+There are two forms of scattering, coherent and incoherent, for which the scattering cross-sections, $\sigma$, are determined by,
+%
+\begin{equation}
+    \begin{aligned}
+        \sigma_{\text{coh}} & = 4\pi\langle b \rangle ^2 \\
+        \sigma_{\text{incoh}} & = 4\pi(\langle b ^ 2 \rangle - \langle b \rangle ^2) \\
+    \end{aligned}
+\end{equation}
+%
+The coherent scattering is the scattering from nuclei that all have the same value of $b$, and leads to the important scattering pattern.
+Whereas, the incoherent scattering is caused by the `disorder' between the isotopes, and is the cause of the background present in the measurement.
+Examples of these scattering cross-sections for nuclei relevant to soft matter are shown in Table \ref{tab:crosssec}.
+It can be seen that the incoherent scattering from the \ce{^1H} nuclei is more than forty times higher than the coherent scattering.
+This leads to a large, intrusive background present in the scattering pattern of hydrogenous samples.
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=0.85\textwidth]{theory/scatlen}
+    \caption{The variation of the average neutron scattering length, $\langle b \rangle$ (circles), with atomic mass, $\mu$. The standard deviation, $\Delta b$, is indicated with the shaded regions. Reproduced, with permission of Oxford University Press\textsuperscript{\textcopyright}, from Reference~\cite{sivia_elementary_2011}.}
+    \label{fig:scatlen}
+\end{figure}
+%
+\begin{table}
+    \centering
+    \small
+    \caption{Examples of coherent and incoherent scattering cross-sections, from Reference~\cite{schurtenberger_contrast_2002}.}
+    \label{tab:crosssec}
+    \begin{tabular}{r | c c c}
+        \toprule
+        Isotope & $S$ & $\sigma_{\text{coh}}$/\SI{e-28}{\meter\square} & $\sigma_{\text{incoh}}$/\SI{e-28}{\meter\square} \\
+        \midrule
+        \ce{^1H} & $\sfrac{1}{2}$ & 1.8 & 79.7 \\
+        \ce{^2H} & 1 & 5.6 & 2.0 \\
+        \ce{^{12}C} & 0 & 5.6 & -- \\
+        \ce{^{14}N} & 1 & 11.6 & 0.3 \\
+        \ce{^{16}O} & 0 & 4.2 & -- \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+%
+
+The difference between the scattering of \ce{^1H} and \ce{^2H}, evident in Table \ref{tab:crosssec}, can lead to a very useful technique in soft matter scattering, known as contrast variation.
+The idea of contrast variation is based on the substitution of one isotope of an atom for another, while not introducing significant change to the properties of the material.
+Traditionally the benefit of this came in terms of contrast matching out a part of the system to reduce the dimensionality of the problem for analysis.
+For example, by matching the solvent scattering length density to that of the tails of the surfactants at the centre of a micelle there would only be scattered from the heads, and conversely, there would only be scattered from the tails if the solvent had the same scattering length density as the head groups.
+This means that the problem becomes more straightforward as there are fewer variable parameters when fitting the data. This idea is represented graphically in Figure~\ref{fig:convar}.
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=0.85\textwidth]{theory/convar}
+    \caption{The effect of varying the scattering length density of the solvent in a micelle system, (a) the system in a pure solvent, (b) the solvent is contrast matched to the surfactant tails, and (c) the solvent is contrast matched to the surfactant heads.}
+    \label{fig:convar}
+\end{figure}
+%
+The technique of contrast variation may also be used in terms of data analysis.
+By increasing the number of data sets corresponding to a single model at different contrasts, the solution for the true structure of the model from the scattering data becomes more robust.
+This is due to the fact that each different contrast can be considered as an independent measurement of the same system, and hence each set of scattering data can be used within the data analysis procedure to obtain the best global agreement to the experiment.
+This co-refinement of multiple experiments can, under the right conditions, be used to simultaneously consider both neutron and X-ray datasets \cite{nelson_co-refinement_2006}.
+
+There is also the possibility of using contrast variation when the probing radiation is the X-ray, through the use of anomalous scattering.
+This is where different wavelengths of radiation give different scattering when the wavelengths are on opposite sides of an X-ray absorption edge.
+This is not frequently used for soft matter species, as the X-ray absorption edges for elements common in soft matter (H, C, N, O, etc.) are at very low X-ray energies so generally outside of the accessible range of a standard SAXS instrument \cite{schurtenberger_contrast_2002}.

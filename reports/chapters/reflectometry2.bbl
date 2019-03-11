@@ -290,7 +290,7 @@ A.~R.~J. Nelson and S.~W. Prescott, \emph{J. Appl. Crystallogr.}, 2019,
 \bibitem[Nelson \emph{et~al.}(2019)Nelson, Prescott, Gresham, and
   McCluskey]{nelson_refnx_2019-1}
 A.~R.~J. Nelson, S.~W. Prescott, I.~Gresham and A.~R. McCluskey, \emph{Refnx
-  v0.1.2}, http://doi.org/10.5281/zenodo.2552023, 2019\relax
+  v0.1.2}, \url{http://doi.org/10.5281/zenodo.2552023}, 2019\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

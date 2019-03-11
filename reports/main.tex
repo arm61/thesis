@@ -42,7 +42,7 @@ headsepline, % Uncomment to get a line under the header
 \usepackage{textcomp}
 \usepackage[
     type={CC},
-    modifier={by-sa},
+    modifier={by},
     version={4.0},]{doclicense}
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
@@ -286,6 +286,29 @@ The ESI may be accessed at the following DOI: \href{https://doi.org/10.5281/zeno
 
 \end{usagestatement}
 
+
+%----------------------------------------------------------------------------------------
+%	PUBS PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{pubsstatement}
+\addchaptertocentry{\pubsname} % Add the abstract to the table of contents
+
+Some of the work covered in Chapter~\ref{reflectometry1} has been previously published in:
+\begin{itemize}
+  \item A. R. McCluskey, A. Sanchez-Fernandez, K. J. Edler, S. C. Parker, A. J. Jackson, R. A. Campbell, and T. Arnold, Bayesian determination of the effect of a deep eutectic solvent on the structure of lipid monolayers, \emph{Phys. Chem. Chem. Phys.}, 2019, Advance Article, DOI: \href{https://doi.org/10.1039/C9CP00203K}{10.1039/C9CP00203K}.
+\end{itemize}
+Some of the work covered in Chapter~\ref{reflectometry2} has been previously published in:
+\begin{itemize}
+  \item A. R. McCluskey, J. Grant, A. J. Smith, J. L. Rawle, D. J. Barlow, M. J. Lawrence, S. C. Parker, and K. J. Edler, Assessing coarse-grained simulation for the analysis of lipid monolayer reflectometry, \emph{J. Phys. Comm.}, 2019, Submitted, arXiv: \href{https://arxiv.org/abs/1901.05514}{1901.05514}.
+\end{itemize}
+Some of the work covered in Chapter~\ref{teaching} has been previously published in:
+\begin{itemize}
+  \item A. R. McCluskey, B. J. Morgan, K. J. Edler, and S. C. Parker, pylj: A teaching tool for classical atomistic simulation, \emph{J. Open Source Educ.}, 2018, \textbf{1} (2), 19, DOI: \href{https://doi.org/10.21105/jose.00019}{10.21105/jose.00019}.
+  \item A. R. McCluskey, J. Grant, A. R. Symington, T. Snow, J. Doutch, B. J. Morgan, S. C. Parker, and K. J. Edler, An introduction to classical molecular dynamics simulation for experimental scattering users, \emph{J. Appl. Crystallogr.}, 2019, Submitted, arXiv: \href{https://arxiv.org/abs/1902.01324}{1902.01324}.
+\end{itemize}
+\end{pubsstatement}
+
 %----------------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES PAGES
 %----------------------------------------------------------------------------------------
@@ -422,12 +445,12 @@ $\sfrac{\text{d}\sigma(q)}{\text{d}\Omega}$ & differential cross-section & \\
 %	THESIS CONTENT - APPENDICES
 %----------------------------------------------------------------------------------------
 
-\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+%\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
 
 % Include the appendices of the thesis as separate files from the Appendices folder
 % Uncomment the lines as you write the Appendices
 
-\include{appendices/papers}
+%\include{appendices/papers}
 
 %----------------------------------------------------------------------------------------
 %	SADIE AND PENNY
@@ -435,12 +458,12 @@ $\sfrac{\text{d}\sigma(q)}{\text{d}\Omega}$ & differential cross-section & \\
 
 %\backmatter
 %
-%\begin{figure}
-%    \centering
-%    \includegraphics[width=0.8\textwidth]{sp.png}
-%    \caption*{Sadie and Penny; good dogs}
-%    \label{fig:sadieandpenny}
-%\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{sp.png}
+    \caption*{Sadie and Penny; good dogs}
+    \label{fig:sadieandpenny}
+\end{figure}
 %
 %----------------------------------------------------------------------------------------
 

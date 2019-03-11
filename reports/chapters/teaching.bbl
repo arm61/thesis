@@ -1,0 +1,255 @@
+\providecommand*{\mcitethebibliography}{\thebibliography}
+\csname @ifundefined\endcsname{endmcitethebibliography}
+{\let\endmcitethebibliography\endthebibliography}{}
+\begin{mcitethebibliography}{30}
+\providecommand*{\natexlab}[1]{#1}
+\providecommand*{\mciteSetBstSublistMode}[1]{}
+\providecommand*{\mciteSetBstMaxWidthForm}[2]{}
+\providecommand*{\mciteBstWouldAddEndPuncttrue}
+  {\def\EndOfBibitem{\unskip.}}
+\providecommand*{\mciteBstWouldAddEndPunctfalse}
+  {\let\EndOfBibitem\relax}
+\providecommand*{\mciteSetBstMidEndSepPunct}[3]{}
+\providecommand*{\mciteSetBstSublistLabelBeginEnd}[3]{}
+\providecommand*{\EndOfBibitem}{}
+\mciteSetBstSublistMode{f}
+\mciteSetBstMaxWidthForm{subitem}
+{(\emph{\alph{mcitesubitemcount}})}
+\mciteSetBstSublistLabelBeginEnd{\mcitemaxwidthsubitemform\space}
+{\relax}{\relax}
+
+\bibitem[Boldon \emph{et~al.}(2015)Boldon, Laliberte, and
+  Liu]{boldon_review_2015}
+L.~Boldon, F.~Laliberte and L.~Liu, \emph{Nano Rev.}, 2015, \textbf{6},
+  25661\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Pan \emph{et~al.}(2012)Pan, Heberle, {Tristram-Nagle}, Szymanski,
+  Koepfinger, Katsaras, and Ku{\v c}erka]{pan_molecular_2012}
+J.~Pan, F.~A. Heberle, S.~{Tristram-Nagle}, M.~Szymanski, M.~Koepfinger,
+  J.~Katsaras and N.~Ku{\v c}erka, \emph{BBA - Biomembranes}, 2012,
+  \textbf{1818}, 2135--2148\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hub(2018)]{hub_interpreting_2018}
+J.~S. Hub, \emph{Curr. Opin. Struct. Biol.}, 2018, \textbf{49}, 18--26\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Koutsioubas(2016)]{koutsioubas_combined_2016}
+A.~Koutsioubas, \emph{J. Phys. Chem. B}, 2016, \textbf{120}, 11474--11483\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Darr\'e \emph{et~al.}(2015)Darr\'e, {Iglesias-Fernandez}, Kohlmeyer,
+  Wacklin, and Domene]{darre_molecular_2015}
+L.~Darr\'e, J.~{Iglesias-Fernandez}, A.~Kohlmeyer, H.~Wacklin and C.~Domene,
+  \emph{J. Chem. Theory Comput.}, 2015, \textbf{11}, 4875--4884\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Scoppola and Schneck(2018)]{scoppola_combining_2018}
+E.~Scoppola and E.~Schneck, \emph{Curr. Opin. Colloid Interface Sci.}, 2018,
+  \textbf{37}, 88--100\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Chen and Hub(2014)]{chen_validating_2014}
+P.-C. Chen and J.~S. Hub, \emph{Biophys. J.}, 2014, \textbf{107},
+  435--447\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Knight and Hub(2015)]{knight_waxsis_2015}
+C.~J. Knight and J.~S. Hub, \emph{Nucleic Acids Res.}, 2015, \textbf{43},
+  W225--W230\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Perkins \emph{et~al.}(2016)Perkins, Wright, Zhang, Brookes, Chen,
+  Irving, Krueger, Barlow, Edler, Scott, Terrill, King, Butler, and
+  Curtis]{perkins_atomistic_2016}
+S.~J. Perkins, D.~W. Wright, H.~Zhang, E.~H. Brookes, J.~Chen, T.~C. Irving,
+  S.~Krueger, D.~J. Barlow, K.~J. Edler, D.~J. Scott, N.~J. Terrill, S.~M.
+  King, P.~D. Butler and J.~E. Curtis, \emph{J. Appl. Crystallogr.}, 2016,
+  \textbf{49}, 1861--1875\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Wiley(2018)]{wiley_open_2018}
+D.~Wiley, \emph{Open Content - Definition},
+  \url{http://opencontent.org/definition}, 2018, (accessed 2018-11-19)\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kluyver \emph{et~al.}(2016)Kluyver, {Ragan-Kelley}, P\'erez, Granger,
+  Bussonnier, Frederic, Kelley, Hamrick, Grout, Corlay, Ivanov, Avila, Abdalla,
+  and Willing]{kluyver_jupyter_2016}
+T.~Kluyver, B.~{Ragan-Kelley}, F.~P\'erez, B.~Granger, M.~Bussonnier,
+  J.~Frederic, K.~Kelley, J.~Hamrick, J.~Grout, S.~Corlay, P.~Ivanov, D.~Avila,
+  S.~Abdalla and C.~Willing, \emph{Positioning and Power in Academic
+  Publishing: Players, Agents and Agendas}, 2016,  87--90\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Barba \emph{et~al.}(2019)Barba, Barker, Blank, Brown, Downey, George,
+  Heagy, Mandli, Moore, Lippert, Niemeyer, Watkins, West, Wickes, Willing, and
+  Zingale]{barba_teaching_2019}
+L.~A. Barba, L.~J. Barker, D.~Blank, J.~Brown, A.~Downey, T.~George, L.~Heagy,
+  K.~Mandli, J.~Moore, D.~Lippert, K.~E. Niemeyer, R.~Watkins, R.~H. West,
+  E.~Wickes, C.~Willing and M.~Zingale, \emph{Teaching and {{Learning}} with
+  {{Jupyter}}}, \url{https://jupyter4edu.github.io/jupyter-edu-book/}, 2019,
+  (accessed 2019-03-04)\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Knuth(1984)]{knuth_literate_1984}
+D.~E. Knuth, \emph{Comput. J.}, 1984, \textbf{27}, 97--111\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Barba \emph{et~al.}(2017)Barba, Wickenheiser, and
+  Watkins]{barba_cybertraining_2017}
+L.~A. Barba, A.~Wickenheiser and R.~Watkins, \emph{{{CyberTraining}}:
+  {{DSE}}--{{The Code Maker}}: {{Computational Thinking}} for {{Engineers}}
+  with {{Interactive Contextual Learning}}},
+  \url{https://doi.org/10.6084/m9.figshare.5662051.v1}, 2017\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Papert(1993)]{papert_mindstroms_1993}
+S.~Papert, \emph{Mindstroms}, {Basic Books}, New York City, US, 1993\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Tarmizi and Sweller(1988)]{tarmizi_guidance_1988}
+R.~A. Tarmizi and J.~Sweller, \emph{J. Educ. Psycho.}, 1988, \textbf{80},
+  424--436\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[{Aiello-Nicosia} and
+  {Sperandeo-Mineo}(1985)]{aiello-nicosia_computer_1985}
+M.~L. {Aiello-Nicosia} and R.~M. {Sperandeo-Mineo}, \emph{Eur. J. Phys.}, 1985,
+  \textbf{6}, 148--153\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Pallant and Tinker(2004)]{pallant_reasoning_2004}
+A.~Pallant and R.~F. Tinker, \emph{J. Sci. Educ. Technol.}, 2004, \textbf{13},
+  51--66\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Jones \emph{et~al.}(2005)Jones, Jordan, and
+  Stillings]{jones_molecular_2005}
+L.~L. Jones, K.~D. Jordan and N.~A. Stillings, \emph{Chem. Educ. Res. Pract.},
+  2005, \textbf{6}, 136--149\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[McCluskey \emph{et~al.}(2019)McCluskey, Symington, Morgan, Edler, and
+  Parker]{mccluskey_arm61/pylj_2019}
+A.~R. McCluskey, A.~R. Symington, B.~J. Morgan, K.~J. Edler and S.~C. Parker,
+  \emph{Arm61/Pylj: Pylj-1.2.4}, \url{http://doi.org/10.5281/zenodo.2577831},
+  2019\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[McCluskey \emph{et~al.}(2018)McCluskey, Morgan, Edler, and
+  Parker]{mccluskey_pylj_2018}
+A.~R. McCluskey, B.~J. Morgan, K.~J. Edler and S.~C. Parker, \emph{J. Open
+  Source Educ.}, 2018, \textbf{1}, 19\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[{Lennard-Jones}(1924)]{lennard-jones_determination_1924}
+J.~E. {Lennard-Jones}, \emph{Proc. Royal Soc. Lond. A.}, 1924, \textbf{106},
+  463--477\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[McCluskey \emph{et~al.}(2018)McCluskey, Morgan, Edler, and
+  Parker]{mccluskey_arm61/pylj_2018}
+A.~R. McCluskey, B.~J. Morgan, K.~J. Edler and S.~C. Parker, \emph{Arm61/Pylj:
+  Pylj-1.1.0}, \url{http://doi.org/10.5281/zenodo.1403828}, 2018\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Buckingham(1938)]{buckingham_classical_1938}
+R.~A. Buckingham, \emph{Proc. Royal Soc. Lond. A.}, 1938, \textbf{168},
+  264--283\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Berendsen \emph{et~al.}(1995)Berendsen, {van der Spoel}, and {van
+  Drunen}]{berendsen_gromacs_1995}
+H.~J.~C. Berendsen, D.~{van der Spoel} and R.~{van Drunen}, \emph{Comput. Phys.
+  Commun.}, 1995, \textbf{91}, 43--56\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Plimpton(1995)]{plimpton_fast_1995}
+S.~Plimpton, \emph{J. Comput. Phys.}, 1995, \textbf{117}, 1--19\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Smith \emph{et~al.}(2002)Smith, Yong, and Rodger]{smith_dl_poly_2002}
+W.~Smith, C.~W. Yong and P.~M. Rodger, \emph{Mol. Simulat.}, 2002, \textbf{28},
+  385--471\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[noa()]{noauthor_cython_nodate}
+\emph{Cython 3.0a0}, \url{https://cython.readthedocs.io/en/latest/}, (accessed
+  2019-03-04)\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[McCluskey \emph{et~al.}(2019)McCluskey, Symington, Morgan, Edler, and
+  Parker]{mccluskey_arm61/pylj_2019-1}
+A.~R. McCluskey, A.~R. Symington, B.~J. Morgan, K.~J. Edler and S.~C. Parker,
+  \emph{Arm61/Pylj: Pylj-1.2.1}, \url{http://doi.org/10.5281/zenodo.2423866},
+  2019\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[noa()]{noauthor_numba_nodate}
+\emph{Numba: {{A High Performance Python Compiler}}},
+  \url{http://numba.pydata.org}, (accessed 2019-03-04)\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\end{mcitethebibliography}

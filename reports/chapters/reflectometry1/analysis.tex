@@ -2,7 +2,7 @@
 \label{refl1:anal}
 XRR and NR methods have a well documented history for the analysis of the structure of phospholipid monolayers at the air-water interface \cite{mohwald_phospholipid_1990,kewalramani_effects_2010,bayerl_specular_1990,johnson_structure_1991,clifton_role_2012,helm_phospholipid_1987,daillant_x-ray_1990}.
 Typically these have involved using a model-dependent analysis method, however, the modelling approaches have varied significantly in the number of layers used, the shape of the layers, the use of interfacial roughness, the parameterisation of constraints employed, and even the method by which the reflectometry profile was calculated from the model.
-Recently, an evaluation of the applicability of different models for surfactant and phospholipid monolayers using NR outlined the authors' view of ``best practice'' \cite{campbell_structure_2018}.
+Recently, an evaluation of the applicability of different models for surfactant and phospholipid monolayers using NR outlined a view of ``best practice'' \cite{campbell_structure_2018}.
 However, frequently the constraints employed in the modelling process include the head and tail volume for the phospholipid head and tail groups.
 These values are taken from a variety of other techniques, some examples are shown in Table~\ref{tab:water}.
 %
@@ -30,19 +30,19 @@ These values are taken from a variety of other techniques, some examples are sho
 
 Table~\ref{tab:water} provides a general consensus that the volume of the phosphocholine head group (PC) is \SIrange{320}{360}{\angstrom\cubed}, while the phosphatidylglycerol head group (PG) is \SIrange{289}{291}{\angstrom\cubed}.
 However, these values were all determined from experiments or simulations where the head group was interacting with water molecules.
-It is not clear is this will influence the volume that it occupies, and if that volume will change in the presence of a non-aqueous solvent, such as the DES considered herein.
+It is not clear if this will influence the volume that it occupies, and if that volume will change in the presence of a non-aqueous solvent, such as the DES considered herein.
 The charged nature of the zwitterionic and anionic phospholipid head groups may have different interactions with the polar, but neutral water and the charged DES \cite{sanchez-fernandez_self-assembly_2018}.
-Additionally, it is known that, on water, increased surface pressures and the associated Liquid-Expanded to Liquid-Condensed phase transition will lead to a compression of the phospholipid tail volume, compared to the values in Tab~\ref{tab:water} \cite{marsh_molecular_2010,small_lateral_1984}, and that this compaction has not necessarily been accounted for in the literature \cite{campbell_structure_2018}.
+Additionally, it is known that, on water, increased surface pressures and the associated Liquid-Expanded to Liquid-Condensed phase transition will lead to a compression of the phospholipid tail volume, compared to the values in Table~\ref{tab:water} \cite{marsh_molecular_2010,small_lateral_1984}, and that this compaction has not necessarily been accounted for in the literature \cite{campbell_structure_2018}.
 
 These factors meant that it was necessary to develop a model that was considerate of the phospholipid chemistry while applying as much of the ``best practice'' from Campbell \emph{et al.} \cite{campbell_structure_2018} as possible, and ensuring that the head and tail group volumes were not constrained parameters.
 The lack of having these normally constrained parameters meant that it was necessary to consider methods by which the reflectometry measurements could be co-refined, in a similar fashion to contrast variation co-refinement in neutron reflectometry.
 This could be achieved by the co-refinement of reflectometry measurements at different surface pressures, as the model was considerate of the phospholipid chemistry, and the different surface pressures were in the same phase; Liquid-Condensed (LC) for DPPC and Liquid-Expanded (LE) for DMPC, DLPC, and DMPG.
-Therefore the head and tail group volumes will remain constant, and only the surface concentration and normal thickness will vary.
+Therefore the head and tail group volumes will remain constant, and only the surface concentration and normal tail thickness will vary.
 
 The chemically-constrained model that has been used in this work was implemented in the Python library \texttt{refnx} \cite{nelson_refnx_2019,nelson_refnx_2019-1}.
 The software enables the inclusion of custom model classes that feed parameters into the Abel\`{e}s model (Section~\ref{sec:refltheory}) \cite{abeles_sur_1948,parratt_surface_1954}.
-Our chemically-consistent model class can be seen in Code Block~\ref{cb:chemconsis}, and is shared under a CC BY-SA 4.0 license in the ESI for the associated publication \cite{mccluskey_arm61/lipids_at_airdes_2019}.
-In order to ensure that the phospholipid chemistry was consistent both within the phospholipid molecule and across the different surface pressures, Code Block~\ref{cb:const} was used implemented.
+Our chemically-consistent model class can be seen in Code Block~\ref{cb:chemconsis}, and is shared under a CC BY-SA 4.0 license in the ESI for the associated publication \cite{mccluskey_lipids_at_airdes_2019}.
+In order to ensure that the phospholipid chemistry was consistent both within the phospholipid molecule and across the different surface pressures, Code Block~\ref{cb:const} was implemented.
 %
 \begin{figure}
     \centering
@@ -58,9 +58,9 @@ In order to ensure that the phospholipid chemistry was consistent both within th
 The chemically-consistent model, that is outlined in Code Block~\ref{cb:chemconsis}, consisted of two layers that define the phospholipid monolayer; the head layer at the interface with the solvent and the tail layer at the air interface.
 The head groups have a scattering length that can be calculated from a summation of the X-ray or neutron atomic scattering lengths, $b_h$, and a volume, $V_h$.
 These groups make up a layer of a given thickness, $d_h$, which has some interfacial roughness, $\sigma_h$, within which some volume fraction of solvent may penetrate, $\phi_h$.
-The tail layer is defined in the same way, however, the tail thickness, $d_t$, is constrained such that can be no greater than the maximum extended length for the phospholipid tail (defined as the Tanford length, $t_t$ \cite{tanford_hydrophobic_1980}), which is given in Table~\ref{tab:invar}, and that no solvent may penetrate into the layer (e.g. $\phi_t=0$).
+The tail layer is defined in the same way, however, the tail thickness, $d_t$, is constrained such that it can be no greater than the maximum extended length for the phospholipid tail (defined as the Tanford length, $t_t$ \cite{tanford_hydrophobic_1980}), which is given in Table~\ref{tab:invar}, and that no solvent may penetrate into the layer (e.g. $\phi_t=0$).
 Therefore, the $\text{SLD}$ may be determined as discussed in Equation~\ref{equ:sld}.
-Based on the work of Campbell \emph{et al.} \cite{campbell_structure_2018}, a single value for the interfacial roughness was fitted for all of the interfaces, including the subphase (i.e. $\sigma_t = \sigma_h = \sigma_s$), as there is only a single phospholipid molecule type present in each monolayere.
+Based on the work of Campbell \emph{et al.} \cite{campbell_structure_2018}, a single value for the interfacial roughness was fitted for all of the interfaces, including the subphase (i.e. $\sigma_t = \sigma_h = \sigma_s$), as there is only a single phospholipid molecule type present in each monolayer.
 Therefore, any capillary wave roughness at the air-DES interface is carried monotonically through the layers. The interfacial roughness was constrained to be greater than \SI{3.3}{\angstrom}, in agreement with previous work \cite{sanchez-fernandez_micellization_2016}.
 %
 \begin{table}
@@ -102,13 +102,13 @@ This was achieved with the following relation \cite{braun_polymers_2017},
 The second aspect was to enforce chemically-consistant constraints across the measurements that were conducted at different surface pressures.
 This was achieved by constraining the head and tail group volumes and the head layer thickness such that they do not vary between the different surface pressure measurements.
 
-The justification for the constraining of the tail volume is built on the assumption that the phospholipids remain in the same phase.
+The justification for constraining the tail volume is built on the assumption that the phospholipids remain in the same phase.
 On water, this may be demonstrated with a Langmuir isotherm.
 However, it was not possible to collect consistent Langmuir isotherm measurements, due to the high viscosity of the DES.
 Instead, grazing incidence X-ray diffraction was used to confirm the phases of DMPC and DPPC at \SI{30}{\milli\newton\per\meter}.
 Figure~\ref{fig:gixd} shows the GIXD data from different phospholipids at different temperatures.
 Unfortunately, all the patterns show a weak artefact due to scattering from the Teflon trough.
-However, there are clear (2, 0) diffraction peaks in the GIXD pattern for DPPC at \SI{22}{\celsius} and DMPC at \SI{7}{\celsius} indicating that both are in the LC phase.
+However, there are clear (2, 0) diffraction peaks in the GIXD pattern for DPPC at \SI{22}{\celsius} and DMPC at \SI{7}{\celsius} indicating that both lipids are in the LC phase.
 This peak was also present at other surface pressures (data not shown).
 The peak position corresponded well with that found for DPPC in water \cite{watkins_structure_2009}.
 DMPC at \SI{22}{\celsius} showed no evidence of a diffraction peak indicating the presence of the LE phase.

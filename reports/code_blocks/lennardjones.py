@@ -33,7 +33,7 @@ def lj_energy(coordinates, cell, cut_off, A, B):
             d = d % cell
             r = np.sqrt(np.sum(np.square(d)))
             if r > cut_off:
-                break
+                continue
             else:
                 energy[i] += A / np.power(r, 12) - B / np.power(r, 6)
                 energy[j] += A / np.power(r, 12) - B / np.power(r, 6)

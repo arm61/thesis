@@ -404,6 +404,24 @@ KOMA-script documentation for details.}]{fancyhdr}
 }
 
 %----------------------------------------------------------------------------------------
+%	PUBlICATIONS PAGE DESIGN
+%----------------------------------------------------------------------------------------
+
+\newcommand{\pubsname}{Publications}
+\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish} {\pubsname}{Publications} % Acknowledgement text for English countries
+\providecaptionname{german,ngerman,austrian,naustrian}{\acknowledgementname}{Danksagung} % Acknowledgement text for Germanic countries
+
+\NewDocumentEnvironment{pubsstatement}{}{%
+\checktoopen
+\tttypeout{\pubsname}
+\thispagestyle{plain}
+\begin{center}{\huge\textit{\pubsname}\par}\end{center}
+}
+{
+\vfil\vfil\null
+}
+
+%----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
