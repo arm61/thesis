@@ -338,7 +338,6 @@ KOMA-script documentation for details.}]{fancyhdr}
 
 \newcommand{\abbrevname}{List of Abbreviations}
 \providecaptionname{english,british,american}{\abbrevname}{List of Abbreviations}
-\providecaptionname{ngerman,german,austrian,naustrian}{\abbrevname}{Abk\"urzungsverzeichnis}
 \NewDocumentEnvironment{abbreviations}{ m }{%
 	\ifbool{nolistspace}{\begingroup\singlespacing}{}
 	\ifbool{listtoc}{\addchap{\abbrevname}}{\addchap*{\abbrevname}}

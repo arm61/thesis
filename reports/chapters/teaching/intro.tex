@@ -3,7 +3,7 @@ The popularity of classical simulation, both all-atom and coarse-grained, as a t
 Figure~\ref{fig:growth} shows that as of 2019, \SI{\sim20}{\percent} of all small angle scattering publications also mention molecular dynamics.
 Users of scattering techniques often have backgrounds in experimental science and may have received little formal training in the theory or practice of computational modelling.
 This can lead to the use of molecular dynamics simulations as a ``black box'' without necessarily understanding the underlying methodologies, or considering possible sources of error.
-To help support researchers use molecular dynamics simulations in their analysis of scattering data, while reducing the risk of modelling errors, a number of software tools, such as WAXSiS and SASSIE \cite{chen_validating_2014,knight_waxsis_2015,perkins_atomistic_2016} have been developed that present easy-to-use, graphical, web-based user interfaces.
+To help support researchers use molecular dynamics simulations in their analysis of scattering data while reducing the risk of modelling errors, a number of software tools, such as WAXSiS and SASSIE \cite{chen_validating_2014,knight_waxsis_2015,perkins_atomistic_2016} have been developed that present easy-to-use, graphical, web-based user interfaces.
 %
 \begin{figure}
     \centering
@@ -13,33 +13,33 @@ To help support researchers use molecular dynamics simulations in their analysis
 \end{figure}
 %
 
-A complementary approach is to organise educational activities, such as lectures and workshops, tailored to introduce molecular simulation techniques to auidiences of scattering users.
+A complementary approach is to organise educational activities, such as lectures and workshops, tailored to introduce molecular simulation techniques to audiences of scattering users.
 One example is the annual ISIS Neutron Training Course, which includes a module titled ``An Introduction to Molecular Dynamics for Neutron Scattering''.
 This module covers the fundamentals of classical molecular dynamics simulation, presents applications of these methods in neutron science, and gives students practical hands-on experience with the SASSIE software package \cite{perkins_atomistic_2016}.
 
 While lectures and workshops are an effective tool for education and training, participation can be limited due to difficulties attending in person (due to location and cost) or physical limits on student numbers.
 An alternative educational strategy gaining popularity within scientific and engineering communities is the publication of open educational resources (OERs). These are courses, lectures, or learning resources published online that are freely available for use by anyone.
-In addition to their broad accessibility these resources have permissive ``open'' copyright licenses that allow their use in the ``5R activities'': retain, reuse, revise, remix, and redistribute \cite{wiley_open_2018}.
-Publishing a resource as an OER increases the reach and impact, because others may use it in their own tewaching not only in its original form, but are free to modify, and reditribute, the material to better suit their aims.
+In addition to their broad accessibility, these resources have permissive ``open'' copyright licenses that allow their use in the ``5R activities'': retain, reuse, revise, remix, and redistribute \cite{wiley_open_nodate}.
+Publishing a resource as an OER increases the reach and impact, because others may use it in their own teaching not only in its original form, but are free to modify, and redistribute, the material to better suit their aims.
 The OERs developed as a part of this work both leveraged heavily the Jupyter Notebook framework \cite{kluyver_jupyter_2016} to enable technology-enhanced OERs.
 
 \subsection{Using Jupyter Notebooks in Education}
 Project Jupyter \cite{kluyver_jupyter_2016} is a collection of standards, a community, and a set of software tools.
 The Jupyter Notebook is one of these software tools that is capable of creating, editing, and running a Jupyter Notebook file.
-This is a file that can contain execuable code (in this work this is exclusively in the Python programming language) and narrative text (either Markdown or formatted LaTex), enabling the user to ``tell an interactive, computational story'' \cite{barba_teaching_2019}.
+This is a file that can contain executable code (in this work this is exclusively in the Python programming language) and narrative text (either Markdown or formatted LaTex), enabling the user to ``tell an interactive, computational story'' \cite{barba_teaching_2019}.
 Furthermore, the interactive nature reduces the barrier of entry to computational methods that is often imposed on those learning, due often to the need to understand a command line interface.
 
-The Jupyter Notebook framework as become a popular platform for OERs that teach computational skills, because it allows authors to include instructional text, images and other media, alongside executable, editable code, in an example of ``literate programming'' \cite{knuth_literate_1984}.
+The Jupyter Notebook framework has become a popular platform for OERs that teach computational skills, because it allows authors to include instructional text, images and other media, alongside the executable, editable code, in an example of ``literate programming'' \cite{knuth_literate_1984}.
 This format encourages students to directly interact with code examples by running, editing, and rerunning these within the source document \cite{barba_cybertraining_2017}, supporting exploratory experiential learning \cite{papert_mindstroms_1993}, and enabling the ``worked example effect'' \cite{tarmizi_guidance_1988}.
 Furthermore, the modular nature of a Jupyter Notebook OER allows the resource designer to build computational tools to be used by those learning, such as Python libraries to aid understanding.
 
 \subsection{Teaching computational simulation}
-It was suggested by Aiello-Micosia and Sperandeo-Mineo \cite{aiello-nicosia_computer_1985} that the understanding of the microscopic disordered motions of particles in gases is a difficult problem for manmy science students.
-While, Pallant and Tinker \cite{pallant_reasoning_2004} comment that there was an educational challange associated with helping students to rationalise the relationship between the mathematics underlying computational simulation and the behaviour of the system.
-However, it has been noted that the visualisation often used in tradiational teaching of molecular dynamics simulations may cause difficulties for students' understanding, that can be categorised as follows \cite{jones_molecular_2005}:
+It was suggested by Aiello-Micosia and Sperandeo-Mineo \cite{aiello-nicosia_computer_1985} that the understanding of the microscopic disordered motions of particles in gases is a difficult problem for many science students.
+While Pallant and Tinker \cite{pallant_reasoning_2004} comment that there was an educational challenge associated with helping students to rationalise the relationship between the mathematics underlying computational simulation and the behaviour of the system.
+However, it has been noted that the visualisation often used in the traditional teaching of molecular dynamics simulations may cause difficulties for students' understanding, that can be categorised as follows \cite{jones_molecular_2005}:
 \begin{itemize}
-\item visual subtley: often simulations are presented as two-dimensional displays of three-dimensional objects, creating spatial relationships that may be difficult to interpret,
-\item complexity: high information depth in an image, perhaps of a complex chemical model, will lead to an increases, and often unnecessary cognitative load,
+\item visual subtlety: often simulations are presented as two-dimensional displays of three-dimensional objects, creating spatial relationships that may be difficult to interpret,
+\item complexity: high information depth in an image, perhaps of a complex chemical model, will lead to increases, often unnecessarily in cognitive load,
 \item abstractness and conceptual depth: conventions are often used to represent phenomena that may be vague or unfamiliar to those learning about the methods.
 \end{itemize}
-Therefore, in addition to making use of software that will enable learners to interact with the computational methods being introduced, it is important that the discussion and visualisation of these methods is as straightforward as possible.
+Therefore, in addition to making use of software that will enable learners to interact with the computational methods being introduced, it is important that the discussion and visualisation of these methods are as straightforward as possible.

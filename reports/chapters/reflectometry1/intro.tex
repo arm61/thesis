@@ -36,14 +36,14 @@ However, this is the cause of the propensity to converge to a local minimum.
 This leads to the application of genetic algorithm derived methods for the optimisation of reflectometry models, beginning with the works of de Haan and Drijkoningen \cite{de_haan_genetic_1994} and Dane \emph{et al.} \cite{dane_application_1998}, who first applied this method to reflectometry analysis.
 These methods are designed to stochastically sample an entire given search-space, and therefore are more able to overcome the local minima issue and determine the vicinity of a global minimum.
 Following this initial application, genetic algorithms were used frequently in the optimisation of reflectometry models \cite{ulyanenkov_genetic_2000,ulyanenkov_extended_2005,politsch_unbiased_2002,wormington_characterization_1999}.
-In particular, the work of Wormington \emph{et al.} \cite{wormington_characterization_1999} showed the applicability of the differential evolution method towards reflectometry model optimisation, which resulted in the inclusion of such methods in many common reflectometry analysis software packages \cite{bjorck_fitting_2011,bjorck_genx_2007,nelson_co-refinement_2006,nelson_refnx_2019,ott_simulreflec_2008,kienzle_ncnr_2006}.
+In particular, the work of Wormington \emph{et al.} \cite{wormington_characterization_1999} showed the applicability of the differential evolution method towards reflectometry model optimisation, which resulted in the inclusion of such methods in many common reflectometry analysis software packages \cite{bjorck_fitting_2011,bjorck_genx_2007,nelson_co-refinement_2006,nelson_refnx_2019,ott_simulreflec_nodate,kienzle_ncnr_nodate}.
 
 The use of Markov chain Monte Carlo (MCMC) methods to probe the probability distribution functions of the fitting parameters of a reflectometry model have grown in popularity \cite{gil_limitations_2012,hoogerheide_structure_2018,owejan_solid_2012,heinrich_myristoylation_2014}.
-This is due to the inclusion of MCMC methods in common analysis software packages such as Refl1D \cite{kienzle_ncnr_2006}.
+This is due to the inclusion of MCMC methods in common analysis software packages such as Refl1D \cite{kienzle_ncnr_nodate}.
 These methods enable the user to better understand the inverse uncertainties for the model.
 Additionally, they enable the quantification of the correlation between parameters, important in ensuring that the model applied is suitably constrained such as to reduce the cross-correlation present between parameters \cite{nelson_co-refinement_2006}.
 
-This work applies a differential algorithm \cite{storn_differential_1997,jones_scipy_2001} to the optimisation of the reflectometry model.
+This work applies a differential algorithm \cite{storn_differential_1997,jones_scipy_nodate} to the optimisation of the reflectometry model.
 The search-space, available within the experimental uncertainty of the data is then sampled using MCMC, as implemented in \texttt{emcee} \cite{foreman-mackey_emcee_2013}, to understand the parameter probability distributions and quantify the inter-parameter correlations.
 
 \subsection{Chemically-consistent modelling}

@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{86}
+\begin{mcitethebibliography}{89}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -351,6 +351,23 @@ A.~R.~J. Nelson and S.~W. Prescott, \emph{J. Appl. Crystallogr.}, 2019,
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
+\bibitem[Ott()]{ott_simulreflec_nodate}
+F.~Ott, \emph{{{SimulReflec}}},
+  \url{http://www-llb.cea.fr/prism/programs/simulreflec/simulreflec.html},
+  (accessed 2019-03-04)\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kienzle \emph{et~al.}()Kienzle, Douchet, McGilivray, O'Donovan, Berk,
+  and Majkrzak]{kienzle_ncnr_nodate}
+P.~A. Kienzle, M.~Douchet, D.~J. McGilivray, K.~V. O'Donovan, N.~K. Berk and
+  C.~F. Majkrzak, \emph{{{NCNR Reflectometry Software}}},
+  \url{http://www.ncnr.nist.gov/reflpak}, (accessed 2018-03-04)\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
 \bibitem[Gil and Windover(2012)]{gil_limitations_2012}
 D.~L. Gil and D.~Windover, \emph{J. Phys. D}, 2012, \textbf{45}, 235301\relax
 \mciteBstWouldAddEndPuncttrue
@@ -385,6 +402,15 @@ F.~Heinrich, H.~Nanda, H.~Z. Goh, C.~Bachert, M.~L\"osche and A.~D. Linstedt,
 \bibitem[Storn and Price(1997)]{storn_differential_1997}
 R.~Storn and K.~Price, \emph{J. Global Optim.}, 1997, \textbf{11},
   341--359\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Jones \emph{et~al.}()Jones, Oliphant, Peterson, and
+  {others}]{jones_scipy_nodate}
+E.~Jones, T.~Oliphant, P.~Peterson and {others}, \emph{{{SciPy}}: {{Open}}
+  Source Scientific Tools for {{Python}}}, \url{http://www.scipy.org},
+  (accessed 2019-03-04)\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

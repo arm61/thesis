@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{29}
+\begin{mcitethebibliography}{47}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -18,19 +18,19 @@
 \mciteSetBstSublistLabelBeginEnd{\mcitemaxwidthsubitemform\space}
 {\relax}{\relax}
 
-\bibitem[Boldon \emph{et~al.}(2015)Boldon, Laliberte, and
-  Liu]{boldon_review_2015}
-L.~Boldon, F.~Laliberte and L.~Liu, \emph{Nano Rev.}, 2015, \textbf{6},
-  25661\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
 \bibitem[Pan \emph{et~al.}(2012)Pan, Heberle, {Tristram-Nagle}, Szymanski,
   Koepfinger, Katsaras, and Ku{\v c}erka]{pan_molecular_2012}
 J.~Pan, F.~A. Heberle, S.~{Tristram-Nagle}, M.~Szymanski, M.~Koepfinger,
   J.~Katsaras and N.~Ku{\v c}erka, \emph{BBA - Biomembranes}, 2012,
   \textbf{1818}, 2135--2148\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Boldon \emph{et~al.}(2015)Boldon, Laliberte, and
+  Liu]{boldon_review_2015}
+L.~Boldon, F.~Laliberte and L.~Liu, \emph{Nano Rev.}, 2015, \textbf{6},
+  25661\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -83,6 +83,13 @@ S.~J. Perkins, D.~W. Wright, H.~Zhang, E.~H. Brookes, J.~Chen, T.~C. Irving,
   S.~Krueger, D.~J. Barlow, K.~J. Edler, D.~J. Scott, N.~J. Terrill, S.~M.
   King, P.~D. Butler and J.~E. Curtis, \emph{J. Appl. Crystallogr.}, 2016,
   \textbf{49}, 1861--1875\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Wiley()]{wiley_open_nodate}
+D.~Wiley, \emph{Open Content - Definition},
+  \url{http://opencontent.org/definition}, (accessed 2018-11-19)\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -162,19 +169,19 @@ L.~L. Jones, K.~D. Jordan and N.~A. Stillings, \emph{Chem. Educ. Res. Pract.},
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
-\bibitem[McCluskey \emph{et~al.}(2019)McCluskey, Symington, Morgan, Edler, and
-  Parker]{mccluskey_arm61/pylj_2019}
-A.~R. McCluskey, A.~R. Symington, B.~J. Morgan, K.~J. Edler and S.~C. Parker,
-  \emph{Arm61/Pylj: Pylj-1.2.4}, \url{http://doi.org/10.5281/zenodo.2577831},
-  2019\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
 \bibitem[McCluskey \emph{et~al.}(2018)McCluskey, Morgan, Edler, and
   Parker]{mccluskey_pylj_2018}
 A.~R. McCluskey, B.~J. Morgan, K.~J. Edler and S.~C. Parker, \emph{J. Open
   Source Educ.}, 2018, \textbf{1}, 19\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[McCluskey \emph{et~al.}(2019)McCluskey, Symington, Morgan, Edler, and
+  Parker]{mccluskey_arm61/pylj_2019-2}
+A.~R. McCluskey, A.~R. Symington, B.~J. Morgan, K.~J. Edler and S.~C. Parker,
+  \emph{Arm61/Pylj: Pylj-1.2.5}, \url{http://doi.org/10.5281/zenodo.2587898},
+  2019\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -241,6 +248,142 @@ A.~R. McCluskey, A.~R. Symington, B.~J. Morgan, K.~J. Edler and S.~C. Parker,
 \bibitem[noa()]{noauthor_numba_nodate}
 \emph{Numba: {{A High Performance Python Compiler}}},
   \url{http://numba.pydata.org}, (accessed 2019-03-04)\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[McCluskey \emph{et~al.}(2019)McCluskey, Grant, Symington, Snow,
+  Doutch, Morgan, Parker, and
+  Edler]{mccluskey_pythoninchemistry/sim_and_scat_2019}
+A.~R. McCluskey, J.~Grant, A.~R. Symington, T.~Snow, J.~Doutch, B.~J. Morgan,
+  S.~C. Parker and K.~J. Edler, \emph{Pythoninchemistry/Sim\_and\_scat:
+  Sim\_and\_scat-v0.3-Preprint}, \url{http://doi.org/10.5281/zenodo.2556824},
+  2019\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Lau and Holdgraf(2019)]{lau_jupyter/jupyter-book_2019}
+S.~Lau and C.~Holdgraf, \emph{Jupyter/Jupyter-Book {{Beta}}-2},
+  \url{https://github.com/jupyter/jupyter-book}, 2019\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[{Ragan-Kelley} \emph{et~al.}(2019){Ragan-Kelley}, Thi\'ery, Corlay,
+  Gutsche, Holdgraf, and Head]{ragan-kelley_minrk/thebelab_2019}
+B.~{Ragan-Kelley}, N.~M. Thi\'ery, S.~Corlay, S.~Gutsche, C.~Holdgraf and
+  T.~Head, \emph{Minrk/Thebelab v0.3.3},
+  \url{https://github.com/minrk/thebelab}, 2019\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[{Ragan-Kelley} \emph{et~al.}(2019){Ragan-Kelley}, Panda, Willing,
+  Holdgraf, Erdogan, Head, Bussonnier, Zarea, {van Niekerk}, Yick, and
+  Sundell]{ragan-kelley_jupyterhub/binderhub_2019}
+B.~{Ragan-Kelley}, Y.~Panda, C.~Willing, C.~Holdgraf, K.~Erdogan, T.~Head,
+  M.~Bussonnier, H.~Zarea, M.~{van Niekerk}, C.~Yick and E.~Sundell,
+  \emph{Jupyterhub/Binderhub {{FirstLight}}},
+  \url{https://github.com/jupyterhub/binderhub}, 2019\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Jupyter and {others}(2018)]{jupyter_binder_2018}
+Jupyter and {others}, Proceedings of the 17th {{Python}} in {{Science
+  Conference}}., 2018\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Commons(2019)]{creative_commons_creative_2019}
+C.~Commons, \emph{Creative {{Commons}} -- {{Attribution}} 4.0 {{International}}
+  -- {{CC}}-{{BY}}-4.0}, \url{https://creativecommons.org/licenses/by/4.0/},
+  2019\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Source(2019)]{open_source_mit_2019}
+O.~Source, \emph{The {{MIT License}}},
+  \url{https://opensource.org/licenses/MIT}, 2019\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Swope \emph{et~al.}(1982)Swope, Andersen, Berens, and
+  Wilson]{swope_computer_1982}
+W.~C. Swope, H.~C. Andersen, P.~H. Berens and K.~R. Wilson, \emph{J. Chem.
+  Phys.}, 1982, \textbf{76}, 637--649\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Debye(1915)]{debye_zerstreuung_1915}
+P.~Debye, \emph{Ann. Phys.}, 1915, \textbf{351}, 809--823\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Watson and Curtis(2013)]{watson_rapid_2013}
+M.~C. Watson and J.~E. Curtis, \emph{J. Appl. Crystallogr.}, 2013, \textbf{46},
+  1171--1177\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Svergun(1994)]{svergun_solution_1994}
+D.~I. Svergun, \emph{Acta Crystallogr. A}, 1994, \textbf{50}, 391--402\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Lemkul()]{lemkul_gromacs_nodate}
+J.~A. Lemkul, \emph{{{GROMACS Tutorial}}: {{Lysozyme}} in {{Water}}},
+  \url{http://www.mdtutorials.com/gmx/lysozyme/index.html}, (accessed
+  2019-03-08)\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[{Michaud-Agrawal} \emph{et~al.}(2011){Michaud-Agrawal}, Denning,
+  Woolf, and Beckstein]{michaud-agrawal_mdanalysis_2011}
+N.~{Michaud-Agrawal}, E.~J. Denning, T.~B. Woolf and O.~Beckstein, \emph{J.
+  Comput. Chem.}, 2011, \textbf{32}, 2319--2327\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Gowers \emph{et~al.}(2016)Gowers, Linke, Barnoud, Reddy, Melo, Seyler,
+  Doma\'nski, Dotson, Buchoux, Kenney, and Beckstein]{gowers_mdanalysis_2016}
+R.~Gowers, M.~Linke, J.~Barnoud, T.~Reddy, M.~Melo, S.~Seyler, J.~Doma\'nski,
+  D.~Dotson, S.~Buchoux, I.~Kenney and O.~Beckstein, Python in {{Science
+  Conference}}, Austin, Texas, 2016, pp. 98--105\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Franke \emph{et~al.}(2015)Franke, Jeffries, and
+  Svergun]{franke_correlation_2015}
+D.~Franke, C.~M. Jeffries and D.~I. Svergun, \emph{Nat. Methods}, 2015,
+  \textbf{12}, 419--422\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Svergun \emph{et~al.}(1995)Svergun, Barberato, and
+  Koch]{svergun_crysol_1995}
+D.~Svergun, C.~Barberato and M.~H.~J. Koch, \emph{J. Appl. Crystallogr.}, 1995,
+  \textbf{28}, 768--773\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[noa()]{noauthor_flipped_nodate}
+\emph{Flipped {{Learning}} | {{Higher Education Academy}}},
+  \url{https://www.heacademy.ac.uk/knowledge-hub/flipped-learning-0}, (accessed
+  2019-03-12)\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

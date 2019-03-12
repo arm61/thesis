@@ -4,52 +4,47 @@ The top-level auxiliary file: reports/chapters/theory.aux
 The style file: rsc.bst
 Database file #1: rsc-main.bib
 Database file #2: reports/main.bib
-Warning--I didn't find a database entry for "hughes_rascal_2010"
-Warning--I didn't find a database entry for "burle_bornagain_2018"
-Warning--I didn't find a database entry for "ott_simulreflec_2008"
-Warning--I didn't find a database entry for "kienzle_ncnr_2006"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 rsc 2016/08/22 v3.1f
-You've used 94 entries,
+You've used 98 entries,
             3113 wiz_defined-function locations,
-            1274 strings with 22957 characters,
-and the built_in function-call counts, 30890 in all, are:
-= -- 2460
-> -- 1837
-< -- 68
-+ -- 586
-- -- 489
-* -- 2881
-:= -- 4573
-add.period$ -- 94
-call.type$ -- 94
+            1288 strings with 23607 characters,
+and the built_in function-call counts, 32066 in all, are:
+= -- 2532
+> -- 1943
+< -- 70
++ -- 620
+- -- 519
+* -- 2983
+:= -- 4759
+add.period$ -- 98
+call.type$ -- 98
 change.case$ -- 3
-chr.to.int$ -- 91
-cite$ -- 102
-duplicate$ -- 1430
-empty$ -- 2294
-format.name$ -- 614
-if$ -- 6428
+chr.to.int$ -- 95
+cite$ -- 106
+duplicate$ -- 1484
+empty$ -- 2380
+format.name$ -- 648
+if$ -- 6664
 int.to.chr$ -- 7
 int.to.str$ -- 1
 missing$ -- 3
-newline$ -- 585
-num.names$ -- 264
-pop$ -- 390
+newline$ -- 609
+num.names$ -- 276
+pop$ -- 430
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 846
+skip$ -- 872
 stack$ -- 0
 substring$ -- 1740
-swap$ -- 572
-text.length$ -- 196
+swap$ -- 588
+text.length$ -- 204
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 631
+type$ -- 659
 warning$ -- 0
-while$ -- 269
+while$ -- 277
 width$ -- 0
-write$ -- 1340
-(There were 4 warnings)
+write$ -- 1396
