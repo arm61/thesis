@@ -4,47 +4,51 @@ The top-level auxiliary file: reports/chapters/reflectometry1.aux
 The style file: rsc.bst
 Database file #1: rsc-main.bib
 Database file #2: reports/main.bib
+Warning--I didn't find a database entry for "ott_simulreflec_2008"
+Warning--I didn't find a database entry for "kienzle_ncnr_2006"
+Warning--I didn't find a database entry for "jones_scipy_2001"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 rsc 2016/08/22 v3.1f
-You've used 89 entries,
+You've used 86 entries,
             3113 wiz_defined-function locations,
-            1265 strings with 25166 characters,
-and the built_in function-call counts, 33702 in all, are:
-= -- 2434
-> -- 2596
-< -- 27
-+ -- 814
-- -- 725
-* -- 3711
-:= -- 5242
-add.period$ -- 89
-call.type$ -- 89
+            1255 strings with 24751 characters,
+and the built_in function-call counts, 32814 in all, are:
+= -- 2379
+> -- 2517
+< -- 26
++ -- 789
+- -- 703
+* -- 3630
+:= -- 5104
+add.period$ -- 86
+call.type$ -- 86
 change.case$ -- 1
-chr.to.int$ -- 89
-cite$ -- 89
-duplicate$ -- 1313
-empty$ -- 2187
-format.name$ -- 843
-if$ -- 6684
+chr.to.int$ -- 86
+cite$ -- 86
+duplicate$ -- 1272
+empty$ -- 2122
+format.name$ -- 818
+if$ -- 6506
 int.to.chr$ -- 2
 int.to.str$ -- 1
 missing$ -- 1
-newline$ -- 555
-num.names$ -- 267
-pop$ -- 298
+newline$ -- 537
+num.names$ -- 258
+pop$ -- 274
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 671
+skip$ -- 646
 stack$ -- 0
 substring$ -- 2000
-swap$ -- 644
-text.length$ -- 178
+swap$ -- 629
+text.length$ -- 172
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 620
+type$ -- 599
 warning$ -- 0
-while$ -- 263
+while$ -- 257
 width$ -- 0
-write$ -- 1267
+write$ -- 1225
+(There were 3 warnings)

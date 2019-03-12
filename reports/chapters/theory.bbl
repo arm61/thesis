@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{98}
+\begin{mcitethebibliography}{94}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -116,13 +116,6 @@ A.~R.~J. Nelson and S.~W. Prescott, \emph{J. Appl. Crystallogr.}, 2019,
 \bibitem[Nelson(2006)]{nelson_co-refinement_2006}
 A.~R.~J. Nelson, \emph{J. Appl. Crystallogr.}, 2006, \textbf{39},
   273--276\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Hughes(2010)]{hughes_rascal_2010}
-A.~V. Hughes, \emph{{{RasCAL}}}, \url{https://sourceforge.net/projects/rscl/},
-  2010, (accessed 2016-08-08)\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -338,16 +331,6 @@ R.~Lazzari, \emph{J. Appl. Crystallogr.}, 2002, \textbf{35}, 406--421\relax
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
-\bibitem[Burle \emph{et~al.}(2018)Burle, Durniak, Fisher, Ganeva, Pospelov,
-  {van Herck}, and Wuttke]{burle_bornagain_2018}
-J.~Burle, C.~Durniak, J.~M. Fisher, M.~Ganeva, G.~Pospelov, W.~{van Herck} and
-  J.~Wuttke, \emph{{{BornAgain}} - {{Software}} for Simulating and Fitting
-  {{X}}-Ray and Neutron Small-Angle Scattering at Grazing Incidence.},
-  \url{www.bornagainproject.com}, 2018\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
 \bibitem[Chourou \emph{et~al.}(2013)Chourou, Sarje, Li, Chan, and
   Hexemer]{chourou_hipgisaxs_2013}
 S.~T. Chourou, A.~Sarje, X.~S. Li, E.~R. Chan and A.~Hexemer, \emph{J. Appl.
@@ -526,23 +509,6 @@ M.~Bj\"orck, \emph{J. Appl. Crystallogr.}, 2011, \textbf{44}, 1198--1204\relax
 \bibitem[Bj\"orck and Andersson(2007)]{bjorck_genx_2007}
 M.~Bj\"orck and G.~Andersson, \emph{J. Appl. Crystallogr.}, 2007, \textbf{40},
   1174--1178\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Ott(2008)]{ott_simulreflec_2008}
-F.~Ott, \emph{{{SimulReflec}}},
-  \url{http://www-llb.cea.fr/prism/programs/simulreflec/simulreflec.html},
-  2008\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Kienzle \emph{et~al.}(2006)Kienzle, Douchet, McGilivray, O'Donovan,
-  Berk, and Majkrzak]{kienzle_ncnr_2006}
-P.~A. Kienzle, M.~Douchet, D.~J. McGilivray, K.~V. O'Donovan, N.~K. Berk and
-  C.~F. Majkrzak, \emph{{{NCNR Reflectometry Software}}},
-  \url{http://www.ncnr.nist.gov/reflpak}, 2006\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

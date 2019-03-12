@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{30}
+\begin{mcitethebibliography}{29}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -83,13 +83,6 @@ S.~J. Perkins, D.~W. Wright, H.~Zhang, E.~H. Brookes, J.~Chen, T.~C. Irving,
   S.~Krueger, D.~J. Barlow, K.~J. Edler, D.~J. Scott, N.~J. Terrill, S.~M.
   King, P.~D. Butler and J.~E. Curtis, \emph{J. Appl. Crystallogr.}, 2016,
   \textbf{49}, 1861--1875\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Wiley(2018)]{wiley_open_2018}
-D.~Wiley, \emph{Open Content - Definition},
-  \url{http://opencontent.org/definition}, 2018, (accessed 2018-11-19)\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
