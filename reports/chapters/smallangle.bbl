@@ -1,0 +1,84 @@
+\providecommand*{\mcitethebibliography}{\thebibliography}
+\csname @ifundefined\endcsname{endmcitethebibliography}
+{\let\endmcitethebibliography\endthebibliography}{}
+\begin{mcitethebibliography}{8}
+\providecommand*{\natexlab}[1]{#1}
+\providecommand*{\mciteSetBstSublistMode}[1]{}
+\providecommand*{\mciteSetBstMaxWidthForm}[2]{}
+\providecommand*{\mciteBstWouldAddEndPuncttrue}
+  {\def\EndOfBibitem{\unskip.}}
+\providecommand*{\mciteBstWouldAddEndPunctfalse}
+  {\let\EndOfBibitem\relax}
+\providecommand*{\mciteSetBstMidEndSepPunct}[3]{}
+\providecommand*{\mciteSetBstSublistLabelBeginEnd}[3]{}
+\providecommand*{\EndOfBibitem}{}
+\mciteSetBstSublistMode{f}
+\mciteSetBstMaxWidthForm{subitem}
+{(\emph{\alph{mcitesubitemcount}})}
+\mciteSetBstSublistLabelBeginEnd{\mcitemaxwidthsubitemform\space}
+{\relax}{\relax}
+
+\bibitem[{Sanchez-Fernandez} \emph{et~al.}(2016){Sanchez-Fernandez}, Arnold,
+  Jackson, Fussell, Heenan, Campbell, and
+  Edler]{sanchez-fernandez_micellization_2016}
+A.~{Sanchez-Fernandez}, T.~Arnold, A.~J. Jackson, S.~L. Fussell, R.~K. Heenan,
+  R.~A. Campbell and K.~J. Edler, \emph{Phys. Chem. Chem. Phys.}, 2016,
+  \textbf{18}, 33240--33249\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Ivanovi\'c \emph{et~al.}(2018)Ivanovi\'c, Bruetzel, Lipfert, and
+  Hub]{ivanovic_temperature-dependent_2018}
+M.~T. Ivanovi\'c, L.~K. Bruetzel, J.~Lipfert and J.~S. Hub, \emph{Angew. Chemie
+  Int. Ed.}, 2018, \textbf{57}, 5635--5639\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Perkins \emph{et~al.}(1991)Perkins, Nealis, Sutton, and
+  Feinstein]{perkins_solution_1991}
+S.~J. Perkins, A.~S. Nealis, B.~J. Sutton and A.~Feinstein, \emph{J. Mol.
+  Biol.}, 1991, \textbf{221}, 1345--1366\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Mayans \emph{et~al.}(1995)Mayans, Coadwell, Beale, Symons, and
+  Perkins]{mayans_demonstration_1995}
+M.~O. Mayans, W.~J. Coadwell, D.~Beale, D.~B.~A. Symons and S.~J. Perkins,
+  \emph{Biochem. J.}, 1995, \textbf{331}, 283--291\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hub(2018)]{hub_interpreting_2018}
+J.~S. Hub, \emph{Curr. Opin. Struct. Biol.}, 2018, \textbf{49}, 18--26\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[noa()]{noauthor_rcsb_nodate}
+\emph{{{RCSB PDB}}: {{Protein Data Bank}}}, \url{http://www.rcsb.org},
+  (accessed 2018-01-28)\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Chen and Hub(2014)]{chen_validating_2014}
+P.-C. Chen and J.~S. Hub, \emph{Biophys. J.}, 2014, \textbf{107},
+  435--447\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Bowerman \emph{et~al.}(2017)Bowerman, Rana, Rice, Pham, Strieter, and
+  Wereszczynski]{bowerman_determining_2017}
+S.~Bowerman, A.~S. J.~B. Rana, A.~Rice, G.~H. Pham, E.~R. Strieter and
+  J.~Wereszczynski, \emph{J. Chem. Theory Comput.}, 2017, \textbf{13},
+  2418--2429\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\end{mcitethebibliography}

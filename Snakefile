@@ -3,12 +3,14 @@ CHAP = 'chapters/'
 THEO = 'theory/'
 REFL1 = 'reflectometry1/'
 REFL2 = 'reflectometry2/'
+SAS = 'smallangle/'
 TEACH = 'teaching/'
 APP = 'appendices/'
 FIG_DIR = REP + 'figures/'
 FIG_THEO = FIG_DIR + 'theory/'
 FIG_REFL1 = FIG_DIR + REFL1
 FIG_REFL2 = FIG_DIR + REFL2
+FIG_SAS = FIG_DIR + SAS
 FIG_TEACH = FIG_DIR + TEACH
 FIGURES_PLOT = [FIG_THEO + 'dyna.pdf', FIG_THEO + 'kine.pdf',
                 FIG_THEO + 'scales.pdf', FIG_THEO + 'rg.pdf',
@@ -86,7 +88,8 @@ FIGURES = [FIG_DIR + 'bath.pdf', FIG_DIR + 'diamond.pdf',
 #            REP + CHAP + 'smallangle.tex', REP + CHAP + 'gisas.tex',
 #            REP + CHAP + 'teaching.tex', REP + CHAP + 'summary.tex']
 CHAPTERS = [REP + CHAP + 'theory.tex', REP + CHAP + 'reflectometry1.tex',
-            REP + CHAP + 'reflectometry2.tex', REP + CHAP + 'teaching.tex']
+            REP + CHAP + 'reflectometry2.tex', REP + CHAP + 'smallangle.tex',
+            REP + CHAP + 'teaching.tex']
 LATEX = [REP + CHAP + THEO + 'scattheory.tex',
          REP + CHAP + THEO + 'probing.tex',
          REP + CHAP + THEO + 'classical.tex',
@@ -111,6 +114,9 @@ LATEX = [REP + CHAP + THEO + 'scattheory.tex',
          REP + CHAP + TEACH + 'pylj.tex',
          REP + CHAP + TEACH + 'sim_and_scat.tex',
          REP + CHAP + TEACH + 'conclusions.tex',
+         REP + CHAP + SAS + 'abstract.tex',
+         REP + CHAP + SAS + 'context.tex',
+         REP + CHAP + SAS + 'intro.tex',
          REP + 'appendices/papers.tex']
 CODE_BLOCKS = [REP + 'code_blocks/' + 'reflectometry.py',
                REP + 'code_blocks/' + 'lennardjones.py',
