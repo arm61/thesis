@@ -28,6 +28,17 @@
       - Need to mention the periodicity effect when there is a vacuum above the monolayer.
     - [ ] Conclusions
   - [ ] Assessing the applicability of particle swarm methods to fitting coarse-grained small angle scattering data
-  - [ ] Parameterisation of accurate forcefields for the analysis of GISAS measurements
-  - [ ] Developing open-source teaching resources for classical simulation and scattering
+    - [ ] Abstract
+    - [ ] Context
+    - [x] Introduction
+    - [ ] Methods
+    - [ ] Results and discussion
+    - [ ] Conclusions 
+  - [x] Developing open-source teaching resources for classical simulation and scattering
+    - [x] Abstract
+    - [x] Context 
+    - [x] Introduction
+    - [x] pylj
+    - [x] The interaction between simulation and scattering
+    - [x] Conclusions
   - [ ] Conclusions
