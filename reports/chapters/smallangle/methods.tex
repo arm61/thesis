@@ -9,10 +9,11 @@ The molecule input file is space separated consisting of an index, particle name
 While, the intramolecular interactions file describes the bonds within the molecule, in lieu of angular interactions a pseudo-bond is defined between each second particle in the system. 
 When the initial molecule input file is read in, a differences object is created which stores the differential between the particle description and the more severe coarse-grained description that is used in the particle swarm optimisation. 
 
-In order to reduce the parameter space that was probed by the particle swarm algorithm, the description of the surfactants as severely coarse-grained.
-This involved reducing the surfactant to a `director' description, that is where the surfactant molecule is reduced to a position and direction, shown pictorially in Figure~\ref{fig:director}.
-The use of this description allowed the surfactant to be desrcibed by just six variables; three of which described the position of the centre-of-mass position of the molecule ($a$, $b$, $c$) and three that describe the orientaion of the surfactant in space ($\phi$, $\omega$, $\kappa$).
-These variables were those that were exposed to the particle swarm optimisation method outlined in Section~\ref{sec:partswarm}.
+Inspired by the work on directional colloid self-assembly of Law \emph{et al.} \cite{}, a severe coarse-graining methodolgy was applied to the surfactant molecules.
+This allowed for a significantly reduced parameter dimensionality to which the particle swarm optimisation was applied. 
+The severe coarse-graining involved reduction the surfactant to a `director' description; where each surfactant molecule is defined by a position and a direction, shown pictorially in Figure~\ref{fig:director}.
+This reduced the parameter dimensionality to just six variables per molecule; three of which described the position of the centre-of-mass position of the molecule ($a$, $b$, $c$) and three that describe the orientaion of the surfactant in space ($\phi$, $\omega$, $\kappa$).
+These were the variables that were exposed to the particle swarm optimisation method outlined in Section~\ref{sec:partswarm}.
 %
 \begin{figure}
     \centering
