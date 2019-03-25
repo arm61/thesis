@@ -4,50 +4,47 @@ The top-level auxiliary file: reports/chapters/smallangle.aux
 The style file: rsc.bst
 Database file #1: rsc-main.bib
 Database file #2: reports/main.bib
-Warning--I didn't find a database entry for "mccluskey_arm61/fitoog_2019"
-Warning--I didn't find a database entry for "evans_rotations_2001"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 rsc 2016/08/22 v3.1f
-You've used 19 entries,
+You've used 22 entries,
             3113 wiz_defined-function locations,
-            816 strings with 9786 characters,
-and the built_in function-call counts, 6764 in all, are:
-= -- 520
-> -- 446
-< -- 6
-+ -- 139
-- -- 120
-* -- 721
-:= -- 1014
-add.period$ -- 19
-call.type$ -- 19
+            834 strings with 10198 characters,
+and the built_in function-call counts, 7625 in all, are:
+= -- 589
+> -- 493
+< -- 8
++ -- 154
+- -- 132
+* -- 794
+:= -- 1143
+add.period$ -- 22
+call.type$ -- 22
 change.case$ -- 0
-chr.to.int$ -- 19
-cite$ -- 20
-duplicate$ -- 276
-empty$ -- 467
-format.name$ -- 146
-if$ -- 1357
+chr.to.int$ -- 22
+cite$ -- 23
+duplicate$ -- 318
+empty$ -- 536
+format.name$ -- 161
+if$ -- 1535
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 0
-newline$ -- 135
-num.names$ -- 54
-pop$ -- 63
+newline$ -- 153
+num.names$ -- 63
+pop$ -- 77
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 143
+skip$ -- 167
 stack$ -- 0
-substring$ -- 433
-swap$ -- 133
-text.length$ -- 38
+substring$ -- 478
+swap$ -- 144
+text.length$ -- 44
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 133
+type$ -- 154
 warning$ -- 0
-while$ -- 54
+while$ -- 62
 width$ -- 0
-write$ -- 285
-(There were 2 warnings)
+write$ -- 327

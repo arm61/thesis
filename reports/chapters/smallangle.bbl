@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{19}
+\begin{mcitethebibliography}{22}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -152,6 +152,27 @@ A.~Vishnyakov, M.-T. Lee and A.~V. Neimark, \emph{J. Phys. Chem. Lett.}, 2013,
   Doniach]{lipfert_size_2007}
 J.~Lipfert, L.~Columbus, V.~B. Chu, S.~A. Lesley and S.~Doniach, \emph{J. Phys.
   Chem. B}, 2007, \textbf{111}, 12427--12438\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[McCluskey(2019)]{mccluskey_arm61/fitoog_2019}
+A.~R. McCluskey, \emph{Arm61/Fitoog: Fitoog-0.1},
+  \url{http://doi.org/10.5281/zenodo.2605181}, 2019\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Law \emph{et~al.}(2016)Law, Ashton, Wilding, and
+  Jack]{law_coarse-grained_2016}
+C.~Law, D.~J. Ashton, N.~B. Wilding and R.~L. Jack, \emph{J. Chem. Phys.},
+  2016, \textbf{145}, 084907\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Evans(2001)]{evans_rotations_2001}
+P.~R. Evans, \emph{Acta Crystallogr. D}, 2001, \textbf{57}, 1355--1359\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
