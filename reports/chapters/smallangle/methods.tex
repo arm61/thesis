@@ -9,7 +9,7 @@ The molecule input file is space separated consisting of an index, particle name
 While, the intramolecular interactions file describes the bonds within the molecule, in lieu of angular interactions a pseudo-bond is defined between each second particle in the system. 
 When the initial molecule input file is read in, a differences object is created which stores the differential between the particle description and the more severe coarse-grained description that is used in the particle swarm optimisation. 
 
-Inspired by the work on directional colloid self-assembly of Law \emph{et al.} \cite{law_coarse-grained_2016}, a severe coarse-graining methodolgy was applied to the surfactant molecules.
+Inspired by the coarse-graining methodology applied to directional colloid self-assembly at Law \emph{et al.} \cite{law_coarse-grained_2016}, a severe coarse-graining methodolgy was applied to the surfactant molecules.
 This allowed for a significantly reduced parameter dimensionality to which the particle swarm optimisation was applied. 
 The severe coarse-graining involved reduction the surfactant to a `director' description; where each surfactant molecule is defined by a position and a direction, shown pictorially in Figure~\ref{fig:director}.
 This reduced the parameter dimensionality to just six variables per molecule; three of which described the position of the centre-of-mass position of the molecule ($a$, $b$, $c$) and three that describe the orientaion of the surfactant in space ($\phi$, $\omega$, $\kappa$).
