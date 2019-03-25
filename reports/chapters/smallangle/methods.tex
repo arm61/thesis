@@ -1,0 +1,30 @@
+\section{Methods}
+
+The computational methodology described herein has been implemented in the open-source C\_MPI program \texttt{fitoog} \cite{mccluskey_arm61/fitoog_2019}.
+
+In order to reduce the parameter space that was probed by the particle swarm algorithm, the description of the surfactants as severely coarse-grained.
+This involved reducing the surfactant to a `director' description, that is where the surfactant molecule is reduced to a position and direction, shown pictorially in Figure~\ref{fig:director}.
+The use of this description allowed the surfactant to be desrcibed by just six variables; three of which described the position of the centre-of-mass position of the molecule ($a$, $b$, $c$) and three that describe the orientaion of the surfactant in space ($\phi$, $\omega$, $\kappa$).
+These variables were those that were exposed to the particle swarm optimisation method outlined in Section~\ref{sec:partswarm}.
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{smallangle/director}
+    \caption{A graphical description of the severe coarse-graining applied to the MARTINI description of the \emph{n}-decyltrimethylammonium surfactant molecule for the use of the particle swarm algorithm.}
+    \label{fig:director}
+\end{figure}
+%
+
+Following each iteration of the particle swarm algorithm, the director description of the surfactant was expanded to a MARTINI representation (or whatever representation was used as an input).
+This was achieved by storing the differences between the original positions of the particles with respect to the center-of-mass.
+The molecule was then rotated based on a rotation matrix, in this work the rotation matrix was constructed by first rotating the rotation axis by $-\phi$ and $-\omega$, then rotating by $\kappa$ in around the $z$-axis, before rotating the axis back to the original position by $\omega$ and $\phi$ \cite{evans_rotations_2001} (Figure~\ref{smallangle/rotdia} defines these angles).
+With the severely coarse-grained description fully expanded, the system could be subjected to a potential model energy minimisation algorithm (implemented as a gradient descent) if desired before the scattering profile was calculated using the Golden Vectors method developed by Watson and Curtis \cite{watson_rapid_2013}.
+The agreement between the calculated scattering profile and the `experimental' scattering was used as a figure of merit, $\zeta$, that was to be optimised by the particle swarm algorithm. 
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{smallangle/rotdia}
+    \caption{The definitation of the polar angles used in the coarse grained representation of the surfactant molecule.}
+    \label{fig:rot}
+\end{figure}
+%

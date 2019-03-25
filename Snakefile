@@ -117,6 +117,7 @@ LATEX = [REP + CHAP + THEO + 'scattheory.tex',
          REP + CHAP + SAS + 'abstract.tex',
          REP + CHAP + SAS + 'context.tex',
          REP + CHAP + SAS + 'intro.tex',
+         REP + CHAP + SAS + 'methods.tex',
          REP + 'appendices/papers.tex']
 CODE_BLOCKS = [REP + 'code_blocks/' + 'reflectometry.py',
                REP + 'code_blocks/' + 'lennardjones.py',

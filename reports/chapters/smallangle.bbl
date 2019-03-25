@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{18}
+\begin{mcitethebibliography}{19}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -152,6 +152,13 @@ A.~Vishnyakov, M.-T. Lee and A.~V. Neimark, \emph{J. Phys. Chem. Lett.}, 2013,
   Doniach]{lipfert_size_2007}
 J.~Lipfert, L.~Columbus, V.~B. Chu, S.~A. Lesley and S.~Doniach, \emph{J. Phys.
   Chem. B}, 2007, \textbf{111}, 12427--12438\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Watson and Curtis(2013)]{watson_rapid_2013}
+M.~C. Watson and J.~E. Curtis, \emph{J. Appl. Crystallogr.}, 2013, \textbf{46},
+  1171--1177\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
