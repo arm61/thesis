@@ -1,6 +1,10 @@
 \section{Introduction}
-The use of a traditional, layer model, approach as outlined in Chapter~\ref{reflectometry1}, may not be sufficient for the study of complex systems such as biomimetic bacterial membranes \cite{barker_neutron_2016} and polymeric energy materials \cite{khodakarimi_x-ray_2016}.
-A commonly suggested method for the multi-modal analysis of reflectometry measurements is the use of molecular dynamics (MD) simulation.
+The use of a traditional, layer model, approach as outlined in Chapter~\ref{reflectometry1}, is a powerful tool to understand the structure of complex systems such as biomimetic bacterial membranes \cite{barker_neutron_2016} and polymeric energy materials \cite{khodakarimi_x-ray_2016}.
+These layers structures are typically defined by the underlying chemistry of the system.
+However, there has been growing interest in the use of molecular dynamics simulations to inform the development of these layer structures.
+This is due to the fact that the equilibrium structures for soft matter interfaces, that are often of interest in reflectometry studies, are accessible on all-atom simulation timescales \cite{scoppola_combining_2018}.
+However, there has been no work that directly compares different levels of simulation coarse-graining in order to assess the required resolution for the accurate reproduction of a given neutron reflectometry profile.
+
 MD-driven multi-modal analysis has been applied previously, either by the calculation of the scattering length density (SLD) profile from the simulation of by the full determination fo the reflectometry profile.
 In the former case, the calculated SLD profile may be compared with the SLD profile determined from the use of a traditional analysis method.
 Bobone \emph{et al.} used such a method to study the antimicrobial peptide trichogin GA-IV within a supported lipid bilayer \cite{bobone_membrane_2013}.
@@ -19,7 +23,7 @@ Koutsioubas used the MARTINI coarse-grained representation of a 1,2-dipalmitoyl-
 This work shows that the parameterisation of the MARTINI water bead was extremely important in the reproduction of the reflectometry data, as the non-polarisable water bead would freeze into crystalline sheets resulting in artefacts in the reflectometry profiles calculated.
 The work of Hughes \emph{et al.} studied again a DPPC lipid bilayer system \cite{hughes_interpretation_2016}, albeit an all-atom representation, that was compared with a supported DPPC lipid bilayer system measured with polarised neutron reflectometry.
 The SLD profile found from MD simulation was varied to better fit the experimental measurement, resulting in good agreement.
-Additionally, the ability to vary the SLD profile was used to remove artefact that arose when the MD simulations were merged with an Abel\`{e}s layer model.
+Additionally, the ability to vary the SLD profile was used to remove an annomalous difference present in the SLD, that arose when the MD simulations were merged with an Abel\`{e}s layer model.
 This was done to account for regions present in the experiment that were not modelled explicitly.
 
 In all the examples discussed so far, there is no direct comparison between the reflectometry profile determined from simulation and that from the application of a traditional modelling approach.
@@ -31,7 +35,7 @@ The previously mentioned work of Koutsioubas involved the use of the MARTINI coa
 The use of atomistic simulation for soft matter systems, such as a lipid bilayer, is undesirable as this requires a huge number of atoms to be simulated, due to the large lengths scales involved.
 The purpose of simulation coarse-graining is to reduce the number of particles over which the forces must be integrated, additionally by removing the higher frequency bond vibrations, the simulation timestep can also be increased \cite{pluhackova_biomembranes_2015}.
 Together, these two factors enable an increase in both simulation size and length.
-The use of the MARTINI 4-to-1 coarse-grained and the Berger united atom, where hydrogen atoms are integrated into the heavier atoms to which they are bound, potential models are particularly pertinent for the application to lipid simulations as both were developed with this specific application in mind \cite{marrink_martini_2007,berger_molecular_1997}.
+The use of the MARTINI 4-to-1 coarse-grained and the Berger united atom (where hydrogen atoms are integrated into the heavier atoms to which they are bound) potential models are particularly pertinent for the application to lipid simulations as both were developed with this specific application in mind \cite{marrink_martini_2007,berger_molecular_1997}.
 
 The MARTINI potential model involves integrating the interactions of every four heavy atoms, e.g. larger than hydrogen, into beads of different chemical nature.
 This potential model attempts to simplify the interactions of lipid and protein molecules significantly by allowing for only eighteen particle types, defined by their polarity, charge, and hydrogen-bond acceptor/donor character, which are discussed in detail in the work of Marrink \emph{et al.} \cite{marrink_martini_2007}.
@@ -49,8 +53,10 @@ The authors optimised the average area per lipid, the thermal expansivity, and c
 This included comparing the X-ray reflectometry profiles of the lipid bilayers with those measured experimentally.
 In later work, additional parameters were optimised to agree well with experimental values \cite{jambeck_extension_2012,jambeck_another_2013}.
 Similar to the application of the Berger potential model, the Slipid potential model has been applied to the study of membrane-protein bound systems, such as the modulation of ion transfer \cite{segala_controlling_2016}.
-However, it has also been used to the study of water diffusion within lipid membranes \cite{von_hansen_anomalous_2013}.
+However, it has also been used for the study of water diffusion within lipid membranes \cite{von_hansen_anomalous_2013}.
 
-This chapter present the comparison of three MD simulations of different potential models, with different degree of coarse-graining; namely the Slipid all-atom \cite{jambeck_derivation_2012}, Berger united-atom \cite{berger_molecular_1997}, and MARTINI coarse-grained potential models \cite{marrink_martini_2007}.
+It is clear that there is substantial interest in the use of classical simulation, and coarse-graining, for the analysis of neutron reflectometry data.
+However, there has been no work to investigate whether the use of atomistic simulations gives more detail than is required to reproduce the reflectometry profile accurately or to assess whether the application of a coarse-grained representation is suitable to aid in analysis.
+This chapter presents the comparison of three MD simulations of different potential models, with different degree of coarse-graining; namely the Slipid all-atom \cite{jambeck_derivation_2012}, Berger united-atom \cite{berger_molecular_1997}, and MARTINI coarse-grained potential models \cite{marrink_martini_2007}.
 This comparison offers a fundamental insight into the simulation resolution that is necessary to reproduce experimental neutron reflectometry measurements.
-Furthermore, we suggest some adjustments that may be made to the traditional, layer models that are commonly used to analyse these measurements.
+Furthermore, the highest resolution simulations are used to suggest possible adjustments that may be made to the traditional, layer models that are commonly used to analyse these measurements.

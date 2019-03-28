@@ -1,5 +1,6 @@
 REP = 'reports/'
 CHAP = 'chapters/'
+INTRO = 'introduction/'
 THEO = 'theory/'
 REFL1 = 'reflectometry1/'
 REFL2 = 'reflectometry2/'
@@ -81,16 +82,23 @@ FIGURES = [FIG_DIR + 'bath.pdf', FIG_DIR + 'diamond.pdf',
            FIG_REFL2 + 'dspc_slipids_40_ref_sld.pdf',
            FIG_REFL2 + 'dspc_slipids_50_ref_sld.pdf',
            FIG_REFL2 + 'martini_order.pdf',
-           FIG_REFL2 + 'number_density.pdf',
+           FIG_REFL2 + 'water_20.pdf',
+           FIG_REFL2 + 'water_30.pdf',
+           FIG_REFL2 + 'water_40.pdf',
+           FIG_REFL2 + 'water_50.pdf',
+           FIG_REFL2 + 'dspc_slipids_30_ref_sld_short.pdf',
            FIG_TEACH + 'chem_data_py.pdf']
 #CHAPTERS = [REP + CHAP + 'introduction.tex', REP + CHAP + 'theory.tex',
 #            REP + CHAP + 'reflectometry1.tex', REP + CHAP + 'reflectometry2.tex',
 #            REP + CHAP + 'smallangle.tex', REP + CHAP + 'gisas.tex',
 #            REP + CHAP + 'teaching.tex', REP + CHAP + 'summary.tex']
-CHAPTERS = [REP + CHAP + 'theory.tex', REP + CHAP + 'reflectometry1.tex',
+CHAPTERS = [REP + CHAP + 'introduction.tex', REP + CHAP + 'theory.tex',
+            REP + CHAP + 'reflectometry1.tex',
             REP + CHAP + 'reflectometry2.tex', REP + CHAP + 'smallangle.tex',
             REP + CHAP + 'teaching.tex']
-LATEX = [REP + CHAP + THEO + 'scattheory.tex',
+LATEX = [REP + CHAP + INTRO + 'soft_matter.tex',
+         REP + CHAP + INTRO + 'scattering.tex',
+         REP + CHAP + THEO + 'scattheory.tex',
          REP + CHAP + THEO + 'probing.tex',
          REP + CHAP + THEO + 'classical.tex',
          REP + CHAP + THEO + 'simulation.tex',
@@ -225,6 +233,10 @@ rule thesis:
         'output/reflectometry2/dspc_30/dspc_slipids_30_wph.txt',
         'output/reflectometry2/dspc_40/dspc_slipids_40_wph.txt',
         'output/reflectometry2/dspc_50/dspc_slipids_50_wph.txt',
+        'output/reflectometry2/dspc_30/slipids_mean_N_30.txt',
+        'output/reflectometry2/dspc_20/slipids_mean_N_20.txt',
+        'output/reflectometry2/dspc_40/slipids_mean_N_40.txt',
+        'output/reflectometry2/dspc_50/slipids_mean_N_50.txt'
     output:
         'reports/main.pdf'
     run:
@@ -651,7 +663,7 @@ rule martini_dspc_20_analysis:
         FIG_REFL2 + 'dspc_martini_20_ref_sld.pdf',
     shell:
         """
-        cd scripts && python sim_analysis.py martini 20 4 0.2
+        cd scripts && python sim_analysis.py martini 20 4 0.4
         """
 
 rule martini_dspc_30_analysis:
@@ -678,7 +690,7 @@ rule martini_dspc_30_analysis:
         FIG_REFL2 + 'dspc_martini_30_ref_sld.pdf',
     shell:
         """
-        cd scripts && python sim_analysis.py martini 30 4 0.2
+        cd scripts && python sim_analysis.py martini 30 4 0.4
         """
 
 rule martini_dspc_40_analysis:
@@ -705,7 +717,7 @@ rule martini_dspc_40_analysis:
         FIG_REFL2 + 'dspc_martini_40_ref_sld.pdf',
     shell:
         """
-        cd scripts && python sim_analysis.py martini 40 4 0.2
+        cd scripts && python sim_analysis.py martini 40 4 0.4
         """
 
 rule martini_dspc_50_analysis:
@@ -732,7 +744,7 @@ rule martini_dspc_50_analysis:
         FIG_REFL2 + 'dspc_martini_50_ref_sld.pdf',
     shell:
         """
-        cd scripts && python sim_analysis.py martini 50 4 0.2
+        cd scripts && python sim_analysis.py martini 50 4 0.4
         """
 
 rule berger_dspc_20_analysis:
@@ -895,6 +907,25 @@ rule slipids_dspc_30_analysis:
     shell:
         """
         cd scripts && python sim_analysis.py slipids 30 1 0
+        """
+
+rule slipids_dspc_30_analysis_short:
+    input:
+        'scripts/sim_analysis.py',
+        'data/reflectometry2/dspc_30/slipids_frame1.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame2.pdb',
+        'data/reflectometry2/dspc_30/d13acmw30.dat',
+        'data/reflectometry2/dspc_30/d13d2o30.dat',
+        'data/reflectometry2/dspc_30/d70acmw30.dat',
+        'data/reflectometry2/dspc_30/d70d2o30.dat',
+        'data/reflectometry2/dspc_30/d83acmw30.dat',
+        'data/reflectometry2/dspc_30/d83d2o30.dat',
+        'data/reflectometry2/dspc_30/hd2o30.dat'
+    output:
+        FIG_REFL2 + 'dspc_slipids_30_ref_sld_short.pdf',
+    shell:
+        """
+        cd scripts && python short_sim_analysis.py slipids 30 1 0
         """
 
 rule slipids_dspc_40_analysis:
@@ -1433,7 +1464,7 @@ rule slipids_dspc_50_wph:
 
 rule slipids_dspc_30_nd:
     input:
-        'scripts/number_density.py',
+        'scripts/intrinsic.py',
         'data/reflectometry2/dspc_30/slipids_frame1.pdb',
         'data/reflectometry2/dspc_30/slipids_frame2.pdb',
         'data/reflectometry2/dspc_30/slipids_frame3.pdb',
@@ -1445,10 +1476,210 @@ rule slipids_dspc_30_nd:
         'data/reflectometry2/dspc_30/slipids_frame9.pdb',
         'data/reflectometry2/dspc_30/slipids_frame10.pdb'
     output:
-        'reports/figures/reflectometry2/number_density.pdf'
+        'output/reflectometry2/dspc_30/waters_slipids_30.txt',
+        'output/reflectometry2/dspc_30/heads_slipids_30.txt',
+        'output/reflectometry2/dspc_30/tails_slipids_30.txt'
     shell:
         """
-        cd scripts && python number_density.py slipids 30
+        cd scripts && python intrinsic.py slipids 30
+        """
+
+rule slipids_dspc_30_nd_plot:
+    input:
+        'scripts/water_plot.py',
+        'output/reflectometry2/dspc_30/waters_slipids_30.txt',
+        'output/reflectometry2/dspc_30/heads_slipids_30.txt',
+        'output/reflectometry2/dspc_30/tails_slipids_30.txt'
+    output:
+        'reports/figures/reflectometry2/water_30.pdf'
+    shell:
+        """
+        cd scripts && python water_plot.py 30
+        """
+
+rule slipids_dspc_20_nd:
+    input:
+        'scripts/intrinsic.py',
+        'data/reflectometry2/dspc_20/slipids_frame1.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame2.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame3.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame4.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame5.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame6.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame7.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame8.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame9.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_20/waters_slipids_20.txt',
+        'output/reflectometry2/dspc_20/heads_slipids_20.txt',
+        'output/reflectometry2/dspc_20/tails_slipids_20.txt'
+    shell:
+        """
+        cd scripts && python intrinsic.py slipids 20
+        """
+
+rule slipids_dspc_20_nd_plot:
+    input:
+        'scripts/water_plot.py',
+        'output/reflectometry2/dspc_20/waters_slipids_20.txt',
+        'output/reflectometry2/dspc_20/heads_slipids_20.txt',
+        'output/reflectometry2/dspc_20/tails_slipids_20.txt'
+    output:
+        'reports/figures/reflectometry2/water_20.pdf'
+    shell:
+        """
+        cd scripts && python water_plot.py 20
+        """
+
+rule slipids_dspc_40_nd:
+    input:
+        'scripts/intrinsic.py',
+        'data/reflectometry2/dspc_40/slipids_frame1.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame2.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame3.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame4.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame5.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame6.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame7.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame8.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame9.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_40/waters_slipids_40.txt',
+        'output/reflectometry2/dspc_40/heads_slipids_40.txt',
+        'output/reflectometry2/dspc_40/tails_slipids_40.txt'
+    shell:
+        """
+        cd scripts && python intrinsic.py slipids 40
+        """
+
+rule slipids_dspc_40_nd_plot:
+    input:
+        'scripts/water_plot.py',
+        'output/reflectometry2/dspc_40/waters_slipids_40.txt',
+        'output/reflectometry2/dspc_40/heads_slipids_40.txt',
+        'output/reflectometry2/dspc_40/tails_slipids_40.txt'
+    output:
+        'reports/figures/reflectometry2/water_40.pdf'
+    shell:
+        """
+        cd scripts && python water_plot.py 40
+        """
+
+rule slipids_dspc_50_nd:
+    input:
+        'scripts/intrinsic.py',
+        'data/reflectometry2/dspc_50/slipids_frame1.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame2.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame3.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame4.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame5.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame6.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame7.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame8.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame9.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame10.pdb'
+    output:
+        'output/reflectometry2/dspc_50/waters_slipids_50.txt',
+        'output/reflectometry2/dspc_50/heads_slipids_50.txt',
+        'output/reflectometry2/dspc_50/tails_slipids_50.txt'
+    shell:
+        """
+        cd scripts && python intrinsic.py slipids 50
+        """
+
+rule slipids_dspc_50_nd_plot:
+    input:
+        'scripts/water_plot.py',
+        'output/reflectometry2/dspc_50/waters_slipids_50.txt',
+        'output/reflectometry2/dspc_50/heads_slipids_50.txt',
+        'output/reflectometry2/dspc_50/tails_slipids_50.txt'
+    output:
+        'reports/figures/reflectometry2/water_50.pdf'
+    shell:
+        """
+        cd scripts && python water_plot.py 50
+        """
+
+rule spread_30:
+    input:
+        'data/reflectometry2/dspc_30/slipids_frame1.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame2.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame3.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame4.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame5.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame6.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame7.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame8.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame9.pdb',
+        'data/reflectometry2/dspc_30/slipids_frame10.pdb',
+        'scripts/roughness.py'
+    output:
+        'output/reflectometry2/dspc_30/slipids_mean_N_30.txt'
+    shell:
+        """
+        cd scripts && python roughness.py 30
+        """
+
+rule spread_20:
+    input:
+        'data/reflectometry2/dspc_20/slipids_frame1.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame2.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame3.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame4.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame5.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame6.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame7.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame8.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame9.pdb',
+        'data/reflectometry2/dspc_20/slipids_frame10.pdb',
+        'scripts/roughness.py'
+    output:
+        'output/reflectometry2/dspc_20/slipids_mean_N_20.txt'
+    shell:
+        """
+        cd scripts && python roughness.py 20
+        """
+
+rule spread_40:
+    input:
+        'data/reflectometry2/dspc_40/slipids_frame1.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame2.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame3.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame4.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame5.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame6.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame7.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame8.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame9.pdb',
+        'data/reflectometry2/dspc_40/slipids_frame10.pdb',
+        'scripts/roughness.py'
+    output:
+        'output/reflectometry2/dspc_40/slipids_mean_N_40.txt'
+    shell:
+        """
+        cd scripts && python roughness.py 40
+        """
+
+rule spread_50:
+    input:
+        'data/reflectometry2/dspc_50/slipids_frame1.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame2.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame3.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame4.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame5.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame6.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame7.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame8.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame9.pdb',
+        'data/reflectometry2/dspc_50/slipids_frame10.pdb',
+        'scripts/roughness.py'
+    output:
+        'output/reflectometry2/dspc_50/slipids_mean_N_50.txt'
+    shell:
+        """
+        cd scripts && python roughness.py 50
         """
 
 rule pear_plotting:

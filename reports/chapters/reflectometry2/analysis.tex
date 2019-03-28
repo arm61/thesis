@@ -1,26 +1,53 @@
 \section{Data analysis}
 \subsection{Traditional layer-model analysis}
 In order to provide a point of comparison for the simulation-derived methods, the chemically-consistent reflectometry model developed in Chapter~\ref{reflectometry1} was used for the analysis of the experimental data.
-The only modification that was made to the methodology described in Chapter~\ref{reflectometry1} was that the volume of the phospholipid tail group, $V_t$ was constrained based on the APM (taken from the surface pressure-isotherm data),
+Two modifications were made to the methodology described in Chapter~\ref{reflectometry1}.
+The first was that the volume of the phospholipid tail group, $V_t$ was constrained based on the APM (taken from the surface pressure-isotherm data),
 %
 \begin{equation}
 V_t = d_t\text{APM},
 \end{equation}
 %
 where $d_t$ is the tail layer thickness. The result of this constraint is that both the monolayer model and the simulation-derived models were constrained equally by the measured surface coverage.
+The second modification was to constrain the head group volume to a value of \SI{339.5}{\angstrom}, in agreement with the work of Ku\v{c}erka \emph{et al.} \cite{kucerka_determination_2004} and Balgav\'{y} \emph{et al.} \cite{balgavy_evaluation_2001}.
+This constraint was possible on this occasion as the monolayer was at the air-water interface, compared to the air-DES interface previously.
+A uniform background, limited to lie within \SI{10}{\percent} of the highest $q$-vector reflected intensity, and a scale factor were then determined using \texttt{refnx} to offer the best agreement between the calculated reflectometry profile and that measured experimentally.
+
+The experimental data from all seven contrasts were co-refined to a single monolayer model at each surface pressure, where th ehead thickness, tail thickness, and interfacial roughness were allowed to vary.
+The co-refinement of measurements at different surface pressures was not required, as there was a substantial number of contrasts measured.
+The values of the head and tail scattering lengths are given in Table~\ref{tab:trad}, while the SLD of the super and subphase were taken as \SI{0}{\per\angstrom\square} and \SI{6.35}{\per\angstrom\square} (for \ce{D2O}) and \SI{0}{\per\angstrom\square} (for ACMW) respectively.
+For each co-refinement of seven neutron reflectometry measurements, there were in total five degrees of freedom in the fitting process, and the fitting was performed using a differential evolution algorithm.
+As with the work of Chapter~\ref{reflectometry1}, Markov chain Monte Carlo sampling was used to obtain experimental uncertainties on the fitted model, enabled by the \texttt{emcee} package \cite{foreman-mackey_emcee_2013}.
+The same protocol for this sampling was used herein.
+%
+\begin{table}
+\centering
+\small
+  \caption{\ The different scattering lengths of the head and tail lipid components. }
+  \label{tab:scat}
+  \begin{tabular}{lllll}
+    \hline
+    Contrast & d$_{13}$-DSPC & d$_{70}$-DSPC & d$_{83}$-DSPC & h-DSPC  \\
+    \hline
+    $b_{\text{head}}$\SI{10e-4}{\angstrom} & 19.54 & 11.21 & 24.75 & 6.01 \\
+    $b_{\text{tail}}$\SI{10e-4}{\angstrom} & -3.58 & 69.32 & 69.32 & -3.58 \\
+    \hline
+  \end{tabular}
+\end{table}
+%
 
 \subsection{Simulation-dervied analysis}
-A custom-class, \texttt{md\_simulation}, was developed for \texttt{refnx} \cite{nelson_refnx_2019,nelson_refnx_2019-1} at enabled the determination of a reflectometry profile from simulation, using a similar method to that employ in previous work, such as Dabkowska \emph{et al.} \cite{dabkowska_modulation_2014}.
+A custom-class, \texttt{md\_simulation}, was developed for \texttt{refnx} \cite{nelson_refnx_2019,nelson_refnx_2019-1} at enabled the determination of a reflectometry profile from simulation, using a similar method to that employed in previous work, such as Dabkowska \emph{et al.} \cite{dabkowska_modulation_2014}.
 The Abel\`{e}s layer model formalism is applied to layers, the SLD of which is drawn directly from the simulation, and the thickness of which is defined.
 The layer thickness used was \SI{1}{\angstrom} for the Slipid and Berger potential model simulations, with an interfacial roughness between these layers of \SI{0}{\angstrom}.
-For the MARTINI potential model, a layer thickness of \SI{4}{\angstrom} was used, with an interfacial roughness of \SI{0.2}{\angstrom}. Each of the \SI{50}{\nano\second} production simulations were analysed each \SI{0.1}{\nano\second}, and the SLD profiles were determined by summing the scattering lengths, $b_j$, for each of the atoms in a given layer.
+For the MARTINI potential model, a layer thickness of \SI{4}{\angstrom} was used, with an interfacial roughness of \SI{0.4}{\angstrom}. Each of the \SI{50}{\nano\second} production simulations were analysed each \SI{0.1}{\nano\second}, and the SLD profiles were determined by summing the scattering lengths, $b_j$, for each of the atoms in a given layer.
 %
 \begin{equation}
 \text{SLD}_n = \frac{\sum_j b_j}{V_n},
 \end{equation}
 %
-where, $V_n$ is the volume of the layer $n$, obtains from the simulation cell parameters in the plane of the interface and the defined layer thickness.
-A uniform background was assigned based on the intensity at the highest $q$-vector and scale factor were then determined using \texttt{refnx} to offer the best agreement between the calculated reflectometry profile and that measured experimentally.
+where, $V_n$ is the volume of the layer $n$, obtained from the simulation cell parameters in the plane of the interface and the defined layer thickness.
+A uniform background, limited to lie withing \SI{10}{\percent} of the highest $q$-value reflected intensity, and a scale factor were then determined using \texttt{refnx} to offer the best agreement between the calculated reflectometry profile and that measured experimentally.
 
 \subsection{Comparison between monolayer model and simulation-derived analysis}
 In order to assess the agreement between the model from each method, the following goodness-of-fit metric was used, following the transformation of the data into $Rq^4$ space,
@@ -31,7 +58,7 @@ In order to assess the agreement between the model from each method, the followi
 %
 where, $q_i$ is a given $q$-vector, $R_{\text{exp}}(q_i)$ is the experimental reflected intensity, $R_{\text{sim}}(q_i)$ is the simulation-derived/traditionally-developed reflected intensity, and $\delta R_{\text{exp}}(q_i)$ is the resolution function of the experimental data.
 
-Parametric outcomes from the different analysis methods were also compared, such as the number of water molecules per head group, wph.
+The number of water molecules per head group, wph, was also compared between the different methods.
 This was obtained from the monolayer model by considering the solvent fraction in the head-layer, $\phi_h$, the volume of the head group, $V_h$, and taking the volume of a single water molecule to be \SI{29.9}{\angstrom\cubed} (from the density of water as \SI{997}{\kg\per\meter\cubed}),
 %
 \begin{equation}
@@ -39,9 +66,18 @@ This was obtained from the monolayer model by considering the solvent fraction i
 \label{equ:wph}
 \end{equation}
 %
-In MD simulations, the number density for each component in the system are obtained directly from the trajectory.
-The ratio of the lipid heads and the water then give the wph.
-The range for this was taken as between the \SI{20}{\percent} and \SI{80}{\percent} quantiles of the lipid head layers.
-Another parameter that was considered from the MD simulations was the length of the carbon tail in the molecules.
-This was determined as the length of a vector from the first atom, or bead, of the tail group to the last atom.
-This was calculated for each carbon tail in each molecule, across all of the timesteps analysed, and are quoted as the median values with a \SI{95}{\percent} quantile of the underlying sample.
+In MD simulations, the number densities, in the \emph{z}-dimension, for each of the three components (lipid heads, lipid tails, and water) may be obtained directly from the trajectory.
+In order to determine the number of water molecules per headgroup from the MD simulations, a head-layer region was defined of that which contained the middle \SI{60}{\percent} of the lipid head number density.
+The ratio between the water density and the lipid head density was then found within thei head-layer region.
+
+\subsection{Simulation trajectory analysis}
+\label{sec:traj}
+In order to use the MD trajectory to guide the future development of the chemically-consistent layer model, it was necessary to investigate the solvent penetration into the head group regions of the lipids, the roughness of each interface and the lipid tail length.
+The solvent penetration was determined using the intrinsic surfact approach, as deatiled by Allen \emph{et al.} \cite{allen_specific_2016,pandit_algorithm_2003}.
+The intrinsic surface approach enables the calculation of the solvent penetration without the effect of the monolayer roughness.
+This involves taking the \emph{z}-dimension position of each atom with respect to an anchor point, in this work the anchor point was taken as the phosphorus atom of the lipid head that was closest to the atom in the \emph{xy}-plane.
+The roughness was probed by investigating the variation in positions from the start, middlem and end of each of the head and tail groups.
+The start of the lipid head was defined as the nitrogen atom, the middle the phosphorus and the end the tertiary carbon, which the start of the lipid tail was defined as the carbonyl carbon atom, the middle the ninth carbon in the tail, and the end the final carbon in the tail.
+The distribution of each of these atom types was determined by finding the \SI{95}{\percent} quantile for the position in the \emph{z}-dimension and comparing the spread of the mean and the upper quantile.
+Finally, the tail length distance, $t_t$, was found as the distance from the carbonyl carbon atom to the final primary carbon atom of the lipid tail.
+All of these analyses used the \texttt{MDAnalysis} package \cite{gowers_mdanalysis_2016,michaud-agrawal_mdanalysis_2011}.

@@ -51,7 +51,7 @@ tail = ['H', 'H']
 sol = ['D', 'D']
 contrasts = ['d13d2o', 'd13d2o']
 lt = [1, 4]
-rough = [0, 0.2]
+rough = [0, 0.4]
 co=30
 
 fig = plt.figure(figsize=(5, 25/11))

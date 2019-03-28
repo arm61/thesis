@@ -128,8 +128,8 @@ For each co-refinement of four XRR measurements, there were, in total, eleven de
 Throughout all of the analyses, the intensity scale factor was allowed to vary freely, while the background was constrained to the intensity at the largest $q$-value.
 
 Following this, the head and tail group volumes, and the head layer thickness that were found from the XRR analysis were used as fixed variables for the refinement of the NR measurements.
-The reduced the number of fitted parameters in the NR data to two, namely the thickness of the tail layer, $d_t$, and the interfacial roughness, $\sigma_{t,h,s}$, for the co-refinement of two datasets.
-Table~\ref{tab:invar} also presents details of the scattering lengths and SLDs using for the NR refinement.
+This reduced the number of fitted parameters in the NR data to two, namely the thickness of the tail layer, $d_t$, and the interfacial roughness, $\sigma_{t,h,s}$, for the co-refinement of two datasets.
+Table~\ref{tab:invar} also presents details of the scattering lengths and SLDs usedß for the NR refinement.
 Again, the intensity scale factor was allowed to vary freely and the background constrained to the intensity at the largest $q$-value.
 
 In both the XRR and the NR analysis, the refinement of the chemically-consistent model to the experimental data involved the transformation of the reflectometry calculated from the model and the data into $Rq^4$-space, such that the contribution of the Fresnel decay was removed \cite{gerelli_aurore_2016}.
@@ -138,7 +138,7 @@ This refined the parameters to give the best fit to the data.
 Markov chain Monte Carlo (MCMC) was then used to probe the search-space available to each parameter, given the experimental uncertainty of the data.
 The MCMC sampling method used was Goodman \& Weare's Affine Invarient Ensemble \cite{goodman_ensemble_2010} as impliemented in the \texttt{emcee} package \cite{foreman-mackey_emcee_2013}.
 This enabled the determination of the probability distribution for each of the parameters, and therefore the quantification of their inverse uncertainty, given the uncertainty in the experimental data.
-A Shapiro-Wilk test \cite{shapiro_analysis_1965} was used to determine the normality of each of the probability distribution functions (PDFs).
+A Shapiro-Wilk test \cite{shapiro_analysis_1965} was used to determine if the probability distribution function (PDF) fitted to a normal distrubition and therefore could be considered to have symmetric confidence intervals.
 If the PDF failed the test the value was quoted with asymmetric confidence intervals, compared with the symmetric confidence intervals given for those that passed the Shapiro-Wilk test.
 It is important to note that the PDFs and therefore the determined confidence intervals are not true confidence intervals, and account only for the uncertainty that is present in the data, i.e. they do not account for systematic uncertainty in the measurement technique.
 In addition to determining parameter confidence intervals, it was also possible to use these probability distributions to understand the correlations present between the parameters and the impact this has on the fitting process.

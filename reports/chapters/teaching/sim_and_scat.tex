@@ -1,10 +1,10 @@
 \section{The interaction between simulation and scattering}
 \label{sec:sim_and_scat}
 
-The Jupyter Notebook framework and \texttt{pylj} software we then used to enable learning and understanding in the OER entitled ``The interaction between simulation and scattering'' (available at \href{https://pythoninchemistry.org/sim_and_scat}{pythoninchemistry.org/sim\_and\_scat}) \cite{mccluskey_pythoninchemistry/sim_and_scat_2019}.
+The Jupyter Notebook framework and \texttt{pylj} software were then used to enable learning and understanding in the OER entitled ``The interaction between simulation and scattering'' (available at \href{https://pythoninchemistry.org/sim_and_scat}{pythoninchemistry.org/sim\_and\_scat}) \cite{mccluskey_pythoninchemistry/sim_and_scat_2019}.
 This is an online, open-source, interactive learning resource written to introduce members of the scattering and diffraction community to molecular dynamics simulations.
 The aim is to improve their understanding, and therefore reduce the treatment of molecular dynamics as ``black box'' calculation by experimental colleagues.
-The OER comprises five lessons that introduce classical molecular dynamics methods and show how these can be used to assist in the analysis of experimental scattering data by the calculation of a simulation scattering profile from the molecular dynamics simulation.
+The OER comprises five lessons that introduce classical molecular dynamics methods and show how these can be used to assist in the analysis of experimental scattering data by the calculation of a simulated scattering profile from the molecular dynamics simulation.
 \texttt{pylj} is used to provide simple, but computationally authentic, examples of simulations, that demonstrate visually and programmatically the conceptual relationships between simulation and scattering techniques.
 Finally, we show a ``real-world'' example of calculation of the scattering profile from a simulation of a lysozyme protein in solution.
 
@@ -28,13 +28,13 @@ The resource follows a simple outline that introduces key aspects of molecular d
 
 The welcome page introduces the resource, explains the purpose, and gives the user information about how the resource may be used, including details of the Thebelab and BinderHub integrations.
 This page also contained details of the permitted use/reuse, sharing of the content of the resource and licensing.
-Finally, a list of authors and contributors if given.
+Finally, a list of authors and contributors was given.
 
 \subsubsection{Classical methods}
 
 This section introduces concepts related to classical simulation methods.
 Including the use of interatomic potential functions, alongside some examples, such as the Lennard-Jones and Buckingham potential models \cite{lennard-jones_determination_1924,buckingham_classical_1938}.
-The problem of parameterising a potential model is then suggested, showing that the use of higher accuracy quantum mechanical calculations to do so.
+The problem of parameterising a potential model is then suggested, showing the use of higher accuracy quantum mechanical calculations to do so.
 The presence of off-the-shelf, general potential models are discussed; with the caveat that they may still require system-specific optimisation.
 Finally, we mention mixing rules; again discussing the possible problems that a user may encounter if applying these blindly to specific systems.
 
@@ -52,14 +52,15 @@ This is presented as a practical example, using the \texttt{pylj} package \cite{
 A two-dimensional molecular dynamics simulation of argon atoms interacting through a Lennard-Jones potential is demonstrated.
 The users are first shown this working \texttt{pylj} simulation and invited to interact with the simulation and the custom plotting functionality of \texttt{pylj}.
 The concept of a radial distribution function (RDF) is then shown, and the user is given the opportunity to run some \texttt{pylj} simulations with the RDF being output alongside the simulation window.
-Next, the Debye equation \cite{debye_zerstreuung_1915} is present and it is shown how it may be used to calculate scattering data from a simulation.
+Next, the Debye equation \cite{debye_zerstreuung_1915} is presented and it is shown how it may be used to calculate scattering data from a simulation.
 The user is invited to observe the effect of simulation temperature on the resulting scattering profile.
-We finish by discussing alternative, faster, algorithms for calculating scattering profile, such as the Fibonacci Sequence or Golden Vectors method \cite{watson_rapid_2013,svergun_solution_1994}
+We finish by discussing alternative, faster, algorithms for calculating scattering profiles, such as the Fibonacci Sequence or Golden Vectors method \cite{watson_rapid_2013,svergun_solution_1994}
 
 \subsubsection{``Real'' simulation and scattering}
 
 Having shown the development of a scattering profile from an idealised system, we then direct the user to a popular resource for the GROMACS \cite{berendsen_gromacs_1995} molecular dynamics software.
-This resource gives a quick introduction to using GROMACS to simulate a lysozyme molecule in buffer \cite{lemkul_gromacs_nodate}, the student may then use their own simulated trajectory or one that can be downloaded from the OER.
+This resource gives a quick introduction to using GROMACS to simulate a lysozyme molecule in buffer \cite{lemkul_gromacs_nodate}.
+The student may then use their own simulated trajectory or one that can be downloaded from the OER.
 We show how the system may be visualised, introduce the \texttt{MDAnalysis} Python package for the analysis of molecular dynamics trajectories \cite{michaud-agrawal_mdanalysis_2011,gowers_mdanalysis_2016}, and show the scattering profile developed from the lysozyme simulation compared with experimental data \cite{franke_correlation_2015}.
 The module finished by pointing the student to resources to more easily resolve scattering data from the molecular simulation, such as SASSIE and CRYSOL \cite{perkins_atomistic_2016,svergun_crysol_1995}.
 The focus of this resource is to introduce simulation methodologies to users of scattering to aid their understanding, not to derive the exact mechanics of the calculation fo scattering from a simulation.

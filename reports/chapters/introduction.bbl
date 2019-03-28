@@ -1,0 +1,173 @@
+\providecommand*{\mcitethebibliography}{\thebibliography}
+\csname @ifundefined\endcsname{endmcitethebibliography}
+{\let\endmcitethebibliography\endthebibliography}{}
+\begin{mcitethebibliography}{20}
+\providecommand*{\natexlab}[1]{#1}
+\providecommand*{\mciteSetBstSublistMode}[1]{}
+\providecommand*{\mciteSetBstMaxWidthForm}[2]{}
+\providecommand*{\mciteBstWouldAddEndPuncttrue}
+  {\def\EndOfBibitem{\unskip.}}
+\providecommand*{\mciteBstWouldAddEndPunctfalse}
+  {\let\EndOfBibitem\relax}
+\providecommand*{\mciteSetBstMidEndSepPunct}[3]{}
+\providecommand*{\mciteSetBstSublistLabelBeginEnd}[3]{}
+\providecommand*{\EndOfBibitem}{}
+\mciteSetBstSublistMode{f}
+\mciteSetBstMaxWidthForm{subitem}
+{(\emph{\alph{mcitesubitemcount}})}
+\mciteSetBstSublistLabelBeginEnd{\mcitemaxwidthsubitemform\space}
+{\relax}{\relax}
+
+\bibitem[Jones(2002)]{jones_soft_2002}
+R.~A.~L. Jones, \emph{Soft {{Condensed Matter}}}, {Oxford University Press},
+  Oxford, UK, 2002\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hargreaves \emph{et~al.}(2011)Hargreaves, Bowron, and
+  Edler]{hargreaves_atomistic_2011}
+R.~Hargreaves, D.~T. Bowron and K.~Edler, \emph{J. Am. Chem. Soc.}, 2011,
+  \textbf{133}, 16524--16536\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kraft \emph{et~al.}(2011)Kraft, Hilhorst, Heinen, Hoogenraad, Luigjes,
+  and Kegel]{kraft_patchy_2011}
+D.~J. Kraft, J.~Hilhorst, M.~A.~P. Heinen, M.~J. Hoogenraad, B.~Luigjes and
+  W.~K. Kegel, \emph{J. Phys. Chem. B}, 2011, \textbf{115}, 7175--7181\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Rose \emph{et~al.}(1988)Rose, Phipps, Michniewicz, Birnbaum, Ahmed,
+  Muir, Anderson, and Narang]{rose_crystal_1988}
+D.~R. Rose, J.~Phipps, J.~Michniewicz, G.~I. Birnbaum, F.~R. Ahmed, A.~Muir,
+  W.~F. Anderson and S.~Narang, \emph{Protein Eng. Des. Sel.}, 1988,
+  \textbf{2}, 277--282\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Schramm \emph{et~al.}(2003)Schramm, Stasiuk, and
+  Marangoni]{schramm_surfactants_2003}
+L.~L. Schramm, E.~N. Stasiuk and D.~G. Marangoni, \emph{Annu. Rep. Prog. Chem.,
+  Sect. C: Phys. Chem.}, 2003, \textbf{99}, 3--48\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Simons and Toomre(2000)]{simons_lipid_2000}
+K.~Simons and D.~Toomre, \emph{Nat. Rev. Mol. Cell Biol.}, 2000, \textbf{1},
+  31--39\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Israelachvili(2011)]{israelachvili_intermolecular_2011}
+J.~Israelachvili, \emph{Intermolecular and {{Surface Forces}}}, {Academic
+  Press}, Cambridge, USA, 3rd edn., 2011\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Schmaljohann(2006)]{schmaljohann_thermo-_2006}
+D.~Schmaljohann, \emph{Adv. Drug Deliv. Rev.}, 2006, \textbf{58},
+  1655--1670\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Sammalkorpi \emph{et~al.}(2009)Sammalkorpi, Karttunen, and
+  Haataja]{sammalkorpi_ionic_2009}
+M.~Sammalkorpi, M.~Karttunen and M.~Haataja, \emph{J. Phys. Chem. B}, 2009,
+  \textbf{113}, 5863--5870\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Rosen and Kunjappu(2012)]{rosen_surfactants_2012}
+M.~J. Rosen and J.~T. Kunjappu, \emph{Surfactants and {{Interfacial
+  Phenomena}}}, {John Wiley \& Sons}, Hoboken, USA, 4th edn., 2012\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Goodwin(2009)]{goodwin_colloids_2009}
+J.~Goodwin, \emph{Colloids and {{Interfaces}} with {{Surfactants}} and
+  {{Polymers}}}, {John Wiley \& Sons}, Chichester, UK, 2nd edn., 2009\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Tanford(1980)]{tanford_hydrophobic_1980}
+C.~Tanford, \emph{The {{Hydrophobic Effect}}: {{Formation}} of {{Micelles}} and
+  {{Biological Membranes}}}, {John Wiley \& Sons}, New York, 2nd edn.,
+  1980\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Jura{\v s}in \emph{et~al.}(2013)Jura{\v s}in, Vincekovi\'c, Pustak,
+  {\v S}mit, Bujan, and {Filipovi\'c-Vincekovi\'c}]{jurasin_lamellar_2013}
+D.~Jura{\v s}in, M.~Vincekovi\'c, A.~Pustak, I.~{\v S}mit, M.~Bujan and
+  N.~{Filipovi\'c-Vincekovi\'c}, \emph{Soft Matter}, 2013, \textbf{9},
+  3349\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Cordob\'es \emph{et~al.}(1997)Cordob\'es, Mu\~noz, and
+  Gallegos]{cordobes_linear_1997}
+F.~Cordob\'es, J.~Mu\~noz and C.~Gallegos, \emph{J. Colloid Interface Sci.},
+  1997, \textbf{187}, 401--417\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Albrecht \emph{et~al.}(1978)Albrecht, Gruler, and
+  Sackmann]{albrecht_polymorphism_1978}
+O.~Albrecht, H.~Gruler and E.~Sackmann, \emph{J. Phys. France}, 1978,
+  \textbf{39}, 301--313\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kratky and Porod(1949)]{kratky_diffuse_1949}
+O.~Kratky and G.~Porod, \emph{J. Colloid Sci.}, 1949, \textbf{4}, 35--70\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hassan \emph{et~al.}(2003)Hassan, Fritz, and Kaler]{hassan_small_2003}
+P.~A. Hassan, G.~Fritz and E.~W. Kaler, \emph{J. Colloid Interface Sci.}, 2003,
+  \textbf{257}, 154--162\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Campbell \emph{et~al.}(2018)Campbell, Saaka, Shao, Gerelli, Cubitt,
+  Nazaruk, Matyszewska, and Lawrence]{campbell_structure_2018}
+R.~A. Campbell, Y.~Saaka, Y.~Shao, Y.~Gerelli, R.~Cubitt, E.~Nazaruk,
+  D.~Matyszewska and M.~J. Lawrence, \emph{J. Colloid Interface Sci.}, 2018,
+  \textbf{531}, 98--108\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Lu \emph{et~al.}(1996)Lu, Lee, and Thomas]{lu_analysis_1996}
+J.~R. Lu, E.~M. Lee and R.~K. Thomas, \emph{Acta Crystallogr. A}, 1996,
+  \textbf{52}, 11--41\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Scoppola and Schneck(2018)]{scoppola_combining_2018}
+E.~Scoppola and E.~Schneck, \emph{Curr. Opin. Colloid Interface Sci.}, 2018,
+  \textbf{37}, 88--100\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\end{mcitethebibliography}

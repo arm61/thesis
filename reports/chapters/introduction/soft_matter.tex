@@ -1,0 +1,113 @@
+\section{Soft Matter}
+
+Soft matter is an umbrella term for many different types of material.
+These include micelles; sub-micron sized, dynamcsi agglomerates of amphiphilic molecules such as surfactants or block co-polymers, colloidal solutions; where the interaction between the the colloids may be controlled through chemical modification, or proteins; where the polar nature of different amino acids leads to the protein folding into a highly organised, and biologically relevant, shape.
+Examples of soft matter systems are shown in Figure~\ref{fig:soft}.
+These species, initially, appear rather disparate, however, there are a few important commonalities among soft matter systems \cite{jones_soft_2002}:
+\begin{itemize}
+\item the lengths scales are intermediate between atomistic and macroscopic; typically in \SIrange{1e-8}{1e-5}{\meter},
+\item for soft matter systems the energy of a structural distortion is similar to thermal energy, so the material in solution is in constant flux,
+\item this thermal motion can lead to the formation of complex, hierarchical structures due to the balance between enthalpy and entropy, this process is refered to as self-assembly.
+\end{itemize}
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=0.80\textwidth]{introduction/soft_matter_examples}
+    \caption{Three examples of soft matter species; (a) a 43 \ce{C_{10}TAB} surfactant micelle \cite{hargreaves_atomistic_2011}, (b) the tunable interactions of colloids \cite{kraft_patchy_2011}, and (c) the crystal structure of T4-lysozyme \cite{rose_crystal_1988}.}
+    \label{fig:soft}
+\end{figure}
+%
+
+\subsection{Self-assembly}
+
+Soft matter self-assembly is the ability for soft matter systems to form organised structures in solution.
+These are of particular interest industrially, where surfactant and polymer self-assembly plays an import role in food, commodity, and speciality chemicals \cite{schramm_surfactants_2003}.
+Self-assembly processes are important from a biological perspective as it si phospholipids, a family of surface-active biomolecules, which make up the bilayers that protect cells \cite{simons_lipid_2000}.
+The structures that result from the self-assembly of soft matter species have fluid-like properties.
+This is due to the fact that the subunits are held together by weak forces such as the van der Waals, hydrophobic, hydrogen-bonding, and screen electrostatic interactions \cite{israelachvili_intermolecular_2011}.
+This means that the structure of a self-assembled species is susceptible to changes in the local chemical environment, such as pH or salt concentration \cite{schmaljohann_thermo-_2006,sammalkorpi_ionic_2009}.
+
+The focus of this work is on the self-assembly of surfactant molecules.
+Surfactant is a general term for any molecule which is \emph{surface-active}, that is it will interact at an interface \cite{rosen_surfactants_2012}.
+Surfactants are generally made up of two components; one part is highly soluble in one of the interfacial phases, while the other is not \cite{goodwin_colloids_2009}.
+Usually, surfactants consist of a hydrocarbon tail, which is hdrophobic, and some hydrophilic head groups, which can be ionic or non-ionic.
+When surfactants are present in water, the two components will interact different with the solvent.
+A hydration sphere of water molecules will form around the hydrophilic head group, effectively allowing the head group to take part in the hydrogen-bonding network of the water.
+Whereas, the lyophilic tail has a structure-breaking effect on the hydrogen bonding network, termed the ``hydrophobic effect''.
+The free energy deficit of this structure-breaking can be reduced through the aggregation of these hydrophobic groups, as the van der Waals attraction between tail groups is larger than between tail groups and water molecules.
+There is a decrease in entropy from the tail organisation, however, this is offset by the entropic increase from the water structure breakup.
+Finally, by considering the effect of the, often charged, head groups being close together, it is thought that the majority of the charge can be screened by the presence of a counter-ion, or water molecules, bound to the head group \cite{goodwin_colloids_2009}.
+This means that at low concentrations, where it is statistically unlikely for an agglomerate to form, the majority of surfactants will sit at the air-water interface, as the concentration is increased, assuming the system is above the Krafft temperature (the lowest temperature at which agglomerated will form), organised structures wil begin to appear.
+
+\subsubsection{Thermodynamics of self-assembly}
+
+The work of Tanford developed the theoretical understanding of the thermodynamics of a self-assembly process \cite{tanford_hydrophobic_1980}, this has then been applied to a wide variety of soft matter systems, such as micelles, bilayers, and microemulsions.
+For any system that is self-assembling in solution, it is necessary that all identical molecules have the same chemical potential, $\mu$.
+This can be expressed as,
+%
+\begin{equation}
+\mu = \mu_N = \mu_N^{\circ} + \frac{k_BT}{N} \ln \Bigg(\frac{X_N}{N}\Bigg) = \text{constant},\;\;\;N = 1,\;2,\;3,\ldots,
+\end{equation}
+%
+where, $\mu_N$ is the mean chemical potential of a molecule in an aggregate of aggregation number $N$, $\mu_N^{\circ}$ is the mean interaction free energy er molecule in aggregates of aggregation number $N$, and $X_N$ is the concentration of molecules in aggregates of aggregation number $N$.
+From Figure~\ref{fig:thermo} it is possible to describe the rates of association and dissociation of monomers as follows,
+%
+\begin{equation}
+\begin{aligned}
+\text{rate of association} & k_1(X_1)^N \\
+\text{rate of dissociation} & k_N\Bigg(\frac{X_N}{N}\Bigg).
+\end{aligned}
+\end{equation}
+%
+These rates allow for the definition of an equilibrium constant, $K$ for the self-assembly process,
+%
+\begin{equation}
+K = \frac{k_1}{k_N} = \exp{\Bigg[\frac{N(\mu_N^\circ - \mu_1^\circ)}{k_BT}\Bigg]}
+\end{equation}
+%
+This allows for Equation~\ref{equ:thermo} to be rewritten in a more useful form,
+%
+\begin{equation}
+X_N = N \Bigg[X_1\exp\Bigg(\frac{\mu_1^\circ - \mu_N^\circ}{k_BT}\Bigg)\Bigg]^N,
+\label{equ:use}
+\end{equation}
+%
+between Equation~\ref{equ:use} and ther conservation relation for the total solute concentration, $C$, the system is completely defined, where,
+%
+\begin{equation}
+C = \sum_{N=1}^{\infty}X_N.
+\end{equation}
+%
+It should however be noted that this assumed that there is no inter-agglomerate interactions, in scattering terms this means no structure factor.
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=0.80\textwidth]{introduction/surf_thermo}
+    \caption{Definitions of parameters for the thermodynamic description of self-assembly, from Ref \cite{israelachvili_intermolecular_2011}.}
+    \label{fig:thermo}
+\end{figure}
+%
+
+\subsubsection{Packing parameters}
+
+The structures that are formed from self-assembled surfactant systems are diverse; featuring micellar, hexagonal, cubic, and lamallar mesophases.
+These mesphases have a significant impact on the macroscopic properties of the system, for example the liquid crystalline hexagonal phase can have interesting viscoelastic behaviour \cite{jurasin_lamellar_2013,cordobes_linear_1997}.
+The mesophase that is formed is dependent on the shape of the underlying surfactants, Israelachvili described this dependency in terms of the dimensionless surfactant packing parameter \cite{israelachvili_intermolecular_2011},
+%
+\begin{equation}
+p = \frac{V_c}{a_0l_0},
+\end{equation}
+%
+where, $V_c$ is the volume of the hydrophobic tail, $l_0$ is the length of the tail, and $a_0$ is the optimum head group area.
+This parameter can be used to estimate the geometry of the resulting self-assembled structure, detailed in Figure~\ref{fig:pack}.
+It is important to note that the optimum head group area accounts for the hydration sphere of the head group.
+A short tail surfactant, such as \emph{n}-decyltrimethylammounium bromide, will have a very small packing parameter resulting in small spherical micelles.
+Whereas, the twin-tailed phospholipids, such as 1,2-dipalmitoyl-\emph{sn}-glycero-3-phosphocholine (DPPC), will have a much larger packing parameter due to the larger tail volume and length, therefore this surfactant will for a lamellar bilayer in solution. 
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=0.80\textwidth]{introduction/surf_pack}
+    \caption{A graphical representation of the packing parameters and information of the resulting self-assembled structure, adapted from \cite{israelachvili_intermolecular_2011}.}
+    \label{fig:pack}
+\end{figure}
+%
