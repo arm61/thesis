@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{27}
+\begin{mcitethebibliography}{28}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -222,6 +222,12 @@ M.~T. Ivanovi\'c, L.~K. Bruetzel, J.~Lipfert and J.~S. Hub, \emph{Angew. Chemie
   Richards]{miller_monte_2003}
 A.~F. Miller, M.~R. Wilson, M.~J. Cook and R.~W. Richards, \emph{Mol. Phys.},
   2003, \textbf{101}, 1131--1138\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Koutsioubas(2016)]{koutsioubas_combined_2016}
+A.~Koutsioubas, \emph{J. Phys. Chem. B}, 2016, \textbf{120}, 11474--11483\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
