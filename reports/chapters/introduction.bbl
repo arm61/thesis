@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{20}
+\begin{mcitethebibliography}{27}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -101,14 +101,6 @@ J.~Goodwin, \emph{Colloids and {{Interfaces}} with {{Surfactants}} and
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
-\bibitem[Tanford(1980)]{tanford_hydrophobic_1980}
-C.~Tanford, \emph{The {{Hydrophobic Effect}}: {{Formation}} of {{Micelles}} and
-  {{Biological Membranes}}}, {John Wiley \& Sons}, New York, 2nd edn.,
-  1980\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
 \bibitem[Jura{\v s}in \emph{et~al.}(2013)Jura{\v s}in, Vincekovi\'c, Pustak,
   {\v S}mit, Bujan, and {Filipovi\'c-Vincekovi\'c}]{jurasin_lamellar_2013}
 D.~Jura{\v s}in, M.~Vincekovi\'c, A.~Pustak, I.~{\v S}mit, M.~Bujan and
@@ -140,6 +132,22 @@ O.~Kratky and G.~Porod, \emph{J. Colloid Sci.}, 1949, \textbf{4}, 35--70\relax
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
+\bibitem[Jensen \emph{et~al.}(2014)Jensen, Lund, Gummel, Narayanan, and
+  Pedersen]{jensen_monitoring_2014}
+G.~V. Jensen, R.~Lund, J.~Gummel, T.~Narayanan and J.~S. Pedersen, \emph{Angew.
+  Chemie Int. Ed.}, 2014, \textbf{53}, 11524--11528\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Rondelli \emph{et~al.}(2012)Rondelli, Fragneto, S., Del~Favero, and
+  Cant\`u]{rondelli_reflectivity_2012}
+V.~Rondelli, G.~Fragneto, S.~S., E.~Del~Favero and L.~Cant\`u, \emph{J. Phys.
+  Conf. Ser.}, 2012, \textbf{340}, 012083\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
 \bibitem[Hassan \emph{et~al.}(2003)Hassan, Fritz, and Kaler]{hassan_small_2003}
 P.~A. Hassan, G.~Fritz and E.~W. Kaler, \emph{J. Colloid Interface Sci.}, 2003,
   \textbf{257}, 154--162\relax
@@ -163,9 +171,57 @@ J.~R. Lu, E.~M. Lee and R.~K. Thomas, \emph{Acta Crystallogr. A}, 1996,
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
+\bibitem[Pedersen(2002)]{pedersen_monte_2002}
+J.~S. Pedersen, in \emph{Neutron, {{X}}-Rays and {{Light}}. {{Scattering
+  Methods Applied}} to {{Soft Condensed Matter}}}, ed. T.~Zemb and P.~Lindner,
+  {Elsevier Science B.V.}, Amsterdam, NL, 2002, pp. 381--390\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Wormington \emph{et~al.}(1999)Wormington, Panaccione, Matney, and
+  Bowen]{wormington_characterization_1999}
+M.~Wormington, C.~Panaccione, K.~M. Matney and D.~K. Bowen, \emph{Philos.
+  Trans. R. Soc. London Ser. A}, 1999, \textbf{357}, 2827--2848\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Nelson and Prescott(2019)]{nelson_refnx_2019}
+A.~R.~J. Nelson and S.~W. Prescott, \emph{J. Appl. Crystallogr.}, 2019,
+  \textbf{52}, 193--200\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
 \bibitem[Scoppola and Schneck(2018)]{scoppola_combining_2018}
 E.~Scoppola and E.~Schneck, \emph{Curr. Opin. Colloid Interface Sci.}, 2018,
   \textbf{37}, 88--100\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Bowerman \emph{et~al.}(2017)Bowerman, Rana, Rice, Pham, Strieter, and
+  Wereszczynski]{bowerman_determining_2017}
+S.~Bowerman, A.~S. J.~B. Rana, A.~Rice, G.~H. Pham, E.~R. Strieter and
+  J.~Wereszczynski, \emph{J. Chem. Theory Comput.}, 2017, \textbf{13},
+  2418--2429\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Ivanovi\'c \emph{et~al.}(2018)Ivanovi\'c, Bruetzel, Lipfert, and
+  Hub]{ivanovic_temperature-dependent_2018}
+M.~T. Ivanovi\'c, L.~K. Bruetzel, J.~Lipfert and J.~S. Hub, \emph{Angew. Chemie
+  Int. Ed.}, 2018, \textbf{57}, 5635--5639\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Miller \emph{et~al.}(2003)Miller, Wilson, Cook, and
+  Richards]{miller_monte_2003}
+A.~F. Miller, M.~R. Wilson, M.~J. Cook and R.~W. Richards, \emph{Mol. Phys.},
+  2003, \textbf{101}, 1131--1138\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
