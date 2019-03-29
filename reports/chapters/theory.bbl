@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{98}
+\begin{mcitethebibliography}{83}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -228,130 +228,6 @@ D.~I. Svergun, \emph{Acta Crystallogr. A}, 1994, \textbf{50}, 391--402\relax
 \bibitem[Watson and Curtis(2013)]{watson_rapid_2013}
 M.~C. Watson and J.~E. Curtis, \emph{J. Appl. Crystallogr.}, 2013, \textbf{46},
   1171--1177\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[{M\"uller-Buschbaum} \emph{et~al.}(2005){M\"uller-Buschbaum}, Roth,
-  Burghammer, Bauer, Pfister, David, and Riekel]{muller-buschbaum_local_2005}
-P.~{M\"uller-Buschbaum}, S.~V. Roth, M.~Burghammer, E.~Bauer, S.~Pfister,
-  C.~David and C.~Riekel, \emph{Physica B}, 2005, \textbf{357}, 148--151\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Zhang \emph{et~al.}(2017)Zhang, Wang, Mallapragada, Travesset, and
-  Vaknin]{zhang_ion-specific_2017}
-H.~Zhang, W.~Wang, S.~Mallapragada, A.~Travesset and D.~Vaknin, \emph{J. Phys.
-  Chem. C}, 2017, \textbf{121}, 15424--15429\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[{M\"uller-Buschbaum}(2009)]{muller-buschbaum_basic_2009}
-P.~{M\"uller-Buschbaum}, in \emph{Applications of {{Synchrotron Light}} to
-  {{Scattering}} and {{Diffraction}} in {{Materials}} and {{Life Sciences}}},
-  ed. M.~Gomez, A.~Nogales, M.~C. {Garcia-Gutierrez} and T.~A. Ezquerra,
-  {Springer-Verlag Berlin Heidelberg}, Berlin, DE, 2009, pp. 61--89\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[{M\"uller-Buschbaum} \emph{et~al.}(2004){M\"uller-Buschbaum}, Gutmann,
-  Cubitt, and Petry]{muller-buschbaum_grazing_2004}
-P.~{M\"uller-Buschbaum}, J.~S. Gutmann, R.~Cubitt and W.~Petry, \emph{Physica
-  B}, 2004, \textbf{350}, 207--210\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Nicklin \emph{et~al.}(2016)Nicklin, Arnold, Rawle, and
-  Warne]{nicklin_diamond_2016}
-C.~Nicklin, T.~Arnold, J.~Rawle and A.~Warne, \emph{J. Synchotron Radiat.},
-  2016, \textbf{23}, 1245--1253\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Buffet \emph{et~al.}(2012)Buffet, Rothkirch, D\"ohrmann, K\"orstgens,
-  Abul~Kashem, Perlich, Herzog, Schwartzkopf, Gehrke, {M\"uller-Buschbaum}, and
-  Roth]{buffet_p03_2012}
-A.~Buffet, A.~Rothkirch, R.~D\"ohrmann, V.~K\"orstgens, M.~M. Abul~Kashem,
-  J.~Perlich, G.~Herzog, M.~Schwartzkopf, R.~Gehrke, P.~{M\"uller-Buschbaum}
-  and S.~V. Roth, \emph{J. Synchotron Radiat.}, 2012, \textbf{19},
-  647--653\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Hexemer \emph{et~al.}(2010)Hexemer, Bras, Glossinger, Schaible, Gann,
-  Kirian, MacDowell, Church, Rude, and Padmore]{hexemer_saxs/waxs/gisaxs_2010}
-A.~Hexemer, W.~Bras, J.~Glossinger, E.~Schaible, E.~Gann, R.~Kirian,
-  A.~MacDowell, M.~Church, B.~Rude and H.~Padmore, \emph{J. Phys. Conf. Ser.},
-  2010, \textbf{247}, 012007\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Hexemer and {M\"uller-Buschbaum}(2015)]{hexemer_advanced_2015}
-A.~Hexemer and P.~{M\"uller-Buschbaum}, \emph{IUCrJ}, 2015, \textbf{2},
-  106--125\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Lee \emph{et~al.}(2007)Lee, Park, Park, Lo, Chang, and
-  Winans]{lee_electron_2007}
-B.~Lee, I.~Park, H.~Park, C.-T. Lo, T.~Chang and R.~E. Winans, \emph{J. Appl.
-  Crystallogr.}, 2007, \textbf{40}, 496--504\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Busch \emph{et~al.}(2006)Busch, Rauscher, Smilgies, Posselt, and
-  Papadakis]{busch_grazing-incidence_2006}
-P.~Busch, M.~Rauscher, D.-M. Smilgies, D.~Posselt and C.~M. Papadakis, \emph{J.
-  Appl. Crystallogr.}, 2006, \textbf{39}, 433--442\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Busch \emph{et~al.}(2007)Busch, Posselt, Smilgies, Rauscher, and
-  Papadakis]{busch_inner_2007}
-P.~Busch, D.~Posselt, D.-M. Smilgies, M.~Rauscher and C.~M. Papadakis,
-  \emph{Macromolecules}, 2007, \textbf{40}, 630--640\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Naudon \emph{et~al.}(2000)Naudon, Babonneau, Thiaudi\`ere, and
-  Lequien]{naudon_grazing-incidence_2000}
-A.~Naudon, D.~Babonneau, D.~Thiaudi\`ere and S.~Lequien, \emph{Physica B},
-  2000, \textbf{283}, 69--74\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Lazzari(2002)]{lazzari_isgisaxs_2002}
-R.~Lazzari, \emph{J. Appl. Crystallogr.}, 2002, \textbf{35}, 406--421\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Burle \emph{et~al.}()Burle, Durniak, Fisher, Ganeva, Pospelov, {van
-  Herck}, and Wuttke]{burle_bornagain_nodate}
-J.~Burle, C.~Durniak, J.~M. Fisher, M.~Ganeva, G.~Pospelov, W.~{van Herck} and
-  J.~Wuttke, \emph{{{BornAgain}} - {{Software}} for Simulating and Fitting
-  {{X}}-Ray and Neutron Small-Angle Scattering at Grazing Incidence.},
-  \url{www.bornagainproject.com}, (accessed 2019-03-04)\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Chourou \emph{et~al.}(2013)Chourou, Sarje, Li, Chan, and
-  Hexemer]{chourou_hipgisaxs_2013}
-S.~T. Chourou, A.~Sarje, X.~S. Li, E.~R. Chan and A.~Hexemer, \emph{J. Appl.
-  Crystallogr.}, 2013, \textbf{46}, 1781--1795\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

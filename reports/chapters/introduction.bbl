@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{29}
+\begin{mcitethebibliography}{42}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -114,6 +114,76 @@ D.~Jura{\v s}in, M.~Vincekovi\'c, A.~Pustak, I.~{\v S}mit, M.~Bujan and
   Gallegos]{cordobes_linear_1997}
 F.~Cordob\'es, J.~Mu\~noz and C.~Gallegos, \emph{J. Colloid Interface Sci.},
   1997, \textbf{187}, 401--417\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Anton \emph{et~al.}(2010)Anton, Mojzisova, Porcher, Benoit, and
+  Saulnier]{anton_reverse_2010}
+N.~Anton, H.~Mojzisova, E.~Porcher, J.-P. Benoit and P.~Saulnier, \emph{Int. J.
+  Pharm.}, 2010, \textbf{398}, 204--209\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Zagnoni(2012)]{zagnoni_miniaturised_2012}
+M.~Zagnoni, \emph{Lab on a Chip}, 2012, \textbf{12}, 1026\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kataoka \emph{et~al.}(2012)Kataoka, Harada, and
+  Nagasaki]{kataoka_block_2012}
+K.~Kataoka, A.~Harada and Y.~Nagasaki, \emph{Adv. Drug Deliv. Rev.}, 2012,
+  \textbf{64}, 37--48\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Mohwald(1990)]{mohwald_phospholipid_1990}
+H.~Mohwald, \emph{Annu. Rev. Phys. Chem.}, 1990, \textbf{41}, 441--476\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kewalramani \emph{et~al.}(2010)Kewalramani, Hlaing, Ocko, Kuzmenko,
+  and Fukuto]{kewalramani_effects_2010}
+S.~Kewalramani, H.~Hlaing, B.~M. Ocko, I.~Kuzmenko and M.~Fukuto, \emph{J.
+  Phys. Chem. Lett.}, 2010, \textbf{1}, 489--495\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Pambou \emph{et~al.}(2015)Pambou, Crewe, Yaseen, Padia, Rogers, Wang,
+  Xu, and Lu]{pambou_structural_2015}
+E.~Pambou, J.~Crewe, M.~Yaseen, F.~N. Padia, S.~Rogers, D.~Wang, H.~Xu and
+  J.~R. Lu, \emph{Langmuir}, 2015, \textbf{31}, 9781--9789\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hayward \emph{et~al.}(2015)Hayward, Gilroy, Rupar, Chabanne, Pizzey,
+  Winnik, Whittell, Manners, and Richardson]{hayward_liquid_2015}
+D.~W. Hayward, J.~B. Gilroy, P.~A. Rupar, L.~Chabanne, C.~Pizzey, M.~A. Winnik,
+  G.~R. Whittell, I.~Manners and R.~M. Richardson, \emph{Macromolecules}, 2015,
+  \textbf{48}, 1579--1591\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[{Rodriguez-Loureiro} \emph{et~al.}(2017){Rodriguez-Loureiro},
+  Scoppola, Bertinetti, Barbetta, Fragneto, and
+  Schneck]{rodriguez-loureiro_neutron_2017}
+I.~{Rodriguez-Loureiro}, E.~Scoppola, L.~Bertinetti, A.~Barbetta, G.~Fragneto
+  and E.~Schneck, \emph{Soft Matter}, 2017, \textbf{13}, 5767--5777\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hazell \emph{et~al.}(2016)Hazell, Gee, Arnold, Edler, and
+  Lewis]{hazell_langmuir_2016}
+G.~Hazell, A.~P. Gee, T.~Arnold, K.~J. Edler and S.~E. Lewis, \emph{J. Colloid
+  Interface Sci.}, 2016, \textbf{474}, 190--198\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -235,6 +305,36 @@ P.~M. Anderson and M.~R. Wilson, \emph{J. Chem. Phys.}, 2004, \textbf{121},
 \EndOfBibitem
 \bibitem[Koutsioubas(2016)]{koutsioubas_combined_2016}
 A.~Koutsioubas, \emph{J. Phys. Chem. B}, 2016, \textbf{120}, 11474--11483\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kmiecik \emph{et~al.}(2016)Kmiecik, Gront, Kolinski, Wieteska, Dawid,
+  and Kolinski]{kmiecik_coarse-grained_2016}
+S.~Kmiecik, D.~Gront, M.~Kolinski, L.~Wieteska, A.~E. Dawid and A.~Kolinski,
+  \emph{Chem. Rev.}, 2016, \textbf{116}, 7898--7936\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kennedy and Eberhart(1995)]{kennedy_particle_1995}
+J.~Kennedy and R.~Eberhart, Proceedings of {{ICNN}}'95, Perth, AU, 1995, pp.
+  1942--1948\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Shi and Eberhart(1998)]{shi_modified_1998}
+Y.~Shi and R.~Eberhart, 1998 {{IEEE International Conference}} on
+  {{Evolutionary Computation Proceedings}}, Anchorage, US, 1998, pp.
+  69--73\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Storn and Price(1997)]{storn_differential_1997}
+R.~Storn and K.~Price, \emph{J. Global Optim.}, 1997, \textbf{11},
+  341--359\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

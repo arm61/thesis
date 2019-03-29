@@ -94,7 +94,7 @@ FIGURES = [FIG_DIR + 'bath.pdf', FIG_DIR + 'diamond.pdf',
 #            REP + CHAP + 'teaching.tex', REP + CHAP + 'summary.tex']
 CHAPTERS = [REP + CHAP + 'introduction.tex', REP + CHAP + 'theory.tex',
             REP + CHAP + 'reflectometry1.tex',
-            REP + CHAP + 'reflectometry2.tex', REP + CHAP + 'smallangle.tex',
+            REP + CHAP + 'reflectometry2.tex', #REP + CHAP + 'smallangle.tex',
             REP + CHAP + 'teaching.tex']
 LATEX = [REP + CHAP + INTRO + 'soft_matter.tex',
          REP + CHAP + INTRO + 'scattering.tex',

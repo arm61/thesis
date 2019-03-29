@@ -556,63 +556,63 @@ The approximate orientationally averaged scattering is then found as an average 
 The accuracy of this calculation increases with $n$, however good agreement between experiment and simulation has been shown for $n < 100$ even for highly anisotropic systems \cite{watson_rapid_2013}.
 
 
-\subsection{Grazing incidence small angle scattering}
+%\subsection{Grazing incidence small angle scattering}
 
-While reflectometry is the study of specular reflections from a layer structure, grazing incidence small angle scattering (GISAS) is the study of the off-specular reflections, those where the scattering vector has $x$- and $y$-components in addition to the $z$-component.
-This off-specular scattering is that which arises from the heterogeneity present at the interface.
-This means that GISAS is ideal for the study of material with nanostructure in the plane of the interface, such as organic semiconducting materials or polymer-grafted nanoparticles at an interface \cite{muller-buschbaum_local_2005,zhang_ion-specific_2017}.
-The geometry of a GISAS experiment on a thin film material is shown in Figure~\ref{fig:gisas}, which also shows a typical GISAS pattern.
+%While reflectometry is the study of specular reflections from a layer structure, grazing incidence small angle scattering (GISAS) is the study of the off-specular reflections, those where the scattering vector has $x$- and $y$-components in addition to the $z$-component.
+%This off-specular scattering is that which arises from the heterogeneity present at the interface.
+%This means that GISAS is ideal for the study of material with nanostructure in the plane of the interface, such as organic semiconducting materials or polymer-grafted nanoparticles at an interface \cite{muller-buschbaum_local_2005,zhang_ion-specific_2017}.
+%The geometry of a GISAS experiment on a thin film material is shown in Figure~\ref{fig:gisas}, which also shows a typical GISAS pattern.
 %
-\begin{figure}
-    \centering
-    \includegraphics[width=0.85\textwidth]{theory/gisas}
-    \caption{A schematic of the geometry of a GISAS experiment, where $\alpha_i$ is the incident angle, $\alpha_f$ is the exit angle, and $\phi$ is the out-of-plane angle, from Reference~\cite{muller-buschbaum_basic_2009}. Reprinted/adapted by permission from Springer Nature Customer Service Centre GmbH: Springer Nature A Basic Introduction to Grazing Incidence Small-Angle X-Ray Scattering by P. M\"{u}ller-Buschbaum\textsuperscript{\textcopyright} (2009).}
-    \label{fig:gisas}
-\end{figure}
-%
-
-In terms of GISAS instrumentation, it can be considered as an amalgamation of a reflectometry instrument and a small angle scattering instrument.
-The sample environment is that from a reflectometry instrument, while the two-dimensional detector required is that commonly associated with small angle scattering.
-Commonly, GISAS is found as an additional capability of another instrument, such as the grazing incidence small angle neutron scattering (GISANS) capability of D22 at the ILL or the GISAS setup at I07 of the Diamond Light Source \cite{muller-buschbaum_grazing_2004,nicklin_diamond_2016}.
-However, as GISAS has grown in popularity as a technique, GISAS focused instruments have been installed, such as MiNaXS at DESY in Hamburg and Beamline 7.3.3 at the ALS in San Francisco \cite{buffet_p03_2012,hexemer_saxs/waxs/gisaxs_2010}.
-
-\subsubsection{Analysis}
-
-The analysis process for a GISAS pattern is substantially more complex than for either the SAS or reflectometry counterparts.
-This is due to the fact that for SAS, the Born approximation is conserved, and only a single scattering event is considered.
-While for reflectometry, there is a well defined theoretical background that enables the analysis where the Born approximation is not valid.
-This is not the case for GISAS since for off-specular reflectometry to occur, the probing radiation will undergo both scattering and reflectometry events simultaneously.
-In order to account for this, generally, the distorted wave Born approximation (DWBA) is invoked.
-This is an extension of the Born approximation, wherein there are four possible ways in which the probing radiation may interact with the material, these are shown in Figure~\ref{fig:dwba}.
-%
-\begin{figure}
-    \centering
-    \includegraphics[width=0.85\textwidth]{theory/dwba}
-    \caption{The four possible way in which some probing radiation may interact with a sample within the DWBA; scattering, reflection-then-scattering, scattering-then-reflection, and reflection-then-scattering-then-reflection, from Reference~\cite{hexemer_advanced_2015}.}
-    \label{fig:dwba}
-\end{figure}
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.85\textwidth]{theory/gisas}
+%    \caption{A schematic of the geometry of a GISAS experiment, where $\alpha_i$ is the incident angle, $\alpha_f$ is the exit angle, and $\phi$ is the out-of-plane angle, from Reference~\cite{muller-buschbaum_basic_2009}. Reprinted/adapted by permission from Springer Nature Customer Service Centre GmbH: Springer Nature A Basic Introduction to Grazing Incidence Small-Angle X-Ray Scattering by P. M\"{u}ller-Buschbaum\textsuperscript{\textcopyright} (2009).}
+%    \label{fig:gisas}
+%\end{figure}
 %
 
-One of the most common methods for the analysis of a GISAS pattern is Bragg peak analysis.
-This is where Bragg peaks of crystallinity in the GISAS pattern are selected and analysed in terms of Bragg's and Snell's laws to account for the effects of the surface and substrate, this allows the dependence of $q_z$ to be determined \cite{lee_electron_2007, busch_grazing-incidence_2006}.
-While useful, this analysis approach is limited to systems with high crystallinity, such as stacked lamellae \cite{busch_inner_2007}.
-This method cannot be easily applied to understand less organised arrangements in soft matter systems, as these give rise to broad, smeared peaks with no clear centre.
+%In terms of GISAS instrumentation, it can be considered as an amalgamation of a reflectometry instrument and a small angle scattering instrument.
+%The sample environment is that from a reflectometry instrument, while the two-dimensional detector required is that commonly associated with small angle scattering.
+%Commonly, GISAS is found as an additional capability of another instrument, such as the grazing incidence small angle neutron scattering (GISANS) capability of D22 at the ILL or the GISAS setup at I07 of the Diamond Light Source \cite{muller-buschbaum_grazing_2004,nicklin_diamond_2016}.
+%However, as GISAS has grown in popularity as a technique, GISAS focused instruments have been installed, such as MiNaXS at DESY in Hamburg and Beamline 7.3.3 at the ALS in San Francisco \cite{buffet_p03_2012,hexemer_saxs/waxs/gisaxs_2010}.
 
-Another simplified method for the analysis of a GISAS pattern involves the effective surface approximation.
-This is where, from the two-dimensional GISAS pattern, selected cuts are taken and analysed only as a function of $q_y$.
-This can be used to probe depth-dependent properties, as taking such a cut effectively considered the lateral structure at a given depth, rather than both the lateral structure and that normal to the interface.
-For incident angles $\alpha_i \gg \alpha_c$ and at constant $q_z$, the scattering intensity in the DWBA simplifies and the differential cross section is given by \cite{naudon_grazing-incidence_2000},
-%
-\begin{equation}
-    \frac{\text{d}\sigma}{\text{d}\Omega} = \frac{A\pi^2}{\lambda^4}\big[(1 - n^2)T_iT_f\big]^2F(\mathbf{q}),
-\end{equation}
-%
-where $A$ is the iluminated surface area, $T_{i,f}$ are the Fresnel transmission factors for incidence and reflectance, and $F(\mathbf{q})$ is the diffuse-scattering factor, which is dependent on the form and structure factors of the lateral structure.
+%\subsubsection{Analysis}
 
-Currently, there exists a handful of software packages that are designed to aid in the structural analysis by GISAS.
-These include, but are not limited to, IsGISAXS, BornAgain, and HipGISAXS \cite{lazzari_isgisaxs_2002,burle_bornagain_nodate,chourou_hipgisaxs_2013}.
-These software packages generally implement analytical solutions to the DWBA by considering different form and structure factors for some system.
-In order to have some understanding of the structure that should be fitted to the experimental data, it is often necessary to perform electron microscopy measurements to educate the analysis process.
+%The analysis process for a GISAS pattern is substantially more complex than for either the SAS or reflectometry counterparts.
+%This is due to the fact that for SAS, the Born approximation is conserved, and only a single scattering event is considered.
+%While for reflectometry, there is a well defined theoretical background that enables the analysis where the Born approximation is not valid.
+%This is not the case for GISAS since for off-specular reflectometry to occur, the probing radiation will undergo both scattering and reflectometry events simultaneously.
+%In order to account for this, generally, the distorted wave Born approximation (DWBA) is invoked.
+%This is an extension of the Born approximation, wherein there are four possible ways in which the probing radiation may interact with the material, these are shown in Figure~\ref{fig:dwba}.
+%
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.85\textwidth]{theory/dwba}
+%    \caption{The four possible way in which some probing radiation may interact with a sample within the DWBA; scattering, reflection-then-scattering, scattering-then-reflection, and reflection-then-scattering-then-reflection, from Reference~\cite{hexemer_advanced_2015}.}
+%    \label{fig:dwba}
+%\end{figure}
+%
+
+%One of the most common methods for the analysis of a GISAS pattern is Bragg peak analysis.
+%This is where Bragg peaks of crystallinity in the GISAS pattern are selected and analysed in terms of Bragg's and Snell's laws to account for the effects of the surface and substrate, this allows the dependence of $q_z$ to be determined \cite{lee_electron_2007, busch_grazing-incidence_2006}.
+%While useful, this analysis approach is limited to systems with high crystallinity, such as stacked lamellae \cite{busch_inner_2007}.
+%This method cannot be easily applied to understand less organised arrangements in soft matter systems, as these give rise to broad, smeared peaks with no clear centre.
+
+%Another simplified method for the analysis of a GISAS pattern involves the effective surface approximation.
+%This is where, from the two-dimensional GISAS pattern, selected cuts are taken and analysed only as a function of $q_y$.
+%This can be used to probe depth-dependent properties, as taking such a cut effectively considered the lateral structure at a given depth, rather than both the lateral structure and that normal to the interface.
+%For incident angles $\alpha_i \gg \alpha_c$ and at constant $q_z$, the scattering intensity in the DWBA simplifies and the differential cross section is given by \cite{naudon_grazing-incidence_2000},
+%
+%\begin{equation}
+%    \frac{\text{d}\sigma}{\text{d}\Omega} = \frac{A\pi^2}{\lambda^4}\big[(1 - n^2)T_iT_f\big]^2F(\mathbf{q}),
+%\end{equation}
+%
+%where $A$ is the iluminated surface area, $T_{i,f}$ are the Fresnel transmission factors for incidence and reflectance, and $F(\mathbf{q})$ is the diffuse-scattering factor, which is dependent on the form and structure factors of the lateral structure.
+
+%Currently, there exists a handful of software packages that are designed to aid in the structural analysis by GISAS.
+%These include, but are not limited to, IsGISAXS, BornAgain, and HipGISAXS \cite{lazzari_isgisaxs_2002,burle_bornagain_nodate,chourou_hipgisaxs_2013}.
+%These software packages generally implement analytical solutions to the DWBA by considering different form and structure factors for some system.
+%In order to have some understanding of the structure that should be fitted to the experimental data, it is often necessary to perform electron microscopy measurements to educate the analysis process.
 
 
 \subsection{Contrast variation}
