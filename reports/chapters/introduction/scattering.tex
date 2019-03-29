@@ -1,0 +1,24 @@
+\section{Analysis of soft matter scattering}
+
+The use of neutron and X-ray scattering experiments for the study of soft matter is well developed, with early research into the structure of phospholipid monolayers by reflectometry being conducted in the layer 1970s by Albrecht \emph{et al.} \cite{albrecht_polymorphism_1978}.
+While, the work of Kratky and Porod \cite{kratky_diffuse_1949}, who used small angle X-ray scattering for the study of colloidal systems was published in 1949.
+Since these early works, the instrumentation developments have enabled more challenging experiments to be conducted, such as time-resolved studies \cite{jensen_monitoring_2014} and the study of floating lipid bilayers \cite{rondelli_reflectivity_2012}.
+
+However, the analysis of soft matter scattering has changed little, still typically involving the use of very coarse models.
+These include the shape-based modelling common in small angle scattering (discussed in Section~\ref{sec:sasanal}) \cite{hassan_small_2003} and the layer models (see Section~\ref{sec:refltheory}) \cite{campbell_structure_2018} and functional models \cite{lu_analysis_1996} used in reflectometry analysis.
+More sophisticated model refinements have been developed, such as the use of Monte-Carlo sampling \cite{pedersen_monte_2002}, differential evolution optimisation \cite{wormington_characterization_1999}, and Bayesian inference \cite{nelson_refnx_2019}.
+However, there has been little evolution in the definition of the models that unpin the analysis process.
+Recently, there have been movements towards the use of atomistic modelling techniques, such as molecular dynamics, to augment, and assist, the analysis of soft matter scattering measurements, ion a multi-modal approach \cite{scoppola_combining_2018}.
+
+Much of the work relating to the use of atomistic simulation for the analysis of small angle scattering measurements has been focused on the study of protein molecules in solution.
+This is discussed briefly in Chapter~\ref{smallangle}, and has allowed for a more profound understanding of the conformational states available to protein molecules in solution \cite{bowerman_determining_2017}.
+The uptake of atomsitic simulation for the analysis of small angle scattering from system such as micelles has been slower, in part due to the larger conformation landscape available to the system under standard conditions.
+However, the work of Hargreaves \emph{et al.} pair atomistic simulation (in the from of Emperical Potential Structure Refinement) with total scattering measurements to resolve the structure of an exemplary short-tail surfactant micelle \cite{hargreaves_atomistic_2011}.
+Further, the work of Ivanovi\'{c} \emph{et al.} used scattering experiments to refine the output of molecular dynamics simulations of micelles of a pre-defined size \cite{ivanovic_temperature-dependent_2018}.
+However, both of these examples required significant computational resource; in the former, the computational time taken was quoted as 200 days, while the later required the running of multiple simulations at different micelle sizes in order to determine the appropriate simulation to analyse.
+
+The use of atomistic simulation for the analysis reflectometry measurements of soft matter systems began with the work of Miller \emph{et al.} and Anderson and Wilson \cite{miller_monte_2003,anderson_molecular_2004}, where atomistic simulation (Monte Carlo and molecular dynamics respectively) was used to study polymer self-assembly at the oil-water interface.
+The simulation trajectory was then compared with experimental neutron reflectometry measurements.
+Dabkowska \emph{et al.} also used atomistic simulation and neutron reflectometry to study the structure of a surfactant monolayer at the air-water interface, providing the first example of a direct comparison between experimental reflectometry data and that determined from simulation.
+To date, there is only one work that uses coarse-grained molecular dynamics simulation to aid in the analysis of neutron reflectometry, this is the work of Koutsioubas \cite{koutsioubas_combined_2016}.
+This work involved the use of the MARTINI coarse-grained forcefield to simulate a lipid bilayer, and was compared with experimental neutron reflectometry measurements.
