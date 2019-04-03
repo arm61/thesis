@@ -1,6 +1,6 @@
 \section{Optimisation \& sampling methods}
 \label{sec:optimisation}
-In this work, various computational methods have been applied to a series of important scattering problems.
+In this work, computational modelling methods have been applied to important scattering problems.
 The aim of many modelling problems is to optimise a series of parameters such that a minimum is found in some parameter-dependent metric.
 While, in other circumstances, the aim is to sample the parametric search-space of a particular problem.
 The problem of parameter optimisation and sampling is a massive area of mathematics and computer science and is it not possible to introduce the whole field.
@@ -21,7 +21,8 @@ For some arbitrary, multi-dimensional function, $F(\mathbf{p})$, where $\mathbf{
 \end{equation}
 %
 where $\alpha$ is a constant that defines the step-size and $\sfrac{\partial F(\mathbf{p})}{\partial \mathbf{p}}$ is the first derivative of the multi-dimensional function.
-It is necessary to determine a suitable value for $\alpha$ for a given function, therefore often the gradient descent method is replaced with the, more computationally expensive, Newton-Raphson methods.
+It is necessary to find a suitable value for $\alpha$ for a given function.
+Therefore, the gradient descent method is often replaced with the more computationally expensive Newton-Raphson methods.
 The gradient descent method is shown applied to a Rosenbrock function \cite{rosenbrock_automatic_1960}, with a series of different step sizes in Figure~\ref{fig:grad}
 The gradient descent method is relatively simple to introduce, shown in Code Block~\ref{cb:grad}, however, it is only capable of finding local minima and therefore is often unsuitable for situations where the global minima are desired.
 %
@@ -47,8 +48,8 @@ These population methods are usually more efficient at finding the global minimu
 
 \subsubsection{Differential evolution}
 \label{sec:de}
-Differential evoulation (DE) is a common, iterative optimisation algorithm, that was first applied to the analysis of reflectometry and diffraction data by Wormington \emph{et al.} \cite{wormington_characterization_1999}.
-Since then, it has proven very popular for the optimisation of reflectometry data with including in many common analysis programs \cite{bjorck_fitting_2011,bjorck_genx_2007,nelson_co-refinement_2006,nelson_refnx_2019,ott_simulreflec_nodate,kienzle_ncnr_nodate}.
+Differential evolution (DE) is a common, iterative optimisation algorithm, that was first applied to the analysis of reflectometry and diffraction data by Wormington \emph{et al.} \cite{wormington_characterization_1999}.
+Since then, it has proven very popular for the optimisation of reflectometry data and is included in many common analysis programs \cite{bjorck_fitting_2011,bjorck_genx_2007,nelson_co-refinement_2006,nelson_refnx_2019,ott_simulreflec_nodate,kienzle_ncnr_nodate}.
 The DE algorithm is designed to more ably determine the global minimum of a particular function \cite{storn_differential_1997}.
 
 DE is an example of a genetic algorithm, one that is designed to mimic the evolution processes observed in biology \cite{holland_adaptation_1992}.
@@ -102,7 +103,7 @@ where, the $*$ notation indicates all objects in the given population, and $\zet
 \end{figure}
 %
 
-It is noted that it is often the case, in particular when optimising experimental data, that there should be some bounds applied to the variables within the populations.
+It is noted that it is often the case, in particular, when optimising experimental data, that there should be some bounds applied to the variables within the populations.
 However, the DE algorithm may disregard these bounds due to the nature of the mutation step.
 Therefore, it is common in DE algorithms, where bounds must be set, that if the search space moves outside that expected it is necessary to reinitialise the parameter.
 An implementation of the DE algorithm is given programmatically in Code Block~\ref{cb:diff_evo}, where this reinitialisation is achieved by obtaining a new random number within the given bounds.
@@ -126,7 +127,7 @@ An implementation of the DE algorithm is given programmatically in Code Block~\r
 %
 \begin{figure}
     \centering
-        \lstinputlisting[caption={The mutation step used in a differential evolution algorithm, as described by Bj\"{o}rck \cite{bjorck_fitting_2011}.},label={cb:sel}]{reports/code_blocks/selection.py}
+        \lstinputlisting[caption={The selection step used in a differential evolution algorithm, as described by Bj\"{o}rck \cite{bjorck_fitting_2011}.},label={cb:sel}]{reports/code_blocks/selection.py}
 \end{figure}
 %
 
@@ -141,8 +142,8 @@ The motions of these `particles' are influenced by the positions of the other pa
 It is anticipated that this will lead the swarm to optimise the function under investigation.
 
 Particles in the swarm are under the influence of two elastic forces.
-The first attracts the particle to the best location in the search-space that that particle has found, while the other attracts the particle to the best search-space location found by any particle of the swarm.
-The magnitude of these forces is randomised but modulated by a pair of acceleration coefficients, $\psi_p$ that influences the attraction towards the personal best location, and $\psi_g$ that influences the attraction to the global best location.
+The first attracts the particle to the best location in the search-space that the particle has found, while the other attracts the particle to the best search-space location found by any particle of the swarm.
+The magnitudes of these forces are randomised but modulated by a pair of acceleration coefficients, $\psi_p$ that influences the attraction towards the personal best location, and $\psi_g$ that influences the attraction to the global best location.
 The position of a particle changes between iterations of the algorithm based on the following relation,
 %
 \begin{equation}
@@ -176,12 +177,12 @@ Figure~\ref{fig:part_swarm} shows an example of the particle swarm optimisation 
 \subsection{Markov chain Monte-Carlo}
 \label{sec:mcmc}
 Markov chain Monte-Carlo (MCMC) is a sampling methodology, derived from direct sampling Monte-Carlo \cite{krauth_statistical_2006}.
-The aim of an MCMC algorithm is to sample a probability distribution, enabling Bayesian inference, when parameters are described in terms of their degree of probability \cite{sivia_data_2006}.
-Similar to molecular dynamics, in practical terms, MCMC should not be used on a system that is not already optimised.
+The aim of an MCMC algorithm is to sample a probability distribution, when parameters are described in terms of their degree of probability \cite{sivia_data_2006}.
+Similar to molecular dynamics, in practical terms, MCMC should not be used on a system that is not already optimised, as its purpose is probability distribution sampling rather than minimisation.
 Generally, the approach would be to optimise using, for example, one of the approaches described above, then to use MCMC or molecular dynamics to sample the appropriate search-space.
 For example, in this work MCMC is used extensively, following the optimisation of a reflectometry model using a differential evolution algorithm, to quantify the inverse uncertainties of the model.
 In this context, the inverse uncertainty is the uncertainty on a given parameter within the model.
-In addition to being able to give information about the inverse uncertainties, MCMC also offers a more profound understanding of the correlations present between the different parameters \cite{gilks_markov_1995}.
+In addition to being able to give information about the inverse uncertainties, MCMC also offers a more complete understanding of the correlations present between the different parameters \cite{gilks_markov_1995}, as the interactions between the parameter variation has been quantified.
 
 The aim of MCMC is to only sample configurations of a given function that are within the experimental uncertainty.
 Figure~\ref{fig:mcmc} shows an example of the possible output that may be obtained from the application of an MCMC sampling method.
@@ -208,7 +209,7 @@ Once an optimised solution, $\theta$, is obtained, the figure of metric is calcu
 \chi^2 = \sum\frac{(y_{\text{exp}} - y_{\text{calc}})^2}{\text{d}y_{\text{exp}}},
 \end{equation}
 %
-and $y_{\text{exp}}$ is the experimental data, and $\text{d}y_{\text{exp}}$ the uncertainty in the data, while $y_{\text{calc}}$ is the model solution.
+and $y_{\text{exp}}$ is the experimental data, and $\text{d}y_{\text{exp}}$ the uncertainty in the experimental data, while $y_{\text{calc}}$ is the model solution.
 Some random pertubation is then applied to the optimised solution,
 %
 \begin{equation}
@@ -233,9 +234,9 @@ It should be noted that in the event on a poorly optimised initial value of $\th
 
 \subsection{Molecular dynamics}
 \label{sec:md}
-Section \ref{sec:classical} introduced classical potential models as a method for the determination of the energy of a given chemical system.
-Any of the optimisation methods discussed above could be used alongside these classical potential models to try and find the energetic minimum structure for the system or to sample the potential energy landscape.
-However, it is often the case that we are interested in the dynamically relevant structure at a given temperature for some system.
+Section \ref{sec:classical} introduced classical potential models as a method for the evalution of the interaction energy of a given chemical system.
+Any of the optimisation methods discussed above could be used alongside these classical potential models to find an energy minimum structure for the system or to sample the potential energy landscape.
+However, it is often the case that we are interested in a dynamically relevant structure at a given temperature for some system.
 This is where molecular dynamics simulations are a useful and important tool.
 
 \subsubsection{Forces and accelertions}
@@ -292,13 +293,13 @@ These equations constitute the Velocity-Verlet algorithm,
 \item go to 1.
 \end{enumerate}
 %
-Following the initial relaxation of the particles to some equilibrium, this algorithm may be iterated as many times as is required to obtain sufficient statistics for the measurement quantity of interest, e.g. particle positions for structural techniques such as elastic scattering.
+Following an equilibration period, this algorithm may be iterated as many times as is required to obtain sufficient statistics for the measurement quantity of interest, e.g. particle positions for structural techniques such as elastic scattering.
 
 The above analytical process is known as the integration step, and the Velocity-Verlet is the integrator.
-If the size of the timestep $\Delta t$ is too large, the acceleration that is calculated for the step will not be accurate, as the forces on the atoms will change too significantly during it.
+If the size of the timestep $\Delta t$ is too large, the step size for a given iteration will not be accurate, as the forces on the atoms will change too significantly during it.
 Therefore, the values of the timestep is usually on the order of \SI{10e-15}{\second} (\si{\femto\second}).
 This means that in order to simulate a single nanosecond of ``real-time'' molecular dynamics, the integrator must be solved one million times.
-This can be slow for very large systems, leading to an interest in coarse-grained simulations that result in fewer particles to determine the forces for (speeding up the integration step), but also enable to use of larger timesteps (so fewer integrations must be solved) \cite{rudd_coarse-grained_1998,brini_systematic_2013}.
+This can be slow for very large systems, leading to an interest in coarse-grained simulations that result in fewer particles to determine the forces for (speeding up the integration step), but also enable to use of larger timesteps (so fewer integrations must be solved) \cite{rudd_coarse-grained_1998,brini_systematic_2013}, for example, the use of a MARTINI potential model allows for an upto twenty times increase in the timestep compared to an all-atom model.
 
 \subsubsection{Initialisation}
 The above discussion ignored two aspects that are necessary to run a molecular dynamics simulation, both of which as associated with the original configuration of the system; the original particle positions and velocities.
@@ -344,5 +345,5 @@ The barostating methods are similar to the thermostating methods with Andersen, 
 However, there is also the Parrinello-Rahman barostat which allows for independent control of the different cell dimensions giving control of stress in addition to pressure \cite{parrinello_polymorphic_1981}.
 
 These optimisation and sampling methods were used in a variety of different applications within this work, firstly differential evoluation optimisation and MCMC sampling are used in Chapter~\ref{reflectometry1} in the study of a chemically-consistent modelling approach to X-ray and neutron reflectometry analysis.
-Molecular dynamics simulation are investigated as a possible tool to assist in the analysis of reflectometry and grazing incidence small angle scattering.
-Finally, the particle swarm optimisation is applied for the efficient determination of a micelle structure for ftting small angle scattering data.
+Molecular dynamics simulation are investigated as a possible tool to assist in the analysis of reflectometry in in Chapter~\ref{reflectometry2}.
+Finally, the particle swarm optimisation is applied for the efficient determination of a micelle structure for ftting small angle scattering data in Chapter~\ref{smallangle}.

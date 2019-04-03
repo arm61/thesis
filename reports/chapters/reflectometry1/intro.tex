@@ -20,21 +20,21 @@ In these works, the authors noted that the non-aqueous surface had an effect on 
 \subsection{Optimisation and sampling in reflectometry analysis}
 The analysis of reflectometry data usually involves the use of some model-dependency.
 Therefore it is necessary to optimise the difference between our model, and the experimental dataset.
-An analytic method, such as the gradient descent method (Section~\ref{sec:singlecan}) is not usually suitable for application to the optimisation of a reflectometry model, as these are only capable of optimisation to local minima, which would require accurate prior knowledge of the model structure \cite{lovell_analysis_1999}.
-Despite the analytic nature of the Maximum entropy (MaxEnt) optimisation method, this showed some success in the optimisation of reflectometry models, due in part to the immunity that optimisation carries to the production of a large number of solutions as it is able to determine the most likely model \cite{geoghegan_experimental_1996,bucknall_neutron_1997}.
-This approach is computationally intensive and therefore become unusual to apply over other more efficient methods.
+Analytical methods, such as the gradient descent method (Section~\ref{sec:singlecan}) are not usually suitable for application to the optimisation of a reflectometry model, as these are only capable of optimisation to local minima, which would require accurate prior knowledge of the model structure \cite{lovell_analysis_1999}.
+Despite the analytical nature of the Maximum entropy (MaxEnt) optimisation method, this showed some success in the optimisation of reflectometry models, due in part to the ability of this optimisation to produce of a large number of solutions \cite{geoghegan_experimental_1996,bucknall_neutron_1997}.
+This approach is computationally intensive and therefore it is unusual to apply it instead of other more efficient methods.
 Some aspects of the MaxEnt methods were replicated in the work of Sivia \emph{et al.}, which employed Bayesian probability theory to rationalise the model selection \cite{geoghegan_experimental_1996,sivia_introduction_1993,sivia_bayesian_1998,sivia_analysis_1991}.
 
 The use of analytic methods became less favoured as more frequently stochastic methods were used, as these offer a more pragmatic solution to the local minima problem.
 These are methods that utilise inherently random behaviour to determine a global minimum.
-The groove tracking method of Zhou and Chen \cite{zhou_model-independent_1993,zhou_theoretical_1995}, was one of the first instances of a stochastic optimisation process applied to the analysis of reflectometry data.
+The groove tracking method of Zhou and Chen \cite{zhou_model-independent_1993,zhou_theoretical_1995}, was one of the first examples of a stochastic optimisation process applied to the analysis of reflectometry data.
 This randomly varied the scattering length density (SLD) of the layers in the model using a Monte Carlo approach.
 A similar approach used a simulated annealing approach, with a ``temperature'' factor that decreased as the number of iterations increases \cite{kunz_model-free_1993}, however, this approach is still subject to the local minima problem as the probability of move acceptance decreased over time.
 
 Both these Monte Carlo based approaches and the analytic methods previously discussed make the same perturbations to the fitted parameters during processing.
 However, this is the cause of the propensity to converge to a local minimum.
-This leads to the application of genetic algorithm derived methods for the optimisation of reflectometry models, beginning with the works of de Haan and Drijkoningen \cite{de_haan_genetic_1994} and Dane \emph{et al.} \cite{dane_application_1998}, who first applied this method to reflectometry analysis.
-These methods are designed to stochastically sample an entire given search-space, and therefore are more able to overcome the local minima issue and determine the vicinity of a global minimum.
+This lead to the application of genetic algorithm derived methods for the optimisation of reflectometry models, beginning with the works of de Haan and Drijkoningen \cite{de_haan_genetic_1994} and Dane \emph{et al.} \cite{dane_application_1998}, who first applied this method to reflectometry analysis.
+These methods are designed to stochastically sample an entire given search-space, and therefore are more able to overcome the local minima issues and determine the vicinity of a global minimum.
 Following this initial application, genetic algorithms were used frequently in the optimisation of reflectometry models \cite{ulyanenkov_genetic_2000,ulyanenkov_extended_2005,politsch_unbiased_2002,wormington_characterization_1999}.
 In particular, the work of Wormington \emph{et al.} \cite{wormington_characterization_1999} showed the applicability of the differential evolution method towards reflectometry model optimisation, which resulted in the inclusion of such methods in many common reflectometry analysis software packages \cite{bjorck_fitting_2011,bjorck_genx_2007,nelson_co-refinement_2006,nelson_refnx_2019,ott_simulreflec_nodate,kienzle_ncnr_nodate}.
 
@@ -47,7 +47,7 @@ This work applies a differential algorithm \cite{storn_differential_1997,jones_s
 The search-space, available within the experimental uncertainty of the data is then sampled using MCMC, as implemented in \texttt{emcee} \cite{foreman-mackey_emcee_2013}, to understand the parameter probability distributions and quantify the inter-parameter correlations.
 
 \subsection{Chemically-consistent modelling}
-The use of chemically-consistent modelling is common in the understanding of X-ray and neutron reflectometry measurements from phospholipid monolayers.
+The use of chemically-consistent modelling is common in the fitting of X-ray and neutron reflectometry measurements from phospholipid monolayers to obtain structural insights.
 The history of this modelling is introduced well by Campbell \emph{et al.} \cite{campbell_structure_2018}.
 While it is possible to model the neutron reflectometry from a phospholipid monolayer with a single layer model \cite{wojciechowski_interaction_2016,wojciechowski_complexation_2016}, the use of at least two layers; representing the head and tail groups is more commonplace \cite{foglia_interaction_2014,bello_influence_2016}.
 Even when two layers are utilised, it is often the case that the volumes of the head and tail groups, $V_i$, are used as constraints in the modelling process, as the scattering length density ($\text{SLD}$) of a layer may be determined as follows,
@@ -59,7 +59,7 @@ Even when two layers are utilised, it is often the case that the volumes of the 
 %
 where, $b_i$ is the scattering length of the head or tail, $\phi_i$ is the volume fraction of solvation by the solvent, $\text{SLD}_s$ is the solvent scattering length density, and $i$ indicates either the head or tail layer.
 However, as noted by Campbell \emph{et al.} \cite{campbell_structure_2018}, this method often fails to account for the compaction of the carbon chains under elevated surface pressures \cite{mcconlogue_close_1997,small_lateral_1984}, which may lead to a volume reduction of up to \SI{\sim 15}{\percent}.
-Furthermore, as discussed in Section~\ref{refl1:anal}, the use of a constrained head group volume may also impact the modelling process in situations where the volume is poorly defined.
+Furthermore, as discussed in Section~\ref{refl1:anal}, the use of a constrained head group volume may also influence the result of the modelling process in situations where the volume is poorly defined.
 
 Equation~\ref{equ:sld} enables the use of chemical-inference in the modelling approach for reflectometry data.
 This allows for the co-refinement of neutron reflectometry data where different isotopic-contrasts of the phospholipid species or solvent have been used.

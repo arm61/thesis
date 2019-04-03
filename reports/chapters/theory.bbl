@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{83}
+\begin{mcitethebibliography}{85}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -358,9 +358,24 @@ U.~Essmann, L.~Perera, M.~L. Berkowitz, T.~Darden, H.~Lee and L.~G. Pedersen,
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
+\bibitem[Harvey(2018)]{harvey_computational_2018}
+J.~Harvey, \emph{Computational {{Chemistry}}}, {Oxford University Press},
+  Oxford, 2018\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
 \bibitem[Jorgensen and {Tirado-Rives}(1988)]{jorgensen_opls_1988}
 W.~L. Jorgensen and J.~{Tirado-Rives}, \emph{J. Am. Chem. Soc.}, 1988,
   \textbf{110}, 1657--1666\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Marrink \emph{et~al.}(2007)Marrink, Risselada, Yefimov, Tieleman, and
+  {de Vries}]{marrink_martini_2007}
+S.~J. Marrink, H.~J. Risselada, S.~Yefimov, D.~P. Tieleman and A.~H. {de
+  Vries}, \emph{J. Phys. Chem. B}, 2007, \textbf{111}, 7812--7824\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

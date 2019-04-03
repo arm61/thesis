@@ -18,7 +18,7 @@ This is in contrast to inelastic scattering where energy transfer occurs; facili
 
 Both X-ray and neutron scattering techniques are discussed and used in this work.
 From an experimental viewpoint, there are significant differences between an X-ray scattering and a neutron scattering experiment.
-However, there is little variation in terms of the data analysis, where the differences are limited to; the nature of the scattering lengths, and the higher background that is present in the neutron scattering experiments.
+However, there is little variation in terms of the data analysis, where the differences are limited to; the nature of the scattering lengths (see Section~\ref{convar}), and the higher background that is present in the neutron scattering experiments.
 
 \subsection{The scattering vector}
 
@@ -61,7 +61,7 @@ From this, and Equation~\ref{equ:wavevec}, the value of $q$, where $q = |\mathbf
 \begin{figure}
     \centering
     \includegraphics[width=0.85\textwidth]{theory/scatvec}
-    \caption{A vector diagram describing an elastic scattering event. Adapted, with permission of Oxford University Press\textsuperscript{\textcopyright}, from Reference~\cite{sivia_elementary_2011}.}
+    \caption{A vector diagram describing an elastic scattering event, where $\mathbf{k}_i$ is the incident wavevector, $\mathbf{k}_f$ is the final wavevector, $2\theta$ is the scattering angle, and $\mathbf{q}$ is the scattering vector. Adapted, with permission of Oxford University Press\textsuperscript{\textcopyright}, from Reference~\cite{sivia_elementary_2011}.}
     \label{fig:scatvec}
 \end{figure}
 %
@@ -123,7 +123,7 @@ where, $b$ is the scattering length discussed in Section~\ref{convar}.
 \begin{figure}
     \centering
     \includegraphics[width=0.85\textwidth]{theory/singleatom}
-    \caption{A schematic of the interaction between a single particle and a wave of probing radiation (green lines). Adapted, with permission of Oxford University Press\textsuperscript{\textcopyright}, from Reference~\cite{sivia_elementary_2011}.}
+    \caption{A schematic showing the propagation of the wave of probing radiation (green lines) radially outwards following the scattering event, where $r$ is the magnitude of the displacement vector. Adapted, with permission of Oxford University Press\textsuperscript{\textcopyright}, from Reference~\cite{sivia_elementary_2011}.}
     \label{fig:singleatom}
 \end{figure}
 %
@@ -151,7 +151,7 @@ Equation~\ref{equ:scatter} holds true, within the Born approximation, where the 
 \begin{figure}
     \centering
     \includegraphics[width=0.85\textwidth]{theory/multiatom}
-    \caption{A schematic of the interaction between a particle, $j$, at position $\mathbf{R}_j$ and a wave of probing radiation (green lines). Adapted, with permission of Oxford University Press\textsuperscript{\textcopyright}, from Reference~\cite{sivia_elementary_2011}.}
+    \caption{A schematic showing the interaction of radition scattered by two particles that are separated by the vector $\mathbf{R}_j$. Adapted, with permission of Oxford University Press\textsuperscript{\textcopyright}, from Reference~\cite{sivia_elementary_2011}.}
     \label{fig:multiatom}
 \end{figure}
 %
@@ -186,7 +186,7 @@ Therefore, the differential cross section, defined in Equation~\ref{equ:dsc} can
 \subsection{Scattering length density}
 \label{sec:sld}
 
-While it may be helpful to consider the scattering of multiple particles individually, where each particle has a scattering length, $b$.
+While it may be helpful to consider the scattering from multiple particles individually, where each particle has a scattering length, $b$.
 In practice, due to the low experimental resolution at small angles, it is more common to consider the scattering length density, $\rho$, of the system,
 %
 \begin{equation}
@@ -235,7 +235,7 @@ In reality, since the layers are usually not completely homogeneous, an average 
 \begin{figure}
     \centering
     \includegraphics[width=0.85\textwidth]{theory/reflectgeo}
-    \caption{A schematic of specular reflectometry from a layered sample. Reproduced, with permission of Oxford University Press\textsuperscript{\textcopyright}, from Reference~\cite{sivia_elementary_2011}.}
+    \caption{A schematic showing the geometry of a typical specular reflectometry experiment from a layered sample. Reproduced, with permission of Oxford University Press\textsuperscript{\textcopyright}, from Reference~\cite{sivia_elementary_2011}.}
     \label{fig:refgeo}
 \end{figure}
 %
@@ -243,7 +243,7 @@ A reflectometry instrument operates by measuring the intensity of specular radia
 The reflected intensity is defined in terms of $q$ (by Equation~\ref{equ:theq}), and is defined as follows,
 %
 \begin{equation}
-    R(q) = \frac{\text{specular reflected radiation at }q}{\text{incident radiation}}.
+    R(q) = \frac{\text{specular reflected radiation intensity at }q}{\text{incident radiation intensity}}.
     \label{equ:refl}
 \end{equation}
 %
@@ -282,9 +282,10 @@ Then, as in Equation~\ref{equ:kine}, the Fourier transform of this $\delta$-func
 %
 \begin{equation}
     \rho_{\text{Si}}\int_{-\infty}^{+\infty}\delta(z)\exp{(-\mathbf{i}zq_z)}\text{d}z = \rho_{\text{Si}}\exp(0) = \rho_{\text{Si}}.
+    \label{equ:rhosi}
 \end{equation}
 %
-This means that the reflectometry profile could be calculated from the following relationship,
+This means that, using Equations~\ref{equ:rhosi} and \ref{equ:kine}, the reflectometry profile could be calculated from the following relationship,
 %
 \begin{equation}
     R(q)\approx \frac{16\pi^2\rho_{\text{Si}}^2}{q_z^4}.
@@ -390,7 +391,7 @@ Applying this method to the scattering length density profile shown in Figure~\r
 %
 \begin{figure}
     \centering
-        \lstinputlisting[caption={An example code block for the Abel\`{e}s method for the calculation of reflectometry, adapted from Reference~\cite{nelson_refnx_2019}.},label={cb:refl}]{reports/code_blocks/reflectometry.py}
+        \lstinputlisting[caption={An example Python code block for the Abel\`{e}s method for the calculation of reflectometry, adapted from Reference~\cite{nelson_refnx_2019}.},label={cb:refl}]{reports/code_blocks/reflectometry.py}
 \end{figure}
 %
 %
@@ -445,11 +446,11 @@ This method is frequency applied in BioSAXS applications, where the interactions
 However, with micelles, it is not always possible to remove the structure factor, as the critical micelle concentration may be higher than the minimum concentration at which the structure factor is present.
 It is possible to deconvolute the structure and form factors for a micellar solution by studying different concentrations, assuming that the form of the micelle is concentration independent, over the measured concentration range.
 
-The rigorous, model-independent method for the analysis of SAS involves taking the inverse Fourier transform of the scattering, to give an auto-correlation function of the average particle in the system, which following a deconvolution procedure will resolve the radially averaged scattering length density profile.
+The rigorous, model-independent method for the analysis of SAS involves taking the inverse Fourier transform of the scattering profile, to give an auto-correlation function of the average particle in the system, which following a deconvolution procedure will resolve the radially averaged scattering length density profile.
 However, this is often cumbersome and has a low information density, when compared to model-dependent techniques.
-Additionally, if the experimental data lacks information at wide enough $q$ to cover all features of the sample artefacts may be present in the inverse Fourier transform of the scattering.
+Additionally, if the experimental data lacks information at wide enough $q$ to cover all features of the sample, artefacts may be present in the inverse Fourier transform of the scattering.
 
-There are two common and straight-forward analysis procedures that can be used to give an understanding of the scattering species.
+There are two common and straight-forward analysis procedures that can be used to give an understanding of the scattering species structure.
 The first is the Guinier approximation, which is used in the determination of the radius of gyration, $R_g$, of the scattering species, at ``infinite dilution''.
 This scattering law is only valid at very small values of $q$, where $q < R_g^{-1}$ \cite{sivia_elementary_2011},
 %
@@ -467,7 +468,7 @@ The Guinier plot for the scattering from a sphere with a radius of \SI{20}{\angs
 The Guinier analysis is very common in the study of proteins by SAS, as it allows for the determination of the protein size in the native, solution phase \cite{skou_synchrotron-based_2014}.
 Another common analysis of SAS data comes in the form of Porod's law, which states that for large values of $q$, the scattering intensity becomes proportional to $Sq^{-4}$, where $S$ is the surface area of the sample.
 This means that by plotting $I(q)q^4$ vs. $q$ and extrapolating to $q \rightarrow \infty$, it is possible to determine the external surface area of the system \cite{willis_experimental_2009}.
-Using the surface area it is then possible to qualitatively determine the `roughness' of the system.
+Using the surface area, it is then possible to qualitatively determine the `roughness' of the system based on the relation of the surface area to the particle size.
 %
 \begin{figure}
     \centering
@@ -553,7 +554,7 @@ The approximate orientationally averaged scattering is then found as an average 
     I(q) = \frac{1}{n}\Bigg\{\sum_{k=(1-n)/2}^{(n-1)/2} I[\mathbf{q}^{(k)}]\Bigg\}.
 \end{equation}
 %
-The accuracy of this calculation increases with $n$, however good agreement between experiment and simulation has been shown for $n < 100$ even for highly anisotropic systems \cite{watson_rapid_2013}.
+The accuracy of this calculation increases with $n$, however agreement, comparible to the Debye equation, between experiment and simulation has been shown for $n < 100$ even for highly anisotropic systems \cite{watson_rapid_2013}.
 
 
 %\subsection{Grazing incidence small angle scattering}
@@ -618,7 +619,7 @@ The accuracy of this calculation increases with $n$, however good agreement betw
 \subsection{Contrast variation}
 \label{convar}
 
-The scattering profile generated by the interaction of some system with radiation depends on three factors:
+The scattering profile generated by the interaction of the chosen system with radiation depends on three factors:
 %
 \begin{itemize}
     \item the spatial arrangement of the atoms in the system,
@@ -637,9 +638,9 @@ The differential cross-section, $\sfrac{\text{d}\sigma}{\text{d}\Omega}$ of a po
 However, as discussed in Section~\ref{sec:sld}, it is often easier to use the scattering length density, $\rho$.
 
 When an X-ray interacts with an atom, it is scattered by the interaction with the electrons, this is due to the X-ray being a form of electromagnetic radiation.
-Furthermore, it means that the scattering length of an atom by an X-ray is directly proportional to the number of electrons in the atom, so it is therefore difficult to discern between the scattering from a carbon atom (6 electrons) and a nitrogen atom (7 electrons), furthermore the scattering from hydrogen atoms is practically non-existent.
+Furthermore, it means that the scattering length of an atom by an X-ray is directly proportional to the number of electrons in the atom, so it is therefore difficult to discern between the scattering from a carbon atom (6 electrons) and a nitrogen atom (7 electrons), furthermore the scattering from hydrogen atoms is practically non-existent, in comparison.
 
-The scattering length a neutron by an atom varies unsystematically with respect to the atomic number of a species, this is shown in Figure~\ref{fig:scatlen}.
+The scattering length from neutrons varies nonsystematically with respect to the atomic number of a species, this is shown in Figure~\ref{fig:scatlen}.
 Furthermore to the apparently random variation with changes in atomic number, there is also significant variation with mass number, e.g. between isotopes of the same atom.
 There is also dependence due to the magnetic state of the atom, however, this is normally unimportant for soft matter.
 The scattering lengths differ with the nuclear spin energy level, this leads to an average scattering length, $\langle b \rangle$, for isotopes where the nuclear spin is non-zero ($S\neq 0$).

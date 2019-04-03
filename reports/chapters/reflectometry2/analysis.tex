@@ -37,7 +37,7 @@ The same protocol for this sampling was used herein.
 %
 
 \subsection{Simulation-dervied analysis}
-A custom-class, \texttt{md\_simulation}, was developed for \texttt{refnx} \cite{nelson_refnx_2019,nelson_refnx_2019-1} at enabled the determination of a reflectometry profile from simulation, using a similar method to that employed in previous work, such as Dabkowska \emph{et al.} \cite{dabkowska_modulation_2014}.
+A custom-class, \texttt{md\_simulation}, was developed for \texttt{refnx} \cite{nelson_refnx_2019,nelson_refnx_2019-1} that enabled the determination of a reflectometry profile from simulation, using a similar method to that employed in previous work, such as Dabkowska \emph{et al.} \cite{dabkowska_modulation_2014}.
 The Abel\`{e}s layer model formalism is applied to layers, the SLD of which is drawn directly from the simulation, and the thickness of which is defined.
 The layer thickness used was \SI{1}{\angstrom} for the Slipid and Berger potential model simulations, with an interfacial roughness between these layers of \SI{0}{\angstrom}.
 For the MARTINI potential model, a layer thickness of \SI{4}{\angstrom} was used, with an interfacial roughness of \SI{0.4}{\angstrom}. Each of the \SI{50}{\nano\second} production simulations were analysed each \SI{0.1}{\nano\second}, and the SLD profiles were determined by summing the scattering lengths, $b_j$, for each of the atoms in a given layer.

@@ -29,14 +29,14 @@ These values are taken from a variety of other techniques, some examples are sho
 %
 
 Table~\ref{tab:water} provides a general consensus that the volume of the phosphocholine head group (PC) is \SIrange{320}{360}{\angstrom\cubed}, while the phosphatidylglycerol head group (PG) is \SIrange{289}{291}{\angstrom\cubed}.
-However, these values were all determined from experiments or simulations where the head group was interacting with water molecules.
+However, these values were all determined from experiments \cite{sun_order_1994,kucerka_determination_2004,balgavy_evaluation_2001,pan_molecular_2012} or simulations \cite{armen_phospholipid_1998,kucerka_scattering_2012} where the head group was interacting with water molecules.
 It is not clear if this will influence the volume that it occupies, and if that volume will change in the presence of a non-aqueous solvent, such as the DES considered herein.
 The charged nature of the zwitterionic and anionic phospholipid head groups may have different interactions with the polar, but neutral water and the charged DES \cite{sanchez-fernandez_self-assembly_2018}.
 Additionally, it is known that, on water, increased surface pressures and the associated Liquid-Expanded to Liquid-Condensed phase transition will lead to a compression of the phospholipid tail volume, compared to the values in Table~\ref{tab:water} \cite{marsh_molecular_2010,small_lateral_1984}, and that this compaction has not necessarily been accounted for in the literature \cite{campbell_structure_2018}.
 
-These factors meant that it was necessary to develop a model that was considerate of the phospholipid chemistry while applying as much of the ``best practice'' from Campbell \emph{et al.} \cite{campbell_structure_2018} as possible, and ensuring that the head and tail group volumes were not constrained parameters.
+These factors meant that it was necessary to develop a model that was appropriate for the phospholipid chemistry while applying as much of the ``best practice'' from Campbell \emph{et al.} \cite{campbell_structure_2018} as possible, and ensuring that the head and tail group volumes were not constrained parameters.
 The lack of having these normally constrained parameters meant that it was necessary to consider methods by which the reflectometry measurements could be co-refined, in a similar fashion to contrast variation co-refinement in neutron reflectometry.
-This could be achieved by the co-refinement of reflectometry measurements at different surface pressures, as the model was considerate of the phospholipid chemistry, and the different surface pressures were in the same phase; Liquid-Condensed (LC) for DPPC and Liquid-Expanded (LE) for DMPC, DLPC, and DMPG.
+This could be achieved by the co-refinement of reflectometry measurements at different surface pressures, as the model was appropriate for the phospholipid chemistry, and the different surface pressures were in the same phase; Liquid-Condensed (LC) for DPPC and Liquid-Expanded (LE) for DMPC, DLPC, and DMPG.
 Therefore the head and tail group volumes will remain constant, and only the surface concentration and normal tail thickness will vary.
 
 The chemically-constrained model that has been used in this work was implemented in the Python library \texttt{refnx} \cite{nelson_refnx_2019,nelson_refnx_2019-1}.
@@ -117,7 +117,7 @@ It was assumed that DLPC and DMPG were also in the LE phase as there is no reaso
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{reflectometry1/gixd}
-    \caption{The GIXD patterns; (a) DPPC at \SI{30}{\milli\newton\per\meter} and \SI{22}{\celsius}, (b) DMPC at \SI{30}{\milli\newton\per\meter} and \SI{22}{\celsius}, and (c) DMPC at \SI{30}{\milli\newton\per\meter} and \SI{7}{\celsius}.}
+    \caption{The GIXD patterns, where $Q_z$ is the scattering vector normal to the interface and $Q_{xy}$ is that in the plane of the interface; (a) DPPC at \SI{30}{\milli\newton\per\meter} and \SI{22}{\celsius}, (b) DMPC at \SI{30}{\milli\newton\per\meter} and \SI{22}{\celsius}, and (c) DMPC at \SI{30}{\milli\newton\per\meter} and \SI{7}{\celsius}.}
     \label{fig:gixd}
 \end{figure}
 %

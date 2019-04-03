@@ -21,7 +21,7 @@ The computationally intensive nature of the pairwise force and energy calculatio
 This enabled a \num{\sim10} times speed up in the determination of the pairwise interactions when compared with the use of pure Python implementation.
 The pure Python implementation is still present in the package, to allow students that are familiar with Python to understand the mechanism without the requirement to become familiar with C.
 From version 1.2.1 \cite{mccluskey_arm61/pylj_2019-1}, the pure Python versions of the pairwise interactions have been built using \texttt{numba} just-in-time compilation \cite{noauthor_numba_nodate}, which enabled a \num{5} times speed up.
-This means that a \texttt{pylj} simulation without the compile C functions is now just twice as slow than the compiled version.
+This means that a \texttt{pylj} simulation without the compiled C functions is now just twice as slow than the compiled version.
 Furthermore, this speed is now comparable to the length of time taken to render the visualisation, meaning that the pairwise interactions are no longer the rate determining step in the use of \texttt{pylj}.
 
 The \texttt{sample.py} module is integral to the utility of \texttt{pylj}, as this allows educators to easily create custom visualisation environments.
@@ -32,6 +32,7 @@ Currently, the \texttt{forcefield.py} module is the location where the potential
 This involves the definition of a single function that describes the potential model (Code Block~\ref{cb:pyljlj} gives the function for the Lennard-Jones potential model), with a Boolean flag that defines where the force or energy should be returned.
 In future, for a planned \texttt{pylj} \num{2.0}, the potential model definition will be adapted such that each model is an individual class containing functions for each of the different parameters to be calculated.
 This will more easily allow the growth of \texttt{pylj} to enable features such as the simulation or particles with different potential model parameterisations and the inclusion of mixing rules.
+This will also allow for the development of more complex potential models, such as those that allow for long range electrostatic interaction that are not currently possible.
 %
 \begin{figure}
     \centering
@@ -73,15 +74,8 @@ Using this exercise, it is possible to introduce a cohort of students to the ins
 \end{figure}
 %
 
-\subsubsection{Molecular dynamics \& Monte Carlo}
-The final application of \texttt{pylj} is its use in teaching molecular dynamics or Monte Carlo methods.
+\subsubsection{Molecular dynamics}
+The final application of \texttt{pylj} is its use in teaching molecular dynamics, with Code Block~\ref{cb:pyljmd} showing a molecular dynamics algorithm.
 The framework of \texttt{pylj} means that it is straightforward, and does not necessarily require substantial familiarity with the Python programming language.
-Code Block~\ref{cb:pyljmd} shows a molecular dynamics algorithm, while Code Block~\ref{cb:pyljmc} gives that for canonical Monte Carlo.
-It is clear that both of these algorithms are simple and clear to implement, allowing the focus of the laboratory exercise to be on the students' understanding of the methodology.
+It is clear that this algorithms is simple and clear to implement, allowing the focus of the laboratory exercise to be on the students' understanding of the methodology.
 \texttt{pylj} has been applied in this way in a third-year undergraduate laboratory exercise at the University of Bath which introduced students to molecular dynamics simulations.
-%
-\begin{figure}
-    \centering
-        \lstinputlisting[caption={An example of an canonical Monte Carlo algorithm as implemented in \texttt{pylj}.},label={cb:pyljmc}]{reports/code_blocks/pyljmc.py}
-\end{figure}
-%
