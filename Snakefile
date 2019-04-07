@@ -87,15 +87,25 @@ FIGURES = [FIG_DIR + 'bath.pdf', FIG_DIR + 'diamond.pdf',
            FIG_REFL2 + 'water_40.pdf',
            FIG_REFL2 + 'water_50.pdf',
            FIG_REFL2 + 'dspc_slipids_30_ref_sld_short.pdf',
+           FIG_SAS + 'scaling.pdf',
+           FIG_SAS + 'speedup.pdf',
+           FIG_SAS + 'fake.pdf',
+           FIG_SAS + 'fake_assess1.pdf',
+           FIG_SAS + 'fake_assess2.pdf',
+           FIG_SAS + 'fake_assess3.pdf',
+           FIG_SAS + 'fake_assess4.pdf',
+           FIG_SAS + 'fake_assess5.pdf',
+           FIG_SAS + 'fake_assess6.pdf',
+           FIG_SAS + 'fake_assess7.pdf',
+           FIG_SAS + 'fake_assess8.pdf',
+           FIG_SAS + 'fake_assess9.pdf',
+           FIG_SAS + 'fake_assess10.pdf',
+           FIG_SAS + 'exp_data.pdf',
            FIG_TEACH + 'chem_data_py.pdf']
-#CHAPTERS = [REP + CHAP + 'introduction.tex', REP + CHAP + 'theory.tex',
-#            REP + CHAP + 'reflectometry1.tex', REP + CHAP + 'reflectometry2.tex',
-#            REP + CHAP + 'smallangle.tex', REP + CHAP + 'gisas.tex',
-#            REP + CHAP + 'teaching.tex', REP + CHAP + 'summary.tex']
 CHAPTERS = [REP + CHAP + 'introduction.tex', REP + CHAP + 'theory.tex',
             REP + CHAP + 'reflectometry1.tex',
-            REP + CHAP + 'reflectometry2.tex', #REP + CHAP + 'smallangle.tex',
-            REP + CHAP + 'teaching.tex']
+            REP + CHAP + 'reflectometry2.tex', REP + CHAP + 'smallangle.tex',
+            REP + CHAP + 'teaching.tex', REP + CHAP + 'summary.tex']
 LATEX = [REP + CHAP + INTRO + 'soft_matter.tex',
          REP + CHAP + INTRO + 'scattering.tex',
          REP + CHAP + INTRO + 'coarsegraining.tex',
@@ -129,6 +139,7 @@ LATEX = [REP + CHAP + INTRO + 'soft_matter.tex',
          REP + CHAP + SAS + 'context.tex',
          REP + CHAP + SAS + 'intro.tex',
          REP + CHAP + SAS + 'methods.tex',
+         REP + CHAP + SAS + 'discussion.tex',
          REP + 'appendices/papers.tex']
 CODE_BLOCKS = [REP + 'code_blocks/' + 'reflectometry.py',
                REP + 'code_blocks/' + 'lennardjones.py',
@@ -175,7 +186,7 @@ rule latexclean:
         rm -f reports/chapters/theory.aux
         """
 
-rule clean:
+rule clean_all:
     run:
         for i in FIGURES_PLOT:
             shell("rm -f {i}")
@@ -261,6 +272,86 @@ rule theory_figues:
     shell:
         """
         cd scripts && python theory.py
+        """
+
+rule fake_fig:
+    input:
+        'scripts/make_fake.py',
+    output:
+        'reports/figures/smallangle/fake.pdf'
+    shell:
+        """
+        cd scripts && python make_fake.py
+        """
+
+rule exp_fig:
+    input:
+        'scripts/plot_exp.py',
+        'data/smallangle/sans2d.txt'
+    output:
+        'reports/figures/smallangle/exp_data.pdf'
+    shell:
+        """
+        cd scripts && python plot_exp.py
+        """
+
+rule fakeassess_fig:
+    input:
+        'scripts/assess_fake.py',
+        'data/smallangle/best_fake/best1.fit',
+        'data/smallangle/best_fake/best1.xyz',
+        'data/smallangle/best_fake/best2.fit',
+        'data/smallangle/best_fake/best2.xyz',
+        'data/smallangle/best_fake/best3.fit',
+        'data/smallangle/best_fake/best3.xyz',
+        'data/smallangle/best_fake/best4.fit',
+        'data/smallangle/best_fake/best4.xyz',
+        'data/smallangle/best_fake/best5.fit',
+        'data/smallangle/best_fake/best5.xyz',
+        'data/smallangle/best_fake/best6.fit',
+        'data/smallangle/best_fake/best6.xyz',
+        'data/smallangle/best_fake/best7.fit',
+        'data/smallangle/best_fake/best7.xyz',
+        'data/smallangle/best_fake/best8.fit',
+        'data/smallangle/best_fake/best8.xyz',
+        'data/smallangle/best_fake/best9.fit',
+        'data/smallangle/best_fake/best9.xyz',
+        'data/smallangle/best_fake/best10.fit',
+        'data/smallangle/best_fake/best10.xyz'
+    output:
+        'reports/figures/smallangle/fake_assess1.pdf',
+        'reports/figures/smallangle/fake_assess2.pdf',
+        'reports/figures/smallangle/fake_assess3.pdf',
+        'reports/figures/smallangle/fake_assess4.pdf',
+        'reports/figures/smallangle/fake_assess5.pdf',
+        'reports/figures/smallangle/fake_assess6.pdf',
+        'reports/figures/smallangle/fake_assess7.pdf',
+        'reports/figures/smallangle/fake_assess8.pdf',
+        'reports/figures/smallangle/fake_assess9.pdf',
+        'reports/figures/smallangle/fake_assess10.pdf'
+    shell:
+        """
+        cd scripts && python assess_fake.py 1
+        python assess_fake.py 2
+        python assess_fake.py 3
+        python assess_fake.py 4
+        python assess_fake.py 5
+        python assess_fake.py 6
+        python assess_fake.py 7
+        python assess_fake.py 8
+        python assess_fake.py 9
+        python assess_fake.py 10
+        """
+
+rule scaling_fig:
+    input:
+        'scripts/scaling.py',
+    output:
+        'reports/figures/smallangle/scaling.pdf',
+        'reports/figures/smallangle/speedup.pdf'
+    shell:
+        """
+        cd scripts && python scaling.py
         """
 
 rule dppc_xray_analysis:

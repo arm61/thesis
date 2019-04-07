@@ -1,0 +1,75 @@
+\providecommand*{\mcitethebibliography}{\thebibliography}
+\csname @ifundefined\endcsname{endmcitethebibliography}
+{\let\endmcitethebibliography\endthebibliography}{}
+\begin{mcitethebibliography}{7}
+\providecommand*{\natexlab}[1]{#1}
+\providecommand*{\mciteSetBstSublistMode}[1]{}
+\providecommand*{\mciteSetBstMaxWidthForm}[2]{}
+\providecommand*{\mciteBstWouldAddEndPuncttrue}
+  {\def\EndOfBibitem{\unskip.}}
+\providecommand*{\mciteBstWouldAddEndPunctfalse}
+  {\let\EndOfBibitem\relax}
+\providecommand*{\mciteSetBstMidEndSepPunct}[3]{}
+\providecommand*{\mciteSetBstSublistLabelBeginEnd}[3]{}
+\providecommand*{\EndOfBibitem}{}
+\mciteSetBstSublistMode{f}
+\mciteSetBstMaxWidthForm{subitem}
+{(\emph{\alph{mcitesubitemcount}})}
+\mciteSetBstSublistLabelBeginEnd{\mcitemaxwidthsubitemform\space}
+{\relax}{\relax}
+
+\bibitem[McCluskey \emph{et~al.}(2019)McCluskey, {Sanchez-Fernandez}, Edler,
+  Parker, Jackson, Campbell, and Arnold]{mccluskey_bayesian_2019}
+A.~R. McCluskey, A.~{Sanchez-Fernandez}, K.~J. Edler, S.~C. Parker, A.~J.
+  Jackson, R.~A. Campbell and T.~Arnold, \emph{Phys. Chem. Chem. Phys.}, 2019,
+  \textbf{21}, 6133--6141\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[McCluskey \emph{et~al.}(2019)McCluskey, {Sanchez-Fernandez}, Edler,
+  Parker, Jackson, Campbell, and Arnold]{mccluskey_lipids_at_airdes_2019}
+A.~R. McCluskey, A.~{Sanchez-Fernandez}, K.~J. Edler, S.~C. Parker, A.~J.
+  Jackson, R.~A. Campbell and T.~Arnold, \emph{Lipids\_at\_airdes ({{Version}}
+  1.0)}, \url{http://doi.org/10.5281/zenodo.2577796}, 2019\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Nelson and Prescott(2019)]{nelson_refnx_2019}
+A.~R.~J. Nelson and S.~W. Prescott, \emph{J. Appl. Crystallogr.}, 2019,
+  \textbf{52}, 193--200\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Nelson \emph{et~al.}(2019)Nelson, Prescott, Gresham, and
+  McCluskey]{nelson_refnx_2019-1}
+A.~R.~J. Nelson, S.~W. Prescott, I.~Gresham and A.~R. McCluskey, \emph{Refnx
+  v0.1.2}, \url{http://doi.org/10.5281/zenodo.2552023}, 2019\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Nelson()]{nelson_refnx-models_nodate}
+A.~R. Nelson, \emph{Refnx-Models}, \url{https://github.com/refnx/refnx-models},
+  (accessed 2019-04-07)\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[noa()]{noauthor_sasfit_nodate}
+\emph{{{SASfit}}}, \url{https://kur.web.psi.ch/sans1/SANSSoft/sasfit.html},
+  (accessed 2018-11-11)\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[noa()]{noauthor_sasview_nodate}
+\emph{{{SASview}} for {{Small Angle Scattering}}},
+  \url{http://www.sasview.org}, (accessed 2016-10-26)\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\end{mcitethebibliography}

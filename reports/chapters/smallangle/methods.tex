@@ -4,13 +4,13 @@ The computational methodology described herein has been implemented in the open-
 
 \subsection{Simulation Methodology}
 
-The \texttt{fitoog} software takes as input a series of input files that define the molecules and the intramolecular interactions. 
-The molecule input file is space separated consisting of an index, particle name, x-coordinate, y-coordinate, z-coordinate, and scattering length. 
-While, the intramolecular interactions file describes the bonds within the molecule, in lieu of angular interactions a pseudo-bond is defined between each second particle in the system. 
-When the initial molecule input file is read in, a differences object is created which stores the differential between the particle description and the more severe coarse-grained description that is used in the particle swarm optimisation. 
+The \texttt{fitoog} software takes as input a series of input files that define the molecules and the intramolecular interactions.
+The molecule input file is space separated consisting of an index, particle name, x-coordinate, y-coordinate, z-coordinate, and scattering length.
+While, the intramolecular interactions file describes the bonds within the molecule, in lieu of angular interactions a pseudo-bond is defined between each second particle in the system.
+When the initial molecule input file is read in, a differences object is created which stores the differential between the particle description and the more severe coarse-grained description that is used in the particle swarm optimisation.
 
-Inspired by the coarse-graining methodology applied to directional colloid self-assembly at Law \emph{et al.} \cite{law_coarse-grained_2016}, a severe coarse-graining methodolgy was applied to the surfactant molecules.
-This allowed for a significantly reduced parameter dimensionality to which the particle swarm optimisation was applied. 
+Inspired by the coarse-graining methodology applied to directional colloid self-assembly by Law \emph{et al.} \cite{law_coarse-grained_2016}, a severe coarse-graining methodolgy was applied to the surfactant molecules.
+This allowed for a significantly reduced parameter dimensionality to which the particle swarm optimisation was applied.
 The severe coarse-graining involved reduction the surfactant to a `director' description; where each surfactant molecule is defined by a position and a direction, shown pictorially in Figure~\ref{fig:director}.
 This reduced the parameter dimensionality to just six variables per molecule; three of which described the position of the centre-of-mass position of the molecule ($a$, $b$, $c$) and three that describe the orientaion of the surfactant in space ($\phi$, $\omega$, $\kappa$).
 These were the variables that were exposed to the particle swarm optimisation method outlined in Section~\ref{sec:partswarm}.
@@ -26,7 +26,7 @@ These were the variables that were exposed to the particle swarm optimisation me
 Following each iteration of the particle swarm algorithm, the director description of the surfactant was expanded (using the differences object mentioned above) to a MARTINI representation (or whatever representation was used as an input).
 The molecule was then rotated based on a rotation matrix, in this work the rotation matrix was constructed by first rotating the rotation axis by $-\phi$ and $-\omega$, then rotating by $\kappa$ in around the $z$-axis, before rotating the axis back to the original position by $\omega$ and $\phi$ \cite{evans_rotations_2001} (Figure~\ref{smallangle/rotdia} defines these angles).
 With the severely coarse-grained description fully expanded, the system could be subjected to a potential model energy minimisation algorithm (implemented as a gradient descent) if desired before the scattering profile was calculated using the Golden Vectors method developed by Watson and Curtis \cite{watson_rapid_2013}.
-The agreement between the calculated scattering profile and the `experimental' scattering was used as a figure of merit, $\zeta$, that was to be optimised by the particle swarm algorithm. 
+The agreement between the calculated scattering profile and the `experimental' scattering was used as a figure of merit, $\zeta$, that was to be optimised by the particle swarm algorithm.
 %
 \begin{figure}
     \centering
@@ -38,18 +38,9 @@ The agreement between the calculated scattering profile and the `experimental' s
 
 \subsection{Parallelisation}
 
-The use of a population based optimisation methods allowed for easy access to highly parallel simulation. 
-This was achieved but parallelisation over the cores available to the simulation such that a population is split evenly across them. 
-There is intercore messaging that makes use of the MPI libraries, where the figure of merit from each core is shared with a parent core that determines the global best population. 
-This global best is then shared to all cores of the process. 
-Figure~\ref{fig:para} described the parallelisation method pictorially.
-The parallelisation methodologies is to reduce the time spent when the helper cores are not in use. 
-I feel that, while more sophisticated methodologies exist (such having a core-level best population and only occasionally finding the true global best), this implementation offers a useful test-case for assessing the utility of this optimisation methodology. 
-%
-\begin{figure}
-    \centering
-    %\includegraphics[width=0.8\textwidth]{smallangle/parallel}
-    \caption{A schematic of the parallelisation methodology applied currently in the \texttt{fitoog} code.}
-    \label{fig:para}
-\end{figure}
-%
+The use of a population based optimisation methods allowed for easy access to highly parallel simulation.
+This was achieved but parallelisation over the cores available to the simulation such that a population is split evenly across them.
+There is intercore messaging that makes use of the MPI libraries, where the figure of merit from each core is shared with a parent core that determines the global best population.
+This global best is then shared to all cores of the process.
+The parallelisation methodologies is to reduce the time spent when the helper cores are not in use.
+I feel that, while more sophisticated methodologies exist (such having a core-level best population and only occasionally finding the true global best), this implementation offers a useful test-case for assessing the utility of this optimisation methodology.

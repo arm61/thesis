@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{47}
+\begin{mcitethebibliography}{49}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -165,6 +165,20 @@ A.~Pallant and R.~F. Tinker, \emph{J. Sci. Educ. Technol.}, 2004, \textbf{13},
   Stillings]{jones_molecular_2005}
 L.~L. Jones, K.~D. Jordan and N.~A. Stillings, \emph{Chem. Educ. Res. Pract.},
   2005, \textbf{6}, 136--149\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[noa()]{noauthor_democritus_nodate}
+\emph{Democritus: {{A Molecular Dynamics}} Tutorial},
+  \url{http://www.cse.scitech.ac.uk/ccg/software/Democritus/Democritus.html},
+  (accessed 2019-04-04)\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[noa()]{noauthor_argonmd_nodate}
+\emph{{{ArgonMD}}}, \url{http://www.argonmd.co.uk}, (accessed 2019-04-04)\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

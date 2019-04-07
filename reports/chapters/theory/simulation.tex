@@ -180,7 +180,7 @@ Markov chain Monte-Carlo (MCMC) is a sampling methodology, derived from direct s
 The aim of an MCMC algorithm is to sample a probability distribution, when parameters are described in terms of their degree of probability \cite{sivia_data_2006}.
 Similar to molecular dynamics, in practical terms, MCMC should not be used on a system that is not already optimised, as its purpose is probability distribution sampling rather than minimisation.
 Generally, the approach would be to optimise using, for example, one of the approaches described above, then to use MCMC or molecular dynamics to sample the appropriate search-space.
-For example, in this work MCMC is used extensively, following the optimisation of a reflectometry model using a differential evolution algorithm, to quantify the inverse uncertainties of the model.
+For example, in this work MCMC is used extensively, following the optimisation of a reflectometry model using a differential evolution algorithm, to quantify the inverse uncertainties of the model (this is the name given to the uncertainties in the parameters fitted in the modelling process).
 In this context, the inverse uncertainty is the uncertainty on a given parameter within the model.
 In addition to being able to give information about the inverse uncertainties, MCMC also offers a more complete understanding of the correlations present between the different parameters \cite{gilks_markov_1995}, as the interactions between the parameter variation has been quantified.
 

@@ -1,6 +1,5 @@
 \section{The interaction between simulation and scattering}
 \label{sec:sim_and_scat}
-
 The Jupyter Notebook framework and \texttt{pylj} software were then used to enable learning and understanding in the OER entitled ``The interaction between simulation and scattering'' (available at \href{https://pythoninchemistry.org/sim_and_scat}{pythoninchemistry.org/sim\_and\_scat}) \cite{mccluskey_pythoninchemistry/sim_and_scat_2019}.
 This is an online, open-source, interactive learning resource written to introduce members of the scattering and diffraction community to molecular dynamics simulations.
 The aim is to improve their understanding, and therefore reduce the treatment of molecular dynamics as ``black box'' calculation by experimental colleagues.
@@ -9,7 +8,6 @@ The OER comprises five lessons that introduce classical molecular dynamics metho
 Finally, we show a ``real-world'' example of calculation of the scattering profile from a simulation of a lysozyme protein in solution.
 
 \subsection{Resource construction}
-
 The resource is available in two main formats.
 First, as a series of web pages, hosted at \href{https://pythoninchemistry.org/sim_and_scat}{pythoninchemistry.org/sim\_and\_scat}.
 Secondly, as the source-code repository used to build these webpages \cite{mccluskey_pythoninchemistry/sim_and_scat_2019}.
@@ -21,11 +19,9 @@ The resource is provided under a CC-BY license \cite{creative_commons_creative_2
 This allows readers to reuse or remix the material to enhance their own educational platform and for secondary authors to contribute to improving the source material.
 
 \subsection{Resource outline}
-
 The resource follows a simple outline that introduces key aspects of molecular dynamics simulations.
 
 \subsubsection{Home}
-
 The welcome page introduces the resource, explains the purpose, and gives the user information about how the resource may be used, including details of the Thebelab and BinderHub integrations.
 This page also contained details of the permitted use/reuse, sharing of the content of the resource and licensing.
 Finally, a list of authors and contributors was given.
@@ -39,14 +35,12 @@ The presence of off-the-shelf, general potential models are discussed; with the 
 Finally, we mention mixing rules; again discussing the possible problems that a user may encounter if applying these blindly to specific systems.
 
 \subsubsection{Molecular dynamics}
-
 With the concept of a classical interatomic potential introduced, the resource then begins to focus on how these are used in molecular dynamics simulations.
 We work through how a one dimensional NVE (constant number, volume, and energy) molecular dynamics simulation may be built, using the Velocity-Verlet algorithm and the Lennard-Jones potential model \cite{swope_computer_1982,lennard-jones_determination_1924}.
 The Velocity-Verlet algorithm is introduced in terms of Newton's laws of motion and the generalised equations of motion.
 Finally, we discuss a range of key factors that can affect molecular dynamics simulations; simulation ensembles, the distance cut-off for an interatomic potential, and the use of periodic boundary conditions.
 
 \subsubsection{\texttt{pylj} and interaction with scattering}
-
 The final aspect of the resource covers using molecular dynamics simulations to understand scattering profiles.
 This is presented as a practical example, using the \texttt{pylj} package \cite{mccluskey_pylj_2018,mccluskey_arm61/pylj_2019-2}.
 A two-dimensional molecular dynamics simulation of argon atoms interacting through a Lennard-Jones potential is demonstrated.
@@ -57,7 +51,6 @@ The user is invited to observe the effect of simulation temperature on the resul
 We finish by discussing alternative, faster, algorithms for calculating scattering profiles, such as the Fibonacci Sequence or Golden Vectors method \cite{watson_rapid_2013,svergun_solution_1994}
 
 \subsubsection{``Real'' simulation and scattering}
-
 Having shown the development of a scattering profile from an idealised system, we then direct the user to a popular resource for the GROMACS \cite{berendsen_gromacs_1995} molecular dynamics software.
 This resource gives a quick introduction to using GROMACS to simulate a lysozyme molecule in buffer \cite{lemkul_gromacs_nodate}.
 The student may then use their own simulated trajectory or one that can be downloaded from the OER.

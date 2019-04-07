@@ -250,9 +250,23 @@ Attention is drawn to the fact that copyright of this thesis rests with the auth
 \begin{abstract}
 \addchaptertocentry{\abstractname} % Add the abstract to the table of contents
 
-The abstract will go here.
-This will be a brief description of the work in the thesis.
+This work focuses on the use of different coarse-graining methodologies to assist in the analysis of scattering measurements from soft matter species, such as surfactant monolayers and micelles.
+The term `coarse-graining' is used broadly in this work; it is used to describe the coarse-graining of a classical simulation potential model and the use of these to analyse reflectometry measurements.
+It has also been used to describe a surfactant monolayer model that consists two layers, the surfactant heads and tails, constrained to respect the chemical bond between them.
+Additionally, a severe coarse-graining methodology has been used to describe a surfactant molecule as just a position and direction in space, to help in the understanding of micellar structure from small angle scattering.
+In all three cases, the aim of the applied coarse-graining is to improve the methods of analysis that may be performed in the analysis of reflectometry and small angle scattering measurements.
 
+A chemically-consistent surfactant monolayer model was developed and applied to reflectometry measurements of a phosphoplipid monolayer at the interface between air and a deep eutectic solvent.
+This model, which allowed the volume of the phosphoplipid head and tails to vary freely, allowed for a unique insight into the structure of the monolayer at the given interface.
+In an effort to assess the utility of coarse-grained potential models in the analysis of neutron reflectometry three potential models of different particle grain size were used to model a phospholipid monolayer.
+This allowed for a better undertstanding of the simulation resolution necessary to accurately and successfully apply simulation-driven analysis to reflectometry.
+Furthermore, using the highest resolution potential model it was possible to describe improvements that may be made to the chemically-consistent model in the future.
+The final coarse-graining method involved using a particle swarm optimisation method to improve the position and direction of surfactant molecules to reproduce data from an experimental small angle neutron scattering measurement of a micellar solution.
+The aim was to develop a method to easily produce a starting structure, for later molecular dynamics simulation, of a realistic micelle purely from the experimental scattering.
+
+Alongside the development and application of coarse-graining methodologies, the final chapter of this work describes the development of open-source software and teaching material for the introduction of molecular simulation to students, in particular those that are users of scattering mesurements.
+It is believed by many users of scattering techniques that molecular simulation driven analysis would offer improved analysis, however, few have access to the skills or knowledge to understand these simulations themselves.
+These open-educational resources aim to introduce students to simulation in its utility in scattering analysis, to enable a future where simulation driven analysis is performed accurately by all.
 
 \end{abstract}
 
@@ -264,7 +278,7 @@ This will be a brief description of the work in the thesis.
 \addchaptertocentry{\usagename} % Add the abstract to the table of contents
 
 This thesis exists as a piece of completely reproducible research.
-I have endevoured to include as much algorithmic and methodological detail within the text.
+I have endevoured to include as much algorithmic and methodological detail within the text, and where relevant working Code Blocks written in Python have been included for clarity.
 However, in order to provide complete, and easy, reproducibility an electronic supplementary information (ESI) is available online in the form of a Git repository.
 This ESI provides full details of the analyses performed in this work and access to an automated analysis workflow.
 
@@ -281,7 +295,7 @@ The ESI may be accessed at the following DOI: \href{https://doi.org/10.5281/zeno
 \begin{pubsstatement}
 \addchaptertocentry{\pubsname} % Add the abstract to the table of contents
 
-Some of the work covered in Chapter~\ref{theory} has been previously published in:
+Some of the information in Chapter~\ref{theory} has been previously published in:
 \begin{itemize}
   \item Andrew R. McCluskey and Karen J. Edler, \emph{Curr. Org. Chem.}, 2018, \textbf{22} (8), 750, DOI: \href{https://doi.org/10.2174/1875692115666170612104439}{10.2174/1875692115666170612104439}.
 \end{itemize}
@@ -296,7 +310,7 @@ Some of the work covered in Chapter~\ref{reflectometry2} has been previously pub
 Some of the work covered in Chapter~\ref{teaching} has been previously published in:
 \begin{itemize}
   \item Andrew R. McCluskey, Benjamin J. Morgan, Karen J. Edler, and Stephen C. Parker, \emph{J. Open Source Educ.}, 2018, \textbf{1} (2), 19, DOI: \href{https://doi.org/10.21105/jose.00019}{10.21105/jose.00019}.
-  \item Andrew R. McCluskey, James Grant, Adam R. Symington, Tim Snow, James Doutch, Benjamin J. Morgan, Stephen C. Parker, and Karen J. Edler, \emph{J. Appl. Crystallogr.}, 2019, Accepted, preprint available on arXiv: \href{https://arxiv.org/abs/1902.01324}{1902.01324}.
+  \item Andrew R. McCluskey, James Grant, Adam R. Symington, Tim Snow, James Doutch, Benjamin J. Morgan, Stephen C. Parker, and Karen J. Edler, \emph{J. Appl. Crystallogr.}, 2019, Accepted, Preprint available on arXiv: \href{https://arxiv.org/abs/1902.01324}{1902.01324}.
 \end{itemize}
 \end{pubsstatement}
 

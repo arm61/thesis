@@ -8,5 +8,35 @@
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
-%\bibliographystyle{rsc}
-%\bibliography{main}
+This work aimed to investigate the use of different coarse-graining methodologies to improve and aid the analysis of scattering data from scattering experiments, in particular, reflectometry and small angle scattering.
+The different coarse-graining methods varied both in what was being coarse-grained, from the potential model to descriptions of entire surfactants, and made use of a series of optimisation and sampling techniques to improve the inference from these analyses.
+Some of these methods showed greater success, for example the use of classical simulation-driven analysis for reflectometry and the chemically-consistent monolayer models, than others, however I feel that this work represents a significant step forward in the development of analysis methodologies for scattering experiments.
+Finally, teaching materials for introduction classical simulation to users of scattering were introduced that I believe with provide a new platform for engagement and understanding in simulation-driven analysis.
+
+\section{Chemically-consistent modelling of X-ray and neutron reflectometry}
+The use of coarse-graining is commonplace in the analysis reflectometry measurements, as the models that are used are typically made up layers which describe different chemical components of the underlying structure.
+In the work contained in Chapter~\ref{reflectometry1}, the use of a chemically-consistent model was used for the analysis of a set of phospholipid reflectometry measurements at an air-deep eutectic solvent (DES) interface.
+This model was coarse-grained such that the system was described as consisting of two layers describing the phospholipid heads and tails.
+The use of this coarse-grained method allowed for X-ray reflectometry measurements conducted at different surface pressures to be co-refined, by keeping chemical features, such as the head and tail volumes constant, across the different surface pressures for a given lipid.
+This allowed for the constraints, that are typically applied in the modelling of phospholipid monolayers at an air-water interface, on the head and tail volume to be removed in consideration of the effect of the non-aqueous solvent and surface pressure on these.
+This method allowed for an unique insight into the structure of the phospholipid monolayer at the air-DES interface, showing a strong similarity to those formed at the air-water interface, however, it was possible to observe that the head group volme for the phosphoditylglycerol containing lipid appeared to swell as a result of the ionic solvent.
+
+This work was published alongside an fully-reproducible electronic supplementary information \cite{mccluskey_bayesian_2019,mccluskey_lipids_at_airdes_2019}, which gave access to the chemically-consistent model Python class.
+This will allow others to use this model in their data analysis, additionally there is scope to include this model (and the MDSimulation Python class) in an accessible repository for models that may be used with the \texttt{refnx} package \cite{nelson_refnx_2019,nelson_refnx_2019-1,nelson_refnx-models_nodate}.
+I believe that the future of X-ray and neutron reflectometry analysis will build on the sharing of these models enabling science to be performed by science-domain experts, who have little reflectometry experience.
+This is already the case in small angle scattering where a large library of functional models exist and users can pick those which fit their needs \cite{noauthor_sasfit_nodate,noauthor_sasview_nodate}.
+
+This chapter presented the use of Markov chain Monte Carlo (MCMC) sampling to probe the inverse uncertainties of a given model, in addition to the interparameter correlations.
+However, it was note that the use of MCMC can only probe the parameter space available within the given experimental uncertainties, which in particular for X-ray reflectometry measurements are believed to be significantly underestimated (leading to an underestimation in the inverse uncertainties of the model).
+Therefore, I feel that in order to fully leverage the power of this sampling process for inverse uncertainty determination, it is first necessary to determine accurate uncertainties for the experimental measurements, which is a non-trival task.
+Hopefully, as there is growing interest in advanced modelling approaches, such as Bayesian inference and machine learning, there will be a concerted effort from large scale facilities and instrument manufacturers to accurately define the uncertainties of a given measurement.
+
+\section{Applying atomistic and coarse-grained simulation to reflectometry analysis}
+
+\section{Using particle swarm methods for small angle scattering analysis}
+
+\section{Developing open-source teaching materials for classical simulation and scattering}
+
+\renewcommand\bibsection{\section{\refname}}
+\bibliographystyle{rsc}
+\bibliography{reports/main}
