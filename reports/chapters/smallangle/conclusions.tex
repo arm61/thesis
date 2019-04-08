@@ -1,1 +1,8 @@
 \section{Conclusions}
+This chapter presented the development of a software entitled \texttt{fitoog}, the aim of which was to try and use particle swarm optimisation in order to generate a resonable starting structure for a molecular dynamics simulation of multiple micelles in solution.
+Previously work had shown it was possible to build a single micelle that agreed well with dilute experimental data.
+However, there had been no previous work investigating the generation of multiple micelles based on the scattering data alone.
+
+\texttt{fitoog} is a highly parallelised software, capable of running efficiently on high performance computing resources.
+It was determined that the serial component of running \texttt{fitoog} made up \SI{0.2}{\percent} of the overall calculation.
+From ten repetitions, the software was able to resolve the expected structure for a model test case quickly running on a workstation class machine.

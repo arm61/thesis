@@ -150,6 +150,7 @@ LATEX = [REP + CHAP + INTRO + 'soft_matter.tex',
          REP + CHAP + SAS + 'intro.tex',
          REP + CHAP + SAS + 'methods.tex',
          REP + CHAP + SAS + 'discussion.tex',
+         REP + CHAP + SAS + 'conclusions.tex',
          REP + 'appendices/papers.tex']
 CODE_BLOCKS = [REP + 'code_blocks/' + 'reflectometry.py',
                REP + 'code_blocks/' + 'lennardjones.py',
