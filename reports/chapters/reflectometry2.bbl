@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{53}
+\begin{mcitethebibliography}{54}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -343,6 +343,14 @@ A.~R.~J. Nelson, S.~W. Prescott, I.~Gresham and A.~R. McCluskey, \emph{Refnx
   Lorenz]{allen_specific_2016}
 D.~T. Allen, Y.~Saaka, L.~C. Pardo, M.~J. Lawrence and C.~D. Lorenz,
   \emph{Phys. Chem. Chem. Phys.}, 2016, \textbf{18}, 30394--30406\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Pandit \emph{et~al.}(2003)Pandit, Bostick, and
+  Berkowitz]{pandit_algorithm_2003}
+S.~A. Pandit, D.~Bostick and M.~L. Berkowitz, \emph{J. Chem. Phys.}, 2003,
+  \textbf{119}, 2199--2205\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

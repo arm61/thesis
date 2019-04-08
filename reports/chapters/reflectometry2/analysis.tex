@@ -15,7 +15,7 @@ A uniform background, limited to lie within \SI{10}{\percent} of the highest $q$
 
 The experimental data from all seven contrasts were co-refined to a single monolayer model at each surface pressure, where th ehead thickness, tail thickness, and interfacial roughness were allowed to vary.
 The co-refinement of measurements at different surface pressures was not required, as there was a substantial number of contrasts measured.
-The values of the head and tail scattering lengths are given in Table~\ref{tab:trad}, while the SLD of the super and subphase were taken as \SI{0}{\per\angstrom\square} and \SI{6.35}{\per\angstrom\square} (for \ce{D2O}) and \SI{0}{\per\angstrom\square} (for ACMW) respectively.
+The values of the head and tail scattering lengths are given in Table~\ref{tab:scat}, while the SLD of the super and subphase were taken as \SI{0}{\per\squared\angstrom} and \SI{6.35}{\per\squared\angstrom} (for \ce{D2O}) and \SI{0}{\per\squared\angstrom} (for ACMW) respectively.
 For each co-refinement of seven neutron reflectometry measurements, there were in total five degrees of freedom in the fitting process, and the fitting was performed using a differential evolution algorithm.
 As with the work of Chapter~\ref{reflectometry1}, Markov chain Monte Carlo sampling was used to obtain experimental uncertainties on the fitted model, enabled by the \texttt{emcee} package \cite{foreman-mackey_emcee_2013}.
 The same protocol for this sampling was used herein.
@@ -58,7 +58,7 @@ In order to assess the agreement between the model from each method, the followi
 %
 where, $q_i$ is a given $q$-vector, $R_{\text{exp}}(q_i)$ is the experimental reflected intensity, $R_{\text{sim}}(q_i)$ is the simulation-derived/traditionally-developed reflected intensity, and $\delta R_{\text{exp}}(q_i)$ is the resolution function of the experimental data.
 
-The number of water molecules per head group, wph, was also compared between the different methods.
+The number of water molecules per head group (wph) was also compared between the different methods.
 This was obtained from the monolayer model by considering the solvent fraction in the head-layer, $\phi_h$, the volume of the head group, $V_h$, and taking the volume of a single water molecule to be \SI{29.9}{\angstrom\cubed} (from the density of water as \SI{997}{\kg\per\meter\cubed}),
 %
 \begin{equation}

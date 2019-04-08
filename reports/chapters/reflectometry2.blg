@@ -4,49 +4,47 @@ The top-level auxiliary file: reports/chapters/reflectometry2.aux
 The style file: rsc.bst
 Database file #1: rsc-main.bib
 Database file #2: reports/main.bib
-Warning--I didn't find a database entry for "pandit_algorithm_2003"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 rsc 2016/08/22 v3.1f
-You've used 53 entries,
+You've used 54 entries,
             3113 wiz_defined-function locations,
-            1034 strings with 17664 characters,
-and the built_in function-call counts, 20214 in all, are:
-= -- 1481
-> -- 1513
+            1039 strings with 17867 characters,
+and the built_in function-call counts, 20580 in all, are:
+= -- 1510
+> -- 1536
 < -- 20
-+ -- 473
-- -- 420
-* -- 2202
-:= -- 3125
-add.period$ -- 53
-call.type$ -- 53
++ -- 480
+- -- 426
+* -- 2243
+:= -- 3179
+add.period$ -- 54
+call.type$ -- 54
 change.case$ -- 1
-chr.to.int$ -- 53
-cite$ -- 53
-duplicate$ -- 800
-empty$ -- 1318
-format.name$ -- 494
-if$ -- 4028
+chr.to.int$ -- 54
+cite$ -- 54
+duplicate$ -- 815
+empty$ -- 1344
+format.name$ -- 501
+if$ -- 4102
 int.to.chr$ -- 2
 int.to.str$ -- 1
 missing$ -- 1
-newline$ -- 339
-num.names$ -- 160
-pop$ -- 173
+newline$ -- 345
+num.names$ -- 163
+pop$ -- 176
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 422
+skip$ -- 429
 stack$ -- 0
-substring$ -- 1220
-swap$ -- 404
-text.length$ -- 108
+substring$ -- 1247
+swap$ -- 412
+text.length$ -- 110
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 368
+type$ -- 375
 warning$ -- 0
-while$ -- 162
+while$ -- 165
 width$ -- 0
-write$ -- 765
-(There was 1 warning)
+write$ -- 779

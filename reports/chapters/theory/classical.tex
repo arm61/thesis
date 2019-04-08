@@ -34,7 +34,7 @@ These typically consist of bond stretches, angle bends and dihedral torsions; wi
 \begin{equation}
 \begin{aligned}
   E_{\text{bonded}}(b, \theta, \phi) & = \sum_{\text{bonds}}K_b(b-b_0)^2 + \sum_{\text{angles}}K_{\theta}(\theta-\theta_0)^2 \\
-  + \sum_{\text{dihedrals}} & \frac{1}{2}\big\{A_1[1 + \cos(\phi)] + A_2(1 - \cos(2\phi)] + A_3(1 + \cos(3\phi)]\big\},
+  + \sum_{\text{dihedrals}} & \frac{1}{2}\big\{A_1[1 + \cos(\phi)] + A_2[1 - \cos(2\phi)] + A_3[1 + \cos(3\phi)]\big\},
 \end{aligned}
 \end{equation}
 %
@@ -120,12 +120,12 @@ The method of obtaining such parameters is referred to as \emph{parameterising} 
 Model parameterisation is important for all types of potential models, for example it is necessary to determine the equilibrium bond length $b_0$ and the force constant $K_b$ for a given covalent bonds, or the partial electrostatic charge that is present on a carbonyl oxygen atom when it interacts with the hydrogen atom from a neighbouring hydroxyl group.
 
 Parameterisation of a potential model is usually achieved by comparison of fitting the potential model functions to energetic data obtained using a higher accuracy technique, such as quantum mechanical calculations or experimental methods.
-We will not dwell on the details of potential model parameterisation (it is discuss in detail in many textbooks \cite{harvey_computational_2018,leach_molecular_1996}), however, it is important to note that the parameters used in molecular dynamics simulation are not absolute and depended heavily on the merits of the parameterisation method.
+We will not dwell on the details of potential model parameterisation (it is discusses in detail in many textbooks \cite{harvey_computational_2018,leach_molecular_1996}), however, it is important to note that the parameters used in molecular dynamics simulation are not absolute and depended heavily on the merits of the parameterisation method.
 
 In the work, we focused heavily on the use of off-the-shelf potential models.
 The was done to ensure the easy reproducibility of the work.
 Off-the-shelf potential models are those that are determined to be applied to a wide range of chemical systems.
-An example includes the OPLS potential mode which was parameterised by comparison to quantum mechanical measurements and crystallographic data \cite{jorgensen_opls_1988}.
+An example includes the OPLS potential model which was parameterised by comparison to quantum mechanical measurements and crystallographic data \cite{jorgensen_opls_1988}.
 While these off-the-shelf potential models are useful for their ease-of-use, it is noted that often these forcefields may require optimisation for the particular system.
 
 \subsection{Coarse-graining}

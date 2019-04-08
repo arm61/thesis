@@ -133,7 +133,7 @@ An implementation of the DE algorithm is given programmatically in Code Block~\r
 
 \subsubsection{Particle swarm}
 \label{sec:partswarm}
-Particle swarm optimisation is a type of swarm intelligence population-based optimisation method.
+Particle swarm optimisation (PSO) is a type of swarm intelligence population-based optimisation method.
 This optimisation method was originally developed by Kennedy, Eberhart, and Shi for the simulation of social organisms such as bird flocks \cite{kennedy_particle_1995,shi_modified_1998}.
 Particle swarm methods are particularly suitable for the optimisation, and sampling, of parametric search-spaces with a large number of similar minima, and therefore is useful for the study of the self-assembly of soft matter materials (Section~\ref{smallangle}).
 
@@ -176,7 +176,7 @@ Figure~\ref{fig:part_swarm} shows an example of the particle swarm optimisation 
 
 \subsection{Markov chain Monte-Carlo}
 \label{sec:mcmc}
-Markov chain Monte-Carlo (MCMC) is a sampling methodology, derived from direct sampling Monte-Carlo \cite{krauth_statistical_2006}.
+Markov chain Monte Carlo (MCMC) is a sampling methodology, derived from direct sampling Monte-Carlo \cite{krauth_statistical_2006}.
 The aim of an MCMC algorithm is to sample a probability distribution, when parameters are described in terms of their degree of probability \cite{sivia_data_2006}.
 Similar to molecular dynamics, in practical terms, MCMC should not be used on a system that is not already optimised, as its purpose is probability distribution sampling rather than minimisation.
 Generally, the approach would be to optimise using, for example, one of the approaches described above, then to use MCMC or molecular dynamics to sample the appropriate search-space.
@@ -216,7 +216,7 @@ Some random pertubation is then applied to the optimised solution,
 \Theta = \theta + aR,
 \end{equation}
 %
-where $R\sim N(0, 1)$.
+where $R\sim N(0, 1)$ and $a$ is the step size.
 A new $\chi^2$ is found for $\Theta$, and the probablity that this transition will occur is found,
 %
 \begin{equation}
@@ -253,7 +253,7 @@ In order to determine the acceleration on the particle, it is necessary to know 
 The force, $f$, is a function of the potential energy, $E$, as found from a classical potential, of that atom,
 %
 \begin{equation}
-f(r) = \frac{-\partial E_{\text{total}}(r)}{\partial r},
+f(r) = \frac{-\delta E_{\text{total}}(r)}{\delta r},
 \label{equ:forcesca}
 \end{equation}
 %
@@ -310,10 +310,10 @@ These small molecules may be built into complex, multicomponent structures using
 The importance of this initial structure cannot be overstated, for example, if the initial structure in a molecular dynamics simulation is unrepresentative of the equilibrium structure, it may take a large amount of simulation time before the equilibrium structure is obtained, possibly much longer than could be reasonably simulated.
 
 The initial particle velocities are obtained in a much more general fashion.
-They are selected randomly, and then scaled such that the kinetic energy, $E_K$, of the system agrees with a defined temperature, $T$,
+They are selected randomly, and then scaled such that the kinetic energy, $E_k$, of the system agrees with a defined temperature, $T$,
 %
 \begin{equation}
-E_K = \sum_{i=1}^N{\frac{m_i|\mathbf{v}_i|^2}{2}} = \frac{3}{2}Nk_BT,
+E_k = \sum_{i=1}^N{\frac{m_i|\mathbf{v}_i|^2}{2}} = \frac{3}{2}Nk_BT,
 \label{equ:ek}
 \end{equation}
 %

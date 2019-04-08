@@ -333,15 +333,68 @@ Need to remember everyone...
 
 \begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
 
+\textbf{ACMW} & air-contrast matched water \\
+\textbf{APM} & area per molecule \\
 \textbf{BM} & bending magnet \\
+\textbf{cmc} & critical micelle concentration \\
+\textbf{C$_{10}$TA$^+$} & \emph{n}-decyltrimethylammonium \\
+\textbf{C$_{16}$TAB} & \emph{n}-hexadecyltrimethylammonium bromide \\
+\textbf{CCP-SAS} & collaborative computational project for small angle scattering \\
+\textbf{CPU} & central processing unit \\
+\textbf{DDM} & \emph{n}-dodecyl-$\beta$-\emph{D}-maltoside \\
+\textbf{DE} & differential evolution \\
+\textbf{DES} & deep eutectic solvent \\
 \textbf{DLS} & Diamond Light Source \\
+\textbf{DM} & \emph{n}-decyl-$\beta$-\emph{D}-maltoside \\
+\textbf{DMSO} & dimethyl sulfoxide \\
+\textbf{DLPC} & 1,2-dilauroyl-\emph{sn}-glycero-3-phosphocholine \\
+\textbf{DMPC} & 1,2-dimyristoyl-\emph{sn}-glycero-3-phosphocholine \\
+\textbf{DMPG} & 1,2-dimyristoyl-\emph{sn}-glycero-3-phospho-(1'-rac-glycerol) \\
+\textbf{DCPC} & 1,2-distearoyl-\emph{sn}-glycero-3-phosphocholine \\
+\textbf{DPPC} & 1,2-dipalmitoyl-\emph{sn}-glycero-3-phosphocholine \\
+\textbf{DPC} & dodecylphosphocholine \\
+\textbf{DPD} & dissipative particle dynamics \\
+\textbf{DVTD} & differential vibrating tube densimetry \\
+\textbf{ESI} & electronic supplementary information \\
 \textbf{ESRF} & European Synchrotron Radiation Facility \\
 \textbf{ESS} & European Spallation Source \\
-\textbf{GiSAS} & grazing incidence small angle scattering \\
+\textbf{GIXD} & grazing-incidence X-ray diffraction \\
+\textbf{GPU} & graphical processing units \\
+\textbf{hdDES} & partially deuterated deep eutectic solvent \\
+\textbf{hDES} & hydrogenated deep eutectic solvent \\
 \textbf{ID} & insertion device \\
 \textbf{ILL} & Institut Laue-Langevin \\
+\textbf{LC} & Liquid-Condensed \\
+\textbf{LE} & Liquid-Expanded \\
+\textbf{Linac} & linear accelerator \\
+\textbf{MCMC} & Markov chain Monte Carlo \\
+\textbf{MD} & molecular dynamics \\
+\textbf{MPI} & message passing interface \\
+\textbf{NB} & neutral buoyancy \\
+\textbf{NPT} & constant number, pressure, and temperature \\
+\textbf{NR} & neutron reflectometry \\
+\textbf{NVE} & constant number, volume, and energy \\
+\textbf{NVT} & constant number, volume, and temperature \\
+\textbf{OER} & open education resource \\
+\textbf{PC} & phosphocholine \\
+\textbf{PDF} & probability distribution function \\
+\textbf{PFTE} & polytetrafluoroethylene \\
+\textbf{PG} & phosphatidylglycerol \\
+\textbf{PME} & particle mesh Ewald \\
+\textbf{PSO} & particle swarm optimisation \\
+\textbf{RDF} & radial distribution function \\
+\textbf{SANS} & small angle neutron scattering \\
 \textbf{SAS} & small angle scattering \\
+\textbf{SDS} & sodium dodecyl sulfate \\
+\textbf{SLD} & scattering length density \\
+\textbf{SAXS} & small angle X-ray scattering \\
+\textbf{SPC} & single point charge \\
+\textbf{STFC} & Science \& Technology Facilities Council \\
 \textbf{ToF} & time-of-flight \\
+\textbf{VMD} & visual molecular dynamics \\
+\textbf{wph} & water molecules per head group \\
+\textbf{WAXS} & wide angle X-ray scattering \\
+\textbf{XRR} & X-ray reflectometry \\
 
 
 \end{abbreviations}
@@ -356,6 +409,10 @@ Need to remember everyone...
 
  & $\pi$ & $3.1415\dots$ \\
 Planck constant & $h$ & \SI{6.626\dots e-34}{\joule\second} \\
+Golden ratio & $\Phi$ & \num{1.618\dots} \\
+dielectric permittivity of the vacuum & $\epsilon_0$ & \SI{8.854\dots e-12}{\farad\per\meter} \\
+charge of electron & $e$ & \SI{1.602\dots e-19}{\coulomb} \\
+Boltzmann constant & $k_B$ & \SI{1.381\dots e-23}{\joule\per\kelvin} \\
 
 %Constant Name & $Symbol$ & $Constant Value$ with units\\
 
@@ -367,32 +424,78 @@ Planck constant & $h$ & \SI{6.626\dots e-34}{\joule\second} \\
 
 \begin{symbols}{lll} % Include a list of Symbols (a three column table)
 
+$a$ & step size & \\
 $a_0$ & optimum head-group area & \si{\meter\squared} \\
 $b$ & scattering length & \si{\meter} \\
+$b$ & bond length & \si{\meter} \\
+$b_i$ & best candidate solution & \\
+$b_0$ & equilibrium bond length & \si{\meter} \\
+$d_h$ & phosphlipid head layer thickness & \si{\meter} \\
+$d_t$ & phosphlipid tail layer thickness & \si{\meter} \\
+$d_x$ & length of object & \si{\meter} \\
+$k_m$ & mutation constant & \\
+$l_0$ & length of hydrophobic tail & \si{\meter} \\
 $m$ & mass & \si{\kilo\gram} \\
+$n$ & number of scattering vectors & \\
 $n_i$ & refractive index & \\
-$n$ & number of individual $q$-vectors & \\
-$q$ & scattering vector magnitude & \si{\per\meter} \\
-$r_{n,n+1}$ & Fresnel equation coefficient & \\
-$res(q)$ & resolution function & \\
-$t_F$ & time of flight & \si{\second} \\
+$p$ & packing parameter & \\
+$p$ & parallel component & \\
+$q$ & scattering magnitude & \si{\per\meter} \\
+$q_{i,j}$ & electronic charge &  \\
+$r$ & displacement vector magnitude & \si{\per\meter} \\
+$r_{n,n+1}$ & Fresnel equation coefficient &  \\
+$s$ & serial component & \\
+$t$ & time & \si{\second} \\
+$t_F$ & time-of-flight & \si{\second} \\
 $v$ & velocity & \si{\meter\per\second} \\
 
+$A_{1,2,3}$ & dihedral constants & \si{\joule} \\
 $B$ & resultant matrix & \\
+$E_\text{bonded}$ & bonded energy & \si{\joule} \\
 $E_k$ & kinetic energy & \si{\joule} \\
+$E_\text{non-bonded}$ & non-bonded energy & \si{\joule} \\
+$E_\text{total}$ & total energy & \si{\joule} \\
+$F$ & some function & \\
 $I$ & intensity &  \\
-$L_F$ & distance of flight & \si{\meter} \\
-$M$ & layer matrix & \\
-$N$ & number of particles & \\
+$K_b$ & bond force constant & \si{\joule\per\meter\squared} \\
+$K_\theta$ & angle force constant & \si{\joule\per\radian\squared} \\
+$L_F$ & length-of-flight & \si{\meter} \\
+$M_n$ & layer matrix & \\
+$N$ & number of some item & \\
 $N_P$ & number of magnets & \\
+$N_\rho$ & number density & \\
+$P(q)$ & form factor & \\
 $R$ & reflected intensity & \\
-$S$ & nuclear spin & \\
-$V$ & volume & \si{\cubic\meter} \\
+$R1,2$ & some random number & \\
+$R_g$ & radius of gyration & \si{\meter} \\
+$R_i$ & incidence rate & \si{\per\second} \\
+$R_s$ & radius of sphere & \si{\meter} \\
+$S$ & surface area & \si{\meter\squared} \\
+$S(q)$ & structure factor & \\
+$T$ & temperature & \si{\kelvin} \\
+$U$ & uniform distribution & \\
+$V$ & volume & \si{\meter\cubed} \\
+$V_c$ & volume of hydrophobic tail & \si{\meter\cubed} \\
+$V_h$ & phosphlipid head volume & \si{\meter\cubed} \\
+$V_n$ & volume of layer & \si{\meter\cubed} \\
+$V_p$ & volume of particle & \si{\meter\cubed} \\
+$V_t$ & phosphlipid tail volume & \si{\meter\cubed} \\
 
-$\mathbf{k}_i$ &  incident wavevector & \si{\per\meter} \\
-$\mathbf{k}_f$ &  final wavevector & \si{\per\meter} \\
-$\mathbf{q}$ & scattering vector & \si{\per\meter} \\
-$\mathbf{r}_i$ & particle position & \\
+$\mathbf{a}$ & acceleration & \si{\meter\per\second\squared} \\
+$\mathbf{f}$ & force & \si{\newton}  \\
+$\mathbf{g}$ & global best &  \\
+$\mathbf{k}_i$ & incident wavevector & \si{\per\meter} \\
+$\mathbf{k}_f$ & final wavevector & \si{\per\meter} \\
+$\mathbf{m}$ & mutant vector &  \\
+$\mathbf{o}$ & offspring population &  \\
+$\mathbf{p}$ & parent population &  \\
+$\mathbf{q}$ & scattering wavevector & \si{\per\meter} \\
+$\mathbf{r}$ & displacement vector & \si{\meter} \\
+$\mathbf{s}$ & personal best &  \\
+$\mathbf{v}$ & velocity vector & \si{\meter\per\second} \\
+$\mathbf{x}$ & position vector & \si{\meter} \\
+
+$\mathbf{R}$ & particle position & \si{\meter} \\
 
 
 %Symbol & Name & Unit \\
@@ -401,21 +504,39 @@ $\mathbf{r}_i$ & particle position & \\
 
 $\beta_c$ & fraction of the speed of light & \\
 $\beta_n$ & phase factor & \\
-$\theta$ & scattering angle & \si{\radian} \\
+$\delta$ & infinitesimally small change & \\
+$\varepsilon$ & depth of potential well & \si{\joule} \\
+$\zeta$ & figure of merit & \\
+$2\theta$ & scattering angle & \si{\radian} \\
+$\theta$ & angle & \si{\radian} \\
+$\theta$ & some solution & \\
+$\theta_0$ & equilibrium angle & \si{\radian} \\
 $\theta_c$ & critical angle & \si{\radian} \\
 $\theta_e$ & angle between electron and photon & \si{\radian} \\
 $\lambda$ & wavelength & \si{\meter} \\
-$\rho$ & scattering lenght density & \si{\per\square\meter} \\
-$\sigma$ & interfacial roughness & \si{\meter} \\
-$\sigma_{\text{coh}}$ & coherent cross-section & \si{\square\meter} \\
-$\sigma_{\text{incoh}}$ & incoherent cross-section & \si{\square\meter} \\
-$\phi$ & scattering angle & \si{\radian} \\
+$\pi$ & surface pressure & \si{\milli\newton\per\meter} \\
+$\sigma$ & distance at zero & \si{\meter} \\
+$\sigma_\text{coh}$ & coherent scattering cross-section & \si{\meter} \\
+$\sigma_\text{incoh}$ & incoherent scattering cross-section & \si{\meter} \\
+$\sigma_{n,n+1}$ & interfacial roughness & \si{\meter} \\
+$\phi$ & scattering angle & \\
+$\phi$ & dihedral angle & \si{\radian} \\
+$\phi_g$ & global acceleration coefficient & \\
+$\phi_i$ & volume fraction of solvation & \\
+$\phi_p$ & personal acceleration coefficient & \\
+$\chi^2$ & a figure of merit & \\
+$\psi_0$ & wave at point \num{0} & \\
+$\psi_i$ & wave at point $i$ & \\
+$\psi_f$ & final scattered wave & \\
 $\omega$ & frequency & \si{\per\second} \\
-$\omega_i$ & initial frequency & \si{\per\second} \\
-$\omega_f$ & final frequency &  \si{\per\second} \\
+$\omega$ & initial weight & \\
+$\omega_i$ & incident frequency & \si{\per\second} \\
+$\omega_f$ & final frequency & \si{\per\second} \\
 
-$\Lambda$ & temperature factor & \\
-$\Phi$ & Golden ratio & \\
+$\Delta t$ & timestep & \si{\second} \\
+$\Theta$ & new solution & \\
+$\Phi$ & incident flux & \\
+
 
 $\sfrac{\text{d}\sigma(q)}{\text{d}\Omega}$ & differential cross-section & \\
 

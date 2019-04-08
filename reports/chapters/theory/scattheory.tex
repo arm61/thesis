@@ -2,7 +2,7 @@
 \label{sec:scattering}
 
 The use of scattering techniques to probe soft condensed matter systems is commonplace.
-In this work, we have focussed on the use of small angle scattering (SAS), reflectometry, and grazing incidence small angle scattering (GiSAS) techniques.
+In this work, we have focussed on the use of small angle scattering (SAS) and reflectometry techniques
 These are particularly appropriate for application to soft condensed matter systems due to the length scales capable of being probed being similar to the persistence length of the soft condensed matter systems.
 The length scale covered for such techniques is from around \SI{1}{\nano\metre} to \SI{300}{\nano\metre}, as is shown in Figure~\ref{fig:lengths}.
 The focus is on the equilibrium structure(s) of a material, and therefore there is no interest in the system dynamics, meaning that exclusively elastic scattering techniques may be used, where there is no energy transfer between the probing radiation and the material.
@@ -88,11 +88,11 @@ The basic quantity measured in a scattering experiment is the differential cross
 This is the fraction of particles of probing radiation that is scattered with a particular set of polar coordinates, $2\theta$ and $\phi$,
 %
 \begin{equation}
-    \frac{\text{d}\sigma(q)}{\text{d}\Omega} = \frac{R(2\theta,\phi)}{NV\Phi\Delta \Omega},
+    \frac{\text{d}\sigma(q)}{\text{d}\Omega} = \frac{R_i(2\theta,\phi)}{NV\Phi\Delta \Omega},
     \label{equ:dsc}
 \end{equation}
 %
-where, $R(2\theta,\phi)$ is the rate of arrival of the scattered particles at the position $2\theta$, $\phi$, $V$ is the illuminated volume of the sample, $\Phi$ is incident flux, $\Delta \Omega$ is some small solid angle, and $N$ is the number of scattering particles of interest, in the case of elastically scattered radiation, $N = N\%_{\text{el}}$, where $\%_{\text{el}}$ is the fraction of elastically scattered radiation.
+where, $R_i(2\theta,\phi)$ is the rate of arrival of the scattered particles at the position $2\theta$, $\phi$, $V$ is the illuminated volume of the sample, $\Phi$ is incident flux, $\Delta \Omega$ is some small solid angle, and $N$ is the number of scattering particles of interest, in the case of elastically scattered radiation, $N = N\%_{\text{el}}$, where $\%_{\text{el}}$ is the fraction of elastically scattered radiation.
 
 \subsection{Scattering from a single fixed particle}
 
@@ -132,7 +132,7 @@ where, $b$ is the scattering length discussed in Section~\ref{convar}.
 \label{sec:multiscat}
 
 It is important to consider how the probing radiation would interact with a real system, consisting of many particles.
-If the incident beam has the form of Equation~\ref{equ:wave}, with the wavevector $\mathbf{k}_i = (0, 0, k)$, each particle, $j$, will contribute the following to the total scattered wave, $psi_f$, made up of the scattering from all, $N$, atoms,
+If the incident beam has the form of Equation~\ref{equ:wave}, with the wavevector $\mathbf{k}_i = (0, 0, k)$, each particle, $j$, will contribute the following to the total scattered wave, $\psi_f$, made up of the scattering from all, $N$, atoms,
 %
 \begin{equation}
     [\delta\psi_f]_j = \psi_o\exp{(\mathbf{ik}_i\cdot \mathbf{R}_j)}b_j\frac{\exp{\big\{\mathbf{ik}_f\cdot (\mathbf{r}-\mathbf{R}_j)\big\}}}{|\mathbf{r}-\mathbf{R}_j|},
@@ -187,17 +187,17 @@ Therefore, the differential cross section, defined in Equation~\ref{equ:dsc} can
 \label{sec:sld}
 
 While it may be helpful to consider the scattering from multiple particles individually, where each particle has a scattering length, $b$.
-In practice, due to the low experimental resolution at small angles, it is more common to consider the scattering length density, $\rho$, of the system,
+In practice, due to the low experimental resolution at small angles, it is more common to consider the scattering length density, (SLD), of the system,
 %
 \begin{equation}
-    \rho = \frac{1}{V}\sum_{i=0}^{N} b_i,
+    \text{SLD} = \frac{1}{V}\sum_{i=0}^{N} b_i,
 \end{equation}
 %
 where $N$ is the total number of particles in the volume $V$.
 A result of this equation is the ability to rewrite Equation~\ref{equ:sca} as,
 %
 \begin{equation}
-    \bigg(\frac{\text{d}\sigma(q)}{\text{d}\Omega}\bigg)_{\text{el}} = \frac{1}{V} \Bigg|\iiint \limits_V \rho\exp{(\mathbf{iq}\cdot\mathbf{R})}\text{d}^3\mathbf{R}\Bigg|^2.
+    \bigg(\frac{\text{d}\sigma(q)}{\text{d}\Omega}\bigg)_{\text{el}} = \frac{1}{V} \Bigg|\iiint \limits_V \text{SLD}\exp{(\mathbf{iq}\cdot\mathbf{R})}\text{d}^3\mathbf{R}\Bigg|^2.
     \label{equ:sldsca}
 \end{equation}
 %
@@ -253,42 +253,42 @@ It is clear from Equation~\ref{equ:refl} that the value of the measured reflecto
 
 There are two model-dependent analysis techniques that can be applied to the rationalisation of a reflectometry dataset.
 The first is the kinematic approach, which can be obtained from Equation~\ref{equ:sca}, from the assumption that $q_x = 0$ and $q_y = 0$, as we are only measuring the specular scattering.
-This approach models the reflectometry as a function of the scattering length density profile in the \emph{z}-dimension, $\rho(z)$,
+This approach models the reflectometry as a function of the scattering length density profile in the \emph{z}-dimension, $\text{SLD}(z)$,
 %
 \begin{equation}
-    R(q) \approx \frac{16\pi^2}{q^4}\bigg|\int_{-\infty}^{+\infty}\frac{\text{d}\rho(z)}{\text{d}z}\exp{(-\mathbf{i}zq_z)}\text{d}z\bigg|^2,
+    R(q) \approx \frac{16\pi^2}{q^4}\bigg|\int_{-\infty}^{+\infty}\frac{\text{d}\text{SLD}(z)}{\text{d}z}\exp{(-\mathbf{i}zq_z)}\text{d}z\bigg|^2,
     \label{equ:kine}
 \end{equation}
 %
-where, $\sfrac{\text{d}\rho(z)}{\text{d}z}$ is the first derivative of the scattering length density profile.
+where, $\sfrac{\text{d}\text{SLD}(z)}{\text{d}z}$ is the first derivative of the scattering length density profile.
 However, this method has a significant problem, which can be demonstrated by applying Equation~\ref{equ:kine} to the scattering length density profile of a bare silicon substrate, which can be modelled as a Heaviside function (Figure~\ref{fig:kine}a),
 %
 \begin{equation}
-    \rho(z) =
+    \text{SLD}(z) =
   \begin{cases}
     0, & \text{where}\ z < 0 \\
-    \rho_{\text{Si}}, & \text{otherwise}
+    \text{SLD}_{\text{Si}}, & \text{otherwise}
   \end{cases}
 \end{equation}
 %
-where, $\rho_{\text{Si}}$ is the scattering length density of pure silicon (\SI{2.1e-6}{\angstrom^{-2}} for neutrons).
+where, $\text{SLD}_{\text{Si}}$ is the scattering length density of pure silicon (\SI{2.1e-6}{\angstrom^{-2}} for neutrons).
 The derivative of a stepwise Heaviside function is a scaled $\delta$-function (Figure~\ref{fig:kine}b),
 %
 \begin{equation}
-    \rho'(z) = \rho_{\text{Si}}\delta(z).
+    \text{SLD}'(z) = \text{SLD}_{\text{Si}}\delta(z).
 \end{equation}
 %
 Then, as in Equation~\ref{equ:kine}, the Fourier transform of this $\delta$-function is taken,
 %
 \begin{equation}
-    \rho_{\text{Si}}\int_{-\infty}^{+\infty}\delta(z)\exp{(-\mathbf{i}zq_z)}\text{d}z = \rho_{\text{Si}}\exp(0) = \rho_{\text{Si}}.
+    \text{SLD}_{\text{Si}}\int_{-\infty}^{+\infty}\delta(z)\exp{(-\mathbf{i}zq_z)}\text{d}z = \text{SLD}_{\text{Si}}\exp(0) = \text{SLD}_{\text{Si}}.
     \label{equ:rhosi}
 \end{equation}
 %
 This means that, using Equations~\ref{equ:rhosi} and \ref{equ:kine}, the reflectometry profile could be calculated from the following relationship,
 %
 \begin{equation}
-    R(q)\approx \frac{16\pi^2\rho_{\text{Si}}^2}{q_z^4}.
+    R(q)\approx \frac{16\pi^2\text{SLD}_{\text{Si}}^2}{q_z^4}.
 \end{equation}
 %
 The curve from this relationship is shown in Figure~\ref{fig:kine}, where it is clear that the agreement with an experimental profile would be poor as $q \rightarrow 0$.
@@ -340,7 +340,7 @@ For each value of $q$ for which the reflectometry is to be calculated, the syste
 The incident radiation beam will be refracted by each of the layers, giving wavevectors values for each layer, $k_n$,
 %
 \begin{equation}
-    k_n = \sqrt{k_0^2 + 4\pi (\rho_n - \rho_0)},
+    k_n = \sqrt{k_0^2 + 4\pi (\text{SLD}_n - \text{SLD}_0)},
 \end{equation}
 %
 where, $k_0=\sfrac{q}{2}$.
@@ -365,7 +365,7 @@ The means that a matrix can be evaluated for each layer, $M_n$,
     \end{bmatrix}
 \end{equation}
 %
-The resultant matrix, $B_n$, is then found as a product of the matrix from each layer,
+The resultant matrix, $B$, is then found as a product of the matrix from each layer,
 %
 \begin{equation}
     B = \prod_{n=0}^{n_{\text{max}}} M_n,
@@ -421,7 +421,7 @@ Hence, the application of small angle scattering (SAS).
 \end{figure}
 %
 
-A SAS experiment generally involves some sample being placed in the path of the probing radiation; the scattering pattern that results from this transmission is measured at some distance, as is shown in Figure~\ref{fig:sasgeo} for the D22 SANS instrument of the ILL.
+A SAS experiment generally involves some sample being placed in the path of the probing radiation; the scattering pattern that results from this transmission is measured at some distance, as is shown in Figure~\ref{fig:sasgeo} for the D22 small angle neutron scattering (SANS) instrument of the ILL.
 SAS instruments are usually very large, due to the large post sample flight path that is necessary to reach the small angles being measured; a longer flight path allows more space for angular divergence.
 Transmission SAS can provide information about the size, shape and orientation of the sample's components \cite{willis_experimental_2009}.
 The range in $q$ that is typically covered by a SAS instrument is usually around \SIrange{2e-3}{0.5}{\per\angstrom}, which corresponds to \SIrange{10}{3000}{\angstrom} in real-space. The neutron or X-ray detector of a SAS instrument is often two-dimensional, meaning that for an isotropic scattering profile, the detector image is radially averaged to give an $I(q)$ scattering profile.
@@ -442,7 +442,7 @@ Furthermore, the SANS2D instrument may leverage the time-of-flight method discus
 A radially averaged SAS pattern can be considered as consisting of two sections that arise from the form and structure factors for the scattering species.
 The form factor gives information about the average shape of the scattering particle, while the structure factor is a measure of the interaction present between the objects.
 It is often possible to control the presence of the structure factor by changing the concentration of the sample, eventually, the concentration will be so low that all interparticle interaction is screened by the solvent \cite{edler_combining_2015}.
-This method is frequency applied in BioSAXS applications, where the interactions between the protein molecules are of less interest than the overall structure of the complex.
+This method is frequently applied in biological small angle X-ray scattering (SAXS) applications, where the interactions between the protein molecules are of less interest than the overall structure of the complex.
 However, with micelles, it is not always possible to remove the structure factor, as the critical micelle concentration may be higher than the minimum concentration at which the structure factor is present.
 It is possible to deconvolute the structure and form factors for a micellar solution by studying different concentrations, assuming that the form of the micelle is concentration independent, over the measured concentration range.
 
@@ -459,10 +459,10 @@ This scattering law is only valid at very small values of $q$, where $q < R_g^{-
 \end{equation}
 %
 This relationship allows the radius of gyration to be found by plotting the scattering profile transformed into $\ln[I(q)]$ vs. $q^2$, and evaluating the gradient at low $q$.
-The Guinier plot for the scattering from a sphere with a radius of \SI{20}{\angstrom} is shown in Figure~\ref{fig:rg}, where the radius of gyration correlates with the radius of the sphere, $R$, as follows,
+The Guinier plot for the scattering from a sphere with a radius of \SI{20}{\angstrom} is shown in Figure~\ref{fig:rg}, where the radius of gyration correlates with the radius of the sphere, $R_s$, as follows,
 %
 \begin{equation}
-    R_g = \sqrt{\frac{3}{5}}R.
+    R_g = \sqrt{\frac{3}{5}}R_s.
 \end{equation}
 %
 The Guinier analysis is very common in the study of proteins by SAS, as it allows for the determination of the protein size in the native, solution phase \cite{skou_synchrotron-based_2014}.
@@ -482,10 +482,10 @@ In the calculation of a SAS pattern, both the structure and form factors will co
 Therefore, when we model the pattern, the differential cross-section has the following form, when the system is centrosymmetric.
 %
 \begin{equation}
-    \frac{\text{d}\sigma(q)}{\text{d}\Omega} = N_\rho\Delta\rho^2V_p^2 P(q)S(q),
+    \frac{\text{d}\sigma(q)}{\text{d}\Omega} = N_\rho\Delta\text{SLD}^2V_p^2 P(q)S(q),
 \end{equation}
 %
-where $N_\rho$ is the number density of the particles, $\Delta\rho$ is the difference in scattering length density between the particles and the solvent, $V_p$ is the particle volume, $P(q)$ is the particle form factor, and $S(q)$ is the structure factor \cite{pedersen_monte_2002}.
+where $N_\rho$ is the number density of the particles, $\Delta\text{SLD}$ is the difference in scattering length density between the particles and the solvent, $V_p$ is the particle volume, $P(q)$ is the particle form factor, and $S(q)$ is the structure factor \cite{pedersen_monte_2002}.
 Therefore, it is necessary to understand how the function of the form factor and structure factor come to be.
 
 The most common method for the modelling of the form-factor is by using very coarse shapes; such as spheres, cylinders, or ellipses.
@@ -493,11 +493,11 @@ This involves the evaluation of analytical or quasi-analytical solutions for the
 The solution for a sphere was solved in the early 19th century by Lord Rayleigh \cite{pedersen_monte_2002}.
 %
 \begin{equation}
-    P(q) = \Bigg\{\frac{3\big\{\sin(qR) - qR\cos(qR)\big\}}{(qR)^3}\Bigg\}^2,
+    P(q) = \Bigg\{\frac{3\big\{\sin(qR_s) - qR\cos(qR_s)\big\}}{(qR_s)^3}\Bigg\}^2,
     \label{equ:sphere}
 \end{equation}
 %
-where $R$ is the radius of the sphere. A comparison between a possible experimental scattering pattern and the scattering generated from Equation~\ref{equ:sphere} is shown in Figure~\ref{fig:sphere}. Analytical form factors exist for a wide variety of shapes; these can be found in software such as SASView and SASFit \cite{noauthor_sasview_nodate, noauthor_sasfit_nodate}.
+where $R_s$ is the radius of the sphere. A comparison between a possible experimental scattering pattern and the scattering generated from Equation~\ref{equ:sphere} is shown in Figure~\ref{fig:sphere}. Analytical form factors exist for a wide variety of shapes; these can be found in software such as SASView and SASFit \cite{noauthor_sasview_nodate, noauthor_sasfit_nodate}.
 %
 \begin{figure}
     \centering
@@ -635,7 +635,7 @@ The differential cross-section, $\sfrac{\text{d}\sigma}{\text{d}\Omega}$ of a po
     \frac{\text{d}\sigma}{\text{d}\Omega} \propto b^2.
 \end{equation}
 %
-However, as discussed in Section~\ref{sec:sld}, it is often easier to use the scattering length density, $\rho$.
+However, as discussed in Section~\ref{sec:sld}, it is often easier to use the scattering length density, $\text{SLD}$.
 
 When an X-ray interacts with an atom, it is scattered by the interaction with the electrons, this is due to the X-ray being a form of electromagnetic radiation.
 Furthermore, it means that the scattering length of an atom by an X-ray is directly proportional to the number of electrons in the atom, so it is therefore difficult to discern between the scattering from a carbon atom (6 electrons) and a nitrogen atom (7 electrons), furthermore the scattering from hydrogen atoms is practically non-existent, in comparison.

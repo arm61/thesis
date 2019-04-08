@@ -1,39 +1,39 @@
 \section{Introduction}
 
 Small angle scattering is a popular technique for the structural investigation of surfactant micelles \cite{sanchez-fernandez_micellization_2016}.
-Typically, coarse shape-based modelling (such as that introduced in Section~\ref{sec:sasanal}) is used for the analysis.
-These shapes allow for the classification of the micelle shape and interactions.
-However, as with reflectometry, there has been a growing interest in the use of atomistic simulations as a multi-modal analysis tool for solution scattering methods \cite{ivanovic_temperature-dependent_2018}.
+Typically, coarse shape-based modelling (such as that introduced in Section~\ref{sec:sasanal}) is used for the analysis, which allows for the classication of the micelle shape and interactions.
+However, as with reflectometry, there has been a growing interest in the use of atomistic simulations as a multi-modal analysis tool for solution scattering methods \cite{ivanovic_temperature-dependent_2018}, to provide greater detail about the structure.
 
 The use of atomistic simulation as an analysis method in the study of biomolecules has been popular for many years \cite{perkins_solution_1991,mayans_demonstration_1995,hub_interpreting_2018}.
 These have built on the success of biomolecular simulation and crystallography, using structural information from the protein data bank \cite{noauthor_rcsb_nodate} and applying popular all-atom potential models.
 Typically, this is used for the study of systems where the solution state differs significantly from that present in the crystal.
-Popular systems that this analysis is applied to are flexible protein multimers, the benefit of molecular dynamics being that an ensemble of structures can be represented in a single simulation trajectory \cite{chen_validating_2014,bowerman_determining_2017}.
+Such as, flexible protein multimers, the benefit of molecular dynamics being that an ensemble of structures can be represented in a single simulation trajectory \cite{chen_validating_2014,bowerman_determining_2017}.
 
-The importance of molecular dynamics simulation to represent an ensemble of structures has lead to the application of interesting aspect from probability theory.
-In particular, the use of Bayesian inference has been popular in understanding that presence of different structures in solution.
+The importance of molecular dynamics simulation to represent an ensemble of structures has lead to the application of interesting aspects from probability theory.
+In particular, the use of Bayesian inference has beenused to understand the presence and population of different structures in solution.
 For example, in the work of Bowerman \emph{et al.} \cite{bowerman_determining_2017}, accelerated molecular dynamics simulations (similar to traditional molecular dynamics however a `boost' potential is applied to the system to improve sampling) were performed on an all-atom representation of the protein multimer tri-ubiquitin.
-The scattering profile was calculated from the simulation and evaluated against experimental data, and the agreement between the simulation and experiment assess in a Bayesian fashion, with a uniform prior probability.
+The scattering profile was calculated from the simulation and evaluated against experimental data, and the agreement between the simulation and experiment assessed in a Bayesian fashion, with a uniform prior probability.
 This methodology showed that the presence of a two state ensemble was more probable that the single state that would be obtained from, for example, a crystallographic study.
 
-The simulation of a surfactant micelle is inherently more complex than for a protein ensemble, due to the greater number of states available under thermodynamic conditions.
-This means that there is rarely a suitable starting structure, instead it is necessary to simulation the system from a random configuration or artifically create a micelle structure as a starting position.
+The simulation of a surfactant micelle is inherently more complex than for a protein ensemble, due to the greater number of states (for example micelles of different sizes) available under thermodynamic conditions.
+This means that there is rarely a suitable starting structure for a molecular dynamics simulation, instead it is necessary to simulate the system from a random configuration or artifically create a micelle structure to start from.
 Early work on the simulation of surfactant aggregation involved the \SI{4.5}{\nano\second} simulation of 42 sodium dodecyl sulfate (SDS) molecules \cite{tarek_molecular_1998}.
 These simulations started with a random solution of surfactant molecules and resulted in two small surfactant aggregates consisting of 17 and 25 molecules each.
-The aggregates simulated were much smaller than those measured experimentally by small angle neutron scattering, which were found to consist of \SI{79\pm1} molecules \cite{hassan_small_2003}.
+The aggregates simulated were much smaller than those measured experimentally by small angle neutron scattering, which consist of \SI{79\pm1} molecules \cite{hassan_small_2003}.
 However, this deviation may be due to the fact that the simulations were performed with simulation thermostat at \SI{60}{\celsius}, and the SDS micelle size is noted to reduce with increasing temperature \cite{hayashi_micelle_1980}.
 Maillet \emph{et al.} studied the mechanism of micelle formation with a \SI{3}{\nano\second} simulation of the cationic \emph{n}-nonyltrimethylammonium chloride; observing micelle formation, fragmentation, and monomer exchange \cite{maillet_large_1999}.
 The micelles that were formed were smaller than would be expected (between 15 and 20 molecules), however, this work suggested that the initial stages of micellisation process are dominated by collisions between aggregates, whereas monomer exchanges are more frequent closer to equilibrium.
 
-These early examples of the simulation of a micellisation event both used all-atom potential models \cite{tarek_molecular_1998,maillet_large_1999}, however, it is clear that in order to obtain an experimentally realistic micelle from simulation a longer simulation would be required.
+These early examples of the simulation of a micellisation event both used all-atom potential models \cite{tarek_molecular_1998,maillet_large_1999}, however, it is clear that in order to obtain an experimentally realistic micelle from simulation a much longer simulation would be required.
 In Section~\ref{sec:coarsegraining}, the use of potential model coarse-graining as a method to increase the ``real-time'' length of a molecular dynamics simulation was introduced.
-Therefore, coarse-graining was used as a tool to simulate micellisation events from a random solution of surfactants.
+This was used as a tool to simulate micellisation events from a random solution of surfactants.
 For example, in the work of Jorge \cite{jorge_molecular_2008}, a united-atom model (where all hydrogen atoms are integrated into the atoms to which they are bound) for \emph{n}-decyltrimethylammonium bromide was used to simulate micellisation at \SI{80}{\celsius}.
 This work showed that the use of a united-atom model allow for a more efficient simulation, but also resulted in a larged mass average cluster size.
 However, again a value of only \num{\sim25} was reached after \SI{14}{\nano\second}, as with the work of Tarek \emph{et al.} \cite{tarek_molecular_1998}, these small micelles might be realistic at these elevated temperatures, however, to my best knowledge no experimental structural data, such as SANS measurements, exists for \emph{n}-decyltrimethylammonium bromide micelles at \SI{80}{\celsius}.
 Sanders and Panagiotopoulos attempted to use the MARTINI coarse-grained potential model to simulate the micellisation of the zwitterionic dodecylphosphocholine (DPC).
 This was simulated at \SI{97}{\celsius} for \SI{1.8}{\micro\second} resulting in a trajectory where the cluster size mode was 41, the authors noted that experimentally at \SI{25}{\celsius} a micelle size of \num{56\pm5} is expected.
 Again, it was noted that this variation may be due to the increased simulation temperature \cite{malliaris_temperature_1985,kamenka_aqueous_1995}.
+Furthermore, in each of these examples it was only possible to simulated the formation of a single, or possibly a pair of micelles, which would not effectively be modelling the inter-micelle interactions.
 
 The use of mesoscale simulation techniques, such as dissipative particle dynamics (DPD), are common for the simulation of surfactant molecules in solution \cite{shelley_computer_2000}.
 DPD simulations are similar to coarse-grained molecular dynamics simulation, however, with the inclusion additional dissipative and random forces.
@@ -42,17 +42,17 @@ An example of the use of DPD to study micellisation is that of Vishnyakov \emph{
 This work found cmc values and mean micelle aggregation numbers that agreed quantitatively with experimental measurements.
 While mesoscopic techniques, such as DPD, are an interesting tool for the study of rough micelle strucutre, these methods lack the structural details that make their use exciting as a method of the multimodal analysis of small angle scattering data.
 
-It is clear from the discussion above that the simulation of experimentally realistic micelles from a random structure would require significantly longer simulations than are currently available.
-Therefore a more pragmatic approach is necessary, essentially this can take one of two routes; building a micelle-like starting structure based on a simple analysis of the experimental data or tackling the problem as an optimisation challange, where the aim is to optimise the atomistic (or near-atomistic) structure to the experimental data.
+It is clear from the discussion above that the simulation of experimentally realistic micelles from a random structure requires very long simulations.
+Therefore a different approach is necessary, essentially this can take one of two routes; building a micelle-like starting structure based on a simple analysis of the experimental data or tackling the problem as an optimisation challange, where the aim is to optimise the atomistic (or near-atomistic) structure to the experimental data.
 The former method was that applied by Ivanovic \emph{et al.} in their recent work \cite{ivanovic_temperature-dependent_2018}, where simulations were performed and compared with experimental scattering of micelles of \emph{n}-dodecyl-$\beta$-\emph{D}-maltoside (DDM) and \emph{n}-decyl-$\beta$-\emph{D}-maltoside (DM).
 This work used two approaches to determine the size of the micelle that should be simulated; the first used the forward scattering (that at $I(0)$) to determine the density and therefore the aggregation number of the micelle \cite{lipfert_size_2007}, while the second involved the simulation of a series of micelles of different sizes and the calculation of scattered intensity at a single scattering vector.
 These methods gave good agreement as to the size of the micelle, and the scattering profiles calculated from \SI{50}{\nano\second} molecular dynamics simulations offered reasonable agreement with those measured experimentally at a series of temperatures.
 The experimental scattering profiles where then used as an energetic restraint on the simulation improving the agreement between experiment and simulation.
 
 The work of Ivanovic \emph{et al.} benefited from the monodispersity of the particular micellar system choosen.
-However, if a more polydisperse system were being studied, the \emph{pragmatic} approach may require significantly more computation, as many more aggregation numbers of surfactants would need to be considered.
+However, if a more polydisperse system were being studied, this approach may require significantly more computation, as many more aggregation numbers of surfactants would need to be considered.
 Additionally, in order to perform a `realistic' simulation of a micelle solution it is often necessary to simulate multiple micelles in order to obtain the structure factor (arising from inter-micelle interactions) present in experimental data.
-In this chapter, I discuss a truely model-free approach for the analysis of micellar small angle scattering data, by applying an global-optimisation process a near-atomistic system.
+In this chapter, I discuss a truely model-free approach for the analysis of micellar small angle scattering data, by applying an global-optimisation process to a near-atomistic system.
 This involved using a particle swarm algorithm to fit to an experimental scattering profile, while a energy minimisation of the potential model was performed using a simple gradient descent approach.
 It was believed that the application of a population-based optimisation method would result in a series of suitable structures, allowing for a more realistic understanding of the ensemble structures that are present for micelles in solution.
 The aim of this approach is to create a starting structure for future molecular dynamics simulation based on the scattering profile, this would ease the ability for experimental users to perform simulations of the system under study.
