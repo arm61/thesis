@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{7}
+\begin{mcitethebibliography}{13}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -68,6 +68,60 @@ A.~R. Nelson, \emph{Refnx-Models}, \url{https://github.com/refnx/refnx-models},
 \bibitem[noa()]{noauthor_sasview_nodate}
 \emph{{{SASview}} for {{Small Angle Scattering}}},
   \url{http://www.sasview.org}, (accessed 2016-10-26)\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Campbell \emph{et~al.}(2018)Campbell, Saaka, Shao, Gerelli, Cubitt,
+  Nazaruk, Matyszewska, and Lawrence]{campbell_structure_2018}
+R.~A. Campbell, Y.~Saaka, Y.~Shao, Y.~Gerelli, R.~Cubitt, E.~Nazaruk,
+  D.~Matyszewska and M.~J. Lawrence, \emph{J. Colloid Interface Sci.}, 2018,
+  \textbf{531}, 98--108\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hub(2018)]{hub_interpreting_2018}
+J.~S. Hub, \emph{Curr. Opin. Struct. Biol.}, 2018, \textbf{49}, 18--26\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Perkins \emph{et~al.}(2016)Perkins, Wright, Zhang, Brookes, Chen,
+  Irving, Krueger, Barlow, Edler, Scott, Terrill, King, Butler, and
+  Curtis]{perkins_atomistic_2016}
+S.~J. Perkins, D.~W. Wright, H.~Zhang, E.~H. Brookes, J.~Chen, T.~C. Irving,
+  S.~Krueger, D.~J. Barlow, K.~J. Edler, D.~J. Scott, N.~J. Terrill, S.~M.
+  King, P.~D. Butler and J.~E. Curtis, \emph{J. Appl. Crystallogr.}, 2016,
+  \textbf{49}, 1861--1875\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[McCluskey \emph{et~al.}(2019)McCluskey, Grant, Symington, Snow,
+  Doutch, Morgan, Parker, and
+  Edler]{mccluskey_pythoninchemistry/sim_and_scat_2019}
+A.~R. McCluskey, J.~Grant, A.~R. Symington, T.~Snow, J.~Doutch, B.~J. Morgan,
+  S.~C. Parker and K.~J. Edler, \emph{Pythoninchemistry/Sim\_and\_scat:
+  Sim\_and\_scat-v0.3-Preprint}, \url{http://doi.org/10.5281/zenodo.2556824},
+  2019\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[McCluskey \emph{et~al.}(2018)McCluskey, Morgan, Edler, and
+  Parker]{mccluskey_pylj_2018}
+A.~R. McCluskey, B.~J. Morgan, K.~J. Edler and S.~C. Parker, \emph{J. Open
+  Source Educ.}, 2018, \textbf{1}, 19\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[McCluskey \emph{et~al.}(2019)McCluskey, Symington, Morgan, Edler, and
+  Parker]{mccluskey_arm61/pylj_2019-2}
+A.~R. McCluskey, A.~R. Symington, B.~J. Morgan, K.~J. Edler and S.~C. Parker,
+  \emph{Arm61/Pylj: Pylj-1.2.5}, \url{http://doi.org/10.5281/zenodo.2587898},
+  2019\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

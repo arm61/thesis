@@ -100,6 +100,16 @@ FIGURES = [FIG_DIR + 'bath.pdf', FIG_DIR + 'diamond.pdf',
            FIG_SAS + 'fake_assess8.pdf',
            FIG_SAS + 'fake_assess9.pdf',
            FIG_SAS + 'fake_assess10.pdf',
+           #FIG_SAS + 'real_assess1.pdf',
+           #FIG_SAS + 'real_assess2.pdf',
+           #FIG_SAS + 'real_assess3.pdf',
+           #FIG_SAS + 'real_assess4.pdf',
+           #FIG_SAS + 'real_assess5.pdf',
+           #FIG_SAS + 'real_assess6.pdf',
+           #FIG_SAS + 'real_assess7.pdf',
+           #FIG_SAS + 'real_assess8.pdf',
+           #FIG_SAS + 'real_assess9.pdf',
+           #FIG_SAS + 'real_assess10.pdf',
            FIG_SAS + 'exp_data.pdf',
            FIG_TEACH + 'chem_data_py.pdf']
 CHAPTERS = [REP + CHAP + 'introduction.tex', REP + CHAP + 'theory.tex',
@@ -341,6 +351,54 @@ rule fakeassess_fig:
         python assess_fake.py 8
         python assess_fake.py 9
         python assess_fake.py 10
+        """
+
+rule realassess_fig:
+    input:
+        'scripts/assess_real.py',
+        'data/smallangle/best_real/best1.fit',
+        'data/smallangle/best_real/best1.xyz',
+        'data/smallangle/best_real/best2.fit',
+        'data/smallangle/best_real/best2.xyz',
+        'data/smallangle/best_real/best3.fit',
+        'data/smallangle/best_real/best3.xyz',
+        'data/smallangle/best_real/best4.fit',
+        'data/smallangle/best_real/best4.xyz',
+        'data/smallangle/best_real/best5.fit',
+        'data/smallangle/best_real/best5.xyz',
+        'data/smallangle/best_real/best6.fit',
+        'data/smallangle/best_real/best6.xyz',
+        'data/smallangle/best_real/best7.fit',
+        'data/smallangle/best_real/best7.xyz',
+        'data/smallangle/best_real/best8.fit',
+        'data/smallangle/best_real/best8.xyz',
+        'data/smallangle/best_real/best9.fit',
+        'data/smallangle/best_real/best9.xyz',
+        'data/smallangle/best_real/best10.fit',
+        'data/smallangle/best_real/best10.xyz'
+    output:
+        'reports/figures/smallangle/real_assess1.pdf',
+        'reports/figures/smallangle/real_assess2.pdf',
+        'reports/figures/smallangle/real_assess3.pdf',
+        'reports/figures/smallangle/real_assess4.pdf',
+        'reports/figures/smallangle/real_assess5.pdf',
+        'reports/figures/smallangle/real_assess6.pdf',
+        'reports/figures/smallangle/real_assess7.pdf',
+        'reports/figures/smallangle/real_assess8.pdf',
+        'reports/figures/smallangle/real_assess9.pdf',
+        'reports/figures/smallangle/real_assess10.pdf'
+    shell:
+        """
+        cd scripts && python assess_real.py 1
+        python assess_real.py 2
+        python assess_real.py 3
+        python assess_real.py 4
+        python assess_real.py 5
+        python assess_real.py 6
+        python assess_real.py 7
+        python assess_real.py 8
+        python assess_real.py 9
+        python assess_real.py 10
         """
 
 rule scaling_fig:

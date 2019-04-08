@@ -125,6 +125,7 @@ for e, q in enumerate(qs):
         intensity2[e] = 0
 
 plt.plot(qs, intensity2 * intensity[0]/intensity2[0])
+ax.set_xscale('log')
 
 plt.tight_layout()
 plt.savefig("../reports/figures/smallangle/fake_assess{}.pdf".format(num))

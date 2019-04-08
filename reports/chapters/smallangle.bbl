@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{23}
+\begin{mcitethebibliography}{26}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -18,6 +18,23 @@
 \mciteSetBstSublistLabelBeginEnd{\mcitemaxwidthsubitemform\space}
 {\relax}{\relax}
 
+\bibitem[Perkins \emph{et~al.}(2016)Perkins, Wright, Zhang, Brookes, Chen,
+  Irving, Krueger, Barlow, Edler, Scott, Terrill, King, Butler, and
+  Curtis]{perkins_atomistic_2016}
+S.~J. Perkins, D.~W. Wright, H.~Zhang, E.~H. Brookes, J.~Chen, T.~C. Irving,
+  S.~Krueger, D.~J. Barlow, K.~J. Edler, D.~J. Scott, N.~J. Terrill, S.~M.
+  King, P.~D. Butler and J.~E. Curtis, \emph{J. Appl. Crystallogr.}, 2016,
+  \textbf{49}, 1861--1875\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hub(2018)]{hub_interpreting_2018}
+J.~S. Hub, \emph{Curr. Opin. Struct. Biol.}, 2018, \textbf{49}, 18--26\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
 \bibitem[{Sanchez-Fernandez} \emph{et~al.}(2016){Sanchez-Fernandez}, Arnold,
   Jackson, Fussell, Heenan, Campbell, and
   Edler]{sanchez-fernandez_micellization_2016}
@@ -48,12 +65,6 @@ S.~J. Perkins, A.~S. Nealis, B.~J. Sutton and A.~Feinstein, \emph{J. Mol.
   Perkins]{mayans_demonstration_1995}
 M.~O. Mayans, W.~J. Coadwell, D.~Beale, D.~B.~A. Symons and S.~J. Perkins,
   \emph{Biochem. J.}, 1995, \textbf{331}, 283--291\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Hub(2018)]{hub_interpreting_2018}
-J.~S. Hub, \emph{Curr. Opin. Struct. Biol.}, 2018, \textbf{49}, 18--26\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -177,9 +188,21 @@ P.~R. Evans, \emph{Acta Crystallogr. D}, 2001, \textbf{57}, 1355--1359\relax
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
+\bibitem[Debye(1915)]{debye_zerstreuung_1915}
+P.~Debye, \emph{Ann. Phys.}, 1915, \textbf{351}, 809--823\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
 \bibitem[Watson and Curtis(2013)]{watson_rapid_2013}
 M.~C. Watson and J.~E. Curtis, \emph{J. Appl. Crystallogr.}, 2013, \textbf{46},
   1171--1177\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Svergun(1994)]{svergun_solution_1994}
+D.~I. Svergun, \emph{Acta Crystallogr. A}, 1994, \textbf{50}, 391--402\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

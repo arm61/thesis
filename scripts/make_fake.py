@@ -91,6 +91,7 @@ gs = gridspec.GridSpec(1, 1)
 ax = plt.subplot(gs[0, 0])
 ax.plot(qs, intensity, '-')
 ax.set_xlabel('$q$/Å$^{-1}$')
+ax.set_xscale('log')
 ax.set_ylabel('$I(q)$')
 
 ax.text(

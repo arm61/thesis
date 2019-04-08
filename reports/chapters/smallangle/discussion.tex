@@ -1,5 +1,5 @@
 \section{Results \& Discussion}
-The aim of this work was to produce a well parallelised software capable of quickly producing starting structures for later molecular dynamics simulations of micellar species from small angle scattering data.
+The aim of this work was to produce a well parallelised software capable of quickly producing starting structures for later molecular dynamics simulations of multiple micellar species from small angle scattering data.
 
 \subsection{Parallelisation}
 The parallelisation of a software package is commonly assessed using two metrics, strong and weak scaling.
@@ -21,10 +21,8 @@ The weak scaling relationship is shown in Figure~\ref{fig:scale}(b).
 %
 
 It can be seen that both the strong and weak parallel efficiency of \texttt{fitoog} are relatively good, with the efficiency not dropping below \SI{80}{\percent} even when spread over 128 cores.
-The speedup of \texttt{fitoog} with increasing number of cores is shown in Figure~\ref{fig:speedup}, from Amdahl's law \cite{amdahl_validity_1967} we can find that the parallel component of a given \texttt{fitoog} run makes up \SI{99.8}{\percent} of the computation.
-These two pieces of information about the parallelisation indicate that is it sensible to be making use of high-performance computing with this software, assuming that a large population size while give a more effective optimisation.
-For the later work of applying the real system to the \texttt{fitoog} software, 48 cores of the SCARF cluster were used.
-This was chosen as it is two times the number of cores per node on the SCARF resource, therefore we are making full use of both nodes and not `wasting' and resource.
+The speedup of \texttt{fitoog} is shown in Figure~\ref{fig:speedup} (this is generated from the strong scaling relationship), from Amdahl's law \cite{amdahl_validity_1967} we can find that the parallel component of a given \texttt{fitoog} run makes up \SI{99.8}{\percent} of the computation.
+This suggests that the parallelisation methodology currently implimented is successful, and it would not be advantageous to utilities the more sophisticated parallelisation method outlined in Section~\ref{sec:para}.
 %
 \begin{figure}
     \centering
@@ -34,11 +32,15 @@ This was chosen as it is two times the number of cores per node on the SCARF res
 \end{figure}
 %
 
+The high efficiency in both strong and weak scaling regimes and the indication that the serial component of the computation is very small indicates that it is sensible to utilise high-performance computing resources for this software package.
+In the real data application of this work, the \texttt{fitoog} software was run on 48 cores of the SCARF cluster.
+This was chosen as it would spread the computation over exactly two nodes of the SCARF cluster (each node contains 24 cores), therefore both nodes are being used to their full capacity.
+
 \subsection{Test system}
-A test system was defined in order to assess the ability for the PSO to fit the near-atomistic molecular coordinates to some ``experimental'' data.
-For this a coordinate cell was built consisting of four surfactant molecules at four corner of a \SI{20}{\angstrom} cube, oriented in different directions.
-The particular cell that was used is shown in Figure~\ref{fig:test}, from this cell the scattering was calculated, the blue MARTINI beads were given a scattering lengths of \SI{100}{\femto\meter} while the grey beads were given a scattering length of \SI{20}{\femto\meter}, in order to ensure that the ``experimental'' data had some intense scattering.
-The Debye equation was used to calculate the scattering data in a $q$ range of \SIrange{0.3}{1.5}{\per\angstrom} with 100 data points, this is also shown in Figure~\ref{fig:test}.
+In order to assess the PSO implimentation, a simple test system was defined.
+This was consisted of a coordinated cell that contained four surfactant molecules at four corners of a \SI{20}{\angstrom} cube, each orientated in a different direction (Figures~\ref{fig:test}(a-c)).
+The scattering intensity was calculated from the cell, with the blue beads given a scattering length of \SI{100}{\femto\meter} and the grey beads a scattering length of \SI{20}{\femto\meter}, to ensure the presence of intensity scattering.
+The scattering was calculated using the Debye equation \cite{debye_zerstreuung_1915} for values of $q$ in a range from \SIrange{0.3}{1.5}{\per\angstrom} with 100 data points, this profile is shown in Figure~\ref{fig:test}(d).
 %
 \begin{figure}
     \centering
@@ -50,7 +52,6 @@ The Debye equation was used to calculate the scattering data in a $q$ range of \
 %
 
 \texttt{fitoog} was used, without the energy minimisation capability, to fit the ``experimental'' data; a population size of 100 was iterated over 5000 steps.
-Acceleration coefficients of 2 were used in the PSO optimisation methods, and an initial weight value of 0.4 was used.
 Ten repetitions of the \texttt{fitoog} run were performed, taking around two and a half minutes per run on a workstation computer with four cores.
 Figure~\ref{fig:test_assess} shows the optimised scattering profile obtained from each of the runs and compares with the ``experimental'' data.
 It is clear that some of the runs agree well with the data, in particular runs 1 and 2, the resulting coordinate cell for these profiles are shown in Figure~\ref{fig:fake_result}.
@@ -67,7 +68,7 @@ It is clear that some of the runs agree well with the data, in particular runs 1
     \includegraphics[width=0.4\textwidth]{smallangle/fake_assess8} \\
     \includegraphics[width=0.4\textwidth]{smallangle/fake_assess9}
     \includegraphics[width=0.4\textwidth]{smallangle/fake_assess10}
-    \caption{The best fit to the experimental data (orange line) is compared with the ``real experimental'' data (blue line) for each of the ten runs.}
+    \caption{The best fit from the \texttt{fitoog} run (orange line) is compared with the ``real experimental'' data (blue line) for each of the ten runs.}
     \label{fig:test_assess}
 \end{figure}
 %
@@ -80,13 +81,13 @@ It is clear that some of the runs agree well with the data, in particular runs 1
 \end{figure}
 %
 
-This agreement with the data in short runs is a positive result, and the resulting cells shown in Figure~\ref{fig:fake_result} appears to shown some superfacial agreement with the coordination cell from which the ``experimental'' data was found.
-Therefore, I continued to use this methodology for the analysis of real experimental data.
+This agreement with the data in short runs is a positive result, and the resulting cells shown in Figure~\ref{fig:fake_result} appears to shown some agreement with the coordination cell from which the ``experimental'' data was found.
+Therefore, the use a PSO method was continued and applied to the real experimental data.
 
 \subsection{Real data}
-A similar methodology as was used for the test system as for the is this real data.
-However, the global best acceleration coefficient was reduced to 1 to place less of an emphasis on the global best, as it is suspected that the real experimental data will have more local minima and therefore a less biased optimisation is required.
-The experimental data consisted of a single small angle neutron scattering profile for a hydrogenated \ce{C_{10}TAB} micelle in \ce{D2O}, it was assumed that this data was background substracted such that the scattering present was a result of the micelles alone.
+\label{sec:real_data}
+This real experimental data consisted of a single small angle neutron scattering profile for the hydrogenated \ce{C_{10}TA+} micelle, with \ce{NO3-} counter ions in \ce{D2O}.
+It was assumed that this data was completely background subtracted such that the scattering present was a result of the micelles alone.
 Figure~\ref{fig:expdata} shows the scattering profile that was being modelled.
 %
 \begin{figure}
@@ -97,7 +98,7 @@ Figure~\ref{fig:expdata} shows the scattering profile that was being modelled.
 \end{figure}
 %
 
-The first aim was to assess the PSO method with the energy minimisation ability, this would allow a variety of conformation structures of the surfactant molecule to be found, as would be the case for a real micelle simulation, this is instead of the single conformation that was used the test case.
-Again, ten repetitions of this were rune with a population size of 38400 and 100 iterations, this was run on 48 cores of the SCARF cluster, with each run taking about one-and-a-half hours.
-The increase in poulation size was performed as this would increase the parameter space that would be investigated by the particle swarm optimisation, hopefully increasing the chance of finding a global minimum.
-It was observed that the runs were not minimising significantly after the first 100 iterations therefore it was chosen to limit this to allow for an increase in the population size, without a significant increase in the time taken.
+The aim of the application to real data was to attempt to quickly produce a system with multiple micellar species.
+Therefore, the simulation cell was substantially larger; containing 500 MARTINI coarse-grained \ce{C_{10}TA+} and \ce{NO3-} molecules, the available cell was a cube with a side \SI{177}{\angstrom} in length.
+Initially it was necessary to assess the ability for the PSO method, combined with the energy minimisation ability, for this five repetitions were run with a population size of 96 and 500 (these values were chosen based on the time taken for the \texttt{fitoog} run to complete), with each run taking \num{\sim2.5} hours.
+Figure~\ref{fig:realfirst} shows the optimim scattering profile achieved from these \texttt{fitoog} runs.
