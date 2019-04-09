@@ -4,44 +4,44 @@ In this work, computational modelling methods have been applied to important sca
 The aim of many modelling problems is to optimise a series of parameters such that a minimum is found in some parameter-dependent metric.
 While, in other circumstances, the aim is to sample the parametric search-space of a particular problem.
 The problem of parameter optimisation and sampling is a massive area of mathematics and computer science and is it not possible to introduce the whole field.
-Therefore, we will introduce three optimisation methods and two sampling methods that are applied within this work.
+Therefore, we will introduce two optimisation methods and two sampling methods that are applied within this work.
 
-\subsection{Single candidate optimisation methods}
-\label{sec:singlecan}
-Single candidate methods are optimisation procedures that operate in a linear fashion, where there is a single sample that must be optimised.
-These type of methods are often more straightforward than the population methods discussed later, however frequently they are only suitable for the determination of local minima.
+%\subsection{Single candidate optimisation methods}
+%\label{sec:singlecan}
+%Single candidate methods are optimisation procedures that operate in a linear fashion, where there is a single sample that must be optimised.
+%These type of methods are often more straightforward than the population methods discussed later, however frequently they are only suitable for the determination of local minima.
 
-\subsubsection{Gradient descent}
-The gradient descent is a simple, analytic optimisation algorithm that is capable of determining the local minimum of a given function.
-This method involves determining the local gradient of the function, at a given position and using this to define how the position should be changed.
-For some arbitrary, multi-dimensional function, $F(\mathbf{p})$, where $\mathbf{p}$ is the position, this can be described as,
+%\subsubsection{Gradient descent}
+%The gradient descent is a simple, analytic optimisation algorithm that is capable of determining the local minimum of a given function.
+%This method involves determining the local gradient of the function, at a given position and using this to define how the position should be changed.
+%For some arbitrary, multi-dimensional function, $F(\mathbf{p})$, where $\mathbf{p}$ is the position, this can be described as,
 %
-\begin{equation}
-\mathbf{a} \leftarrow \mathbf{a} - \alpha \frac{\partial F(\mathbf{p})}{\partial \mathbf{a}},
-\end{equation}
+%\begin{equation}
+%\mathbf{a} \leftarrow \mathbf{a} - \alpha \frac{\partial F(\mathbf{p})}{\partial \mathbf{a}},
+%\end{equation}
 %
-where $\alpha$ is a constant that defines the step-size and $\sfrac{\partial F(\mathbf{p})}{\partial \mathbf{p}}$ is the first derivative of the multi-dimensional function.
-It is necessary to find a suitable value for $\alpha$ for a given function.
-Therefore, the gradient descent method is often replaced with the more computationally expensive Newton-Raphson methods.
-The gradient descent method is shown applied to a Rosenbrock function \cite{rosenbrock_automatic_1960}, with a series of different step sizes in Figure~\ref{fig:grad}
-The gradient descent method is relatively simple to introduce, shown in Code Block~\ref{cb:grad}, however, it is only capable of finding local minima and therefore is often unsuitable for situations where the global minima are desired.
+%where $\alpha$ is a constant that defines the step-size and $\sfrac{\partial F(\mathbf{p})}{\partial \mathbf{p}}$ is the first derivative of the multi-dimensional function.
+%It is necessary to find a suitable value for $\alpha$ for a given function.
+%Therefore, the gradient descent method is often replaced with the more computationally expensive Newton-Raphson methods.
+%The gradient descent method is shown applied to a Rosenbrock function \cite{rosenbrock_automatic_1960}, with a series of different step sizes in Figure~\ref{fig:grad}
+%The gradient descent method is relatively simple to introduce, shown in Code Block~\ref{cb:grad}, however, it is only capable of finding local minima and therefore is often unsuitable for situations where the global minima are desired.
 %
-\begin{figure}
-    \centering
-    \includegraphics[width=0.85\textwidth]{theory/grad}
-    \caption{Example of the gradient descent method applied to a Rosenbrock function \cite{rosenbrock_automatic_1960}, where $a=1$ and $b=100$ (therefore the minima is at ($1$, $1$)), $n$ indicated the number of iterations required to minimise the values. Two different values (\SIlist{2e-4;8e-4}{}) for $\alpha$ are shown to emphasize the efficiency improvement that is possible with the optimisation.}
-    \label{fig:grad}
-\end{figure}
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.85\textwidth]{theory/grad}
+%    \caption{Example of the gradient descent method applied to a Rosenbrock function \cite{rosenbrock_automatic_1960}, where $a=1$ and $b=100$ (therefore the minima is at ($1$, $1$)), $n$ indicated the number of iterations required to minimise the values. Two different values (\SIlist{2e-4;8e-4}{}) for $\alpha$ are shown to emphasize the efficiency improvement that is possible with the optimisation.}
+%    \label{fig:grad}
+%\end{figure}
 %
 %
-\begin{figure}
-    \centering
-        \lstinputlisting[caption={An example of a simple implementation for the Gradient descent, as applied to a two-dimensional function.},label={cb:grad}]{reports/code_blocks/grad.py}
-\end{figure}
+%\begin{figure}
+%    \centering
+%        \lstinputlisting[caption={An example of a simple implementation for the Gradient descent, as applied to a two-dimensional function.},label={cb:grad}]{reports/code_blocks/grad.py}
+%\end{figure}
 %
 
 \subsection{Population optimisation methods}
-Population-based algorithms make use of a population of candidate solutions, compared to the single candidate shown in the gradient descent method above.
+Population-based algorithms make use of a population of candidate solutions.%, compared to the single candidate shown in the gradient descent method above.
 This population of candidate solutions often have knowledge of the state of each other through some interaction method.
 The method of interaction is often used to characterise the algorithms, into evolutionary algorithms (such as differential evolution), and swarm intelligence algorithms (such as the particle swarm method detailed below) \cite{wu_ensemble_2019}.
 These population methods are usually more efficient at finding the global minimum for a given search space, than the single candidate methods described above.

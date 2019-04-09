@@ -51,6 +51,16 @@ Furthermore, it was noted that in disagreement with the work of Campbell \emph{e
 Instead the roughness appeared to increase from the tail to the head of the phospholipid, this suggests that a more accurate monolayer model would not have the interface roughness to be conformal when only a single phospholipid type is present, as is the case in the chemically-consistent monolayer model.
 
 \section{Using particle swarm methods for small angle scattering analysis}
+The simulation of micellar species typically involves either the simulation of a random solution of surfactant molecules until a micelle-like structure forms, or the artifical creation of a micelle of an appropriate size based on \emph{a priori} information.
+In an effort to improve the ability for the simulation-driven analysis of small angle scattering data from micellar solutions, a particle swarm optimisation to attempt to generate a starting structure.
+This particle swarm optimisation was implimented in the \texttt{fitoog} software and used a severely coarse-grained description of the molecules to try and optimise to the scattering profile alone.
+Despite some success on a small test system, this method was not able to be applied to a case with real experimental data.
+
+This failure of the particle swarm optimisation to be able to produce a realistic micellar structure indicates that it may be necessary to consider some energetic optimisation alongside the purely structural one.
+Previous work has involves the use of potential models that are biased based on the agreement with experimental scattering \cite{hargreaves_atomistic_2011,ivanovic_temperature-dependent_2018}, however, these still require significant computational resource to run and obtain useful information.
+A pragmatic approach to enable experimental users to use simulation-driven analysis would be to implimented the methods applied previously in an easy-to-operate software that would allow for access to high performace computing resources.
+Such an implimentation is already available within the biological scattering community in the form of the SASSIE \cite{perkins_atomistic_2016} and WAXSiS \cite{knight_waxsis_2015} resources.
+However, I believe that there is still the opportunity for a straightforward solution to the problem to easily generating realistic starting sturctures for the simulation of micellar solutions, using the optimisation of structural and energetic information. 
 
 \section{Developing open-source teaching materials for classical simulation and scattering}
 To accompany the development of these coarse-grained methodologies applied to the analysis of scattering measurements, has been the creation of teaching resources to introduce users of scattering methods to classical simulation.

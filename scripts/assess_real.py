@@ -27,24 +27,34 @@ import pandas as pd
 import sys
 
 num = sys.argv[1]
+which = sys.argv[2]
 
-data = pd.read_csv('../data/smallangle/best_real/best{}.fit'.format(num), delim_whitespace=True, header=None, skiprows=2)
-data2 = pd.read_csv('../data/smallangle/best_real/best{}.xyz'.format(num), delim_whitespace=True, header=None, skiprows=2)
+data = pd.read_csv('../data/smallangle/best_real/{}/best{}.fit'.format(which, num), delim_whitespace=True, header=None, skiprows=2)
+data2 = pd.read_csv('../data/smallangle/best_real/{}/best{}.xyz'.format(which, num), delim_whitespace=True, header=None, skiprows=2)
+data3 = np.loadtxt('../data/smallangle/sans2d.txt', unpack=True)
 
-qs = np.linspace(0.3, 1.5, 100)
+
+qs = data[0]
+bis = np.array([])
+bjs = np.array([])
+xs = np.array([])
+ys = np.array([])
+zs = np.array([])
+for m in range(0, data2[1].size-1):
+    print(m)
+    for n in range(m+1, data2[1].size):
+        bis = np.append(bis, data.values[data[2] == data2[0][m]][0][5])
+        bjs = np.append(bjs, data.values[data[2] == data2[0][n]][0][5])
+        xs = np.append(xs, data2[1][n] - data2[1][m])
+        ys = np.append(ys, data2[2][n] - data2[2][m])
+        zs = np.append(zs, data2[3][n] - data2[3][m])
 
 intensity = np.zeros_like(qs)
 for e, q in enumerate(qs):
-    for m in range(0, data2[1].size-1):
-        for n in range(m+1, data2[1].size):
-            bi = data.values[data[1] == data2[0][m]][0][5]
-            bj = data.values[data[1] == data2[0][n]][0][5]
-            xdist = data2[1][n] - data2[1][m]
-            ydist = data2[2][n] - data2[2][m]
-            zdist = data2[3][n] - data2[3][m]
-            r_mn = np.sqrt(np.square(xdist) + np.square(ydist) + np.square(zdist))
-            intensity[e] += bi * bj * np.sin(
-                r_mn * q) / (r_mn * q)
+    print(q, 'doing')
+    r_mn = np.sqrt(np.square(xs) + np.square(ys) + np.square(zs))
+    intensity[e] = np.sum(bis * bjs * np.sin(
+        r_mn * q) / (r_mn * q))
     if intensity[e] < 0:
         intensity[e] = 0
 
@@ -65,12 +75,10 @@ ax.text(
     size=12,
 )
 
-data3 = np.loadtxt('../data/smallangle/sans2d.txt', unpack=True)
-
 ax.errorbar(data3[0], data3[1], marker='o', ls='', yerr=data3[2])
 
 ax.set_xscale('log')
 
 plt.tight_layout()
-plt.savefig("../reports/figures/smallangle/real_assess{}.pdf".format(num))
+plt.savefig("../reports/figures/smallangle/{}_assess{}.pdf".format(which, num))
 plt.close()

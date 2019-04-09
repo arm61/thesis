@@ -7,44 +7,44 @@ Database file #2: reports/main.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 rsc 2016/08/22 v3.1f
-You've used 13 entries,
+You've used 16 entries,
             3113 wiz_defined-function locations,
-            740 strings with 7983 characters,
-and the built_in function-call counts, 4551 in all, are:
-= -- 281
-> -- 417
-< -- 3
-+ -- 137
-- -- 122
-* -- 477
-:= -- 721
-add.period$ -- 13
-call.type$ -- 13
+            766 strings with 8736 characters,
+and the built_in function-call counts, 5669 in all, are:
+= -- 371
+> -- 486
+< -- 4
++ -- 158
+- -- 140
+* -- 599
+:= -- 885
+add.period$ -- 16
+call.type$ -- 16
 change.case$ -- 0
-chr.to.int$ -- 11
-cite$ -- 15
-duplicate$ -- 181
-empty$ -- 292
-format.name$ -- 135
-if$ -- 886
+chr.to.int$ -- 14
+cite$ -- 18
+duplicate$ -- 225
+empty$ -- 371
+format.name$ -- 158
+if$ -- 1113
 int.to.chr$ -- 3
 int.to.str$ -- 1
 missing$ -- 0
-newline$ -- 99
-num.names$ -- 33
-pop$ -- 78
+newline$ -- 117
+num.names$ -- 42
+pop$ -- 87
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 97
+skip$ -- 120
 stack$ -- 0
-substring$ -- 116
-swap$ -- 73
-text.length$ -- 26
+substring$ -- 203
+swap$ -- 97
+text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 91
+type$ -- 112
 warning$ -- 0
-while$ -- 28
+while$ -- 37
 width$ -- 0
-write$ -- 200
+write$ -- 242

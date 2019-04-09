@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{85}
+\begin{mcitethebibliography}{84}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -383,12 +383,6 @@ S.~J. Marrink, H.~J. Risselada, S.~Yefimov, D.~P. Tieleman and A.~H. {de
 \bibitem[Pluhackova and B\"ockmann(2015)]{pluhackova_biomembranes_2015}
 K.~Pluhackova and R.~A. B\"ockmann, \emph{J. Phys. Condens. Matter}, 2015,
   \textbf{27}, 323103\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Rosenbrock(1960)]{rosenbrock_automatic_1960}
-H.~H. Rosenbrock, \emph{Comput. J.}, 1960, \textbf{3}, 175--184\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

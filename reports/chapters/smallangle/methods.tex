@@ -27,13 +27,7 @@ It was th
 
 Following each PSO iteration, the molecule director is expanded from the position variable (using the \texttt{differences} object mentioned above) to a MARTINI represention.
 This representation is then rotated based on a rotation matrix, in this work the rotation matrix was constructed by first rotating the rotation axis by $-\phi$ and $-\omega$, then rotating by $\kappa$ in around the $z$-axis, before rotating the axis back to the original position by $\omega$ and $\phi$ \cite{evans_rotations_2001} (Figure~\ref{fig:rot} defines these angles).
-Having expanded the severely coarse-grained description, there is then an optional energy minimisation step.
-This is implimented only for the MARTINI potential model currently and is only considerate of the non-bonded van der Waals interaction (through a Lennard-Jones interaction), and molecular bonds and angles.
-It consists of 100 steps of a gradient descent based minimisation.
-The purpose of this step is two-fold; firstly it will introduce conformational heterogeneity into the molecules present (which is not available to the severely coarse-grained representation) and it will remove overlaps between atoms in the molecules.
-
-
-Following the energy minimisation, if desired, the scattering profile is then calculated using the Debye equation \cite{debye_zerstreuung_1915}, this was used over the more efficient Golden Vectors \cite{watson_rapid_2013} or Fibonnaci sequence \cite{svergun_solution_1994} methods as the aim of this work was to assess the application of the PSO method and efficiency was not the initial goal.
+Following the expansion and reorientation, the scattering profile is then calculated using the Debye equation \cite{debye_zerstreuung_1915}, this was used over the more efficient Golden Vectors \cite{watson_rapid_2013} or Fibonnaci sequence \cite{svergun_solution_1994} methods as the aim of this work was to assess the application of the PSO method and efficiency was not the initial goal.
 The agreement between the calculated scattering profile and the experimental input scattering was used as a figure of merit, $\zeta$, that was to be optimised by the particle swarm algorithm.
 This $\zeta$ was a simple $\chi^2$ value found as follows,
 %
@@ -68,5 +62,5 @@ The efficiency of the parallelisation was defined by considering the strong and 
 \text{speedup} = \frac{1}{s + \sfrac{p}{N}},
 \end{equation}
 %
-where, $N$ is the number of cores in the parallel job, and $s + p = 1$. 
+where, $N$ is the number of cores in the parallel job, and $s + p = 1$.
 While more sophisticated methodologies could be used to further reduce the serial component, such as having a core-level best population that is only occasionally communicated with the entire swarm, this implementation was shown to be highly parallelised and useful for assessing the utility of the PSO method.

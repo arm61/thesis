@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{13}
+\begin{mcitethebibliography}{16}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -81,8 +81,18 @@ R.~A. Campbell, Y.~Saaka, Y.~Shao, Y.~Gerelli, R.~Cubitt, E.~Nazaruk,
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
-\bibitem[Hub(2018)]{hub_interpreting_2018}
-J.~S. Hub, \emph{Curr. Opin. Struct. Biol.}, 2018, \textbf{49}, 18--26\relax
+\bibitem[Hargreaves \emph{et~al.}(2011)Hargreaves, Bowron, and
+  Edler]{hargreaves_atomistic_2011}
+R.~Hargreaves, D.~T. Bowron and K.~Edler, \emph{J. Am. Chem. Soc.}, 2011,
+  \textbf{133}, 16524--16536\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Ivanovi\'c \emph{et~al.}(2018)Ivanovi\'c, Bruetzel, Lipfert, and
+  Hub]{ivanovic_temperature-dependent_2018}
+M.~T. Ivanovi\'c, L.~K. Bruetzel, J.~Lipfert and J.~S. Hub, \emph{Angew. Chemie
+  Int. Ed.}, 2018, \textbf{57}, 5635--5639\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -94,6 +104,19 @@ S.~J. Perkins, D.~W. Wright, H.~Zhang, E.~H. Brookes, J.~Chen, T.~C. Irving,
   S.~Krueger, D.~J. Barlow, K.~J. Edler, D.~J. Scott, N.~J. Terrill, S.~M.
   King, P.~D. Butler and J.~E. Curtis, \emph{J. Appl. Crystallogr.}, 2016,
   \textbf{49}, 1861--1875\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Knight and Hub(2015)]{knight_waxsis_2015}
+C.~J. Knight and J.~S. Hub, \emph{Nucleic Acids Res.}, 2015, \textbf{43},
+  W225--W230\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hub(2018)]{hub_interpreting_2018}
+J.~S. Hub, \emph{Curr. Opin. Struct. Biol.}, 2018, \textbf{49}, 18--26\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

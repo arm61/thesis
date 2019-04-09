@@ -100,16 +100,17 @@ FIGURES = [FIG_DIR + 'bath.pdf', FIG_DIR + 'diamond.pdf',
            FIG_SAS + 'fake_assess8.pdf',
            FIG_SAS + 'fake_assess9.pdf',
            FIG_SAS + 'fake_assess10.pdf',
+           FIG_SAS + 'comparechi.pdf',
            #FIG_SAS + 'real_assess1.pdf',
            #FIG_SAS + 'real_assess2.pdf',
            #FIG_SAS + 'real_assess3.pdf',
            #FIG_SAS + 'real_assess4.pdf',
            #FIG_SAS + 'real_assess5.pdf',
-           #FIG_SAS + 'real_assess6.pdf',
-           #FIG_SAS + 'real_assess7.pdf',
-           #FIG_SAS + 'real_assess8.pdf',
-           #FIG_SAS + 'real_assess9.pdf',
-           #FIG_SAS + 'real_assess10.pdf',
+           #FIG_SAS + 'real_rand_assess1.pdf',
+           #FIG_SAS + 'real_rand_assess2.pdf',
+           #FIG_SAS + 'real_rand_assess3.pdf',
+           #FIG_SAS + 'real_rand_assess4.pdf',
+           #FIG_SAS + 'real_rand_assess5.pdf',
            FIG_SAS + 'exp_data.pdf',
            FIG_TEACH + 'chem_data_py.pdf']
 CHAPTERS = [REP + CHAP + 'introduction.tex', REP + CHAP + 'theory.tex',
@@ -357,49 +358,77 @@ rule fakeassess_fig:
 rule realassess_fig:
     input:
         'scripts/assess_real.py',
-        'data/smallangle/best_real/best1.fit',
-        'data/smallangle/best_real/best1.xyz',
-        'data/smallangle/best_real/best2.fit',
-        'data/smallangle/best_real/best2.xyz',
-        'data/smallangle/best_real/best3.fit',
-        'data/smallangle/best_real/best3.xyz',
-        'data/smallangle/best_real/best4.fit',
-        'data/smallangle/best_real/best4.xyz',
-        'data/smallangle/best_real/best5.fit',
-        'data/smallangle/best_real/best5.xyz',
-        'data/smallangle/best_real/best6.fit',
-        'data/smallangle/best_real/best6.xyz',
-        'data/smallangle/best_real/best7.fit',
-        'data/smallangle/best_real/best7.xyz',
-        'data/smallangle/best_real/best8.fit',
-        'data/smallangle/best_real/best8.xyz',
-        'data/smallangle/best_real/best9.fit',
-        'data/smallangle/best_real/best9.xyz',
-        'data/smallangle/best_real/best10.fit',
-        'data/smallangle/best_real/best10.xyz'
+        'data/smallangle/best_real/real/best1.fit',
+        'data/smallangle/best_real/real/best1.xyz',
+        'data/smallangle/best_real/real/best2.fit',
+        'data/smallangle/best_real/real/best2.xyz',
+        'data/smallangle/best_real/real/best3.fit',
+        'data/smallangle/best_real/real/best3.xyz',
+        'data/smallangle/best_real/real/best4.fit',
+        'data/smallangle/best_real/real/best4.xyz',
+        'data/smallangle/best_real/real/best5.fit',
+        'data/smallangle/best_real/real/best5.xyz'
     output:
         'reports/figures/smallangle/real_assess1.pdf',
         'reports/figures/smallangle/real_assess2.pdf',
         'reports/figures/smallangle/real_assess3.pdf',
         'reports/figures/smallangle/real_assess4.pdf',
-        'reports/figures/smallangle/real_assess5.pdf',
-        'reports/figures/smallangle/real_assess6.pdf',
-        'reports/figures/smallangle/real_assess7.pdf',
-        'reports/figures/smallangle/real_assess8.pdf',
-        'reports/figures/smallangle/real_assess9.pdf',
-        'reports/figures/smallangle/real_assess10.pdf'
+        'reports/figures/smallangle/real_assess5.pdf'
     shell:
         """
-        cd scripts && python assess_real.py 1
-        python assess_real.py 2
-        python assess_real.py 3
-        python assess_real.py 4
-        python assess_real.py 5
-        python assess_real.py 6
-        python assess_real.py 7
-        python assess_real.py 8
-        python assess_real.py 9
-        python assess_real.py 10
+        cd scripts && python assess_real.py 1 real
+        python assess_real.py 2 real
+        python assess_real.py 3 real
+        python assess_real.py 4 real
+        python assess_real.py 5 real
+        """
+
+rule realrandassess_fig:
+    input:
+        'scripts/assess_real.py',
+        'data/smallangle/best_real/real_rand/best1.fit',
+        'data/smallangle/best_real/real_rand/best1.xyz',
+        'data/smallangle/best_real/real_rand/best2.fit',
+        'data/smallangle/best_real/real_rand/best2.xyz',
+        'data/smallangle/best_real/real_rand/best3.fit',
+        'data/smallangle/best_real/real_rand/best3.xyz',
+        'data/smallangle/best_real/real_rand/best4.fit',
+        'data/smallangle/best_real/real_rand/best4.xyz',
+        'data/smallangle/best_real/real_rand/best5.fit',
+        'data/smallangle/best_real/real_rand/best5.xyz'
+    output:
+        'reports/figures/smallangle/real_rand_assess1.pdf',
+        'reports/figures/smallangle/real_rand_assess2.pdf',
+        'reports/figures/smallangle/real_rand_assess3.pdf',
+        'reports/figures/smallangle/real_rand_assess4.pdf',
+        'reports/figures/smallangle/real_rand_assess5.pdf'
+    shell:
+        """
+        cd scripts && python assess_real.py 1 real_rand
+        python assess_real.py 2 real_rand
+        python assess_real.py 3 real_rand
+        python assess_real.py 4 real_rand
+        python assess_real.py 5 real_rand
+        """
+
+rule compchi_fig:
+    input:
+        'scripts/compare_chi.py',
+        'data/smallangle/best_real/real/best1.out',
+        'data/smallangle/best_real/real/best2.out',
+        'data/smallangle/best_real/real/best3.out',
+        'data/smallangle/best_real/real/best4.out',
+        'data/smallangle/best_real/real/best5.out',
+        'data/smallangle/best_real/real_rand/best1.out',
+        'data/smallangle/best_real/real_rand/best2.out',
+        'data/smallangle/best_real/real_rand/best3.out',
+        'data/smallangle/best_real/real_rand/best4.out',
+        'data/smallangle/best_real/real_rand/best5.out'
+    output:
+        'reports/figures/smallangle/comparechi.pdf'
+    shell:
+        """
+        cd scripts && python compare_chi.py
         """
 
 rule scaling_fig:

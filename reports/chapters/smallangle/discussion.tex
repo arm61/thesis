@@ -51,7 +51,7 @@ The scattering was calculated using the Debye equation \cite{debye_zerstreuung_1
 \end{figure}
 %
 
-\texttt{fitoog} was used, without the energy minimisation capability, to fit the ``experimental'' data; a population size of 100 was iterated over 5000 steps.
+\texttt{fitoog} was used to fit the ``experimental'' data; a population size of 100 was iterated over 5000 steps.
 Ten repetitions of the \texttt{fitoog} run were performed, taking around two and a half minutes per run on a workstation computer with four cores.
 Figure~\ref{fig:test_assess} shows the optimised scattering profile obtained from each of the runs and compares with the ``experimental'' data.
 It is clear that some of the runs agree well with the data, in particular runs 1 and 2, the resulting coordinate cell for these profiles are shown in Figure~\ref{fig:fake_result}.
@@ -100,5 +100,33 @@ Figure~\ref{fig:expdata} shows the scattering profile that was being modelled.
 
 The aim of the application to real data was to attempt to quickly produce a system with multiple micellar species.
 Therefore, the simulation cell was substantially larger; containing 500 MARTINI coarse-grained \ce{C_{10}TA+} and \ce{NO3-} molecules, the available cell was a cube with a side \SI{177}{\angstrom} in length.
-Initially it was necessary to assess the ability for the PSO method, combined with the energy minimisation ability, for this five repetitions were run with a population size of 96 and 500 (these values were chosen based on the time taken for the \texttt{fitoog} run to complete), with each run taking \num{\sim2.5} hours.
-Figure~\ref{fig:realfirst} shows the optimim scattering profile achieved from these \texttt{fitoog} runs.
+In order to assess the utility for the PSO, two \texttt{fitoog} runs were perfromed (each with five repetitions, and a population size of 96 over 500 iterations).
+The PSO method was compared with a random method (where at each iteration a new random population was generated).
+Figure~\ref{fig:chi} shows the variation in the figure of merit, $\zeta$, in each of this optimisations.
+From this, there is no clear benefit to the use of the PSO method over simply selecting random structures.
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{smallangle/comparechi}
+    \caption{The quality of agreement between the \texttt{fitoog} model and the experimental data; where the blue lines are the different PSO runs and the orange are the randomisation runs.}
+    \label{fig:chi}
+\end{figure}
+%
+
+This inability for the PSO method to optimise the structure of the micellar species could be due to a wide varity of reasons, some which could be acted on and others that could not.
+While it is common to use values for the acceleration coefficients that are typically in the range of \numrange{0}{2}, it may be necessary to optimise these values (which of course could lead to a infinite set of optimisations).
+However, it may the case that the parameter space was too large to be optimisated using the PSO alone, this is very likely considering that the dimensionality of the parameter space was 4500 ($500\times6+500\times3$, for 500 \ce{C_{10}TA+} and \ce{NO3-} molecules).
+Figure~\ref{fig:best_real_bad} shows the best structure that was obtained from the \texttt{fitoog} runs, notably it is from the randomisation based run, which shows no evidence of the formation of micelle like species.
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{smallangle/best_real_bad}
+    \caption{Result of the best outcome from the real data example, observed down the (a) \emph{x}-, (b) \emph{y}, and (c) \emph{z}-axis.}
+    \label{fig:best_real_bad}
+\end{figure}
+%
+
+A possible method that may enable the optimisation of such structures would the be inclusion of an energetic term.
+For example, this could involve the use of an energy optimisation to be performed alongside the structural optimisation to the scattering profile (regardless of the optimisation methodology).
+The use of energetic considerations and an Markov state model optimisation has been shown to perform well for peptide self-assembly \cite{sengupta_automated_2019}.
+Additionally, the Emperical Potential Structure Refinement used by Hargreaves \emph{et al.} \cite{hargreaves_atomistic_2011} and the method used by Ivanovic \emph{et al.} \cite{ivanovic_temperature-dependent_2018} both involve performing and energetic optimisation that is biased based on the agreement with experimental data. 

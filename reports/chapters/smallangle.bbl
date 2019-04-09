@@ -1,7 +1,7 @@
 \providecommand*{\mcitethebibliography}{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
 {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{26}
+\begin{mcitethebibliography}{28}
 \providecommand*{\natexlab}[1]{#1}
 \providecommand*{\mciteSetBstSublistMode}[1]{}
 \providecommand*{\mciteSetBstMaxWidthForm}[2]{}
@@ -209,6 +209,22 @@ D.~I. Svergun, \emph{Acta Crystallogr. A}, 1994, \textbf{50}, 391--402\relax
 \EndOfBibitem
 \bibitem[Amdahl(1967)]{amdahl_validity_1967}
 G.~M. Amdahl, {{AFIPS Conference Proceedings}}, 1967\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Sengupta \emph{et~al.}(2019)Sengupta, {Carballo-Pacheco}, and
+  Strodel]{sengupta_automated_2019}
+U.~Sengupta, M.~{Carballo-Pacheco} and B.~Strodel, \emph{J. Chem. Phys.}, 2019,
+  \textbf{150}, 115101\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hargreaves \emph{et~al.}(2011)Hargreaves, Bowron, and
+  Edler]{hargreaves_atomistic_2011}
+R.~Hargreaves, D.~T. Bowron and K.~Edler, \emph{J. Am. Chem. Soc.}, 2011,
+  \textbf{133}, 16524--16536\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
