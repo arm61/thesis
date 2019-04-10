@@ -227,7 +227,8 @@ rule clean_all:
 
 rule thesis:
     input:
-        'reports/MastersDoctoralThesis.cls',
+        'reports/arm-common.def',
+        'reports/arm-thesis.cls',
         LATEX,
         REP + 'main.tex',
         REP + 'main.bib',
@@ -267,12 +268,10 @@ rule thesis:
         'reports/main.pdf'
     run:
         shell("black -l 70 reports/code_blocks/*.py")
-        shell("pdflatex -output-directory=reports/ reports/main.tex")
-        for i in CHAPTERS:
-            j = i[:-3] + 'aux'
-            shell("bibtex {}".format(j))
-        shell("pdflatex -output-directory=reports/ reports/main.tex")
-        shell("pdflatex -output-directory=reports/ reports/main.tex")
+        shell("xelatex -output-directory=reports/ reports/main.tex")
+        shell("cd reports && biber main && cd ../")
+        shell("xelatex -output-directory=reports/ reports/main.tex")
+        shell("xelatex -output-directory=reports/ reports/main.tex")
 
 rule theory_figues:
     input:
