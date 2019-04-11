@@ -1,3 +1,7 @@
+# Copyright 2015-2019 A. R. J. Nelson
+# Australian Nuclear Science and Technology Organisation
+# Licensed under the BSD 3-Clause "New" or "Revised" License
+
 import numpy as np
 
 
@@ -22,7 +26,6 @@ def abeles(q_values, sld, d):
     -------
     float, array-like
         The reflected intensity over the given q-vector values.
-
     """
     R = np.zeros_like(q_values)
     kn = np.sqrt(

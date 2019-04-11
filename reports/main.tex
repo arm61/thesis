@@ -133,7 +133,7 @@
 \setsansfont[Renderer=Basic, Scale=0.90]{TeX Gyre Heros}
 \setmonofont[Renderer=Basic]{TeX Gyre Cursor}
 
-\usepackage[style=verbose-note,
+\usepackage[style=verbose-trad2,
 maxcitenames=1,
 maxbibnames=100,
 url=false,
@@ -181,6 +181,18 @@ hyperref=true]{biblatex}
 \DeclareFieldFormat{urldate}{%
     (Accessed \thefield{urlyear}-\thefield{urlmonth}-\thefield{urlday}\isdot)}
 
+\renewbibmacro*{name:andothers}{% Based on name:andothers from biblatex.def
+  \ifboolexpr{
+    test {\ifnumequal{\value{listcount}}{\value{liststop}}}
+    and
+    test \ifmorenames
+  }
+    {\ifnumgreater{\value{liststop}}{1}
+       {\finalandcomma}
+       {}%
+     \andothersdelim\bibstring[\emph]{andothers}}
+    {}}
+
 \addbibresource{main.bib}
 
 \usepackage{doi}
@@ -188,6 +200,31 @@ hyperref=true]{biblatex}
 \usepackage{mparhack}
 
 \usepackage[most]{tcolorbox}
+
+\makeatletter
+% textwidth Tuftian float for listings
+\newenvironment{listing}[1][htbp]
+  {\ifvmode\else\unskip\fi\begin{@tufte@float}[#1]{lstlisting}{}}
+  {\end{@tufte@float}}
+% enable re-use of \listoflistings facility
+\def\ext@lstlisting{lol}
+% show listing number in caption even though \lst@@caption is empty
+\def\fnum@lstlisting{\lstlistingname~\thelstlisting}
+\makeatother
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\tiny\ttfamily,
+  %breaklines=false,
+  frame=single,
+  tabsize=4,
+  xrightmargin=10mm,
+  xleftmargin=10mm,
+  language=python
+}
+
+\renewcommand{\lstlistingname}{Code Block}
+\renewcommand{\lstlistlistingname}{List of \lstlistingname s}
 
 \begin{document}
 \pagenumbering{gobble}
@@ -236,7 +273,7 @@ Attention is drawn to the fact that copyright of this thesis rests with the auth
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{\baselineskip}
 ~\vfill
-\section*{Declaration of Authorship}
+\chapter*{Declaration of Authorship}
 
 I, \thanklessauthor, declare that this thesis titled ``Coarse-grained modelling for soft matter scattering'' and the work presented in it are my own. I confirm that:
 \begin{itemize}
@@ -260,26 +297,26 @@ I, \thanklessauthor, declare that this thesis titled ``Coarse-grained modelling 
 \setlength{\parskip}{\baselineskip}
 ~\vfill
 
-\section*{Publications}
+\chapter*{Publications}
 Some of the information in Chapter~\ref{theory} has been previously published in:
 \begin{itemize}
-  \item \cite{mccluskey_model-dependent_2018}.
+  \item A. R. McCluskey \emph{et al.} \emph{Curr. Org. Chem.} 22.8 (2018), pp. 750–757.
 \end{itemize}
 Some of the work covered in Chapter~\ref{reflectometry1} has been previously published in:
 \begin{itemize}
-  \item \cite{mccluskey_bayesian_2019}.
+  \item A. R. McCluskey \emph{et al.} \emph{Phys. Chem. Chem. Phys.} 21.11 (2019), pp. 6133–6141.
 \end{itemize}
 Some of the work covered in Chapter~\ref{reflectometry2} has been previously published in:
 \begin{itemize}
-  \item \cite{mccluskey_assessing_2019}.
+  \item A. R. McCluskey \emph{et al.} \emph{J. Phys. Comm.} Accepted (2019).
 \end{itemize}
 Some of the work covered in Chapter~\ref{teaching} has been previously published in:
 \begin{itemize}
-  \item \cite{mccluskey_pylj_2018}.
-  \item \cite{mccluskey_introduction_2019}.
+  \item A. R. McCluskey \emph{et al.} \emph{J. Open Source Educ.} 1.2 (2018), pp.19–21.
+  \item A. R. McCluskey \emph{et al.} \emph{J. Appl. Crystallogr.} Accepted (2019).
 \end{itemize}
 
-\section*{Reproducibility Statement}
+\chapter*{Reproducibility Statement}
 This thesis exists as a piece of completely reproducible research.
 I have endevoured to include as much algorithmic and methodological detail within the text, and where relevant working Code Blocks written in Python, and including appropriate documentation strings in the NumPy format, have been included for clarity.
 
@@ -299,7 +336,7 @@ The ESI may be accessed at the following \doi{10.5281/zenodo.xxxxxxx}.
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{\baselineskip}
 ~\vfill
-\section*{Acknowledgements}
+\chapter*{Acknowledgements}
 
 This is where I will acknowledge people.
 Need to remember everyone...
@@ -314,12 +351,15 @@ Need to remember everyone...
 
 \listoftables
 
+\lstlistoflistings
+
 \begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
 
 \textbf{ACMW} & air-contrast matched water \\
 \textbf{APM} & area per molecule \\
 \textbf{cmc} & critical micelle concentration \\
 \textbf{C$_{10}$TA$^+$} & \emph{n}-decyltrimethylammonium \\
+\textbf{C$_{10}$TAB} & \emph{n}-decyltrimethylammonium bromide \\
 \textbf{C$_{16}$TAB} & \emph{n}-hexadecyltrimethylammonium bromide \\
 \textbf{CCP-SAS} & collaborative computational project for small angle scattering \\
 \textbf{CPU} & central processing unit \\
@@ -332,7 +372,7 @@ Need to remember everyone...
 \textbf{DLPC} & 1,2-dilauroyl-\emph{sn}-glycero-3-phosphocholine \\
 \textbf{DMPC} & 1,2-dimyristoyl-\emph{sn}-glycero-3-phosphocholine \\
 \textbf{DMPG} & 1,2-dimyristoyl-\emph{sn}-glycero-3-phospho-(1'-rac-glycerol) \\
-\textbf{DCPC} & 1,2-distearoyl-\emph{sn}-glycero-3-phosphocholine \\
+\textbf{DSPC} & 1,2-distearoyl-\emph{sn}-glycero-3-phosphocholine \\
 \textbf{DPPC} & 1,2-dipalmitoyl-\emph{sn}-glycero-3-phosphocholine \\
 \textbf{DPC} & dodecylphosphocholine \\
 \textbf{DPD} & dissipative particle dynamics \\
@@ -356,6 +396,7 @@ Need to remember everyone...
 \textbf{NVE} & constant number, volume, and energy \\
 \textbf{NVT} & constant number, volume, and temperature \\
 \textbf{OER} & open education resource \\
+\textbf{PBC} & periodic boundary condition \\
 \textbf{PC} & phosphocholine \\
 \textbf{PDF} & probability distribution function \\
 \textbf{PFTE} & polytetrafluoroethylene \\
@@ -560,6 +601,9 @@ These educational resources introduce scattering users to simulation and its uti
 %%
 % The back matter contains appendices, bibliographies, indices, glossaries, etc.
 
+\appendix
+%\pagenumbering{roman}
+\include{appendices/diff_evo}
 \backmatter
 
 %\bibliography{main}

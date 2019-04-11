@@ -15,7 +15,7 @@ FIG_SAS = FIG_DIR + SAS
 FIG_TEACH = FIG_DIR + TEACH
 FIGURES_PLOT = [FIG_THEO + 'dyna.pdf', FIG_THEO + 'kine.pdf',
                 FIG_THEO + 'scales.pdf', FIG_THEO + 'rg.pdf',
-                FIG_THEO + 'sphere.pdf', FIG_THEO + 'grad.pdf',
+                FIG_THEO + 'sphere.pdf', 
                 FIG_THEO + 'diff_evo.pdf', FIG_THEO + 'part_swarm.pdf',
                 FIG_THEO + 'mcmc.pdf']
 FIGURES = [FIG_DIR + 'bath.pdf', FIG_DIR + 'diamond.pdf',
@@ -116,7 +116,8 @@ FIGURES = [FIG_DIR + 'bath.pdf', FIG_DIR + 'diamond.pdf',
 CHAPTERS = [REP + CHAP + 'introduction.tex', REP + CHAP + 'theory.tex',
             REP + CHAP + 'reflectometry1.tex',
             REP + CHAP + 'reflectometry2.tex', REP + CHAP + 'smallangle.tex',
-            REP + CHAP + 'teaching.tex', REP + CHAP + 'summary.tex']
+            REP + CHAP + 'teaching.tex', REP + CHAP + 'summary.tex',
+            REP + APP + 'diff_evo.tex']
 LATEX = [REP + CHAP + INTRO + 'soft_matter.tex',
          REP + CHAP + INTRO + 'scattering.tex',
          REP + CHAP + INTRO + 'coarsegraining.tex',
@@ -270,6 +271,7 @@ rule thesis:
         shell("black -l 70 reports/code_blocks/*.py")
         shell("xelatex -output-directory=reports/ reports/main.tex")
         shell("cd reports && biber main && cd ../")
+        shell("xelatex -output-directory=reports/ reports/main.tex")
         shell("xelatex -output-directory=reports/ reports/main.tex")
         shell("xelatex -output-directory=reports/ reports/main.tex")
 

@@ -16,18 +16,18 @@ import reflectometry as refl
 
 import matplotlib as mpl
 
-mpl.rcParams["xtick.labelsize"] = 8
-mpl.rcParams["ytick.labelsize"] = 8
+mpl.rcParams["xtick.labelsize"] = 10
+mpl.rcParams["ytick.labelsize"] = 10
 mpl.rcParams["axes.facecolor"] = "w"
 mpl.rcParams["lines.linewidth"] = 2
 mpl.rcParams["xtick.top"] = False
 mpl.rcParams["xtick.bottom"] = True
 mpl.rcParams["ytick.left"] = True
 mpl.rcParams["grid.linestyle"] = "--"
-mpl.rcParams["legend.fontsize"] = 8
+mpl.rcParams["legend.fontsize"] = 10
 mpl.rcParams["legend.facecolor"] = [1, 1, 1]
 mpl.rcParams["legend.framealpha"] = 0.75
-mpl.rcParams["axes.labelsize"] = 8
+mpl.rcParams["axes.labelsize"] = 10
 mpl.rcParams["axes.linewidth"] = 1
 mpl.rcParams["axes.edgecolor"] = "k"
 
@@ -49,37 +49,37 @@ for i in range(0, len(q)):
     r[i] *= 16 * np.pi ** 2
     r[i] /= q[i] ** 4
 
-plt.figure(figsize=(5, 25 / 6))
+plt.figure(figsize=(4.13, 3.51))
 gs = gridspec.GridSpec(2, 2)
 ax = plt.subplot(gs[0, 0])
 ax.plot(x, y * 1e6)
 ax.set_xlabel(r"$z$/Å")
 ax.set_ylabel(r"$\rho(z)$/$\times10^{-6}$ Å$^{-2}$")
 ax.set_xlim([-10, 10])
-ax.set_xticks(np.arange(-10, 15, 5))
+ax.set_xticks(np.arange(-10, 20, 10))
 ax.text(
-    0.1,
-    0.92,
+    0.12,
+    0.9,
     "(a)",
     horizontalalignment="center",
     verticalalignment="center",
     transform=ax.transAxes,
-    size=8,
+    size=10,
 )
 ax = plt.subplot(gs[0, 1])
 ax.plot(x2, y2 * 1e4)
 ax.set_xlabel(r"$z$/Å")
 ax.set_ylabel(r"$\rho'(z)$/$\times10^{-6}$ Å$^{-3}$")
 ax.set_xlim([-10, 10])
-ax.set_xticks(np.arange(-10, 15, 5))
+ax.set_xticks(np.arange(-10, 20, 10))
 ax.text(
-    0.1,
-    0.92,
+    0.12,
+    0.9,
     "(b)",
     horizontalalignment="center",
     verticalalignment="center",
     transform=ax.transAxes,
-    size=8,
+    size=10,
 )
 ax = plt.subplot(gs[1, :])
 ra = refl.abeles(q, np.array([0, 2.0719e-6]), np.array([10, 10]))
@@ -88,13 +88,13 @@ ax.plot(q, np.ones_like(q), lw=1)
 ax.set_xlabel(r"$q$/Å$^{-1}$")
 ax.set_ylabel(r"$R(q)$")
 ax.text(
-    0.05,
-    0.92,
+    0.95,
+    0.9,
     "(c)",
     horizontalalignment="center",
     verticalalignment="center",
     transform=ax.transAxes,
-    size=8,
+    size=10,
 )
 ax.set_yscale("log")
 ax.set_xlim([0, 0.1])
@@ -121,7 +121,7 @@ for i in range(0, len(q)):
     r[i] *= 16 * np.pi ** 2
     r[i] /= q[i] ** 4
 
-plt.figure(figsize=(5, 25 / 11))
+plt.figure(figsize=(4.13, 1.755))
 gs = gridspec.GridSpec(1, 2)
 ax = plt.subplot(gs[0, :])
 ra = refl.abeles(q, np.array([0, 2.0719e-6]), np.array([10, 10]))
@@ -144,45 +144,43 @@ qx = np.arange(-1.5, 1.5, 0.001)
 dsc = np.zeros_like(qx)
 for i, q in enumerate(qx):
     dsc[i] = np.sum(beta * np.exp(1j * q * x)) ** 2
-plt.figure(figsize=(5, 25 / 11))
-gs = gridspec.GridSpec(1, 2)
+plt.figure(figsize=(1.77, 3.54))
+gs = gridspec.GridSpec(2, 1)
 ax = plt.subplot(gs[0, 0])
 ax.plot(x, beta)
 ax.set_yticks([0])
 ax.set_xlabel(r"x/Å")
-ax.set_ylabel(r"$\beta/$Å$^{-2}$")
+ax.set_ylabel(r"SLD/Å$^{-2}$")
 ax.text(
-    0.075,
-    0.92,
+    0.12,
+    0.88,
     "(a)",
     horizontalalignment="center",
     verticalalignment="center",
     transform=ax.transAxes,
-    size=8,
+    size=10,
 )
-ax = plt.subplot(gs[0, 1])
+ax = plt.subplot(gs[1, 0])
 ax.plot(qx, dsc)
 ax.set_yticks([0])
-ax.set_xticks([-1.2566, -0.6283, 0, 0.6283, 1.2566])
+ax.set_xticks([-1.2566, 0, 1.2566])
 ax.set_xticklabels(
     [
         r"$\frac{-4\pi}{d_x}$",
-        r"$\frac{-2\pi}{d_x}$",
         0,
-        r"$\frac{2\pi}{d_x}$",
         r"$\frac{4\pi}{d_x}$",
     ]
 )
 ax.set_xlabel(r"$q_x$/Å$^{-1}$")
 ax.set_ylabel(r"$\frac{d\sigma}{d\Omega}$/Å$^{2}$")
 ax.text(
-    0.075,
-    0.92,
+    0.12,
+    0.88,
     "(b)",
     horizontalalignment="center",
     verticalalignment="center",
     transform=ax.transAxes,
-    size=8,
+    size=10,
 )
 plt.tight_layout()
 plt.savefig("../reports/figures/theory/scales.pdf")
@@ -200,7 +198,7 @@ def sphere(r, q):
 
 q = np.linspace(0.001, 0.75, 100)
 i = sphere(20, q)
-plt.figure(figsize=(5, 25 / 6))
+plt.figure(figsize=(4.13, 3.51))
 gs = gridspec.GridSpec(2, 1)
 ax = plt.subplot(gs[0, 0])
 ax.plot(q, i, "o")
@@ -211,13 +209,13 @@ ax.set_ylabel(r"$I(q)$")
 ax.set_xlim(0.01, 0.75)
 ax.set_ylim(0.0001, 1)
 ax.text(
-    0.05,
-    0.08,
+    0.12,
+    0.1,
     "(a)",
     horizontalalignment="center",
     verticalalignment="center",
     transform=ax.transAxes,
-    size=8,
+    size=10,
 )
 ax1 = plt.subplot(gs[1, 0])
 ax1.plot(q * q, np.log(i), "o")
@@ -230,13 +228,13 @@ ax1.set_ylim(-8.5, 0)
 ax1.set_xlabel(r"$q^2$/Å$^{-2}$")
 ax1.set_ylabel(r"ln[$I(q)$]")
 ax1.text(
-    0.05,
-    0.08,
+    0.06,
+    0.1,
     "(b)",
     horizontalalignment="center",
     verticalalignment="center",
     transform=ax1.transAxes,
-    size=8,
+    size=10,
 )
 plt.tight_layout()
 plt.savefig("../reports/figures/theory/rg.pdf")
@@ -247,7 +245,7 @@ exp_file = "../data/theory/Experimental-sphere.txt"
 
 data = pd.read_csv(exp_file, delim_whitespace=True)
 
-plt.figure(figsize=(5, 25 / 11))
+plt.figure(figsize=(4.13, 1.755))
 plt.errorbar(
     data["<X>"],
     data["<Y>"],
@@ -283,7 +281,7 @@ def lj_energy(rij, a, b):
 
 
 r = np.linspace(3e-10, 6e-10, 100)
-fig = plt.figure(figsize=(5, 25 / 11))
+fig = plt.figure(figsize=(4.13, 2.6325))
 ax = fig.add_subplot(111)
 ax.plot(r * 1e10, 6.022e23 * 1e-3 * attractive_energy(r, 9.273e-78))
 ax.plot(r * 1e10, 6.022e23 * 1e-3 * repulsive_energy(r, 1.363e-134))
@@ -292,6 +290,7 @@ ax.plot(
 )
 ax.set_xlabel("$r$/Å")
 ax.set_ylabel(r"$E$/kJmol$^{-1}$")
+plt.tight_layout()
 plt.savefig("../reports/figures/theory/lj.pdf")
 plt.close()
 
@@ -308,78 +307,6 @@ def xrosen(x, y):
 
 def yrosen(x, y):
     return 200 * (y - x ** 2)
-
-
-startx = -1.5
-starty = -0.5
-
-alpha = [8e-4, 2e-4]
-label = ["(a)", "(b)"]
-
-routea = grad.gradient_descent(
-    startx, starty, xrosen, yrosen, alpha[0], 1e-4
-)
-routeb = grad.gradient_descent(
-    startx, starty, xrosen, yrosen, alpha[1], 1e-4
-)
-
-routes = [routea, routeb]
-xs = np.linspace(-2.0, 2.0, 50)
-ys = np.linspace(-1.0, 3.0, 50)
-es = np.zeros((xs.size, ys.size))
-for i in range(xs.size):
-    for j in range(ys.size):
-        es[i, j] = rosenbrock(xs[i], ys[j])
-
-fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(5, 25 / 11))
-for i, ax in enumerate(axes.flat):
-    im = ax.contourf(ys, xs, np.log(es), 100, cmap="Blues")
-    ax.plot(
-        routes[i][:200, 1],
-        routes[i][:200, 0],
-        marker="o",
-        ms=4,
-        c=sns.color_palette()[i + 1],
-    )
-    ax.plot(
-        routes[i][200::10, 1],
-        routes[i][200::10, 0],
-        marker="o",
-        ms=4,
-        c=sns.color_palette()[i + 1],
-    )
-    ax.text(
-        0.95,
-        0.95,
-        r"$\alpha$ = {:.0e} & $n$ = {:d}".format(
-            alpha[i], routes[i].shape[0]
-        ),
-        horizontalalignment="right",
-        verticalalignment="center",
-        transform=ax.transAxes,
-        color=sns.color_palette()[i + 1],
-        size=8,
-    )
-    ax.text(
-        0.95,
-        0.05,
-        label[i],
-        horizontalalignment="right",
-        verticalalignment="center",
-        transform=ax.transAxes,
-        color=sns.color_palette()[i + 1],
-        size=8,
-    )
-    ax.set_ylabel(r"$x_1$")
-    ax.set_xlabel(r"$x_2$")
-
-
-plt.tight_layout()
-fig.subplots_adjust(right=0.8)
-cbar_ax = fig.add_axes([0.85, 0.27, 0.05, 0.6])
-fig.colorbar(im, cax=cbar_ax, label=r"$\ln[F(\mathbf{x})]$")
-plt.savefig("../reports/figures/theory/grad.pdf")
-plt.close()
 
 
 def ackley(x):
@@ -415,7 +342,7 @@ for i in range(xs.size):
     for j in range(ys.size):
         es[i, j] = ackley(np.array([xs[i], ys[j]]))
 
-fig = plt.figure(figsize=(5, 25 / 6))
+fig = plt.figure(figsize=(4.13, 3.304))
 ax = fig.add_subplot(111)
 im = ax.contourf(ys, xs, es, 100, cmap="Blues")
 for i in range(route.shape[2]):
@@ -476,7 +403,8 @@ ax.set_xlabel(r"$x_2$")
 plt.colorbar(im, label=r"$F(\mathbf{x})$")
 
 plt.tight_layout()
-plt.savefig("../reports/figures/theory/part_swarm.pdf")
+plt.savefig("../reports/figures/theory/part_swarm.pdf", bbox_inches = 'tight',
+    pad_inches = 0)
 plt.close()
 
 
@@ -657,5 +585,6 @@ ax1.text(
 )
 
 plt.tight_layout()
-plt.savefig("../reports/figures/theory/mcmc.pdf")
+plt.savefig("../reports/figures/theory/mcmc.pdf", bbox_inches = 'tight',
+    pad_inches = 0)
 plt.close()

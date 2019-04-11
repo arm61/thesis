@@ -54,10 +54,10 @@
       <file>blx-unicode.def</file>
       <file>blx-compat.def</file>
       <file>biblatex.def</file>
-      <file>verbose-note.bbx</file>
+      <file>verbose-trad2.bbx</file>
       <file>authortitle.bbx</file>
       <file>standard.bbx</file>
-      <file>verbose-note.cbx</file>
+      <file>verbose-trad2.cbx</file>
       <file>biblatex.cfg</file>
       <file>english.lbx</file>
     </requires>

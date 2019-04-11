@@ -1,64 +1,29 @@
 \section{Optimisation \& sampling methods}
 \label{sec:optimisation}
 In this work, computational modelling methods have been applied to important scattering problems.
-The aim of many modelling problems is to optimise a series of parameters such that a minimum is found in some parameter-dependent metric.
+The aim of many modelling problems is to optimise a series of parameters such that a minimum in some parameter-dependent metric is found.
 While, in other circumstances, the aim is to sample the parametric search-space of a particular problem.
 The problem of parameter optimisation and sampling is a massive area of mathematics and computer science and is it not possible to introduce the whole field.
-Therefore, we will introduce two optimisation methods and two sampling methods that are applied within this work.
+Therefore, I will introduce two optimisation methods and two sampling methods that are applied within this work.
 
-%\subsection{Single candidate optimisation methods}
-%\label{sec:singlecan}
-%Single candidate methods are optimisation procedures that operate in a linear fashion, where there is a single sample that must be optimised.
-%These type of methods are often more straightforward than the population methods discussed later, however frequently they are only suitable for the determination of local minima.
+Both optimisation algorithms in this work are population-based, making use of a population of candidate solutions.
+These populations of candidate solutions often have knowledge of the state of each other through some interaction method.
+The interaction method is often used to characterise the algorithms, into evolutionary algorithms and swarm intelligence algorithms.\autocite{wu_ensemble_2019}
+These population methods are usually more efficient at finding the global minimum for a given search space, than a single candidate method.
 
-%\subsubsection{Gradient descent}
-%The gradient descent is a simple, analytic optimisation algorithm that is capable of determining the local minimum of a given function.
-%This method involves determining the local gradient of the function, at a given position and using this to define how the position should be changed.
-%For some arbitrary, multi-dimensional function, $F(\mathbf{p})$, where $\mathbf{p}$ is the position, this can be described as,
-%
-%\begin{equation}
-%\mathbf{a} \leftarrow \mathbf{a} - \alpha \frac{\partial F(\mathbf{p})}{\partial \mathbf{a}},
-%\end{equation}
-%
-%where $\alpha$ is a constant that defines the step-size and $\sfrac{\partial F(\mathbf{p})}{\partial \mathbf{p}}$ is the first derivative of the multi-dimensional function.
-%It is necessary to find a suitable value for $\alpha$ for a given function.
-%Therefore, the gradient descent method is often replaced with the more computationally expensive Newton-Raphson methods.
-%The gradient descent method is shown applied to a Rosenbrock function \cite{rosenbrock_automatic_1960}, with a series of different step sizes in Figure~\ref{fig:grad}
-%The gradient descent method is relatively simple to introduce, shown in Code Block~\ref{cb:grad}, however, it is only capable of finding local minima and therefore is often unsuitable for situations where the global minima are desired.
-%
-%\begin{figure}
-%    \centering
-%    \includegraphics[width=0.85\textwidth]{theory/grad}
-%    \caption{Example of the gradient descent method applied to a Rosenbrock function \cite{rosenbrock_automatic_1960}, where $a=1$ and $b=100$ (therefore the minima is at ($1$, $1$)), $n$ indicated the number of iterations required to minimise the values. Two different values (\SIlist{2e-4;8e-4}{}) for $\alpha$ are shown to emphasize the efficiency improvement that is possible with the optimisation.}
-%    \label{fig:grad}
-%\end{figure}
-%
-%
-%\begin{figure}
-%    \centering
-%        \lstinputlisting[caption={An example of a simple implementation for the Gradient descent, as applied to a two-dimensional function.},label={cb:grad}]{reports/code_blocks/grad.py}
-%\end{figure}
-%
-
-\subsection{Population optimisation methods}
-Population-based algorithms make use of a population of candidate solutions.%, compared to the single candidate shown in the gradient descent method above.
-This population of candidate solutions often have knowledge of the state of each other through some interaction method.
-The method of interaction is often used to characterise the algorithms, into evolutionary algorithms (such as differential evolution), and swarm intelligence algorithms (such as the particle swarm method detailed below) \cite{wu_ensemble_2019}.
-These population methods are usually more efficient at finding the global minimum for a given search space, than the single candidate methods described above.
-
-\subsubsection{Differential evolution}
+\subsection{Differential evolution}
 \label{sec:de}
-Differential evolution (DE) is a common, iterative optimisation algorithm, that was first applied to the analysis of reflectometry and diffraction data by Wormington \emph{et al.} \cite{wormington_characterization_1999}.
-Since then, it has proven very popular for the optimisation of reflectometry data and is included in many common analysis programs \cite{bjorck_fitting_2011,bjorck_genx_2007,nelson_co-refinement_2006,nelson_refnx_2019,ott_simulreflec_nodate,kienzle_ncnr_nodate}.
-The DE algorithm is designed to more ably determine the global minimum of a particular function \cite{storn_differential_1997}.
+Differential evolution (DE) is a common, iterative optimisation algorithm, that was first applied to the analysis of reflectometry and diffraction data by Wormington \emph{et al.}\autocite{wormington_characterization_1999}
+Since then, it has proven very popular for the optimisation of reflectometry data and is included in many common analysis programs.\autocite{bjorck_fitting_2011,bjorck_genx_2007,nelson_co-refinement_2006,nelson_refnx_2019,ott_simulreflec_nodate,kienzle_ncnr_nodate}
+The DE algorithm is designed to more ably determine the global minimum of a particular function.\autocite{storn_differential_1997}
 
-DE is an example of a genetic algorithm, one that is designed to mimic the evolution processes observed in biology \cite{holland_adaptation_1992}.
+DE is an example of a genetic algorithm, one that is designed to mimic the evolution processes observed in biology.\autocite{holland_adaptation_1992}
 The method consists of two vectors, the parent population, $\mathbf{p}$, the offspring population, $\mathbf{o}$.
 These vectors are of a dimension $(i\times j)$, where $i$ is the number of variables being optimised and $j$ is the number of candidate solutions being used.
-The offspring population vector is created through some trial methods, many of these exist however we will discuss a simple classical trial method, details of other methods may be found in the work of Bj\"{o}rck \cite{bjorck_fitting_2011}.
+The offspring population vector is created through some trial methods.\footnote{Many of these exist however we will discuss a simple classical trial method, details of other methods may be found in \cite{bjorck_fitting_2011}.}
 
 A classical trial method consists of two stages, mutation and recombination.
-The mutation stage involves performing some mutation on the parent population to create a mutant vector, $\mathbf{m}$, analogous to the mutation in biologically evolutionary theory.
+The mutation stage involves performing some mutation on the parent population to create a mutant vector, $\mathbf{m}$, analogous to the mutation in biological evolutionary theory.
 The magnitude of the mutation is dependent on the mutation constant, $k_m$,
 %
 \begin{equation}
@@ -83,7 +48,7 @@ The recombination constant controls the progress of the algorithm as it impacts 
 
 The final stage is to compare the offspring and parent population vectors, in the selection stage to create the new parent population for the next iteration.
 The selection stage comprises of using some figure of merit, $\zeta$, to choose between the subunit from the offspring or parent population vector.
-In our example, that figure of merit may be the agreement between some experimental data and our model, or for the example in Figure~\ref{fig:diff_evo} it is the value of the Ackley function \cite{ackley_connectionist_1987}, which we are trying to minimise.
+In our example, that figure of merit may be the agreement between some experimental data and our model, or for the example in Figure~\ref{fig:diff_evo} it is the value of the Ackley function,\autocite{ackley_connectionist_1987} which we are trying to minimise.\footnote{The Ackley function is a common function used for assessing the utility of global optimisation functions.}
 %
 \begin{equation}
     \mathbf{p}_{*,j} \leftarrow
@@ -97,48 +62,33 @@ where, the $*$ notation indicates all objects in the given population, and $\zet
 %
 \begin{figure}
     \centering
-    \includegraphics[width=0.85\textwidth]{theory/diff_evo}
-    \caption{An example of a differential evolution (DE) algorithm as applied to an Ackley function \cite{ackley_connectionist_1987}, where $a=20$, $b=0.2$, and $c=2\pi$ (a common function for assessing global optimisation methods). The mutation and recombination constant in this implementation are both $0.5$. Each different coloured line represents a different candidate solution. The optimisation was stopped after $100$ iterations had run.}
+    \includegraphics[width=\textwidth]{theory/diff_evo}
+    \caption{An example of a differential evolution (DE) algorithm as applied to an Ackley function, where $a=20$, $b=0.2$, and $c=2\pi$. The mutation and recombination constant in this implementation are both $0.5$. Each different coloured line represents a different candidate solution. The optimisation was stopped after $100$ iterations had run.}
     \label{fig:diff_evo}
 \end{figure}
 %
 
-It is noted that it is often the case, in particular, when optimising experimental data, that there should be some bounds applied to the variables within the populations.
+It is noted that it is often the case,\footnote{In particular for the optimisation of experimental data.} that there should be some bounds applied to the variables within the populations.
 However, the DE algorithm may disregard these bounds due to the nature of the mutation step.
 Therefore, it is common in DE algorithms, where bounds must be set, that if the search space moves outside that expected it is necessary to reinitialise the parameter.
-An implementation of the DE algorithm is given programmatically in Code Block~\ref{cb:diff_evo}, where this reinitialisation is achieved by obtaining a new random number within the given bounds.
+An implementation of the DE algorithm is given programmatically in Code Block~\ref{cb:diff_evo},\footnote{Additional Code Blocks showing the mutation, recombination, selection steps may be found in Appendix~\ref{diff_evo_app}.} where this reinitialisation is achieved by obtaining a new random number within the given bounds.
 %
-\begin{figure}
-        \lstinputlisting[caption={An example of a simple implementation for a DE algorithm as described by Bj\"{o}rck \cite{bjorck_fitting_2011}.},label={cb:diff_evo}]{reports/code_blocks/diff_evo.py}
-\end{figure}
-%
-%
-\begin{figure}
+\begin{listing}
     \centering
-        \lstinputlisting[caption={The mutation step used in a classical trial method for a differential evolution algorithm, as described by Bj\"{o}rck \cite{bjorck_fitting_2011}.},label={cb:mut}]{reports/code_blocks/mutation.py}
-\end{figure}
-%
-%
-\begin{figure}
-    \centering
-        \lstinputlisting[caption={The recombination step used in a classical trial method for a differential evolution algorithm, as described by Bj\"{o}rck \cite{bjorck_fitting_2011}.},label={cb:recomb}]{reports/code_blocks/recombination.py}
-\end{figure}
-%
-%
-\begin{figure}
-    \centering
-        \lstinputlisting[caption={The selection step used in a differential evolution algorithm, as described by Bj\"{o}rck \cite{bjorck_fitting_2011}.},label={cb:sel}]{reports/code_blocks/selection.py}
-\end{figure}
+    \caption{An example of a simple implementation for a DE algorithm as described in \cite{bjorck_fitting_2011}.}
+    \lstinputlisting{reports/code_blocks/diff_evo.py}
+    \label{cb:diff_evo}
+\end{listing}
 %
 
-\subsubsection{Particle swarm}
+\subsection{Particle swarm}
 \label{sec:partswarm}
 Particle swarm optimisation (PSO) is a type of swarm intelligence population-based optimisation method.
-This optimisation method was originally developed by Kennedy, Eberhart, and Shi for the simulation of social organisms such as bird flocks \cite{kennedy_particle_1995,shi_modified_1998}.
+This optimisation method was originally developed by Kennedy, Eberhart, and Shi for the simulation of social organisms such as bird flocks.\autocite{kennedy_particle_1995,shi_modified_1998}
 Particle swarm methods are particularly suitable for the optimisation, and sampling, of parametric search-spaces with a large number of similar minima, and therefore is useful for the study of the self-assembly of soft matter materials (Section~\ref{smallangle}).
 
 These methods consist of a population vector, similar to that described for the differential evolution, that moves around the parametric search-space.
-The motions of these `particles' are influenced by the positions of the other particles in the vector \cite{poli_analysis_2008}.
+The motions of these ``particles'' are influenced by the positions of the other particles in the vector.\autocite{poli_analysis_2008}
 It is anticipated that this will lead the swarm to optimise the function under investigation.
 
 Particles in the swarm are under the influence of two elastic forces.
@@ -159,12 +109,12 @@ This velocity is determined as shown below,
 %
 where, $\omega$ a constant known as the interia weight, $R1\sim U[0, 1)$ and $R2\sim U[0, 1)$ are random numbers, $\mathbf{g}_{*}$ is the best position occupied by any particle in the swarm and $\mathbf{s}_{*,j}$ is the person best for the particle $j$.
 
-Figure~\ref{fig:part_swarm} shows an example of the particle swarm optimisation in action, applied to the Ackley function \cite{ackley_connectionist_1987}. Code Block~\ref{cb:part_swarm} shows a functional programmatic implementation of a particle swarm optimisation algorithm.
+Figure~\ref{fig:part_swarm} shows an example of the particle swarm optimisation in action, applied to the Ackley function.\autocite{ackley_connectionist_1987} Code Block~\ref{cb:part_swarm} shows a functional programmatic implementation of a particle swarm optimisation algorithm.
 %
 \begin{figure}
     \centering
     \includegraphics[width=0.85\textwidth]{theory/part_swarm}
-    \caption{An example of a particle swarm optimisation as applied to an Ackley function \cite{ackley_connectionist_1987}, where $a=20$, $b=0.2$, and $c=2\pi$. For the particle swarm, the following parameters were used $\omega=0.9$, $\psi_g=0.05$, and $\psi_p=0.05$. Each different coloured line represents a different candidate solution. The optimisation was stopped after $100$ iterations had run.}
+    \caption{An example of a particle swarm optimisation as applied to an Ackley function (from \cite{ackley_connectionist_1987}), where $a=20$, $b=0.2$, and $c=2\pi$. For the particle swarm, the following parameters were used $\omega=0.9$, $\psi_g=0.05$, and $\psi_p=0.05$. Each different coloured line represents a different candidate solution. The optimisation was stopped after $100$ iterations had run.}
     \label{fig:part_swarm}
 \end{figure}
 %
@@ -176,18 +126,18 @@ Figure~\ref{fig:part_swarm} shows an example of the particle swarm optimisation 
 
 \subsection{Markov chain Monte-Carlo}
 \label{sec:mcmc}
-Markov chain Monte Carlo (MCMC) is a sampling methodology, derived from direct sampling Monte-Carlo \cite{krauth_statistical_2006}.
-The aim of an MCMC algorithm is to sample a probability distribution, when parameters are described in terms of their degree of probability \cite{sivia_data_2006}.
+Markov chain Monte Carlo (MCMC) is a sampling methodology, derived from direct sampling Monte-Carlo.\autocite{krauth_statistical_2006}
+The aim of an MCMC algorithm is to sample a probability distribution, when parameters are described in terms of their degree of probability.\autocite{sivia_data_2006}
 Similar to molecular dynamics, in practical terms, MCMC should not be used on a system that is not already optimised, as its purpose is probability distribution sampling rather than minimisation.
 Generally, the approach would be to optimise using, for example, one of the approaches described above, then to use MCMC or molecular dynamics to sample the appropriate search-space.
 For example, in this work MCMC is used extensively, following the optimisation of a reflectometry model using a differential evolution algorithm, to quantify the inverse uncertainties of the model (this is the name given to the uncertainties in the parameters fitted in the modelling process).
 In this context, the inverse uncertainty is the uncertainty on a given parameter within the model.
-In addition to being able to give information about the inverse uncertainties, MCMC also offers a more complete understanding of the correlations present between the different parameters \cite{gilks_markov_1995}, as the interactions between the parameter variation has been quantified.
+In addition to being able to give information about the inverse uncertainties, MCMC also offers a more complete understanding of the correlations present between the different parameters,\autocite{gilks_markov_1995} as the interactions between the parameter variation has been quantified.
 
 The aim of MCMC is to only sample configurations of a given function that are within the experimental uncertainty.
 Figure~\ref{fig:mcmc} shows an example of the possible output that may be obtained from the application of an MCMC sampling method.
-This was generated using a Metropolis-Hastings algorithm \cite{metropolis_equation_1953,hastings_monte_1970}, shown in Code Block~\ref{cb:mcmc}.
-Initially, a Levenberg–Marquardt algorithm \cite{levenberg_method_1944,marquardt_algorithm_1963} was used to optimise the positions and integral of the two Gaussian functions that make up the data.
+This was generated using a Metropolis-Hastings algorithm,\autocite{metropolis_equation_1953,hastings_monte_1970} shown in Code Block~\ref{cb:mcmc}.
+Initially, a Levenberg–Marquardt algorithm\autocite{levenberg_method_1944,marquardt_algorithm_1963} was used to optimise the positions and integral of the two Gaussian functions that make up the data.
 The MCMC was used to sample the values that were within the experimental uncertainty.
 %
 \begin{figure}
@@ -239,7 +189,7 @@ Any of the optimisation methods discussed above could be used alongside these cl
 However, it is often the case that we are interested in a dynamically relevant structure at a given temperature for some system.
 This is where molecular dynamics simulations are a useful and important tool.
 
-\subsubsection{Forces and accelertions}
+%\subsubsection{Forces and accelertions}
 The aim of a molecular dynamics simulation is to probe the positions, velocities, and accelerations on each of the atoms, or coarse-grained particles, as a simulation progresses.
 The acceleration on a given particle, $\mathbf{a}$ is defined by the force on that particle, $\mathbf{f}$, in agreement with Newton's second law of motion,
 %
@@ -268,13 +218,13 @@ To determine the force in a given direction, it is necessary to find the product
 %
 where $r_x$ is the atomic configuration in the $x$-dimension, and $|\mathbf{r}|$ is the magnitude of the atomic configuration vector.
 
-\subsubsection{Integration}
+%\subsubsection{Integration}
 The potential model, which we define for a given system, allows for the calculation of the acceleration on each particle in that system.
 The next step is to use this acceleration to iterate through the trajectory of our system.
-This is achieved by applying Newtonian equations of motion, for example in the Velocity-Verlet algorithm \cite{swope_computer_1982}.
+This is achieved by applying Newtonian equations of motion, for example in the Velocity-Verlet algorithm.\autocite{swope_computer_1982}
 %
 \begin{equation}
-\mathbf{x}(t + \Delta t) = \mathbf{x}(t) + \mathbf{v}(t)\Delta t + \frac{1}{2}\mathbf{a}(t)\Delta t^2, \\
+\mathbf{x}(t + \Delta t) = \mathbf{x}(t) + \mathbf{v}(t)\Delta t + \frac{1}{2}\mathbf{a}(t)\Delta t^2,
 \label{equ:vv1}
 \end{equation}
 \begin{equation}
@@ -299,14 +249,14 @@ The above analytical process is known as the integration step, and the Velocity-
 If the size of the timestep $\Delta t$ is too large, the step size for a given iteration will not be accurate, as the forces on the atoms will change too significantly during it.
 Therefore, the values of the timestep is usually on the order of \SI{10e-15}{\second} (\si{\femto\second}).
 This means that in order to simulate a single nanosecond of ``real-time'' molecular dynamics, the integrator must be solved one million times.
-This can be slow for very large systems, leading to an interest in coarse-grained simulations that result in fewer particles to determine the forces for (speeding up the integration step), but also enable to use of larger timesteps (so fewer integrations must be solved) \cite{rudd_coarse-grained_1998,brini_systematic_2013}, for example, the use of a MARTINI potential model allows for an upto twenty times increase in the timestep compared to an all-atom model.
+This can be slow for very large systems, leading to an interest in coarse-grained simulations that result in fewer particles to determine the forces for (speeding up the integration step), but also enable to use of larger timesteps (so fewer integrations must be solved),\autocite{rudd_coarse-grained_1998,brini_systematic_2013} for example, the use of a MARTINI potential model allows for an upto twenty times increase in the timestep compared to an all-atom model.
 
-\subsubsection{Initialisation}
+%\subsubsection{Initialisation}
 The above discussion ignored two aspects that are necessary to run a molecular dynamics simulation, both of which as associated with the original configuration of the system; the original particle positions and velocities.
 
-The particle positions are usually taken from some library, for example for the simulation of a protein, often the protein data bank \cite{noauthor_rcsb_nodate} is a useful resource.
-Small molecules may be configured by hand using graphical programs such as Jmol \cite{noauthor_jmol_nodate}.
-These small molecules may be built into complex, multicomponent structures using software such as the Packmol package \cite{martinez_packmol_2009}.
+The particle positions are usually taken from some library, for example for the simulation of a protein, often the protein data bank\autocite{noauthor_rcsb_nodate} is a useful resource.
+Small molecules may be configured by hand using graphical programs such as Jmol.\autocite{noauthor_jmol_nodate}
+These small molecules may be built into complex, multicomponent structures using software such as the Packmol package.\autocite{martinez_packmol_2009}
 The importance of this initial structure cannot be overstated, for example, if the initial structure in a molecular dynamics simulation is unrepresentative of the equilibrium structure, it may take a large amount of simulation time before the equilibrium structure is obtained, possibly much longer than could be reasonably simulated.
 
 The initial particle velocities are obtained in a much more general fashion.
@@ -319,7 +269,7 @@ E_k = \sum_{i=1}^N{\frac{m_i|\mathbf{v}_i|^2}{2}} = \frac{3}{2}Nk_BT,
 %
 where, $m_i$ and $\mathbf{v}_i$ are the masses and velocities of the particles, $N$ is the number of particles, and $k_B$ is the Boltzmann constant.
 
-\subsubsection{Ensembles}
+%\subsubsection{Ensembles}
 The above algorithm details a simulation that makes use of an NVE ensemble, a simulation where the number of particles (N), the volume of the system (V), the energy of the system (E) are all kept constant.
 However, this is not the only simulation ensemble that is available, within this work two other ensembles have been used extensively,
 %
@@ -329,8 +279,8 @@ However, this is not the only simulation ensemble that is available, within this
 \end{itemize}
 %
 Thermostating involves controlling the kinetic energy of the particles (Equation~\ref{equ:ek}) such that the simulation temperature is kept at a predefined value.
-There are a variety of methods for thermostating a molecular dynamics simulation, such as the Andersen, Nos\'{e}-Hoover, or Berendsen methods \cite{andersen_molecular_1980,nose_unified_1984,berendsen_molecular_1984,hoover_canonical_1985}.
-However, the most straightforward to describe, and that implemented in the \texttt{pylj} software (discussed in detail in Chapter \ref{teaching}) \cite{mccluskey_pylj_2018,mccluskey_arm61/pylj_2018} is a velocity rescaling \cite{bussi_canonical_2007}.
+There are a variety of methods for thermostating a molecular dynamics simulation, such as the Andersen, Nos\'{e}-Hoover, or Berendsen methods.\autocite{andersen_molecular_1980,nose_unified_1984,berendsen_molecular_1984,hoover_canonical_1985}
+However, the most straightforward to describe, and that implemented in the \texttt{pylj} software (discussed in detail in Chapter \ref{teaching}) \autocite{mccluskey_pylj_2018,mccluskey_arm61/pylj_2018} is a velocity rescaling.\autocite{bussi_canonical_2007}
 This is where the velocities for a random subset of the particles, $\mathbf{v}_i$ are adapted based on the following relation,
 %
 \begin{equation}
@@ -342,7 +292,7 @@ where, $T_{\text{target}}$ is the target temperature, and $\bar{T}$ is the avera
 The use of a barostat to control the simulation pressure usually involves varying the simulation cell parameters and the distances between the particles.
 This would in a similar way to thermostating, where the simulation dimensions are scaled by a value in an effort to control the pressure.
 The barostating methods are similar to the thermostating methods with Andersen, Nos\'{e}-Hoover, and Berendsen methods.
-However, there is also the Parrinello-Rahman barostat which allows for independent control of the different cell dimensions giving control of stress in addition to pressure \cite{parrinello_polymorphic_1981}.
+However, there is also the Parrinello-Rahman barostat which allows for independent control of the different cell dimensions giving control of stress in addition to pressure.\autocite{parrinello_polymorphic_1981}
 
 These optimisation and sampling methods were used in a variety of different applications within this work, firstly differential evoluation optimisation and MCMC sampling are used in Chapter~\ref{reflectometry1} in the study of a chemically-consistent modelling approach to X-ray and neutron reflectometry analysis.
 Molecular dynamics simulation are investigated as a possible tool to assist in the analysis of reflectometry in in Chapter~\ref{reflectometry2}.
