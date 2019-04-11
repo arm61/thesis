@@ -387,7 +387,7 @@ for i in range(xs.size):
     for j in range(ys.size):
         es[i, j] = ackley(np.array([xs[i], ys[j]]))
 
-fig = plt.figure(figsize=(5, 25 / 6))
+fig = plt.figure(figsize=(4.13, 3.304))
 ax = fig.add_subplot(111)
 im = ax.contourf(ys, xs, es, 100, cmap="Blues")
 for i in range(route.shape[2]):
@@ -403,8 +403,7 @@ ax.set_xlabel(r"$x_2$")
 plt.colorbar(im, label=r"$F(\mathbf{x})$")
 
 plt.tight_layout()
-plt.savefig("../reports/figures/theory/part_swarm.pdf", bbox_inches = 'tight',
-    pad_inches = 0)
+plt.savefig("../reports/figures/theory/part_swarm.pdf")
 plt.close()
 
 
@@ -432,7 +431,7 @@ x2 = np.linspace(-5, 8, 2500)
 
 theta1 = np.zeros((4))
 guess1 = gaussian(x, [popt[0], popt[1], popt[2], popt[3]])
-plt.figure(figsize=(5, 25 / 4))
+plt.figure(figsize=(4.13, 5.1625))
 gs = gridspec.GridSpec(3, 2)
 
 ax1 = plt.subplot(gs[2, :])
@@ -585,6 +584,5 @@ ax1.text(
 )
 
 plt.tight_layout()
-plt.savefig("../reports/figures/theory/mcmc.pdf", bbox_inches = 'tight',
-    pad_inches = 0)
+plt.savefig("../reports/figures/theory/mcmc.pdf")
 plt.close()

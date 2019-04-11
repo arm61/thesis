@@ -83,17 +83,18 @@ An implementation of the DE algorithm is given programmatically in Code Block~\r
 
 \subsection{Particle swarm}
 \label{sec:partswarm}
-Particle swarm optimisation (PSO) is a type of swarm intelligence population-based optimisation method.
-This optimisation method was originally developed by Kennedy, Eberhart, and Shi for the simulation of social organisms such as bird flocks.\autocite{kennedy_particle_1995,shi_modified_1998}
-Particle swarm methods are particularly suitable for the optimisation, and sampling, of parametric search-spaces with a large number of similar minima, and therefore is useful for the study of the self-assembly of soft matter materials (Section~\ref{smallangle}).
+Particle swarm optimisation\footnote{Abbreviated to PSO.} is a type of swarm intelligence population-based optimisation method.
+This optimisation method was originally developed by Kennedy, Eberhart, and Shi.\autocite[The initial purpose of the algorithm was to simulate social organisms such as bird flocks]{kennedy_particle_1995,shi_modified_1998}
+Particle swarm methods are particularly suitable for the optimisation, and sampling, of parametric search-spaces with a large number of similar minima.
+Therefore, I believe that it will be useful for the study of the self-assembly of soft matter materials.\footnote{This is the focus of Chapter~\ref{smallangle}.}
 
 These methods consist of a population vector, similar to that described for the differential evolution, that moves around the parametric search-space.
 The motions of these ``particles'' are influenced by the positions of the other particles in the vector.\autocite{poli_analysis_2008}
 It is anticipated that this will lead the swarm to optimise the function under investigation.
 
 Particles in the swarm are under the influence of two elastic forces.
-The first attracts the particle to the best location in the search-space that the particle has found, while the other attracts the particle to the best search-space location found by any particle of the swarm.
-The magnitudes of these forces are randomised but modulated by a pair of acceleration coefficients, $\psi_p$ that influences the attraction towards the personal best location, and $\psi_g$ that influences the attraction to the global best location.
+The first attracts the particle to the best location in the search-space that the particular particle has found, while the other attracts the particle to the best search-space location found by any particle of the swarm.
+The magnitudes of these forces are randomised but modulated by a pair of acceleration coefficients; $\psi_p$ that influences the attraction towards the personal best location and $\psi_g$ that influences the attraction to the global best location.
 The position of a particle changes between iterations of the algorithm based on the following relation,
 %
 \begin{equation}
@@ -109,40 +110,42 @@ This velocity is determined as shown below,
 %
 where, $\omega$ a constant known as the interia weight, $R1\sim U[0, 1)$ and $R2\sim U[0, 1)$ are random numbers, $\mathbf{g}_{*}$ is the best position occupied by any particle in the swarm and $\mathbf{s}_{*,j}$ is the person best for the particle $j$.
 
-Figure~\ref{fig:part_swarm} shows an example of the particle swarm optimisation in action, applied to the Ackley function.\autocite{ackley_connectionist_1987} Code Block~\ref{cb:part_swarm} shows a functional programmatic implementation of a particle swarm optimisation algorithm.
+Figure~\ref{fig:part_swarm} shows an example of the particle swarm optimisation in action, applied to the Ackley function.autocite{ackley_connectionist_1987} 
+Code Block~\ref{cb:part_swarm} shows a functional programmatic implementation of a particle swarm optimisation algorithm.
 %
 \begin{figure}
     \centering
-    \includegraphics[width=0.85\textwidth]{theory/part_swarm}
-    \caption{An example of a particle swarm optimisation as applied to an Ackley function (from \cite{ackley_connectionist_1987}), where $a=20$, $b=0.2$, and $c=2\pi$. For the particle swarm, the following parameters were used $\omega=0.9$, $\psi_g=0.05$, and $\psi_p=0.05$. Each different coloured line represents a different candidate solution. The optimisation was stopped after $100$ iterations had run.}
+    \includegraphics[width=\textwidth]{theory/part_swarm}
+    \caption{An example of a particle swarm optimisation as applied to an Ackley function, where $a=20$, $b=0.2$, and $c=2\pi$. For the particle swarm, the following parameters were used $\omega=0.9$, $\psi_g=0.05$, and $\psi_p=0.05$. Each different coloured line represents a different candidate solution. The optimisation was stopped after \num{100} iterations had run.}
     \label{fig:part_swarm}
 \end{figure}
 %
-\begin{figure}
+\begin{listing}
     \centering
-        \lstinputlisting[caption={An example of the particle swarm optimisation algorithm \cite{poli_analysis_2008}.},label={cb:part_swarm}]{reports/code_blocks/part_swarm.py}
-\end{figure}
+    \caption{An example of the particle swarm optimisation algorithm from \cite{poli_analysis_2008}.}
+    \lstinputlisting{reports/code_blocks/part_swarm.py}
+    \label{cb:part_swarm}
+\end{listing}
 %
 
 \subsection{Markov chain Monte-Carlo}
 \label{sec:mcmc}
-Markov chain Monte Carlo (MCMC) is a sampling methodology, derived from direct sampling Monte-Carlo.\autocite{krauth_statistical_2006}
+Markov chain Monte Carlo\footnote{Abbreviated to MCMC.} is a sampling methodology, derived from direct sampling Monte-Carlo.\autocite{krauth_statistical_2006}
 The aim of an MCMC algorithm is to sample a probability distribution, when parameters are described in terms of their degree of probability.\autocite{sivia_data_2006}
-Similar to molecular dynamics, in practical terms, MCMC should not be used on a system that is not already optimised, as its purpose is probability distribution sampling rather than minimisation.
+Similar to MD, in practical terms, MCMC should not be used on a system that is not already optimised, as its purpose is probability distribution sampling rather than minimisation.
 Generally, the approach would be to optimise using, for example, one of the approaches described above, then to use MCMC or molecular dynamics to sample the appropriate search-space.
-For example, in this work MCMC is used extensively, following the optimisation of a reflectometry model using a differential evolution algorithm, to quantify the inverse uncertainties of the model (this is the name given to the uncertainties in the parameters fitted in the modelling process).
-In this context, the inverse uncertainty is the uncertainty on a given parameter within the model.
+For example, in this work MCMC is used following the optimisation of a reflectometry model using a differential evolution algorithm, to quantify the inverse uncertainties of the model.\footnote{This is the name given to the uncertainties in the parameters fitted in the modelling process.}
 In addition to being able to give information about the inverse uncertainties, MCMC also offers a more complete understanding of the correlations present between the different parameters,\autocite{gilks_markov_1995} as the interactions between the parameter variation has been quantified.
 
 The aim of MCMC is to only sample configurations of a given function that are within the experimental uncertainty.
 Figure~\ref{fig:mcmc} shows an example of the possible output that may be obtained from the application of an MCMC sampling method.
-This was generated using a Metropolis-Hastings algorithm,\autocite{metropolis_equation_1953,hastings_monte_1970} shown in Code Block~\ref{cb:mcmc}.
+This was generated using a Metropolis-Hastings MCMC algorithm,\autocite{metropolis_equation_1953,hastings_monte_1970} shown in Code Block~\ref{cb:mcmc}.
 Initially, a Levenberg–Marquardt algorithm\autocite{levenberg_method_1944,marquardt_algorithm_1963} was used to optimise the positions and integral of the two Gaussian functions that make up the data.
 The MCMC was used to sample the values that were within the experimental uncertainty.
 %
 \begin{figure}
     \centering
-    \includegraphics[width=0.85\textwidth]{theory/mcmc}
+    \includegraphics[width=\textwidth]{theory/mcmc}
     \caption{An example of a four variable (two nearby Gaussian functions of different sizes with added random noise and some fractional uncertainty) problem probed using a MCMC method, using values of $a=0.1$, $\theta_1$ and $\theta_2$ correspond to the integral of the Gaussian function, while $\theta_3$ and $\theta_4$ indicate their positions; (a)-(d) histograms of the probability distribution function for each of the varibles, and (e) the data (blue circles), the optimised solution (orange line), and a series of probable solutions (green lines) showing the variability present in the data uncertainty.}
     \label{fig:mcmc}
 \end{figure}
@@ -180,7 +183,7 @@ This probability is then compared with a random number $n\sim U[0, 1)$, and if $
 \end{equation}
 %
 This process is repeated until some desired number of samples has been obtained.
-It should be noted that in the event on a poorly optimised initial value of $\theta$, it may be necessary to `burn' (that is to ignore) the first series of solutions while the MCMC algorithm settles into the search-space.
+It should be noted that in the event on a poorly optimised initial value of $\theta$, it may be necessary to `burn'\footnote{This means to ignore.} the first series of solutions while the MCMC algorithm settles into the search-space.
 
 \subsection{Molecular dynamics}
 \label{sec:md}
