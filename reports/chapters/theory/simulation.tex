@@ -75,8 +75,8 @@ An implementation of the DE algorithm is given programmatically in Code Block~\r
 %
 \begin{listing}
     \centering
-    \caption{An example of a simple implementation for a DE algorithm as described in \cite{bjorck_fitting_2011}.}
-    \lstinputlisting{reports/code_blocks/diff_evo.py}
+    \caption{An example of a simple implementation for a DE algorithm as described in \cite{bjorck_fitting_2011}. The input variables are \texttt{population} which is an array of floats containing the initial parent population, \texttt{f} which is the figure of merit function to be minimised, \texttt{km} which is the mutation constant, \texttt{kr} which is the recombination constant, \texttt{bounds} which is an array of floats giving the minimum and maximum values for the variables, and \texttt{max\_iter} which is the maximum number of iterations that should be performed. This will return \texttt{history} which is a history of the variables that are being fit during the DE algorithm.}
+    \lstinputlisting[nolol]{reports/code_blocks/diff_evo.py}
     \label{cb:diff_evo}
 \end{listing}
 %
@@ -84,7 +84,7 @@ An implementation of the DE algorithm is given programmatically in Code Block~\r
 \subsection{Particle swarm}
 \label{sec:partswarm}
 Particle swarm optimisation\footnote{Abbreviated to PSO.} is a type of swarm intelligence population-based optimisation method.
-This optimisation method was originally developed by Kennedy, Eberhart, and Shi.\autocite[The initial purpose of the algorithm was to simulate social organisms such as bird flocks]{kennedy_particle_1995,shi_modified_1998}
+This optimisation method was originally developed by Kennedy, Eberhart, and Shi.\autocite[the initial purpose of the algorithm was to simulate social organisms such as bird flocks]{kennedy_particle_1995,shi_modified_1998}
 Particle swarm methods are particularly suitable for the optimisation, and sampling, of parametric search-spaces with a large number of similar minima.
 Therefore, I believe that it will be useful for the study of the self-assembly of soft matter materials.\footnote{This is the focus of Chapter~\ref{smallangle}.}
 
@@ -110,7 +110,7 @@ This velocity is determined as shown below,
 %
 where, $\omega$ a constant known as the interia weight, $R1\sim U[0, 1)$ and $R2\sim U[0, 1)$ are random numbers, $\mathbf{g}_{*}$ is the best position occupied by any particle in the swarm and $\mathbf{s}_{*,j}$ is the person best for the particle $j$.
 
-Figure~\ref{fig:part_swarm} shows an example of the particle swarm optimisation in action, applied to the Ackley function.\autocite{ackley_connectionist_1987} 
+Figure~\ref{fig:part_swarm} shows an example of the particle swarm optimisation in action, applied to the Ackley function.\autocite{ackley_connectionist_1987}
 Code Block~\ref{cb:part_swarm} shows a functional programmatic implementation of a particle swarm optimisation algorithm.
 %
 \begin{figure}
@@ -122,8 +122,8 @@ Code Block~\ref{cb:part_swarm} shows a functional programmatic implementation of
 %
 \begin{listing}
     \centering
-    \caption{An example of the particle swarm optimisation algorithm from \cite{poli_analysis_2008}.}
-    \lstinputlisting{reports/code_blocks/part_swarm.py}
+    \caption{An example of the particle swarm optimisation algorithm from \cite{poli_analysis_2008}. The input variables are \texttt{position} which is the initial position vector, \texttt{f} which is the figure of merit function to be minimised, \texttt{omega} which is the interia weight, \texttt{psig} which is the global acceleration constant, \texttt{psip} which is the personal acceleration constant, and the \texttt{max\_iter} which is the maximum number of iterations that should be performed. This will return the \texttt{history} which is a history of the variables that are being fit during the PSO.}
+    \lstinputlisting[nolol]{reports/code_blocks/part_swarm.py}
     \label{cb:part_swarm}
 \end{listing}
 %
@@ -150,10 +150,12 @@ The MCMC was used to sample the values that were within the experimental uncerta
     \label{fig:mcmc}
 \end{figure}
 %
-\begin{figure}
+\begin{listing}
     \centering
-        \lstinputlisting[caption={An example of the Metropolis-Hastings MCMC algorithm \cite{metropolis_equation_1953,hastings_monte_1970}.},label={cb:mcmc}]{reports/code_blocks/mcmc.py}
-\end{figure}
+    \caption{An example of the Metropolis-Hastings MCMC algorithm from \cite{metropolis_equation_1953,hastings_monte_1970}. The input variables are \texttt{theta} which is an array of floats giving the initial values for the variables, \texttt{f} which is the figure of merit function to be minimised, \texttt{a} which is the step size for the changes, \texttt{data} which is the experimental data, \texttt{iterations} which is the number of accepted iterations to obtain, and \texttt{nburn} which is the number of accepted iteractions to ignore in the burn-in phase. This will return the \texttt{history} which is a history of the variables that are being fit during the PSO.}
+    \lstinputlisting[nolol]{reports/code_blocks/mcmc.py}
+    \label{cb:mcmc}
+\end{listing}
 %
 
 Once an optimised solution, $\theta$, is obtained, the figure of metric is calculated, in Code Block~\ref{cb:mcmc} this is the agreement between the model and the experimental data, $\chi^2$, where,
@@ -176,7 +178,7 @@ A new $\chi^2$ is found for $\Theta$, and the probablity that this transition wi
 p = \exp{\bigg(\frac{-\chi^2(\Theta) + \chi^2(\theta)}{2}\bigg)}.
 \end{equation}
 %
-This probability is then compared with a random number $n\sim U[0, 1)$, and if $n$ is less than the probability, the new solution is stored,
+This probability is then compared with a random number $n\sim~U[0, 1)$, and if $n$ is less than the probability, the new solution is stored,
 %
 \begin{equation}
 \theta \leftarrow \Theta.
@@ -192,7 +194,6 @@ Any of the optimisation methods discussed above could be used alongside these cl
 However, it is often the case that we are interested in a dynamically relevant structure at a given temperature for some system.
 This is where molecular dynamics simulations are a useful and important tool.
 
-%\subsubsection{Forces and accelertions}
 The aim of a molecular dynamics simulation is to probe the positions, velocities, and accelerations on each of the atoms, or coarse-grained particles, as a simulation progresses.
 The acceleration on a given particle, $\mathbf{a}$ is defined by the force on that particle, $\mathbf{f}$, in agreement with Newton's second law of motion,
 %
@@ -210,8 +211,7 @@ f(r) = \frac{-\delta E_{\text{total}}(r)}{\delta r},
 \label{equ:forcesca}
 \end{equation}
 %
-where, $r$ is the configuration of the atoms.
-Which is to say that, the force is the negative of the first derivative of the energy with respect to the atomic configuration.
+where, $r$ is the configuration of the atoms.\footnote{The force is the negative of the first derivative of the energy with respect to the atomic configuration.}
 The force found from Equation~\ref{equ:forcesca} is a scalar, however, we are interested in the force vector in Equation~\ref{equ:forcevec}.
 To determine the force in a given direction, it is necessary to find the product of the force, $f$, and the unit vector in that direction,
 %
@@ -221,7 +221,6 @@ To determine the force in a given direction, it is necessary to find the product
 %
 where $r_x$ is the atomic configuration in the $x$-dimension, and $|\mathbf{r}|$ is the magnitude of the atomic configuration vector.
 
-%\subsubsection{Integration}
 The potential model, which we define for a given system, allows for the calculation of the acceleration on each particle in that system.
 The next step is to use this acceleration to iterate through the trajectory of our system.
 This is achieved by applying Newtonian equations of motion, for example in the Velocity-Verlet algorithm.\autocite{swope_computer_1982}
@@ -239,9 +238,9 @@ where, $\mathbf{x}$ is the position the particle $\mathbf{v}$ is the particle's 
 These equations constitute the Velocity-Verlet algorithm,
 %
 \begin{enumerate}
-\item calculate the force (and therefore the acceleration) on each particle (Equations~\ref{equ:forcevec} \& \ref{equ:forcesca}),
-\item find the position of the particle after some timestep (Equation~\ref{equ:vv1}),
-\item determine the new velocity for each particle, based on the average acceleration at the current and new positions (Equation~\ref{equ:vv2}),
+\item calculate the force,and therefore the acceleration, on each particle,\footnote{Using Equations~\protect\ref{equ:forcevec} \& \protect\ref{equ:forcesca}.}
+\item find the position of the particle after some timestep,\footnote{Using Equation~\protect\ref{equ:vv1}.}
+\item determine the new velocity for each particle, based on the average acceleration at the current and new positions,\footnote{Using Equation~\protect\ref{equ:vv2}.}
 \item overwrite the old acceleration values with the new ones,
 \item go to 1.
 \end{enumerate}
@@ -250,17 +249,15 @@ Following an equilibration period, this algorithm may be iterated as many times 
 
 The above analytical process is known as the integration step, and the Velocity-Verlet is the integrator.
 If the size of the timestep $\Delta t$ is too large, the step size for a given iteration will not be accurate, as the forces on the atoms will change too significantly during it.
-Therefore, the values of the timestep is usually on the order of \SI{10e-15}{\second} (\si{\femto\second}).
+Therefore, the values of the timestep is usually on the order of \SI{10e-15}{\second}.\footnote{femtoseconds.}
 This means that in order to simulate a single nanosecond of ``real-time'' molecular dynamics, the integrator must be solved one million times.
-This can be slow for very large systems, leading to an interest in coarse-grained simulations that result in fewer particles to determine the forces for (speeding up the integration step), but also enable to use of larger timesteps (so fewer integrations must be solved),\autocite{rudd_coarse-grained_1998,brini_systematic_2013} for example, the use of a MARTINI potential model allows for an upto twenty times increase in the timestep compared to an all-atom model.
+This can be slow for very large systems, leading to an interest in coarse-grained simulations that result in fewer particles to determine the forces for, but also enable to use of larger timesteps,\autocite[so fewer, faster integration steps must be solved]{rudd_coarse-grained_1998,brini_systematic_2013} for example, the use of a MARTINI potential model allows for an upto twenty times increase in the timestep compared to an all-atom model.
 
-%\subsubsection{Initialisation}
 The above discussion ignored two aspects that are necessary to run a molecular dynamics simulation, both of which as associated with the original configuration of the system; the original particle positions and velocities.
-
 The particle positions are usually taken from some library, for example for the simulation of a protein, often the protein data bank\autocite{noauthor_rcsb_nodate} is a useful resource.
 Small molecules may be configured by hand using graphical programs such as Jmol.\autocite{noauthor_jmol_nodate}
 These small molecules may be built into complex, multicomponent structures using software such as the Packmol package.\autocite{martinez_packmol_2009}
-The importance of this initial structure cannot be overstated, for example, if the initial structure in a molecular dynamics simulation is unrepresentative of the equilibrium structure, it may take a large amount of simulation time before the equilibrium structure is obtained, possibly much longer than could be reasonably simulated.
+The importance of this initial structure cannot be overstated, for example, if the initial structure in a molecular dynamics simulation is unrepresentative of the equilibrium structure, it may take a large amount of simulation time before the equilibrium structure is obtained.\footnote{This can be much longer than could be reasonably simulated.}
 
 The initial particle velocities are obtained in a much more general fashion.
 They are selected randomly, and then scaled such that the kinetic energy, $E_k$, of the system agrees with a defined temperature, $T$,
@@ -272,8 +269,7 @@ E_k = \sum_{i=1}^N{\frac{m_i|\mathbf{v}_i|^2}{2}} = \frac{3}{2}Nk_BT,
 %
 where, $m_i$ and $\mathbf{v}_i$ are the masses and velocities of the particles, $N$ is the number of particles, and $k_B$ is the Boltzmann constant.
 
-%\subsubsection{Ensembles}
-The above algorithm details a simulation that makes use of an NVE ensemble, a simulation where the number of particles (N), the volume of the system (V), the energy of the system (E) are all kept constant.
+The above algorithm details a simulation that makes use of an NVE ensemble.\footnote{A simulation where the number of particles (N), the volume of the system (V), the energy of the system (E) are all kept constant.}
 However, this is not the only simulation ensemble that is available, within this work two other ensembles have been used extensively,
 %
 \begin{itemize}
@@ -281,9 +277,9 @@ However, this is not the only simulation ensemble that is available, within this
 \item the NPT (isothermal-isobaric); this ensemble is similar to the NVT ensemble, however, the system volume is allowed to vary while the overall system pressure is held constant using a barostat.
 \end{itemize}
 %
-Thermostating involves controlling the kinetic energy of the particles (Equation~\ref{equ:ek}) such that the simulation temperature is kept at a predefined value.
+Thermostating involves controlling the kinetic energy of the particles\footnote{Using Equation~\ref{equ:ek}.} such that the simulation temperature is kept at a predefined value.
 There are a variety of methods for thermostating a molecular dynamics simulation, such as the Andersen, Nos\'{e}-Hoover, or Berendsen methods.\autocite{andersen_molecular_1980,nose_unified_1984,berendsen_molecular_1984,hoover_canonical_1985}
-However, the most straightforward to describe, and that implemented in the \texttt{pylj} software (discussed in detail in Chapter \ref{teaching}) \autocite{mccluskey_pylj_2018,mccluskey_arm61/pylj_2018} is a velocity rescaling.\autocite{bussi_canonical_2007}
+However, the most straightforward to describe, and that implemented in the \texttt{pylj} software\autocite[Discussed in detail in Chapter \ref{teaching}]{mccluskey_pylj_2018,mccluskey_arm61/pylj_2018} is a velocity rescaling.\autocite{bussi_canonical_2007}
 This is where the velocities for a random subset of the particles, $\mathbf{v}_i$ are adapted based on the following relation,
 %
 \begin{equation}

@@ -136,6 +136,7 @@
 \usepackage[style=verbose-trad2,
 maxcitenames=1,
 maxbibnames=100,
+sorting=nyt,
 url=false,
 dashed=false,
 hyperref=true]{biblatex}
@@ -218,13 +219,16 @@ hyperref=true]{biblatex}
   %breaklines=false,
   frame=single,
   tabsize=4,
-  xrightmargin=10mm,
-  xleftmargin=10mm,
+  xrightmargin=0mm,
+  xleftmargin=0mm,
   language=python
 }
 
 \renewcommand{\lstlistingname}{Code Block}
 \renewcommand{\lstlistlistingname}{List of \lstlistingname s}
+
+\usepackage{rotating}
+
 
 \begin{document}
 \pagenumbering{gobble}
@@ -318,7 +322,7 @@ Some of the work covered in Chapter~\ref{teaching} has been previously published
 
 \chapter*{Reproducibility Statement}
 This thesis exists as a piece of completely reproducible research.
-I have endevoured to include as much algorithmic and methodological detail within the text, and where relevant working Code Blocks written in Python, and including appropriate documentation strings in the NumPy format, have been included for clarity.
+I have endevoured to include as much algorithmic and methodological detail within the text, and where relevant working Code Blocks written in Python.
 
 However, in order to provide complete, and easy, reproducibility an electronic supplementary information (ESI) is available online in the form of a Git repository.
 This ESI provides full details of the analyses performed in this work and access to an automated analysis workflow.
@@ -409,6 +413,7 @@ Need to remember everyone...
 \textbf{SDS} & sodium dodecyl sulfate \\
 \textbf{SLD} & scattering length density \\
 \textbf{SAXS} & small angle X-ray scattering \\
+\textbf{SP} & surface pressure \\
 \textbf{SPC} & single point charge \\
 \textbf{STFC} & Science \& Technology Facilities Council \\
 \textbf{ToF} & time-of-flight \\
@@ -596,6 +601,8 @@ These educational resources introduce scattering users to simulation and its uti
 \pagenumbering{arabic}
 \include{chapters/introduction}
 \include{chapters/theory}
+\include{chapters/reflectometry1}
+\include{chapters/reflectometry2}
 
 
 %%
@@ -604,6 +611,8 @@ These educational resources introduce scattering users to simulation and its uti
 \appendix
 %\pagenumbering{roman}
 \include{appendices/diff_evo}
+\include{appendices/refl1app}
+\include{appendices/refl2app}
 \backmatter
 
 %\bibliography{main}

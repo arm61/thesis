@@ -54,7 +54,7 @@ lt = [1, 4]
 rough = [0, 0.4]
 co=30
 
-fig = plt.figure(figsize=(5, 25/11))
+fig = plt.figure(figsize=(4.13, 3.51*0.5))
 gs = mpl.gridspec.GridSpec(1, 1)
 ax2 = plt.subplot(gs[0, 0])
 for ci, contrast in enumerate(contrasts):

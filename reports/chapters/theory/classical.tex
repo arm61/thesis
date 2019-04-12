@@ -9,7 +9,7 @@ Classical simulation, particularly in combination with coarse-grained potential 
 In order to simulate a complexity of a real chemical system, it is necessary to model the electrons of the molecules and their interactions.
 This is usually achieved using quantum mechanical calculations, where the energy of the system is calculated by finding some approximate solution to the Schr\"{o}dinger equation.
 However, quantum mechanical calculations are very computationally expensive and are realistically limited to hundreds of atoms.
-In order to simulate a soft matter system such as a lipid monolayer or polymer nanoparticles, it is necessary to simplify the calculation being performed.
+In order to simulate a soft matter system such as a phospholipid monolayer or polymer nanoparticles, it is necessary to simplify the calculation being performed.
 This leads to the use of classical simulations, where parameterised analytical functions are used to represent the potential energy of the system.
 Classical simulations are used substantially in this work, in terms of molecular dynamics simulations.\footnote{Molecular dynamics (MD) is discussed in detail in Section~\ref{sec:optimisation}.}
 Therefore, it is necessary to introduce the underlying theory on which this method is defined.
@@ -106,8 +106,8 @@ Code Block~\ref{cb:lj} gives an example of some code that could be used to calcu
 %
 \begin{listing}
     \centering
-    \caption{Code that may be used to generate the Lennard-Jones energy for a given atomistic system, which accounts for the periodic boundary condition and the energy cut-off distance.}
-    \lstinputlisting{reports/code_blocks/lennardjones.py}
+    \caption{Code that may be used to generate the Lennard-Jones energy for a given atomistic system, which accounts for the periodic boundary condition and the energy cut-off distance. The input varibles are \texttt{coordinates} which is an array of floats describing the position of the \texttt{N} particles, \texttt{cell} which are the unit cell vectors, \texttt{cut\_off} which is potential energy cut-off, and \texttt{A} and \texttt{B} which are the Lennard-Jones potential parameters. This returns an array with the energy for each particle.}
+    \lstinputlisting[nolol]{reports/code_blocks/lennardjones.py}
     \label{cb:lj}
 \end{listing}
 %
@@ -135,7 +135,7 @@ While these off-the-shelf potential models are useful for their ease-of-use, it 
 
 \subsection{Coarse-graining}
 \label{sec:coarsegraining}
-The atomistic simulation of very large systems, such as multiple surfactant micelles or large lipid monolayers, require a huge number of atoms.
+The atomistic simulation of very large systems, such as multiple surfactant micelles or large phospholipid monolayers, require a huge number of atoms.
 While computational efficiency improvements such as the PBC or the energy cut-off distance are able to reduce the time taken to simulate these systems, it is often still not possible to produce physically meaningful simulations,\footnote{In particular for emergent properties that depend on large system sizes and long simulation times.} without including some other efficiency improvements.
 
 This has led to the use of coarse-graining of molecules in simulations.
@@ -154,7 +154,7 @@ Additionally, there are thirteen other super-atom types that can be use to model
 
 In addition to the computational benefit of having fewer particles in the simulation,\footnote{Therefore requiring fewer integrations of the equations of motion} there is also the opportunity to increase the timestep length for the simulation.\autocite{pluhackova_biomembranes_2015}
 This can be achieved as the highest frequency vibrations that must be modelled in the system are integrated out.
-For example, another coarse-grained model called the united atom potential model, where the hydrogen atoms have been integrated out, the time step may be larger than for the same all-atom system as it is no longer necessary to model the high-frequency \ce{C-H} bond.
+For example, another coarse-grained model called the united atom potential model, where the hydrogen atoms have been integrated out, the timestep may be larger than for the same all-atom system as it is no longer necessary to model the high-frequency \ce{C-H} bond.
 
 The technique of coarse-graining a molecule can range from the integration of the hydrogen atoms into the heavier atoms to which they are bound, all the way to the treatment of entire molecules as a single ``bead'', with the inclusion of an implicit solvent.
 The parameterisation of a coarse-grained potential model is carried out in much the same way as discussed in Section~\ref{sec:parameterisation} for all-atom potential models.

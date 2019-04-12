@@ -49,7 +49,7 @@ for i in range(0, len(q)):
     r[i] *= 16 * np.pi ** 2
     r[i] /= q[i] ** 4
 
-plt.figure(figsize=(4.13, 3.51))
+plt.figure(figsize=(4.13, 3.51*0.7*2))
 gs = gridspec.GridSpec(2, 2)
 ax = plt.subplot(gs[0, 0])
 ax.plot(x, y * 1e6)
@@ -121,7 +121,7 @@ for i in range(0, len(q)):
     r[i] *= 16 * np.pi ** 2
     r[i] /= q[i] ** 4
 
-plt.figure(figsize=(4.13, 1.755))
+plt.figure(figsize=(4.13, 3.51*0.7))
 gs = gridspec.GridSpec(1, 2)
 ax = plt.subplot(gs[0, :])
 ra = refl.abeles(q, np.array([0, 2.0719e-6]), np.array([10, 10]))
@@ -331,7 +331,6 @@ route = diff_evo.differential_evolution(
     0.5,
     0.5,
     [-40, 40],
-    2.5,
     100,
 )
 
@@ -376,7 +375,6 @@ while np.max(np.abs(route)) > 40:
         0.9,
         0.05,
         0.05,
-        2.5,
         100,
     )
 
@@ -485,48 +483,48 @@ ax3.set_ylim(0, 0.15)
 ax4.set_ylim(0, 0.15)
 ax5.set_ylim(0, 0.15)
 ax2.text(
-    0.95,
-    0.92,
+    0.05,
+    0.9,
     r"$\theta_1$ = {:.2f}$\pm${:.2f}".format(
         np.average(history[:, 0]), np.std(history[:, 0])
     ),
-    horizontalalignment="right",
+    horizontalalignment="left",
     verticalalignment="center",
     transform=ax2.transAxes,
     color="k",
     size=8,
 )
 ax3.text(
-    0.95,
-    0.92,
+    0.05,
+    0.9,
     r"$\theta_2$ = {:.2f}$\pm${:.2f}".format(
         np.average(history[:, 1]), np.std(history[:, 1])
     ),
-    horizontalalignment="right",
+    horizontalalignment="left",
     verticalalignment="center",
     transform=ax3.transAxes,
     color="k",
     size=8,
 )
 ax4.text(
-    0.95,
-    0.92,
+    0.05,
+    0.9,
     r"$\theta_3$ = {:.2f}$\pm${:.2f}".format(
         np.average(history[:, 2]), np.std(history[:, 2])
     ),
-    horizontalalignment="right",
+    horizontalalignment="left",
     verticalalignment="center",
     transform=ax4.transAxes,
     color="k",
     size=8,
 )
 ax5.text(
-    0.95,
-    0.92,
+    0.05,
+    0.9,
     r"$\theta_4$ = {:.2f}$\pm${:.2f}".format(
         np.average(history[:, 3]), np.std(history[:, 3])
     ),
-    horizontalalignment="right",
+    horizontalalignment="left",
     verticalalignment="center",
     transform=ax5.transAxes,
     color="k",
@@ -534,7 +532,7 @@ ax5.text(
 )
 ax2.text(
     0.05,
-    0.92,
+    0.77,
     r"(a)",
     horizontalalignment="left",
     verticalalignment="center",
@@ -544,7 +542,7 @@ ax2.text(
 )
 ax3.text(
     0.05,
-    0.92,
+    0.77,
     r"(b)",
     horizontalalignment="left",
     verticalalignment="center",
@@ -554,7 +552,7 @@ ax3.text(
 )
 ax4.text(
     0.05,
-    0.92,
+    0.77,
     r"(c)",
     horizontalalignment="left",
     verticalalignment="center",
@@ -564,8 +562,8 @@ ax4.text(
 )
 ax5.text(
     0.05,
-    0.92,
-    r"(d)".format(np.average(history[:, 3]), np.std(history[:, 3])),
+    0.77,
+    r"(d)",
     horizontalalignment="left",
     verticalalignment="center",
     transform=ax5.transAxes,
@@ -574,7 +572,7 @@ ax5.text(
 )
 ax1.text(
     0.025,
-    0.92,
+    0.9,
     r"(e)",
     horizontalalignment="left",
     verticalalignment="center",

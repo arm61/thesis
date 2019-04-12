@@ -15,7 +15,7 @@ FIG_SAS = FIG_DIR + SAS
 FIG_TEACH = FIG_DIR + TEACH
 FIGURES_PLOT = [FIG_THEO + 'dyna.pdf', FIG_THEO + 'kine.pdf',
                 FIG_THEO + 'scales.pdf', FIG_THEO + 'rg.pdf',
-                FIG_THEO + 'sphere.pdf', 
+                FIG_THEO + 'sphere.pdf',
                 FIG_THEO + 'diff_evo.pdf', FIG_THEO + 'part_swarm.pdf',
                 FIG_THEO + 'mcmc.pdf']
 FIGURES = [FIG_DIR + 'bath.pdf', FIG_DIR + 'diamond.pdf',
@@ -60,6 +60,7 @@ FIGURES = [FIG_DIR + 'bath.pdf', FIG_DIR + 'diamond.pdf',
            FIG_REFL1 + 'dmpc_neutron_20_ref_sld.pdf',
            FIG_REFL1 + 'dmpc_neutron_25_pdf.pdf',
            FIG_REFL1 + 'dmpc_neutron_25_ref_sld.pdf',
+           FIG_REFL1 + 'pear.pdf',
            FIG_REFL2 + 'apm.pdf',
            FIG_REFL2 + 'dspc_20_pdf.pdf',
            FIG_REFL2 + 'dspc_20_ref_sld.pdf',

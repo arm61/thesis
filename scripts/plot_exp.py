@@ -25,7 +25,7 @@ mpl.rcParams["axes.titlesize"] = 8
 
 data = np.loadtxt('../data/smallangle/sans2d.txt', unpack=True)
 
-plt.figure(figsize=(5, 25 / 11))
+plt.figure(figsize=(4.13, 3.51*0.7))
 gs = gridspec.GridSpec(1, 1)
 ax = plt.subplot(gs[0, 0])
 ax.errorbar(data[0], data[1], marker='o', ls='', yerr=data[2])

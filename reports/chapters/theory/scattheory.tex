@@ -13,7 +13,7 @@ In this work, we have focussed on the use of small angle scattering\footnote{Gen
 These are particularly appropriate for application to soft condensed matter systems due to the length scales capable of being probed being similar to the persistence length of the soft condensed matter systems.
 The length scale covered for such techniques is from around \SIrange{1}{300}{\nano\metre}, as is shown in Figure~\ref{fig:lengths}.
 The focus is on the equilibrium structure(s) of a material, and therefore there is no interest in the system dynamics, meaning that exclusively elastic scattering techniques may be used, where there is no energy transfer between the probing radiation and the material.
-This is in contrast to inelastic scattering where energy transfer occurs; facilitating the measurement of system dynamics, such as the dynamical modes of polymers and lipid bilayers\autocite{garcia_sakai_quasielastic_2009, farago_recent_2009}
+This is in contrast to inelastic scattering where energy transfer occurs; facilitating the measurement of system dynamics, such as the dynamical modes of polymers and phospholipid bilayers\autocite{garcia_sakai_quasielastic_2009, farago_recent_2009}
 
 Both X-ray and neutron scattering techniques are discussed and used in this work.
 From an experimental viewpoint, there are significant differences between an X-ray scattering and a neutron scattering experiment.
@@ -204,7 +204,7 @@ All types of scattering patterns can be analysed by two methods; model independe
 The nature of this work means that it will focus on model-dependent analysis methods.\footnote{With the model usually being derived from some atomistic, or coarse-grained simulation.}
 Model-dependent analysis has significant benefits over model-independent methods, such as improved resolution and more detailed information about the structure.
 However, the necessity of the inclusion of \emph{a priori} information within model-dependent analysis may act to bias the result.
-While this is undesirable, these assumptions can, and should, be educated based on the chemical information present.\autocite[][such as the propensity for twin-tailed lipid molecules to form monolayers at an air-water interface or small surfactants to form micelles in solution.]{mccluskey_model-dependent_2018}
+While this is undesirable, these assumptions can, and should, be educated based on the chemical information present.\autocite[][such as the propensity for twin-tailed phospholipid molecules to form monolayers at an air-water interface or small surfactants to form micelles in solution.]{mccluskey_model-dependent_2018}
 
 The scattering from the model system is determined, using technique specific methods that are discussed in detail in later sections.
 This is then compared with the experimental data using some figure of merit, the model is then varied to find the best possible model for the data provided.\footnote{This typically uses some optimisation algorithm to determine the best solution, the particular algorithms used in this work are dicussed in Section~\ref{sec:optimisation}.}
@@ -329,7 +329,7 @@ This is the angle below which a reflectometry profile will be measured.
 \end{figure}
 %
 
-The above method can then be generalised to a structure of an arbitrary number of layers, as shown in Code Block~\ref{cb:refl}.\footnote{The purpose of the Code Blocks throughout this work is to ensure transparency and reproducibility, these are written as Python functions with a standard docstring at the start describing the function and inputs.}
+The above method can then be generalised to a structure of an arbitrary number of layers, as shown in Code Block~\ref{cb:refl}.\footnote{The purpose of the Code Blocks throughout this work is to ensure transparency and reproducibility, these are written as Python functions.}
 For each value of $q$ for which the reflectometry is to be calculated, the system is considered in terms of $n_{\text{max}}$ layers.
 The incident radiation beam will be refracted by each of the layers, giving wavevectors values for each layer, $k_n$,
 %
@@ -386,8 +386,8 @@ Applying this method to the scattering length density profile shown in Figure~\r
 %
 \begin{listing}
     \centering
-    \caption[][1.5cm]{An example Python code block for the Abel\`{e}s method for the calculation of reflectometry, adapted from \cite{nelson_refnx_2019}.}
-    \lstinputlisting{reports/code_blocks/reflectometry.py}
+    \caption{An example Python code block for the Abel\`{e}s method for the calculation of reflectometry, adapted from \cite{nelson_refnx_2019}. The input variables are \texttt{q\_values} which are the $q$-vectors at which the reflected intensity should be calculated, \texttt{sld} which is the array of scattering length densities for the layers, and \texttt{d} which is the array of thicknesses for the layers. This will return an array of floats that is the same size as the \texttt{q\_values} and contains the reflected intensities.}
+    \lstinputlisting[nolol]{reports/code_blocks/reflectometry.py}
     \label{cb:refl}
 \end{listing}
 %
@@ -481,168 +481,4 @@ Therefore, when we model the pattern, the differential cross-section has the fol
     \frac{\text{d}\sigma(q)}{\text{d}\Omega} = N_\rho\Delta\text{SLD}^2V_p^2 P(q)S(q),
 \end{equation}
 %
-where $N_\rho$ is the number density of the particles, $\Delta\text{SLD}$ is the difference in scattering length density between the particles and the solvent, $V_p$ is the particle volume, $P(q)$ is the particle form factor, and $S(q)$ is the structure factor.\autocite{pedersen_monte_2002}
-Therefore, it is necessary to understand the form and structure factors individually.
-
-The most common method for the modelling of the form factor is by using very coarse shapes; such as spheres, cylinders, or ellipses.
-This involves the evaluation of analytical or quasi-analytical solutions for the scattering, which have been derived for many common shapes.
-The solution for a sphere was solved in the early 19th century by Lord Rayleigh.\cite{pedersen_monte_2002}
-%
-\begin{equation}
-    P(q) = \Bigg\{\frac{3\big\{\sin(qR_s) - qR\cos(qR_s)\big\}}{(qR_s)^3}\Bigg\}^2,
-    \label{equ:sphere}
-\end{equation}
-%
-where $R_s$ is the radius of the sphere.
-A comparison between a possible experimental scattering pattern and the scattering generated from Equation~\ref{equ:sphere} is shown in Figure~\ref{fig:sphere}.
-Analytical form factors exist for a wide variety of shapes; these can be found in software such as SASView and SASFit.\autocite{noauthor_sasview_nodate, noauthor_sasfit_nodate}
-%
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{theory/sphere}
-    \caption{The SANS profile of a micelle of \ce{C_{16}TAB} with radius $\SI{50(3)}{\angstrom}$ (circles, generated using SASView \cite{noauthor_sasview_nodate}, with instrumental smearing) compared with a curve of Equation~\protect\ref{equ:sphere}, where $R = \SI{50}{\angstrom}$ (solid line).}
-    \label{fig:sphere}
-\end{figure}
-%
-
-The structure factor accounts for the scattering interference that arises from the interaction of different particles.
-This is modelled using expressions which depend on the nature of the scattering particles; hard-sphere, sticky hard-spheres, screened Coulomb, etc.
-Structure factor expressions are generated as solutions to the Ornstein-Zernike Equation.\autocite{klein_interacting_2002}
-The most relevant structure factor in terms of micelle modelling is probably the Hayter-Penfold Mean Spherical Approximation, \autocite{hayter_analytic_1981} this is where the micelles are modelled as like-charged, soft spheres and is valid for dilute solutions.
-Again, a whole range of these structure factor functions are built into the SASView package.\autocite{noauthor_sasview_nodate}
-
-In order to evaluate the scattering profile from an atomic,\footnote{Or any coordinate system, such as a coarse-grained simulation.} it is possible to use the Debye equation.\autocite{debye_zerstreuung_1915}
-This is an analytical relationship for the determination of the scattering profile based on the atomic positions, $\mathbf{r}_i$,
-%
-\begin{equation}
-    I(q) = \sum_{i}^{N}\sum_{j}^{N} b_ib_j\frac{\sin{(q|\mathbf{r}_i-\mathbf{r}_j|)}}{q|\mathbf{r}_i-\mathbf{r}_j|},
-\end{equation}
-%
-where, $N$ is the number of particles, $q$ is the scattering vector, and $b_i$ and $b_j$ are the scattering lengths of particles $i$ and $j$ respectively.\footnote{In the case of a coarse-grained particle, this can be obtained from summing the scattering lengths of the constituent atoms.}
-The Debye equation is powerful, however, it is not intrinsically parallelisable and scales as $\mathcal{O}(N^2)$.
-In order to improve the efficiency of the calculation of the scattering profile, a variety of methods have been developed that offer a sufficiently accurate approximation.\autocite{svergun_solution_1994,watson_rapid_2013}
-The Golden Vector method, developed by Watson and Curtis,\autocite{watson_rapid_2013} scales as $\mathcal{O}(Nn)$, where $n$ is the number of scattering vectors used in the calculation.
-In this method, the scattering amplitude is calculated numerically for a single $\mathbf{q}$-vector,
-%
-\begin{equation}
-    I(\mathbf{q}) = \Bigg[\sum_{i}^{N}b_i\cos{(\mathbf{q}\cdot\mathbf{r}_i)}\Bigg]^2 + \Bigg[\sum_{i}^{N}b_i\sin{(\mathbf{q}\cdot\mathbf{r}_i)}\Bigg]^2.
-\end{equation}
-%
-This is carried out for $n$ scattering vectors that are selected in an orientationally averaged fashion from a quasi-uniform lattice on a sphere.
-This was first developed such that $n$ is a number from the Fibonacci sequence,\autocite{svergun_solution_1994} however for the Golden Vector method, $n$ may be any positive integer.
-This leads to the scattering vectors being calculated as,
-%
-\begin{equation}
-    \begin{aligned}
-        q_x^{(k)} & = q\cos\Bigg[\sin^{-1}\bigg(\frac{2k}{n}\bigg)\Bigg]\cos\bigg(\frac{2\pi k}{\Phi}\bigg), \\
-        q_y^{(k)} & = q\cos\Bigg[\sin^{-1}\bigg(\frac{2k}{n}\bigg)\Bigg]\sin\bigg(\frac{2\pi k}{\Phi}\bigg), \\
-        q_z^{(k)} & = \frac{2 k q}{n},
-    \end{aligned}
-\end{equation}
-%
-where, $k$ runs from $-(n-1)/2,\ldots,0,\ldots,(n-1)/2$ and $\Phi$ is the golden ratio,
-%
-\begin{equation}
-    \Phi = \frac{1+\sqrt{5}}{2}.
-\end{equation}
-%
-The approximate orientationally averaged scattering is then found as an average of the scattering from each of ther individual $q$-vectors,
-%
-\begin{equation}
-    I(q) = \frac{1}{n}\Bigg\{\sum_{k=(1-n)/2}^{(n-1)/2} I[\mathbf{q}^{(k)}]\Bigg\}.
-\end{equation}
-%
-The accuracy of this calculation increases with $n$, however agreement, comparible to the Debye equation, between experiment and simulation has been shown for $n < 100$ even for highly anisotropic systems.\autocite{watson_rapid_2013}
-
-\subsection{Contrast variation}
-\label{convar}
-The scattering profile generated by the interaction of the chosen system with radiation depends on three factors:
-%
-\begin{itemize}
-    \item the spatial arrangement of the atoms in the system,
-    \item the instrument being used to measure the pattern\footnote{The instrumental resolution function mentioned in \protect\ref{sec:moddep}.}, and
-    \item the interaction between the radiation and the matter under investigation.
-\end{itemize}
-%
-This final factor is perhaps better known as the ``scattering contrast'', this is an extremely important factor in the study of soft matter, particularly when the probing radiation is the neutron.
-The scattering contrast makes it possible to select individual components of the system and investigate their structural properties.\autocite{schurtenberger_contrast_2002}
-The differential cross-section, $\sfrac{\text{d}\sigma}{\text{d}\Omega}$ of a point scatterer, as shown in Equation~\ref{equ:sca}, varies only with respect to the scattering length of the species, $b$,
-%
-\begin{equation}
-    \frac{\text{d}\sigma}{\text{d}\Omega} \propto b^2.
-\end{equation}
-%
-However,\footnote{As discussed in Section~\protect\ref{sec:sld}.} it is often easier to use the SLD.
-
-When an X-ray interacts with an atom, it is scattered by the interaction with the electrons.\footnote{As the X-ray is a form of electromagnetic radiation.}
-This means that the scattering length of an atom by an X-ray is directly proportional to the number of electrons in the atom, so it is therefore difficult to discern between the scattering from a carbon atom (6 electrons) and a nitrogen atom (7 electrons).
-Furthermore, the scattering from hydrogen atoms is practically non-existent, in comparison to heavier elements.
-
-The scattering length from neutrons varies nonsystematically with respect to the atomic number of a species, this is shown in Figure~\ref{fig:scatlen}.
-In addition to the apparently random variation with changes in atomic number, there is also significant variation with mass number.\footnote{Leading to varition between isotopes of a given element.}
-There is also dependence due to the magnetic state of the atom, however, this is normally unimportant for soft matter.
-The scattering lengths differ with the nuclear spin energy level, this leads to an average scattering length, $\langle b \rangle$, for isotopes where the nuclear spin is non-zero.
-There are two forms of scattering, coherent and incoherent, for which the scattering cross-sections, $\sigma$, are determined by,
-%
-\begin{equation}
-    \begin{aligned}
-        \sigma_{\text{coh}} & = 4\pi\langle b \rangle ^2 \\
-        \sigma_{\text{incoh}} & = 4\pi(\langle b ^ 2 \rangle - \langle b \rangle ^2) \\
-    \end{aligned}
-\end{equation}
-%
-The coherent scattering is the scattering from nuclei that all have the same value of $b$, and leads to the important scattering pattern.
-Whereas, the incoherent scattering is caused by the ``disorder'' between the isotopes, and is the cause of the background present in the measurement.
-Examples of these scattering cross-sections for nuclei relevant to soft matter are shown in Table \ref{tab:crosssec}.
-It can be seen that the incoherent scattering from the \ce{^1H} nuclei is more than forty times higher than the coherent scattering.
-This leads to a large, intrusive background present in the scattering pattern of hydrogenous samples.
-%
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{theory/scatlen}
-    \caption{The variation of the average neutron scattering length, $\langle b \rangle$ (circles), with atomic mass, $\mu$. The standard deviation, $\Delta b$, is indicated with the shaded regions. Reproduced, with permission of Oxford University Press, from \cite{sivia_elementary_2011}.}
-    \label{fig:scatlen}
-\end{figure}
-%
-\begin{table}[b]
-    \centering
-    \small
-    \caption{Examples of coherent and incoherent scattering cross-sections. Reproduced, with permission from Elsevier, from \cite{schurtenberger_contrast_2002}.}
-    \label{tab:crosssec}
-    \begin{tabular}{r | c c c}
-        \toprule
-        Isotope & $S$ & $\sigma_{\text{coh}}$/\SI{e-28}{\meter\square} & $\sigma_{\text{incoh}}$/\SI{e-28}{\meter\square} \\
-        \midrule
-        \ce{^1H} & $\sfrac{1}{2}$ & \num{1.8} & \num{79.7} \\
-        \ce{^2H} & \num{1} & \num{5.6} & \num{2.0} \\
-        \ce{^{12}C} & \num{0} & \num{5.6} & -- \\
-        \ce{^{14}N} & \num{1} & \num{11.6} & \num{0.3} \\
-        \ce{^{16}O} & \num{0} & \num{4.2} & -- \\
-        \bottomrule
-    \end{tabular}
-\end{table}
-%
-
-The difference between the scattering of \ce{^1H} and \ce{^2H}, evident in Table \ref{tab:crosssec}, can lead to a very useful technique in soft matter scattering, known as contrast variation.
-The idea of contrast variation is based on the substitution of one isotope of an atom for another, while not introducing significant change to the properties of the material.
-Traditionally the benefit of this came in terms of contrast matching out a part of the system to reduce the dimensionality of the problem for analysis.
-For example, by matching the solvent SLD to that of the tails of the surfactants at the centre of a micelle, there would only be scattering from the heads, and conversely, there would only be scattering from the tails if the solvent had the same SLD as the head groups.
-This means that the problem becomes more straightforward as there are fewer variable parameters when fitting the data.
-This idea is represented graphically in Figure~\ref{fig:convar}.
-%
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{theory/convar}
-    \caption{The effect of varying the scattering length density of the solvent in a micelle system, (a) the system in a pure solvent, (b) the solvent is contrast matched to the surfactant tails, and (c) the solvent is contrast matched to the surfactant heads.}
-    \label{fig:convar}
-\end{figure}
-%
-
-The technique of contrast variation may also be used in terms of data analysis.
-By increasing the number of datasets corresponding to a single model at different contrasts, the solution for the true structure of the model from the scattering data becomes more robust.
-This is due to the fact that each different contrast can be considered as an independent measurement of the same system, and hence each set of scattering data can be used within the data analysis procedure to obtain the best global agreement to the experiment.
-This co-refinement of multiple experiments can, under the right conditions, be used to simultaneously consider both neutron and X-ray datasets.\autocite{nelson_co-refinement_2006}
-
-There is also the possibility of using contrast variation when the probing radiation is the X-ray, by leveraging anomalous scattering.
-This is where different wavelengths of radiation give different scattering when the wavelengths are on opposite sides of an X-ray absorption edge.
-This is not frequently used for soft matter species, as the X-ray absorption edges for elements common in soft matter (H, C, N, O, etc.) are at very low X-ray energies so generally outside of the accessible range of a standard SAXS instrument.\autocite{schurtenberger_contrast_2002}
+where $N_\rho$ is the number density of the particles, $\Delta\text{SLD}$ is the difference in scattering length density between the particles and the solvent, $V_p$ is the particle volume, $P(q)$ is t

@@ -28,21 +28,21 @@ import ref_help as rh
 
 import matplotlib as mpl
 
-mpl.rcParams["xtick.labelsize"] = 8
-mpl.rcParams["ytick.labelsize"] = 8
+mpl.rcParams["xtick.labelsize"] = 10
+mpl.rcParams["ytick.labelsize"] = 10
 mpl.rcParams["axes.facecolor"] = "w"
 mpl.rcParams["lines.linewidth"] = 2
 mpl.rcParams["xtick.top"] = False
 mpl.rcParams["xtick.bottom"] = True
 mpl.rcParams["ytick.left"] = True
 mpl.rcParams["grid.linestyle"] = "--"
-mpl.rcParams["legend.fontsize"] = 8
+mpl.rcParams["legend.fontsize"] = 10
 mpl.rcParams["legend.facecolor"] = [1, 1, 1]
 mpl.rcParams["legend.framealpha"] = 0.75
-mpl.rcParams["axes.labelsize"] = 8
+mpl.rcParams["axes.labelsize"] = 10
 mpl.rcParams["axes.linewidth"] = 1
 mpl.rcParams["axes.edgecolor"] = "k"
-mpl.rcParams["axes.titlesize"] = 8
+mpl.rcParams["axes.titlesize"] = 10
 
 # The lipid to be investigated
 lipid = sys.argv[1]
@@ -247,14 +247,14 @@ for i in range(sp.size):
         color=sns.color_palette()[i],
         smooth1d=True,
     )
-    figure.set_size_inches(5, 25 / 6)
+    figure.set_size_inches(4.13, 3.51)
     axes = np.array(figure.axes).reshape(
         (per_sp.shape[1], per_sp.shape[1])
     )
     for j, n in enumerate(names):
         axes[j, j].set_title(n)
     axes[0, 0].text(
-        0.02, 0.78, fig_lab[i], transform=axes[0, 0].transAxes
+        0.02, 0.78, fig_lab[i], transform=axes[0, 0].transAxes, size=8
     )
     p_mag = np.array([])
     for j in range(0, axes.shape[0] - 1):
@@ -277,7 +277,7 @@ for i in range(sp.size):
                     "{:.2f}".format(pear),
                     ha="right",
                     transform=axes[k, j].transAxes,
-                    size=6,
+                    size=8,
                     va="top",
                     zorder=10,
                 )
@@ -288,7 +288,7 @@ for i in range(sp.size):
                     "{:.2f}".format(pear),
                     ha="left",
                     transform=axes[k, j].transAxes,
-                    size=6,
+                    size=8,
                     va="top",
                     zorder=10,
                 )
@@ -344,7 +344,7 @@ for i in range(len(para_labels)):
         file_open.write(string)
         file_open.close()
 
-fig = plt.figure(figsize=(5, 25 / 11))
+fig = plt.figure(figsize=(4.13, 3.51*0.5))
 gs = mpl.gridspec.GridSpec(1, 3)
 ax1 = plt.subplot(gs[0, 0:2])
 ax2 = plt.subplot(gs[0, 2])
@@ -388,7 +388,7 @@ for i in range(sp.size):
     ax1.set_xlabel(r"$q$/Å$^{-1}$")
     ax2.set_xlabel(r"$z$/Å")
     ax2.set_ylabel(r"SLD/$10^{-6}$Å$^{-2}$")
-ax2.text(0.72, 0.05, abc[lipid], transform=ax2.transAxes)
+ax2.text(0.63, 0.05, abc[lipid], transform=ax2.transAxes, size=8)
 plt.tight_layout()
 plt.savefig("{}{}_ref_sld.pdf".format(fig_dir, label))
 plt.close()
@@ -400,7 +400,7 @@ xax = {
     "dmpg": np.arange(int(sp[0]), int(sp[-1]) + 5, 5),
 }
 
-fig = plt.figure(figsize=(5, 25 / 11))
+fig = plt.figure(figsize=(4.13, 3.51*0.5))
 gs = mpl.gridspec.GridSpec(1, 1)
 ax2 = plt.subplot(gs[0, 0])
 ax3 = ax2.twinx()
@@ -432,7 +432,7 @@ ax3.set_ylabel(r"$\phi_h$/$\times 10^{-2}$")
 
 ax2.yaxis.label.set_color(sns.color_palette()[0])
 ax3.yaxis.label.set_color(sns.color_palette()[1])
-ax2.text(0.88, 0.07, abc[lipid], transform=ax2.transAxes)
+ax2.text(0.88, 0.07, abc[lipid], transform=ax2.transAxes, size=8)
 ax2.tick_params(axis="y", colors=sns.color_palette()[0])
 ax3.tick_params(axis="y", colors=sns.color_palette()[1])
 ax2.set_xticks(xax[lipid])
