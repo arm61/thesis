@@ -22,21 +22,21 @@ import ref_help as rh
 
 import matplotlib as mpl
 
-mpl.rcParams["xtick.labelsize"] = 8
-mpl.rcParams["ytick.labelsize"] = 8
+mpl.rcParams["xtick.labelsize"] = 10
+mpl.rcParams["ytick.labelsize"] = 10
 mpl.rcParams["axes.facecolor"] = "w"
 mpl.rcParams["lines.linewidth"] = 2
 mpl.rcParams["xtick.top"] = False
 mpl.rcParams["xtick.bottom"] = True
 mpl.rcParams["ytick.left"] = True
 mpl.rcParams["grid.linestyle"] = "--"
-mpl.rcParams["legend.fontsize"] = 8
+mpl.rcParams["legend.fontsize"] = 10
 mpl.rcParams["legend.facecolor"] = [1, 1, 1]
 mpl.rcParams["legend.framealpha"] = 0.75
-mpl.rcParams["axes.labelsize"] = 8
+mpl.rcParams["axes.labelsize"] = 10
 mpl.rcParams["axes.linewidth"] = 1
 mpl.rcParams["axes.edgecolor"] = "k"
-mpl.rcParams["axes.titlesize"] = 8
+mpl.rcParams["axes.titlesize"] = 10
 
 # The lipid to be investigated
 lipid = sys.argv[1]
@@ -240,7 +240,7 @@ per_sp[:, 5, i] = list(pchain[4].chain.flatten())
 figure = corner.corner(per_sp[:, :, i],
                        max_n_ticks=3, show_titles=True,
                        color=sns.color_palette()[i], smooth1d=True)
-figure.set_size_inches(5, 25/6)
+figure.set_size_inches(4.13, 3.51)
 axes = np.array(figure.axes).reshape((per_sp.shape[1],
                                       per_sp.shape[1]))
 for j, n in enumerate(names):
@@ -259,11 +259,11 @@ for j in range(0, axes.shape[0]-1):
         p_all = np.append(p_all, pear)
         if pear < 0:
             axes[k, j].text(0.95, 0.95, '{:.2f}'.format(pear), ha='right',
-                            transform=axes[k, j].transAxes, size=6,
+                            transform=axes[k, j].transAxes, size=8,
                             va='top', zorder=10)
         else:
             axes[k, j].text(0.05, 0.95, '{:.2f}'.format(pear), ha='left',
-                            transform=axes[k, j].transAxes, size=6,
+                            transform=axes[k, j].transAxes, size=8,
                             va='top', zorder=10)
 file_open = open('{}/{}_p_sum_sp{}.txt'.format(anal_dir, lipid, sp), 'w')
 file_open.write('{:.2f}'.format(np.sum(np.abs(p_mag))))
@@ -341,7 +341,7 @@ for i in range(len(para_labels)):
         file_open.write(string)
         file_open.close()
 
-fig = plt.figure(figsize=(5, 25/6))
+fig = plt.figure(figsize=(4.13, 3.51*1.3))
 gs = mpl.gridspec.GridSpec(1, 3)
 ax1 = plt.subplot(gs[0, 0:2])
 ax2 = plt.subplot(gs[0, 2])
@@ -382,7 +382,7 @@ ax1.set_yscale('log')
 ax1.set_xlabel(r'$q$/Å$^{-1}$')
 ax2.set_xlabel(r'$z$/Å')
 ax2.set_ylabel(r'SLD/$10^{-6}$Å$^{-2}$')
-ax1.text(0.02, 0.98, abc[label], transform=ax1.transAxes, va='top', ha='left')
+ax1.text(0.02, 0.98, '(a)', transform=ax1.transAxes, va='top', ha='left', size=8)
 plt.tight_layout()
 plt.savefig('{}{}_ref_sld.pdf'.format(fig_dir, label))
 plt.close()
