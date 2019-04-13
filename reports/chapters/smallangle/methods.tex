@@ -5,9 +5,9 @@ The computational methodology described herein has been implemented in the open-
 \subsection{Simulation Methodology}
 
 The \texttt{fitoog} software takes a series of input files that define the molecules, intramolecular interactions, and scattering lengths for the consistuent particles.
-The molecule input file is a spec separated file consisting of an index, particle name, \emph{x}-coordinate, \emph{y}-coordinate, \emph{z}-coordinate, and scattering length.
+The molecule input file is a space separated file consisting of an index, particle name, \emph{x}-coordinate, \emph{y}-coordinate, \emph{z}-coordinate, and scattering length.
 While, the intramolecular interactions file described the bonds within the molecule, currently only MARTINI-bonded interactions are supported.
-In lieu of angular interactions, and for simplicity at this early stage, a pseudo-bond was commonly defined between particles at were two-apart.
+In lieu of angular interactions, and for simplicity at this early stage, a pseudo-bond was commonly defined between particles at where an angular interaction would typically be present.
 When \texttt{fitoog} reads in a molecular input file, a \texttt{differences} object is created, this stores the differential between the expanded particle description and the more severe coarse-grained description that is used in the particle swarm optimisation (PSO).
 
 Inspired by the coarse-graining methodology applied to directional colloid self-assembly by Law \emph{et al.} \cite{law_coarse-grained_2016}, a severe coarse-graining methodolgy was developed for use on surfactant molecules in \texttt{fitoog}.
@@ -15,7 +15,6 @@ This allowed for a significantly reduced parameter dimensionality to which the p
 The severe coarse-graining reduced the surfactant to a `director' description; where each surfactant molecule is defined by a position and a direction, shown pictorially in Figure~\ref{fig:director}.
 This reduced the parameter dimensionality to just six variables per molecule; three of which described the position of the centre-of-mass position of the molecule ($a$, $b$, $c$) and three that describe the orientaion of the surfactant in space ($\phi$, $\omega$, $\kappa$).
 Additionally, if the molecule was a single particle in length, as is the case for the \ce{NO3-} anion in the Section~\ref{sec:real_data}, then the dimensionality is just three as the direction is arbitrary.
-It was th
 %
 \begin{figure}
     \centering
