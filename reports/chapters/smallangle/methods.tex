@@ -1,32 +1,30 @@
 \section{Methods}
 
-The computational methodology described herein has been implemented in the open-source C\_MPI program \texttt{fitoog} \cite{mccluskey_arm61/fitoog_2019}.
+The computational methodology described herein has been implemented in the open-source C\_MPI program \texttt{fitoog}.\autocite{mccluskey_arm61/fitoog_2019}
 
 \subsection{Simulation Methodology}
 
 The \texttt{fitoog} software takes a series of input files that define the molecules, intramolecular interactions, and scattering lengths for the consistuent particles.
-The molecule input file is a space separated file consisting of an index, particle name, \emph{x}-coordinate, \emph{y}-coordinate, \emph{z}-coordinate, and scattering length.
-While, the intramolecular interactions file described the bonds within the molecule, currently only MARTINI-bonded interactions are supported.
-In lieu of angular interactions, and for simplicity at this early stage, a pseudo-bond was commonly defined between particles at where an angular interaction would typically be present.
-When \texttt{fitoog} reads in a molecular input file, a \texttt{differences} object is created, this stores the differential between the expanded particle description and the more severe coarse-grained description that is used in the particle swarm optimisation (PSO).
+The molecule input file is a space-separated file consisting of an index, particle name, \emph{x}-coordinate, \emph{y}-coordinate, \emph{z}-coordinate, and scattering length.
+When \texttt{fitoog} reads in a molecular input file, a \texttt{differences} object is created, this stores the differential between the expanded particle description and the more severe coarse grained description that is used in the particle swarm optimisation (PSO).
 
-Inspired by the coarse-graining methodology applied to directional colloid self-assembly by Law \emph{et al.} \cite{law_coarse-grained_2016}, a severe coarse-graining methodolgy was developed for use on surfactant molecules in \texttt{fitoog}.
-This allowed for a significantly reduced parameter dimensionality to which the particle swarm optimisation (as described in \ref{sec:partswarm}) could be applied.
-The severe coarse-graining reduced the surfactant to a `director' description; where each surfactant molecule is defined by a position and a direction, shown pictorially in Figure~\ref{fig:director}.
-This reduced the parameter dimensionality to just six variables per molecule; three of which described the position of the centre-of-mass position of the molecule ($a$, $b$, $c$) and three that describe the orientaion of the surfactant in space ($\phi$, $\omega$, $\kappa$).
-Additionally, if the molecule was a single particle in length, as is the case for the \ce{NO3-} anion in the Section~\ref{sec:real_data}, then the dimensionality is just three as the direction is arbitrary.
+Inspired by the coarse-graining methodology applied to directional colloid self-assembly by Law \emph{et al.},\autocite{law_coarse-grained_2016} a severe coarse-graining methodology was developed for use on surfactant molecules in \texttt{fitoog}.
+This allowed for a significantly reduced parameter dimensionality to which the particle swarm optimisation\footnote{Which is described in Section \ref{sec:partswarm}.} could be applied.
+The severe coarse graining reduced the surfactant to a `director' description; where each surfactant molecule is defined by a position and a direction, shown pictorially in Figure~\ref{fig:director}.
+This reduced the parameter dimensionality to just six variables per molecule; three of which described the position of the centre-of-mass position of the molecule and three that describe the angular orientaion of the surfactant in space.\footnote{Given the symbols, $a$, $b$, $c$ for the positions and $\phi$, $\omega$, and $\kappa$ for the angles.}
+Additionally, if the molecule was a single particle in length, as is the case for the \ce{NO3-} anion in the Section~\ref{sec:real_data}, then the dimensionality is just three, as the direction is arbitrary.
 %
-\begin{figure}
+\begin{marginfigure}
     \centering
-    \includegraphics[width=0.8\textwidth]{smallangle/director}
+    \includegraphics[width=\linewidth]{smallangle/director}
     \caption{A graphical description of the severe coarse-graining applied to the MARTINI description of the \emph{n}-decyltrimethylammonium surfactant molecule for the use of the particle swarm algorithm.}
     \label{fig:director}
-\end{figure}
+\end{marginfigure}
 %
 
-Following each PSO iteration, the molecule director is expanded from the position variable (using the \texttt{differences} object mentioned above) to a MARTINI represention.
-This representation is then rotated based on a rotation matrix, in this work the rotation matrix was constructed by first rotating the rotation axis by $-\phi$ and $-\omega$, then rotating by $\kappa$ in around the $z$-axis, before rotating the axis back to the original position by $\omega$ and $\phi$ \cite{evans_rotations_2001} (Figure~\ref{fig:rot} defines these angles).
-Following the expansion and reorientation, the scattering profile is then calculated using the Debye equation \cite{debye_zerstreuung_1915}, this was used over the more efficient Golden Vectors \cite{watson_rapid_2013} or Fibonnaci sequence \cite{svergun_solution_1994} methods as the aim of this work was to assess the application of the PSO method and efficiency was not the initial goal.
+Following each PSO iteration, the molecule director is expanded from the position variable\footnote{Using the \texttt{differences} object mentioned above.}.
+This representation is then rotated based on a rotation matrix, in this work the rotation matrix was constructed by first rotating the rotation axis by $-\phi$ and $-\omega$, then rotating by $\kappa$ in around the $z$-axis, before rotating the axis back to the original position by $\omega$ and $\phi$.\autocite[Figure~\ref{fig:rot} defines these angles]{evans_rotations_2001}
+Following the expansion and reorientation, the scattering profile is then calculated using the Debye equation,\autocite{debye_zerstreuung_1915} this was used over the more efficient Golden Vectors\autocite{watson_rapid_2013} or Fibonnaci sequence\autocite{svergun_solution_1994} methods as the aim of this work was to assess the application of the PSO method and efficiency was not the initial goal.
 The agreement between the calculated scattering profile and the experimental input scattering was used as a figure of merit, $\zeta$, that was to be optimised by the particle swarm algorithm.
 This $\zeta$ was a simple $\chi^2$ value found as follows,
 %
@@ -36,15 +34,15 @@ This $\zeta$ was a simple $\chi^2$ value found as follows,
 %
 where $I_{\text{exp}}(q)$ is the experimental scattering intensity, $I_{\text{calc}}(q)$ is the calculated scattering intensity, and $\text{d}I_{\text{exp}}(q)$ is the uncertainty in the experimental scattering intensity, all at a given $q$-vector.
 %
-\begin{figure}
+\begin{marginfigure}
     \centering
-    \includegraphics[width=0.8\textwidth]{smallangle/rotdia}
+\includegraphics[width=\linewidth]{smallangle/rotdia}
     \caption{The definitation of the polar angles used in the coarse grained representation of the surfactant molecule.}
     \label{fig:rot}
-\end{figure}
+\end{marginfigure}
 %
 
-Throughout this work, an initial weight for the PSO of 0.4 was used.
+Throughout this work, an interia weight for the PSO of 0.4 was used.
 Generally, values of between 0 and 2 are used for the global and personal acceleration coefficients are common in the use of PSO.
 For the test case discussed below a value of 2 was used for both acceleration coefficients, however, in the real case discussed later, the global acceleration coefficient was reduced to 1.
 This was chosen to reduce the acceleration toward the global best and improve the ability for the PSO to search the parameter space available in this much larger problem.
@@ -54,8 +52,9 @@ This was chosen to reduce the acceleration toward the global best and improve th
 The use of a population-based optimisation method, such as the PSO, allowed for easy access to highly parallel simulation.
 Parallelisation was achieved by spreading the population evenly across the cores that were available to the simulation.
 Inter-core messaging was performed using the MPI libraries, and to ensure efficiency only the figures of merit and the best possible structure were shared across the cores.
-This means that through a given \texttt{fitoog} run, the only serial component was the determination of lowest figure of merit.
-The efficiency of the parallelisation was defined by considering the strong and weak scaling of the software, it was possible to determine the percentage of serial, $s$, and parallel, $p$, components of the software by fitting the speedup (the time take for a job to run on a single core divide by the time taken on multiple cores) with Amdahl's law \cite{amdahl_validity_1967},
+This means that during a given \texttt{fitoog} run, the only serial component was the determination of lowest figure of merit.
+The efficiency of the parallelisation was defined by considering the strong and weak scaling of the software.
+It was possible to determine the percentage of serial, $s$, and parallel, $p$, components of the software by fitting the speedup\footnote{The time taken for a job to run on a single core divided by the time taken on multiple cores.} with Amdahl's law,\autocite{amdahl_validity_1967}
 %
 \begin{equation}
 \text{speedup} = \frac{1}{s + \sfrac{p}{N}},

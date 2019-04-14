@@ -7,45 +7,45 @@ These assess the CPU-bound efficiency and memory-bound efficiency of the softwar
 A perfectly parallelised software would present a strong and weak scaling efficiency of 1 regardless of the number of processors.
 
 In order to determine the strong scaling relationship for \texttt{fitoog}, a system was set up with a population size of 128 and was run for 5000 iterations steps.
-This system was run on a range of processor counts, from 1 to 128 increasing in a $\log_2$ fashion, on the SCARF cluster of STFC.
+This system was run on a range of processor counts, from 1 to 128,\footnote{Increasing in a $\log_2$ fashion.} on the SCARF cluster of STFC.
 Figure~\ref{fig:scale}(a) shows the strong scaling relationship for \texttt{fitoog} running on up to 128 cores.
 The weak scaling was probed by increasing the population size alongside the number of processors, both were varied in the same range as for the strong scaling, e.g. a population of 1 on a single core upto a population of 128 over 128 cores.
 The weak scaling relationship is shown in Figure~\ref{fig:scale}(b).
 %
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{smallangle/scaling}
+    \includegraphics[width=\textwidth]{smallangle/scaling}
     \caption{The (a) strong and (b) weak scaling relationships of \texttt{fitoog} running on upto 128 cores of the SCARF cluster.}
     \label{fig:scale}
 \end{figure}
 %
 
 It can be seen that both the strong and weak parallel efficiency of \texttt{fitoog} are relatively good, with the efficiency not dropping below \SI{80}{\percent} even when spread over 128 cores.
-The speedup of \texttt{fitoog} is shown in Figure~\ref{fig:speedup} (this is generated from the strong scaling relationship), from Amdahl's law \cite{amdahl_validity_1967} it is possible to find that the parallel component of a given \texttt{fitoog} run makes up \SI{99.8}{\percent} of the computation.
-This suggests that the parallelisation methodology currently implimented is successful, and it would not be advantageous to utilities the more sophisticated parallelisation method outlined in Section~\ref{sec:para}.
+The speedup of \texttt{fitoog} is shown in Figure~\ref{fig:speedup},\footnote{This is generated from the strong scaling relationship.} from Amdahl's law\autocite{amdahl_validity_1967} it is possible to find that the parallel component of a given \texttt{fitoog} run makes up \SI{99.8}{\percent} of the computation.
+This suggests that the parallelisation methodology currently implimented is successful, and it would not be advantageous to utilitise a more sophisticated parallelisation method.
 %
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{smallangle/speedup}
-    \caption{The speed up of \texttt{fitoog} running on upto 128 cores of the SCARF cluster, the blue dots show the speedup at different compute size, the orange line indicates the theoretical maximum, and the blue line shows the fitting Amdahl's law to the measured speedup \cite{amdahl_validity_1967}.}
+    \includegraphics[width=\textwidth]{smallangle/speedup}
+    \caption{The speed up of \texttt{fitoog} running on upto 128 cores of the SCARF cluster, the blue dots show the speedup at different compute size, the orange line indicates the theoretical maximum, and the blue line shows the fitting Amdahl's law to the measured speedup.}
     \label{fig:speedup}
 \end{figure}
 %
 
-The high efficiency in both strong and weak scaling regimes and the indication that the serial component of the computation is very small indicates that it is sensible to utilise high-performance computing resources for this software package.
+The high efficiency in both strong and weak scaling regimes and the indication that the serial component of the computation is very small indicate that it is sensible to utilise high-performance computing resources for this software package.
 In the real data application of this work, the \texttt{fitoog} software was run on 48 cores of the SCARF cluster.
-This was chosen as it would spread the computation over exactly two nodes of the SCARF cluster (each node contains 24 cores), therefore both nodes are being used to their full capacity.
+This was chosen as it would spread the computation over exactly two nodes of the SCARF cluster,\footnote{Each node contains 24 cores.} therefore both nodes are being used to their full capacity.
 
 \subsection{Test system}
 In order to assess the PSO implimentation, a simple test system was defined.
-This consisted of a coordinated cell that contained four surfactant molecules at four corners of a \SI{20}{\angstrom} cube, each orientated in a different direction (Figures~\ref{fig:test}(a-c)).
+This consisted of a coordinate cell that contained four surfactant molecules at four corners of a \SI{20}{\angstrom} cube, each orientated in a different direction, see Figures~\ref{fig:test}(a-c).
 The scattering intensity was calculated from the cell, with the blue beads given a scattering length of \SI{100}{\femto\meter} and the grey beads a scattering length of \SI{20}{\femto\meter}, to ensure the presence of intense scattering.
-The scattering was calculated using the Debye equation \cite{debye_zerstreuung_1915} for values of $q$ in a range from \SIrange{0.3}{1.5}{\per\angstrom} with 100 data points, this profile is shown in Figure~\ref{fig:test}(d).
+The scattering was calculated using the Debye equation\autocite{debye_zerstreuung_1915} for values of $q$ in a range from \SIrange{0.3}{1.5}{\per\angstrom} with 100 data points, this profile is shown in Figure~\ref{fig:test}(d).
 %
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{smallangle/fake_box}
-    \includegraphics[width=0.8\textwidth]{smallangle/fake}
+    \includegraphics[width=\textwidth]{smallangle/fake_box}
+    \includegraphics[width=\textwidth]{smallangle/fake}
     \caption{Test system coordinated cell observed down the (a) \emph{x}-, (b) \emph{y}, and (c) \emph{z}-axis, and the calculated scattering data from the Debye equation.}
     \label{fig:test}
 \end{figure}
@@ -54,20 +54,20 @@ The scattering was calculated using the Debye equation \cite{debye_zerstreuung_1
 \texttt{fitoog} was used to fit the ``experimental'' data; a population size of 100 was iterated over 5000 steps.
 Ten repetitions of the \texttt{fitoog} run were performed, taking around two and a half minutes per run on a workstation computer with four cores.
 Figure~\ref{fig:test_assess} shows the optimised scattering profile obtained from each of the runs and compares with the ``experimental'' data.
-It is clear that some of the runs agree well with the data, in particular runs 1 and 2, the resulting coordinate cell for these profiles are shown in Figure~\ref{fig:fake_result}.
+It is clear that some of the runs agree well with the data, in particular runs \num{1} and \num{2}, the resulting coordinate cell for these profiles are shown in Figure~\ref{fig:fake_result}.
 %
 \begin{figure}
     \centering
-    \includegraphics[width=0.4\textwidth]{smallangle/fake_assess1}
-    \includegraphics[width=0.4\textwidth]{smallangle/fake_assess2} \\
-    \includegraphics[width=0.4\textwidth]{smallangle/fake_assess3}
-    \includegraphics[width=0.4\textwidth]{smallangle/fake_assess4} \\
-    \includegraphics[width=0.4\textwidth]{smallangle/fake_assess5}
-    \includegraphics[width=0.4\textwidth]{smallangle/fake_assess6} \\
-    \includegraphics[width=0.4\textwidth]{smallangle/fake_assess7}
-    \includegraphics[width=0.4\textwidth]{smallangle/fake_assess8} \\
-    \includegraphics[width=0.4\textwidth]{smallangle/fake_assess9}
-    \includegraphics[width=0.4\textwidth]{smallangle/fake_assess10}
+    \includegraphics[width=0.49\textwidth]{smallangle/fake_assess1}
+    \includegraphics[width=0.49\textwidth]{smallangle/fake_assess2} \\
+    \includegraphics[width=0.49\textwidth]{smallangle/fake_assess3}
+    \includegraphics[width=0.49\textwidth]{smallangle/fake_assess4} \\
+    \includegraphics[width=0.49\textwidth]{smallangle/fake_assess5}
+    \includegraphics[width=0.49\textwidth]{smallangle/fake_assess6} \\
+    \includegraphics[width=0.49\textwidth]{smallangle/fake_assess7}
+    \includegraphics[width=0.49\textwidth]{smallangle/fake_assess8} \\
+    \includegraphics[width=0.49\textwidth]{smallangle/fake_assess9}
+    \includegraphics[width=0.49\textwidth]{smallangle/fake_assess10}
     \caption{The best fit from the \texttt{fitoog} run (orange line) is compared with the ``real experimental'' data (blue line) for each of the ten runs.}
     \label{fig:test_assess}
 \end{figure}
@@ -75,13 +75,13 @@ It is clear that some of the runs agree well with the data, in particular runs 1
 %
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{smallangle/fake_result}
+    \includegraphics[width=\textwidth]{smallangle/fake_result}
     \caption{The result of runs 1 (a, b, and c) and 2 (d, e, and f) along each axis for the test system coordinated cell.}
     \label{fig:fake_result}
 \end{figure}
 %
 
-This agreement with the data in short runs is a positive result, and the resulting cells shown in Figure~\ref{fig:fake_result} appears to show some agreement with the coordination cell from which the ``experimental'' data was found.
+This agreement with the ``experimental data'' in the test case is a positive result, and the resulting cells shown in Figure~\ref{fig:fake_result} appear to show some agreement with the coordination cell from which the ``experimental'' data was found.
 Therefore, the use of a PSO method was continued and applied to the real experimental data.
 
 \subsection{Real data}
@@ -92,30 +92,30 @@ Figure~\ref{fig:expdata} shows the scattering profile that was being modelled.
 %
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{smallangle/exp_data}
+    \includegraphics[width=\textwidth]{smallangle/exp_data}
     \caption{The experimental data to which the real \texttt{fitoog} run was attempting to fit.}
     \label{fig:expdata}
 \end{figure}
 %
 
 The aim of the application to real data was to attempt to quickly produce a system with multiple micellar species.
-Therefore, the simulation cell was substantially larger; containing 500 MARTINI coarse-grained \ce{C_{10}TA+} and \ce{NO3-} molecules, the available cell was a cube with a side \SI{177}{\angstrom} in length.\footnote{No solvent was included in the box as the scattering was considered to have arisen from the micelle scattering alone. The concentration of the solution was \SI{\sim0.15}{\mol\deci\meter^{-3}}, which is nearly three times the cmc for \ce{C_{10}TA+} from \cite{rodriguez_surface_2007}.}
-In order to assess the utility for the PSO, two \texttt{fitoog} runs were performed (each with five repetitions, and a population size of 96 over 500 iterations).
-The PSO method was compared with a random method (where at each iteration a new random population was generated).
+Therefore, the simulation cell was substantially larger; containing 500 MARTINI coarse grained \ce{C_{10}TA+} and \ce{NO3-} molecules, the available cell was a cube with a side \SI{177}{\angstrom} in length.\footnote{No solvent was included in the box as the scattering was considered to have arisen from the micelle scattering alone. The concentration of the solution was \SI{\sim0.15}{\mol\deci\meter^{-3}}, which is nearly three times the cmc for \ce{C_{10}TA+} from \cite{rodriguez_surface_2007}.}
+In order to assess the utility for the PSO, two \texttt{fitoog} runs were performed.\footnote{Each with five repetitions, and a population size of 96 over 500 iterations.}
+The PSO method was compared with a random method, where at each iteration a new random population was generated.
 Figure~\ref{fig:chi} shows the variation in the figure of merit, $\zeta$, in each of this optimisations.
 From this, there is no clear benefit to the use of the PSO method over simply selecting random structures.
 %
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{smallangle/comparechi}
+    \includegraphics[width=\textwidth]{smallangle/comparechi}
     \caption{The quality of agreement between the \texttt{fitoog} model and the experimental data; where the blue lines are the different PSO runs and the orange are the randomisation runs.}
     \label{fig:chi}
 \end{figure}
 %
 
 This inability for the PSO method to optimise the structure of the micellar species could be due to a wide variety of reasons, some which could be acted on and others that could not.
-While it is common to use values for the acceleration coefficients that are typically in the range of \numrange{0}{2}, it may be necessary to optimise these values (which of course could lead to a infinite set of optimisations).
-However, it may the case that the parameter space was too large to be optimised using the PSO alone, this is very likely considering that the dimensionality of the parameter space was 4500 ($500\times6+500\times3$, for 500 \ce{C_{10}TA+} and \ce{NO3-} molecules).
+While it is common to use values for the acceleration coefficients that are typically in the range of \numrange{0}{2}, it may be necessary to optimise these values.\footnote{Which, of course, could lead to a infinite set of optimisations.}
+However, it may the case that the parameter space was too large to be optimised using the PSO alone, this is very likely considering that the dimensionality of the parameter space was 4500.\footnote{$500\times6+500\times3$, for 500 \ce{C_{10}TA+} and \ce{NO3-} molecules.}
 Figure~\ref{fig:best_real_bad} shows the best structure that was obtained from the \texttt{fitoog} runs, notably it is from the randomisation based run, which shows no evidence of the formation of micelle-like species.
 %
 \begin{figure}
@@ -127,6 +127,6 @@ Figure~\ref{fig:best_real_bad} shows the best structure that was obtained from t
 %
 
 A possible method that may enable the optimisation of such structures would be the inclusion of an energetic term.
-For example, this could involve the use of an energy optimisation to be performed alongside the structural optimisation to the scattering profile (regardless of the optimisation methodology).
-The use of energetic considerations and an Markov state model optimisation has been shown to perform well for peptide self-assembly \cite{sengupta_automated_2019}.
-Additionally, the Emperical Potential Structure Refinement used by Hargreaves \emph{et al.} \cite{hargreaves_atomistic_2011} and in a coarse-grained fashion by Soper and Edler\autocite{soper_coarse-grained_2017} and the method used by Ivanovic \emph{et al.} \cite{ivanovic_temperature-dependent_2018} all involve performing and energetic optimisation that is biased based on the agreement with experimental data.
+For example, this could involve the use of an energy optimisation to be performed alongside the structural optimisation to the scattering profile, regardless of the optimisation methodology.
+The use of energetic considerations and an Markov state model optimisation has been shown to perform well for peptide self-assembly.\autocite{sengupta_automated_2019}
+Additionally, the Emperical Potential Structure Refinement used by Hargreaves \emph{et al.}\autocite{hargreaves_atomistic_2011} and in a coarse-grained fashion by Soper and Edler\autocite{soper_coarse-grained_2017} and the method used by Ivanovic \emph{et al.}\autocite{ivanovic_temperature-dependent_2018} all involve performing and energetic optimisation that is biased based on the agreement with experimental data.
