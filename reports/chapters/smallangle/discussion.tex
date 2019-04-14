@@ -21,7 +21,7 @@ The weak scaling relationship is shown in Figure~\ref{fig:scale}(b).
 %
 
 It can be seen that both the strong and weak parallel efficiency of \texttt{fitoog} are relatively good, with the efficiency not dropping below \SI{80}{\percent} even when spread over 128 cores.
-The speedup of \texttt{fitoog} is shown in Figure~\ref{fig:speedup} (this is generated from the strong scaling relationship), from Amdahl's law \cite{amdahl_validity_1967} we can find that the parallel component of a given \texttt{fitoog} run makes up \SI{99.8}{\percent} of the computation.
+The speedup of \texttt{fitoog} is shown in Figure~\ref{fig:speedup} (this is generated from the strong scaling relationship), from Amdahl's law \cite{amdahl_validity_1967} it is possible to find that the parallel component of a given \texttt{fitoog} run makes up \SI{99.8}{\percent} of the computation.
 This suggests that the parallelisation methodology currently implimented is successful, and it would not be advantageous to utilities the more sophisticated parallelisation method outlined in Section~\ref{sec:para}.
 %
 \begin{figure}

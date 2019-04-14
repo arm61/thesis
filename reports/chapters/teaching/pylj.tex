@@ -1,7 +1,7 @@
 \section{\texttt{pylj}: an open-source teaching tool for classical atomistic simulation}
 
 \texttt{pylj} (PYthon Lennard-Jones) \cite{mccluskey_pylj_2018,mccluskey_arm61/pylj_2019-2} is an educational software and molecular dynamics engine designed to introduce students to the details of classical simulation.
-Initially, \texttt{pylj} was only able to utilise a Lennard-Jones potential model \cite{lennard-jones_determination_1924}, however, recently (as of version 1.1.0 \cite{mccluskey_arm61/pylj_2018}) there is the ability to include any custom forcefield, with a Buckingham potential packaged with the software \cite{buckingham_classical_1938}.
+Initially, \texttt{pylj} was only able to utilise a Lennard-Jones potential model \cite{lennard-jones_determination_1924}, however, recently (as of version 1.1.0 \cite{mccluskey_arm61/pylj_2018}) there is the ability to include any custom potential model, with a Buckingham potential packaged with the software \cite{buckingham_classical_1938}.
 In an effort to reduce the complexity and visual subtlety of typical molecular dynamics simulations, pylj performs two-dimension molecular dynamics simulation.
 From the beginning, this software was designed to operate in the Jupyter Notebook framework and therefore eliminate the need for the learner to interact with the command line interface, as is the case with common molecular dynamics packages like Gromacs \cite{berendsen_gromacs_1995}, LAMMPS \cite{plimpton_fast_1995}, or DL\_POLY \cite{smith_dl_poly_2002}.
 
@@ -28,7 +28,7 @@ The \texttt{sample.py} module is integral to the utility of \texttt{pylj}, as th
 Using this module, is it possible to create a molecular dynamics simulation that enables the plotting of a huge variety of outputs.
 Plots such as instantaneous pressure against time, radial distribution function, and instantaneous temperature histogram are included in \texttt{pylj} and it is easy for the users to create custom plots or build visualisations where multiple plots can be presented together.
 
-Currently, the \texttt{forcefield.py} module is the location where the potential model may be defined.
+Currently, the \texttt{forcefield.py}\footnote{Forcefield is another word to describe a potential model.} module is the location where the potential model may be defined.
 This involves the definition of a single function that describes the potential model (Code Block~\ref{cb:pyljlj} gives the function for the Lennard-Jones potential model), with a Boolean flag that defines where the force or energy should be returned.
 In future, for a planned \texttt{pylj} \num{2.0}, the potential model definition will be adapted such that each model is an individual class containing functions for each of the different parameters to be calculated.
 This will more easily allow the growth of \texttt{pylj} to enable features such as the simulation or particles with different potential model parameterisations and the inclusion of mixing rules.

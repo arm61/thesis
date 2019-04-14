@@ -46,14 +46,14 @@ The thickness increase for the phospholipid tails may be associated with the str
   \caption{\ The values for the parameters allowed to vary in the fitting of the chemically-consistent model, at each surface pressure measured.}
   \label{tab:cc}
   \begin{tabular}{llllll}
-    \hline
+    \toprule
     Surface Pressure/\si{\milli\newton\per\meter} & $d_h$/\si{\angstrom} & $d_t$/\si{\angstrom} & $\sigma_{t,h,s}$/\si{\angstrom} & $\phi_h$$\times10^{-2}$ & $V_t$/\si{\angstrom\cubed} \\
-    \hline
+    \midrule
     20 & \input{output/reflectometry2/dspc_20/dspc_20-d_h_20.tex} & \input{output/reflectometry2/dspc_20/dspc_20-d_t_20.tex} & \input{output/reflectometry2/dspc_20/dspc_20_rough_20.tex} & \input{output/reflectometry2/dspc_20/dspc_20-phih_20.tex} & \input{output/reflectometry2/dspc_20/dspc_20-V_t_20.tex} \\
     30 & \input{output/reflectometry2/dspc_30/dspc_30-d_h_30.tex} & \input{output/reflectometry2/dspc_30/dspc_30-d_t_30.tex} & \input{output/reflectometry2/dspc_30/dspc_30_rough_30.tex} & \input{output/reflectometry2/dspc_30/dspc_30-phih_30.tex} & \input{output/reflectometry2/dspc_30/dspc_30-V_t_30.tex} \\
     40 & \input{output/reflectometry2/dspc_40/dspc_40-d_h_40.tex} & \input{output/reflectometry2/dspc_40/dspc_40-d_t_40.tex} & \input{output/reflectometry2/dspc_40/dspc_40_rough_40.tex} & \input{output/reflectometry2/dspc_40/dspc_40-phih_40.tex} & \input{output/reflectometry2/dspc_40/dspc_40-V_t_40.tex} \\
     50 & \input{output/reflectometry2/dspc_50/dspc_50-d_h_50.tex} & \input{output/reflectometry2/dspc_50/dspc_50-d_t_50.tex} & \input{output/reflectometry2/dspc_50/dspc_50_rough_50.tex} & \input{output/reflectometry2/dspc_50/dspc_50-phih_50.tex} & \input{output/reflectometry2/dspc_50/dspc_50-V_t_50.tex} \\
-    \hline
+    \bottomrule
   \end{tabular}
 \end{table}
 %
@@ -105,7 +105,7 @@ It is clear that the 4-to-1 beading present in the MARTINI potential model is cr
 
 The requirement for a 4-to-1 beading strategy for the MARTINI potential model is a significant weakness.
 A better method may be limiting experiments to a system that can be modelled exactly or the use of a different beading model.
-However, we are not aware of an off-the-shelf coarse-grained potential model that would easily offer the exact beading of DSPC.
+However, I am not aware of an off-the-shelf coarse-grained potential model that would easily offer the exact beading of DSPC.
 
 \subsection{Comparison with other simulations}
 Table~\ref{tab:chi} shows that both the Slipid and Berger potential model simulations agree well with the experimental data, with the Slipid potential model offering a slight improvement over the Berger.
@@ -142,7 +142,7 @@ This suggests that by using the a larger timestep, shorter simulations, and the 
 %
 
 \subsection{Using the Slipid potential model simulations to improve the monolayer model}
-Despite the chemically-consistent model offering a small improvement in agreement over the Slipid potential model simulation, we believe that it is possible to use the MD simulations to improve the existing this model.
+Despite the chemically-consistent model offering a small improvement in agreement over the Slipid potential model simulation, it is possible to use the MD simulations to improve the existing this model.
 A possible improvement can be found from considering Figure~\ref{fig:waters}, which shows the solvent penetration of the phospholipid heads, using the intrinsic surface approach to remove the effect of the interfacial roughness.
 It is clear that the plot is not step-wise as is obtained from the uniform solvation model that is commonly used in traditional layer models.
 Nor is the distribution sigmoidal, as there is a small deviation in the region of the ester group of the phospholipid heads.
@@ -152,7 +152,7 @@ Regardless of the mechanism, this suggests that a different solvation model shou
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{reflectometry2/water_30}
-    \caption{The simulation time-averaged intrinsic density profile of the water molecules (blue dots), and phospholipid components (head groups: green dots, tail groups: red dots), where the phosphorus atoms of the phospholipid heads create the intrinsic surface at $z=0$\si{\angstrom}, and the equivalent number density from the chemically-consistent model (orange line).}
+    \caption{The simulation time-averaged intrinsic density profile of the water molecules (blue dots), and phospholipid components (head groups: green dots, tail groups: red dots) at an APM associated with a surface pressure of \SI{30}{\milli\newton\per\meter}, where the phosphorus atoms of the phospholipid heads create the intrinsic surface at $z=0$\si{\angstrom}, and the equivalent number density from the chemically-consistent model (orange line).}
     \label{fig:waters}
 \end{figure}
 %
@@ -162,12 +162,12 @@ This agrees well with the model used previously to fit the experimental data by 
 However, the tail group distribution is not Gaussian and this previous method failed to include any additional factors to account for interfacial roughness.
 Previous work has suggested that when only a single phospholipid type is present, the roughness between the layers should be conformal in nature, that is it should be carried uniformly through the layers.\autocite{kozhevnikov_general_2012,campbell_structure_2018}
 However, from the investigation of the SLD profiles in Figure~\ref{fig:dspcccref30}(b) it appears that the roughness between the phospholipid tails and the air is dramatically different from that at the phospholipid head-water interface.
-In an effort to quantify the interfacial roughness in the simulations, we have used the method outlined in Section~\ref{sec:traj}.
+In an effort to quantify the interfacial roughness in the simulations, the method outlined in Section~\ref{sec:traj} was used.
 The values for the mean, \SI{95}{\percent} quantile, and the spread between these for the \emph{z}-dimension position for atoms representative of the start, middle, and end of each of the phospholipid head and tails are given in Table~\ref{tab:spread2}, for each the APM associated with a surface pressure of \SI{30}{\milli\newton\per\meter}.\footnote{Similar data at other surface pressures can be found in Appendix~\ref{refl2app}.}
 From this table, it is clear that at the very start of the phospholipid molecule\footnote{At the head group.} the roughness is very large with a value of \SI{\sim10}{\angstrom} for the nitrogen atom.
 However this decreases slightly within the phospholipid head, reaching a value of \input{output/reflectometry2/dspc_30/slipids_position_C2_30.txt}\si{\angstrom} for the end of the head group.
 There is then a substantial decrease noted in the phospholipid tail, going from \SI{\sim8.5}{\angstrom} at the start of the tail to \SI{\sim1.5}{\angstrom} at the end.
-We believe that this indicates the presence of a highly non-conformal roughness in the phospholipid monolayer of a single phospholipid type and therefore in future, it is important to consider this possibility in the use of model layer structure method.
+This indicates the presence of a highly non-conformal roughness in the phospholipid monolayer of a single phospholipid type and therefore in future, it is important to consider this possibility in the use of model layer structure method.
 %
 \begin{table}
 \centering
@@ -175,20 +175,20 @@ We believe that this indicates the presence of a highly non-conformal roughness 
   \caption{\ The mean, \SI{95}{\percent} quantile, and their spread for the \emph{z}-dimension position of atoms representative of difference parts of the phospholipid, at an APM associated with a surface pressure of \SI{30}{\milli\newton\per\meter}.}
   \label{tab:spread2}
   \begin{tabular}{llll}
-    \hline
+    \toprule
     Position & Mean/\si{\angstrom} & \SI{95}{\percent} quantile/\si{\angstrom} & Spread/\si{\angstrom} \\
-    \hline
+    \midrule
     Start-Head & \input{output/reflectometry2/dspc_30/slipids_mean_N_30.txt} & \input{output/reflectometry2/dspc_30/slipids_uq_N_30.txt} & \input{output/reflectometry2/dspc_30/slipids_position_N_30.txt} \\
     Mid-Head & \input{output/reflectometry2/dspc_30/slipids_mean_P_30.txt} & \input{output/reflectometry2/dspc_30/slipids_uq_P_30.txt} & \input{output/reflectometry2/dspc_30/slipids_position_P_30.txt} \\
     End-Head & \input{output/reflectometry2/dspc_30/slipids_mean_C2_30.txt} & \input{output/reflectometry2/dspc_30/slipids_uq_C2_30.txt} & \input{output/reflectometry2/dspc_30/slipids_position_C2_30.txt} \\
-    \hline
+    \midrule
     Start-Tail 1 & \input{output/reflectometry2/dspc_30/slipids_mean_C21_30.txt} & \input{output/reflectometry2/dspc_30/slipids_uq_C21_30.txt} & \input{output/reflectometry2/dspc_30/slipids_position_C21_30.txt} \\
     Start-Tail 2 & \input{output/reflectometry2/dspc_30/slipids_mean_C31_30.txt} & \input{output/reflectometry2/dspc_30/slipids_uq_C31_30.txt} & \input{output/reflectometry2/dspc_30/slipids_position_C31_30.txt} \\
     Mid-Tail 1 & \input{output/reflectometry2/dspc_30/slipids_mean_C29_30.txt} & \input{output/reflectometry2/dspc_30/slipids_uq_C29_30.txt} & \input{output/reflectometry2/dspc_30/slipids_position_C29_30.txt} \\
     Mid-Tail 2 & \input{output/reflectometry2/dspc_30/slipids_mean_C39_30.txt} & \input{output/reflectometry2/dspc_30/slipids_uq_C39_30.txt} & \input{output/reflectometry2/dspc_30/slipids_position_C39_30.txt} \\
     End-Tail 1 & \input{output/reflectometry2/dspc_30/slipids_mean_8C21_30.txt} & \input{output/reflectometry2/dspc_30/slipids_uq_8C21_30.txt} & \input{output/reflectometry2/dspc_30/slipids_position_8C21_30.txt} \\
     End-Tail 2 & \input{output/reflectometry2/dspc_30/slipids_mean_8C31_30.txt} & \input{output/reflectometry2/dspc_30/slipids_uq_8C31_30.txt} & \input{output/reflectometry2/dspc_30/slipids_position_8C31_30.txt} \\
-    \hline
+    \bottomrule
   \end{tabular}
 \end{table}
 %

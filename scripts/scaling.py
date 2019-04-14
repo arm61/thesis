@@ -6,21 +6,21 @@ import matplotlib.gridspec as gridspec
 
 import matplotlib as mpl
 
-mpl.rcParams["xtick.labelsize"] = 8
-mpl.rcParams["ytick.labelsize"] = 8
+mpl.rcParams["xtick.labelsize"] = 10
+mpl.rcParams["ytick.labelsize"] = 10
 mpl.rcParams["axes.facecolor"] = "w"
 mpl.rcParams["lines.linewidth"] = 2
 mpl.rcParams["xtick.top"] = False
 mpl.rcParams["xtick.bottom"] = True
 mpl.rcParams["ytick.left"] = True
 mpl.rcParams["grid.linestyle"] = ""
-mpl.rcParams["legend.fontsize"] = 8
+mpl.rcParams["legend.fontsize"] = 10
 mpl.rcParams["legend.facecolor"] = [1, 1, 1]
 mpl.rcParams["legend.framealpha"] = 0.75
-mpl.rcParams["axes.labelsize"] = 8
+mpl.rcParams["axes.labelsize"] = 10
 mpl.rcParams["axes.linewidth"] = 1
 mpl.rcParams["axes.edgecolor"] = "k"
-mpl.rcParams["axes.titlesize"] = 8
+mpl.rcParams["axes.titlesize"] = 10
 
 # strong scaling
 
@@ -61,7 +61,7 @@ plt.close()
 
 y = t1 / (N * tN)
 
-plt.figure(figsize=(5, 25 / 6))
+plt.figure(figsize=(4.13, 3.51))
 gs = gridspec.GridSpec(2, 1)
 ax = plt.subplot(gs[0, 0])
 

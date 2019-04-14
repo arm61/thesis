@@ -12,22 +12,6 @@ import seaborn as sns
 sns.set(palette="colorblind")
 
 
-mpl.rcParams["xtick.labelsize"] = 8
-mpl.rcParams["ytick.labelsize"] = 8
-mpl.rcParams["axes.facecolor"] = "w"
-mpl.rcParams["lines.linewidth"] = 2
-mpl.rcParams["xtick.top"] = False
-mpl.rcParams["xtick.bottom"] = True
-mpl.rcParams["ytick.left"] = True
-mpl.rcParams["grid.linestyle"] = "--"
-mpl.rcParams["legend.fontsize"] = 8
-mpl.rcParams["legend.facecolor"] = [1, 1, 1]
-mpl.rcParams["legend.framealpha"] = 0.75
-mpl.rcParams["axes.labelsize"] = 8
-mpl.rcParams["axes.linewidth"] = 1
-mpl.rcParams["axes.edgecolor"] = "k"
-mpl.rcParams["axes.titlesize"] = 8
-
 ff = sys.argv[1]
 
 sp = sys.argv[2]

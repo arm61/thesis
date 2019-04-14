@@ -20,7 +20,7 @@ The DE algorithm is designed to more ably determine the global minimum of a part
 DE is an example of a genetic algorithm, one that is designed to mimic the evolution processes observed in biology.\autocite{holland_adaptation_1992}
 The method consists of two vectors, the parent population, $\mathbf{p}$, the offspring population, $\mathbf{o}$.
 These vectors are of a dimension $(i\times j)$, where $i$ is the number of variables being optimised and $j$ is the number of candidate solutions being used.
-The offspring population vector is created through some trial methods.\footnote{Many of these exist however we will discuss a simple classical trial method, details of other methods may be found in \cite{bjorck_fitting_2011}.}
+The offspring population vector is created through some trial methods.\footnote{Many of these exist however discussion will be limited to a simple classical trial method, details of other methods may be found in \cite{bjorck_fitting_2011}.}
 
 A classical trial method consists of two stages, mutation and recombination.
 The mutation stage involves performing some mutation on the parent population to create a mutant vector, $\mathbf{m}$, analogous to the mutation in biological evolutionary theory.
@@ -48,7 +48,7 @@ The recombination constant controls the progress of the algorithm as it impacts 
 
 The final stage is to compare the offspring and parent population vectors, in the selection stage to create the new parent population for the next iteration.
 The selection stage comprises of using some figure of merit, $\zeta$, to choose between the subunit from the offspring or parent population vector.
-In our example, that figure of merit may be the agreement between some experimental data and our model, or for the example in Figure~\ref{fig:diff_evo} it is the value of the Ackley function,\autocite{ackley_connectionist_1987} which we are trying to minimise.\footnote{The Ackley function is a common function used for assessing the utility of global optimisation functions.}
+In our example, that figure of merit may be the agreement between some experimental data and our model, or for the example in Figure~\ref{fig:diff_evo} it is the value of the Ackley function,\autocite{ackley_connectionist_1987} which is being minimised.\footnote{The Ackley function is a common function used for assessing the utility of global optimisation functions.}
 %
 \begin{equation}
     \mathbf{p}_{*,j} \leftarrow
@@ -191,7 +191,7 @@ It should be noted that in the event on a poorly optimised initial value of $\th
 \label{sec:md}
 Section \ref{sec:classical} introduced classical potential models as a method for the evalution of the interaction energy of a given chemical system.
 Any of the optimisation methods discussed above could be used alongside these classical potential models to find an energy minimum structure for the system or to sample the potential energy landscape.
-However, it is often the case that we are interested in a dynamically relevant structure at a given temperature for some system.
+However, it is often the case that a dynamically relevant structure is of interest at a given temperature.
 This is where molecular dynamics simulations are a useful and important tool.
 
 The aim of a molecular dynamics simulation is to probe the positions, velocities, and accelerations on each of the atoms, or coarse-grained particles, as a simulation progresses.
@@ -212,7 +212,7 @@ f(r) = \frac{-\delta E_{\text{total}}(r)}{\delta r},
 \end{equation}
 %
 where, $r$ is the configuration of the atoms.\footnote{The force is the negative of the first derivative of the energy with respect to the atomic configuration.}
-The force found from Equation~\ref{equ:forcesca} is a scalar, however, we are interested in the force vector in Equation~\ref{equ:forcevec}.
+The force found from Equation~\ref{equ:forcesca} is a scalar, however, the force vector is present in Equation~\ref{equ:forcevec}.
 To determine the force in a given direction, it is necessary to find the product of the force, $f$, and the unit vector in that direction,
 %
 \begin{equation}
@@ -221,7 +221,7 @@ To determine the force in a given direction, it is necessary to find the product
 %
 where $r_x$ is the atomic configuration in the $x$-dimension, and $|\mathbf{r}|$ is the magnitude of the atomic configuration vector.
 
-The potential model, which we define for a given system, allows for the calculation of the acceleration on each particle in that system.
+The potential model, which is defined for a given system, allows for the calculation of the acceleration on each particle in that system.
 The next step is to use this acceleration to iterate through the trajectory of our system.
 This is achieved by applying Newtonian equations of motion, for example in the Velocity-Verlet algorithm.\autocite{swope_computer_1982}
 %

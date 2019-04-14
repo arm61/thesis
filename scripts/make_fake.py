@@ -6,21 +6,21 @@ import matplotlib.gridspec as gridspec
 
 import matplotlib as mpl
 
-mpl.rcParams["xtick.labelsize"] = 8
-mpl.rcParams["ytick.labelsize"] = 8
+mpl.rcParams["xtick.labelsize"] = 10
+mpl.rcParams["ytick.labelsize"] = 10
 mpl.rcParams["axes.facecolor"] = "w"
 mpl.rcParams["lines.linewidth"] = 2
 mpl.rcParams["xtick.top"] = False
 mpl.rcParams["xtick.bottom"] = True
 mpl.rcParams["ytick.left"] = True
 mpl.rcParams["grid.linestyle"] = ""
-mpl.rcParams["legend.fontsize"] = 8
+mpl.rcParams["legend.fontsize"] = 10
 mpl.rcParams["legend.facecolor"] = [1, 1, 1]
 mpl.rcParams["legend.framealpha"] = 0.75
-mpl.rcParams["axes.labelsize"] = 8
+mpl.rcParams["axes.labelsize"] = 10
 mpl.rcParams["axes.linewidth"] = 1
 mpl.rcParams["axes.edgecolor"] = "k"
-mpl.rcParams["axes.titlesize"] = 8
+mpl.rcParams["axes.titlesize"] = 10
 
 import pandas as pd
 
@@ -101,7 +101,7 @@ ax.text(
     horizontalalignment="center",
     verticalalignment="center",
     transform=ax.transAxes,
-    size=12,
+    size=8,
 )
 plt.tight_layout()
 plt.savefig("../reports/figures/smallangle/fake.pdf")
