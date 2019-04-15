@@ -221,7 +221,7 @@ names = [
     r"$\phi_h/\times10^{-2}$",
     r"$\sigma_{t,h,s}$/Å",
 ]
-fig_lab = ["dppc":"(a)", "dmpc":"(b)", "dlpc":"(c)", "dmpg":"(d)"]
+fig_lab = {"dppc":"(a)", "dmpc":"(b)", "dlpc":"(c)", "dmpg":"(d)"}
 solh_store = np.zeros((4, pchain[0].chain.size))
 p_lab = ["V_t", "V_h", "d_t", "d_h", "phi_h", "sigma"]
 p_all = np.array([])
