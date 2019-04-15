@@ -1,26 +1,28 @@
 \section{\texttt{pylj}: an open-source teaching tool for classical atomistic simulation}
 
-\texttt{pylj} (PYthon Lennard-Jones) \cite{mccluskey_pylj_2018,mccluskey_arm61/pylj_2019-2} is an educational software and molecular dynamics engine designed to introduce students to the details of classical simulation.
-Initially, \texttt{pylj} was only able to utilise a Lennard-Jones potential model \cite{lennard-jones_determination_1924}, however, recently (as of version 1.1.0 \cite{mccluskey_arm61/pylj_2018}) there is the ability to include any custom potential model, with a Buckingham potential packaged with the software \cite{buckingham_classical_1938}.
+\texttt{pylj}\autocite[PYthon Lennard-Jones]{mccluskey_pylj_2018,mccluskey_arm61/pylj_2019-2} is an educational software and molecular dynamics engine designed to introduce students to the details of classical simulation.
+Initially, \texttt{pylj} was only able to utilise a Lennard-Jones potential model,\autocite{lennard-jones_determination_1924} however, recently\autocite{mccluskey_arm61/pylj_2018} there is the ability to include any custom potential model, with a Buckingham potential packaged with the software.\autocite{buckingham_classical_1938}
 In an effort to reduce the complexity and visual subtlety of typical molecular dynamics simulations, pylj performs two-dimension molecular dynamics simulation.
-From the beginning, this software was designed to operate in the Jupyter Notebook framework and therefore eliminate the need for the learner to interact with the command line interface, as is the case with common molecular dynamics packages like Gromacs \cite{berendsen_gromacs_1995}, LAMMPS \cite{plimpton_fast_1995}, or DL\_POLY \cite{smith_dl_poly_2002}.
+From the beginning, this software was designed to operate in the Jupyter Notebook framework and therefore eliminate the need for the learner to interact with the command line interface, as is the case with common research-level molecular dynamics packages like Gromacs, LAMMPS, or DL\_POLY.\autocite{berendsen_gromacs_1995,plimpton_fast_1995,smith_dl_poly_2002}
 
 \subsection{Software design}
 \texttt{pylj} was designed such that it may be operated at a series of different levels of abstraction.
-For example, an educator could write a simple function to allow the running of a molecular dynamics simulation (Code Block~\ref{cb:pyljmd}) or an interested student could manually interact with the source code.
+For example, an educator could write a simple function to allow the running of a molecular dynamics simulation\footnote{An example of this can be seen in Code Block~\ref{cb:pyljmd}.} or an interested student could manually interact with the source code.
 This abstraction is achieved through the modular design of pylj, where the \texttt{md.py} module implements all of the functionality related to MD simulation.
 The simulation is controlled by an overarching \texttt{System} class, which contains all of the information regarding the simulation that has been/is running.
 %
-\begin{figure}
+\begin{listing}
     \centering
-        \lstinputlisting[caption={An example of an NVT ensemble molecular dynamics algorithm as implemented in \texttt{pylj}.},label={cb:pyljmd}]{reports/code_blocks/pyljmd.py}
-\end{figure}
+    \caption{An example of an NVT ensemble molecular dynamics algorithm as implemented in \texttt{pylj}.}
+    \lstinputlisting[nolol]{reports/code_blocks/pyljmd.py}
+    \label{cb:pyljmd}
+\end{listing}
 %
 
-The computationally intensive nature of the pairwise force and energy calculations necessary for molecular dynamics simulation necessitated the use of Cython, a method of including compiled C language code within a Python package \cite{noauthor_cython_nodate}.
+The computationally intensive nature of the pairwise force and energy calculations necessary for molecular dynamics simulation necessitated the use of Cython, a method of including compiled C language code within a Python package.\autocite{noauthor_cython_nodate}
 This enabled a \num{\sim10} times speed up in the determination of the pairwise interactions when compared with the use of pure Python implementation.
 The pure Python implementation is still present in the package, to allow students that are familiar with Python to understand the mechanism without the requirement to become familiar with C.
-From version 1.2.1 \cite{mccluskey_arm61/pylj_2019-1}, the pure Python versions of the pairwise interactions have been built using \texttt{numba} just-in-time compilation \cite{noauthor_numba_nodate}, which enabled a \num{5} times speed up.
+From version 1.2.1,\autocite{mccluskey_arm61/pylj_2019-1} the pure Python versions of the pairwise interactions have been built using \texttt{numba} just-in-time compilation,\autocite{noauthor_numba_nodate} which enabled a \num{5} times speed up.
 This means that a \texttt{pylj} simulation without the compiled C functions is now just twice as slow than the compiled version.
 Furthermore, this speed is now comparable to the length of time taken to render the visualisation, meaning that the pairwise interactions are no longer the rate determining step in the use of \texttt{pylj}.
 
@@ -29,61 +31,62 @@ Using this module, is it possible to create a molecular dynamics simulation that
 Plots such as instantaneous pressure against time, radial distribution function, and instantaneous temperature histogram are included in \texttt{pylj} and it is easy for the users to create custom plots or build visualisations where multiple plots can be presented together.
 
 Currently, the \texttt{forcefield.py}\footnote{Forcefield is another word to describe a potential model.} module is the location where the potential model may be defined.
-This involves the definition of a single function that describes the potential model (Code Block~\ref{cb:pyljlj} gives the function for the Lennard-Jones potential model), with a Boolean flag that defines where the force or energy should be returned.
+This involves the definition of a single function that describes the potential model,\footnote{Code Block~\ref{cb:pyljlj} gives the function for the Lennard-Jones potential model.} with a Boolean flag that defines where the force or energy should be returned.
 In future, for a planned \texttt{pylj} \num{2.0}, the potential model definition will be adapted such that each model is an individual class containing functions for each of the different parameters to be calculated.
-This will more easily allow the growth of \texttt{pylj} to enable features such as the simulation or particles with different potential model parameterisations and the inclusion of mixing rules.
+This will more easily allow the growth of \texttt{pylj} to enable features such as particles that have different potential model parameterisations and the inclusion of mixing rules.
 This will also allow for the development of more complex potential models, such as those that allow for long range electrostatic interaction that are not currently possible.
 %
-\begin{figure}
+\begin{listing}
     \centering
-        \lstinputlisting[caption={The Lennard Jones potential model as implemented in \texttt{pylj}.},label={cb:pyljlj}]{reports/code_blocks/pyljlj.py}
-\end{figure}
+    \caption{The Lennard-Jones potential model as implemented in \texttt{pylj}.}
+    \lstinputlisting[nolol]{reports/code_blocks/pyljlj.py}
+    \label{cb:pyljlj}
+\end{listing}
 %
 
-\subsection{Applications}
-In order to give an idea of the capabilities of the \texttt{pylj} software, three typical applications are discussed, a further application is evident in Section~\ref{sec:sim_and_scat}.
+In order to give an idea of the capabilities and current use cases of the \texttt{pylj} software, three typical applications are discussed, a further application is evident in Section~\ref{sec:sim_and_scat}.
 
-\subsubsection{States of matter}
-States of matter (solid, liquid, and gas) is a common high school level science subject, where the different states of matter are rationalised in terms of the atomic density and interactions.
+\subsection{Applications: States of matter}
+States of matter\footnote{Solid, liquid, and gas.} is a common high school level science subject, where the different states of matter are rationalised in terms of the atomic density and interactions.
 Often this is introduced with pictorial examples showing a two-dimensional representation of a hexagonally close-packed crystal, a disordered liquid, and a low-density gas with the atoms represented as circular particles.
-\texttt{pylj} is capable of easily reproducing these diagram (Figure~\ref{fig:matter}), while increasing student engagement by representing a ``real'' chemical system in thermal motion.
-\texttt{pylj} was recently used by Dr Benjamin Morgan of the University of Bath for a demonstration such as this in a seminar introducing chemical simulation to a cohort of mathematicians.
+\texttt{pylj} is capable of easily reproducing these diagram, as shown in Figure~\ref{fig:matter}, while increasing student engagement by representing a ``real'' chemical system in thermal motion.
+\texttt{pylj} was recently used by Dr Benjamin Morgan of the University of Bath for such a demonstration in a seminar introducing chemical simulation to a cohort of mathematicians.
 %
-\begin{figure}
+\begin{marginfigure}
     \centering
-    \includegraphics[width=0.32\textwidth]{teaching/pyljsolid}
-    \includegraphics[width=0.32\textwidth]{teaching/pyljliquid}
-    \includegraphics[width=0.32\textwidth]{teaching/pyljgas}
+    \includegraphics[width=\linewidth]{teaching/pyljsolid}
+    \includegraphics[width=\linewidth]{teaching/pyljliquid}
+    \includegraphics[width=\linewidth]{teaching/pyljgas}
     \caption{A snapshot of a \texttt{pylj} molecular dynamics simulation for: (a) a solid, (b) a liquid, and (c) a gas.}
     \label{fig:matter}
-\end{figure}
+\end{marginfigure}
 %
 
-\subsubsection{Ideal gas law}
-When \texttt{pylj} was originally published \cite{mccluskey_pylj_2018}, the repository included an example of a possible laboratory exercise where the ideal gas law was modelled using molecular dynamics simulation.
+\subsection{Applications: Ideal gas law}
+When \texttt{pylj} was originally published,\autocite{mccluskey_pylj_2018} the repository included an example of a possible laboratory exercise where the ideal gas law was modelled using molecular dynamics simulation.
 This was achieved by varying the particle density and measuring the time-averaged pressure of the simulation.
 At low particle densities, where the interactions of the particles are unlikely, the \texttt{pylj} molecular dynamics simulation agrees well with the ideal gas law.
-However, as the particle density increases such that the interparticle interactions are more frequent, deviations are observed in agreement with the van der Waals equation (Figure~\ref{fig:vdw}).
+However, as the particle density increases such that the inter-particle interactions are more frequent, deviations are observed in agreement with the van der Waals equation, as can be seen from Figure~\ref{fig:vdw}.
 Using this exercise, it is possible to introduce a cohort of students to the insight available from chemical simulation, without a significant focus on the simulation methods increasing the accessibility to students in the first or second year of their undergraduate course.
 %
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{teaching/pyljvdw}
+    \includegraphics[width=\textwidth]{teaching/pyljvdw}
     \caption{The deviation from the ideal gas law observed using \SI{0.1}{\nano\second} \texttt{pylj} simulations (blue circle), the ideal gas law is shown with a solid orange line, which the van der Waals equation of state is shown with a solid green line.}
     \label{fig:vdw}
 \end{figure}
 %
 
-\subsubsection{Molecular dynamics}
+\subsection{Applications: Molecular dynamics}
 The final application of \texttt{pylj} is its use in teaching molecular dynamics, with Code Block~\ref{cb:pyljmd} showing a molecular dynamics algorithm.
 The framework of \texttt{pylj} means that it is straightforward, and does not necessarily require substantial familiarity with the Python programming language.
-It is clear that this algorithms is simple and clear to implement, allowing the focus of the laboratory exercise to be on the students' understanding of the methodology.
+The MD algorithm presented above is simple and clear to implement, allowing the focus of the laboratory exercise to be on the students' understanding of the methodology.
 \texttt{pylj} has been applied in this way in a third-year undergraduate laboratory exercise at the University of Bath which introduced students to molecular dynamics simulations.
 
 \subsection{Comparison to other packages}
-The open-source nature of the \texttt{pylj} package allows the 5R activities to take place, meaning that anyone cause use part or all of \texttt{pylj} to improve their teaching.
-This is not available from other software packages that provide a visualisation enivornment for the simulation.
-In addition to allowing for the 5R activities, the open-source nature of \texttt{pylj} allows users (the students using the software) to read the underlying code and therefore better understand the computational methodology taking place.
+The open-source nature of the \texttt{pylj} package allows the 5R activities to take place, meaning that anyone cause use part or all of \texttt{pylj} to improve their own teaching.
+This is not available from other software packages that provide a visualisation environnment for the simulation.
+In addition to allowing for the 5R activities, the fact that ths source code is available allows users to read the underlying code and therefore better understand the computational methodology taking place.
 
-The fact that \texttt{pylj} has been built on the popular Jupyter Notebooks framework means that there is a low barrier of entry to using the software, e.g. it is not necessary to install anything as it is possible to run a centrally supported Jupyter Notebook hub that provides access to \texttt{pylj} online.
+The fact that \texttt{pylj} has been built on the popular Jupyter Notebooks framework means that there is a low barrier of entry to using the software.\footnote{For example, it is not necessary to install anything as it is possible to run a centrally supported Jupyter Notebook hub that provides access to \texttt{pylj} online.}
 This is currently the case for the use of \texttt{pylj} in the ``The interaction between simulation and scattering'' OER discussed below.
