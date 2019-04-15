@@ -2,26 +2,30 @@
 
 \label{diff_evo_app} % Change X to a consecutive letter; for referencing this appendix elsewhere, use \ref{AppendixX}
 
+This appendix includes additional Code Blocks relevant to the introduction of the differential evolution optimisation method discussed in Section~\ref{sec:de}.
+Code Block~\ref{cb:mut} describes the mutation step of the differential evolution algorithm, as described by Bj\"{o}rck.\autocite{bjorck_fitting_2011}
 %
 \begin{listing}
     \centering
-    \caption{The mutation step used in a classical trial method for a differential evolution algorithm, as described in \cite{bjorck_fitting_2011}.}
+    \caption{The mutation step used in a classical trial method for a differential evolution algorithm, as described in \cite{bjorck_fitting_2011}. The input variables are \texttt{p} which is an array of floats representing the parent population, \texttt{b} which is an array of floats representing the best vector of the parent population, and \texttt{km} the mutant constant. This function returns an array of floats representing the mutant vector.}
     \lstinputlisting{reports/code_blocks/mutation.py}
     \label{cb:mut}
 \end{listing}
 %
+Code Block~\ref{cb:recomb} describes the recombination step of the differential evolution algorithm, as described by Bj\"{o}rck.\autocite{bjorck_fitting_2011}
 %
 \begin{listing}
     \centering
-    \caption{The recombination step used in a classical trial method for a differential evolution algorithm, as described in \cite{bjorck_fitting_2011}.}
+    \caption{The recombination step used in a classical trial method for a differential evolution algorithm, as described in \cite{bjorck_fitting_2011}. The input variables are \texttt{p} which is an array of floats representing the parent population, \texttt{m} which is an array of floats representing the mutant vector, and \texttt{kr} the recombination constant. This function returns an array of floats representing the offspring population.}
     \lstinputlisting{reports/code_blocks/recombination.py}
     \label{cb:recomb}
 \end{listing}
 %
+Code Block~\ref{cb:self} describes the classical step of the differential evolution algorithm, as described by Bj\"{o}rck.\autocite{bjorck_fitting_2011}
 %
 \begin{listing}
     \centering
-    \caption{The selection step used in a differential evolution algorithm, as described in \cite{bjorck_fitting_2011}.}
+    \caption{The classical selection step used in a differential evolution algorithm, as described in \cite{bjorck_fitting_2011}. The input variables are \texttt{p} which is an array of floats representing the parent population, \texttt{m} which is an array of floats representing the offspring vector, and \texttt{f} is the function to be minimised. This function returns an array of floats representing the new parent population.}
     \lstinputlisting{reports/code_blocks/selection.py}
     \label{cb:sel}
 \end{listing}

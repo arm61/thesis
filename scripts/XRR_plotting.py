@@ -221,7 +221,7 @@ names = [
     r"$\phi_h/\times10^{-2}$",
     r"$\sigma_{t,h,s}$/Å",
 ]
-fig_lab = ["(a)", "(b)", "(c)", "(d)"]
+fig_lab = ["dppc":"(a)", "dmpc":"(b)", "dlpc":"(c)", "dmpg":"(d)"]
 solh_store = np.zeros((4, pchain[0].chain.size))
 p_lab = ["V_t", "V_h", "d_t", "d_h", "phi_h", "sigma"]
 p_all = np.array([])
@@ -254,7 +254,7 @@ for i in range(sp.size):
     for j, n in enumerate(names):
         axes[j, j].set_title(n)
     axes[0, 0].text(
-        0.02, 0.78, fig_lab[i], transform=axes[0, 0].transAxes, size=8
+        0.02, 0.78, fig_lab[lipid], transform=axes[0, 0].transAxes, size=8
     )
     p_mag = np.array([])
     for j in range(0, axes.shape[0] - 1):
