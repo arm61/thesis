@@ -13,7 +13,7 @@ The simulation is controlled by an overarching \texttt{System} class, which cont
 %
 \begin{listing}
     \centering
-    \caption{An example of an NVT ensemble molecular dynamics algorithm as implemented in \texttt{pylj}.}
+    \caption{An example of an NVT ensemble molecular dynamics algorithm as implemented in \texttt{pylj}. The input variables are \texttt{number\_of\_particles} which is the number of particles in the simulation, \texttt{temperature} which is the temperature of the simulation in Kelvin, \texttt{box\_length} which is the size of the simulation cell edge in \AA ngstrom, and \texttt{number\_of\_steps} which is the number of MD iteractions to be performed. This will return a \texttt{pylj.System} class object containing a full description of the simulation.}
     \lstinputlisting[nolol]{reports/code_blocks/pyljmd.py}
     \label{cb:pyljmd}
 \end{listing}
@@ -38,7 +38,7 @@ This will also allow for the development of more complex potential models, such 
 %
 \begin{listing}
     \centering
-    \caption{The Lennard-Jones potential model as implemented in \texttt{pylj}.}
+    \caption{The Lennard-Jones potential model as implemented in \texttt{pylj}. The input variables are \texttt{dr} which is an array of floats describing the distences between the pairs of particles, \texttt{constants} which is an array of two floats giving the $A$ and $B$ parameters for the Lennnard-Jones function, and the Boolen \texttt{force} which if true return the negative of the first derivative of the energy. This returns either the potential energy or the force depending on the \texttt{force} Boolen.}
     \lstinputlisting[nolol]{reports/code_blocks/pyljlj.py}
     \label{cb:pyljlj}
 \end{listing}
