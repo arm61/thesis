@@ -15,7 +15,7 @@ The weak scaling relationship is shown in Figure~\ref{fig:scale}(b).
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{smallangle/scaling}
-    \caption{The (a) strong and (b) weak scaling relationships of \texttt{fitoog} running on upto 128 cores of the SCARF cluster.}
+    \caption{The (a) strong and (b) weak scaling relationships of \texttt{fitoog} running on upto 128 cores of the SCARF cluster. The slight increase between \num{1} and \num{2} cores is most likely due to small difference in the speed of the different processors.}
     \label{fig:scale}
 \end{figure}
 %
@@ -81,7 +81,8 @@ It is clear that some of the runs agree well with the data, in particular runs \
 \end{figure}
 %
 
-This agreement with the ``experimental data'' in the test case is a positive result, and the resulting cells shown in Figure~\ref{fig:fake_result} appear to show some agreement with the coordination cell from which the ``experimental'' data was found.
+This agreement with the ``experimental data'' in the test case is a positive result, and the resulting cells shown in Figure~\ref{fig:fake_result} appear to show some quantitative agreement\footnote{The molecules are in similar locations.} with the coordination cell from which the ``experimental'' data was found.
+In particular, the agreement between the simulated and ``experimental'' data sufficient to consider that in the more disordered example it may be possible to form a realistic starting strucutre. 
 Therefore, the use of a PSO method was continued and applied to the real experimental data.
 
 \subsection{Real data}
