@@ -114,24 +114,24 @@ However, the chemically-consistent model still offers a better fit to the experi
 
 The result that the chemically-consistent model offers better agreement with the data than those from even all-atom simulations is to be expected by considering the level of constraint present implicity when determining the reflectometry profile directly from the simulation.
 While the chemically-consistent model constrains the layer model to ensure that the number of phospholipid head groups is the same as the pairs of tail groups, those from MD simulation have more realistic chemical constraints present from the potential model.\footnote{Such as the bonding between atoms, and the non-bonded potentials.}
-The quality of the agreement from this multi-modal approach is sufficient for such a method to be applied regularly to the analysis of neutron reflectometry.
+The quality of the agreement from this multi-modal approach is sufficient for such a method to be applied regularly to the analysis of NR.
 
 Both the Slipid and Berger potential model simulations produced values for the tail length that were in better agreement with that from the Tanford equation than the MARTINI potential model simulations.
 For the Slipid potential model, with simulations at an APM associated with a surface pressure of \SI{30}{\milli\newton\per\meter} the tail length was found to be \input{output/reflectometry2/dspc_30/dspc_slipids_30_dt.txt}~\si{\angstrom}, while for the Berger potential model, at the same APM, a value of \input{output/reflectometry2/dspc_30/dspc_berger_30_dt.txt}~\si{\angstrom} was obtained.
 Neither is quite as large as the \SI{24.3}{\angstrom} from the Tanford equation.\footnote{It should be noted that this value is considered a theoretical maximum for a fully extended carbon chain, which is unlikely to occur, in a liquid phase monolayer, in reality due to entropic considerations.}
 
-Using the molecular dynamics simulations and the chemically-consistent model, it is possible to compare the number of water molecules per head group.
+Using the MD simulations and the chemically-consistent model, it is possible to compare the number of water molecules per head group.
 From the Slipid and Berger potential model simulations, the number of water molecules per head group at an APM associated with a surface pressure of \SI{30}{\milli\newton\per\meter} was found to be \input{output/reflectometry2/dspc_30/dspc_slipids_30_wph.txt} and \input{output/reflectometry2/dspc_30/dspc_berger_30_wph.txt} respectively.
 These are in good agreement with the value of \input{output/reflectometry2/dspc_30/dspc_30-wph_30.tex} found from the chemically-consistent model, using Equation~\ref{equ:wph}.
 
 It should be noted that to obtain the \SI{50}{\nano\second} production run simulation using the all-atom Slipid potential model required over 13 days of using 32 cores of the SCARF computing resource.
-This is non-trivial and therefore not necessarily applicable to all neutron reflectometry measurements.
+This is non-trivial and therefore not necessarily applicable to all NR measurements.
 However, the use of a \SI{2}{\femto\second} timestep could reduce this time significantly.
 Additionally, Figure \ref{fig:short} shows the results from the first \SI{5}{\nano\second} of the Slipid potential model simulations, at an APM assocated with a surface pressure of \SI{30}{\milli\newton\per\meter}, and already good agreement with the data is apparent.
 It is important to acknowledge that the length of simulation required may be extremely system specific.
-Furthermore, recent developments of molecular dynamics simulations of graphical processing units (GPUs) may allow for significant speed up of the simulations.
+Furthermore, recent developments of MD simulations of graphical processing units\footnote{Abbreviated to GPUs.} may allow for significant speed up of the simulations.
 The nearly as accurate Berger potential model simulations, only approximately 2 days of the same compute resource was required.
-This suggests that by using the a larger timestep, shorter simulations, and the power of GPU-based molecular dynamics engines, it may be possible to run these simulations alongside experiments at large facilities to aid interpretation and analysis.
+This suggests that by using the a larger timestep, shorter simulations, and the power of GPU-based MD engines, it may be possible to run these simulations alongside experiments at large facilities to aid interpretation and analysis.
 %
 \begin{figure}
     \centering

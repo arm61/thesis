@@ -33,7 +33,7 @@ The charged nature of the zwitterionic and anionic phospholipid head groups may 
 Additionally, it is known that, on water, increased surface pressures and the associated Liquid-Expanded to Liquid-Condensed phase transition will lead to a compression of the phospholipid tail volume, compared to the values in Table~\ref{tab:water},\autocite{marsh_molecular_2010,small_lateral_1984} and that this compaction has not necessarily been accounted for in the literature.\autocite{campbell_structure_2018}
 
 These factors meant that it was necessary to develop a model that was appropriate for the phospholipid chemistry while applying as much of the ``best practice'' from Campbell \emph{et al.}\autocite{campbell_structure_2018} as possible, and ensuring that the head and tail group volumes were not constrained parameters.
-The lack of having these normally constrained parameters meant that it was necessary to consider methods by which the reflectometry measurements could be co-refined, in a similar fashion to contrast variation co-refinement in neutron reflectometry.
+The lack of having these normally constrained parameters meant that it was necessary to consider methods by which the reflectometry measurements could be co-refined, in a similar fashion to contrast variation co-refinement in NR.
 This could be achieved by the co-refinement of reflectometry measurements at different surface pressures, as the model was appropriate for the phospholipid chemistry, and the different surface pressures were in the same phase.\footnote{Liquid-Condensed (LC) for DPPC and Liquid-Expanded (LE) for DMPC, DLPC, and DMPG.}
 Therefore the head and tail group volumes will remain constant, and only the surface concentration and tail thickness will vary.
 
@@ -136,12 +136,12 @@ Table~\ref{tab:invar} also presents details of the scattering lengths and SLDs u
 Again, the intensity scale factor was allowed to vary freely and the background constrained to the intensity at the largest $q$-value.
 
 In both the XRR and the NR analysis, the refinement of the chemically-consistent model to the experimental data involved the transformation of the reflectometry calculated from the model and the data into $Rq^4$-space, such that the contribution of the Fresnel decay was removed.\autocite{gerelli_aurore_2016}
-The model was then optimised using the differential evolution method that is available within the \texttt{scipy} library.\autocite{jones_scipy_nodate}
+The model was then optimised using the DE method that is available within the \texttt{scipy} library.\autocite{jones_scipy_nodate}
 This refined the parameters to give the best fit to the data.
-Markov chain Monte Carlo (MCMC) was then used to probe the search-space available to each parameter, given the experimental uncertainty of the data.
+MCMC was then used to probe the search-space available to each parameter, given the experimental uncertainty of the data.
 The MCMC sampling method used was Goodman \& Weare's Affine Invarient Ensemble\autocite{goodman_ensemble_2010} as implimented in the \texttt{emcee} package.\autocite{foreman-mackey_emcee_2013}
 This enabled the determination of the probability distribution for each of the parameters, and therefore the quantification of their inverse uncertainty, given the uncertainty in the experimental data.
-A Shapiro-Wilk test\autocite[this is a commonly test to assess the normality of a distribution]{shapiro_analysis_1965} was used to determine if the probability distribution function\footnote{Abbreviated to PDF.} fitted to a normal distrubition and therefore could be considered to have symmetric confidence intervals.
+A Shapiro-Wilk test\autocite[this is a commonly test to assess the normality of a distribution]{shapiro_analysis_1965} was used to determine if the PDF fitted to a normal distrubition and therefore could be considered to have symmetric confidence intervals.
 If the PDF failed the test the value was quoted with asymmetric confidence intervals, compared with the symmetric confidence intervals given for those that passed the Shapiro-Wilk test.
 It is important to note that the PDFs and therefore the determined confidence intervals are not true confidence intervals, and account only for the uncertainty that is present in the data.\footnote{Therefore, they do not account for systematic uncertainty in the measurement technique.}
 In addition to determining parameter confidence intervals, it was also possible to use these probability distributions to understand the correlations present between the parameters and the impact this has on the fitting process.

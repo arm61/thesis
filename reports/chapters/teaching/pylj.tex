@@ -1,25 +1,25 @@
 \section{\texttt{pylj}: an open-source teaching tool for classical atomistic simulation}
 
-\texttt{pylj}\autocite[PYthon Lennard-Jones]{mccluskey_pylj_2018,mccluskey_arm61/pylj_2019-2} is an educational software and molecular dynamics engine designed to introduce students to the details of classical simulation.
+\texttt{pylj}\autocite[PYthon Lennard-Jones]{mccluskey_pylj_2018,mccluskey_arm61/pylj_2019-2} is an educational software and MD engine designed to introduce students to the details of classical simulation.
 Initially, \texttt{pylj} was only able to utilise a Lennard-Jones potential model,\autocite{lennard-jones_determination_1924} however, recently\autocite{mccluskey_arm61/pylj_2018} there is the ability to include any custom potential model, with a Buckingham potential packaged with the software.\autocite{buckingham_classical_1938}
-In an effort to reduce the complexity and visual subtlety of typical molecular dynamics simulations, pylj performs two-dimension molecular dynamics simulation.
-From the beginning, this software was designed to operate in the Jupyter Notebook framework and therefore eliminate the need for the learner to interact with the command line interface, as is the case with common research-level molecular dynamics packages like Gromacs, LAMMPS, or DL\_POLY.\autocite{berendsen_gromacs_1995,plimpton_fast_1995,smith_dl_poly_2002}
+In an effort to reduce the complexity and visual subtlety of typical MD simulations, pylj performs two-dimension MD simulation.
+From the beginning, this software was designed to operate in the Jupyter Notebook framework and therefore eliminate the need for the learner to interact with the command line interface, as is the case with common research-level MD packages like Gromacs, LAMMPS, or DL\_POLY.\autocite{berendsen_gromacs_1995,plimpton_fast_1995,smith_dl_poly_2002}
 
 \subsection{Software design}
 \texttt{pylj} was designed such that it may be operated at a series of different levels of abstraction.
-For example, an educator could write a simple function to allow the running of a molecular dynamics simulation\footnote{An example of this can be seen in Code Block~\ref{cb:pyljmd}.} or an interested student could manually interact with the source code.
+For example, an educator could write a simple function to allow the running of a MD simulation\footnote{An example of this can be seen in Code Block~\ref{cb:pyljmd}.} or an interested student could manually interact with the source code.
 This abstraction is achieved through the modular design of pylj, where the \texttt{md.py} module implements all of the functionality related to MD simulation.
 The simulation is controlled by an overarching \texttt{System} class, which contains all of the information regarding the simulation that has been/is running.
 %
 \begin{listing}
     \centering
-    \caption{An example of an NVT ensemble molecular dynamics algorithm as implemented in \texttt{pylj}. The input variables are \texttt{number\_of\_particles} which is the number of particles in the simulation, \texttt{temperature} which is the temperature of the simulation in Kelvin, \texttt{box\_length} which is the size of the simulation cell edge in \AA ngstrom, and \texttt{number\_of\_steps} which is the number of MD iteractions to be performed. This will return a \texttt{pylj.System} class object containing a full description of the simulation.}
+    \caption{An example of an NVT (constant number of particles, volume, and temperatre) ensemble MD algorithm as implemented in \texttt{pylj}. The input variables are \texttt{number\_of\_particles} which is the number of particles in the simulation, \texttt{temperature} which is the temperature of the simulation in Kelvin, \texttt{box\_length} which is the size of the simulation cell edge in \AA ngstrom, and \texttt{number\_of\_steps} which is the number of MD iteractions to be performed. This will return a \texttt{pylj.System} class object containing a full description of the simulation.}
     \lstinputlisting[nolol]{reports/code_blocks/pyljmd.py}
     \label{cb:pyljmd}
 \end{listing}
 %
 
-The computationally intensive nature of the pairwise force and energy calculations necessary for molecular dynamics simulation necessitated the use of Cython, a method of including compiled C language code within a Python package.\autocite{noauthor_cython_nodate}
+The computationally intensive nature of the pairwise force and energy calculations necessary for MD simulation necessitated the use of Cython, a method of including compiled C language code within a Python package.\autocite{noauthor_cython_nodate}
 This enabled a \num{\sim10} times speed up in the determination of the pairwise interactions when compared with the use of pure Python implementation.
 The pure Python implementation is still present in the package, to allow students that are familiar with Python to understand the mechanism without the requirement to become familiar with C.
 From version 1.2.1,\autocite{mccluskey_arm61/pylj_2019-1} the pure Python versions of the pairwise interactions have been built using \texttt{numba} just-in-time compilation,\autocite{noauthor_numba_nodate} which enabled a \num{5} times speed up.
@@ -27,8 +27,8 @@ This means that a \texttt{pylj} simulation without the compiled C functions is n
 Furthermore, this speed is now comparable to the length of time taken to render the visualisation, meaning that the pairwise interactions are no longer the rate determining step in the use of \texttt{pylj}.
 
 The \texttt{sample.py} module is integral to the utility of \texttt{pylj}, as this allows educators to easily create custom visualisation environments.
-Using this module, is it possible to create a molecular dynamics simulation that enables the plotting of a huge variety of outputs.
-Plots such as instantaneous pressure against time, radial distribution function, and instantaneous temperature histogram are included in \texttt{pylj} and it is easy for the users to create custom plots or build visualisations where multiple plots can be presented together.
+Using this module, is it possible to create a MD simulation that enables the plotting of a huge variety of outputs.
+Plots such as instantaneous pressure against time, radial distribution function,\footnote{Abbreviated to RDF.}  and instantaneous temperature histogram are included in \texttt{pylj} and it is easy for the users to create custom plots or build visualisations where multiple plots can be presented together.
 
 Currently, the \texttt{forcefield.py}\footnote{Forcefield is another word to describe a potential model.} module is the location where the potential model may be defined.
 This involves the definition of a single function that describes the potential model,\footnote{Code Block~\ref{cb:pyljlj} gives the function for the Lennard-Jones potential model.} with a Boolean flag that defines where the force or energy should be returned.
@@ -57,15 +57,15 @@ Often this is introduced with pictorial examples showing a two-dimensional repre
     \includegraphics[width=\linewidth]{teaching/pyljsolid}
     \includegraphics[width=\linewidth]{teaching/pyljliquid}
     \includegraphics[width=\linewidth]{teaching/pyljgas}
-    \caption{A snapshot of a \texttt{pylj} molecular dynamics simulation for: (a) a solid, (b) a liquid, and (c) a gas.}
+    \caption{A snapshot of a \texttt{pylj} MD simulation for: (a) a solid, (b) a liquid, and (c) a gas.}
     \label{fig:matter}
 \end{marginfigure}
 %
 
 \subsection{Applications: Ideal gas law}
-When \texttt{pylj} was originally published,\autocite{mccluskey_pylj_2018} the repository included an example of a possible laboratory exercise where the ideal gas law was modelled using molecular dynamics simulation.
+When \texttt{pylj} was originally published,\autocite{mccluskey_pylj_2018} the repository included an example of a possible laboratory exercise where the ideal gas law was modelled using MD simulation.
 This was achieved by varying the particle density and measuring the time-averaged pressure of the simulation.
-At low particle densities, where the interactions of the particles are unlikely, the \texttt{pylj} molecular dynamics simulation agrees well with the ideal gas law.
+At low particle densities, where the interactions of the particles are unlikely, the \texttt{pylj} MD simulation agrees well with the ideal gas law.
 However, as the particle density increases such that the inter-particle interactions are more frequent, deviations are observed in agreement with the van der Waals equation, as can be seen from Figure~\ref{fig:vdw}.
 Using this exercise, it is possible to introduce a cohort of students to the insight available from chemical simulation, without a significant focus on the simulation methods increasing the accessibility to students in the first or second year of their undergraduate course.
 %
@@ -78,10 +78,10 @@ Using this exercise, it is possible to introduce a cohort of students to the ins
 %
 
 \subsection{Applications: Molecular dynamics}
-The final application of \texttt{pylj} is its use in teaching molecular dynamics, with Code Block~\ref{cb:pyljmd} showing a molecular dynamics algorithm.
+The final application of \texttt{pylj} is its use in teaching MD, with Code Block~\ref{cb:pyljmd} showing a MD algorithm.
 The framework of \texttt{pylj} means that it is straightforward, and does not necessarily require substantial familiarity with the Python programming language.
 The MD algorithm presented above is simple and clear to implement, allowing the focus of the laboratory exercise to be on the students' understanding of the methodology.
-\texttt{pylj} has been applied in this way in a third-year undergraduate laboratory exercise at the University of Bath which introduced students to molecular dynamics simulations.
+\texttt{pylj} has been applied in this way in a third-year undergraduate laboratory exercise at the University of Bath which introduced students to MD simulations.
 
 \subsection{Comparison to other packages}
 The open-source nature of the \texttt{pylj} package allows the 5R activities to take place, meaning that anyone cause use part or all of \texttt{pylj} to improve their own teaching.

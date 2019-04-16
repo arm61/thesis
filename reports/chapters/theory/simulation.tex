@@ -13,7 +13,7 @@ These population methods are usually more efficient at finding the global minimu
 
 \subsection{Differential evolution}
 \label{sec:de}
-Differential evolution (DE) is a common, iterative optimisation algorithm, that was first applied to the analysis of reflectometry and diffraction data by Wormington \emph{et al.}\autocite{wormington_characterization_1999}
+Differential evolution\footnote{DE.} is a common, iterative optimisation algorithm, that was first applied to the analysis of reflectometry and diffraction data by Wormington \emph{et al.}\autocite{wormington_characterization_1999}
 Since then, it has proven very popular for the optimisation of reflectometry data and is included in many common analysis programs.\autocite{bjorck_fitting_2011,bjorck_genx_2007,nelson_co-refinement_2006,nelson_refnx_2019,ott_simulreflec_nodate,kienzle_ncnr_nodate}
 The DE algorithm is designed to more ably determine the global minimum of a particular function.\autocite{storn_differential_1997}
 
@@ -63,7 +63,7 @@ where, the $*$ notation indicates all objects in the given population, and $\zet
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{theory/diff_evo}
-    \caption{An example of a differential evolution (DE) algorithm as applied to an Ackley function, where $a=20$, $b=0.2$, and $c=2\pi$. The mutation and recombination constant in this implementation are both $0.5$. Each different coloured line represents a different candidate solution. The optimisation was stopped after $100$ iterations had run.}
+    \caption{An example of a DE algorithm as applied to an Ackley function, where $a=20$, $b=0.2$, and $c=2\pi$. The mutation and recombination constant in this implementation are both $0.5$. Each different coloured line represents a different candidate solution. The optimisation was stopped after $100$ iterations had run.}
     \label{fig:diff_evo}
 \end{figure}
 %
@@ -83,12 +83,12 @@ An implementation of the DE algorithm is given programmatically in Code Block~\r
 
 \subsection{Particle swarm}
 \label{sec:partswarm}
-Particle swarm optimisation\footnote{Abbreviated to PSO.} is a type of swarm intelligence population-based optimisation method.
+Particle swarm optimisation\footnote{PSO.} is a type of swarm intelligence population-based optimisation method.
 This optimisation method was originally developed by Kennedy, Eberhart, and Shi.\autocite[the initial purpose of the algorithm was to simulate social organisms such as bird flocks]{kennedy_particle_1995,shi_modified_1998}
 Particle swarm methods are particularly suitable for the optimisation, and sampling, of parametric search-spaces with a large number of similar minima.
 Therefore, I believe that it will be useful for the study of the self-assembly of soft matter materials.\footnote{This is the focus of Chapter~\ref{smallangle}.}
 
-These methods consist of a population vector, similar to that described for the differential evolution, that moves around the parametric search-space.
+These methods consist of a population vector, similar to that described for the DE, that moves around the parametric search-space.
 The motions of these ``particles'' are influenced by the positions of the other particles in the vector.\autocite{poli_analysis_2008}
 It is anticipated that this will lead the swarm to optimise the function under investigation.
 
@@ -110,19 +110,19 @@ This velocity is determined as shown below,
 %
 where, $\omega$ a constant known as the interia weight, $R1\sim U[0, 1)$ and $R2\sim U[0, 1)$ are random numbers, $\mathbf{g}_{*}$ is the best position occupied by any particle in the swarm and $\mathbf{s}_{*,j}$ is the person best for the particle $j$.
 
-Figure~\ref{fig:part_swarm} shows an example of the particle swarm optimisation in action, applied to the Ackley function.\autocite{ackley_connectionist_1987}
-Code Block~\ref{cb:part_swarm} shows a functional programmatic implementation of a particle swarm optimisation algorithm.
+Figure~\ref{fig:part_swarm} shows an example of the PSO in action, applied to the Ackley function.\autocite{ackley_connectionist_1987}
+Code Block~\ref{cb:part_swarm} shows a functional programmatic implementation of a PSO algorithm.
 %
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{theory/part_swarm}
-    \caption{An example of a particle swarm optimisation as applied to an Ackley function, where $a=20$, $b=0.2$, and $c=2\pi$. For the particle swarm, the following parameters were used $\omega=0.9$, $\psi_g=0.05$, and $\psi_p=0.05$. Each different coloured line represents a different candidate solution. The optimisation was stopped after \num{100} iterations had run.}
+    \caption{An example of a PSO as applied to an Ackley function, where $a=20$, $b=0.2$, and $c=2\pi$. For the particle swarm, the following parameters were used $\omega=0.9$, $\psi_g=0.05$, and $\psi_p=0.05$. Each different coloured line represents a different candidate solution. The optimisation was stopped after \num{100} iterations had run.}
     \label{fig:part_swarm}
 \end{figure}
 %
 \begin{listing}
     \centering
-    \caption{An example of the particle swarm optimisation algorithm from \cite{poli_analysis_2008}. The input variables are \texttt{position} which is the initial position vector, \texttt{f} which is the figure of merit function to be minimised, \texttt{omega} which is the interia weight, \texttt{psig} which is the global acceleration constant, \texttt{psip} which is the personal acceleration constant, and the \texttt{max\_iter} which is the maximum number of iterations that should be performed. This will return the \texttt{history} which is a history of the variables that are being fit during the PSO.}
+    \caption{An example of the PSO algorithm from \cite{poli_analysis_2008}. The input variables are \texttt{position} which is the initial position vector, \texttt{f} which is the figure of merit function to be minimised, \texttt{omega} which is the interia weight, \texttt{psig} which is the global acceleration constant, \texttt{psip} which is the personal acceleration constant, and the \texttt{max\_iter} which is the maximum number of iterations that should be performed. This will return the \texttt{history} which is a history of the variables that are being fit during the PSO.}
     \lstinputlisting[nolol]{reports/code_blocks/part_swarm.py}
     \label{cb:part_swarm}
 \end{listing}
@@ -133,8 +133,8 @@ Code Block~\ref{cb:part_swarm} shows a functional programmatic implementation of
 Markov chain Monte Carlo\footnote{Abbreviated to MCMC.} is a sampling methodology, derived from direct sampling Monte-Carlo.\autocite{krauth_statistical_2006}
 The aim of an MCMC algorithm is to sample a probability distribution, when parameters are described in terms of their degree of probability.\autocite{sivia_data_2006}
 Similar to MD, in practical terms, MCMC should not be used on a system that is not already optimised, as its purpose is probability distribution sampling rather than minimisation.
-Generally, the approach would be to optimise using, for example, one of the approaches described above, then to use MCMC or molecular dynamics to sample the appropriate search-space.
-For example, in this work MCMC is used following the optimisation of a reflectometry model using a differential evolution algorithm, to quantify the inverse uncertainties of the model.\footnote{This is the name given to the uncertainties in the parameters fitted in the modelling process.}
+Generally, the approach would be to optimise using, for example, one of the approaches described above, then to use MCMC or molecular dynamics\footnote{MD.} to sample the appropriate search-space.
+For example, in this work MCMC is used following the optimisation of a reflectometry model using a DE algorithm, to quantify the inverse uncertainties of the model.\footnote{This is the name given to the uncertainties in the parameters fitted in the modelling process.}
 In addition to being able to give information about the inverse uncertainties, MCMC also offers a more complete understanding of the correlations present between the different parameters,\autocite{gilks_markov_1995} as the interactions between the parameter variation has been quantified.
 
 The aim of MCMC is to only sample configurations of a given function that are within the experimental uncertainty.
@@ -192,9 +192,9 @@ It should be noted that in the event on a poorly optimised initial value of $\th
 Section \ref{sec:classical} introduced classical potential models as a method for the evalution of the interaction energy of a given chemical system.
 Any of the optimisation methods discussed above could be used alongside these classical potential models to find an energy minimum structure for the system or to sample the potential energy landscape.
 However, it is often the case that a dynamically relevant structure is of interest at a given temperature.
-This is where molecular dynamics simulations are a useful and important tool.
+This is where MD simulations are a useful and important tool.
 
-The aim of a molecular dynamics simulation is to probe the positions, velocities, and accelerations on each of the atoms, or coarse-grained particles, as a simulation progresses.
+The aim of a MD simulation is to probe the positions, velocities, and accelerations on each of the atoms, or coarse-grained particles, as a simulation progresses.
 The acceleration on a given particle, $\mathbf{a}$ is defined by the force on that particle, $\mathbf{f}$, in agreement with Newton's second law of motion,
 %
 \begin{equation}
@@ -250,14 +250,14 @@ Following an equilibration period, this algorithm may be iterated as many times 
 The above analytical process is known as the integration step, and the Velocity-Verlet is the integrator.
 If the size of the timestep $\Delta t$ is too large, the step size for a given iteration will not be accurate, as the forces on the atoms will change too significantly during it.
 Therefore, the values of the timestep is usually on the order of \SI{10e-15}{\second}.\footnote{femtoseconds.}
-This means that in order to simulate a single nanosecond of ``real-time'' molecular dynamics, the integrator must be solved one million times.
+This means that in order to simulate a single nanosecond of ``real-time'' MD, the integrator must be solved one million times.
 This can be slow for very large systems, leading to an interest in coarse-grained simulations that result in fewer particles to determine the forces for, but also enable to use of larger timesteps,\autocite[so fewer, faster integration steps must be solved]{rudd_coarse-grained_1998,brini_systematic_2013} for example, the use of a MARTINI potential model allows for an upto twenty times increase in the timestep compared to an all-atom model.
 
-The above discussion ignored two aspects that are necessary to run a molecular dynamics simulation, both of which as associated with the original configuration of the system; the original particle positions and velocities.
+The above discussion ignored two aspects that are necessary to run a MD simulation, both of which as associated with the original configuration of the system; the original particle positions and velocities.
 The particle positions are usually taken from some library, for example for the simulation of a protein, often the protein data bank\autocite{noauthor_rcsb_nodate} is a useful resource.
 Small molecules may be configured by hand using graphical programs such as Jmol.\autocite{noauthor_jmol_nodate}
 These small molecules may be built into complex, multicomponent structures using software such as the Packmol package.\autocite{martinez_packmol_2009}
-The importance of this initial structure cannot be overstated, for example, if the initial structure in a molecular dynamics simulation is unrepresentative of the equilibrium structure, it may take a large amount of simulation time before the equilibrium structure is obtained.\footnote{This can be much longer than could be reasonably simulated.}
+The importance of this initial structure cannot be overstated, for example, if the initial structure in a MD simulation is unrepresentative of the equilibrium structure, it may take a large amount of simulation time before the equilibrium structure is obtained.\footnote{This can be much longer than could be reasonably simulated.}
 
 The initial particle velocities are obtained in a much more general fashion.
 They are selected randomly, and then scaled such that the kinetic energy, $E_k$, of the system agrees with a defined temperature, $T$,
@@ -278,7 +278,7 @@ However, this is not the only simulation ensemble that is available, within this
 \end{itemize}
 %
 Thermostating involves controlling the kinetic energy of the particles\footnote{Using Equation~\ref{equ:ek}.} such that the simulation temperature is kept at a predefined value.
-There are a variety of methods for thermostating a molecular dynamics simulation, such as the Andersen, Nos\'{e}-Hoover, or Berendsen methods.\autocite{andersen_molecular_1980,nose_unified_1984,berendsen_molecular_1984,hoover_canonical_1985}
+There are a variety of methods for thermostating a MD simulation, such as the Andersen, Nos\'{e}-Hoover, or Berendsen methods.\autocite{andersen_molecular_1980,nose_unified_1984,berendsen_molecular_1984,hoover_canonical_1985}
 However, the most straightforward to describe, and that implemented in the \texttt{pylj} software\autocite[Discussed in detail in Chapter \ref{teaching}]{mccluskey_pylj_2018,mccluskey_arm61/pylj_2018} is a velocity rescaling.\autocite{bussi_canonical_2007}
 This is where the velocities for a random subset of the particles, $\mathbf{v}_i$ are adapted based on the following relation,
 %
@@ -293,6 +293,6 @@ This would in a similar way to thermostating, where the simulation dimensions ar
 The barostating methods are similar to the thermostating methods with Andersen, Nos\'{e}-Hoover, and Berendsen methods.
 However, there is also the Parrinello-Rahman barostat which allows for independent control of the different cell dimensions giving control of stress in addition to pressure.\autocite{parrinello_polymorphic_1981}
 
-These optimisation and sampling methods were used in a variety of different applications within this work, firstly differential evoluation optimisation and MCMC sampling are used in Chapter~\ref{reflectometry1} in the study of a chemically-consistent modelling approach to X-ray and neutron reflectometry analysis.
-Molecular dynamics simulation are investigated as a possible tool to assist in the analysis of reflectometry in in Chapter~\ref{reflectometry2}.
-Finally, the particle swarm optimisation is applied for the efficient determination of a micelle structure for ftting small angle scattering data in Chapter~\ref{smallangle}.
+These optimisation and sampling methods were used in a variety of different applications within this work, firstly DE optimisation and MCMC sampling are used in Chapter~\ref{reflectometry1} in the study of a chemically-consistent modelling approach to X-ray and neutron reflectometry analysis.
+MD simulation are investigated as a possible tool to assist in the analysis of reflectometry in in Chapter~\ref{reflectometry2}.
+Finally, the PSO is applied for the efficient determination of a micelle structure for ftting small angle scattering data in Chapter~\ref{smallangle}.

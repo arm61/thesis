@@ -1,9 +1,9 @@
 \section{Results \& Discussion}
-The aim of this work was to produce a well parallelised software capable of quickly producing starting structures for later molecular dynamics simulations of multiple micellar species from small angle scattering data.
+The aim of this work was to produce a well parallelised software capable of quickly producing starting structures for later MD simulations of multiple micellar species from small angle scattering data.
 
 \subsection{Parallelisation}
 The parallelisation of a software package is commonly assessed using two metrics, strong and weak scaling.
-These assess the CPU-bound efficiency and memory-bound efficiency of the software respectively.
+These assess the CPU-bound\footnote{Central processing unit} efficiency and memory-bound efficiency of the software respectively.
 A perfectly parallelised software would present a strong and weak scaling efficiency of 1 regardless of the number of processors.
 
 In order to determine the strong scaling relationship for \texttt{fitoog}, a system was set up with a population size of 128 and was run for 5000 iterations steps.
@@ -87,7 +87,7 @@ Therefore, the use of a PSO method was continued and applied to the real experim
 
 \subsection{Real data}
 \label{sec:real_data}
-This real experimental data consisted of a single small angle neutron scattering profile for the hydrogenated \ce{C_{10}TA+} micelle, with \ce{NO3-} counter ions in \ce{D2O}.
+This real experimental data consisted of a single small angle neutron scattering profile for the hydrogenated \emph{n}-decyltrimethylammonium micelle, with nitrate counter ions\footnote{Abbreviated to \ce{C_{10}TA+} and \ce{NO3-} respectively.} counter ions in \ce{D2O}.
 It was assumed that this data was completely background subtracted such that the scattering present was a result of the micelles alone.
 Figure~\ref{fig:expdata} shows the scattering profile that was being modelled.
 %
