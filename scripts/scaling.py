@@ -6,21 +6,21 @@ import matplotlib.gridspec as gridspec
 
 import matplotlib as mpl
 
-mpl.rcParams["xtick.labelsize"] = 8
-mpl.rcParams["ytick.labelsize"] = 8
+mpl.rcParams["xtick.labelsize"] = 10
+mpl.rcParams["ytick.labelsize"] = 10
 mpl.rcParams["axes.facecolor"] = "w"
 mpl.rcParams["lines.linewidth"] = 2
 mpl.rcParams["xtick.top"] = False
 mpl.rcParams["xtick.bottom"] = True
 mpl.rcParams["ytick.left"] = True
 mpl.rcParams["grid.linestyle"] = ""
-mpl.rcParams["legend.fontsize"] = 8
+mpl.rcParams["legend.fontsize"] = 10
 mpl.rcParams["legend.facecolor"] = [1, 1, 1]
 mpl.rcParams["legend.framealpha"] = 0.75
-mpl.rcParams["axes.labelsize"] = 8
+mpl.rcParams["axes.labelsize"] = 10
 mpl.rcParams["axes.linewidth"] = 1
 mpl.rcParams["axes.edgecolor"] = "k"
-mpl.rcParams["axes.titlesize"] = 8
+mpl.rcParams["axes.titlesize"] = 10
 
 # strong scaling
 
@@ -55,19 +55,19 @@ ax.plot(x2, speed_up(x2, popt[0]), c=sns.color_palette()[0])
 ax.set_xlabel('Cores')
 ax.set_ylabel('Speedup')
 plt.tight_layout()
-plt.savefig("../reports/figures/smallangle/speedup.pdf")
+plt.savefig("../reports/figures/smallangle/speedup.pdf", bbox_inches='tight', pad_inches=0.1)
 plt.close()
 
 
 y = t1 / (N * tN)
 
-plt.figure(figsize=(5, 25 / 6))
+plt.figure(figsize=(4.13, 3.51))
 gs = gridspec.GridSpec(2, 1)
 ax = plt.subplot(gs[0, 0])
 
 ax.plot(x, y, 'o')
 ax.set_xlabel('Cores')
-ax.set_ylabel('Strong Parallel Efficiency/cores$^{-1}$')
+ax.set_ylabel('Strong Parallel\nEfficiency/\ncores$^{-1}$')
 ax.set_xscale('log', basex=2)
 ax.set_xticks(N)
 ax.set_xticklabels(N)
@@ -101,7 +101,7 @@ y = t1 / tN
 ax = plt.subplot(gs[1, 0])
 ax.plot(x, y, 'o')
 ax.set_xlabel('Cores')
-ax.set_ylabel('Weak Parallel Efficiency')
+ax.set_ylabel('Weak Parallel\nEfficiency')
 ax.set_xscale('log', basex=2)
 ax.set_xticks(N)
 ax.set_xticklabels(N)
@@ -116,5 +116,5 @@ ax.text(
 )
 ax.set_ylim([0.7, 1.1])
 plt.tight_layout()
-plt.savefig("../reports/figures/smallangle/scaling.pdf")
+plt.savefig("../reports/figures/smallangle/scaling.pdf", bbox_inches='tight', pad_inches=0.1)
 plt.close()

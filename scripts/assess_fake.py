@@ -6,21 +6,21 @@ import matplotlib.gridspec as gridspec
 
 import matplotlib as mpl
 
-mpl.rcParams["xtick.labelsize"] = 8
-mpl.rcParams["ytick.labelsize"] = 8
+mpl.rcParams["xtick.labelsize"] = 10
+mpl.rcParams["ytick.labelsize"] = 10
 mpl.rcParams["axes.facecolor"] = "w"
 mpl.rcParams["lines.linewidth"] = 2
 mpl.rcParams["xtick.top"] = False
 mpl.rcParams["xtick.bottom"] = True
 mpl.rcParams["ytick.left"] = True
 mpl.rcParams["grid.linestyle"] = ""
-mpl.rcParams["legend.fontsize"] = 8
+mpl.rcParams["legend.fontsize"] = 10
 mpl.rcParams["legend.facecolor"] = [1, 1, 1]
 mpl.rcParams["legend.framealpha"] = 0.75
-mpl.rcParams["axes.labelsize"] = 8
+mpl.rcParams["axes.labelsize"] = 10
 mpl.rcParams["axes.linewidth"] = 1
 mpl.rcParams["axes.edgecolor"] = "k"
-mpl.rcParams["axes.titlesize"] = 8
+mpl.rcParams["axes.titlesize"] = 10
 
 import pandas as pd
 
@@ -90,7 +90,7 @@ for e, q in enumerate(qs):
     if intensity[e] < 0:
         intensity[e] = 0
 
-plt.figure(figsize=(5, 25 / 11))
+plt.figure(figsize=(4.13, 3.51*0.5))
 gs = gridspec.GridSpec(1, 1)
 ax = plt.subplot(gs[0, 0])
 ax.plot(qs, intensity, '-')
@@ -99,7 +99,7 @@ ax.set_ylabel('$I(q)$')
 
 ax.text(
     0.95,
-    0.90,
+    0.85,
     r"run {}".format(num),
     horizontalalignment="right",
     verticalalignment="center",
@@ -128,5 +128,5 @@ plt.plot(qs, intensity2 * intensity[0]/intensity2[0])
 ax.set_xscale('log')
 
 plt.tight_layout()
-plt.savefig("../reports/figures/smallangle/fake_assess{}.pdf".format(num))
+plt.savefig("../reports/figures/smallangle/fake_assess{}.pdf".format(num), bbox_inches='tight', pad_inches=0.1)
 plt.close()

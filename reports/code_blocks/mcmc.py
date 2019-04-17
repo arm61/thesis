@@ -2,35 +2,6 @@ import numpy as np
 
 
 def mcmc(theta, f, a, data, iterations, nburn):
-    """
-    A simple implemation of the Metropolis-Hasting MCMC algorithm
-
-    Parameters
-    ----------
-    theta: float, array_like
-        Initial values for the variables. An array of length n,
-        where n is the number of variables.
-    f: function
-        The function being fit to the data.
-    a: float, array_like
-        The step size. An array of length n, where n is the number
-        of variables.
-    data: float, array_like
-        The data being assessed. An array of shape  (m, 3)
-        containing x, y, and dy.
-    iterations: int
-        The number of accepted iterations to obtain.
-    nburn: int
-        The number of accepted iterations to ignore during the
-        burn-in phase.
-
-    Returns
-    -------
-    float, array_like
-        The history of the parameters being fit. An array of
-        shape (m, n), where n is the number of iterations,
-        and m is the number of parameters.
-    """
     accepted = np.array([])
     calc_y = f(data[0], theta)
     chi2 = np.sum(np.square((data[1] - calc_y) / data[2]))

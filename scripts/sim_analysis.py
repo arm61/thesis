@@ -17,21 +17,21 @@ import seaborn as sns
 sns.set(palette="colorblind")
 
 
-mpl.rcParams["xtick.labelsize"] = 8
-mpl.rcParams["ytick.labelsize"] = 8
+mpl.rcParams["xtick.labelsize"] = 10
+mpl.rcParams["ytick.labelsize"] = 10
 mpl.rcParams["axes.facecolor"] = "w"
 mpl.rcParams["lines.linewidth"] = 2
 mpl.rcParams["xtick.top"] = False
 mpl.rcParams["xtick.bottom"] = True
 mpl.rcParams["ytick.left"] = True
 mpl.rcParams["grid.linestyle"] = "--"
-mpl.rcParams["legend.fontsize"] = 8
+mpl.rcParams["legend.fontsize"] = 10
 mpl.rcParams["legend.facecolor"] = [1, 1, 1]
 mpl.rcParams["legend.framealpha"] = 0.75
-mpl.rcParams["axes.labelsize"] = 8
+mpl.rcParams["axes.labelsize"] = 10
 mpl.rcParams["axes.linewidth"] = 1
 mpl.rcParams["axes.edgecolor"] = "k"
-mpl.rcParams["axes.titlesize"] = 8
+mpl.rcParams["axes.titlesize"] = 10
 
 import sys
 sys.path.insert(0, '../reports/code_blocks')
@@ -52,12 +52,12 @@ tail = ['H', 'H', 'H', 'D', 'D', 'D', 'D']
 sol = ['acmw', 'D', 'D', 'acmw', 'D', 'acmw', 'D']
 contrasts = ['d13acmw', 'd13d2o', 'hd2o', 'd70acmw', 'd70d2o', 'd83acmw', 'd83d2o']
 
-fig = plt.figure(figsize=(5, 25/6))
+fig = plt.figure(figsize=(4.13, 3.51*1.3))
 gs = mpl.gridspec.GridSpec(1, 3)
 ax1 = plt.subplot(gs[0, 0:2])
 ax2 = plt.subplot(gs[0, 2])
 all_chi = np.array([])
-abc = {'20': '(a)', '30': '(b)', '40': '(c)', '50': '(d)'}
+abc = {'slipids': '(b)', 'berger': '(c)', 'martini': '(d)'}
 for ci, contrast in enumerate(contrasts):
     for k in range(0, len(contrasts)):
         if contrasts[k] == contrast:
@@ -130,7 +130,7 @@ for ci, contrast in enumerate(contrasts):
     ax1.plot(dataset.x,
              np.average(refy, axis=0) * 10**(ci-1),
              color='k', zorder=10)
-    ax1.text(0.02, 0.98, abc[surface_pressure], transform=ax1.transAxes, va='top', ha='left')
+    ax1.text(0.02, 0.98, abc[forcefield], transform=ax1.transAxes, va='top', ha='left', size=8)
     file_open = open('{}dspc_{}_{}_{}_chi.txt'.format(anal_dir, forcefield, surface_pressure, contrast), 'w')
     file_open.write('{:.2f}'.format(np.average(chi)))
     file_open.close()

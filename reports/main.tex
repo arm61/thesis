@@ -1,61 +1,217 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX:
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[twoside,symmetric,nobib]{./arm-thesis}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Masters/Doctoral Thesis
-% LaTeX Template
-% Version 2.3 (25/3/16)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Version 2.x major modifications by:
-% Vel (vel@latextemplates.com)
-%
-% This template is based on a template by:
-% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
-% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
-%
-% Template license:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\hypersetup{colorlinks}% uncomment this line if you prefer colored hyperlinks (e.g., for onscreen viewing)
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+%%
+% Book metadata
+\title{Coarse-grained\\\noindent modelling for\\\noindent soft matter\\\noindent scattering}
+\author[ARM]{Andrew R. McCluskey}
+\degree{Doctor of Philosophy}
+\university{University of Bath}
+\department{Department of Chemistry}
+\institution{Diamond Light Source}
 
-\documentclass[
-11pt, % The default document font size, options: 10pt, 11pt, 12pt
-%oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
-chapterinoneline,% Have the chapter title next to the number in one single line
-english, % ngerman for German
-%singlespacing, % Single line spacing, alternatives:
-onehalfspacing,
-%doublespacing,
-%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
-%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
-liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
-%toctotoc, % Uncomment to add the main table of contents to the table of contents
-parskip, % Uncomment to add space between paragraphs
-%nohyperref, % Uncomment to not load the hyperref package
-headsepline, % Uncomment to get a line under the header
-]{reports/MastersDoctoralThesis} % The class file specifying the document structure
-\usepackage{textcomp}
+%%
+% If they're installed, use Bergamo and Chantilly from www.fontsite.com.
+% They're clones of Bembo and Gill Sans, respectively.
+\IfFileExists{bergamo.sty}{\usepackage[osf]{bergamo}}{}% Bembo
+\IfFileExists{chantill.sty}{\usepackage{chantill}}{}% Gill Sans
+
+%\usepackage{microtype}
+
+%%
+% Just some sample text
+\usepackage{lipsum}
+\usepackage{xfrac}
+
+%%
+% For nicely typeset tabular material
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage[version=3]{mhchem}
+
+%%
+% For graphics / images
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{reports/figures/}{./}} % Specifies where to look for included images
+
+\usepackage[english]{babel}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+%%
+% Prints argument within hanging parentheses (i.e., parentheses that take
+% up no horizontal space).  Useful in tabular environments.
+\newcommand{\hangp}[1]{\makebox[0pt][r]{(}#1\makebox[0pt][l]{)}}
+
+%%
+% Prints an asterisk that takes up no horizontal space.
+% Useful in tabular environments.
+\newcommand{\hangstar}{\makebox[0pt][l]{*}}
+
+%%
+% Prints a trailing space in a smart way.
+\usepackage{xspace}
+
+%%
+% Prints the CC-BY license
 \usepackage[
     type={CC},
     modifier={by},
     version={4.0},]{doclicense}
-\usepackage[utf8]{inputenc} % Required for inputting international characters
-\usepackage[T1]{fontenc} % Output font encoding for international characters
 
-\usepackage{palatino} % Use the Palatino font by default
+%\usepackage{rotating}
+%\usepackage{tablefootnote}
+%\usepackage{footmisc}
+%\usepackage{chapterbib}
+%\usepackage[nottoc,numbib]{tocbibind}
+%\usepackage[usedoi=true,linkdoi=true]{rsc}
+% Prints the month name (e.g., January) and the year (e.g., 2008)
+\newcommand{\monthyear}{%
+  \ifcase\month\or January\or February\or March\or April\or May\or June\or
+  July\or August\or September\or October\or November\or
+  December\fi\space\number\year
+}
 
-%\usepackage[backend=bibtex,style=authoryear]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
-%\makeatletter
-%\def\blx@maxline{77}
-%\makeatother
+% Prints an epigraph and speaker in sans serif, all-caps type.
+\newcommand{\openepigraph}[2]{%
+  %\sffamily\fontsize{14}{16}\selectfont
+  \begin{fullwidth}
+  \sffamily\large
+  \begin{doublespace}
+  \noindent\allcaps{#1}\\% epigraph
+  \noindent{#2}% author
+  \end{doublespace}
+  \end{fullwidth}
+}
 
-\usepackage{courier}
+% Inserts a blank page
+\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
 
+
+% Generates the index
+\usepackage{makeidx}
+\makeindex
+
+\newcommand{\textls}[2][5]{%
+    \begingroup\addfontfeatures{LetterSpace=#1}#2\endgroup
+}
+\renewcommand{\allcapsspacing}[1]{\textls[15]{#1}}
+\renewcommand{\smallcapsspacing}[1]{\textls[10]{#1}}
+\renewcommand{\allcaps}[1]{\textls[15]{\MakeTextUppercase{#1}}}
+\renewcommand{\smallcaps}[1]{\smallcapsspacing{\scshape\MakeTextLowercase{#1}}}
+\renewcommand{\textsc}[1]{\smallcapsspacing{\textsmallcaps{#1}}}
+\usepackage{fontspec}
+%\setmainfont[
+%Path = reports/font/,
+%BoldFont = PublicSans-Bold.otf,
+%ItalicFont = PublicSans-Italic.otf,
+%BoldItalicFont  = PublicSans-BoldItalic.otf]
+%{PublicSans-Regular.otf}
+\setmainfont[Renderer=Basic, Scale = 1.0]{TeX Gyre Pagella}
+\setsansfont[Renderer=Basic, Scale=0.90]{TeX Gyre Heros}
+\setmonofont[Renderer=Basic]{TeX Gyre Cursor}
+
+\usepackage[style=verbose-trad1,
+maxcitenames=1,
+maxbibnames=100,
+sorting=nyt,
+url=false,
+dashed=false,
+hyperref=true]{biblatex}
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{%
+  }{\printtext{\bibstring{in}\intitlepunct}}}
+\ExecuteBibliographyOptions{citetracker=true}
+\AtEveryCitekey{%
+  \ifentrytype{article}{%
+    \clearfield{title}%
+    \clearfield{doi}%
+  }%
+  {%
+  \ifentrytype{book}{%
+      \clearlist{location}%
+      \clearfield{isbn}%
+      \clearfield{edition}%
+      \clearlist{publisher}%
+      }%
+      {%
+      \ifentrytype{incollection}{%
+          \clearlist{location}%
+          \clearname{editor}%
+          \clearlist{publisher}%
+          \clearfield{isbn}%
+          \clearfield{edition}%
+          }%
+          {%
+          \ifentrytype{inproceedings}{%
+              \clearname{editor}%
+              \clearlist{publisher}%
+              \clearfield{title}%
+              \clearfield{doi}%
+              \clearfield{edition}%
+              }%
+              {%
+              }%
+          }%
+      }%
+  }%
+}%
+
+\DeclareFieldFormat{urldate}{%
+    (Accessed \thefield{urlyear}-\thefield{urlmonth}-\thefield{urlday}\isdot)}
+
+\renewbibmacro*{name:andothers}{% Based on name:andothers from biblatex.def
+  \ifboolexpr{
+    test {\ifnumequal{\value{listcount}}{\value{liststop}}}
+    and
+    test \ifmorenames
+  }
+    {\ifnumgreater{\value{liststop}}{1}
+       {\finalandcomma}
+       {}%
+     \andothersdelim\bibstring[\emph]{andothers}}
+    {}}
+
+\addbibresource{main.bib}
+
+\usepackage{doi}
+
+\usepackage{mparhack}
+
+\usepackage[most]{tcolorbox}
+
+\makeatletter
+% textwidth Tuftian float for listings
+\newenvironment{listing}[1][htbp]
+  {\ifvmode\else\unskip\fi\begin{@tufte@float}[#1]{lstlisting}{}}
+  {\end{@tufte@float}}
+% enable re-use of \listoflistings facility
+\def\ext@lstlisting{lol}
+% show listing number in caption even though \lst@@caption is empty
+\def\fnum@lstlisting{\lstlistingname~\thelstlisting}
+\makeatother
 
 \usepackage{listings}
 \lstset{
@@ -63,310 +219,216 @@ headsepline, % Uncomment to get a line under the header
   %breaklines=false,
   frame=single,
   tabsize=4,
-  xrightmargin=0.2\textwidth,
-  xleftmargin=0.2\textwidth,
+  xrightmargin=0mm,
+  xleftmargin=0mm,
   language=python
 }
 
 \renewcommand{\lstlistingname}{Code Block}
 \renewcommand{\lstlistlistingname}{List of \lstlistingname s}
 
-\usepackage{multirow}
-\usepackage[version=4]{mhchem}
-\usepackage{url}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{xfrac}
-\usepackage{caption}
-\captionsetup{justification   = raggedright,
-              singlelinecheck = false}
-
-\newcommand{\MONTH}{%
-	\ifcase\the\month
-	\or January% 1
-	\or February% 2
-	\or March% 3
-	\or April% 4
-	\or May% 5
-	\or June% 6
-	\or July% 7
-	\or August% 8
-	\or September% 9
-	\or October% 10
-	\or November% 11
-	\or December% 12
-	\fi}
-\makeatletter
-
-\setcounter{tocdepth}{2}
-
-\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
-
-\usepackage{pdfpages}
-
-\sisetup{
-list-units = single,
-range-units = single
-}
-
 \usepackage{rotating}
-\usepackage{tablefootnote}
-\usepackage{footmisc}
-\usepackage{chapterbib}
-\usepackage[nottoc,numbib]{tocbibind}
-\usepackage[super=false,usedoi=true,linkdoi=true]{rsc}
-\setlength{\bibsep}{0.0pt}
+\usepackage{xparse}
+\usepackage{xpatch}
+\makeatletter
+\xpatchcmd{\@footnotetext}%
+      {\color@begingroup}
+      {\color@begingroup\toggletrue{blx@footnote}}
+      {}
+      {}
+\makeatother
 
-%----------------------------------------------------------------------------------------
-%	MARGIN SETTINGS
-%----------------------------------------------------------------------------------------
+\DeclareCiteCommand{\sidecitehelper}[\bibfootnotewrapper]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{cite:postnote}}
 
-\geometry{
-	margin=15mm,
-	bindingoffset=25mm,
-	heightrounded,
-	paper=a4paper, % Change to letterpaper for US letter
-	%inner=1.8cm, % Inner margin
-	%outer=3.1cm, % Outer margin
-	%bindingoffset=2cm, % Binding offset
-	top=15mm, % Top margin
-	bottom=15mm, % Bottom margin
-	%showframe,% show how the type block is set on the page
+\ExplSyntaxOn
+\NewDocumentCommand\sidecite{D<>{}O{}om}{%
+  \iftoggle{blx@footnote}
+    {\cs_set_protected_nopar:Npn \__sct_wrapper:nn ##1 ##2 {\mkbibparens{##2}}}
+    {\cs_set_protected_nopar:Npn \__sct_wrapper:nn ##1 ##2 {\sidenote[][##1]{##2}}}
+    {\IfNoValueTF{#3}
+      {\__sct_wrapper:nn{#1}{\sidecitehelper[#2]{#4}}}
+      {\__sct_wrapper:nn{#1}{\sidecitehelper[#2][#3]{#4}}}}
 }
+\ExplSyntaxOff
 
-%----------------------------------------------------------------------------------------
-%	THESIS INFORMATION
-%----------------------------------------------------------------------------------------
-
-\thesistitle{Coarse-grained modelling for soft matter scattering} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
-\supervisor{Prof. Karen J. \textsc{Edler}, Prof. Stephen C. \textsc{Parker}, Dr. Andrew J. \textsc{Smith}, Dr. Jonathan \textsc{Rawle}} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
-\examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
-\degree{Doctor of Philosophy} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
-\author{Andrew R. McCluskey} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
-\addresses{} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
-
-\subject{Physical/Computational Chemistry} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
-\keywords{} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
-\university{University of Bath} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
-\department{Department of Chemistry} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
-\group{Edler Research Group} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
-\faculty{Faculty of Science} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
-
-%\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
-%\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
-%\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
 
 \begin{document}
+\pagenumbering{gobble}
+% Front matter
+\frontmatter
 
-\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+% r.3 full title page
+\maketitle
 
-\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
 
-%----------------------------------------------------------------------------------------
-%	TITLE PAGE
-%----------------------------------------------------------------------------------------
+% v.4 copyright page
+\newpage
+\begin{fullwidth}
+~\vfill
+\thispagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+Copyright \copyright\ \the\year\ \thanklessauthor
 
-\begin{titlepage}
-\begin{center}
-\doublespacing
+Attention is drawn to the fact that copyright of this thesis rests with the author. A copy of this thesis has been supplied on condition that anyone who consults it is understood to recognise that its copyright rests with the author and that they must not copy it or use material from it except as permitted by law or with the consent of the author.
 
-{\huge \bfseries \ttitle}\\
-\vspace{0.4cm} % Thesis title
-submitted by \\
-\vspace{0.1cm}
-\text{\huge \authorname} \\
-\vspace{0.2cm}
-for the degree of \degreename \\
-\vspace{0.1cm}
-of the \\
-\vspace{0.2cm}
-{\scshape\LARGE \univname} \\
-\vspace{0.1cm}
-\deptname \\
-\vspace{0.5cm}
-\MONTH, \the\year \\
-\vspace{4.cm}
-{\scshape \bfseries copyright} \\
-Attention is drawn to the fact that copyright of this thesis rests with the author. A copy of this thesis has been supplied on condition that anyone who consults it is understood to recognise that its copyright rests with the author and that they must not copy it or use material from it except as permitted by law or with the consent of the author. \\
-\vspace{1.cm}
 \doclicenseThis
-\vspace{1.5cm}
-\rule[0.5em]{25em}{0.5pt} \\
-\vspace{1.cm}
 
-\begin{minipage}[t][][b]{0.4\textwidth}
-\begin{flushleft}
-\includegraphics[height=1.5cm]{bath.pdf}
-\end{flushleft}
-\end{minipage}
-\begin{minipage}[t][][b]{0.4\textwidth}
-\begin{flushright}
-\includegraphics[height=1.3cm]{diamond.pdf}
-\end{flushright}
-\end{minipage}\\[2cm]
+\par\textit{First printing, \monthyear}
+\end{fullwidth}
 
-
+% v.2 epigraphs
+\newpage\thispagestyle{empty}
+\openepigraph{%
+}{
+}
 \vfill
-\end{center}
-\end{titlepage}
+\openepigraph{%
+``Atticus told me to delete the adjectives and I'd have the facts.''
+}{Scout Finch -- To Kill a Mockingbird
+}
+\vfill
+\openepigraph{%
+}{}
 
-%----------------------------------------------------------------------------------------
-%	DECLARATION PAGE
-%----------------------------------------------------------------------------------------
+\blankpage
 
-\begin{declaration}
-\addchaptertocentry{\authorshipname}
-\doublespacing
-\noindent I, \authorname, declare that this thesis titled, \enquote{\ttitle} and the work presented in it are my own. I confirm that:
+\newpage
+\begin{fullwidth}
+\thispagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+~\vfill
+\chapter*{Declaration of Authorship}
 
+I, \thanklessauthor, declare that this thesis titled ``Coarse-grained modelling for soft matter scattering'' and the work presented in it are my own. I confirm that:
 \begin{itemize}
 \item where the thesis or any part of the thesis such as a published paper, has been produced jointly with others, that a substantial part is the original work of myself, and
-\item where the thesis incorporates material already submitted for another degree, the extent of that material and the degree, if any, obtained. \\
+\item where the thesis incorporates material already submitted for another degree, the extent of that material and the degree, if any, obtained.
 \end{itemize}
-
 \noindent Signed:\\
 \rule[0.5em]{25em}{0.5pt} % This prints a line for the signature
 
 \noindent Date:\\
 \rule[0.5em]{25em}{0.5pt} % This prints a line to write the date
-\end{declaration}
+~\vfill
+\end{fullwidth}
 
-\cleardoublepage
+\blankpage
 
-%----------------------------------------------------------------------------------------
-%	QUOTATION PAGE
-%----------------------------------------------------------------------------------------
+\newpage
+\begin{fullwidth}
+\thispagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+~\vfill
 
-\vspace*{0.2\textheight}
-
-\noindent\enquote{\itshape Atticus told me to delete the adjectives and I'd have the facts.}\bigbreak
-
-\hfill Scout Finch -- To Kill a Mockingbird
-
-%----------------------------------------------------------------------------------------
-%	ABSTRACT PAGE
-%----------------------------------------------------------------------------------------
-
-\begin{abstract}
-\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
-
-This work uses different coarse-graining methodologies to assist in the analysis of scattering measurements from soft matter species, such as surfactant monolayers and micelles.
-The term `coarse-graining' is used broadly in this work; to describe the coarse-graining of a classical simulation potential model, a surfactant monolayer model that consists two layers, and a severe coarse-graining methodology that describes a surfactant molecule as just a position and direction in space.
-In all three cases, the aim of the applied coarse-graining is to improve the methods of analysis that may be performed in the analysis of reflectometry and small angle scattering measurements.
-
-A surfactant monolayer model, that was considerate of the chemical bond between the surfactant heads and tails, was developed for the analysis of reflectometry measurements from a phosphoplipid monolayer at the interface between air and a deep eutectic solvent.
-This model allowed for a unique insight into the structure of the monolayer at the given interface.
-To assess the utility of coarse-grained potential modesl in the analysis of neutron reflectometry, a phospholipid monolayer was simulated using three different potential models, of different particle grain-size.
-This allowed for a better undertstanding of the simulation resolution necessary to accurately and successfully apply simulation-driven analysis to reflectometry.
-Finally, a severely coarse-grained description of a surfactant was used in a particle swarm optimisation to try and develop a starting structure for a multiple micelle simulation, where the experimental scattering profile was the optimisation target.
-Alongside the development and application of coarse-graining methodologies, the final chapter of this work describes the development of open-source software and teaching materials for the introduction of classical molecular simulation.
-These educational resources introduce scattering users to simulation and its utility in scattering analysis, to enable a future where simulation driven analysis may be performed accurately by all.
-
-\end{abstract}
-
-%----------------------------------------------------------------------------------------
-%	USAGE PAGE
-%----------------------------------------------------------------------------------------
-
-\begin{usagestatement}
-\addchaptertocentry{\usagename} % Add the abstract to the table of contents
-
-This thesis exists as a piece of completely reproducible research.
-I have endevoured to include as much algorithmic and methodological detail within the text, and where relevant working Code Blocks written in Python have been included for clarity.
-However, in order to provide complete, and easy, reproducibility an electronic supplementary information (ESI) is available online in the form of a Git repository.
-This ESI provides full details of the analyses performed in this work and access to an automated analysis workflow.
-
-The ESI may be accessed at the following DOI: \href{https://doi.org/10.5281/zenodo.xxxxxxx}{10.5281/zenodo.xxxxxxx}.
-
-
-\end{usagestatement}
-
-
-%----------------------------------------------------------------------------------------
-%	PUBS PAGE
-%----------------------------------------------------------------------------------------
-
-\begin{pubsstatement}
-\addchaptertocentry{\pubsname} % Add the abstract to the table of contents
-
+\chapter*{Publications}
 Some of the information in Chapter~\ref{theory} has been previously published in:
 \begin{itemize}
-  \item Andrew R. McCluskey and Karen J. Edler, \emph{Curr. Org. Chem.}, 2018, \textbf{22} (8), 750, DOI: \href{https://doi.org/10.2174/1875692115666170612104439}{10.2174/1875692115666170612104439}.
+  \item \cite{mccluskey_model-dependent_2018}.
 \end{itemize}
 Some of the work covered in Chapter~\ref{reflectometry1} has been previously published in:
 \begin{itemize}
-  \item Andrew R. McCluskey, Adrian Sanchez-Fernandez, Karen J. Edler, Stephen C. Parker, Andrew J. Jackson, Richard A. Campbell, and Thomas Arnold, \emph{Phys. Chem. Chem. Phys.}, 2019, \textbf{21} (11), 6133-6141, DOI: \href{https://doi.org/10.1039/C9CP00203K}{10.1039/C9CP00203K}.
+  \item \cite{mccluskey_bayesian_2019}.
 \end{itemize}
 Some of the work covered in Chapter~\ref{reflectometry2} has been previously published in:
 \begin{itemize}
-  \item Andrew R. McCluskey, James Grant, Andrew J. Smith, Jonathan L. Rawle, David J. Barlow, M. Jayne Lawrence, Stephen C. Parker, and Karen J. Edler, \emph{J. Phys. Comm.}, 2019, Accepted, DOI: \href{https://doi.org/10.1088/2399-6528/ab12a9}{10.1088/2399-6528/ab12a9}.
+  \item \cite{mccluskey_assessing_2019}.
 \end{itemize}
 Some of the work covered in Chapter~\ref{teaching} has been previously published in:
 \begin{itemize}
-  \item Andrew R. McCluskey, Benjamin J. Morgan, Karen J. Edler, and Stephen C. Parker, \emph{J. Open Source Educ.}, 2018, \textbf{1} (2), 19, DOI: \href{https://doi.org/10.21105/jose.00019}{10.21105/jose.00019}.
-  \item Andrew R. McCluskey, James Grant, Adam R. Symington, Tim Snow, James Doutch, Benjamin J. Morgan, Stephen C. Parker, and Karen J. Edler, \emph{J. Appl. Crystallogr.}, 2019, Accepted, Preprint available on arXiv: \href{https://arxiv.org/abs/1902.01324}{1902.01324}.
+  \item \cite{mccluskey_pylj_2018}.
+  \item \cite{mccluskey_introduction_2019}.
 \end{itemize}
-\end{pubsstatement}
 
+\chapter*{Reproducibility Statement}
+This thesis exists as a piece of completely reproducible research.
+I have endevoured to include as much algorithmic and methodological detail within the text, and where relevant working Code Blocks written in Python.
 
-%----------------------------------------------------------------------------------------
-%	ACKNOWLEDGEMENTS
-%----------------------------------------------------------------------------------------
+However, in order to provide complete, and easy, reproducibility an electronic supplementary information (ESI) is available online in the form of a Git repository.
+This ESI provides full details of the analyses performed in this work and access to an automated analysis workflow.
 
-\begin{acknowledgements}
-\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+In order to avoid incorrect self-plagarism detection this Git repository will not be publically available until after the \emph{viva voce}, however, if either examiners would like access to the repository before the \emph{viva voce}, this may be arranged.
 
-This is where I will acknowledge people.
-Need to remember everyone...
+%The ESI may be accessed at the following \doi{10.5281/zenodo.xxxxxxx}.
 
-\end{acknowledgements}
+~\vfill
+\end{fullwidth}
 
-%----------------------------------------------------------------------------------------
-%	LIST OF CONTENTS/FIGURES/TABLES PAGES
-%----------------------------------------------------------------------------------------
+\blankpage
 
-\tableofcontents % Prints the main table of contents
+\newpage
+\begin{fullwidth}
+\thispagestyle{empty}
+\chapter*{Acknowledgements}
 
-%----------------------------------------------------------------------------------------
-%	ABBREVIATIONS
-%----------------------------------------------------------------------------------------
+First and foremost I would like to thank my supervisors at Bath; Karen Edler and Steve Parker, without whom I would never have gotten here.
+The freedom they have given me and the gentle guidance they have bestowed on me, has allowed me to develop during these past three and a half years more than I ever thought was possible.
+I hope that Karen will forgive me for being a butterfly chaser and Steve will forgive me for using Python.
+
+I should thank my Diamond supervisors; Andrew Smith and Jonathan Rawle, for hosting me a DLS for 6 months in my first year and always being available for a chat or a drink or to gift me some beamtime.
+
+Thanks to James Grant for being my mentor in the first year and for introducing me to the magical world of computational science.
+
+Tom Arnold, Richard Campbell, and Andrew Jackson made the work in Chapter~\ref{reflectometry1} possible with their help and advice. Chapter~\ref{reflectometry2} built on some great data collected by Dave Barlow and Jayne Lawrence. Ben Morgan \& Fiona Dickinson, thank you for all the help and encouragement that allowed my participation in the pythoninchemistry project.
+
+Thanks to all the members of the Edler Group that I have gotten to know over the years; Cecilia, Kerrie, Vincenzo, Julien, Marcelo, Andi, and Ria. Thanks for the laughs on beamtime and for the willingness to suffer my chat during beamwine.
+Adrian for arguments at 5 am on beamtime about data analysis and drunken chats about everything at NMSUM.
+Oli for being there to discuss the futility of academia and for getting drunk at any opportunity, regardless of the day.
+Nom for being my personal chauffer far too often and for all night beamtimes.
+
+Cheers to CompChem for all the drunken nights, long may it continue; Georgie, Alex, Dan, Jacob.
+Particular shout out to Victoria; despite your late arrival, your attendance made up for it.
+And Adam for being my friend and housemate, listening to me complain, and for always being keen for Parade.
+
+To all of the members of 0.15 throughout my time here; Richard, Philippe, Megan, Leyorla, Elliot, and Jack for ensuring a happy and friendly place to work every day, and for not complaining about my gym towel lying about. And to all the Chemistry football crowd, for an escape from the monotony and the allowance to run around like a headless chicken.
+\vspace{\baselineskip}
+
+Ioli, you've changed my life, and I wouldn't have managed to get here without you.
+
+Thanks to Sadie and Penny (and Sophie before that) to being a particularly beautiful way to end a presentation, and for helping me stay sane during the writing of this.
+
+Finally, to my parents (all of them) for suffering with me as I chase this dream, but particularly my mother for letting me occupy the dining room for the last three months as I wrote this up and buying me Ben \& Jerry's ice cream whenever I wanted it.
+\end{fullwidth}
+
+% r.5 contents
+\tableofcontents
+
+%\listoffigures
+
+%\listoftables
+
+%\lstlistoflistings
 
 \begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
 
 \textbf{ACMW} & air-contrast matched water \\
 \textbf{APM} & area per molecule \\
-\textbf{BM} & bending magnet \\
 \textbf{cmc} & critical micelle concentration \\
 \textbf{C$_{10}$TA$^+$} & \emph{n}-decyltrimethylammonium \\
-\textbf{C$_{16}$TAB} & \emph{n}-hexadecyltrimethylammonium bromide \\
 \textbf{CCP-SAS} & collaborative computational project for small angle scattering \\
 \textbf{CPU} & central processing unit \\
-\textbf{DDM} & \emph{n}-dodecyl-$\beta$-\emph{D}-maltoside \\
 \textbf{DE} & differential evolution \\
 \textbf{DES} & deep eutectic solvent \\
-\textbf{DLS} & Diamond Light Source \\
-\textbf{DM} & \emph{n}-decyl-$\beta$-\emph{D}-maltoside \\
-\textbf{DMSO} & dimethyl sulfoxide \\
 \textbf{DLPC} & 1,2-dilauroyl-\emph{sn}-glycero-3-phosphocholine \\
 \textbf{DMPC} & 1,2-dimyristoyl-\emph{sn}-glycero-3-phosphocholine \\
 \textbf{DMPG} & 1,2-dimyristoyl-\emph{sn}-glycero-3-phospho-(1'-rac-glycerol) \\
-\textbf{DCPC} & 1,2-distearoyl-\emph{sn}-glycero-3-phosphocholine \\
+\textbf{DSPC} & 1,2-distearoyl-\emph{sn}-glycero-3-phosphocholine \\
 \textbf{DPPC} & 1,2-dipalmitoyl-\emph{sn}-glycero-3-phosphocholine \\
-\textbf{DPC} & dodecylphosphocholine \\
-\textbf{DPD} & dissipative particle dynamics \\
 \textbf{DVTD} & differential vibrating tube densimetry \\
-\textbf{ESI} & electronic supplementary information \\
-\textbf{ESRF} & European Synchrotron Radiation Facility \\
-\textbf{ESS} & European Spallation Source \\
 \textbf{GIXD} & grazing-incidence X-ray diffraction \\
 \textbf{GPU} & graphical processing units \\
 \textbf{hdDES} & partially deuterated deep eutectic solvent \\
 \textbf{hDES} & hydrogenated deep eutectic solvent \\
-\textbf{ID} & insertion device \\
 \textbf{ILL} & Institut Laue-Langevin \\
 \textbf{LC} & Liquid-Condensed \\
 \textbf{LE} & Liquid-Expanded \\
-\textbf{Linac} & linear accelerator \\
 \textbf{MCMC} & Markov chain Monte Carlo \\
 \textbf{MD} & molecular dynamics \\
 \textbf{MPI} & message passing interface \\
@@ -375,12 +437,12 @@ Need to remember everyone...
 \textbf{NR} & neutron reflectometry \\
 \textbf{NVE} & constant number, volume, and energy \\
 \textbf{NVT} & constant number, volume, and temperature \\
-\textbf{OER} & open education resource \\
+\textbf{OER} & open educational resource \\
+\textbf{PBC} & periodic boundary condition \\
 \textbf{PC} & phosphocholine \\
 \textbf{PDF} & probability distribution function \\
 \textbf{PFTE} & polytetrafluoroethylene \\
 \textbf{PG} & phosphatidylglycerol \\
-\textbf{PME} & particle mesh Ewald \\
 \textbf{PSO} & particle swarm optimisation \\
 \textbf{RDF} & radial distribution function \\
 \textbf{SANS} & small angle neutron scattering \\
@@ -388,6 +450,7 @@ Need to remember everyone...
 \textbf{SDS} & sodium dodecyl sulfate \\
 \textbf{SLD} & scattering length density \\
 \textbf{SAXS} & small angle X-ray scattering \\
+\textbf{SP} & surface pressure \\
 \textbf{SPC} & single point charge \\
 \textbf{STFC} & Science \& Technology Facilities Council \\
 \textbf{ToF} & time-of-flight \\
@@ -395,7 +458,6 @@ Need to remember everyone...
 \textbf{wph} & water molecules per head group \\
 \textbf{WAXS} & wide angle X-ray scattering \\
 \textbf{XRR} & X-ray reflectometry \\
-
 
 \end{abbreviations}
 
@@ -405,14 +467,15 @@ Need to remember everyone...
 
 \begin{constants}{lr@{${}={}$}l} % The list of physical constants is a three column table
 
-% The \SI{}{} command is provided by the siunitx package, see its documentation for instructions on how to use it
+% The \SI{}{} command is provided by the tx package, see its documentation for instructions on how to use it
 
- & $\pi$ & $3.1415\dots$ \\
+& $\pi$ & $3.1415\dots$ \\
 Planck constant & $h$ & \SI{6.626\dots e-34}{\joule\second} \\
 Golden ratio & $\Phi$ & \num{1.618\dots} \\
 dielectric permittivity of the vacuum & $\epsilon_0$ & \SI{8.854\dots e-12}{\farad\per\meter} \\
 charge of electron & $e$ & \SI{1.602\dots e-19}{\coulomb} \\
 Boltzmann constant & $k_B$ & \SI{1.381\dots e-23}{\joule\per\kelvin} \\
+
 
 %Constant Name & $Symbol$ & $Constant Value$ with units\\
 
@@ -447,7 +510,6 @@ $r_{n,n+1}$ & Fresnel equation coefficient &  \\
 $s$ & serial component & \\
 $t$ & time & \si{\second} \\
 $t_F$ & time-of-flight & \si{\second} \\
-$v$ & velocity & \si{\meter\per\second} \\
 
 $A_{1,2,3}$ & dihedral constants & \si{\joule} \\
 $B$ & resultant matrix & \\
@@ -490,10 +552,10 @@ $\mathbf{m}$ & mutant vector &  \\
 $\mathbf{o}$ & offspring population &  \\
 $\mathbf{p}$ & parent population &  \\
 $\mathbf{q}$ & scattering wavevector & \si{\per\meter} \\
-$\mathbf{r}$ & displacement vector & \si{\meter} \\
+$\mathbf{r}$ & displacement & \si{\meter} \\
 $\mathbf{s}$ & personal best &  \\
-$\mathbf{v}$ & velocity vector & \si{\meter\per\second} \\
-$\mathbf{x}$ & position vector & \si{\meter} \\
+$\mathbf{v}$ & velocity & \si{\meter\per\second} \\
+$\mathbf{x}$ & position & \si{\meter} \\
 
 $\mathbf{R}$ & particle position & \si{\meter} \\
 
@@ -542,29 +604,38 @@ $\sfrac{\text{d}\sigma(q)}{\text{d}\Omega}$ & differential cross-section & \\
 
 \end{symbols}
 
-%\listoffigures % Prints the list of figures
-%\listoftables % Prints the list of tables
-%\lstlistoflistings % Prints the list of algorithms \lstlistlistingname
+\blankpage
 
-%----------------------------------------------------------------------------------------
-%	DEDICATION
-%----------------------------------------------------------------------------------------
+\newpage
 
-%\dedicatory{For/Dedicated to/To my\ldots}
+\begin{fullwidth}
+\thispagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+~\vfill
+\chapter*{Abstract}
+This work uses different coarse-graining methodologies to assist in the analysis of scattering measurements from soft matter aggregates, such as surfactant monolayers and micelles.
+The term ```coarse-graining'' is used broadly in this work; to describe the coarse-graining of a classical simulation potential model, a surfactant monolayer model that consists two layers, and a severe coarse-graining methodology that describes a surfactant molecule as just a position and direction in space.
+In all three cases, the aim of the applied coarse-graining is to improve the methods of analysis that may be performed in the analysis of reflectometry and small angle scattering measurements.
 
-%----------------------------------------------------------------------------------------
-%	THESIS CONTENT - CHAPTERS
-%----------------------------------------------------------------------------------------
+A surfactant monolayer model, that was considerate of the chemical bond between the surfactant heads and tails, was developed for the analysis of reflectometry measurements from a phospholipid monolayer at the interface between air and a deep eutectic solvent.
+This model allowed for a unique insight into the structure of the monolayer at the given interface.
+To assess the utility of coarse-grained potential models in the analysis of neutron reflectometry, a phospholipid monolayer was simulated using three different potential models, of different particle grain-size.
+This allowed for a better understanding of the simulation resolution necessary to accurately and successfully apply simulation-driven analysis to reflectometry.
+Finally, a severely coarse-grained description of a surfactant was used in a particle swarm optimisation to try and develop a starting structure for a multiple micelle simulation, where the experimental scattering profile was the optimisation target.
 
- % Begin numeric (1,2,3...) page numbering
+Alongside the development and application of coarse-graining methodologies, the final chapter of this work describes the development of open-source software and teaching materials for the introduction of classical molecular simulation.
+These educational resources introduce scattering users to simulation and its utility in scattering analysis, to enable a future where simulation driven analysis may be performed accurately by all.
+~\vfill
+\end{fullwidth}
 
-\pagestyle{thesis} % Return the page headers back to the "thesis" style
+% r.9 introduction
+\cleardoublepage
 
-% Include the chapters of the thesis as separate files from the Chapters folder
-% Uncomment the lines as you write the chapters
-
-%\include{chapters/aims}
+%%
+% Start the main matter (normal chapters)
 \mainmatter
+\pagenumbering{arabic}
 \include{chapters/introduction}
 \include{chapters/theory}
 \include{chapters/reflectometry1}
@@ -573,30 +644,21 @@ $\sfrac{\text{d}\sigma(q)}{\text{d}\Omega}$ & differential cross-section & \\
 \include{chapters/teaching}
 \include{chapters/summary}
 
-%----------------------------------------------------------------------------------------
-%	THESIS CONTENT - APPENDICES
-%----------------------------------------------------------------------------------------
 
-%\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+%%
+% The back matter contains appendices, bibliographies, indices, glossaries, etc.
 
-% Include the appendices of the thesis as separate files from the Appendices folder
-% Uncomment the lines as you write the Appendices
+\appendix
+%\pagenumbering{roman}
+\include{appendices/diff_evo}
+\include{appendices/refl1}
+\include{appendices/refl2}
+\backmatter
 
-%\include{appendices/papers}
-
-%----------------------------------------------------------------------------------------
-%	SADIE AND PENNY
-%----------------------------------------------------------------------------------------
-
-%\backmatter
-%
-%\begin{figure}
-%    \centering
-%    \includegraphics[width=0.8\textwidth]{sp.png}
-%    \caption*{Sadie and Penny; good dogs}
-%    \label{fig:sadieandpenny}
-%\end{figure}
-%
-%----------------------------------------------------------------------------------------
-
+%\bibliography{main}
+%\bibliographystyle{./plainnat}
+%\begin{fullwidth}
+\chapter*{References}
+\printbibliography[heading=none]
+%\end{fullwidth}
 \end{document}

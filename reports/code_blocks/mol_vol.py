@@ -6,25 +6,6 @@ from refnx.reflect import Component
 
 class VolMono(Component):
     def __init__(self, vol, b, d_h, c_length, name=""):
-        """
-        The custom model class to enable control of the
-        phospholipid head and tail volumes.
-
-        Parameters
-        ----------
-        vol: float, array_like
-            The initial values for the head and tail group volumes.
-        b: complex, array_like
-            The calculated scattering length for the head and tail
-            groups.
-        d_h: float
-            The initial value for the thickness of the head group
-            region.
-        c_length: int
-            Number of carbon atoms in the phospholipid tail.
-        name: str
-            A name to be given to the object.
-        """
         super(VolMono, self).__init__()
         t_t = 1.54 + 1.265 * c_length
         self.vol = [
@@ -52,12 +33,6 @@ class VolMono(Component):
 
     @property
     def slabs(self):
-        """
-        Returns
-        -------
-        float, array_like
-            Slab representaions of phospholipid monolayer.
-        """
         layers = np.zeros((2, 5))
         layers[0, 0] = self.d[1]
         layers[0, 1] = self.realb[1] * 1.0e16 / self.vol[1]

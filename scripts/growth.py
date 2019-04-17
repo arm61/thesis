@@ -4,21 +4,21 @@ import seaborn as sns
 sns.set(palette="colorblind")
 import matplotlib as mpl
 import pandas as pd
-mpl.rcParams["xtick.labelsize"] = 8
-mpl.rcParams["ytick.labelsize"] = 8
+mpl.rcParams["xtick.labelsize"] = 10
+mpl.rcParams["ytick.labelsize"] = 10
 mpl.rcParams["axes.facecolor"] = "w"
 mpl.rcParams["lines.linewidth"] = 2
 mpl.rcParams["xtick.top"] = False
 mpl.rcParams["xtick.bottom"] = True
 mpl.rcParams["ytick.left"] = True
 mpl.rcParams["grid.linestyle"] = "--"
-mpl.rcParams["legend.fontsize"] = 8
+mpl.rcParams["legend.fontsize"] = 10
 mpl.rcParams["legend.facecolor"] = [1, 1, 1]
 mpl.rcParams["legend.framealpha"] = 0.75
-mpl.rcParams["axes.labelsize"] = 8
+mpl.rcParams["axes.labelsize"] = 10
 mpl.rcParams["axes.linewidth"] = 1
 mpl.rcParams["axes.edgecolor"] = "k"
-mpl.rcParams["axes.titlesize"] = 8
+mpl.rcParams["axes.titlesize"] = 10
 
 
 data = {'years':[2002, 2003, 2004, 2005, 2006, 2007,
@@ -33,13 +33,13 @@ data = {'years':[2002, 2003, 2004, 2005, 2006, 2007,
 
 df = pd.DataFrame(data)
 
-fig, ax1 = plt.subplots(figsize=(5, 25/11))
+fig, ax1 = plt.subplots(figsize=(4.13, 3.51*0.7))
 
 ax1.plot(df['years'], df['sasmd'] / df['sas'] * 100, 'o')
 ax1.set_xlabel('Year')
-ax1.set_ylabel('Percentage of Publications')
+ax1.set_ylabel('Percentage of\nPublications')
 ax1.set_xticks([2002, 2006, 2010, 2014, 2018])
 ax1.set_yticks([0, 10, 20])
 plt.tight_layout()
-plt.savefig('../reports/figures/teaching/chem_data_py.pdf')
+plt.savefig('../reports/figures/teaching/chem_data_py.pdf', bbox_inches='tight', pad_inches=0.1)
 plt.close()

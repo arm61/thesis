@@ -15,16 +15,16 @@ FIG_SAS = FIG_DIR + SAS
 FIG_TEACH = FIG_DIR + TEACH
 FIGURES_PLOT = [FIG_THEO + 'dyna.pdf', FIG_THEO + 'kine.pdf',
                 FIG_THEO + 'scales.pdf', FIG_THEO + 'rg.pdf',
-                FIG_THEO + 'sphere.pdf', FIG_THEO + 'grad.pdf',
+                FIG_THEO + 'sphere.pdf',
                 FIG_THEO + 'diff_evo.pdf', FIG_THEO + 'part_swarm.pdf',
                 FIG_THEO + 'mcmc.pdf']
 FIGURES = [FIG_DIR + 'bath.pdf', FIG_DIR + 'diamond.pdf',
-           FIG_THEO+ '2ddect.png', FIG_THEO + 'convar.pdf',
+           FIG_THEO+ '2ddect.png', FIG_THEO + 'convar.png',
            FIG_THEO + 'd22.pdf', FIG_THEO + 'gisas.png',
-           FIG_THEO + 'length.png', FIG_THEO + 'multiatom.pdf',
-           FIG_THEO + 'reflectgeo.png', FIG_THEO + 'reflrefr.pdf',
-           FIG_THEO + 'scat.pdf', FIG_THEO + 'scatlen.png',
-           FIG_THEO + 'scatvec.pdf', FIG_THEO + 'singleatom.pdf',
+           FIG_THEO + 'length.png', FIG_THEO + 'multiatom.png',
+           FIG_THEO + 'reflectgeo.png', FIG_THEO + 'reflrefr.png',
+           FIG_THEO + 'scat.png', FIG_THEO + 'scatlen.png',
+           FIG_THEO + 'scatvec.png', FIG_THEO + 'singleatom.png',
            FIG_THEO + 'syn.png', FIG_THEO + 'undulator.png',
            FIG_THEO + 'dwba.png', FIG_REFL1 + 'head_groups.png',
            FIG_REFL1 + 'gixd.png',
@@ -60,6 +60,7 @@ FIGURES = [FIG_DIR + 'bath.pdf', FIG_DIR + 'diamond.pdf',
            FIG_REFL1 + 'dmpc_neutron_20_ref_sld.pdf',
            FIG_REFL1 + 'dmpc_neutron_25_pdf.pdf',
            FIG_REFL1 + 'dmpc_neutron_25_ref_sld.pdf',
+           FIG_REFL1 + 'pear.pdf',
            FIG_REFL2 + 'apm.pdf',
            FIG_REFL2 + 'dspc_20_pdf.pdf',
            FIG_REFL2 + 'dspc_20_ref_sld.pdf',
@@ -116,7 +117,8 @@ FIGURES = [FIG_DIR + 'bath.pdf', FIG_DIR + 'diamond.pdf',
 CHAPTERS = [REP + CHAP + 'introduction.tex', REP + CHAP + 'theory.tex',
             REP + CHAP + 'reflectometry1.tex',
             REP + CHAP + 'reflectometry2.tex', REP + CHAP + 'smallangle.tex',
-            REP + CHAP + 'teaching.tex', REP + CHAP + 'summary.tex']
+            REP + CHAP + 'teaching.tex', REP + CHAP + 'summary.tex',
+            REP + APP + 'diff_evo.tex', REP + APP + 'refl1.tex', REP + APP + 'refl2.tex']
 LATEX = [REP + CHAP + INTRO + 'soft_matter.tex',
          REP + CHAP + INTRO + 'scattering.tex',
          REP + CHAP + INTRO + 'coarsegraining.tex',
@@ -227,7 +229,8 @@ rule clean_all:
 
 rule thesis:
     input:
-        'reports/MastersDoctoralThesis.cls',
+        'reports/arm-common.def',
+        'reports/arm-thesis.cls',
         LATEX,
         REP + 'main.tex',
         REP + 'main.bib',
@@ -267,12 +270,11 @@ rule thesis:
         'reports/main.pdf'
     run:
         shell("black -l 70 reports/code_blocks/*.py")
-        shell("pdflatex -output-directory=reports/ reports/main.tex")
-        for i in CHAPTERS:
-            j = i[:-3] + 'aux'
-            shell("bibtex {}".format(j))
-        shell("pdflatex -output-directory=reports/ reports/main.tex")
-        shell("pdflatex -output-directory=reports/ reports/main.tex")
+        shell("xelatex -output-directory=reports/ reports/main.tex")
+        shell("cd reports && biber main && cd ../")
+        shell("xelatex -output-directory=reports/ reports/main.tex")
+        shell("xelatex -output-directory=reports/ reports/main.tex")
+        shell("xelatex -output-directory=reports/ reports/main.tex")
 
 rule theory_figues:
     input:

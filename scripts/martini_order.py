@@ -17,21 +17,21 @@ import seaborn as sns
 sns.set(palette="colorblind")
 
 
-mpl.rcParams["xtick.labelsize"] = 8
-mpl.rcParams["ytick.labelsize"] = 8
+mpl.rcParams["xtick.labelsize"] = 10
+mpl.rcParams["ytick.labelsize"] = 10
 mpl.rcParams["axes.facecolor"] = "w"
 mpl.rcParams["lines.linewidth"] = 2
 mpl.rcParams["xtick.top"] = False
 mpl.rcParams["xtick.bottom"] = True
 mpl.rcParams["ytick.left"] = True
 mpl.rcParams["grid.linestyle"] = "--"
-mpl.rcParams["legend.fontsize"] = 8
+mpl.rcParams["legend.fontsize"] = 10
 mpl.rcParams["legend.facecolor"] = [1, 1, 1]
 mpl.rcParams["legend.framealpha"] = 0.75
-mpl.rcParams["axes.labelsize"] = 8
+mpl.rcParams["axes.labelsize"] = 10
 mpl.rcParams["axes.linewidth"] = 1
 mpl.rcParams["axes.edgecolor"] = "k"
-mpl.rcParams["axes.titlesize"] = 8
+mpl.rcParams["axes.titlesize"] = 10
 
 import sys
 sys.path.insert(0, '../reports/code_blocks')
@@ -54,7 +54,7 @@ lt = [1, 4]
 rough = [0, 0.4]
 co=30
 
-fig = plt.figure(figsize=(5, 25/11))
+fig = plt.figure(figsize=(4.13, 3.51*0.5))
 gs = mpl.gridspec.GridSpec(1, 1)
 ax2 = plt.subplot(gs[0, 0])
 for ci, contrast in enumerate(contrasts):
@@ -113,4 +113,4 @@ ax2.set_ylabel(r'SLD/$10^{-6}$Å$^{-2}$')
 ax2.set_xlim([-2, 70])
 plt.tight_layout()
 fig_dir = "../reports/figures/reflectometry2/"
-plt.savefig('{}martini_order.pdf'.format(fig_dir))
+plt.savefig('{}martini_order.pdf'.format(fig_dir), bbox_inches='tight', pad_inches=0.1)

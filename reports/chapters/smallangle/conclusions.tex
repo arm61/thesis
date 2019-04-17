@@ -1,12 +1,12 @@
 \section{Conclusions}
-This chapter presented the development of a software entitled \texttt{fitoog}, the aim of which was to try and use particle swarm optimisation in order to generate a resonable starting structure for a molecular dynamics simulation of multiple micelles in solution.
+This chapter presented the development of a software entitled \texttt{fitoog}, the aim of which was to try and use PSO in order to generate a reasonable starting structure for an MD simulation of multiple micelles in solution.
 Previously work had shown it was possible to build a single micelle that agreed well with dilute experimental data.
 However, there had been no previous work investigating the generation of multiple micelles based on the scattering data alone.
 
-\texttt{fitoog} is a highly parallelised software, capable of running efficiently on high performance computing resources.
+\texttt{fitoog} is a highly parallelised software, capable of running efficiently on high-performance computing resources.
 It was determined that the serial component of running \texttt{fitoog} made up \SI{0.2}{\percent} of the overall calculation.
 From ten repetitions, the software was able to resolve the expected structure for a model test case quickly running on a workstation class machine.
-
-Using \texttt{fitoog} it was possible to optimise a simple test case consisting of 4 surfactant molecules with the particle swarm optimisation method.
 However, when applied to a larger, realistic system it was not possible to obtain any realistic structures.
-Additionally, when compared with a simple random number generation, it performed no better in minimisation of the figure of merit. 
+Additionally, when compared with a simple random number generation, it performed no better in minimisation of the figure of merit.
+This indicates that it may be necessary to consider energetic information in addition to structural detail to accurately develop a feasible starting structure for an MD simulation.
+Alternatively, it may be possible to use a short MD simulation to generate the starting structure for the \texttt{fitoog} run rather than a randomly generated structure.

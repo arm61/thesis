@@ -1,90 +1,85 @@
-% Chapter Template
-
 \chapter{Summary \& Future Work} % Main chapter title
-
 \label{summary} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
-
-%----------------------------------------------------------------------------------------
-%	SECTION 1
-%----------------------------------------------------------------------------------------
-
-This work aimed to investigate the use of different coarse-graining methodologies to improve and aid the analysis of scattering data from scattering experiments, in particular, reflectometry and small angle scattering.
-The different coarse-graining methods varied both in what was being coarse-grained, from the potential model to descriptions of entire surfactants, and made use of a series of optimisation and sampling techniques to improve the inference from these analyses.
-Some of these methods showed greater success, for example the use of classical simulation-driven analysis for reflectometry and the chemically-consistent monolayer models, than others, however I feel that this work represents a significant step forward in the development of analysis methodologies for scattering experiments.
-Finally, teaching materials for introduction classical simulation to users of scattering were introduced that I believe with provide a new platform for engagement and understanding in simulation-driven analysis.
+The work described in this thesis aimed to investigate the use of different coarse-graining methodologies to improve and aid in the analysis of scattering data from scattering experiments, in particular, reflectometry and small angle scattering.\footnote{SAS.}
+The different coarse-graining methods varied both in what was being coarse-grained, from the potential model to descriptions for entire surfactants, and made use of a series of optimisation and sampling techniques to improve the inference from these analyses.
+Some of these methods showed greater success, for example, the use of classical simulation-driven analysis for reflectometry and the chemically-consistent monolayer models.
+Others were less successful, however, this work represents a significant step forward in the development of analysis methodologies for scattering experiments.
+Finally, teaching materials for introducing classical simulation approaches to users of scattering were developed that provide a new platform for engagement and understanding in simulation-driven analysis.
 
 \section{Chemically-consistent modelling of X-ray and neutron reflectometry}
-The use of coarse-graining is commonplace in the analysis reflectometry measurements, as the models that are used are typically made up layers which describe different chemical components of the underlying structure.
-In the work contained in Chapter~\ref{reflectometry1}, the use of a chemically-consistent model was used for the analysis of a set of phospholipid reflectometry measurements at an air-deep eutectic solvent (DES) interface.
+The use of coarse-graining is commonplace in the analysis of reflectometry measurements, as the models that are typically used are comprised of layers which represent different chemical components of the underlying structure.
+In the work contained in Chapter~\ref{reflectometry1}, this approached was extended to use a chemically-consistent model for the analysis of a set of phospholipid reflectometry measurements at an air-deep eutectic solvent interface.
 This model was coarse-grained such that the system was described as consisting of two layers describing the phospholipid heads and tails.
-The use of this coarse-grained method allowed for X-ray reflectometry measurements conducted at different surface pressures to be co-refined, by keeping chemical features, such as the head and tail volumes constant, across the different surface pressures for a given lipid.
-This allowed for the constraints, that are typically applied in the modelling of phospholipid monolayers at an air-water interface, on the head and tail volume to be removed in consideration of the effect of the non-aqueous solvent and surface pressure on these.
-This method allowed for an unique insight into the structure of the phospholipid monolayer at the air-DES interface, showing a strong similarity to those formed at the air-water interface, however, it was possible to observe that the head group volme for the phosphoditylglycerol containing lipid appeared to swell as a result of the ionic solvent.
+The use of this coarse-grained method allowed for X-ray reflectometry\footnote{XRR.} measurements conducted at different surface pressures\footnote{SPs.} to be co-refined, by keeping chemical features constant\footnote{Such as the head and tail volumes.} across the different SPs for a given phospholipid.
+This allowed for the constraints, that are typically applied in the modelling of phospholipid monolayers at an air-water interface, on the head and tail volume to be removed to reflect of the effect of the non-aqueous solvent and SP on these.
+This method allowed for a unique insight into the structure of the phospholipid monolayer at the air-DES interface, showing a strong similarity to those formed at the air-water interface.
+However, it was possible to observe that the head group volume for the PG-containing phospholipid appeared to swell as a result of interactions with the ionic solvent.
 
-This work was published alongside an fully-reproducible electronic supplementary information \cite{mccluskey_bayesian_2019,mccluskey_lipids_at_airdes_2019}, which gave access to the chemically-consistent model Python class.
-This will allow others to use this model in their data analysis, additionally there is scope to include this model (and the \texttt{MDSimulation} Python class) in an accessible repository for models that may be used with the \texttt{refnx} package \cite{nelson_refnx_2019,nelson_refnx_2019-1,nelson_refnx-models_nodate}.
-I believe that the future of X-ray and neutron reflectometry analysis will build on the sharing of these models enabling science to be performed by science-domain experts, who have little reflectometry experience.
-This is already the case in small angle scattering where a large library of functional models exist and users can pick those which fit their needs \cite{noauthor_sasfit_nodate,noauthor_sasview_nodate}.
+This work was published alongside a fully-reproducible electronic supplementary information,\autocite{mccluskey_bayesian_2019,mccluskey_lipids_at_airdes_2019} which gave access to the chemically-consistent model Python class.
+This will allow others to use this model in their data analysis, additionally there is scope to include this model\footnote{In addition to the \texttt{MDSimulation} Python class developed in Chapter~\ref{reflectometry2}.} in an accessible repository for models that may be used with the \texttt{refnx} package.\autocite{nelson_refnx_2019,nelson_refnx_2019-1,nelson_refnx-models_nodate}
+The future of XRR and neutron reflectometry\footnote{NR} analysis will build on the sharing of these models enabling science to be performed by science-domain experts, who have little reflectometry analysis experience.
+This is already the case in SAS where a large library of functional models exist and users can pick those which fit their needs.\autocite{noauthor_sasfit_nodate,noauthor_sasview_nodate}
 
-This chapter presented the use of Markov chain Monte Carlo (MCMC) sampling to probe the inverse uncertainties of a given model, in addition to the interparameter correlations.
-However, it was note that the use of MCMC can only probe the parameter space available within the given experimental uncertainties, which in particular for X-ray reflectometry measurements are believed to be significantly underestimated (leading to an underestimation in the inverse uncertainties of the model).
-Therefore, I feel that in order to fully leverage the power of this sampling process for inverse uncertainty determination, it is first necessary to determine accurate uncertainties for the experimental measurements, which is a non-trival task.
-Hopefully, as there is growing interest in advanced modelling approaches, such as Bayesian inference and machine learning, there will be a concerted effort from large scale facilities and instrument manufacturers to accurately define the uncertainties of a given measurement.
+Another novel innovation of this work was the use of Markov chain Monte Carlo sampling to probe the inverse uncertainties of a given model, in addition to the inter-parameter correlations.
+However, it was noted that the use of MCMC can only probe the parameter space available within the given experimental uncertainties, which in particular for XRR measurements are believed to be significantly underestimated.\footnote{Therefore, leading to an underestimation in the inverse uncertainties of the model.}
+Therefore, in order to fully leverage the power of this sampling process for inverse uncertainty determination, it is first necessary to determine accurate uncertainties for the experimental measurements, which is a non-trivial task.
+As there is a growing interest in advanced modelling approaches, such as Bayesian inference and machine learning, a concerted effort from large scale facilities and instrument manufacturers to accurately define the uncertainties of a given measurement will be required.
 
 \section{Applying atomistic and coarse-grained simulation to reflectometry analysis}
-This chapter focussed on the use of conventional off the shelf atomistic and coarse-grained potential models to simulated a phospholipid monolayer at the air-water interface.
+Chapter~\ref{reflectometry1} focussed on the use of conventional off-the-shelf atomistic and coarse-grained potential models to simulate a phospholipid monolayer at the air-water interface.
+This is the first study to compare three-levels of simulation coarse-graining to a chemically-consistent modelling approach for the analysis of neutron reflectometry data.
 The reflectometry was calculated directly from the simulation trajectory and compared with the chemically-consistent analysis process developed in Chapter~\ref{reflectometry1}.
-While the chemically-consistent method consistently produced a better fit to the experimental data, the atomistic Slipid and united-atom Berger models offered very good agreement, in particular when considering the substaintial constraint implicit in the determination of a reflectometry profile directly from simulation.
-The coarse-grained MARTINI potential model however did not fair well, with some severe difficultlies, from water bead freezing to the inability to coarse-grain a 18-carbon chain with the MARTINI's 4-to-1 beading structure.
+While the chemically-consistent method produced a better fit to the experimental data, the atomistic Slipid and united-atom Berger models offered very good agreement, in particular when considering the substantial constraint implicit in the determination of a reflectometry profile directly from a simulation.
+The coarse-grained MARTINI potential model, however, did not fare well, with some severe difficulties, from water bead freezing to the inability to coarse-grain an 18-carbon chain with the MARTINI's 4-to-1 beading structure.
 The atomistic simulations were used to better understand the nature of a phospholipid monolayer at the air-water interface to improve the chemically-consistent model in the future.
 For example, it was observed that the uniform solvation that is commonly used for the phospholipid head group, and used in the chemically-consistent model, may not be accurate as the solvation varies throughout the monolayer depending on the chemistry of the head-solvent interactions.
 
 This work offers two important opportunities for future work in the area.
-The first is the advancement of the use for simulation-driven analysis in neutron reflectometry measurements; where it was suggested that either the united-atom or atomistic simulations would be capable of reproducing experimental data.
-Therefore it would be pertainent to develop a workflow to produce starting structure for different, common, reflectometry systems, such as monolayers, bilayers, etc.
-Such as workflow would allow users of neutron and X-ray reflectometry instruments to easily set up simulations to match the experiments that they are conducting.
-Furthermore, the computational requirement to perform these simulations is becoming more available with improving compute resource are national facilities, so it would be possible to the user to perform these simulations concurrently to their experiments.
+The first is the advancement of the use for simulation-driven analysis in NR measurements; where it was suggested that either the united-atom or atomistic simulations would be capable of reproducing experimental data.
+Therefore it would be pertinent to develop a workflow to produce starting structure for different, common, reflectometry systems, such as monolayers, bilayers, etc.
+This workflow could be implemented on computing resources at the large scale facilities and allow users to state the phospholipid type and the expected structure, leveraging existing software such as Packmol and GROMACS.\autocite[in a similar fashion the building of a monolayer in this work]{martinez_packmol_2009,lindahl_gromacs_2001} to build a starting structure and run a simulation.
+Such a workflow would allow users of NR and XRR instruments to easily set up and run simulations to match the experiments that they are conducting.
+Furthermore, the computational requirements to perform these simulations are becoming more accessible with improving compute resource at national facilities, so it would be possible for the user to perform these simulations concurrently with experiments.
 
 The second area of future work would be the improvement of the chemically-consistent monolayer model based on the findings from this work.
-As mentioned above the atomistic simulation showed the inadequacy of the use of a uniform solvent, therefore it may be useful to investigate the use of a three layer model to describe a phospholipid monolayer systen, where the head layer is split in two to allow for different solvation, as it was shown that the solvation at the carbonyl group is great that would be expected for a simple sigmoidal decay.
-Furthermore, it was noted that in disagreement with the work of Campbell \emph{et al.} \cite{campbell_structure_2018}, it appears the interfacial roughness between the layers is not carried in a conformal fashion.
-Instead the roughness appeared to increase from the tail to the head of the phospholipid, this suggests that a more accurate monolayer model would not have the interface roughness to be conformal when only a single phospholipid type is present, as is the case in the chemically-consistent monolayer model.
+As mentioned above the atomistic simulation showed the inadequacy of the use of a uniform solvent, therefore it may be useful to investigate the use of a three-layer model to describe a phospholipid monolayer system,\footnote{Where the head layer is split in two to allow for different solvation.} as it was shown that the solvation at the carbonyl group is greater than would be expected for a simple sigmoidal decay.
+Furthermore, it was noted that in disagreement with the work of Campbell \emph{et al.},\autocite{campbell_structure_2018} it appears the interfacial roughness between the layers is not carried in a conformal fashion.
+Instead, the roughness appeared to increase from the tail to the head of the phospholipid, this suggests that a more accurate monolayer model would not constrain the interface roughness to be conformal when only a single phospholipid type is present, as is the case in the chemically-consistent monolayer model.
 
 \section{Using particle swarm methods for small angle scattering analysis}
-The simulation of micellar species typically involves either the simulation of a random solution of surfactant molecules until a micelle-like structure forms, or the artifical creation of a micelle of an appropriate size based on \emph{a priori} information.
-In an effort to improve the ability for the simulation-driven analysis of small angle scattering data from micellar solutions, a particle swarm optimisation to attempt to generate a starting structure.
-This particle swarm optimisation was implimented in the \texttt{fitoog} software and used a severely coarse-grained description of the molecules to try and optimise to the scattering profile alone.
+The simulation of micellar species typically involves either the simulation of a random solution of surfactant molecules until a micelle-like structure forms, or the artificial creation of a micelle of appropriate size based on \emph{a priori} information.
+In an effort to improve the ability for the simulation-driven analysis of SAS data from micellar solutions, a particle swarm optimisation\footnote{PSO.} algorithm was used to attempt to generate a starting structure.
+This PSO was implemented in the \texttt{fitoog} software and used a severely coarse-grained description of the molecules to try and optimise to the scattering profile alone.
 Despite some success on a small test system, this method was not able to be applied to a case with real experimental data.
 
-This failure of the particle swarm optimisation to be able to produce a realistic micellar structure indicates that it may be necessary to consider some energetic optimisation alongside the purely structural one.
-Previous work has involves the use of potential models that are biased based on the agreement with experimental scattering \cite{hargreaves_atomistic_2011,ivanovic_temperature-dependent_2018}, however, these still require significant computational resource to run and obtain useful information.
-A pragmatic approach to enable experimental users to use simulation-driven analysis would be to implimented the methods applied previously in an easy-to-operate software that would allow for access to high performace computing resources.
-Such an implimentation is already available within the biological scattering community in the form of the SASSIE \cite{perkins_atomistic_2016} and WAXSiS \cite{knight_waxsis_2015} resources.
-However, I believe that there is still the opportunity for a straightforward solution to the problem to easily generating realistic starting sturctures for the simulation of micellar solutions, using the optimisation of structural and energetic information. 
+The failure of the PSO to be able to produce a realistic micellar structure indicates that it may be necessary to consider some energetic optimisation alongside the purely structural one.
+Previous work has involved the use of potential models that are biased on the agreement with experimental scattering.\autocite{hargreaves_atomistic_2011,soper_coarse-grained_2017,ivanovic_temperature-dependent_2018}
+However, these still require a significant computational resource to run and obtain useful information.
+A pragmatic approach to enable experimental users to use simulation-driven analysis would be to implement the methods applied previously in an easy-to-operate software that would allow for access to high-performance computing resources.
+Such an implementation is already available within the biological scattering community in the form of the SASSIE\autocite{perkins_atomistic_2016} and WAXSiS\autocite{knight_waxsis_2015} resources.
+However, there is still the opportunity for a straightforward solution to the problem to easily generating realistic starting structures for the simulation of micellar solutions, using the optimisation of structural and energetic information.
+This may come in the form of an optimised version of the coarse-grained implementation of the Empirical Potential Structure Refinement,\autocite{soper_coarse-grained_2017} or a generalisation of the workflow developed by Ivanovic \emph{et al.}.\autocite{ivanovic_temperature-dependent_2018}
 
 \section{Developing open-source teaching materials for classical simulation and scattering}
-To accompany the development of these coarse-grained methodologies applied to the analysis of scattering measurements, has been the creation of teaching resources to introduce users of scattering methods to classical simulation.
-Driven by the growing interest in using simulation to analysis small angle scattering experiments \cite{hub_interpreting_2018,perkins_atomistic_2016}, the open learning module entitled ``The interaction between simulation and scattering'' was developed \cite{mccluskey_pythoninchemistry/sim_and_scat_2019}.
-This was designed to introduce users of scattering methods to the underlying mechanics of classical molecular dynamics simulations through the use of Python based examples, to stimulate the worked example effect.
-In addition to showing how classical molecular dynamics worked, this also showed how the scattering profile may be determined directly from the simulation trajectory.
-Alongside this open learning module, the Python package \texttt{pylj} was developed \cite{mccluskey_pylj_2018,mccluskey_arm61/pylj_2019-2}.
-This package was created to introduce classical molecular dynamics and the results available to these simulations in a computational laboratory fashion.
+An important challenge for ensuring that users of scattering techniques apply simulation-driven analysis methods is to provide suitable training material.
+Thus to accompany the development of these coarse-grained methodologies applied to the analysis of scattering measurements, teaching resources have been created to introduce users of scattering methods to classical simulation.
+Driven by the growing interest in using simulation to analyse SAS experiments,\autocite{hub_interpreting_2018,perkins_atomistic_2016} the open learning module entitled ``The interaction between simulation and scattering'' was developed.\autocite{mccluskey_introduction_2019,mccluskey_pythoninchemistry/sim_and_scat_2019}
+This was designed to introduce users of scattering methods to the underlying mechanics of classical molecular dynamics\footnote{MD.} simulations through the use of Python-based examples, to stimulate the worked example effect.
+In addition to showing how classical MD worked, this also showed how the scattering profile may be determined directly from the simulation trajectory.
+Alongside this open learning module, the Python package \texttt{pylj} was developed.\autocite{mccluskey_pylj_2018,mccluskey_arm61/pylj_2019-2}
+This package was created to introduce classical MD and the results available to these simulations in a computational laboratory fashion.
 Open-source and written in the readable Python language this software aimed to engage students to learn more about simulation methods by interacting with the simulations through the easy visualisation environment, which aimed to provide a straightforward way to rationalise the system being simulated.
 This package was used in the open learning module, has already been applied in the undergraduate computational chemistry laboratory at the University of Bath, and will in the future be used at the University of Bristol.
 
-The open source nature of both of these resources mean that they are available to anyone to use, change, or build upon.
-This means that in future the open learning module will be able to grow as others, and myself, improve it.
-For example, it would be relevant to include a more detailed description of the particulars of calculating a realisitic scattering profile from a simulation, as currently aspects such as instrumental resolution and absorption effects are not covered.
-Additionally, as more and more methods for producing starting structures for classical simulation as relevant to scattering are developed, for example by the CCP-SAS consortium, it would be useful to users to include descriptions of these.
-Finally, I believe that this example of an open, online, interactive learning module will begin the creation of many more from the chemical science, examples of how to use Python for chemical data analysis or topics such as analytical methods (e.g. NMR spectroscopy) would be useful resources for students and academics alike.
+The open source nature of both of these resources ensures that they are available to anyone to use, change, or build upon.
+This means that in the future the open learning module will be able to grow as others, and myself, improve it.
+For example, it would be relevant to include a more detailed description of the particulars of calculating a ``realistic'' scattering profile from a simulation, as currently aspects such as instrumental resolution and absorption effects are not covered.
+Additionally, as more and more methods for producing starting structures for classical simulations that are relevant to scattering are developed, for example by the CCP-SAS\footnote{The collaborative computational project for SAS.} consortium, it would be useful to users for detailed descriptions of these to be included.
+Finally, this example of an open, online, interactive learning module has the potential to encourage the creation of many more from the chemical sciences.
+Such topics as, examples of how to use Python for chemical data analysis or topics such as analytical methods (e.g. NMR spectroscopy) would be useful resources for students and academics alike.
 
-Currently the \texttt{pylj} package only allows the simulation of a single particle type, with no inclusion of aspects such as mixing rules.
+Currently, the \texttt{pylj} package only allows the simulation of a single particle type, with no inclusion of aspects such as mixing rules.
 The planned \texttt{pylj} 2.0 version would adapt the underlying structures of the pylj software to enable these features.
-This would substantially improve the utility of \texttt{pylj} in the chemical sciences, as it would be more straightforward to simulate mixtures of chemical species and aspects such as bonding.
-As mentioned, the \texttt{pylj} software is used in the undergraduate chemistry course at the University of Bath, however currently a course is being developed by the University of Bristol that will feature the use of \texttt{pylj}, in addition to interest from the Physics Department at University College London.
+This would substantially improve the utility of \texttt{pylj} in the chemical sciences, as it would be more straightforward to simulate mixtures of chemical species and aspects such as chemical bonding.
+As mentioned, the \texttt{pylj} software is used in the undergraduate chemistry course at the University of Bath and currently, a course is being developed by the University of Bristol that will feature the use of \texttt{pylj}.
 It is hoped that as more universities make use of the software, the community behind it will grow.
-
-
-\renewcommand\bibsection{\section{\refname}}
-\bibliographystyle{rsc}
-\bibliography{reports/main}

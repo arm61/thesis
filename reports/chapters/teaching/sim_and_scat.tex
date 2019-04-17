@@ -1,60 +1,54 @@
 \section{The interaction between simulation and scattering}
 \label{sec:sim_and_scat}
-The Jupyter Notebook framework and \texttt{pylj} software were then used to enable learning and understanding in the OER entitled ``The interaction between simulation and scattering'' (available at \href{https://pythoninchemistry.org/sim_and_scat}{pythoninchemistry.org/sim\_and\_scat}) \cite{mccluskey_pythoninchemistry/sim_and_scat_2019}.
-This is an online, open-source, interactive learning resource written to introduce members of the scattering and diffraction community to molecular dynamics simulations.
-The aim is to improve their understanding, and therefore reduce the treatment of molecular dynamics as ``black box'' calculation by experimental colleagues.
-The OER comprises five lessons that introduce classical molecular dynamics methods and show how these can be used to assist in the analysis of experimental scattering data by the calculation of a simulated scattering profile from the molecular dynamics simulation.
+The Jupyter Notebook framework and \texttt{pylj} software were then used to enable learning and understanding in the OER entitled ``The interaction between simulation and scattering''.\autocite[available at \href{https://pythoninchemistry.org/sim_and_scat}{pythoninchemistry.org/sim\_and\_scat}]{mccluskey_introduction_2019,mccluskey_pythoninchemistry/sim_and_scat_2019}
+This is an online, open-source, interactive learning resource written to introduce members of the scattering and diffraction community to MD simulations.
+The aim is to improve their understanding, and therefore reduce the treatment of MD as ``black box'' calculation by experimental colleagues.
+The OER comprises five lessons that introduce classical MD methods and show how these can be used to assist in the analysis of experimental scattering data by the calculation of a simulated scattering profile from the MD simulation.
 \texttt{pylj} is used to provide simple, but computationally authentic, examples of simulations, that demonstrate visually and programmatically the conceptual relationships between simulation and scattering techniques.
-Finally, we show a ``real-world'' example of calculation of the scattering profile from a simulation of a lysozyme protein in solution.
+Finally, a ``real-world'' example of calculation of the scattering profile from a simulation of a lysozyme protein in solution is shown.
 
 \subsection{Resource construction}
 The resource is available in two main formats.
 First, as a series of web pages, hosted at \href{https://pythoninchemistry.org/sim_and_scat}{pythoninchemistry.org/sim\_and\_scat}.
-Secondly, as the source-code repository used to build these webpages \cite{mccluskey_pythoninchemistry/sim_and_scat_2019}.
-The source content consists of a set of Jupyter Notebooks and Markdown files, which are automatically compiled using the \texttt{jupyter-book} tool \cite{lau_jupyter/jupyter-book_2019} to generate the web version.
-This system allows the resulting webpages to include text, equations, and figures, which describe key concepts and explain details of algorithms, as well as Python code blocks, which provide specific examples.
-The web pages have Thebelab and BinderHub integrations \cite{ragan-kelley_minrk/thebelab_2019, ragan-kelley_jupyterhub/binderhub_2019, jupyter_binder_2018}, which allow students to launch interactive versions of these webpages that allow execution and modification of the included Python code.
-The ability to read the resource as an ``interactive document'' improves the ability for the students to engage in the ``worked example effect'' \cite{tarmizi_guidance_1988}.
-The resource is provided under a CC-BY license \cite{creative_commons_creative_2019}, while the \texttt{jupyter-book} software is shared under an MIT license \cite{open_source_mit_2019}, both of which are open and highly permissive.
+Secondly, as the source-code repository used to build these webpages.\autocite{mccluskey_pythoninchemistry/sim_and_scat_2019}
+The source content consists of a set of Jupyter Notebooks and Markdown files, which are automatically compiled using the \texttt{jupyter-book} tool\autocite{lau_jupyter/jupyter-book_2019} to generate the web version.
+This allows the resulting webpages to include text, equations, and figures, which describe key concepts and explain details of algorithms, as well as Python code blocks, which provide specific examples.
+The web pages have Thebelab and BinderHub integrations,\autocite{ragan-kelley_minrk/thebelab_2019, ragan-kelley_jupyterhub/binderhub_2019, jupyter_binder_2018} which allow students to launch interactive versions of these webpages that allow execution and modification of the included Python code.
+The ability to read the resource as an ``interactive document'' improves the ability for the students to engage in the ``worked example effect''.\autocite{tarmizi_guidance_1988}
+The resource is provided under a CC-BY license,\autocite{creative_commons_creative_2019} while the \texttt{jupyter-book} software is shared under an MIT license,\autocite{open_source_mit_2019} both of which are open and highly permissive.
 This allows readers to reuse or remix the material to enhance their own educational platform and for secondary authors to contribute to improving the source material.
 
 \subsection{Resource outline}
-The resource follows a simple outline that introduces key aspects of molecular dynamics simulations.
+The resource follows a simple outline that introduces key aspects of MD simulations.
 
-\subsubsection{Home}
-The welcome page introduces the resource, explains the purpose, and gives the user information about how the resource may be used, including details of the Thebelab and BinderHub integrations.
+\textbf{Home:} The welcome page introduces the resource, explains the purpose, and gives the user information about how the resource may be used, including details of the Thebelab and BinderHub integrations.
 This page also contained details of the permitted use/reuse, sharing of the content of the resource and licensing.
 Finally, a list of authors and contributors was given.
 
-\subsubsection{Classical methods}
-
-This section introduces concepts related to classical simulation methods.
-Including the use of interatomic potential functions, alongside some examples, such as the Lennard-Jones and Buckingham potential models \cite{lennard-jones_determination_1924,buckingham_classical_1938}.
+\textbf{Classical methods:} This section introduces concepts related to classical simulation methods.
+Including the use of interatomic potential functions, alongside some examples, such as the Lennard-Jones and Buckingham potential models.\autocite{lennard-jones_determination_1924,buckingham_classical_1938}
 The problem of parameterising a potential model is then suggested, showing the use of higher accuracy quantum mechanical calculations to do so.
 The presence of off-the-shelf, general potential models are discussed; with the caveat that they may still require system-specific optimisation.
-Finally, we mention mixing rules; again discussing the possible problems that a user may encounter if applying these blindly to specific systems.
+Finally, mixing rules are mentioned; again discussing the possible problems that a user may encounter if applying these blindly to specific systems.
 
-\subsubsection{Molecular dynamics}
-With the concept of a classical interatomic potential introduced, the resource then begins to focus on how these are used in molecular dynamics simulations.
-We work through how a one dimensional NVE (constant number, volume, and energy) molecular dynamics simulation may be built, using the Velocity-Verlet algorithm and the Lennard-Jones potential model \cite{swope_computer_1982,lennard-jones_determination_1924}.
+\textbf{Molecular dynamics:} With the concept of a classical interatomic potential introduced, the resource then begins to focus on how these are used in MD simulations.
+It is shown how a one dimensional NVE (constant number, volume, and energy) MD simulation may be built, using the Velocity-Verlet algorithm and the Lennard-Jones potential model.\autocite{swope_computer_1982,lennard-jones_determination_1924}
 The Velocity-Verlet algorithm is introduced in terms of Newton's laws of motion and the generalised equations of motion.
-Finally, we discuss a range of key factors that can affect molecular dynamics simulations; simulation ensembles, the distance cut-off for an interatomic potential, and the use of periodic boundary conditions.
+Finally, a range of key factors that can affect MD simulations are discussed; simulation ensembles, the distance cut-off for an interatomic potential, and the use of periodic boundary conditions.
 
-\subsubsection{\texttt{pylj} and interaction with scattering}
-The final aspect of the resource covers using molecular dynamics simulations to understand scattering profiles.
-This is presented as a practical example, using the \texttt{pylj} package \cite{mccluskey_pylj_2018,mccluskey_arm61/pylj_2019-2}.
-A two-dimensional molecular dynamics simulation of argon atoms interacting through a Lennard-Jones potential is demonstrated.
+\textbf{\texttt{pylj} and interaction with scattering:} The later aspect of the resource covers using MD simulations to understand scattering profiles.
+This is presented as a practical example, using the \texttt{pylj} package.\autocite{mccluskey_pylj_2018,mccluskey_arm61/pylj_2019-2}
+A two-dimensional MD simulation of argon atoms interacting through a Lennard-Jones potential is demonstrated.
 The users are first shown this working \texttt{pylj} simulation and invited to interact with the simulation and the custom plotting functionality of \texttt{pylj}.
-The concept of a radial distribution function (RDF) is then shown, and the user is given the opportunity to run some \texttt{pylj} simulations with the RDF being output alongside the simulation window.
-Next, the Debye equation \cite{debye_zerstreuung_1915} is presented and it is shown how it may be used to calculate scattering data from a simulation.
+The concept of an RDF is then shown, and the user is given the opportunity to run some \texttt{pylj} simulations with the RDF being output alongside the simulation window.
+Next, the Debye equation\autocite{debye_zerstreuung_1915} is presented and it is shown how it may be used to calculate scattering data from a simulation.
 The user is invited to observe the effect of simulation temperature on the resulting scattering profile.
-We finish by discussing alternative, faster, algorithms for calculating scattering profiles, such as the Fibonacci Sequence or Golden Vectors method \cite{watson_rapid_2013,svergun_solution_1994}
+There is also a short discussion of alternative, faster, algorithms for calculating scattering profiles, such as the Fibonacci Sequence or Golden Vectors method.\autocite{watson_rapid_2013,svergun_solution_1994}
 
-\subsubsection{``Real'' simulation and scattering}
-Having shown the development of a scattering profile from an idealised system, we then direct the user to a popular resource for the GROMACS \cite{berendsen_gromacs_1995} molecular dynamics software.
-This resource gives a quick introduction to using GROMACS to simulate a lysozyme molecule in buffer \cite{lemkul_gromacs_nodate}.
-The student may then use their own simulated trajectory or one that can be downloaded from the OER.
-We show how the system may be visualised, introduce the \texttt{MDAnalysis} Python package for the analysis of molecular dynamics trajectories \cite{michaud-agrawal_mdanalysis_2011,gowers_mdanalysis_2016}, and show the scattering profile developed from the lysozyme simulation compared with experimental data \cite{franke_correlation_2015}.
-The module finished by pointing the student to resources to more easily resolve scattering data from the molecular simulation, such as SASSIE and CRYSOL \cite{perkins_atomistic_2016,svergun_crysol_1995}.
-The focus of this resource is to introduce simulation methodologies to users of scattering to aid their understanding, not to derive the exact mechanics of the calculation fo scattering from a simulation.
+\textbf{``Real'' simulation and scattering:} Having shown the development of a scattering profile from an idealised system, the user is directed to a popular resource for the GROMACS\autocite{berendsen_gromacs_1995} MD software.
+This resource gives a quick introduction to using GROMACS to simulate a lysozyme molecule in buffer.\autocite{lemkul_gromacs_nodate}
+The user may then use their own simulated trajectory or one that can be downloaded from the OER.
+It is shown how the system may be visualised, introducing the \texttt{MDAnalysis} Python package for the analysis of MD trajectories,\autocite{michaud-agrawal_mdanalysis_2011,gowers_mdanalysis_2016} and show the scattering profile developed from the lysozyme simulation compared with experimental data.\autocite{franke_correlation_2015}
+The module finishes by pointing the student to resources to more easily resolve scattering data from the molecular simulation, such as SASSIE and CRYSOL.\autocite{perkins_atomistic_2016,svergun_crysol_1995}
+The focus of this resource is to introduce simulation methodologies to users of scattering to aid their understanding, not to derive the exact mechanics of the calculation of scattering from a simulation.
 Resources for this purpose already exist and have well-developed tutorials, so it is not necessary to recreate such software here.

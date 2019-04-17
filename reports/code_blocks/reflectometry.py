@@ -1,29 +1,11 @@
+# Copyright 2015-2019 A. R. J. Nelson
+# Australian Nuclear Science and Technology Organisation
+# Licensed under the BSD 3-Clause "New" or "Revised" License
+
 import numpy as np
 
 
 def abeles(q_values, sld, d):
-    """
-    Calculates the reflectometry from a set of layers of a given
-    scattering length density.
-
-    Parameters
-    ----------
-    q_values: float, array-like
-        The q-vector values over which the reflectometry is to be
-        calculated.
-    sld: float, array-like
-        An array of scattering length densities of length N, where
-        N is the number of layers present.
-    d: float, array-like
-        An array of thicknesses of length N, where N is the number
-        of layers present.
-
-    Returns
-    -------
-    float, array-like
-        The reflected intensity over the given q-vector values.
-
-    """
     R = np.zeros_like(q_values)
     kn = np.sqrt(
         q_values[:, np.newaxis] ** 2.0 / 4.0 - 4.0 * np.pi * sld

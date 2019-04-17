@@ -5,21 +5,21 @@ import seaborn as sns
 sns.set(palette="colorblind")
 import matplotlib as mpl
 
-mpl.rcParams["xtick.labelsize"] = 8
-mpl.rcParams["ytick.labelsize"] = 8
+mpl.rcParams["xtick.labelsize"] = 10
+mpl.rcParams["ytick.labelsize"] = 10
 mpl.rcParams["axes.facecolor"] = "w"
 mpl.rcParams["lines.linewidth"] = 2
 mpl.rcParams["xtick.top"] = False
 mpl.rcParams["xtick.bottom"] = True
 mpl.rcParams["ytick.left"] = True
 mpl.rcParams["grid.linestyle"] = ""
-mpl.rcParams["legend.fontsize"] = 8
+mpl.rcParams["legend.fontsize"] = 10
 mpl.rcParams["legend.facecolor"] = [1, 1, 1]
 mpl.rcParams["legend.framealpha"] = 0.75
-mpl.rcParams["axes.labelsize"] = 8
+mpl.rcParams["axes.labelsize"] = 10
 mpl.rcParams["axes.linewidth"] = 1
 mpl.rcParams["axes.edgecolor"] = "k"
-mpl.rcParams["axes.titlesize"] = 8
+mpl.rcParams["axes.titlesize"] = 10
 
 import sys
 
@@ -63,7 +63,7 @@ def rough(x, a):
 
 dd, ss = curve_fit(rough, data[0], data[1], bounds=((-25), (15)))
 
-fig, ax2 = plt.subplots(figsize=(5, 25/8))
+fig, ax2 = plt.subplots(figsize=(4.13, 3.51))
 ax2.errorbar(data_h[0], data_h[1], yerr=data_h[2], marker='o', color=sns.color_palette()[2])
 ax2.errorbar(data_t[0], data_t[1], yerr=data_t[2], marker='o', color=sns.color_palette()[3])
 ax = ax2.twinx()
@@ -77,4 +77,4 @@ ax2.set_ylabel('Intrinsic density of lipid/Å$^{-3}$')
 ax.set_ylim([0, 0.04])
 ax2.set_ylim([0, 0.0025])
 plt.tight_layout()
-plt.savefig('../reports/figures/reflectometry2/water_{}.pdf'.format(sp))
+plt.savefig('../reports/figures/reflectometry2/water_{}.pdf'.format(sp), bbox_inches='tight', pad_inches=0.1)
