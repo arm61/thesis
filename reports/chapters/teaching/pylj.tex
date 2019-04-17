@@ -7,11 +7,11 @@ From the beginning, this software was designed to operate in the Jupyter Noteboo
 
 \subsection{Software design}
 \texttt{pylj} was designed such that it may be operated at a series of different levels of abstraction.
-For example, an educator could write a simple function to allow the running of a MD simulation\footnote{An example of this can be seen in Code Block~\ref{cb:pyljmd}.} or an interested student could manually interact with the source code.
+For example, an educator could write a simple function to allow the running of an MD simulation\footnote{An example of this can be seen in Code Block~\ref{cb:pyljmd}.} or an interested student could manually interact with the source code.
 This abstraction is achieved through the modular design of pylj, where the \texttt{md.py} module implements all of the functionality related to MD simulation.
 The simulation is controlled by an overarching \texttt{System} class, which contains all of the information regarding the simulation that has been/is running.
 %
-\begin{listing}
+\begin{listing}[t]
     \centering
     \caption{An example of an NVT (constant number of particles, volume, and temperatre) ensemble MD algorithm as implemented in \texttt{pylj}. The input variables are \texttt{number\_of\_particles} which is the number of particles in the simulation, \texttt{temperature} which is the temperature of the simulation in Kelvin, \texttt{box\_length} which is the size of the simulation cell edge in \AA ngstrom, and \texttt{number\_of\_steps} which is the number of MD iteractions to be performed. This will return a \texttt{pylj.System} class object containing a full description of the simulation.}
     \lstinputlisting[nolol]{reports/code_blocks/pyljmd.py}
@@ -27,16 +27,16 @@ This means that a \texttt{pylj} simulation without the compiled C functions is n
 Furthermore, this speed is now comparable to the length of time taken to render the visualisation, meaning that the pairwise interactions are no longer the rate determining step in the use of \texttt{pylj}.
 
 The \texttt{sample.py} module is integral to the utility of \texttt{pylj}, as this allows educators to easily create custom visualisation environments.
-Using this module, is it possible to create a MD simulation that enables the plotting of a huge variety of outputs.
+Using this module, is it possible to create an MD simulation that enables the plotting of a huge variety of outputs.
 Plots such as instantaneous pressure against time, radial distribution function,\footnote{Abbreviated to RDF.}  and instantaneous temperature histogram are included in \texttt{pylj} and it is easy for the users to create custom plots or build visualisations where multiple plots can be presented together.
 
 Currently, the \texttt{forcefield.py}\footnote{Forcefield is another word to describe a potential model.} module is the location where the potential model may be defined.
 This involves the definition of a single function that describes the potential model,\footnote{Code Block~\ref{cb:pyljlj} gives the function for the Lennard-Jones potential model.} with a Boolean flag that defines where the force or energy should be returned.
 In future, for a planned \texttt{pylj} \num{2.0}, the potential model definition will be adapted such that each model is an individual class containing functions for each of the different parameters to be calculated.
 This will more easily allow the growth of \texttt{pylj} to enable features such as particles that have different potential model parameterisations and the inclusion of mixing rules.
-This will also allow for the development of more complex potential models, such as those that allow for long range electrostatic interaction that are not currently possible.
+This will also allow for the development of more complex potential models, such as those that allow for long-range electrostatic interaction that are not currently possible.
 %
-\begin{listing}
+\begin{listing}[t]
     \centering
     \caption{The Lennard-Jones potential model as implemented in \texttt{pylj}. The input variables are \texttt{dr} which is an array of floats describing the distences between the pairs of particles, \texttt{constants} which is an array of two floats giving the $A$ and $B$ parameters for the Lennnard-Jones function, and the Boolen \texttt{force} which if true return the negative of the first derivative of the energy. This returns either the potential energy or the force depending on the \texttt{force} Boolen.}
     \lstinputlisting[nolol]{reports/code_blocks/pyljlj.py}
@@ -52,14 +52,14 @@ Often this is introduced with pictorial examples showing a two-dimensional repre
 \texttt{pylj} is capable of easily reproducing these diagram, as shown in Figure~\ref{fig:matter}, while increasing student engagement by representing a ``real'' chemical system in thermal motion.
 \texttt{pylj} was recently used by Dr Benjamin Morgan of the University of Bath for such a demonstration in a seminar introducing chemical simulation to a cohort of mathematicians.
 %
-\begin{marginfigure}
+\begin{figure}[t]
     \centering
-    \includegraphics[width=\linewidth]{teaching/pyljsolid}
-    \includegraphics[width=\linewidth]{teaching/pyljliquid}
-    \includegraphics[width=\linewidth]{teaching/pyljgas}
+    \includegraphics[width=0.32\textwidth]{teaching/pyljsolid}
+    \includegraphics[width=0.32\textwidth]{teaching/pyljliquid}
+    \includegraphics[width=0.32\textwidth]{teaching/pyljgas}
     \caption{A snapshot of a \texttt{pylj} MD simulation for: (a) a solid, (b) a liquid, and (c) a gas.}
     \label{fig:matter}
-\end{marginfigure}
+\end{figure}
 %
 
 \subsection{Applications: Ideal gas law}
@@ -69,7 +69,7 @@ At low particle densities, where the interactions of the particles are unlikely,
 However, as the particle density increases such that the inter-particle interactions are more frequent, deviations are observed in agreement with the van der Waals equation, as can be seen from Figure~\ref{fig:vdw}.
 Using this exercise, it is possible to introduce a cohort of students to the insight available from chemical simulation, without a significant focus on the simulation methods increasing the accessibility to students in the first or second year of their undergraduate course.
 %
-\begin{figure}
+\begin{figure}[b]
     \centering
     \includegraphics[width=\textwidth]{teaching/pyljvdw}
     \caption{The deviation from the ideal gas law observed using \SI{0.1}{\nano\second} \texttt{pylj} simulations (blue circle), the ideal gas law is shown with a solid orange line, which the van der Waals equation of state is shown with a solid green line.}
@@ -85,8 +85,8 @@ The MD algorithm presented above is simple and clear to implement, allowing the 
 
 \subsection{Comparison to other packages}
 The open-source nature of the \texttt{pylj} package allows the 5R activities to take place, meaning that anyone cause use part or all of \texttt{pylj} to improve their own teaching.
-This is not available from other software packages that provide a visualisation environnment for the simulation.
-In addition to allowing for the 5R activities, the fact that ths source code is available allows users to read the underlying code and therefore better understand the computational methodology taking place.
+This is not available from other software packages that provide a visualisation environment for the simulation.
+In addition to allowing for the 5R activities, the fact that the source code is available allows users to read the underlying code and therefore better understand the computational methodology taking place.
 
 The fact that \texttt{pylj} has been built on the popular Jupyter Notebooks framework means that there is a low barrier of entry to using the software.\footnote{For example, it is not necessary to install anything as it is possible to run a centrally supported Jupyter Notebook hub that provides access to \texttt{pylj} online.}
 This is currently the case for the use of \texttt{pylj} in the ``The interaction between simulation and scattering'' OER discussed below.

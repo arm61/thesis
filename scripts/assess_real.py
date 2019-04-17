@@ -80,5 +80,5 @@ ax.errorbar(data3[0], data3[1], marker='o', ls='', yerr=data3[2])
 ax.set_xscale('log')
 
 plt.tight_layout()
-plt.savefig("../reports/figures/smallangle/{}_assess{}.pdf".format(which, num))
+plt.savefig("../reports/figures/smallangle/{}_assess{}.pdf".format(which, num), bbox_inches='tight', pad_inches=0.1)
 plt.close()

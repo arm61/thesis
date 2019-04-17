@@ -1,10 +1,8 @@
-\chapter{Additional tables and plot from Chapter~\ref{reflectometry2}}
-
-\ref{refl2app}
-
-This appendix contains additional plots and tables associated with Chapter~\ref{reflectometry2}. 
+\chapter{Additional tables and plot from Chapter 4}
+\label{refl2}
+This appendix contains additional plots and tables associated with Chapter~\ref{reflectometry2}.
 Figures~\ref{fig:dspcccref20}-\ref{fig:dspcccref50} give the NR and SLD profiles for the chemically-consistent model alongside those obtained directly from MD simulations at an APM associated with surface pressures of \SIlist{20;40;50}{\milli\newton\per\meter}.
-The equivalent data at a APM associated with a surface pressure of \SI{30}{\milli\newton\per\meter} can be found in Figure~\ref{tab:dspcccref30}. 
+The equivalent data at a APM associated with a surface pressure of \SI{30}{\milli\newton\per\meter} can be found in Figure~\ref{fig:dspcccref30}.
 %
 \begin{figure}
     \centering
@@ -18,6 +16,7 @@ The equivalent data at a APM associated with a surface pressure of \SI{30}{\mill
 %
 %
 \begin{figure}
+\forceversofloat
     \centering
     \includegraphics[width=0.49\textwidth]{reflectometry2/dspc_40_ref_sld}
     \includegraphics[width=0.49\textwidth]{reflectometry2/dspc_slipids_40_ref_sld}\\
@@ -39,8 +38,8 @@ The equivalent data at a APM associated with a surface pressure of \SI{30}{\mill
 \end{figure}
 %
 
-Tables~\ref{tab:chi20}-\ref{tab:chi50} give the figure of merit for agreement between the model and the data from each of the analysis method at a APM associated with a surface pressure of \SIlist{20;40;50}{\milli\newton\per\meter}. 
-The equivalent data at a APM associated with a surface pressure of \SI{30}{\milli\newton\per\meter} can be found in Table~\ref{tab:chi}. 
+Tables~\ref{tab:chi20}-\ref{tab:chi50} give the figure of merit for agreement between the model and the data from each of the analysis method at a APM associated with a surface pressure of \SIlist{20;40;50}{\milli\newton\per\meter}.
+The equivalent data at a APM associated with a surface pressure of \SI{30}{\milli\newton\per\meter} can be found in Table~\ref{tab:chi}.
 %
 \begin{table}
     \centering
@@ -49,7 +48,8 @@ The equivalent data at a APM associated with a surface pressure of \SI{30}{\mill
     \label{tab:chi20}
     \begin{tabular}{l | l l l l}
         \toprule
-        Contrast & Chemically-consistent & Slipids & Berger & MARTINI \\
+         & Chemically- & & & \\
+        Contrast & consistent & Slipids & Berger & MARTINI \\
         \midrule
         h-\ce{D2O} & \input{output/reflectometry2/dspc_20/dspc_20_hd2o_chi.txt} & \input{output/reflectometry2/dspc_20/dspc_slipids_20_hd2o_chi.txt} & \input{output/reflectometry2/dspc_20/dspc_berger_20_hd2o_chi.txt} & \input{output/reflectometry2/dspc_20/dspc_martini_20_hd2o_chi.txt} \\
         d$_{13}$-\ce{D2O} & \input{output/reflectometry2/dspc_20/dspc_20_d13d2o_chi.txt} & \input{output/reflectometry2/dspc_20/dspc_slipids_20_d13d2o_chi.txt} & \input{output/reflectometry2/dspc_20/dspc_berger_20_d13d2o_chi.txt} & \input{output/reflectometry2/dspc_20/dspc_martini_20_d13d2o_chi.txt} \\
@@ -72,7 +72,8 @@ The equivalent data at a APM associated with a surface pressure of \SI{30}{\mill
     \label{tab:chi40}
     \begin{tabular}{l | l l l l}
         \toprule
-        Contrast & Chemically-consistent & Slipids & Berger & MARTINI \\
+        & Chemically- & & & \\
+        Contrast & consistent & Slipids & Berger & MARTINI \\
         \midrule
         h-\ce{D2O} & \input{output/reflectometry2/dspc_40/dspc_40_hd2o_chi.txt} & \input{output/reflectometry2/dspc_40/dspc_slipids_40_hd2o_chi.txt} & \input{output/reflectometry2/dspc_40/dspc_berger_40_hd2o_chi.txt} & \input{output/reflectometry2/dspc_40/dspc_martini_40_hd2o_chi.txt} \\
         d$_{13}$-\ce{D2O} & \input{output/reflectometry2/dspc_40/dspc_40_d13d2o_chi.txt} & \input{output/reflectometry2/dspc_40/dspc_slipids_40_d13d2o_chi.txt} & \input{output/reflectometry2/dspc_40/dspc_berger_40_d13d2o_chi.txt} & \input{output/reflectometry2/dspc_40/dspc_martini_40_d13d2o_chi.txt} \\
@@ -95,7 +96,8 @@ The equivalent data at a APM associated with a surface pressure of \SI{30}{\mill
     \label{tab:chi50}
     \begin{tabular}{l | l l l l}
         \toprule
-        Contrast & Chemically-consistent & Slipids & Berger & MARTINI \\
+        & Chemically- & & & \\
+       Contrast & consistent & Slipids & Berger & MARTINI \\
         \midrule
         h-\ce{D2O} & \input{output/reflectometry2/dspc_50/dspc_50_hd2o_chi.txt} & \input{output/reflectometry2/dspc_50/dspc_slipids_50_hd2o_chi.txt} & \input{output/reflectometry2/dspc_50/dspc_berger_50_hd2o_chi.txt} & \input{output/reflectometry2/dspc_50/dspc_martini_50_hd2o_chi.txt} \\
         d$_{13}$-\ce{D2O} & \input{output/reflectometry2/dspc_50/dspc_50_d13d2o_chi.txt} & \input{output/reflectometry2/dspc_50/dspc_slipids_50_d13d2o_chi.txt} & \input{output/reflectometry2/dspc_50/dspc_berger_50_d13d2o_chi.txt} & \input{output/reflectometry2/dspc_50/dspc_martini_50_d13d2o_chi.txt} \\
@@ -111,10 +113,11 @@ The equivalent data at a APM associated with a surface pressure of \SI{30}{\mill
 \end{table}
 %
 
-The solvent penetration at APMs associated with surface pressures of \SIlist{20;40;50}{\milli\newton\per\meter} is shown in Figures~\ref{fig:waters20}-\ref{fig:waters50} using the intrinsic density profile. 
+The solvent penetration at APMs associated with surface pressures of \SIlist{20;40;50}{\milli\newton\per\meter} is shown in Figures~\ref{fig:waters20}-\ref{fig:waters50} using the intrinsic density profile.
 The equivalent figure for an APM associated with a surface pressure of \SI{30}{\milli\newton\per\meter} can be found in Figure~\ref{fig:waters30}.
 %
 \begin{figure}
+\forcerectofloat
     \centering
     \includegraphics[width=\textwidth]{reflectometry2/water_20}
     \caption{The simulation time-averaged intrinsic density profile of the water molecules (blue dots), and phospholipid components (head groups: green dots, tail groups: red dots) at an APM associated with a surface pressure of \SI{20}{\milli\newton\per\meter}, where the phosphorus atoms of the phospholipid heads create the intrinsic surface at $z=0$\si{\angstrom}, and the equivalent number density from the chemically-consistent model (orange line).}
@@ -123,6 +126,7 @@ The equivalent figure for an APM associated with a surface pressure of \SI{30}{\
 %
 %
 \begin{figure}
+\forcerectofloat
     \centering
     \includegraphics[width=\textwidth]{reflectometry2/water_40}
     \caption{The simulation time-averaged intrinsic density profile of the water molecules (blue dots), and phospholipid components (head groups: green dots, tail groups: red dots) at an APM associated with a surface pressure of \SI{40}{\milli\newton\per\meter}, where the phosphorus atoms of the phospholipid heads create the intrinsic surface at $z=0$\si{\angstrom}, and the equivalent number density from the chemically-consistent model (orange line).}
@@ -138,7 +142,7 @@ The equivalent figure for an APM associated with a surface pressure of \SI{30}{\
 \end{figure}
 %
 
-The quantification of the interfacial roughness determined from the Slipids simulations at APMs associated with surface pressures of \SIlist{20;40;50}{\milli\newton\per\meter} are given in Tables~\\ref{tab:spread1}-\ref{tab:spread4}. 
+The quantification of the interfacial roughness determined from the Slipids simulations at APMs associated with surface pressures of \SIlist{20;40;50}{\milli\newton\per\meter} are given in Tables~\\ref{tab:spread1}-\ref{tab:spread4}.
 The equivalent data for an APM associated with a surface pressure of \SI{30}{\milli\newton\per\meter} can be found in Table~\ref{tab:spread2}.
 %
 \begin{table}
@@ -190,6 +194,7 @@ The equivalent data for an APM associated with a surface pressure of \SI{30}{\mi
 %
 %
 \begin{table}
+\forcerectofloat
 \centering
 \small
   \caption{\ The mean, \SI{95}{\percent} quantile, and their spread for the \emph{z}-dimension position of atoms representative of difference parts of the phospholipid, at an APM associated with a surface pressure of \SI{50}{\milli\newton\per\meter}.}

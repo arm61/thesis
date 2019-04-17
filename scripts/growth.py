@@ -33,13 +33,13 @@ data = {'years':[2002, 2003, 2004, 2005, 2006, 2007,
 
 df = pd.DataFrame(data)
 
-fig, ax1 = plt.subplots(figsize=(4.13, 3.51*0.5))
+fig, ax1 = plt.subplots(figsize=(4.13, 3.51*0.7))
 
 ax1.plot(df['years'], df['sasmd'] / df['sas'] * 100, 'o')
 ax1.set_xlabel('Year')
-ax1.set_ylabel('Percentage of Publications')
+ax1.set_ylabel('Percentage of\nPublications')
 ax1.set_xticks([2002, 2006, 2010, 2014, 2018])
 ax1.set_yticks([0, 10, 20])
 plt.tight_layout()
-plt.savefig('../reports/figures/teaching/chem_data_py.pdf')
+plt.savefig('../reports/figures/teaching/chem_data_py.pdf', bbox_inches='tight', pad_inches=0.1)
 plt.close()

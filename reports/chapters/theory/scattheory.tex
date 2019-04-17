@@ -1,19 +1,20 @@
 \section{Scattering}
 \label{sec:scattering}
+The use of scattering techniques to probe soft condensed matter systems is commonplace.
+This work will focus on the use of small angle scattering\footnote{SAS.} and reflectometry techniques.
+These are particularly appropriate for application to soft condensed matter systems due to the length scales capable of being probed being similar to the persistence length of the soft condensed matter systems.
+The length scale covered for such techniques is from around \SIrange{1}{300}{\nano\metre}, as is shown in Figure~\ref{fig:lengths}.
+The focus is on the equilibrium structure(s) of a material, and therefore there is no interest in the system dynamics, meaning that exclusively elastic scattering techniques may be used, where there is no energy transfer between the probing radiation and the material.
+This is in contrast to inelastic scattering where energy transfer occurs; facilitating the measurement of system dynamics, such as the dynamical modes of polymers and phospholipid bilayers\autocite{garcia_sakai_quasielastic_2009, farago_recent_2009}
 %
-\begin{figure}
+\begin{figure}[t]
+    \forceversofloat
     \centering
     \includegraphics[width=\textwidth]{theory/length}
     \caption{A representation of how different techniques can be used to probe various length scales. Reprinted, with permission of Oxford University Press, from \cite{sivia_elementary_2011}.}
     \label{fig:lengths}
 \end{figure}
 %
-The use of scattering techniques to probe soft condensed matter systems is commonplace.
-This work will focus on the use of small angle scattering\footnote{Generally abbreviated to SAS; with SAXS indicating the use of X-rays and SANS neutrons} and reflectometry techniques.
-These are particularly appropriate for application to soft condensed matter systems due to the length scales capable of being probed being similar to the persistence length of the soft condensed matter systems.
-The length scale covered for such techniques is from around \SIrange{1}{300}{\nano\metre}, as is shown in Figure~\ref{fig:lengths}.
-The focus is on the equilibrium structure(s) of a material, and therefore there is no interest in the system dynamics, meaning that exclusively elastic scattering techniques may be used, where there is no energy transfer between the probing radiation and the material.
-This is in contrast to inelastic scattering where energy transfer occurs; facilitating the measurement of system dynamics, such as the dynamical modes of polymers and phospholipid bilayers\autocite{garcia_sakai_quasielastic_2009, farago_recent_2009}
 
 Both X-ray and neutron scattering techniques are discussed and used in this work.
 From an experimental viewpoint, there are significant differences between an X-ray scattering and a neutron scattering experiment.
@@ -55,9 +56,9 @@ From this, and Equation~\ref{equ:wavevec}, the value of $q$, where $q = |\mathbf
 \end{equation}
 %
 %
-\begin{figure}
+\begin{figure}[t]
     \centering
-    \includegraphics[width=0.7\textwidth]{theory/scatvec}
+    \includegraphics[width=\textwidth]{theory/scatvec}
     \caption{A vector diagram describing an elastic scattering event, where $\mathbf{k}_i$ is the incident wavevector, $\mathbf{k}_f$ is the final wavevector, $2\theta$ is the scattering angle, and $\mathbf{q}$ is the scattering vector. Adapted, with permission of Oxford University Press, from \cite{sivia_elementary_2011}.}
     \label{fig:scatvec}
 \end{figure}
@@ -116,7 +117,7 @@ Hence the final scattered wave has the form,
 %
 where, $b$ is the scattering length discussed in Section~\ref{convar}.
 %
-\begin{marginfigure}[-6cm]
+\begin{marginfigure}
     \centering
     \includegraphics[width=\linewidth]{theory/singleatom}
     \caption{A schematic showing the propagation of the wave of probing radiation (green lines) radially outwards following the scattering event, where $r$ is the magnitude of the displacement vector. Adapted, with permission of Oxford University Press, from \cite{sivia_elementary_2011}.}
@@ -144,7 +145,8 @@ This allows the total scattered wave to be defined as a summation of the contrib
 %
 Equation~\ref{equ:scatter} holds true, within the Born approximation, where the scattered wave has no impact on the incident wave and each wave is scattered only once.
 %
-\begin{figure}
+\begin{figure}[t]
+    \forcerectofloat
     \centering
     \includegraphics[width=\textwidth]{theory/multiatom}
     \caption{A schematic showing the interaction of radition scattered by two particles that are separated by the vector $\mathbf{R}_j$. Adapted, with permission of Oxford University Press, from \cite{sivia_elementary_2011}.}
@@ -182,7 +184,7 @@ Therefore, the differential cross section, defined in Equation~\ref{equ:dsc} can
 \subsection{Scattering length density}
 \label{sec:sld}
 While it may be helpful to consider the scattering from multiple particles individually, where each particle has a scattering length, $b$.
-In practice, due to low experimental resolution at small angles, it is more common to consider the scattering length density,\footnote{Abbreviated to SLD.} of the system,
+In practice, due to low experimental resolution at small angles, it is more common to consider the SLD of the system,
 %
 \begin{equation}
     \text{SLD} = \frac{1}{V}\sum_{i=0}^{N} b_i,
@@ -196,7 +198,7 @@ A result of this equation is the ability to rewrite Equation~\ref{equ:sca} as,
     \label{equ:sldsca}
 \end{equation}
 %
-This equation shows that the scattering differential cross-section from some object is related to the scattering length density profile of that object by a Fourier transform.
+This equation shows that the scattering differential cross-section from some object is related to the SLD profile of that object by a Fourier transform.
 
 \subsection{Model-dependent analysis}
 \label{sec:moddep}
@@ -207,7 +209,7 @@ However, the necessity of the inclusion of \emph{a priori} information within mo
 While this is undesirable, these assumptions can, and should, be educated based on the chemical information present.\autocite[][such as the propensity for twin-tailed phospholipid molecules to form monolayers at an air-water interface or small surfactants to form micelles in solution.]{mccluskey_model-dependent_2018}
 
 The scattering from the model system is determined, using technique specific methods that are discussed in detail in later sections.
-This is then compared with the experimental data using some figure of merit, the model is then varied to find the best possible model for the data provided.\footnote{This typically uses some optimisation algorithm to determine the best solution, the particular algorithms used in this work are dicussed in Section~\ref{sec:optimisation}.}
+This is then compared with the experimental data using some figure of merit, the model is then varied to find the best possible model for the data provided.\footnote{This typically uses some optimisation algorithm to determine the best solution, the particular algorithms used in this work are discussed in Section~\ref{sec:optimisation}.}
 In order to accurately reproduce the experimental measurement, it is necessary to include some instrumental resolution function, $res(q)$, in the modelling procedure.
 This is instrument-specific, although it may be approximated by convolving the experimental dataset with some Gaussian smearing function, the modelled intensity can then be determined from,\autocite{nelson_towards_2013-1,nelson_towards_2014}
 %
@@ -227,7 +229,8 @@ The geometry of a reflectometry experiment is shown in Figure~\ref{fig:refgeo}, 
 Reflectometry measurements give information about the structure perpendicular to the interface, the \emph{z}-dimension in Figure~\ref{fig:refgeo}, and therefore the analysis of reflectometry data is founded on the assumption that the layers will be completely homogenous in the plane of the interface, the \emph{xy}-plane in Figure~\ref{fig:refgeo}.
 In reality, since the layers are usually not completely homogeneous, an average is obtained for the area in the radiation beam.
 %
-\begin{figure}
+\begin{figure}[t]
+    \forcerectofloat
     \centering
     \includegraphics[width=0.8\textwidth]{theory/reflectgeo}
     \caption{A schematic showing the geometry of a typical specular reflectometry experiment from a layered sample. Reprinted, with permission of Oxford University Press, from \cite{sivia_elementary_2011}.}
@@ -247,15 +250,15 @@ It is clear from Equation~\ref{equ:refl} that the value of the measured reflecto
 
 There are two model-dependent analysis techniques that can be applied to the understanding of a reflectometry dataset.
 The first is the kinematic approach, which can be described with Equation~\ref{equ:sca}, from the assumption that $q_x = 0$ and $q_y = 0$, as only the specular scattering is being measured.
-This approach models the reflectometry as a function of the scattering length density profile in the \emph{z}-dimension, $\text{SLD}(z)$,
+This approach models the reflectometry as a function of the SLD profile in the \emph{z}-dimension, $\text{SLD}(z)$,
 %
 \begin{equation}
     R(q) \approx \frac{16\pi^2}{q^4}\bigg|\int_{-\infty}^{+\infty}\frac{\text{d}\text{SLD}(z)}{\text{d}z}\exp{(-\mathbf{i}zq_z)}\text{d}z\bigg|^2,
     \label{kine}
 \end{equation}
 %
-where, $\sfrac{\text{d}\text{SLD}(z)}{\text{d}z}$ is the first derivative of the scattering length density profile.
-However, this method has a significant problem, which can be demonstrated by applying Equation~\ref{equ:kine} to the scattering length density profile of a bare silicon substrate, which can be modelled as a Heaviside function, as shown in Figure~\ref{fig:kine}(a),
+where, $\sfrac{\text{d}\text{SLD}(z)}{\text{d}z}$ is the first derivative of the SLD profile.
+However, this method has a significant problem, which can be demonstrated by applying Equation~\ref{kine} to the SLD profile of a bare silicon substrate, which can be modelled as a Heaviside function, as shown in Figure~\ref{fig:kine}(a),
 %
 \begin{equation}
     \text{SLD}(z) =
@@ -265,21 +268,21 @@ However, this method has a significant problem, which can be demonstrated by app
   \end{cases}
 \end{equation}
 %
-where, $\text{SLD}_{\text{Si}}$ is the scattering length density of pure silicon.\footnote{This is \SI{2.1e-6}{\angstrom^{-2}} for neutrons.}
+where, $\text{SLD}_{\text{Si}}$ is the SLD of pure silicon.\footnote{This is \SI{2.1e-6}{\angstrom^{-2}} for neutrons.}
 The derivative of a stepwise Heaviside function is a scaled $\delta$-function, as shown in Figure~\ref{fig:kine}(b),
 %
 \begin{equation}
     \text{SLD}'(z) = \text{SLD}_{\text{Si}}\delta(z).
 \end{equation}
 %
-Then, as in Equation~\ref{equ:kine}, the Fourier transform of this $\delta$-function is taken,
+Then, as in Equation~\ref{kine}, the Fourier transform of this $\delta$-function is taken,
 %
 \begin{equation}
     \text{SLD}_{\text{Si}}\int_{-\infty}^{+\infty}\delta(z)\exp{(-\mathbf{i}zq_z)}\text{d}z = \text{SLD}_{\text{Si}}\exp(0) = \text{SLD}_{\text{Si}}.
     \label{equ:rhosi}
 \end{equation}
 %
-This means that, using Equations~\ref{equ:rhosi} and \ref{equ:kine}, the reflectometry profile could be calculated from the following relationship,
+This means that, using Equations~\ref{equ:rhosi} and \ref{kine}, the reflectometry profile could be calculated from the following relationship,
 %
 \begin{equation}
     R(q)\approx \frac{16\pi^2\text{SLD}_{\text{Si}}^2}{q_z^4}.
@@ -290,10 +293,10 @@ It can be seen that for low values of $q$ the calculated reflectometry is greate
 This break down of the kinematic approach is due to the assumption present in this approach that the Born approximation\footnote{Mentioned previously in Section~\ref{sec:multiscat}.} will hold.
 However, in the reflectometry scattering geometry, this is no longer true rendering the kinematic approach invalid.
 %
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{theory/kine}
-    \caption{A graphical representation of the kinematic approach; (a) the Heaviside function describing the scattering length density profile of a bare silicon substrate, (b) the $\delta$-function arising from the first derivative of the function in (a), and (c) the reflectometry profile resulting from the kinemtic approach, where the orange line at $R=1$ identifies the break down between experimental and theory in the kinematic approach. Adapted, with permission of Oxford University Press, from \cite{sivia_elementary_2011}.}
+    \caption{A graphical representation of the kinematic approach; (a) the Heaviside function describing the SLD profile of a bare silicon substrate, (b) the $\delta$-function arising from the first derivative of the function in (a), and (c) the reflectometry profile resulting from the kinemtic approach, where the orange line at $R=1$ identifies the break down between experimental and theory in the kinematic approach. Adapted, with permission of Oxford University Press, from \cite{sivia_elementary_2011}.}
     \label{fig:kine}
 \end{figure}
 %
@@ -321,9 +324,9 @@ and therefore the reflected radiation will never be greater than 1, while the cr
 %
 This is the angle below which a reflectometry profile will be measured.
 %
-\begin{figure}
+\begin{figure}[t]
     \centering
-    \includegraphics[width=0.85\textwidth]{theory/reflrefr}
+    \includegraphics[width=\textwidth]{theory/reflrefr}
     \caption{A schematic diagram showing the reflected ($r$) and transmitted ($t$) waves when an incident ($i$) wave enters an interface of thickness $d$, where the refractive indices of each layer are $n_0$, $n_1$, and $n_2$. Adapted, with permission of Elsevier, from \cite{foglia_studies_2015}.}
     \label{fig:reflrefr}
 \end{figure}
@@ -382,9 +385,10 @@ This adapts Equation~\ref{equ:fres} to the form,
 where, $\sigma_{n,n+1}$ is the interfacial roughness between layers $n$ and $n+1$.\autocite{nevot_caracterisation_1980}
 This has the effect of Gaussian broadening the layers into each other, as a result.
 This method\footnote{That is given programmatically in Code Block~\protect\ref{cb:refl}.} is currently implemented in a variety of reflectometry modelling software packages, such as \texttt{refnx}, MOTOFIT, RasCAL, and Aurore \autocite{nelson_refnx_2019,nelson_co-refinement_2006,hughes_rascal_nodate,gerelli_aurore_2016-1,gerelli_aurore_2016}.
-Applying this method to the scattering length density profile shown in Figure~\ref{fig:kine} gives the reflectometry profile shown with the dashed green line in Figure~\ref{fig:dyna}.
+Applying this method to the SLD profile shown in Figure~\ref{fig:kine} gives the reflectometry profile shown with the dashed green line in Figure~\ref{fig:dyna}.
 %
-\begin{listing}
+\begin{listing}[t]
+    \forcerectofloat
     \centering
     \caption{An example Python code block for the Abel\`{e}s method for the calculation of reflectometry, adapted from \cite{nelson_refnx_2019}. The input variables are \texttt{q\_values} which are the $q$-vectors at which the reflected intensity should be calculated, \texttt{sld} which is the array of scattering length densities for the layers, and \texttt{d} which is the array of thicknesses for the layers. This will return an array of floats that is the same size as the \texttt{q\_values} and contains the reflected intensities.}
     \lstinputlisting[nolol]{reports/code_blocks/reflectometry.py}
@@ -392,10 +396,10 @@ Applying this method to the scattering length density profile shown in Figure~\r
 \end{listing}
 %
 %
-\begin{figure}
+\begin{figure}[b]
     \centering
     \includegraphics[width=\textwidth]{theory/dyna}
-    \caption{A comparison of the kinematic approach (blue solid line), and the dynamical approach (green dashed line), to determine the reflected intensity from the material with the scattering length density profile given in Figure~\protect\ref{fig:kine}(a). It is clear that at low $q$, there is a noticable deviation between the two.}
+    \caption{A comparison of the kinematic approach (blue solid line), and the dynamical approach (green dashed line), to determine the reflected intensity from the material with the SLD profile given in Figure~\protect\ref{fig:kine}(a). It is clear that at low $q$, there is a noticable deviation between the two.}
     \label{fig:dyna}
 \end{figure}
 %
@@ -413,7 +417,7 @@ Hence, the use of scattering at small angles.
 \begin{marginfigure}
     \centering
     \includegraphics[width=\linewidth]{theory/scales}
-    \caption{The effect of a Fourier transform (a) the scattering length density profile for some object with a width of \SI{10}{\angstrom}, (b) the Fourier transform of this object showing the minima in the differential cross section at values of $\sfrac{2n\pi}{10}$, where $n$ is some integer.}
+    \caption{The effect of a Fourier transform (a) the SLD profile for some object with a width of \SI{10}{\angstrom}, (b) the Fourier transform of this object showing the minima in the differential cross section at values of $\sfrac{2n\pi}{10}$, where $n$ is some integer.}
     \label{fig:scales}
 \end{marginfigure}
 %
@@ -427,7 +431,7 @@ It is possible to increase the $q$-range of a SAS instrument through the introdu
 This allows the SANS2D instrument, at the ISIS Neutron and Muon Source, to have a total range from \SIrange{2e-3}{2}{\per\angstrom}.\autocite{noauthor_isis_nodate}
 Furthermore, the SANS2D instrument may leverage the ToF method discussed in Section \ref{sec:neutrons} to allow for a much shorter post sample flight path than is present at D22.
 %
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{theory/d22}
     \caption{A schematic of the D22 instrument of the ILL. Reprinted with permission of Springer Nature Customer Service Centre GmbH: Springer Nature from \cite{grillo_small-angle_2008}.}
@@ -466,7 +470,7 @@ Another common analysis of SAS data comes in the form of Porod's law, which stat
 This means that by plotting $I(q)q^4$ vs. $q$ and extrapolating to $q \rightarrow \infty$, it is possible to determine the external surface area of the system.\autocite{willis_experimental_2009}
 Using the surface area, it is then possible to qualitatively determine the ``roughness'' of the system based on the relation of the surface area to the particle size.
 %
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{theory/rg}
     \caption{The Guinier plot, (a) the ideal scattering profile from a sphere of radius \SI{20}{\angstrom}, (b) the associated Guinier plot, with a straight line (orange) at low-$q$ showing the radius of gyration to be \SI{\sim15.5}{\angstrom}.}
@@ -481,4 +485,4 @@ Therefore, when the pattern is modelled, the differential cross-section has the 
     \frac{\text{d}\sigma(q)}{\text{d}\Omega} = N_\rho\Delta\text{SLD}^2V_p^2 P(q)S(q),
 \end{equation}
 %
-where $N_\rho$ is the number density of the particles, $\Delta\text{SLD}$ is the difference in scattering length density between the particles and the solvent, $V_p$ is the particle volume, $P(q)$ is t
+where $N_\rho$ is the number density of the particles, $\Delta\text{SLD}$ is the difference in SLD between the particles and the solvent, $V_p$ is the particle volume, $P(q)$ is t

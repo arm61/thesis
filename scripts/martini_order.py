@@ -113,4 +113,4 @@ ax2.set_ylabel(r'SLD/$10^{-6}$Å$^{-2}$')
 ax2.set_xlim([-2, 70])
 plt.tight_layout()
 fig_dir = "../reports/figures/reflectometry2/"
-plt.savefig('{}martini_order.pdf'.format(fig_dir))
+plt.savefig('{}martini_order.pdf'.format(fig_dir), bbox_inches='tight', pad_inches=0.1)

@@ -30,26 +30,27 @@ Table~\ref{tab:water} provides a general consensus that the volume of the PC hea
 However, these values were all determined from experiments\autocite{sun_order_1994,kucerka_determination_2004,balgavy_evaluation_2001,pan_molecular_2012} or simulations \autocite{armen_phospholipid_1998,kucerka_scattering_2012} where the head group was interacting with water molecules.
 It is not clear if this will influence the volume that it occupies, and if that volume will change in the presence of a non-aqueous solvent.\footnote{Such as the DES considered herein.}
 The charged nature of the zwitterionic and anionic phospholipid head groups may have different interactions with the polar, but neutral water and the charged DES.\autocite{sanchez-fernandez_self-assembly_2018}
-Additionally, it is known that, on water, increased surface pressures and the associated Liquid-Expanded to Liquid-Condensed phase transition will lead to a compression of the phospholipid tail volume, compared to the values in Table~\ref{tab:water},\autocite{marsh_molecular_2010,small_lateral_1984} and that this compaction has not necessarily been accounted for in the literature.\autocite{campbell_structure_2018}
+Additionally, it is known that, on water, increased SPs and the associated Liquid-Expanded to Liquid-Condensed phase transition will lead to a compression of the phospholipid tail volume, compared to the values in Table~\ref{tab:water},\autocite{marsh_molecular_2010,small_lateral_1984} and that this compaction has not necessarily been accounted for in the literature.\autocite{campbell_structure_2018}
 
 These factors meant that it was necessary to develop a model that was appropriate for the phospholipid chemistry while applying as much of the ``best practice'' from Campbell \emph{et al.}\autocite{campbell_structure_2018} as possible, and ensuring that the head and tail group volumes were not constrained parameters.
 The lack of having these normally constrained parameters meant that it was necessary to consider methods by which the reflectometry measurements could be co-refined, in a similar fashion to contrast variation co-refinement in NR.
-This could be achieved by the co-refinement of reflectometry measurements at different surface pressures, as the model was appropriate for the phospholipid chemistry, and the different surface pressures were in the same phase.\footnote{Liquid-Condensed (LC) for DPPC and Liquid-Expanded (LE) for DMPC, DLPC, and DMPG.}
+This could be achieved by the co-refinement of reflectometry measurements at different SPs, as the model was appropriate for the phospholipid chemistry, and the different SPs were in the same phase.\footnote{Liquid-Condensed (LC) for DPPC and Liquid-Expanded (LE) for DMPC, DLPC, and DMPG.}
 Therefore the head and tail group volumes will remain constant, and only the surface concentration and tail thickness will vary.
 
 The chemically-constrained model that has been used in this work was implemented in the Python library \texttt{refnx}.\autocite{nelson_refnx_2019,nelson_refnx_2019-1}.
 The software enables the inclusion of custom model classes that feed parameters into the Abel\`{e}s model.\autocite[discussed in detail in Section~\ref{sec:refltheory}]{abeles_sur_1948,parratt_surface_1954}.
 Our chemically-consistent model class can be seen in Code Block~\ref{cb:chemconsis}, and is shared under a CC BY-SA 4.0 license in the ESI for the associated publication.\autocite{mccluskey_lipids_at_airdes_2019}
-In order to ensure that the phospholipid chemistry was consistent both within the phospholipid molecule and across the different surface pressures, Code Block~\ref{cb:const} was implemented.
+In order to ensure that the phospholipid chemistry was consistent both within the phospholipid molecule and across the different SPs, Code Block~\ref{cb:const} was implemented.
 %
-\begin{listing}
+\begin{listing}[t]
+    \forcerectofloat
     \centering
     \caption{The chemically-consistent model class that was implemented in \texttt{refnx} \cite{nelson_refnx_2019,nelson_refnx_2019-1}. The input variables are \texttt{vol} which is an array of floats containing the initial values for the head and tail group volumes, \texttt{b} which is the calculated scattering length for the head and tail groups, \texttt{d\_h} which is the initial value for the thickness of the head group region, \texttt{c\_length} which is the number of carbon atoms in the phospholipid tail, \texttt{str} which is the name to be given to the object. The \texttt{slabs} function will return an array of floats representing the scattering length density profile.}
     \lstinputlisting[nolol,firstline=1,lastline=72]{reports/code_blocks/mol_vol.py}
     \label{cb:chemconsis}
 \end{listing}
 %
-\begin{listing}
+\begin{listing}[t]
     \centering
     \caption{The \texttt{set\_constraints} that was used to impose chemical-consistency on the phospholipid monolayer structure.. The input variables are \texttt{lipids} and \texttt{structures} which are \texttt{refnx} objects that contain information about the phospholipids and monolayers, and \texttt{hold\_tails}, \texttt{hold\_rough}, and \texttt{hold\_phih} are Boolen switches to constrain the tail layer thickness, the interfacial roughness, and the volume fraction of solvent across the different measurements, in this work these were all kept as \texttt{False}.}
     \lstinputlisting[nolol,firstline=5,lastline=22]{reports/code_blocks/ref_help.py}
@@ -66,7 +67,8 @@ Based on the work of Campbell \emph{et al.},\autocite{campbell_structure_2018} a
 Therefore, any capillary wave roughness at the air-DES interface is carried conformally through the layers.
 The interfacial roughness was constrained to be greater than \SI{3.3}{\angstrom}, in agreement with previous work.\autocite{sanchez-fernandez_micellization_2016}
 %
-\begin{table}
+\begin{table}[b]
+    \forceversofloat
     \centering
   \small
     \caption{The invarient parameters within the chemically-consistent model. Values for $t_t$ were taken from the Tanford formula (\cite{tanford_hydrophobic_1980}), and the SLD values for the DES from \cite{sanchez-fernandez_micellization_2016}.}
@@ -102,8 +104,8 @@ This was achieved with the following relation,\autocite{braun_polymers_2017}
 \label{equ:phih}
 \end{equation}
 %
-The second aspect was to enforce chemically-consistant constraints across the measurements that were conducted at different surface pressures.
-This was achieved by constraining the head and tail group volumes and the head layer thickness such that they do not vary between the different surface pressure measurements.
+The second aspect was to enforce chemically-consistant constraints across the measurements that were conducted at different SPs.
+This was achieved by constraining the head and tail group volumes and the head layer thickness such that they do not vary between the different SP measurements.
 
 The justification for constraining the tail volume is built on the assumption that the phospholipids remain in the same phase.
 On water, this may be demonstrated with a Langmuir isotherm.
@@ -112,12 +114,13 @@ Instead, grazing incidence X-ray diffraction was used to confirm the phases of D
 Figure~\ref{fig:gixd} shows the grazing-incidence X-ray diffraction\footnote{Abbreviated to GIXD.} data from different phospholipids at different temperatures.
 Unfortunately, all the patterns show a weak artefact due to scattering from the Teflon trough.
 However, there are clear (2, 0) diffraction peaks in the GIXD pattern for DPPC at \SI{22}{\celsius} and DMPC at \SI{7}{\celsius} indicating that both phospholipids are in the LC phase.
-This peak was also present at other surface pressures (data not shown).
+This peak was also present at other SPs (data not shown).
 The peak position corresponded well with that found for DPPC in water.\autocite{watkins_structure_2009}
 DMPC at \SI{22}{\celsius} showed no evidence of a diffraction peak indicating the presence of the LE phase.
 It was assumed that DLPC and DMPG were also in the LE phase as there is no reason for the phase behaviour of these systems to differ significantly from that of DMPC at room temperature.
 %
-\begin{figure}
+\begin{figure}[t]
+    \forcerectofloat
     \centering
     \includegraphics[width=\textwidth]{reflectometry1/gixd}
     \caption{The GIXD patterns, where $Q_z$ is the scattering vector normal to the interface and $Q_{xy}$ is that in the plane of the interface; (a) DPPC at \SI{30}{\milli\newton\per\meter} and \SI{22}{\celsius}, (b) DMPC at \SI{30}{\milli\newton\per\meter} and \SI{22}{\celsius}, and (c) DMPC at \SI{30}{\milli\newton\per\meter} and \SI{7}{\celsius}. Note that $Q$ is equivalent to $q$.}
@@ -126,7 +129,7 @@ It was assumed that DLPC and DMPG were also in the LE phase as there is no reaso
 %
 
 Initially, this chemically-consistent modelling approach was applied only to the XRR data.
-The tail layer thickness and interfacial roughness were allowed to vary independently across the surface pressures, while the other parameters were constrained as discussed above or held constant to the values given in Table~\ref{tab:invar}.
+The tail layer thickness and interfacial roughness were allowed to vary independently across the SPs, while the other parameters were constrained as discussed above or held constant to the values given in Table~\ref{tab:invar}.
 For each co-refinement of four XRR measurements, there were, in total, eleven degrees of freedom.
 Throughout all of the analyses, the intensity scale factor was allowed to vary freely, while the background was constrained to the intensity at the largest $q$-value.
 
@@ -139,12 +142,12 @@ In both the XRR and the NR analysis, the refinement of the chemically-consistent
 The model was then optimised using the DE method that is available within the \texttt{scipy} library.\autocite{jones_scipy_nodate}
 This refined the parameters to give the best fit to the data.
 MCMC was then used to probe the search-space available to each parameter, given the experimental uncertainty of the data.
-The MCMC sampling method used was Goodman \& Weare's Affine Invarient Ensemble\autocite{goodman_ensemble_2010} as implimented in the \texttt{emcee} package.\autocite{foreman-mackey_emcee_2013}
+The MCMC sampling method used was Goodman \& Weare's Affine Invariant Ensemble\autocite{goodman_ensemble_2010} as implemented in the \texttt{emcee} package.\autocite{foreman-mackey_emcee_2013}
 This enabled the determination of the probability distribution for each of the parameters, and therefore the quantification of their inverse uncertainty, given the uncertainty in the experimental data.
-A Shapiro-Wilk test\autocite[this is a commonly test to assess the normality of a distribution]{shapiro_analysis_1965} was used to determine if the PDF fitted to a normal distrubition and therefore could be considered to have symmetric confidence intervals.
+A Shapiro-Wilk test\autocite[this is a common test to assess the normality of a distribution]{shapiro_analysis_1965} was used to determine if the PDF fitted to a normal distribution and therefore could be considered to have symmetric confidence intervals.
 If the PDF failed the test the value was quoted with asymmetric confidence intervals, compared with the symmetric confidence intervals given for those that passed the Shapiro-Wilk test.
 It is important to note that the PDFs and therefore the determined confidence intervals are not true confidence intervals, and account only for the uncertainty that is present in the data.\footnote{Therefore, they do not account for systematic uncertainty in the measurement technique.}
 In addition to determining parameter confidence intervals, it was also possible to use these probability distributions to understand the correlations present between the parameters and the impact this has on the fitting process.
 The correlation was quantified using the Pearson correlation coefficient\autocite{pearson_notes_1895}, a common statistical definition for the level of correlation present between two variables.
-The Pearson correlation coefficient can have values that range from \numrange{-1}{1}, with a value of \num{-1} corresponding to a complete negative correlation\footnote{An increase in one variable is associated with a decrease in the other.}, while a value of \num{1} corresponds to a complete positive correlation\footnote{An increase in one variable is associated with a similar increase in the other.}, a value of \num{0} indicates no correlation between the two variables.
+The Pearson correlation coefficient can have values that range from \num{-1} to \num{1}, with a value of \num{-1} corresponding to a complete negative correlation\footnote{An increase in one variable is associated with a decrease in the other.}, while a value of \num{1} corresponds to a complete positive correlation\footnote{An increase in one variable is associated with a similar increase in the other.}, a value of \num{0} indicates no correlation between the two variables.
 The MCMC sampling involved 200 walkers that were used for 1000 iterations, following a burn-in of 200 iterations.

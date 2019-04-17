@@ -223,7 +223,7 @@ names = [
 ]
 fig_lab = {"dppc":"(a)", "dmpc":"(b)", "dlpc":"(c)", "dmpg":"(d)"}
 solh_store = np.zeros((4, pchain[0].chain.size))
-p_lab = ["V_t", "V_h", "d_t", "d_h", "phi_h", "sigma"]
+p_lab = ["V_t", "V_h", "d_t", "d_h", "  phi_h", "sigma"]
 p_all = np.array([])
 for i in range(sp.size):
     per_sp[:, 0, i] = list(pchain[2].chain.flatten())
@@ -390,7 +390,7 @@ for i in range(sp.size):
     ax2.set_ylabel(r"SLD/$10^{-6}$Å$^{-2}$")
 ax2.text(0.63, 0.05, abc[lipid], transform=ax2.transAxes, size=8)
 plt.tight_layout()
-plt.savefig("{}{}_ref_sld.pdf".format(fig_dir, label))
+plt.savefig("{}{}_ref_sld.pdf".format(fig_dir, label), bbox_inches='tight', pad_inches=0.1)
 plt.close()
 
 xax = {
@@ -437,5 +437,5 @@ ax2.tick_params(axis="y", colors=sns.color_palette()[0])
 ax3.tick_params(axis="y", colors=sns.color_palette()[1])
 ax2.set_xticks(xax[lipid])
 plt.tight_layout()
-plt.savefig("{}{}_dt_phi.pdf".format(fig_dir, label))
+plt.savefig("{}{}_dt_phi.pdf".format(fig_dir, label), bbox_inches='tight', pad_inches=0.1)
 plt.close()
