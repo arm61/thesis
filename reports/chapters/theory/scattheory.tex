@@ -481,4 +481,75 @@ Therefore, when the pattern is modelled, the differential cross-section has the 
     \frac{\text{d}\sigma(q)}{\text{d}\Omega} = N_\rho\Delta\text{SLD}^2V_p^2 P(q)S(q),
 \end{equation}
 %
-where $N_\rho$ is the number density of the particles, $\Delta\text{SLD}$ is the difference in scattering length density between the particles and the solvent, $V_p$ is the particle volume, $P(q)$ is t
+where $N_\rho$ is the number density of the particles, $\Delta\text{SLD}$ is the difference in scattering length density between the particles and the solvent, $V_p$ is the particle volume, $P(q)$ is the particle form factor, and $S(q)$ is the structure factor.\autocite{pedersen_monte_2002}
+Therefore, it is necessary to understand the form and structure factors individually.
+
+The most common method for the modelling of the form factor is by using very coarse shapes; such as spheres, cylinders, or ellipses.
+This involves the evaluation of analytical or quasi-analytical solutions for the scattering, which have been derived for many common shapes.
+The solution for a sphere was solved in the early 19th century by Lord Rayleigh.\cite{pedersen_monte_2002}
+%
+\begin{equation}
+    P(q) = \Bigg\{\frac{3\big\{\sin(qR_s) - qR\cos(qR_s)\big\}}{(qR_s)^3}\Bigg\}^2,
+    \label{equ:sphere}
+\end{equation}
+%
+where $R_s$ is the radius of the sphere.
+A comparison between a possible experimental scattering pattern and the scattering generated from Equation~\ref{equ:sphere} is shown in Figure~\ref{fig:sphere}.
+Analytical form factors exist for a wide variety of shapes; these can be found in software such as SASView and SASFit.\autocite{noauthor_sasview_nodate, noauthor_sasfit_nodate}
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{theory/sphere}
+    \caption{The SANS profile of a micelle of \ce{C_{16}TAB} with radius $\SI{50(3)}{\angstrom}$ (circles, generated using SASView \cite{noauthor_sasview_nodate}, with instrumental smearing) compared with a curve of Equation~\protect\ref{equ:sphere}, where $R = \SI{50}{\angstrom}$ (solid line).}
+    \label{fig:sphere}
+\end{figure}
+%
+
+The structure factor accounts for the scattering interference that arises from the interaction of different particles.
+This is modelled using expressions which depend on the nature of the scattering particles; hard-sphere, sticky hard-spheres, screened Coulomb, etc.
+Structure factor expressions are generated as solutions to the Ornstein-Zernike Equation.\autocite{klein_interacting_2002}
+The most relevant structure factor in terms of micelle modelling is probably the Hayter-Penfold Mean Spherical Approximation, \autocite{hayter_analytic_1981} this is where the micelles are modelled as like-charged, soft spheres and is valid for dilute solutions.
+Again, a whole range of these structure factor functions are built into the SASView package.\autocite{noauthor_sasview_nodate}
+
+In order to evaluate the scattering profile from an atomic,\footnote{Or any coordinate system, such as a coarse-grained simulation.} it is possible to use the Debye equation.\autocite{debye_zerstreuung_1915}
+This is an analytical relationship for the determination of the scattering profile based on the atomic positions, $\mathbf{r}_i$,
+%
+\begin{equation}
+    I(q) = \sum_{i}^{N}\sum_{j}^{N} b_ib_j\frac{\sin{(q|\mathbf{r}_i-\mathbf{r}_j|)}}{q|\mathbf{r}_i-\mathbf{r}_j|},
+\end{equation}
+%
+where, $N$ is the number of particles, $q$ is the scattering vector, and $b_i$ and $b_j$ are the scattering lengths of particles $i$ and $j$ respectively.\footnote{In the case of a coarse-grained particle, this can be obtained from summing the scattering lengths of the constituent atoms.}
+The Debye equation is powerful, however, it is not intrinsically parallelisable and scales as $\mathcal{O}(N^2)$.
+In order to improve the efficiency of the calculation of the scattering profile, a variety of methods have been developed that offer a sufficiently accurate approximation.\autocite{svergun_solution_1994,watson_rapid_2013}
+The Golden Vector method, developed by Watson and Curtis,\autocite{watson_rapid_2013} scales as $\mathcal{O}(Nn)$, where $n$ is the number of scattering vectors used in the calculation.
+In this method, the scattering amplitude is calculated numerically for a single $\mathbf{q}$-vector,
+%
+\begin{equation}
+    I(\mathbf{q}) = \Bigg[\sum_{i}^{N}b_i\cos{(\mathbf{q}\cdot\mathbf{r}_i)}\Bigg]^2 + \Bigg[\sum_{i}^{N}b_i\sin{(\mathbf{q}\cdot\mathbf{r}_i)}\Bigg]^2.
+\end{equation}
+%
+This is carried out for $n$ scattering vectors that are selected in an orientationally averaged fashion from a quasi-uniform lattice on a sphere.
+This was first developed such that $n$ is a number from the Fibonacci sequence,\autocite{svergun_solution_1994} however for the Golden Vector method, $n$ may be any positive integer.
+This leads to the scattering vectors being calculated as,
+%
+\begin{equation}
+    \begin{aligned}
+        q_x^{(k)} & = q\cos\Bigg[\sin^{-1}\bigg(\frac{2k}{n}\bigg)\Bigg]\cos\bigg(\frac{2\pi k}{\Phi}\bigg), \\
+        q_y^{(k)} & = q\cos\Bigg[\sin^{-1}\bigg(\frac{2k}{n}\bigg)\Bigg]\sin\bigg(\frac{2\pi k}{\Phi}\bigg), \\
+        q_z^{(k)} & = \frac{2 k q}{n},
+    \end{aligned}
+\end{equation}
+%
+where, $k$ runs from $-(n-1)/2,\ldots,0,\ldots,(n-1)/2$ and $\Phi$ is the golden ratio,
+%
+\begin{equation}
+    \Phi = \frac{1+\sqrt{5}}{2}.
+\end{equation}
+%
+The approximate orientationally averaged scattering is then found as an average of the scattering from each of ther individual $q$-vectors,
+%
+\begin{equation}
+    I(q) = \frac{1}{n}\Bigg\{\sum_{k=(1-n)/2}^{(n-1)/2} I[\mathbf{q}^{(k)}]\Bigg\}.
+\end{equation}
+%
+The accuracy of this calculation increases with $n$, however agreement, comparible to the Debye equation, between experiment and simulation has been shown for $n < 100$ even for highly anisotropic systems.\autocite{watson_rapid_2013}
