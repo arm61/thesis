@@ -1,7 +1,6 @@
 \section*{Context}
-The work contained in this chapter moves from coarse grained representations of interfaces to those of solutions.
-The use of classical simulation as a tool to assist small angle scattering analysis is popular in the biomolecular community.\autocite{perkins_atomistic_2016,hub_interpreting_2018}
-However, its use in the study of other soft matter species, such as micelles, is limited due to the significant computational cost of obtaining a starting structure that is similar to the experimental system.
-While it is possible to produce a series of simulations of various micelle sizes and compare these with experimental data, the desire to model the inter-micelle interactions means that these method quickly become unfeasible.
+The use of classical simulation as a tool to assist SAS analysis is popular in the biomolecular community.\autocite{perkins_atomistic_2016,hub_interpreting_2018}
+However, their application in the study of other soft matter species, such as micelles, is limited due to the significant computational cost of obtaining a starting structure that is similar to the experimental system.
+While it is possible to produce a series of simulations of various micelle sizes and compare these with experimental data, one of the targets for such experimental work is the inter-micelle interactions and hence the large system sizes mean that these methods quickly become unfeasible.
 Herein, the generation of a starting structure for a molecular dynamics\footnote{MD.} simulation from scattering data is treated as an optimisation problem and a particle swarm optimisation\footnote{PSO.} algorithm is applied to attempt to resolve it.
 The aim is to obtain a starting structure that is representative of the experimental system, including scattering from inter-micelle interactions.

@@ -99,7 +99,7 @@ ax.set_ylabel('$I(q)$')
 
 ax.text(
     0.95,
-    0.90,
+    0.85,
     r"run {}".format(num),
     horizontalalignment="right",
     verticalalignment="center",
@@ -128,5 +128,5 @@ plt.plot(qs, intensity2 * intensity[0]/intensity2[0])
 ax.set_xscale('log')
 
 plt.tight_layout()
-plt.savefig("../reports/figures/smallangle/fake_assess{}.pdf".format(num))
+plt.savefig("../reports/figures/smallangle/fake_assess{}.pdf".format(num), bbox_inches='tight', pad_inches=0.1)
 plt.close()

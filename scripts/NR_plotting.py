@@ -287,5 +287,5 @@ for i in range(len(cont)):
     ax2.set_ylabel(r'SLD/$10^{-6}$Å$^{-2}$')
 ax2.text(0.64, 0.95, abc[label], transform=ax2.transAxes, va='top', size=8)
 plt.tight_layout()
-plt.savefig('{}{}_ref_sld.pdf'.format(fig_dir, label))
+plt.savefig('{}{}_ref_sld.pdf'.format(fig_dir, label), bbox_inches='tight', pad_inches=0.1)
 plt.close()

@@ -104,5 +104,5 @@ ax.text(
     size=8,
 )
 plt.tight_layout()
-plt.savefig("../reports/figures/smallangle/fake.pdf")
+plt.savefig("../reports/figures/smallangle/fake.pdf", bbox_inches='tight', pad_inches=0.1)
 plt.close()

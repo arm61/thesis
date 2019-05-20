@@ -99,7 +99,7 @@ ax.text(
 ax.set_yscale("log")
 ax.set_xlim([0, 0.1])
 plt.tight_layout()
-plt.savefig("../reports/figures/theory/kine.pdf")
+plt.savefig("../reports/figures/theory/kine.pdf", bbox_inches='tight', pad_inches=0.1)
 plt.close()
 
 
@@ -133,7 +133,7 @@ ax.set_ylabel(r"$R(q)$")
 ax.set_yscale("log")
 ax.set_xlim([0, 0.1])
 plt.tight_layout()
-plt.savefig("../reports/figures/theory/dyna.pdf")
+plt.savefig("../reports/figures/theory/dyna.pdf", bbox_inches='tight', pad_inches=0.1)
 plt.close()
 
 
@@ -183,7 +183,7 @@ ax.text(
     size=10,
 )
 plt.tight_layout()
-plt.savefig("../reports/figures/theory/scales.pdf")
+plt.savefig("../reports/figures/theory/scales.pdf", bbox_inches='tight', pad_inches=0.1)
 plt.close()
 
 
@@ -237,7 +237,7 @@ ax1.text(
     size=10,
 )
 plt.tight_layout()
-plt.savefig("../reports/figures/theory/rg.pdf")
+plt.savefig("../reports/figures/theory/rg.pdf", bbox_inches='tight', pad_inches=0.1)
 plt.close()
 
 
@@ -264,7 +264,7 @@ plt.xlim([0, 0.5])
 plt.ylabel("$I(q)$/cm$^{-1}$")
 plt.xlabel("$q$/Å$^{-1}$")
 plt.tight_layout()
-plt.savefig("../reports/figures/theory/sphere.pdf")
+plt.savefig("../reports/figures/theory/sphere.pdf", bbox_inches='tight', pad_inches=0.1)
 plt.close()
 
 
@@ -291,7 +291,7 @@ ax.plot(
 ax.set_xlabel("$r$/Å")
 ax.set_ylabel(r"$E$/kJmol$^{-1}$")
 plt.tight_layout()
-plt.savefig("../reports/figures/theory/lj.pdf")
+plt.savefig("../reports/figures/theory/lj.pdf", bbox_inches='tight', pad_inches=0.1)
 plt.close()
 
 import grad
@@ -357,7 +357,7 @@ ax.set_xlabel(r"$x_2$")
 plt.colorbar(im, label=r"$F(\mathbf{x})$")
 
 plt.tight_layout()
-plt.savefig("../reports/figures/theory/diff_evo.pdf")
+plt.savefig("../reports/figures/theory/diff_evo.pdf", bbox_inches='tight', pad_inches=0.1)
 plt.close()
 
 
@@ -401,7 +401,7 @@ ax.set_xlabel(r"$x_2$")
 plt.colorbar(im, label=r"$F(\mathbf{x})$")
 
 plt.tight_layout()
-plt.savefig("../reports/figures/theory/part_swarm.pdf")
+plt.savefig("../reports/figures/theory/part_swarm.pdf", bbox_inches='tight', pad_inches=0.1)
 plt.close()
 
 
@@ -582,5 +582,5 @@ ax1.text(
 )
 
 plt.tight_layout()
-plt.savefig("../reports/figures/theory/mcmc.pdf")
+plt.savefig("../reports/figures/theory/mcmc.pdf", bbox_inches='tight', pad_inches=0.1)
 plt.close()

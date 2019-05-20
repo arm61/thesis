@@ -1,27 +1,25 @@
 \chapter{Additional Code Blocks for Differential Evolution} % Main appendix title
-
 \label{diff_evo_app} % Change X to a consecutive letter; for referencing this appendix elsewhere, use \ref{AppendixX}
-
 This appendix includes additional Code Blocks relevant to the introduction of the DE optimisation method discussed in Section~\ref{sec:de}.
-Code Block~\ref{cb:mut} describes the mutation step of the DE algorithm, as described by Bj\"{o}rck.\autocite{bjorck_fitting_2011}
+Code Block~\ref{cb:mut} describes the mutation step of the DE algorithm, as described by Bj\"{o}rck.\sidecite<-1\baselineskip>{bjorck_fitting_2011}
 %
 \begin{listing}
     \centering
-    \caption{The mutation step used in a classical trial method for a DE algorithm, as described in \cite{bjorck_fitting_2011}. The input variables are \texttt{p} which is an array of floats representing the parent population, \texttt{b} which is an array of floats representing the best vector of the parent population, and \texttt{km} the mutant constant. This function returns an array of floats representing the mutant vector.}
+    \caption[-4\baselineskip]{The mutation step used in a classical trial method for a DE algorithm, as described in \cite{bjorck_fitting_2011}. The input variables are \texttt{p} which is an array of floats representing the parent population, \texttt{b} which is an array of floats representing the best vector of the parent population, and \texttt{km} the mutant constant. This function returns an array of floats representing the mutant vector.}
     \lstinputlisting{reports/code_blocks/mutation.py}
     \label{cb:mut}
 \end{listing}
 %
-Code Block~\ref{cb:recomb} describes the recombination step of the DE algorithm, as described by Bj\"{o}rck.\autocite{bjorck_fitting_2011}
+Code Block~\ref{cb:recomb} describes the recombination step of the DE algorithm, as described by Bj\"{o}rck.
 %
 \begin{listing}
     \centering
-    \caption{The recombination step used in a classical trial method for a DE algorithm, as described in \cite{bjorck_fitting_2011}. The input variables are \texttt{p} which is an array of floats representing the parent population, \texttt{m} which is an array of floats representing the mutant vector, and \texttt{kr} the recombination constant. This function returns an array of floats representing the offspring population.}
+    \caption[-1\baselineskip]{The recombination step used in a classical trial method for a DE algorithm, as described in \cite{bjorck_fitting_2011}. The input variables are \texttt{p} which is an array of floats representing the parent population, \texttt{m} which is an array of floats representing the mutant vector, and \texttt{kr} the recombination constant. This function returns an array of floats representing the offspring population.}
     \lstinputlisting{reports/code_blocks/recombination.py}
     \label{cb:recomb}
 \end{listing}
 %
-Code Block~\ref{cb:self} describes the classical step of the DE algorithm, as described by Bj\"{o}rck.\autocite{bjorck_fitting_2011}
+Code Block~\ref{cb:sel} describes the classical step of the DE algorithm, as described by Bj\"{o}rck.
 %
 \begin{listing}
     \centering

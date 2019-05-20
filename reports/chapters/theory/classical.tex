@@ -6,7 +6,7 @@ This would involve the simulation of the chemical system in order to educate the
 These systems, especially when the materials being simulated are soft in nature, are often highly complex and typically cover large length scales.
 Classical simulation, particularly in combination with coarse-grained potential models, can feasibly enable the simulation of these methods.
 
-In order to simulate a complexity of a real chemical system, it is necessary to model the electrons of the molecules and their interactions.
+In order to simulate the complexity of a real chemical system, it is necessary to model the electrons of the molecules and their interactions.
 This is usually achieved using quantum mechanical calculations, where the energy of the system is calculated by finding some approximate solution to the Schr\"{o}dinger equation.
 However, quantum mechanical calculations are very computationally expensive and are realistically limited to hundreds of atoms.
 In order to simulate a soft matter system such as a phospholipid monolayer or polymer nanoparticles, it is necessary to simplify the calculation being performed.
@@ -66,7 +66,8 @@ The Lennard-Jones potential model is not the only form that may be used for the 
 In each case, there is a short ranged repulsive interaction to describe the electrostatic repulsion between the electron clouds, and a longer range attractive component that represents dispersion interactions.
 However, the Lennard-Jones model has been used heavily in this work.
 %
-\begin{figure}
+\begin{figure}[t]
+    \forceversofloat
     \centering
     \includegraphics[width=\textwidth]{theory/lj}
     \caption{The form of each component; attractive (blue), repulsive (orange), of the Lennard-Jones potential model (green) for argon, using parameters in \cite{rahman_correlations_1964}.}
@@ -83,16 +84,17 @@ While the short-range interactions can be accounted for by a function such as th
 %
 where, $r$ is the distance between the two particles, $\varepsilon_0$ is the dielectric permittivity of the vacuum, $e$ is the charge of the electron, and $q_i$ and $q_j$ are the electronic charges on each of the particles.
 It is clear that when $q_i$ and $q_j$ have the opposite signs Coulomb's law is always attractive.
-The fact that Equation~\ref{equ:col} contains a factor of $r^2$ indicates that this is a much longer range interaction than those modeled with the Lennard-Jones model, make the Coulomb potential more complex to compute.\autocite{frenkel_understanding_1996}
+The fact that Equation~\ref{equ:col} contains a factor of $r^2$ indicates that this is a much longer range interaction than those modelled with the Lennard-Jones model, make the Coulomb potential more complex to compute.\autocite{frenkel_understanding_1996}
 
 An example of a very large classical simulation would be $\sim3$ million atoms.\autocite{gumbart_regulation_2009}
 However, this is still only \SI{1.8e-16}{\mol} which is not remotely realistic as a simulation of a ``real'' system.
 A common method to allow for the apparent simulation of a much larger system is the use of periodic boundary conditions.\footnote{Abbreviated to PBC.}
-This is where a boundary condition is applied to the edges of the simulation cell, such as to mimic an infinite system, such that the simulation cell is surrounded by identical images of itself, this is shown pictorally in Figure~\ref{fig:pbc}.
+This is where a boundary condition is applied to the edges of the simulation cell, such as to mimic an infinite system, such that the simulation cell is surrounded by identical images of itself, this is shown pictorially in Figure~\ref{fig:pbc}.
 Using the PBC means that atomic diffusion is conserved as when an atom reaches the edge of the simulation cell, it will appear on the other side as though it came from the adjacent periodic cell.
 The use of a PBC is particularly powerful in the simulation of homogenous systems, such as liquids.
 %
-\begin{figure}
+\begin{figure}[t]
+    \forcerectofloat
     \centering
     \includegraphics[width=0.8\textwidth]{theory/pbc}
     \caption{A graphical representation of the PBCs. Reprinted, with permission of Elsevier, from \cite{frenkel_understanding_1996}.}
@@ -101,10 +103,11 @@ The use of a PBC is particularly powerful in the simulation of homogenous system
 %
 
 The cut-off is another important factor for classical simulation, this is the distance after which the energy between two particles is considered to be zeros.
-Therefore, for distances greater than the cut-off, it is not necessary to calculate the energy between the two particles as it is taken to be zero.\footnote{This leads to an increase in the computational efficiency.}
+Therefore, for distances greater than the cut-off, it is not necessary to calculate the energy between the two particles as it is taken to be zero.\footnote{This leads to an increase in computational efficiency.}
 Code Block~\ref{cb:lj} gives an example of some code that could be used to calculate the Lennard-Jones energy of an atomistic system, where both the PBC and the energy cut-off distance are considered.
 %
-\begin{listing}
+\begin{listing}[b]
+    \forcerectofloat
     \centering
     \caption{Code that may be used to generate the Lennard-Jones energy for a given atomistic system, which accounts for the PBC and the energy cut-off distance. The input varibles are \texttt{coordinates} which is an array of floats describing the position of the \texttt{N} particles, \texttt{cell} which are the unit cell vectors, \texttt{cut\_off} which is potential energy cut-off, and \texttt{A} and \texttt{B} which are the Lennard-Jones potential parameters. This returns an array with the energy for each particle.}
     \lstinputlisting[nolol]{reports/code_blocks/lennardjones.py}
@@ -128,7 +131,7 @@ Model parameterisation is important for all types of potential models, for examp
 Parameterisation of a potential model is usually achieved by fitting the potential model functions to energetic data obtained using a higher accuracy technique.\footnote{These may be quantum mechanical calculations or experimental methods.}
 We will not dwell on the details of potential model parameterisation,\footnote{This is discussed in detail in many textbooks such as \cite{harvey_computational_2018,leach_molecular_1996}} however, it is important to note that the parameters used in MD simulation are not absolute and depend heavily on the merits of the parameterisation method.
 
-In this work, we have focused heavily on the use of off-the-shelf potential models, to ensure the easy replicablity of the work.
+In this work, we have focused heavily on the use of off-the-shelf potential models, to ensure the easy replicability of the work.
 Off-the-shelf potential models are those that are determined to be applied to a wide range of chemical systems.
 An example includes the OPLS potential model which was parameterised by comparison to quantum mechanical measurements and crystallographic data.\autocite{jorgensen_opls_1988}
 While these off-the-shelf potential models are useful for their ease-of-use, it is noted that often these forcefields may require optimisation for the particular system.
@@ -141,10 +144,11 @@ While computational efficiency improvements such as the PBC or the energy cut-of
 This has led to the use of coarse-graining of molecules in simulations.
 This is the definition of super-atoms, in the place of groups of atoms, known as ``beading'', some examples are shown for the MARTINI force field\autocite{marrink_martini_2007} in Figure~\ref{fig:cg}.
 Each of the super-atoms must correspond to the chemistry of the underlying atoms.
-For example the MARTINI potential model, introduces five different apolar, beads to represent the polarity of the carbon atoms that make up the super-atom.
-Additionally, there are thirteen other super-atom types that can be use to model polar, nonpolar, and charged atomic groups.
+For example, the MARTINI potential model introduces five different apolar, beads to represent the polarity of the carbon atoms that make up the super-atom.
+Additionally, there are thirteen other super-atom types that can be used to model polar, nonpolar, and charged atomic groups.
 %
-\begin{figure}
+\begin{figure}[t]
+    \forcerectofloat
     \centering
     \includegraphics[width=0.8\textwidth]{theory/beading}
     \caption{Three examples of the MARTINI coarse-graining mechanism for (a) aspertic acid, (b) a water cluster, and (c) a molecule of DPPC. Reprinted with permission of the Institute of Physics, from \cite{pluhackova_biomembranes_2015}.}

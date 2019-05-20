@@ -153,5 +153,5 @@ ax2.set_xlabel(r'$z$/Å')
 ax2.set_ylabel(r'SLD/$10^{-6}$Å$^{-2}$')
 plt.tight_layout()
 fig_dir = "../reports/figures/reflectometry2/"
-plt.savefig('{}dspc_{}_{}_ref_sld_short.pdf'.format(fig_dir, forcefield, surface_pressure))
+plt.savefig('{}dspc_{}_{}_ref_sld_short.pdf'.format(fig_dir, forcefield, surface_pressure), bbox_inches='tight', pad_inches=0.1)
 plt.close()

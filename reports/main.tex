@@ -133,7 +133,7 @@
 \setsansfont[Renderer=Basic, Scale=0.90]{TeX Gyre Heros}
 \setmonofont[Renderer=Basic]{TeX Gyre Cursor}
 
-\usepackage[style=verbose-trad2,
+\usepackage[style=verbose-trad1,
 maxcitenames=1,
 maxbibnames=100,
 sorting=nyt,
@@ -228,6 +228,33 @@ hyperref=true]{biblatex}
 \renewcommand{\lstlistlistingname}{List of \lstlistingname s}
 
 \usepackage{rotating}
+\usepackage{xparse}
+\usepackage{xpatch}
+\makeatletter
+\xpatchcmd{\@footnotetext}%
+      {\color@begingroup}
+      {\color@begingroup\toggletrue{blx@footnote}}
+      {}
+      {}
+\makeatother
+
+\DeclareCiteCommand{\sidecitehelper}[\bibfootnotewrapper]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{cite:postnote}}
+
+\ExplSyntaxOn
+\NewDocumentCommand\sidecite{D<>{}O{}om}{%
+  \iftoggle{blx@footnote}
+    {\cs_set_protected_nopar:Npn \__sct_wrapper:nn ##1 ##2 {\mkbibparens{##2}}}
+    {\cs_set_protected_nopar:Npn \__sct_wrapper:nn ##1 ##2 {\sidenote[][##1]{##2}}}
+    {\IfNoValueTF{#3}
+      {\__sct_wrapper:nn{#1}{\sidecitehelper[#2]{#4}}}
+      {\__sct_wrapper:nn{#1}{\sidecitehelper[#2][#3]{#4}}}}
+}
+\ExplSyntaxOff
 
 
 \begin{document}
@@ -327,7 +354,9 @@ I have endevoured to include as much algorithmic and methodological detail withi
 However, in order to provide complete, and easy, reproducibility an electronic supplementary information (ESI) is available online in the form of a Git repository.
 This ESI provides full details of the analyses performed in this work and access to an automated analysis workflow.
 
-The ESI may be accessed at the following \doi{10.5281/zenodo.xxxxxxx}.
+In order to avoid incorrect self-plagarism detection this Git repository will not be publically available until after the \emph{viva voce}, however, if either examiners would like access to the repository before the \emph{viva voce}, this may be arranged.
+
+%The ESI may be accessed at the following \doi{10.5281/zenodo.xxxxxxx}.
 
 ~\vfill
 \end{fullwidth}
@@ -337,25 +366,45 @@ The ESI may be accessed at the following \doi{10.5281/zenodo.xxxxxxx}.
 \newpage
 \begin{fullwidth}
 \thispagestyle{empty}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{\baselineskip}
-~\vfill
 \chapter*{Acknowledgements}
 
-This is where I will acknowledge people.
-Need to remember everyone...
+First and foremost I would like to thank my supervisors at Bath; Karen Edler and Steve Parker, without whom I would never have gotten here.
+The freedom they have given me and the gentle guidance they have bestowed on me, has allowed me to develop during these past three and a half years more than I ever thought was possible.
+I hope that Karen will forgive me for being a butterfly chaser and Steve will forgive me for using Python.
 
-~\vfill
+I should thank my Diamond supervisors; Andrew Smith and Jonathan Rawle, for hosting me a DLS for 6 months in my first year and always being available for a chat or a drink or to gift me some beamtime.
+
+Thanks to James Grant for being my mentor in the first year and for introducing me to the magical world of computational science.
+
+Tom Arnold, Richard Campbell, and Andrew Jackson made the work in Chapter~\ref{reflectometry1} possible with their help and advice. Chapter~\ref{reflectometry2} built on some great data collected by Dave Barlow and Jayne Lawrence. Ben Morgan \& Fiona Dickinson, thank you for all the help and encouragement that allowed my participation in the pythoninchemistry project.
+
+Thanks to all the members of the Edler Group that I have gotten to know over the years; Cecilia, Kerrie, Vincenzo, Julien, Marcelo, Andi, and Ria. Thanks for the laughs on beamtime and for the willingness to suffer my chat during beamwine.
+Adrian for arguments at 5 am on beamtime about data analysis and drunken chats about everything at NMSUM.
+Oli for being there to discuss the futility of academia and for getting drunk at any opportunity, regardless of the day.
+Nom for being my personal chauffer far too often and for all night beamtimes.
+
+Cheers to CompChem for all the drunken nights, long may it continue; Georgie, Alex, Dan, Jacob.
+Particular shout out to Victoria; despite your late arrival, your attendance made up for it.
+And Adam for being my friend and housemate, listening to me complain, and for always being keen for Parade.
+
+To all of the members of 0.15 throughout my time here; Richard, Philippe, Megan, Leyorla, Elliot, and Jack for ensuring a happy and friendly place to work every day, and for not complaining about my gym towel lying about. And to all the Chemistry football crowd, for an escape from the monotony and the allowance to run around like a headless chicken.
+\vspace{\baselineskip}
+
+Ioli, you've changed my life, and I wouldn't have managed to get here without you.
+
+Thanks to Sadie and Penny (and Sophie before that) to being a particularly beautiful way to end a presentation, and for helping me stay sane during the writing of this.
+
+Finally, to my parents (all of them) for suffering with me as I chase this dream, but particularly my mother for letting me occupy the dining room for the last three months as I wrote this up and buying me Ben \& Jerry's ice cream whenever I wanted it.
 \end{fullwidth}
 
 % r.5 contents
 \tableofcontents
 
-\listoffigures
+%\listoffigures
 
-\listoftables
+%\listoftables
 
-\lstlistoflistings
+%\lstlistoflistings
 
 \begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
 
@@ -566,13 +615,13 @@ $\sfrac{\text{d}\sigma(q)}{\text{d}\Omega}$ & differential cross-section & \\
 ~\vfill
 \chapter*{Abstract}
 This work uses different coarse-graining methodologies to assist in the analysis of scattering measurements from soft matter aggregates, such as surfactant monolayers and micelles.
-The term `coarse-graining' is used broadly in this work; to describe the coarse-graining of a classical simulation potential model, a surfactant monolayer model that consists two layers, and a severe coarse-graining methodology that describes a surfactant molecule as just a position and direction in space.
+The term ```coarse-graining'' is used broadly in this work; to describe the coarse-graining of a classical simulation potential model, a surfactant monolayer model that consists two layers, and a severe coarse-graining methodology that describes a surfactant molecule as just a position and direction in space.
 In all three cases, the aim of the applied coarse-graining is to improve the methods of analysis that may be performed in the analysis of reflectometry and small angle scattering measurements.
 
-A surfactant monolayer model, that was considerate of the chemical bond between the surfactant heads and tails, was developed for the analysis of reflectometry measurements from a phosphoplipid monolayer at the interface between air and a deep eutectic solvent.
+A surfactant monolayer model, that was considerate of the chemical bond between the surfactant heads and tails, was developed for the analysis of reflectometry measurements from a phospholipid monolayer at the interface between air and a deep eutectic solvent.
 This model allowed for a unique insight into the structure of the monolayer at the given interface.
-To assess the utility of coarse-grained potential modesl in the analysis of neutron reflectometry, a phospholipid monolayer was simulated using three different potential models, of different particle grain-size.
-This allowed for a better undertstanding of the simulation resolution necessary to accurately and successfully apply simulation-driven analysis to reflectometry.
+To assess the utility of coarse-grained potential models in the analysis of neutron reflectometry, a phospholipid monolayer was simulated using three different potential models, of different particle grain-size.
+This allowed for a better understanding of the simulation resolution necessary to accurately and successfully apply simulation-driven analysis to reflectometry.
 Finally, a severely coarse-grained description of a surfactant was used in a particle swarm optimisation to try and develop a starting structure for a multiple micelle simulation, where the experimental scattering profile was the optimisation target.
 
 Alongside the development and application of coarse-graining methodologies, the final chapter of this work describes the development of open-source software and teaching materials for the introduction of classical molecular simulation.
@@ -602,8 +651,8 @@ These educational resources introduce scattering users to simulation and its uti
 \appendix
 %\pagenumbering{roman}
 \include{appendices/diff_evo}
-\include{appendices/refl1app}
-\include{appendices/refl2app}
+\include{appendices/refl1}
+\include{appendices/refl2}
 \backmatter
 
 %\bibliography{main}

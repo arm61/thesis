@@ -33,12 +33,12 @@ A similar approach used a simulated annealing approach, with a ``temperature'' f
 
 Both these Monte Carlo based approaches and the analytic methods previously discussed make the same perturbations to the fitted parameters during processing.
 However, this is the cause of the propensity to converge to a local minimum.
-This led to the application of genetic algorithm-derived methods for the optimisation of reflectometry models, beginning with the works of de Haan and Drijkoningen\autocite{de_haan_genetic_1994} and Dane \emph{et al.}\autocite{dane_application_1998}
+This led to the application of genetic algorithm-derived methods for the optimisation of reflectometry models, beginning with the works of de Haan and Drijkoningen\sidecite<-6\baselineskip>{de_haan_genetic_1994} and Dane \emph{et al.}\sidecite<-4\baselineskip>{dane_application_1998}
 These methods are designed to stochastically sample an entire search-space, and therefore are more able to overcome the local minima issues and determine the vicinity of a global minimum.
-Following this initial application, genetic algorithms were used frequently in the optimisation of reflectometry models\autocite{ulyanenkov_genetic_2000,ulyanenkov_extended_2005,politsch_unbiased_2002,wormington_characterization_1999}
-In particular, the work of Wormington \emph{et al.}\autocite{wormington_characterization_1999} showed the applicability of the DE method towards reflectometry model optimisation, which resulted in the inclusion of such methods in many common reflectometry analysis software packages.\autocite{bjorck_fitting_2011,bjorck_genx_2007,nelson_co-refinement_2006,nelson_refnx_2019,ott_simulreflec_nodate,kienzle_ncnr_nodate}
+Following this initial application, genetic algorithms were used frequently in the optimisation of reflectometry models\sidecite<-7\baselineskip>{ulyanenkov_genetic_2000,ulyanenkov_extended_2005,politsch_unbiased_2002,wormington_characterization_1999}
+In particular, the work of Wormington \emph{et al.}\sidecite<-2\baselineskip>{wormington_characterization_1999} showed the applicability of the DE method towards reflectometry model optimisation, which resulted in the inclusion of such methods in many common reflectometry analysis software packages.\sidecite<-3\baselineskip>{bjorck_fitting_2011,bjorck_genx_2007,nelson_co-refinement_2006,nelson_refnx_2019,ott_simulreflec_nodate,kienzle_ncnr_nodate}
 
-The use of MCMC methods to probe the probability distribution functions\footnote{Abbreviated to PDFs.} of the fitting parameters of a reflectometry model have also grown in popularity.\autocite{gil_limitations_2012,hoogerheide_structure_2018,owejan_solid_2012,heinrich_myristoylation_2014}
+The use of MCMC methods to probe the probability distribution functions\sidenote[][-3\baselineskip]{Abbreviated to PDFs.} of the fitting parameters of a reflectometry model have also grown in popularity.\sidecite<-3\baselineskip>{gil_limitations_2012,hoogerheide_structure_2018,owejan_solid_2012,heinrich_myristoylation_2014}
 This is due to the inclusion of MCMC methods in common analysis software packages such as Refl1D.\autocite{kienzle_ncnr_nodate}
 These methods enable the user to better understand the inverse uncertainties of the model.
 Additionally, they enable the quantification of the correlation between parameters, important in ensuring that the model applied is suitably constrained such as to reduce the cross-correlation present between parameters.\autocite{nelson_co-refinement_2006}
@@ -57,12 +57,12 @@ Even when two layers are utilised, it is often the case that the volumes of the 
 \end{equation}
 %
 where, $b_i$ is the scattering length of the head or tail, $\phi_i$ is the volume fraction of solvation by the solvent, $\text{SLD}_s$ is the solvent scattering length density, and $i$ indicates either the head or tail layer.
-However, as noted by Campbell \emph{et al.},\autocite{campbell_structure_2018} this method often fails to account for the compaction of the carbon chains under elevated surface pressures,\autocite{mcconlogue_close_1997,small_lateral_1984} which may lead to a volume reduction of up to \SI{\sim 15}{\percent}.
+However, as noted by Campbell \emph{et al.},\autocite{campbell_structure_2018} this method often fails to account for the compaction of the carbon chains under elevated SPs,\autocite{mcconlogue_close_1997,small_lateral_1984} which may lead to a volume reduction of up to \SI{\sim 15}{\percent}.
 Furthermore,\footnote{As is discussed in Section~\ref{refl1:anal}.} the use of a constrained head group volume may also influence the result of the modelling process in situations where the volume is poorly defined.
 
 Equation~\ref{equ:sld} enables the use of chemical-inference in the modelling approach for reflectometry data.
 This allows for the co-refinement of NR data where different isotopic-contrasts of the phospholipid species or solvent have been used.
 This is possible based on the expectation that the effect of contrast variation on the structure and chemistry of the monolayer will be negligible, and therefore the same values of all parameters in the fitting, except $b_i$ and $\text{SLD}_s$ may be constrained between the different measurements.\autocite{hollinshead_effects_2009}
-In this work, similar logic was applied, with the assumption that the volume of the head and tail groups is constant across different surface pressures, while the phospholipid phase is the same.
-This means that, for this system, all of the fitted parameters may be constrained aside from the tail thickness, head solvation, and interfacial roughness, across the different surface pressure measurements.
+In this work, similar logic was applied, with the assumption that the volume of the head and tail groups is constant across different SPs, while the phospholipid phase is the same.
+This means that, for this system, all of the fitted parameters may be constrained aside from the tail thickness, head solvation, and interfacial roughness, across the different SP measurements.
 This is the first time that such a methodology has been applied to the analysis of XRR and NR, additionally, it is believed that this ability to co-refine XRR measurements enables a greater understanding of the structure than that possible from a single measurement.

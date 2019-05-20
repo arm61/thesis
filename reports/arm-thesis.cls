@@ -76,7 +76,7 @@
 
 %%
 % Only show the chapter titles in the table of contents
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{0}
 
 %%
 % If there is a `tufte-book-local.sty' file, load it.
