@@ -61,6 +61,7 @@
 - Page 67, Para 2, Line 1/2: "potential mode, where" to "potential model, where"
 - Page 67, Para 2, Line 5: "Berger \emph{et al.}" to "Berger \emph{et al.}."
 - Page 67, Para 4, Line 10: Marrink reference in text when should be sidenote
+- Page 68, Para 1, Line 6: "four phospholipids types" to four phospholipid types"
 - Page 71, Para 2, Line 14: Foreman-Mackey refence in text when should be sidenote
 - Page 73, Para 2, Line 2: "APM assocaited with" to "APM associated with"
 - Page 75, Para 2: Remove final sentence
