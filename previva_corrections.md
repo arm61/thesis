@@ -66,3 +66,26 @@
 - Page 75, Para 2: Remove final sentence
 - Page 80, Figure 4.6: Add x-axis label reading "z/\AA"
 
+## Using particle swarm methods for small angle scattering analysis 
+
+- Page 85, Para 3, Line 12: "more likely that" to "more likely than"
+- Page 86, Para 2, Line 14: "Tarek \emph{et al.},," to "Tarek \emph{et al.},"
+- Page 90, Para 2: Add explantion of how Efficiency is calculated
+- Page 94, Para 1, Line 3: "However, it may the case" to "However, it may be the case"
+
+## Developing open-source teaching materials for classical simulation and scattering
+
+- Page 106, Para 2, Line 9: "and show the scattering profile developed from" to "and how the scattering profile is developed from"
+- Page 106, Para 3, Line 12: "June 2018m" to "June 2018,"
+
+## Summary & Future Work
+
+- Page 109, Para 2, Line 5: "this approached was" to "this approach was"
+- Page 109, Para 2, Line 9: "two layers describing the" to "two layers consisting of
+- Page 111, Para 3, Line 3: "As mentioned above the" to "As mentioned above, the"
+- Page 112, Para 2, Line 14: "problem to easily" to "problem of easily"
+
+## Appendices
+
+- Page 115: Fix overlapping Code Block captions
+- Page 127/128: Figures C.4, C.5, and C.6: Add x-axis label reading "z/\AA"
