@@ -46,3 +46,23 @@
 ## Chemically consistent modelling X-ray and neutron reflectometry
 
 - Page 41, Para 2, Line 14: "modelling methodology" to "modelling methodology."
+- Page 48, Para 2, Line 12: "volumes will remain" to "volumes remain"
+- Page 48, Para 2, Line 13/14: "thickness will vary." to thickness vary."
+- Page 49, Code Block 3.1: Remove the parameters function and this is unnecessary
+- Page 51, Para 1, Line 9: "the intensity" to "the reflected intensity"
+- Page 51, Para 2, Line 9: "the intensity" to "the reflected intensity"
+- Page 56, Para 4, Line 3: "current measurement than" to "current measurements than"
+
+## Applying atomistic and coarse-grained simulation to reflectometry analysis
+
+- Page 65, Para 3, Line 11: "Darr\'{e} \emph{et al.}" to "Darr\'{e} \emph{et al.}."
+- Page 66, Para 1, Line 3: "studied again a" to studied, again, a" 
+- Page 66, Para 2, Line 5: "Dabkowska \emph{et al.}" to "Dabkowska \emph{et al.}."
+- Page 67, Para 2, Line 1/2: "potential mode, where" to "potential model, where"
+- Page 67, Para 2, Line 5: "Berger \emph{et al.}" to "Berger \emph{et al.}."
+- Page 67, Para 4, Line 10: Marrink reference in text when should be sidenote
+- Page 71, Para 2, Line 14: Foreman-Mackey refence in text when should be sidenote
+- Page 73, Para 2, Line 2: "APM assocaited with" to "APM associated with"
+- Page 75, Para 2: Remove final sentence
+- Page 80, Figure 4.6: Add x-axis label reading "z/\AA"
+
