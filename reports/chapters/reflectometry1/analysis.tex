@@ -35,7 +35,7 @@ Additionally, it is known that, on water, increased SPs and the associated Liqui
 These factors meant that it was necessary to develop a model that was appropriate for the phospholipid chemistry while applying as much of the ``best practice'' from Campbell \emph{et al.}\autocite{campbell_structure_2018} as possible, and ensuring that the head and tail group volumes were not constrained parameters.
 The lack of having these normally constrained parameters meant that it was necessary to consider methods by which the reflectometry measurements could be co-refined, in a similar fashion to contrast variation co-refinement in NR.
 This could be achieved by the co-refinement of reflectometry measurements at different SPs, as the model was appropriate for the phospholipid chemistry, and the different SPs were in the same phase.\footnote{Liquid-Condensed (LC) for DPPC and Liquid-Expanded (LE) for DMPC, DLPC, and DMPG.}
-Therefore the head and tail group volumes will remain constant, and only the surface concentration and tail thickness will vary.
+Therefore the head and tail group volumes remain constant, and only the surface concentration and tail thickness vary.
 
 The chemically-constrained model that has been used in this work was implemented in the Python library \texttt{refnx}.\autocite{nelson_refnx_2019,nelson_refnx_2019-1}.
 The software enables the inclusion of custom model classes that feed parameters into the Abel\`{e}s model.\autocite[discussed in detail in Section~\ref{sec:refltheory}]{abeles_sur_1948,parratt_surface_1954}.
@@ -131,7 +131,7 @@ It was assumed that DLPC and DMPG were also in the LE phase as there is no reaso
 Initially, this chemically-consistent modelling approach was applied only to the XRR data.
 The tail layer thickness and interfacial roughness were allowed to vary independently across the SPs, while the other parameters were constrained as discussed above or held constant to the values given in Table~\ref{tab:invar}.
 For each co-refinement of four XRR measurements, there were, in total, eleven degrees of freedom.
-Throughout all of the analyses, the intensity scale factor was allowed to vary freely, while the background was constrained to the intensity at the largest $q$-value.
+Throughout all of the analyses, the reflected intensity scale factor was allowed to vary freely, while the background was constrained to the reflected intensity at the largest $q$-value.
 
 Following this, the head and tail group volumes, and the head layer thickness that were found from the XRR analysis were used as fixed variables for the refinement of the NR measurements.
 This reduced the number of fitted parameters in the NR data to two, namely the thickness of the tail layer, $d_t$, and the interfacial roughness, $\sigma_{t,h,s}$, for the co-refinement of two datasets.
