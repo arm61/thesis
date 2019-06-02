@@ -133,8 +133,8 @@ Code Block~\ref{cb:part_swarm} shows a functional programmatic implementation of
 \label{sec:mcmc}
 Markov chain Monte Carlo\footnote{Abbreviated to MCMC.} is a sampling methodology, derived from direct sampling Monte-Carlo.\autocite{krauth_statistical_2006}
 The aim of an MCMC algorithm is to sample a probability distribution, when parameters are described in terms of their degree of probability.\autocite{sivia_data_2006}
-Similar to MD, in practical terms, MCMC should not be used on a system that is not already optimised, as its purpose is probability distribution sampling rather than minimisation.
-Generally, the approach would be to optimise using, for example, one of the approaches described above, then to use MCMC or molecular dynamics\footnote{MD.} to sample the appropriate search-space.
+Similar to molecular dynamics,\footnote{MD.} in practical terms, MCMC should not be used on a system that is not already optimised, as its purpose is probability distribution sampling rather than minimisation.
+Generally, the approach would be to optimise using, for example, one of the approaches described above, then to use MCMC or MD to sample the appropriate search-space.
 For example, in this work MCMC is used following the optimisation of a reflectometry model using a DE algorithm, to quantify the inverse uncertainties of the model.\footnote{This is the name given to the uncertainties in the parameters fitted in the modelling process.}
 In addition to being able to give information about the inverse uncertainties, MCMC also offers a more complete understanding of the correlations present between the different parameters,\autocite{gilks_markov_1995} as the interactions between the parameter variation has been quantified.
 
@@ -281,7 +281,7 @@ However, this is not the only simulation ensemble that is available, within this
 %
 Thermostating involves controlling the kinetic energy of the particles\sidenote[][-6\baselineskip]{Using Equation~\ref{equ:ek}.} such that the simulation temperature is kept at a predefined value.
 There are a variety of methods for thermostating a MD simulation, such as the Andersen, Nos\'{e}-Hoover, or Berendsen methods.\sidecite<-8\baselineskip>{andersen_molecular_1980,nose_unified_1984,berendsen_molecular_1984,hoover_canonical_1985}
-However, the most straightforward to describe, and that implemented in the \texttt{pylj} software\sidecite<-3\baselineskip>[Discussed in detail in Chapter \ref{teaching}]{mccluskey_pylj_2018,mccluskey_arm61/pylj_2018} is a velocity rescaling.\autocite{bussi_canonical_2007}
+However, the most straightforward to describe, and that implemented in the \texttt{pylj} software,\sidecite<-3\baselineskip>[Discussed in detail in Chapter \ref{teaching}]{mccluskey_pylj_2018,mccluskey_arm61/pylj_2018} is a velocity rescaling.\autocite{bussi_canonical_2007}
 This is where the velocities for a random subset of the particles, $\mathbf{v}_i$ are adapted based on the following relation,
 %
 \begin{equation}
@@ -291,7 +291,7 @@ This is where the velocities for a random subset of the particles, $\mathbf{v}_i
 where, $T_{\text{target}}$ is the target temperature, and $\bar{T}$ is the average simulation temperature.
 
 The use of a barostat to control the simulation pressure usually involves varying the simulation cell parameters and the distances between the particles.
-This would in a similar way to thermostating, where the simulation dimensions are scaled by a value in an effort to control the pressure.
+In a similar way to thermostating, where the simulation dimensions are scaled by a value in an effort to control the pressure.
 The barostating methods are similar to the thermostating methods with Andersen, Nos\'{e}-Hoover, and Berendsen methods.
 However, there is also the Parrinello-Rahman barostat which allows for independent control of the different cell dimensions giving control of stress in addition to pressure.\autocite{parrinello_polymorphic_1981}
 
