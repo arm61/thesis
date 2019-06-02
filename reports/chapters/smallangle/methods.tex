@@ -16,7 +16,7 @@ When \texttt{fitoog} reads in a molecular input file, a \texttt{differences} obj
 
 Inspired by the coarse-graining methodology applied to directional colloid self-assembly by Law \emph{et al.},\autocite{law_coarse-grained_2016} a severe coarse-graining methodology was developed for use on surfactant molecules in \texttt{fitoog}.
 This allowed for a significantly reduced parameter dimensionality to which the PSO\footnote{Which is described in Section \ref{sec:partswarm}.} could be applied.
-The severe coarse-graining reduced the surfactant to a `director' description; where each surfactant molecule is defined by a position and a direction, shown pictorially in Figure~\ref{fig:director}.
+The severe coarse-graining reduced the surfactant to a ``director'' description; where each surfactant molecule is defined by a position and a direction, shown pictorially in Figure~\ref{fig:director}.
 This reduced the parameter dimensionality to just six variables per molecule; three of which described the centre-of-mass position of the molecule and three that describe the angular orientation of the surfactant in space.\footnote{Given the symbols, $a$, $b$, $c$ for the positions and $\phi$, $\omega$, and $\kappa$ for the angles.}
 Additionally, if the molecule was a single particle in length, as is the case for the \ce{NO3-} anion in the Section~\ref{sec:real_data}, then the dimensionality is just three, as the direction is arbitrary.
 
