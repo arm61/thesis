@@ -38,22 +38,3 @@ snakemake
 ## Acknowledgements
 
 ARM is grateful to the University of Bath and Diamond Light Source for co-funding a studentship (Studentship No. STU0149).
-
-## Project Organization
-
-    .
-    ├── config/           # For configuration details
-    ├── docs/             # Some documentation
-    ├── reports/        
-    │   └── appendices/   # Appendices to the thesis
-    │   └── chapters/     
-    │   │   └── theory/   # Theory chapter
-    │   └── code_blocks/  # Code blocks that are included in the thesis
-    │   └── figures/      
-    │       └── theory/   # Plots and figures in the theory chapter
-    ├── tools/            # Tool scripts used
-    ├── visualisation/    # Plotting scripts
-    ├── .gitignore        # gitignore details
-    ├── LICENSE           # This work is shared under a CC BY-4.0 Licence
-    ├── README.md         # You are here
-    └── Snakefile         # The snakemake configuration file
