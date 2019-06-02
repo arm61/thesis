@@ -12,7 +12,7 @@ The ability for MD simulations to represent an ensemble of structures has led to
 In particular, Bayesian inference to understand the presence and population of different structures in solution.
 For example, in the work of Bowerman \emph{et al.},\autocite{bowerman_determining_2017} accelerated MD simulations\footnote{Similar to traditional MD but with use of a ``boost'' potential to improve sampling.} were performed on an all-atom representation of the protein multimer, tri-ubiquitin.
 The scattering profile was calculated from the simulation and compared with experimental data, and the agreement between the simulation and experiment assessed in a Bayesian fashion, with a uniform prior probability.
-This methodology showed that the presence of a two-state ensemble was more likely that the single state that would be obtained from, for example, a crystallographic study.
+This methodology showed that the presence of a two-state ensemble was more likely than the single state that would be obtained from, for example, a crystallographic study.
 Therefore, giving a more realistic understanding of the solution structure of the system.
 
 The simulation of a surfactant micelle is inherently more complex than for a protein ensemble, due to the greater number of states\footnote{For example, micelles of different sizes.} available under thermodynamic conditions.
@@ -30,7 +30,7 @@ In Section~\ref{sec:coarsegraining}, the use of potential model coarse-graining 
 This can be used as a tool to simulate micellisation events from a random solution of surfactants.
 For example, in the work of Jorge,\autocite{jorge_molecular_2008} a united-atom potential model\footnote{Like the Berger potential model from Chapter~\ref{reflectometry2}, where all hydrogen atoms are integrated into the atoms to which they are bound.} for \emph{n}-decyltrimethylammonium bromide was used to simulate micellisation at \SI{80}{\celsius}.
 This work showed that the use of a united-atom potential model allows for more efficient simulation, but also resulted in a larger mass average cluster size.
-However, again a value of only \num{\sim25} was reached after \SI{14}{\nano\second}, as with the work of Tarek \emph{et al.},\autocite{tarek_molecular_1998}, these small micelles might be realistic at these elevated temperatures, however, there appears to be no experimental structural data, such as SANS measurements, for \emph{n}-decyltrimethylammonium bromide micelles at \SI{80}{\celsius}.
+However, again a value of only \num{\sim25} was reached after \SI{14}{\nano\second}, as with the work of Tarek \emph{et al.},\autocite{tarek_molecular_1998} these small micelles might be realistic at these elevated temperatures, however, there appears to be no experimental structural data, such as SANS measurements, for \emph{n}-decyltrimethylammonium bromide micelles at \SI{80}{\celsius}.
 Therefore, it is not possible to assess the accuracy of these results.
 Sanders and Panagiotopoulos attempted to use the MARTINI coarse-grained potential model to simulate the micellisation of the zwitterionic dodecylphosphocholine.\autocite{sanders_micellization_2010}
 This was simulated at \SI{97}{\celsius} for \SI{1.8}{\micro\second} resulting in a trajectory where the cluster size mode was 41, the authors noted that experimentally at \SI{25}{\celsius} a micelle size of \num{56\pm5} is expected.
