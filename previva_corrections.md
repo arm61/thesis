@@ -2,7 +2,7 @@
 
 ## Front Matter
 
-- [ ] Publications, Final Bullet Point: "A. R. McCluskey *et al.* *J. Appl. Crystallogr.* Accepted (2019)" to "A. R. McCluskey *et al.* *J. Appl. Crystallogr.* 52.3 (2019)"
+- [x] Publications, Final Bullet Point: "A. R. McCluskey *et al.* *J. Appl. Crystallogr.* Accepted (2019)" to "A. R. McCluskey *et al.* *J. Appl. Crystallogr.* 52.3 (2019)"
 - [x] Reproducibility Statement, Para 1, Line 1: "have endevoured to" to "have enveadoured to"
 - [x] Acknowledgements, Para 2, Line 1: "me a DLS" to "me at DLS"
 
