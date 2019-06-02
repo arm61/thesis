@@ -100,7 +100,7 @@ It is possible to describe a steady stream X-ray photons or neutrons of waveleng
     \label{equ:wave}
 \end{equation}
 %
-where, $z$ is the direction of travel, and the incident flux is the magnitude of the wave squared, $\Phi = |\psi_o|^2$.
+where, $z$ is the direction of travel, $k=\sfrac{2\pi}{\lambda}$, and the incident flux is the magnitude of the wave squared, $\Phi = |\psi_o|^2$.
 This wave then interacts with a single fixed particle elastically, propagating the wave radially outwards, as shown in Figure~\ref{fig:singleatom}.
 This propagation is centred on the atom, therefore the wavevector, $\mathbf{k_f}$ is parallel to the displacement vector, $\mathbf{r}$, and the following holds,
 %
@@ -238,7 +238,7 @@ In reality, since the layers are usually not completely homogeneous, an average 
 \end{figure}
 %
 
-A reflectometry instrument operates by measuring the intensity of specular radiation at a series of different angles, $\theta$, or wavelengths, $\lambda$.
+A reflectometry instrument operates by measuring the intensity of specular reflected radiation at a series of different angles, $\theta$, or wavelengths, $\lambda$.
 The reflected intensity is described in terms of the $q$-vector\footnote{Using Equation~\ref{equ:theq}}, and is defined as follows,
 %
 \begin{equation}
@@ -341,7 +341,7 @@ The incident radiation beam will be refracted by each of the layers, giving wave
 \end{equation}
 %
 where, $k_0=\sfrac{q}{2}$.
-The Fresnel equation coefficient between layers $n$ and $n+1$, $r_{n,n+1}$ can then be found along with the phase factor, $\beta_n$, which is dependent on the thickness of the layer, $d_n$,
+The Fresnel equation coefficient between layers $n$ and $n+1$, $r_{n,n+1}$ can then be found along with the phase factor, $\beta_n$, as the Born approximation holds for SAS, which is dependent on the thickness of the layer, $d_n$,
 %
 \begin{equation}
     r_{n,n+1} = \frac{k_n - k_{n+1}}{k_n + k_{n+1}},
@@ -515,7 +515,7 @@ Structure factor expressions are generated as solutions to the Ornstein-Zernike 
 The most relevant structure factor in terms of micelle modelling is probably the Hayter-Penfold Mean Spherical Approximation, \autocite{hayter_analytic_1981} this is where the micelles are modelled as like-charged, soft spheres and is valid for dilute solutions.
 Again, a whole range of these structure factor functions are built into the SASView package.\autocite{noauthor_sasview_nodate}
 
-In order to evaluate the scattering profile from an atomic,\footnote{Or any coordinate system, such as a coarse-grained simulation.} it is possible to use the Debye equation.\autocite{debye_zerstreuung_1915}
+In order to evaluate the scattering profile from an atomic structure,\footnote{Or any coordinate system, such as a coarse-grained simulation.} it is possible to use the Debye equation.\autocite{debye_zerstreuung_1915}
 This is an analytical relationship for the determination of the scattering profile based on the atomic positions, $\mathbf{r}_i$,
 %
 \begin{equation}
