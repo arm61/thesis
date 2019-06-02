@@ -65,7 +65,7 @@
 - [x] Page 71, Para 2, Line 14: Foreman-Mackey refence in text when should be sidenote
 - [x] Page 73, Para 2, Line 2: "APM assocaited with" to "APM associated with"
 - [x] Page 75, Para 2: Remove final sentence
-- [ ] Page 80, Figure 4.6: Add x-axis label reading "z/\AA"
+- [x] Page 80, Figure 4.6: Add x-axis label reading "z/\AA"
 
 ## Using particle swarm methods for small angle scattering analysis 
 
@@ -89,4 +89,4 @@
 ## Appendices
 
 - [x] Page 115: Fix overlapping Code Block captions
-- [ ] Page 127/128: Figures C.4, C.5, and C.6: Add x-axis label reading "z/\AA"
+- [x] Page 127/128: Figures C.4, C.5, and C.6: Add x-axis label reading "z/\AA"
