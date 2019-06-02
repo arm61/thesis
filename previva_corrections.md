@@ -17,7 +17,7 @@
 - [x] Page 3, Para 2, Line 1: "The structures can" to "The structures that can"
 - [x] Page 3, Para 2, Line 19: "will for, a lamellar" to "will form a lamellar"
 - [x] Page 3, Para 3, Line 3: "significant interest both" to "significant relevance both"
-- [ ] Page 4, Para 2, Line 7: Add DOI: 10.1107/S1600576718008956 to Reference 29
+- [x] Page 4, Para 2, Line 7: Add DOI: 10.1107/S1600576718008956 to Reference 29
 - [x] Page 4, Para 3, Line 11: "Further," to "Furthermore,"
 - [x] Page 4, Para 4, Line 1: "the analysis reflectometry" to "the analysis of reflectometry"
 - [x] Page 5, Para 1, Line 12: "for coarse-graining as" to "for coarse-graining has"
