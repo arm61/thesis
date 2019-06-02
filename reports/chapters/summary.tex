@@ -8,8 +8,8 @@ Finally, teaching materials for introducing classical simulation approaches to u
 
 \section{Chemically-consistent modelling of X-ray and neutron reflectometry}
 The use of coarse-graining is commonplace in the analysis of reflectometry measurements, as the models that are typically used are comprised of layers which represent different chemical components of the underlying structure.
-In the work contained in Chapter~\ref{reflectometry1}, this approached was extended to use a chemically-consistent model for the analysis of a set of phospholipid reflectometry measurements at an air-deep eutectic solvent interface.
-This model was coarse-grained such that the system was described as consisting of two layers describing the phospholipid heads and tails.
+In the work contained in Chapter~\ref{reflectometry1}, this approach was extended to use a chemically-consistent model for the analysis of a set of phospholipid reflectometry measurements at an air-deep eutectic solvent interface.
+This model was coarse-grained such that the system was described as consisting of two layers consisting of phospholipid heads and tails.
 The use of this coarse-grained method allowed for X-ray reflectometry\footnote{XRR.} measurements conducted at different surface pressures\footnote{SPs.} to be co-refined, by keeping chemical features constant\footnote{Such as the head and tail volumes.} across the different SPs for a given phospholipid.
 This allowed for the constraints, that are typically applied in the modelling of phospholipid monolayers at an air-water interface, on the head and tail volume to be removed to reflect of the effect of the non-aqueous solvent and SP on these.
 This method allowed for a unique insight into the structure of the phospholipid monolayer at the air-DES interface, showing a strong similarity to those formed at the air-water interface.
@@ -42,7 +42,7 @@ Such a workflow would allow users of NR and XRR instruments to easily set up and
 Furthermore, the computational requirements to perform these simulations are becoming more accessible with improving compute resource at national facilities, so it would be possible for the user to perform these simulations concurrently with experiments.
 
 The second area of future work would be the improvement of the chemically-consistent monolayer model based on the findings from this work.
-As mentioned above the atomistic simulation showed the inadequacy of the use of a uniform solvent, therefore it may be useful to investigate the use of a three-layer model to describe a phospholipid monolayer system,\footnote{Where the head layer is split in two to allow for different solvation.} as it was shown that the solvation at the carbonyl group is greater than would be expected for a simple sigmoidal decay.
+As mentioned above, the atomistic simulation showed the inadequacy of the use of a uniform solvent, therefore it may be useful to investigate the use of a three-layer model to describe a phospholipid monolayer system,\footnote{Where the head layer is split in two to allow for different solvation.} as it was shown that the solvation at the carbonyl group is greater than would be expected for a simple sigmoidal decay.
 Furthermore, it was noted that in disagreement with the work of Campbell \emph{et al.},\autocite{campbell_structure_2018} it appears the interfacial roughness between the layers is not carried in a conformal fashion.
 Instead, the roughness appeared to increase from the tail to the head of the phospholipid, this suggests that a more accurate monolayer model would not constrain the interface roughness to be conformal when only a single phospholipid type is present, as is the case in the chemically-consistent monolayer model.
 
@@ -57,7 +57,7 @@ Previous work has involved the use of potential models that are biased on the ag
 However, these still require a significant computational resource to run and obtain useful information.
 A pragmatic approach to enable experimental users to use simulation-driven analysis would be to implement the methods applied previously in an easy-to-operate software that would allow for access to high-performance computing resources.
 Such an implementation is already available within the biological scattering community in the form of the SASSIE\autocite{perkins_atomistic_2016} and WAXSiS\autocite{knight_waxsis_2015} resources.
-However, there is still the opportunity for a straightforward solution to the problem to easily generating realistic starting structures for the simulation of micellar solutions, using the optimisation of structural and energetic information.
+However, there is still the opportunity for a straightforward solution to the problem of easily generating realistic starting structures for the simulation of micellar solutions, using the optimisation of structural and energetic information.
 This may come in the form of an optimised version of the coarse-grained implementation of the Empirical Potential Structure Refinement,\autocite{soper_coarse-grained_2017} or a generalisation of the workflow developed by Ivanovic \emph{et al.}.\autocite{ivanovic_temperature-dependent_2018}
 
 \section{Developing open-source teaching materials for classical simulation and scattering}
