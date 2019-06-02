@@ -14,7 +14,7 @@ Code Block~\ref{cb:recomb} describes the recombination step of the DE algorithm,
 %
 \begin{listing}
     \centering
-    \caption[-1\baselineskip]{The recombination step used in a classical trial method for a DE algorithm, as described in \cite{bjorck_fitting_2011}. The input variables are \texttt{p} which is an array of floats representing the parent population, \texttt{m} which is an array of floats representing the mutant vector, and \texttt{kr} the recombination constant. This function returns an array of floats representing the offspring population.}
+    \caption[-2\baselineskip]{The recombination step used in a classical trial method for a DE algorithm, as described in \cite{bjorck_fitting_2011}. The input variables are \texttt{p} which is an array of floats representing the parent population, \texttt{m} which is an array of floats representing the mutant vector, and \texttt{kr} the recombination constant. This function returns an array of floats representing the offspring population.}
     \lstinputlisting{reports/code_blocks/recombination.py}
     \label{cb:recomb}
 \end{listing}
@@ -23,7 +23,7 @@ Code Block~\ref{cb:sel} describes the classical step of the DE algorithm, as des
 %
 \begin{listing}
     \centering
-    \caption{The classical selection step used in a DE algorithm, as described in \cite{bjorck_fitting_2011}. The input variables are \texttt{p} which is an array of floats representing the parent population, \texttt{m} which is an array of floats representing the offspring vector, and \texttt{f} is the function to be minimised. This function returns an array of floats representing the new parent population.}
+    \caption[-2\baselineskip]{The classical selection step used in a DE algorithm, as described in \cite{bjorck_fitting_2011}. The input variables are \texttt{p} which is an array of floats representing the parent population, \texttt{m} which is an array of floats representing the offspring vector, and \texttt{f} is the function to be minimised. This function returns an array of floats representing the new parent population.}
     \lstinputlisting{reports/code_blocks/selection.py}
     \label{cb:sel}
 \end{listing}
