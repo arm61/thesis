@@ -4,7 +4,7 @@ While the currently applied traditional methods for the analysis of experimental
 There is growing interest in the use of multi-modal analysis methods that leverage classical simulation to assist in the analysis of scattering data.\autocite{ivanovic_temperature-dependent_2018,scoppola_combining_2018,dabkowska_modulation_2014,hub_interpreting_2018}
 This would involve the simulation of the chemical system in order to educate the analysis of the experimental data.
 These systems, especially when the materials being simulated are soft in nature, are often highly complex and typically cover large length scales.
-Classical simulation, particularly in combination with coarse-grained potential models, can feasibly enable the simulation of these methods.
+Classical simulation, particularly in combination with coarse-grained potential models, can feasibly enable the simulation of these systems.
 
 In order to simulate the complexity of a real chemical system, it is necessary to model the electrons of the molecules and their interactions.
 This is usually achieved using quantum mechanical calculations, where the energy of the system is calculated by finding some approximate solution to the Schr\"{o}dinger equation.
@@ -102,7 +102,7 @@ The use of a PBC is particularly powerful in the simulation of homogenous system
 \end{figure}
 %
 
-The cut-off is another important factor for classical simulation, this is the distance after which the energy between two particles is considered to be zeros.
+The cut-off is another important factor for classical simulation, this is the distance after which the energy between two particles is considered to be zero.
 Therefore, for distances greater than the cut-off, it is not necessary to calculate the energy between the two particles as it is taken to be zero.\footnote{This leads to an increase in computational efficiency.}
 Code Block~\ref{cb:lj} gives an example of some code that could be used to calculate the Lennard-Jones energy of an atomistic system, where both the PBC and the energy cut-off distance are considered.
 %
