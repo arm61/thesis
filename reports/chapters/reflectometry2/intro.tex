@@ -14,20 +14,20 @@ The SLD profile from the MD simulations agreed well with that fitted to the refl
 The reflectometry profile was determined explicitly from the classical simulation in the works of Miller \emph{et al.} and Anderson and Wilson.\autocite{miller_monte_2003,anderson_molecular_2004}
 In these studies, an amphiphilic polymer at the oil-water interface was simulated by Monte Carlo and MD respectively, and the NR profile was found by splitting the simulation cell into a series of small layers and treating these layers with the Abel\`{e}s formalism.
 There was good agreement between the experimental and calculated reflectometry, for low interfacial coverages of the polymer.
-Another study that has made a direct comparison between the atomistic simulation-derived reflectometry data and those measured experimentally includes that of Darr\'{e} \emph{et al.}\autocite{darre_molecular_2015}
+Another study that has made a direct comparison between the atomistic simulation-derived reflectometry data and those measured experimentally includes that of Darr\'{e} \emph{et al.}.\autocite{darre_molecular_2015}
 In this work, NeutronRefTools was developed to produce the NR profile from an MD simulation.
 The particular system studied was a supported DMPC phospholipid bilayer, with good agreement found between the simulation-derived profile and the associated experimental measurements.
 However, the nature of the support required that a correction for the head group hydration be imposed to achieve this agreement.
 
 Koutsioubas used the MARTINI coarse-grained representation of a DPPC phospholipid bilayer to compare with experimental reflectometry.\autocite{koutsioubas_combined_2016}
 This work shows that the parameterisation of the MARTINI water bead was extremely important in the reproduction of the reflectometry data, as the non-polarisable water bead would freeze into crystalline sheets resulting in artefacts in the reflectometry profiles calculated.
-The work of Hughes \emph{et al.} studied again a DPPC phospholipid bilayer system,\autocite{hughes_interpretation_2016} albeit an all-atom representation, that was compared with a supported DPPC phospholipid bilayer system measured with polarised NR.
+The work of Hughes \emph{et al.} studied, again, a DPPC phospholipid bilayer system,\autocite{hughes_interpretation_2016} albeit an all-atom representation, that was compared with a supported DPPC phospholipid bilayer system measured with polarised NR.
 The SLD profile found from MD simulation was varied to better fit the experimental measurement, resulting in good agreement.
 Additionally, the ability to vary the SLD profile was used to remove an anomalous difference present in the SLD, that arose when the MD simulations were merged with an Abel\`{e}s layer model.
 This was done to account for regions present in the experiment that were not modelled explicitly.
 
 In all the examples discussed so far, there is no direct comparison between the reflectometry profile determined from simulation and that from the application of a traditional modelling approach.
-Indeed, the only example,\footnote{To the author's knowledge.} where a direct comparison was drawn is the work of Dabkowska \emph{et al.}\autocite{dabkowska_modulation_2014}
+Indeed, the only example,\footnote{To the author's knowledge.} where a direct comparison was drawn is the work of Dabkowska \emph{et al.}.\autocite{dabkowska_modulation_2014}
 This work compares the reflectometry profile from a DPPC monolayer at the air-water interface containing dimethyl sulfoxide molecules with a similar MD simulation using the CHARMM potential model.
 The use of multimodal analysis allowed the determination of the position and orientation of dimethyl sulfoxide molecules at a particular region within the monolayer.
 
@@ -42,8 +42,8 @@ This potential model attempts to simplify the interactions of phospholipid and p
 This coarse-grained potential model was initially developed for the simulation of a phospholipid bilayer, and proteins held within and therefore is parameterised well under these conditions.
 It has successfully been used to simulate a wide range of systems, such as DNA nucleotides,\autocite{uusitalo_martini_2015} the micellisation of zwitterionic and nonionic surfactants,\autocite{sanders_micellization_2010} and the self-assembly of ionic surfactants.\autocite{wang_coarse-grained_2015}
 
-Increasing the simulation resolution gives an united-atom potential mode, where all of the hydrogen atoms are integrated into the heavier atoms to which they are bound.
-One of the most popular united-atom potential models for phospholipid simulations is that developed by Berger \emph{et al.}\autocite{berger_molecular_1997}
+Increasing the simulation resolution gives an united-atom potential model, where all of the hydrogen atoms are integrated into the heavier atoms to which they are bound.
+One of the most popular united-atom potential models for phospholipid simulations is that developed by Berger \emph{et al.}.\autocite{berger_molecular_1997}
 The Berger parameters were optimised to reproduce phospholipid density and area per phospholipid, the latter of which is often an important parameter for the understanding of reflectometry profiles.
 Since its inception, this potential model has proven one of the most commonly used and resilient sets of phospholipid parameters, with the original paper being cited 1500 times at the time of writing.
 Applications of this potential model have mostly been focussed on the simulation of membrane-bound proteins in a phospholipid bilayer.\autocite{tieleman_membrane_2006,cordomi_membrane_2012}
@@ -57,6 +57,6 @@ However, it has also been used for the study of water diffusion within phospholi
 
 It is clear that there is substantial interest in the use of classical simulation, and coarse-graining, for the analysis of NR data.
 However, there has been no work to investigate whether the use of atomistic simulations gives more detail than is required to reproduce the reflectometry profile accurately or to assess whether the application of a coarse-grained representation is suitable to aid in analysis.
-This chapter presents the comparison of three MD simulations of different potential models, with different degree of coarse-graining; namely the Slipid all-atom,\autocite{jambeck_derivation_2012} Berger united-atom,\autocite{berger_molecular_1997} and MARTINI coarse-grained potential models.\cite{marrink_martini_2007}
+This chapter presents the comparison of three MD simulations of different potential models, with different degree of coarse-graining; namely the Slipid all-atom,\autocite{jambeck_derivation_2012} Berger united-atom,\autocite{berger_molecular_1997} and MARTINI coarse-grained potential models.\autocite{marrink_martini_2007}
 This comparison offers a fundamental insight into the simulation resolution that is necessary to reproduce experimental NR measurements.
 Furthermore, the highest resolution simulations are used to suggest possible adjustments that may be made to the traditional, layer models that are commonly used to analyse these measurements.
