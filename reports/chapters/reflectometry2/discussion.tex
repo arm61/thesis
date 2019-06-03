@@ -158,17 +158,6 @@ Regardless of the mechanism, this suggests that a different solvation model shou
 \end{figure}
 %
 
-Figure~\ref{fig:waters30} also shows that without the presence of the roughness, the distribution of the head groups is relatively normal.
-This agrees well with the model used previously to fit the experimental data by Hollinshead \emph{et al.},\autocite{hollinshead_effects_2009} where Gaussian functions were used to describe the phospholipid head and tail groups.
-However, the tail group distribution is not Gaussian and this previous method failed to include any additional factors to account for interfacial roughness.
-Previous work has suggested that when only a single phospholipid type is present, the roughness between the layers should be conformal in nature, that is it should be carried uniformly through the layers.\autocite{kozhevnikov_general_2012,campbell_structure_2018}
-However, from the investigation of the SLD profiles in Figure~\ref{fig:dspcccref30}(b), it appears that the roughness between the phospholipid tails and the air is dramatically different from that at the phospholipid head-water interface.
-In an effort to quantify the interfacial roughness in the simulations, the method outlined in Section~\ref{sec:traj} was used.
-The values for the mean, \SI{95}{\percent} quantile, and the spread between these for the \emph{z}-dimension position for atoms representative of the start, middle, and end of each of the phospholipid head and tails are given in Table~\ref{tab:spread2}, for each the APM associated with a SP of \SI{30}{\milli\newton\per\meter}.\footnote{Similar data at other SPs can be found in Appendix~\ref{refl2}.}
-From this table, it is clear that at the very start of the phospholipid molecule\footnote{At the head group.} the roughness is very large with a value of \SI{\sim10}{\angstrom} for the nitrogen atom.
-However, this decreases slightly within the phospholipid head, reaching a value of \input{output/reflectometry2/dspc_30/slipids_position_C2_30.txt}\si{\angstrom} for the end of the head group.
-There is then a substantial decrease noted in the phospholipid tail, going from \SI{\sim8.5}{\angstrom} at the start of the tail to \SI{\sim1.5}{\angstrom} at the end.
-This indicates the presence of a highly non-conformal roughness in the phospholipid monolayer of a single phospholipid type and therefore in future, it is important to consider this possibility in the use of model layer structure method.
 %
 \begin{table}[b]
 \forcerectofloat
@@ -194,3 +183,14 @@ This indicates the presence of a highly non-conformal roughness in the phospholi
   \end{tabular}
 \end{table}
 %
+Figure~\ref{fig:waters30} also shows that without the presence of the roughness, the distribution of the head groups is relatively normal.
+This agrees well with the model used previously to fit the experimental data by Hollinshead \emph{et al.},\autocite{hollinshead_effects_2009} where Gaussian functions were used to describe the phospholipid head and tail groups.
+However, the tail group distribution is not Gaussian and this previous method failed to include any additional factors to account for interfacial roughness.
+Previous work has suggested that when only a single phospholipid type is present, the roughness between the layers should be conformal in nature, that is it should be carried uniformly through the layers.\autocite{kozhevnikov_general_2012,campbell_structure_2018}
+However, from the investigation of the SLD profiles in Figure~\ref{fig:dspcccref30}(b), it appears that the roughness between the phospholipid tails and the air is dramatically different from that at the phospholipid head-water interface.
+In an effort to quantify the interfacial roughness in the simulations, the method outlined in Section~\ref{sec:traj} was used.
+The values for the mean, \SI{95}{\percent} quantile, and the spread between these for the \emph{z}-dimension position for atoms representative of the start, middle, and end of each of the phospholipid head and tails are given in Table~\ref{tab:spread2}, for each the APM associated with a SP of \SI{30}{\milli\newton\per\meter}.\footnote{Similar data at other SPs can be found in Appendix~\ref{refl2}.}
+From this table, it is clear that at the very start of the phospholipid molecule\footnote{At the head group.} the roughness is very large with a value of \SI{\sim10}{\angstrom} for the nitrogen atom.
+However, this decreases slightly within the phospholipid head, reaching a value of \input{output/reflectometry2/dspc_30/slipids_position_C2_30.txt}\si{\angstrom} for the end of the head group.
+There is then a substantial decrease noted in the phospholipid tail, going from \SI{\sim8.5}{\angstrom} at the start of the tail to \SI{\sim1.5}{\angstrom} at the end.
+This indicates the presence of a highly non-conformal roughness in the phospholipid monolayer of a single phospholipid type and therefore in future, it is important to consider this possibility in the use of model layer structure method.
