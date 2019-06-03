@@ -48,7 +48,7 @@
 - [x] Page 41, Para 2, Line 14: "modelling methodology" to "modelling methodology."
 - [x] Page 48, Para 2, Line 12: "volumes will remain" to "volumes remain"
 - [x] Page 48, Para 2, Line 13/14: "thickness will vary." to thickness vary."
-- [ ] Page 49, Code Block 3.1: Remove the parameters function and this is unnecessary
+- [x] Page 49, Code Block 3.1: Remove the parameters function and this is unnecessary
 - [x] Page 51, Para 1, Line 9: "the intensity" to "the reflected intensity"
 - [x] Page 51, Para 2, Line 9: "the intensity" to "the reflected intensity"
 - [x] Page 56, Para 4, Line 3: "current measurement than" to "current measurements than"
