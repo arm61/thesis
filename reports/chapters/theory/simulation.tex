@@ -84,6 +84,7 @@ Therefore, it is common in DE algorithms, where bounds must be set, that if the 
 An implementation of the DE algorithm is given programmatically in Code Block~\ref{cb:diff_evo},\footnote{Additional Code Blocks showing the mutation, recombination, selection steps may be found in Appendix~\ref{diff_evo_app}.} where this reinitialisation is achieved by obtaining a new random number within the given bounds.
 %
 \begin{listing}[b]
+    \forceversofloat    
     \centering
     \caption{An example of a simple implementation for a DE algorithm as described in \cite{bjorck_fitting_2011}. The input variables are \texttt{population} which is an array of floats containing the initial parent population, \texttt{f} which is the figure of merit function to be minimised, \texttt{km} which is the mutation constant, \texttt{kr} which is the recombination constant, \texttt{bounds} which is an array of floats giving the minimum and maximum values for the variables, and \texttt{max\_iter} which is the maximum number of iterations that should be performed. This will return \texttt{history} which is a history of the variables that are being fit during the DE algorithm.}
     \lstinputlisting[nolol]{reports/code_blocks/diff_evo.py}
