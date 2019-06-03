@@ -59,7 +59,7 @@ The selection stage comprises of using some figure of merit, $\zeta$, to choose 
 %
 where, the $*$ notation indicates all objects in the given population, and $\zeta_{\mathbf{o}_{*,j}}$ and $\zeta_{\mathbf{p}_{*,j}}$ are the figures of merit for the offspring and population candidate solutions respectively.
 In our example, that figure of merit may be the agreement between some experimental data and our model, or for the example in Figure~\ref{fig:diff_evo} it is the value of the Ackley function,\autocite{ackley_connectionist_1987} which is being minimised.
-The Ackley function is a common function used for assessing the utility of global optimisation functions, which has the following form in the two-dimensional case, 
+The Ackley function is a common function used for assessing the utility of global optimisation functions, and has the following form in the two-dimensional case, 
 %
 \begin{equation}
 \begin{aligned}
@@ -142,9 +142,9 @@ Code Block~\ref{cb:part_swarm} shows a functional programmatic implementation of
 
 \subsection{Markov chain Monte-Carlo}
 \label{sec:mcmc}
-Markov chain Monte Carlo\footnote{Abbreviated to MCMC.} is a sampling methodology, derived from direct sampling Monte-Carlo.\autocite{krauth_statistical_2006}
-The aim of an MCMC algorithm is to sample a probability distribution, when parameters are described in terms of their degree of probability.\autocite{sivia_data_2006}
-Similar to molecular dynamics,\footnote{MD.} in practical terms, MCMC should not be used on a system that is not already optimised, as its purpose is probability distribution sampling rather than minimisation.
+Markov chain Monte Carlo\sidenote[][-1\baselineskip]{Abbreviated to MCMC.} is a sampling methodology, derived from direct sampling Monte-Carlo.\sidecite<-1\baselineskip>{krauth_statistical_2006}
+The aim of an MCMC algorithm is to sample a probability distribution, when parameters are described in terms of their degree of probability.\sidecite<-1\baselineskip>{sivia_data_2006}
+Similar to molecular dynamics,\sidenote[][-1\baselineskip]{MD.} in practical terms, MCMC should not be used on a system that is not already optimised, as its purpose is probability distribution sampling rather than minimisation.
 Generally, the approach would be to optimise using, for example, one of the approaches described above, then to use MCMC or MD to sample the appropriate search-space.
 For example, in this work MCMC is used following the optimisation of a reflectometry model using a DE algorithm, to quantify the inverse uncertainties of the model.\footnote{This is the name given to the uncertainties in the parameters fitted in the modelling process.}
 In addition to being able to give information about the inverse uncertainties, MCMC also offers a more complete understanding of the correlations present between the different parameters,\autocite{gilks_markov_1995} as the interactions between the parameter variation has been quantified.
@@ -290,9 +290,9 @@ However, this is not the only simulation ensemble that is available, within this
 \item the NPT (isothermal-isobaric); this ensemble is similar to the NVT ensemble, however, the system volume is allowed to vary while the overall system pressure is held constant using a barostat.
 \end{itemize}
 %
-Thermostating involves controlling the kinetic energy of the particles\sidenote[][-6\baselineskip]{Using Equation~\ref{equ:ek}.} such that the simulation temperature is kept at a predefined value.
-There are a variety of methods for thermostating a MD simulation, such as the Andersen, Nos\'{e}-Hoover, or Berendsen methods.\sidecite<-8\baselineskip>{andersen_molecular_1980,nose_unified_1984,berendsen_molecular_1984,hoover_canonical_1985}
-However, the most straightforward to describe, and that implemented in the \texttt{pylj} software,\sidecite<-3\baselineskip>[Discussed in detail in Chapter \ref{teaching}]{mccluskey_pylj_2018,mccluskey_arm61/pylj_2018} is a velocity rescaling.\autocite{bussi_canonical_2007}
+Thermostating involves controlling the kinetic energy of the particles\footnote{Using Equation~\ref{equ:ek}.} such that the simulation temperature is kept at a predefined value.
+There are a variety of methods for thermostating a MD simulation, such as the Andersen, Nos\'{e}-Hoover, or Berendsen methods.\autocite{andersen_molecular_1980,nose_unified_1984,berendsen_molecular_1984,hoover_canonical_1985}
+However, the most straightforward to describe, and that implemented in the \texttt{pylj} software,\autocite[discussed in detail in Chapter \ref{teaching}]{mccluskey_pylj_2018,mccluskey_arm61/pylj_2018} is a velocity rescaling.\autocite{bussi_canonical_2007}
 This is where the velocities for a random subset of the particles, $\mathbf{v}_i$ are adapted based on the following relation,
 %
 \begin{equation}
