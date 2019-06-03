@@ -22,7 +22,7 @@ Moved the introduction of the ackley function to the end of the paragraph and ad
 The Ackley function is a common function used for assessing the utility of global optimisation functions, which has the following form in the two-dimensional case, 
 %
 \begin{equation}
-f(x,y) = -a \exp{\big\[-b\sqrt{0.5(x^2 + y^2)}\big\]} - \exp{\big\[0.5(\cos{cx} + \cos{cy})\big\]} + e + a,
+f(x,y) = -a \exp{\big[-b\sqrt{0.5(x^2 + y^2)}\big]} - \exp{\big[0.5(\cos{cx} + \cos{cy})\big]} + e + a,
 \end{equation}
 where, $a$, $b$, and $c$ are constants defined by the user, and $e$ is the base of the natural logarithm. 
 ```
