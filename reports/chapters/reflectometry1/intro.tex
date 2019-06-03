@@ -54,11 +54,13 @@ While it is possible to model the NR from a phospholipid monolayer with a single
 Even when two layers are utilised, it is often the case that the volumes of the head and tail groups, $V_i$, are used as constraints in the modelling process, as the SLD of a layer may be determined as follows,
 %
 \begin{equation}
-\text{SLD}_i = \frac{b_i}{V_i}(1-\phi_i)+\text{SLD}_s(\phi_s)
+\text{SLD}_i = \frac{b_i}{V_i}(1-\phi_i)+\text{SLD}_s(\phi_i)
 \label{equ:sld}
 \end{equation}
 %
 where, $b_i$ is the scattering length of the head or tail, $\phi_i$ is the volume fraction of solvation by the solvent, $\text{SLD}_s$ is the solvent scattering length density, and $i$ indicates either the head or tail layer.
+The scattering length for the head or tail of the phospholipid can be found based on the different atom types present in each. 
+Therefore, the volume and solvation fraction are variables that may be fitted to give value for the SLD that may be used in Equation~\ref{equ:knsld}.
 However, as noted by Campbell \emph{et al.},\autocite{campbell_structure_2018} this method often fails to account for the compaction of the carbon chains under elevated SPs,\autocite{mcconlogue_close_1997,small_lateral_1984} which may lead to a volume reduction of up to \SI{\sim 15}{\percent}.
 Furthermore,\footnote{As is discussed in Section~\ref{refl1:anal}.} the use of a constrained head group volume may also influence the result of the modelling process in situations where the volume is poorly defined.
 
