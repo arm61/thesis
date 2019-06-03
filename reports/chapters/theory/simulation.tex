@@ -48,7 +48,6 @@ The recombination constant controls the progress of the algorithm as it impacts 
 
 The final stage is to compare the offspring and parent population vectors, in the selection stage to create the new parent population for the next iteration.
 The selection stage comprises of using some figure of merit, $\zeta$, to choose between the subunit from the offspring or parent population vector.
-In our example, that figure of merit may be the agreement between some experimental data and our model, or for the example in Figure~\ref{fig:diff_evo} it is the value of the Ackley function,\autocite{ackley_connectionist_1987} which is being minimised.\footnote{The Ackley function is a common function used for assessing the utility of global optimisation functions.}
 %
 \begin{equation}
     \mathbf{p}_{*,j} \leftarrow
@@ -59,6 +58,13 @@ In our example, that figure of merit may be the agreement between some experimen
 \end{equation}
 %
 where, the $*$ notation indicates all objects in the given population, and $\zeta_{\mathbf{o}_{*,j}}$ and $\zeta_{\mathbf{p}_{*,j}}$ are the figures of merit for the offspring and population population candidate solutions respectively.
+In our example, that figure of merit may be the agreement between some experimental data and our model, or for the example in Figure~\ref{fig:diff_evo} it is the value of the Ackley function,\autocite{ackley_connectionist_1987} which is being minimised.
+The Ackley function is a common function used for assessing the utility of global optimisation functions, which has the following form in the two-dimensional case, 
+%
+\begin{equation}
+f(x,y) = -a \exp{[-b\sqrt{0.5(x^2 + y^2)}]} - \exp{[0.5(\cos{cx} + \cos(cy})]} + e + a,
+\end{equation}
+where, $a$, $b$, and $c$ are constants defined by the user, and $e$ is the base of the natural logarithm. 
 %
 \begin{figure}[t]
     \centering
