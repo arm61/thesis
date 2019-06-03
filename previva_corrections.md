@@ -71,7 +71,6 @@
 
 - [x] Page 85, Para 3, Line 12: "more likely that" to "more likely than"
 - [x] Page 86, Para 2, Line 14: "Tarek \emph{et al.},," to "Tarek \emph{et al.},"
-- [ ] Page 90, Para 2: Add explantion of how Efficiency is calculated
 - [x] Page 94, Para 1, Line 3: "However, it may the case" to "However, it may be the case"
 
 ## Developing open-source teaching materials for classical simulation and scattering

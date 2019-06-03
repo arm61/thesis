@@ -2,7 +2,7 @@
 
 [Andrew R. McCluskey](https://orcid.org/0000-0003-3381-5911)
 
-[a.r.mccluskey@bath.ac.uk](mailto:a.r.mccluskey@bath.ac.uk)
+[a.r.mccluskey@bath.ac.uk](mailto:a.r.mccluskey@bath.ac.uk)/[andrew.mccluskey@diamond.ac.uk](mailto:andrew.mccluskey@diamond.ac.uk)
 
 Supervisors: [Karen J. Edler](https://orcid.org/0000-0001-5822-0127) (Bath), [Stephen C. Parker](https://orcid.org/0000-0003-3804-0975) (Bath), [Andrew J. Smith](https://orcid.org/0000-0003-3745-7082) (DLS), and [Jonathan L. Rawle](https://orcid.org/0000-0001-8767-4443) (DLS)
 
@@ -20,6 +20,8 @@ Requirements:
 
 - anaconda or miniconda python
 
+Before the work may be re-created it is necessary to obtain the experimental data, 
+this is stored in a series of repositories in the Bath Data Archive, however, a zip file of all the data may be obtained from contacting Andrew. 
 The supplied Snakemake file, will reproduce all of the analysis, plot the figures, and build the thesis (`reports/main.pdf`) when run.
 Be aware that the analyses within this work are non-trivial and take many hours to run so **use caution** before re-running.
 
