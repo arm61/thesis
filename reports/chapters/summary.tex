@@ -15,10 +15,10 @@ This allowed for the constraints, that are typically applied in the modelling of
 This method allowed for a unique insight into the structure of the phospholipid monolayer at the air-DES interface, showing a strong similarity to those formed at the air-water interface.
 However, it was possible to observe that the head group volume for the PG-containing phospholipid appeared to swell as a result of interactions with the ionic solvent.
 
-This work was published alongside a fully-reproducible electronic supplementary information,\autocite{mccluskey_bayesian_2019,mccluskey_lipids_at_airdes_2019} which gave access to the chemically-consistent model Python class.
-This will allow others to use this model in their data analysis, additionally there is scope to include this model\footnote{In addition to the \texttt{MDSimulation} Python class developed in Chapter~\ref{reflectometry2}.} in an accessible repository for models that may be used with the \texttt{refnx} package.\autocite{nelson_refnx_2019,nelson_refnx_2019-1,nelson_refnx-models_nodate}
+This work was published alongside a fully-reproducible electronic supplementary information,\sidecite{mccluskey_bayesian_2019,mccluskey_lipids_at_airdes_2019} which gave access to the chemically-consistent model Python class.
+This will allow others to use this model in their data analysis, additionally there is scope to include this model\footnote{In addition to the \texttt{MDSimulation} Python class developed in Chapter~\ref{reflectometry2}.} in an accessible repository for models that may be used with the \texttt{refnx} package.\sidecite{nelson_refnx_2019,nelson_refnx_2019-1,nelson_refnx-models_nodate}
 The future of XRR and neutron reflectometry\footnote{NR} analysis will build on the sharing of these models enabling science to be performed by science-domain experts, who have little reflectometry analysis experience.
-This is already the case in SAS where a large library of functional models exist and users can pick those which fit their needs.\autocite{noauthor_sasfit_nodate,noauthor_sasview_nodate}
+This is already the case in SAS where a large library of functional models exist and users can pick those which fit their needs.\sidecite{noauthor_sasfit_nodate,noauthor_sasview_nodate}
 
 Another novel innovation of this work was the use of Markov chain Monte Carlo sampling to probe the inverse uncertainties of a given model, in addition to the inter-parameter correlations.
 However, it was noted that the use of MCMC can only probe the parameter space available within the given experimental uncertainties, which in particular for XRR measurements are believed to be significantly underestimated.\footnote{Therefore, leading to an underestimation in the inverse uncertainties of the model.}
@@ -37,13 +37,13 @@ For example, it was observed that the uniform solvation that is commonly used fo
 This work offers two important opportunities for future work in the area.
 The first is the advancement of the use for simulation-driven analysis in NR measurements; where it was suggested that either the united-atom or atomistic simulations would be capable of reproducing experimental data.
 Therefore it would be pertinent to develop a workflow to produce starting structure for different, common, reflectometry systems, such as monolayers, bilayers, etc.
-This workflow could be implemented on computing resources at the large scale facilities and allow users to state the phospholipid type and the expected structure, leveraging existing software such as Packmol and GROMACS.\autocite[in a similar fashion the building of a monolayer in this work]{martinez_packmol_2009,lindahl_gromacs_2001} to build a starting structure and run a simulation.
+This workflow could be implemented on computing resources at the large scale facilities and allow users to state the phospholipid type and the expected structure, leveraging existing software such as Packmol and GROMACS.\sidecite[in a similar fashion the building of a monolayer in this work]{martinez_packmol_2009,lindahl_gromacs_2001} to build a starting structure and run a simulation.
 Such a workflow would allow users of NR and XRR instruments to easily set up and run simulations to match the experiments that they are conducting.
 Furthermore, the computational requirements to perform these simulations are becoming more accessible with improving compute resource at national facilities, so it would be possible for the user to perform these simulations concurrently with experiments.
 
 The second area of future work would be the improvement of the chemically-consistent monolayer model based on the findings from this work.
 As mentioned above, the atomistic simulation showed the inadequacy of the use of a uniform solvent, therefore it may be useful to investigate the use of a three-layer model to describe a phospholipid monolayer system,\footnote{Where the head layer is split in two to allow for different solvation.} as it was shown that the solvation at the carbonyl group is greater than would be expected for a simple sigmoidal decay.
-Furthermore, it was noted that in disagreement with the work of Campbell \emph{et al.},\autocite{campbell_structure_2018} it appears the interfacial roughness between the layers is not carried in a conformal fashion.
+Furthermore, it was noted that in disagreement with the work of Campbell \emph{et al.},\sidecite{campbell_structure_2018} it appears the interfacial roughness between the layers is not carried in a conformal fashion.
 Instead, the roughness appeared to increase from the tail to the head of the phospholipid, this suggests that a more accurate monolayer model would not constrain the interface roughness to be conformal when only a single phospholipid type is present, as is the case in the chemically-consistent monolayer model.
 
 \section{Using particle swarm methods for small angle scattering analysis}
@@ -53,20 +53,20 @@ This PSO was implemented in the \texttt{fitoog} software and used a severely coa
 Despite some success on a small test system, this method was not able to be applied to a case with real experimental data.
 
 The failure of the PSO to be able to produce a realistic micellar structure indicates that it may be necessary to consider some energetic optimisation alongside the purely structural one.
-Previous work has involved the use of potential models that are biased on the agreement with experimental scattering.\autocite{hargreaves_atomistic_2011,soper_coarse-grained_2017,ivanovic_temperature-dependent_2018}
+Previous work has involved the use of potential models that are biased on the agreement with experimental scattering.\sidecite{hargreaves_atomistic_2011,soper_coarse-grained_2017,ivanovic_temperature-dependent_2018}
 However, these still require a significant computational resource to run and obtain useful information.
 A pragmatic approach to enable experimental users to use simulation-driven analysis would be to implement the methods applied previously in an easy-to-operate software that would allow for access to high-performance computing resources.
-Such an implementation is already available within the biological scattering community in the form of the SASSIE\autocite{perkins_atomistic_2016} and WAXSiS\autocite{knight_waxsis_2015} resources.
+Such an implementation is already available within the biological scattering community in the form of the SASSIE\sidecite{perkins_atomistic_2016} and WAXSiS\sidecite{knight_waxsis_2015} resources.
 However, there is still the opportunity for a straightforward solution to the problem of easily generating realistic starting structures for the simulation of micellar solutions, using the optimisation of structural and energetic information.
-This may come in the form of an optimised version of the coarse-grained implementation of the Empirical Potential Structure Refinement,\autocite{soper_coarse-grained_2017} or a generalisation of the workflow developed by Ivanovic \emph{et al.}.\autocite{ivanovic_temperature-dependent_2018}
+This may come in the form of an optimised version of the coarse-grained implementation of the Empirical Potential Structure Refinement,\sidecite{soper_coarse-grained_2017} or a generalisation of the workflow developed by Ivanovic \emph{et al.}.\sidecite{ivanovic_temperature-dependent_2018}
 
 \section{Developing open-source teaching materials for classical simulation and scattering}
 An important challenge for ensuring that users of scattering techniques apply simulation-driven analysis methods is to provide suitable training material.
 Thus to accompany the development of these coarse-grained methodologies applied to the analysis of scattering measurements, teaching resources have been created to introduce users of scattering methods to classical simulation.
-Driven by the growing interest in using simulation to analyse SAS experiments,\autocite{hub_interpreting_2018,perkins_atomistic_2016} the open learning module entitled ``The interaction between simulation and scattering'' was developed.\autocite{mccluskey_introduction_2019,mccluskey_pythoninchemistry/sim_and_scat_2019}
+Driven by the growing interest in using simulation to analyse SAS experiments,\sidecite{hub_interpreting_2018,perkins_atomistic_2016} the open learning module entitled ``The interaction between simulation and scattering'' was developed.\sidecite{mccluskey_introduction_2019,mccluskey_pythoninchemistry/sim_and_scat_2019}
 This was designed to introduce users of scattering methods to the underlying mechanics of classical molecular dynamics\footnote{MD.} simulations through the use of Python-based examples, to stimulate the worked example effect.
 In addition to showing how classical MD worked, this also showed how the scattering profile may be determined directly from the simulation trajectory.
-Alongside this open learning module, the Python package \texttt{pylj} was developed.\autocite{mccluskey_pylj_2018,mccluskey_arm61/pylj_2019-2}
+Alongside this open learning module, the Python package \texttt{pylj} was developed.\sidecite{mccluskey_pylj_2018,mccluskey_arm61/pylj_2019-2}
 This package was created to introduce classical MD and the results available to these simulations in a computational laboratory fashion.
 Open-source and written in the readable Python language this software aimed to engage students to learn more about simulation methods by interacting with the simulations through the easy visualisation environment, which aimed to provide a straightforward way to rationalise the system being simulated.
 This package was used in the open learning module, has already been applied in the undergraduate computational chemistry laboratory at the University of Bath, and will in the future be used at the University of Bristol.

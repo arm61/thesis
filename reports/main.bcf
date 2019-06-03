@@ -1925,11 +1925,11 @@
     <bcf:datasource type="file" datatype="bibtex">main.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">mccluskey_model-dependent_2018</bcf:citekey>
-    <bcf:citekey order="2">mccluskey_bayesian_2019</bcf:citekey>
-    <bcf:citekey order="3">mccluskey_assessing_2019</bcf:citekey>
-    <bcf:citekey order="4">mccluskey_pylj_2018</bcf:citekey>
-    <bcf:citekey order="5">mccluskey_introduction_2019</bcf:citekey>
+    <bcf:citekey order="1">mccluskey_model-dependent_20182</bcf:citekey>
+    <bcf:citekey order="2">mccluskey_bayesian_20192</bcf:citekey>
+    <bcf:citekey order="3">mccluskey_assessing_20192</bcf:citekey>
+    <bcf:citekey order="4">mccluskey_pylj_20182</bcf:citekey>
+    <bcf:citekey order="5">mccluskey_introduction_20192</bcf:citekey>
     <bcf:citekey order="6">jones_soft_2002</bcf:citekey>
     <bcf:citekey order="7">hargreaves_atomistic_2011</bcf:citekey>
     <bcf:citekey order="8">kraft_patchy_2011</bcf:citekey>
@@ -2067,7 +2067,7 @@
     <bcf:citekey order="111">ewald_berechnung_1921</bcf:citekey>
     <bcf:citekey order="112">essmann_smooth_1995</bcf:citekey>
     <bcf:citekey order="113">harvey_computational_2018</bcf:citekey>
-    <bcf:citekey order="113">leach_molecular_1996</bcf:citekey>
+    <bcf:citekey order="113">leach_molecular_19962</bcf:citekey>
     <bcf:citekey order="114">jorgensen_opls_1988</bcf:citekey>
     <bcf:citekey order="115">marrink_martini_2007</bcf:citekey>
     <bcf:citekey order="116">pluhackova_biomembranes_2015</bcf:citekey>
@@ -2082,9 +2082,9 @@
     <bcf:citekey order="120">kienzle_ncnr_nodate</bcf:citekey>
     <bcf:citekey order="121">storn_differential_1997</bcf:citekey>
     <bcf:citekey order="122">holland_adaptation_1992</bcf:citekey>
-    <bcf:citekey order="123">bjorck_fitting_2011</bcf:citekey>
+    <bcf:citekey order="123">bjorck_fitting_20112</bcf:citekey>
     <bcf:citekey order="124">ackley_connectionist_1987</bcf:citekey>
-    <bcf:citekey order="125">bjorck_fitting_2011</bcf:citekey>
+    <bcf:citekey order="125">bjorck_fitting_20112</bcf:citekey>
     <bcf:citekey order="126">kennedy_particle_1995</bcf:citekey>
     <bcf:citekey order="126">shi_modified_1998</bcf:citekey>
     <bcf:citekey order="127">poli_analysis_2008</bcf:citekey>
@@ -2172,7 +2172,7 @@
     <bcf:citekey order="172">storn_differential_1997</bcf:citekey>
     <bcf:citekey order="172">jones_scipy_nodate</bcf:citekey>
     <bcf:citekey order="173">foreman-mackey_emcee_2013</bcf:citekey>
-    <bcf:citekey order="174">campbell_structure_2018</bcf:citekey>
+    <bcf:citekey order="174">campbell_structure_20182</bcf:citekey>
     <bcf:citekey order="175">wojciechowski_interaction_2016</bcf:citekey>
     <bcf:citekey order="175">wojciechowski_complexation_2016</bcf:citekey>
     <bcf:citekey order="176">foglia_interaction_2014</bcf:citekey>
@@ -2446,9 +2446,9 @@
     <bcf:citekey order="375">mccluskey_pylj_2018</bcf:citekey>
     <bcf:citekey order="375">mccluskey_arm61/pylj_2019-2</bcf:citekey>
     <bcf:citekey order="376">bjorck_fitting_2011</bcf:citekey>
-    <bcf:citekey order="377">bjorck_fitting_2011</bcf:citekey>
-    <bcf:citekey order="378">bjorck_fitting_2011</bcf:citekey>
-    <bcf:citekey order="379">bjorck_fitting_2011</bcf:citekey>
+    <bcf:citekey order="377">bjorck_fitting_20112</bcf:citekey>
+    <bcf:citekey order="378">bjorck_fitting_20112</bcf:citekey>
+    <bcf:citekey order="379">bjorck_fitting_20112</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

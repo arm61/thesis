@@ -1,6 +1,6 @@
 \section{Methods}
 \subsection{Neutron reflectometry measurements}
-The NR measurements analysed in this chapter were published previously by Hollinshead \emph{et al.}\autocite[full details of the experimental methods used can be found in that publication]{hollinshead_effects_2009}.
+The NR measurements analysed in this chapter were published previously by Hollinshead \emph{et al.}\sidecite[full details of the experimental methods used can be found in that publication]{hollinshead_effects_2009}.
 These measurements concern the study of a monolayer of 1,2-distearoyl-\emph{sn}-phosphatidylcholine\footnote{Abbreviated to DSPC.} at the air-water interface.
 The NR measurements were conducted on seven isotopic contrasts of the phospholipid and water.
 These contrasts were made up from four phospholipid types; fully-hydrogenated phospholipid, head-deuterated phospholipid, tail-deuterated phospholipid, and fully-deuterated phospholipid,\footnote{The different lipid constants are abbreviated to h-DSPC, \ce{d_{13}}-DSPC, \ce{d_{70}}-DSPC, and \ce{d_{83}}-DSPC respectively.} were paired with two water contrasts; fully-deuterated water and air-contrast matched water.\footnote{Abbreviated to \ce{D2O} and ACMW respectively, where ACMW is a mixture of \ce{D2O} and \ce{H2O} such that the SLD is zero.}
@@ -31,17 +31,17 @@ Table~\ref{tab:dspc} outlines the shorthands used to refer to the different cont
 
 \subsection{Molecular dynamics simulations}
 The DSPC monolayer simulations were made up of phospholipid molecules modelled with three potential models, each with a different degree of coarse-graining.
-The Slipids potential model is an all-atom representation of the phospholipid molecules,\autocite{jambeck_derivation_2012} which was used alongside the single point charge water model,\autocite[abbreviated to SPC]{berendsen_missing_1987} with a timestep of \SI{0.5}{\femto\second}, the SHAKE, RATTLE, and PLINCS methods were used to constrain the \ce{C-H} bond.\autocite{miyamoto_settle_1992,hess_p-lincs_2008}
-The Berger potential model is obtained by the integration of the hydrogen atoms into the heavy atoms to which they are bound, producing a united-atom potential model;\autocite{berger_molecular_1997} again the SPC water molecules were used.
+The Slipids potential model is an all-atom representation of the phospholipid molecules,\sidecite{jambeck_derivation_2012} which was used alongside the single point charge water model,\sidecite[abbreviated to SPC]{berendsen_missing_1987} with a timestep of \SI{0.5}{\femto\second}, the SHAKE, RATTLE, and PLINCS methods were used to constrain the \ce{C-H} bond.\sidecite{miyamoto_settle_1992,hess_p-lincs_2008}
+The Berger potential model is obtained by the integration of the hydrogen atoms into the heavy atoms to which they are bound, producing a united-atom potential model;\sidecite{berger_molecular_1997} again the SPC water molecules were used.
 This potential model was simulated with an increased timestep of \SI{1}{\femto\second}.\footnote{It is noted that these timesteps are shorter than those typically used for both potential models and that timesteps of up to \SI{2}{\femto\second} have been applied previously.}
-Finally, the lowest resolution potential model used was the MARTINI\autocite{marrink_martini_2007} alongside the polarisable MARTINI water model,\autocite{yesylevskyy_polarizable_2010} to avoid the freezing issues observed previously.\autocite{koutsioubas_combined_2016}
+Finally, the lowest resolution potential model used was the MARTINI\sidecite{marrink_martini_2007} alongside the polarisable MARTINI water model,\sidecite{yesylevskyy_polarizable_2010} to avoid the freezing issues observed previously.\sidecite{koutsioubas_combined_2016}
 The MARTINI 4-to-1 heavy atom beading allows for the use of a \SI{20}{\femto\second} timestep.
 For the Slipids and Berger potential model simulations a short-range cut-off of \SI{10}{\angstrom} was used, while for the MARTINI potential model simulations the cut-off was extended to \SI{15}{\angstrom}.
-All simulations were conducted with temperature coupling to a heat bath at \SI{300}{\kelvin} and a leapfrog integrator, and run using GROMACS 5.0.5\autocite{berendsen_gromacs_1995,lindahl_gromacs_2001,van_der_spoel_gromacs_2005,hess_gromacs_2008} on \num{32} cores of the STFC Scientific Computing resource SCARF.
-The simulations were of monolayers, therefore the Ewald 3DC correction was applied to allow for the use of \emph{x}/\emph{y}-only periodic boundary condition.\autocite{yeh_ewald_1999}
+All simulations were conducted with temperature coupling to a heat bath at \SI{300}{\kelvin} and a leapfrog integrator, and run using GROMACS 5.0.5\sidecite{berendsen_gromacs_1995,lindahl_gromacs_2001,van_der_spoel_gromacs_2005,hess_gromacs_2008} on \num{32} cores of the STFC Scientific Computing resource SCARF.
+The simulations were of monolayers, therefore the Ewald 3DC correction was applied to allow for the use of \emph{x}/\emph{y}-only periodic boundary condition.\sidecite{yeh_ewald_1999}
 A close-packed ``wall'' of non-interacting dummy atoms was placed at each side of the simulation cell in the \emph{z}-direction, to ensure that the atoms could not leave the simulation cell.
 
-The starting simulation structure was generated using the molecular packing software Packmol.\autocite{martinez_packmol_2009}
+The starting simulation structure was generated using the molecular packing software Packmol.\sidecite{martinez_packmol_2009}
 This was used to produce a monolayer of \num{100} DSPC molecules, with the head group oriented to the bottom of the simulation cell.
 A \SI{6}{\angstrom} layer of water was then added such that it overlapped the head groups, this was achieved with the \texttt{solvate} functionality in GROMACS 5.0.5.
 Examples, of the dry and wet monolayer for the Berger potential model, can be seen in Figure~\ref{fig:drywet}.

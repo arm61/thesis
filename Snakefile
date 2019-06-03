@@ -274,7 +274,6 @@ rule thesis:
         shell("cd reports && biber main && cd ../")
         shell("xelatex -output-directory=reports/ reports/main.tex")
         shell("xelatex -output-directory=reports/ reports/main.tex")
-        shell("xelatex -output-directory=reports/ reports/main.tex")
 
 rule theory_figues:
     input:

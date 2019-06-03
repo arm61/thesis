@@ -1,5 +1,5 @@
 \section{Methods}
-The computational methodology described herein has been implemented in the open-source C\_MPI program\footnote{MPI is the abbreviation of message passing interface.} \texttt{fitoog}.\autocite{mccluskey_arm61/fitoog_2019}
+The computational methodology described herein has been implemented in the open-source C\_MPI program\footnote{MPI is the abbreviation of message passing interface.} \texttt{fitoog}.\sidecite{mccluskey_arm61/fitoog_2019}
 
 \subsection{Simulation Methodology}
 %
@@ -14,7 +14,7 @@ The \texttt{fitoog} software takes a series of input files that define the molec
 The molecule input file is a space-separated file consisting of an index, particle name, \emph{x}-coordinate, \emph{y}-coordinate, \emph{z}-coordinate, and scattering length.
 When \texttt{fitoog} reads in a molecular input file, a \texttt{differences} object is created, this stores the differential between the atomistic, or near-atomistic\footnote{Such as the MARTINI-style beading use in this work.} description and the more severe coarse-grained description that is used in the PSO.
 
-Inspired by the coarse-graining methodology applied to directional colloid self-assembly by Law \emph{et al.},\autocite{law_coarse-grained_2016} a severe coarse-graining methodology was developed for use on surfactant molecules in \texttt{fitoog}.
+Inspired by the coarse-graining methodology applied to directional colloid self-assembly by Law \emph{et al.},\sidecite{law_coarse-grained_2016} a severe coarse-graining methodology was developed for use on surfactant molecules in \texttt{fitoog}.
 This allowed for a significantly reduced parameter dimensionality to which the PSO\footnote{Which is described in Section \ref{sec:partswarm}.} could be applied.
 The severe coarse-graining reduced the surfactant to a ``director'' description; where each surfactant molecule is defined by a position and a direction, shown pictorially in Figure~\ref{fig:director}.
 This reduced the parameter dimensionality to just six variables per molecule; three of which described the centre-of-mass position of the molecule and three that describe the angular orientation of the surfactant in space.\footnote{Given the symbols, $a$, $b$, $c$ for the positions and $\phi$, $\omega$, and $\kappa$ for the angles.}
@@ -23,8 +23,8 @@ Additionally, if the molecule was a single particle in length, as is the case fo
 The methodology for the particle swarm in this work followed the implementation discussed in Section~\ref{sec:partswarm}.
 Where the parameters to be optimised where the position and orientation of the input molecules.\footnote{The $a$, $b$, $c$, $\phi$, $\omega$, and $\kappa$ mentioned above.}
 Following each PSO iteration, the molecule director is expanded from the position variable\footnote{Using the \texttt{differences} object mentioned above.}.
-This representation is then rotated based on a rotation matrix, in this work the rotation matrix was constructed by first rotating the rotation axis by $-\phi$ and $-\omega$, then rotating by $\kappa$ in around the $z$-axis, before rotating the axis back to the original position by $\omega$ and $\phi$.\autocite[Figure~\ref{fig:rot} defines these angles]{evans_rotations_2001}
-Following the expansion and reorientation, the scattering profile is then calculated using the Debye equation,\autocite{debye_zerstreuung_1915} this was used over the more efficient Golden Vectors\autocite{watson_rapid_2013} or Fibonacci sequence\autocite{svergun_solution_1994} methods as the aim of this work was to assess the application of the PSO method and efficiency was not the initial goal.
+This representation is then rotated based on a rotation matrix, in this work the rotation matrix was constructed by first rotating the rotation axis by $-\phi$ and $-\omega$, then rotating by $\kappa$ in around the $z$-axis, before rotating the axis back to the original position by $\omega$ and $\phi$.\sidecite[Figure~\ref{fig:rot} defines these angles]{evans_rotations_2001}
+Following the expansion and reorientation, the scattering profile is then calculated using the Debye equation,\sidecite{debye_zerstreuung_1915} this was used over the more efficient Golden Vectors\sidecite{watson_rapid_2013} or Fibonacci sequence\sidecite{svergun_solution_1994} methods as the aim of this work was to assess the application of the PSO method and efficiency was not the initial goal.
 The agreement between the calculated scattering profile and the experimental input scattering was used as a figure of merit, $\zeta$, that was to be optimised by the particle swarm algorithm.
 This $\zeta$ was a simple $\chi^2$ value found as follows,
 %
@@ -54,7 +54,7 @@ Parallelisation was achieved by spreading the population evenly across the cores
 Inter-core messaging was performed using the MPI libraries, and to ensure efficiency only the figures of merit and the best possible structure were shared across the cores.
 This means that during a given \texttt{fitoog} run, the only serial component was the determination of the lowest figure of merit.
 The efficiency of the parallelisation was defined by considering the strong and weak scaling of the software.
-It was possible to determine the percentage of serial, $s$, and parallel, $p$, components of the software by fitting the speedup\footnote{The time taken for a job to run on a single core divided by the time taken on multiple cores.} with Amdahl's law,\autocite{amdahl_validity_1967}
+It was possible to determine the percentage of serial, $s$, and parallel, $p$, components of the software by fitting the speedup\footnote{The time taken for a job to run on a single core divided by the time taken on multiple cores.} with Amdahl's law,\sidecite{amdahl_validity_1967}
 %
 \begin{equation}
 \text{speedup} = \frac{1}{s + \sfrac{p}{N}},

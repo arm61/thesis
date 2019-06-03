@@ -5,7 +5,7 @@ This work will focus on the use of small angle scattering\footnote{SAS.} and ref
 These are particularly appropriate for application to soft condensed matter systems due to the length scales capable of being probed being similar to the persistence length of the soft condensed matter systems.
 The length scale covered for such techniques is from around \SIrange{1}{300}{\nano\metre}, as is shown in Figure~\ref{fig:lengths}.
 The focus is on the equilibrium structure(s) of a material, and therefore there is no interest in the system dynamics, meaning that exclusively elastic scattering techniques may be used, where there is no energy transfer between the probing radiation and the material.
-This is in contrast to inelastic scattering where energy transfer occurs; facilitating the measurement of system dynamics, such as the dynamical modes of polymers and phospholipid bilayers\autocite{garcia_sakai_quasielastic_2009, farago_recent_2009}
+This is in contrast to inelastic scattering where energy transfer occurs; facilitating the measurement of system dynamics, such as the dynamical modes of polymers and phospholipid bilayers\sidecite{garcia_sakai_quasielastic_2009, farago_recent_2009}
 %
 \begin{figure}[t]
     \forceversofloat
@@ -208,12 +208,12 @@ However, model-dependent analysis is when reasonable assumptions are made about 
 The nature of this work means that it will focus on model-dependent analysis methods.\footnote{With the model usually being derived from some atomistic, or coarse-grained simulation.}
 Model-dependent analysis has significant benefits over model-independent methods, such as improved resolution and more detailed information about the structure.
 However, the necessity of the inclusion of \emph{a priori} information within model-dependent analysis may act to bias the result.
-While this is undesirable, these assumptions can, and should, be educated based on the chemical information present.\autocite[such as the propensity for twin-tailed phospholipid molecules to form monolayers at an air-water interface or small surfactants to form micelles in solution.]{mccluskey_model-dependent_2018}
+While this is undesirable, these assumptions can, and should, be educated based on the chemical information present.\sidecite[such as the propensity for twin-tailed phospholipid molecules to form monolayers at an air-water interface or small surfactants to form micelles in solution.]{mccluskey_model-dependent_2018}
 
 The scattering from the model system is determined, using technique specific methods that are discussed in detail in later sections.
 This is then compared with the experimental data using some figure of merit, the model is then varied to find the best possible model for the data provided.\footnote{This typically uses some optimisation algorithm to determine the best solution, the particular algorithms used in this work are discussed in Section~\ref{sec:optimisation}.}
 In order to accurately reproduce the experimental measurement, it is necessary to include some instrumental resolution function, $res(q)$, in the modelling procedure.
-This is instrument-specific, although it may be approximated by convolving the experimental dataset with some Gaussian smearing function, the modelled intensity can then be determined from,\autocite{nelson_towards_2013-1,nelson_towards_2014}
+This is instrument-specific, although it may be approximated by convolving the experimental dataset with some Gaussian smearing function, the modelled intensity can then be determined from,\sidecite{nelson_towards_2013-1,nelson_towards_2014}
 %
 \begin{equation}
     I(q) = res(q) * \frac{\text{d}\sigma(q)}{\text{d}\Omega},
@@ -303,7 +303,7 @@ However, in the reflectometry scattering geometry, this is no longer true render
 \end{figure}
 %
 
-This breakdown of the kinematic approach has led to the application of the Abel\`{e}s, or Parratt, model for the reflection of light at a given number of stratified interfaces.\autocite[also known as dynamical theory]{abeles_sur_1948,parratt_surface_1954}
+This breakdown of the kinematic approach has led to the application of the Abel\`{e}s, or Parratt, model for the reflection of light at a given number of stratified interfaces.\sidecite[also known as dynamical theory]{abeles_sur_1948,parratt_surface_1954}
 This method involves considering the system as a layered structure at the interfaces of which, the probing radiation can either be reflected or refracted, by some refractive index, $n_i$.
 Figure~\ref{fig:reflrefr} shows this process for a system of two layers, where the layer \num{0} is the air or vacuum above the sample, it is clear to see how the two waves labelled $r$ could interfere constructively or destructively depending on the thickness of layer \num{1}, $d$.
 This means that for a single interface,\footnote{Such as that between layers \num{0} and \num{1} in Figure~\ref{fig:reflrefr}.} the reflectometry can be described by the Fresnel equation,
@@ -428,11 +428,11 @@ Hence, the use of scattering at small angles.
 
 A SAS experiment generally involves some sample being placed in the path of the probing radiation; the scattering pattern that results from this transmission is measured at some distance, as is shown in Figure~\ref{fig:sasgeo} for the D22 SANS instrument of the ILL.
 SAS instruments are usually very large, due to the large post sample flight path that is necessary to reach the small angles being measured.\footnote{A longer flight path allows more space for angular divergence.}
-Transmission SAS can provide information about the size, shape and orientation of the sample's components.\autocite{willis_experimental_2009}
+Transmission SAS can provide information about the size, shape and orientation of the sample's components.\sidecite{willis_experimental_2009}
 The range of $q$ that is typically covered by a SAS instrument is usually around \SIrange{2e-3}{0.5}{\per\angstrom}, which corresponds to \SIrange{10}{3000}{\angstrom} in real-space.
 The neutron or X-ray detector of a SAS instrument is often two-dimensional, meaning that for an isotropic scattering profile, the detector image is radially averaged to give an $I(q)$ scattering profile.
 It is possible to increase the $q$-range of a SAS instrument through the introduction of wide-$q$ detector banks close to the sample or small-$q$ detector banks further away.
-This allows the SANS2D instrument, at the ISIS Neutron and Muon Source, to have a total range from \SIrange{2e-3}{2}{\per\angstrom}.\autocite{noauthor_isis_nodate}
+This allows the SANS2D instrument, at the ISIS Neutron and Muon Source, to have a total range from \SIrange{2e-3}{2}{\per\angstrom}.\sidecite{noauthor_isis_nodate}
 Furthermore, the SANS2D instrument may leverage the ToF method discussed in Section \ref{sec:neutrons} to allow for a much shorter post sample flight path than is present at D22.
 %
 \begin{figure}[t]
@@ -445,7 +445,7 @@ Furthermore, the SANS2D instrument may leverage the ToF method discussed in Sect
 
 A radially averaged SAS pattern can be considered as consisting of two sections that arise from the form and structure factors for the scattering species.
 The form factor gives information about the average shape of the scattering particle, while the structure factor is a measure of the interaction present between the objects.
-It is often possible to control the presence of the structure factor by changing the concentration of the sample, eventually, the concentration will be so low that all interparticle interaction is screened by the solvent.\autocite{edler_combining_2015}
+It is often possible to control the presence of the structure factor by changing the concentration of the sample, eventually, the concentration will be so low that all interparticle interaction is screened by the solvent.\sidecite{edler_combining_2015}
 This method is frequently applied in biological SAXS applications, where the interactions between the protein molecules are of less interest than the overall structure of the complex.
 However, with micelles, it is not always possible to remove the structure factor, as the critical micelle concentration may be higher than the minimum concentration at which the structure factor is present.
 It is possible to deconvolute the structure and form factors for a micellar solution by studying different concentrations, assuming that the form of the micelle is concentration independent, over the measured concentration range.
@@ -456,7 +456,7 @@ Additionally, if the experimental data lacks information at wide enough $q$ to c
 
 There are two common and straight-forward analysis procedures that can be used to give an understanding of the scattering species structure.
 The first is the Guinier approximation, which is used in the determination of the radius of gyration, $R_g$, of the scattering species at ``infinite dilution''.
-This scattering law is only valid at very small values of $q$, where $q < R_g^{-1}$,\autocite{sivia_elementary_2011}
+This scattering law is only valid at very small values of $q$, where $q < R_g^{-1}$,\sidecite{sivia_elementary_2011}
 %
 \begin{equation}
     \ln[I(q)] = \ln[I(0)] - \Bigg(\frac{R_g^2}{3}\Bigg)q^2.
@@ -469,9 +469,9 @@ The Guinier plot for the scattering from a sphere with a radius of \SI{20}{\angs
     R_g = \sqrt{\frac{3}{5}}R_s.
 \end{equation}
 %
-The Guinier analysis is very common in the study of proteins by SAS, as it allows for the determination of the protein size in the native, solution phase.\autocite{skou_synchrotron-based_2014}
+The Guinier analysis is very common in the study of proteins by SAS, as it allows for the determination of the protein size in the native, solution phase.\sidecite{skou_synchrotron-based_2014}
 Another common analysis of SAS data comes in the form of Porod's law, which states that for large values of $q$, the scattering intensity becomes proportional to $Sq^{-4}$, where $S$ is the surface area of the sample.
-This means that by plotting $I(q)q^4$ vs. $q$ and extrapolating to $q \rightarrow \infty$, it is possible to determine the external surface area of the system.\autocite{willis_experimental_2009}
+This means that by plotting $I(q)q^4$ vs. $q$ and extrapolating to $q \rightarrow \infty$, it is possible to determine the external surface area of the system.\sidecite{willis_experimental_2009}
 Using the surface area, it is then possible to qualitatively determine the ``roughness'' of the system based on the relation of the surface area to the particle size.
 %
 \begin{figure}[t]
@@ -489,12 +489,12 @@ Therefore, when the pattern is modelled, the differential cross-section, which i
     \frac{\text{d}\sigma(q)}{\text{d}\Omega} = N_\rho\Delta\text{SLD}^2V_p^2 P(q)S(q),
 \end{equation}
 %
-where $N_\rho$ is the number density of the particles, $\Delta\text{SLD}$ is the difference in scattering length density between the particles and the solvent, $V_p$ is the particle volume, $P(q)$ is the particle form factor, and $S(q)$ is the structure factor.\autocite{pedersen_monte_2002}
+where $N_\rho$ is the number density of the particles, $\Delta\text{SLD}$ is the difference in scattering length density between the particles and the solvent, $V_p$ is the particle volume, $P(q)$ is the particle form factor, and $S(q)$ is the structure factor.\sidecite{pedersen_monte_2002}
 Therefore, it is necessary to understand the form and structure factors individually.
 
 The most common method for the modelling of the form factor is by using very coarse shapes; such as spheres, cylinders, or ellipses.
 This involves the evaluation of analytical or quasi-analytical solutions for the scattering, which have been derived for many common shapes.
-The solution for a sphere was solved in the early 19th century by Lord Rayleigh.\autocite{pedersen_monte_2002}
+The solution for a sphere was solved in the early 19th century by Lord Rayleigh.\sidecite{pedersen_monte_2002}
 %
 \begin{equation}
     P(q) = \Bigg\{\frac{3\big\{\sin(qR_s) - qR\cos(qR_s)\big\}}{(qR_s)^3}\Bigg\}^2,
@@ -503,23 +503,23 @@ The solution for a sphere was solved in the early 19th century by Lord Rayleigh.
 %
 where $R_s$ is the radius of the sphere.
 A comparison between a possible experimental scattering pattern and the scattering generated from Equation~\ref{equ:sphere} is shown in Figure~\ref{fig:sphere}.
-Analytical form factors exist for a wide variety of shapes; these can be found in software such as SASView and SASFit.\autocite{noauthor_sasview_nodate, noauthor_sasfit_nodate}
+Analytical form factors exist for a wide variety of shapes; these can be found in software such as SASView and SASFit.\sidecite{noauthor_sasview_nodate, noauthor_sasfit_nodate}
 %
 \begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{theory/sphere}
-    \caption{The SANS profile of a micelle of \ce{C_{16}TAB} with radius $\SI{50(3)}{\angstrom}$ (circles, generated using SASView \cite{noauthor_sasview_nodate2}, with instrumental smearing) compared with a curve of Equation~\protect\ref{equ:sphere}, where $R = \SI{50}{\angstrom}$ (solid line).}
+    \caption{The SANS profile of a micelle of \ce{C_{16}TAB} with radius $\SI{50(3)}{\angstrom}$ (circles, generated using SASView \cite{noauthor_sasview_nodate}, with instrumental smearing) compared with a curve of Equation~\protect\ref{equ:sphere}, where $R = \SI{50}{\angstrom}$ (solid line).}
     \label{fig:sphere}
 \end{figure}
 %
 
 The structure factor accounts for the scattering interference that arises from the interaction of different particles.
 This is modelled using expressions which depend on the nature of the scattering particles; hard-sphere, sticky hard-spheres, screened Coulomb, etc.
-Structure factor expressions are generated as solutions to the Ornstein-Zernike Equation.\autocite{klein_interacting_2002}
-The most relevant structure factor in terms of micelle modelling is probably the Hayter-Penfold Mean Spherical Approximation, \autocite{hayter_analytic_1981} this is where the micelles are modelled as like-charged, soft spheres and is valid for dilute solutions.
-Again, a whole range of these structure factor functions are built into the SASView package.\autocite{noauthor_sasview_nodate}
+Structure factor expressions are generated as solutions to the Ornstein-Zernike Equation.\sidecite{klein_interacting_2002}
+The most relevant structure factor in terms of micelle modelling is probably the Hayter-Penfold Mean Spherical Approximation, \sidecite{hayter_analytic_1981} this is where the micelles are modelled as like-charged, soft spheres and is valid for dilute solutions.
+Again, a whole range of these structure factor functions are built into the SASView package.\sidecite{noauthor_sasview_nodate}
 
-In order to evaluate the scattering profile from an atomic structure,\footnote{Or any coordinate system, such as a coarse-grained simulation.} it is possible to use the Debye equation.\autocite{debye_zerstreuung_1915}
+In order to evaluate the scattering profile from an atomic structure,\footnote{Or any coordinate system, such as a coarse-grained simulation.} it is possible to use the Debye equation.\sidecite{debye_zerstreuung_1915}
 This is an analytical relationship for the determination of the scattering profile based on the atomic positions, $\mathbf{r}_i$,
 %
 \begin{equation}
@@ -528,8 +528,8 @@ This is an analytical relationship for the determination of the scattering profi
 %
 where, $N$ is the number of particles, $q$ is the scattering vector, and $b_i$ and $b_j$ are the scattering lengths of particles $i$ and $j$ respectively.\footnote{In the case of a coarse-grained particle, this can be obtained from summing the scattering lengths of the constituent atoms.}
 The Debye equation is powerful, however, it is not intrinsically parallelisable and scales as $\mathcal{O}(N^2)$.
-In order to improve the efficiency of the calculation of the scattering profile, a variety of methods have been developed that offer a sufficiently accurate approximation.\autocite{svergun_solution_1994,watson_rapid_2013}
-The Golden Vector method, developed by Watson and Curtis,\autocite{watson_rapid_2013} scales as $\mathcal{O}(Nn)$, where $n$ is the number of scattering vectors used in the calculation.
+In order to improve the efficiency of the calculation of the scattering profile, a variety of methods have been developed that offer a sufficiently accurate approximation.\sidecite{svergun_solution_1994,watson_rapid_2013}
+The Golden Vector method, developed by Watson and Curtis,\sidecite{watson_rapid_2013} scales as $\mathcal{O}(Nn)$, where $n$ is the number of scattering vectors used in the calculation.
 In this method, the scattering amplitude is calculated numerically for a single $\mathbf{q}$-vector,
 %
 \begin{equation}
@@ -537,7 +537,7 @@ In this method, the scattering amplitude is calculated numerically for a single 
 \end{equation}
 %
 This is carried out for $n$ scattering vectors that are selected in an orientationally averaged fashion from a quasi-uniform lattice on a sphere.
-This was first developed such that $n$ is a number from the Fibonacci sequence,\autocite{svergun_solution_1994} however for the Golden Vector method, $n$ may be any positive integer.
+This was first developed such that $n$ is a number from the Fibonacci sequence,\sidecite{svergun_solution_1994} however for the Golden Vector method, $n$ may be any positive integer.
 This leads to the scattering vectors being calculated as,
 %
 \begin{equation}
@@ -560,4 +560,4 @@ The approximate orientationally averaged scattering is then found as an average 
     I(q) = \frac{1}{n}\Bigg\{\sum_{k=(1-n)/2}^{(n-1)/2} I[\mathbf{q}^{(k)}]\Bigg\}.
 \end{equation}
 %
-The accuracy of this calculation increases with $n$, however agreement, comparible to the Debye equation, between experiment and simulation has been shown for $n < 100$ even for highly anisotropic systems.\autocite{watson_rapid_2013}
+The accuracy of this calculation increases with $n$, however agreement, comparible to the Debye equation, between experiment and simulation has been shown for $n < 100$ even for highly anisotropic systems.\sidecite{watson_rapid_2013}

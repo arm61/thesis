@@ -37,8 +37,8 @@ In addition, the $\chi^2$ between each of the models and the experimental data f
 
 \subsection{Traditional analysis}
 The chemically-consistent model was used to determine the structure of the phospholipid monolayer, Table~\ref{tab:cc} gives the optimum values for the parameters that were varied in the model.
-It is clear from this Table, that as the SP is increased, as expected, and as found previously,\autocite{mohwald_phospholipid_1990,vaknin_structural_1991} the overall thickness of the monolayer increases.
-The thickness increase for the phospholipid tails may be associated with the straightening of the tails with respect to the interface normal, while the thickness increase of the head groups has been noted previously for DSPC.\autocite{hollinshead_effects_2009}
+It is clear from this Table, that as the SP is increased, as expected, and as found previously,\sidecite{mohwald_phospholipid_1990,vaknin_structural_1991} the overall thickness of the monolayer increases.
+The thickness increase for the phospholipid tails may be associated with the straightening of the tails with respect to the interface normal, while the thickness increase of the head groups has been noted previously for DSPC.\sidecite{hollinshead_effects_2009}
 %
 \begin{sidewaystable}
 \small
@@ -58,13 +58,13 @@ The thickness increase for the phospholipid tails may be associated with the str
 \end{sidewaystable}
 %
 
-It would be anticipated that as the SP increases, there would be a corresponding decrease in the volume fraction of solvent in the head group.\autocite{bayerl_specular_1990}
+It would be anticipated that as the SP increases, there would be a corresponding decrease in the volume fraction of solvent in the head group.\sidecite{bayerl_specular_1990}
 However, for DSPC, the volume fraction of the solvent appears to be constant (or even increase slightly) with increasing SP.
 This is due to the decision to constrain the volume of the phospholipid head, which may decrease with increasing SP.
 
-Hollinshead \emph{et al.}\autocite{hollinshead_effects_2009} suggest a tail volume of \SI{972}{\angstrom\cubed} from the density data.
+Hollinshead \emph{et al.}\sidecite{hollinshead_effects_2009} suggest a tail volume of \SI{972}{\angstrom\cubed} from the density data.
 However, the values found in this work are substantially lower, at \SI{\sim850}{\angstrom\cubed}.
-This reduction, of \SI{\sim12}{\percent}, agrees well with the work of Campbell \emph{et al.}\autocite{campbell_structure_2018} and Small,\autocite{small_lateral_1984} which suggest that under the SP investigated in this work a reduction of the tail volume of up to \SI{15}{\percent} may be observed.
+This reduction, of \SI{\sim12}{\percent}, agrees well with the work of Campbell \emph{et al.}\sidecite{campbell_structure_2018} and Small,\sidecite{small_lateral_1984} which suggest that under the SP investigated in this work a reduction of the tail volume of up to \SI{15}{\percent} may be observed.
 The model layer structure from the chemically-consistent method provides a satisfactory description of the monolayer structure.
 However, the use of an MD-driven analysis method may provide greater insight into the chemical nature of the monolayer.
 
@@ -74,9 +74,9 @@ Initially, the MARTINI coarse-grained simulations were analysed with a layer thi
 However, as can be seen in Figure~\ref{fig:martorder} there is a clear ordering effect present in the MARTINI water, despite the use of the polarised water model.
 The effect of this ordering on the SLD profile, and therefore the reflectometry profile, can be reduced by using a larger layer thickness and introducing an interfacial roughness.
 Therefore, in the results discussed below the MARTINI potential model simulation were analysed using a layer thickness of \SI{4}{\angstrom} and an interfacial roughness of \SI{0.4}{\angstrom}.
-It is noted that this structuring may be reduced through the use of a less ordered wall\autocite{koutsioubas_combined_2016} at the extreme of the simulation cell, however, the aim was to reproduce the experimental conditions using off-the-shelf tools and this would require custom modifications not easily available.
+It is noted that this structuring may be reduced through the use of a less ordered wall\sidecite{koutsioubas_combined_2016} at the extreme of the simulation cell, however, the aim was to reproduce the experimental conditions using off-the-shelf tools and this would require custom modifications not easily available.
 Alternatively, it may be possible to effect the presence of this structuring through the inclusion of \SI{\sim 10}{\percent} of antifreeze MARTINI beads alongside the normal MARTINI water.
-However, this method has been noted to also give structuring effects in the presence on an ordered wall.\autocite{marrink_comment_2010}
+However, this method has been noted to also give structuring effects in the presence on an ordered wall.\sidecite{marrink_comment_2010}
 %
 \begin{figure}[t]
     \centering
@@ -92,7 +92,7 @@ This is most likely an artefact of the structuring effect mentioned above which 
 
 However, the agreement for the samples where the contrast uses ACMW, where the water is effectively removed from the SLD profile is also poor.
 This indicates that there are other artefacts limiting the applicability of the MARTINI potential model.
-One such artefact is clear from investigating the calculated length of the hydrocarbon tail from the MARTINI simulation, at an APM associated with an SP of \SI{30}{\milli\newton\per\meter}, which was found to be \input{output/reflectometry2/dspc_30/dspc_martini_30_dt.txt}~\si{\angstrom}, significantly less than the \SI{24.3}{\angstrom} estimated by the Tanford equation.\autocite[which has the form $t_t = (1.5 + 1.265)n_c$ \AA, where $t_t$ is the length and $n_c$ is the number of carbon atoms]{tanford_hydrophobic_1980}
+One such artefact is clear from investigating the calculated length of the hydrocarbon tail from the MARTINI simulation, at an APM associated with an SP of \SI{30}{\milli\newton\per\meter}, which was found to be \input{output/reflectometry2/dspc_30/dspc_martini_30_dt.txt}~\si{\angstrom}, significantly less than the \SI{24.3}{\angstrom} estimated by the Tanford equation.\sidecite[which has the form $t_t = (1.5 + 1.265)n_c$ \AA, where $t_t$ is the length and $n_c$ is the number of carbon atoms]{tanford_hydrophobic_1980}
 This is due to the nature of the MARTINI's 4-to-1 beading process, as DSPC has a hydrocarbon tail consisting of 18 carbon atoms, and it is not possible to bead such a chain accurately with the MARTINI potential model.
 In this work, a MARTINI phospholipid molecule was used with 4 MARTINI beads making up the chain.\footnote{This corresponds to an all-atom hydrocarbon chain of 16 atoms.}
 Applying the Tanford equation to a hydrocarbon chain of such a length results in an anticipated length of \SI{18.7}{\angstrom}, which agrees better with that found from the simulation.
@@ -184,9 +184,9 @@ Regardless of the mechanism, this suggests that a different solvation model shou
 \end{table}
 %
 Figure~\ref{fig:waters30} also shows that without the presence of the roughness, the distribution of the head groups is relatively normal.
-This agrees well with the model used previously to fit the experimental data by Hollinshead \emph{et al.},\autocite{hollinshead_effects_2009} where Gaussian functions were used to describe the phospholipid head and tail groups.
+This agrees well with the model used previously to fit the experimental data by Hollinshead \emph{et al.},\sidecite{hollinshead_effects_2009} where Gaussian functions were used to describe the phospholipid head and tail groups.
 However, the tail group distribution is not Gaussian and this previous method failed to include any additional factors to account for interfacial roughness.
-Previous work has suggested that when only a single phospholipid type is present, the roughness between the layers should be conformal in nature, that is it should be carried uniformly through the layers.\autocite{kozhevnikov_general_2012,campbell_structure_2018}
+Previous work has suggested that when only a single phospholipid type is present, the roughness between the layers should be conformal in nature, that is it should be carried uniformly through the layers.\sidecite{kozhevnikov_general_2012,campbell_structure_2018}
 However, from the investigation of the SLD profiles in Figure~\ref{fig:dspcccref30}(b), it appears that the roughness between the phospholipid tails and the air is dramatically different from that at the phospholipid head-water interface.
 In an effort to quantify the interfacial roughness in the simulations, the method outlined in Section~\ref{sec:traj} was used.
 The values for the mean, \SI{95}{\percent} quantile, and the spread between these for the \emph{z}-dimension position for atoms representative of the start, middle, and end of each of the phospholipid head and tails are given in Table~\ref{tab:spread2}, for each the APM associated with a SP of \SI{30}{\milli\newton\per\meter}.\footnote{Similar data at other SPs can be found in Appendix~\ref{refl2}.}

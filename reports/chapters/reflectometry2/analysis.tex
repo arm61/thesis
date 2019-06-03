@@ -10,7 +10,7 @@ V_t = d_t\text{APM},
 %
 where $d_t$ is the tail layer thickness.
 The result of this constraint is that both the monolayer model and the simulation-derived models were constrained equally by the measured surface coverage.
-The second modification was to constrain the head group volume to a value of \SI{339.5}{\angstrom}, in agreement with the work of Ku\v{c}erka \emph{et al.}\autocite{kucerka_determination_2004} and Balgav\'{y} \emph{et al.}\autocite{balgavy_evaluation_2001}
+The second modification was to constrain the head group volume to a value of \SI{339.5}{\angstrom}, in agreement with the work of Ku\v{c}erka \emph{et al.}\sidecite{kucerka_determination_2004} and Balgav\'{y} \emph{et al.}\sidecite{balgavy_evaluation_2001}
 This constraint was possible on this occasion as the monolayer was at the air-water interface, compared to the air-DES interface previously.
 A uniform background\footnote{This was limited to lie within \SI{10}{\percent} of the highest $q$-vector reflected intensity.} and a scale factor were then determined using \texttt{refnx} to offer the best agreement between the calculated reflectometry profile and that measured experimentally.
 
@@ -18,7 +18,7 @@ The experimental data from all seven contrasts were co-refined to a single monol
 The co-refinement of measurements at different SPs was not required, as there was a substantial number of contrasts measured.
 The values of the head and tail scattering lengths are given in Table~\ref{tab:scat}, while the SLD of the super and subphase were taken as \SI{0}{\per\squared\angstrom}, and \SI{6.35}{\per\squared\angstrom} and \SI{0}{\per\squared\angstrom} respectively.
 For each co-refinement of seven NR measurements, there were a total of five degrees of freedom in the fitting process, and the fitting was performed using a differential evolution algorithm.
-As with the work of Chapter~\ref{reflectometry1}, Markov chain Monte Carlo sampling was used to obtain experimental uncertainties on the fitted model, enabled by the \texttt{emcee} package \autocite{foreman-mackey_emcee_2013}.
+As with the work of Chapter~\ref{reflectometry1}, Markov chain Monte Carlo sampling was used to obtain experimental uncertainties on the fitted model, enabled by the \texttt{emcee} package \sidecite{foreman-mackey_emcee_2013}.
 The same protocol for this sampling was used herein.
 %
 \begin{table}[t]
@@ -38,7 +38,7 @@ The same protocol for this sampling was used herein.
 %
 
 \subsection{Simulation-dervied analysis}
-A custom-class, \texttt{md\_simulation}, was developed for \texttt{refnx}\autocite{nelson_refnx_2019,nelson_refnx_2019-1} that enabled the determination of a reflectometry profile from simulation, using a similar method to that employed in previous work, such as Dabkowska \emph{et al.}\autocite{dabkowska_modulation_2014}
+A custom-class, \texttt{md\_simulation}, was developed for \texttt{refnx}\sidecite{nelson_refnx_2019,nelson_refnx_2019-1} that enabled the determination of a reflectometry profile from simulation, using a similar method to that employed in previous work, such as Dabkowska \emph{et al.}\sidecite{dabkowska_modulation_2014}
 The Abel\`{e}s layer model formalism is applied to layers, the SLD of which is drawn directly from the simulation, and the thickness of which is defined.
 The layer thickness used was \SI{1}{\angstrom} for the Slipid and Berger potential model simulations, with an interfacial roughness between these layers of \SI{0}{\angstrom}.
 For the MARTINI potential model, a layer thickness of \SI{4}{\angstrom} was used, with an interfacial roughness of \SI{0.4}{\angstrom}.\footnote{The motivation for this is discussed in Section~\ref{sec:martanal}.}
@@ -75,11 +75,11 @@ The ratio between the water density and the phospholipid head density was then f
 \subsection{Simulation trajectory analysis}
 \label{sec:traj}
 In order to use the MD trajectory to guide the future development of the chemically-consistent layer model, it was necessary to investigate the solvent penetration into the head group regions of the phospholipids, the roughness of each interface and the phospholipid tail length.
-The solvent penetration was determined using the intrinsic surface approach, as detailed by Allen \emph{et al.}\autocite{allen_specific_2016,pandit_algorithm_2003}
+The solvent penetration was determined using the intrinsic surface approach, as detailed by Allen \emph{et al.}\sidecite{allen_specific_2016,pandit_algorithm_2003}
 The intrinsic surface approach enables the calculation of the solvent penetration without the effect of the monolayer roughness.
 This involves taking the \emph{z}-dimension position of each atom with respect to an anchor point, in this work the anchor point was taken as the phosphorus atom of the phospholipid head that was closest to the atom in the \emph{xy}-plane.
 The roughness was probed by investigating the variation in positions from the start, middle and end of each of the head and tail groups.
 The start of the phospholipid head was defined as the nitrogen atom, the middle the phosphorus and the end the tertiary carbon, while the start of the phospholipid tail was defined as the carbonyl carbon atom, the middle the ninth carbon in the tail, and the end the final carbon in the tail.
 The distribution of each of these atom types was determined by finding the \SI{95}{\percent} quantile for the position in the \emph{z}-dimension and comparing the spread of the mean and the upper quantile.
 Finally, the tail length distance, $t_t$, was found as the distance from the carbonyl carbon atom to the final primary carbon atom of the phospholipid tail.
-All of these analyses used the \texttt{MDAnalysis} package.\autocite{gowers_mdanalysis_2016,michaud-agrawal_mdanalysis_2011}
+All of these analyses used the \texttt{MDAnalysis} package.\sidecite{gowers_mdanalysis_2016,michaud-agrawal_mdanalysis_2011}
