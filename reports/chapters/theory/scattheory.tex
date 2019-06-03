@@ -395,9 +395,9 @@ This adapts Equation~\ref{equ:fres} to the form,
     r_{n,n+1} = \frac{k_n - k_{n+1}}{k_n + k_{n+1}}\exp{(-2k_nk_{n+1}\sigma^2_{n,n+1})},
 \end{equation}
 %
-where, $\sigma_{n,n+1}$ is the interfacial roughness between layers $n$ and $n+1$.\autocite{nevot_caracterisation_1980}
+where, $\sigma_{n,n+1}$ is the interfacial roughness between layers $n$ and $n+1$.\sidecite<-4\baselineskip>{nevot_caracterisation_1980}
 This has the effect of Gaussian broadening the layers into each other, as a result.
-This method\footnote{That is given programmatically in Code Block~\protect\ref{cb:refl}.} is currently implemented in a variety of reflectometry modelling software packages, such as \texttt{refnx}, MOTOFIT, RasCAL, and Aurore \autocite{nelson_refnx_2019,nelson_co-refinement_2006,hughes_rascal_nodate,gerelli_aurore_2016-1,gerelli_aurore_2016}.
+This method\sidenote[][-4\baselineskip]{That is given programmatically in Code Block~\protect\ref{cb:refl}.} is currently implemented in a variety of reflectometry modelling software packages, such as \texttt{refnx}, MOTOFIT, RasCAL, and Aurore \sidecite<-4\baselineskip>{nelson_refnx_2019,nelson_co-refinement_2006,hughes_rascal_nodate,gerelli_aurore_2016-1,gerelli_aurore_2016}.
 Applying this method to the SLD profile shown in Figure~\ref{fig:kine} gives the reflectometry profile shown with the dashed green line in Figure~\ref{fig:dyna}.
 %
 \begin{listing}[t]
@@ -505,7 +505,7 @@ where $R_s$ is the radius of the sphere.
 A comparison between a possible experimental scattering pattern and the scattering generated from Equation~\ref{equ:sphere} is shown in Figure~\ref{fig:sphere}.
 Analytical form factors exist for a wide variety of shapes; these can be found in software such as SASView and SASFit.\sidecite<-5\baselineskip>{noauthor_sasview_nodate, noauthor_sasfit_nodate}
 %
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{theory/sphere}
     \caption{The SANS profile of a micelle of \ce{C_{16}TAB} with radius $\SI{50(3)}{\angstrom}$ (circles, generated using SASView \cite{noauthor_sasview_nodate}, with instrumental smearing) compared with a curve of Equation~\protect\ref{equ:sphere}, where $R = \SI{50}{\angstrom}$ (solid line).}
