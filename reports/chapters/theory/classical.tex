@@ -1,7 +1,7 @@
 \section{Classical simulation}
 \label{sec:classical}
 While the currently applied traditional methods for the analysis of experimental scattering data discussed previously are popular.
-There is growing interest in the use of multi-modal analysis methods that leverage classical simulation to assist in the analysis of scattering data.\sidecite{ivanovic_temperature-dependent_2018,scoppola_combining_2018,dabkowska_modulation_2014,hub_interpreting_2018}
+There is growing interest in the use of multi-modal analysis methods that leverage classical simulation to assist in the analysis of scattering data.\autocite{ivanovic_temperature-dependent_2018,scoppola_combining_2018,dabkowska_modulation_2014,hub_interpreting_2018}
 This would involve the simulation of the chemical system in order to educate the analysis of the experimental data.
 These systems, especially when the materials being simulated are soft in nature, are often highly complex and typically cover large length scales.
 Classical simulation, particularly in combination with coarse-grained potential models, can feasibly enable the simulation of these systems.
@@ -45,8 +45,8 @@ where, $K_b$ and $b_0$, $K_{\theta}$, $\theta_0$, and $A_1$, $A_2$, and $A_3$ ar
 It can be seen that both the bond stretch and angle bend have harmonic functions, whereas the dihedral consists of a more complex multiple cosine functions.
 
 The non-bonded terms are a series of functions that describe the potential energy of intermolecular interactions, such as electrostatics and London dispersion forces.
-The potential energies of the short-range interactions are usually modelled as a combination of the attractive London dispersion interaction and the repulsive exchange forces that arise from the Pauli exclusions principle.\sidecite{leach_molecular_1996}
-These are often forms such as shown below for the Lennard-Jones potential model,\sidecite{lennard-jones_determination_1924}
+The potential energies of the short-range interactions are usually modelled as a combination of the attractive London dispersion interaction and the repulsive exchange forces that arise from the Pauli exclusions principle.\autocite{leach_molecular_1996}
+These are often forms such as shown below for the Lennard-Jones potential model,\autocite{lennard-jones_determination_1924}
 %
 \begin{equation}
 \begin{aligned}
@@ -62,7 +62,7 @@ where, $r$ is the distance between two particles, $A$ and $B$ are interaction de
 \end{equation}
 %
 Figure~\ref{fig:lj} shows each component of the Lennard-Jones potential model for atoms of argon.\footnote{Using parameters for $A$ and $B$ determined in \cite{rahman_correlations_1964}.}
-The Lennard-Jones potential model is not the only form that may be used for the modelling of the short-range non-bonded interactions, others such as the Buckingham and Morse potentials exist.\sidecite{buckingham_classical_1938, morse_diatomic_1929}
+The Lennard-Jones potential model is not the only form that may be used for the modelling of the short-range non-bonded interactions, others such as the Buckingham and Morse potentials exist.\autocite{buckingham_classical_1938, morse_diatomic_1929}
 In each case, there is a short ranged repulsive interaction to describe the electrostatic repulsion between the electron clouds, and a longer range attractive component that represents dispersion interactions.
 However, the Lennard-Jones model has been used heavily in this work.
 %
@@ -75,7 +75,7 @@ However, the Lennard-Jones model has been used heavily in this work.
 \end{figure}
 %
 
-While the short-range interactions can be accounted for by a function such as the Lennard-Jones potential model, the potential energy of the long-range electrostatic interactions are usually modelled, more consistently, using Coulomb's law for classical electrostatic interaction between point particles,\sidecite{coulomb_premier_1788, coulomb_second_1788}
+While the short-range interactions can be accounted for by a function such as the Lennard-Jones potential model, the potential energy of the long-range electrostatic interactions are usually modelled, more consistently, using Coulomb's law for classical electrostatic interaction between point particles,\autocite{coulomb_premier_1788, coulomb_second_1788}
 %
 \begin{equation}
   E_{\text{Coulomb}}(r) = \frac{1}{4\pi\varepsilon_0}{\frac{q_iq_je^2}{r^2}},
@@ -84,9 +84,9 @@ While the short-range interactions can be accounted for by a function such as th
 %
 where, $r$ is the distance between the two particles, $\varepsilon_0$ is the dielectric permittivity of the vacuum, $e$ is the charge of the electron, and $q_i$ and $q_j$ are the electronic charges on each of the particles.
 It is clear that when $q_i$ and $q_j$ have the opposite signs Coulomb's law is always attractive.
-The fact that Equation~\ref{equ:col} contains a factor of $r^2$ indicates that this is a much longer range interaction than those modelled with the Lennard-Jones model, make the Coulomb potential more complex to compute.\sidecite{frenkel_understanding_1996}
+The fact that Equation~\ref{equ:col} contains a factor of $r^2$ indicates that this is a much longer range interaction than those modelled with the Lennard-Jones model, make the Coulomb potential more complex to compute.\autocite{frenkel_understanding_1996}
 
-An example of a very large classical simulation would be $\sim3$ million atoms.\sidecite{gumbart_regulation_2009}
+An example of a very large classical simulation would be $\sim3$ million atoms.\autocite{gumbart_regulation_2009}
 However, this is still only \SI{1.8e-16}{\mol} which is not remotely realistic as a simulation of a ``real'' system.
 A common method to allow for the apparent simulation of a much larger system is the use of periodic boundary conditions.\footnote{Abbreviated to PBC.}
 This is where a boundary condition is applied to the edges of the simulation cell, such as to mimic an infinite system, such that the simulation cell is surrounded by identical images of itself, this is shown pictorially in Figure~\ref{fig:pbc}.
@@ -116,9 +116,9 @@ Code Block~\ref{cb:lj} gives an example of some code that could be used to calcu
 %
 
 The use of the PBC may be problematic for systems containing long-range interactions, such as classical electrostatics, due to the fact that the range of the electrostatic interaction may be much greater than the size of half of the simulation cell, which can be taken to be the energy cut-off distance.
-In order to avoid truncation artefacts, the Ewald summation is often used for the calculation of the electrostatic contribution to the potential energy.\sidecite{ewald_berechnung_1921}
+In order to avoid truncation artefacts, the Ewald summation is often used for the calculation of the electrostatic contribution to the potential energy.\autocite{ewald_berechnung_1921}
 The Ewald summation involves performing the summation of the contributing interaction energies in reciprocal space rather than in real space as is the case for the short-range interactions.
-Most modern MD simulation software packages implement the Ewald summation using a particle mesh Ewald method.\sidecite{essmann_smooth_1995}
+Most modern MD simulation software packages implement the Ewald summation using a particle mesh Ewald method.\autocite{essmann_smooth_1995}
 
 \subsection{Parameterisation}
 \label{sec:parameterisation}
@@ -133,7 +133,7 @@ We will not dwell on the details of potential model parameterisation,\footnote{T
 
 In this work, we have focused heavily on the use of off-the-shelf potential models, to ensure the easy replicability of the work.
 Off-the-shelf potential models are those that are determined to be applied to a wide range of chemical systems.
-An example includes the OPLS potential model which was parameterised by comparison to quantum mechanical measurements and crystallographic data.\sidecite{jorgensen_opls_1988}
+An example includes the OPLS potential model which was parameterised by comparison to quantum mechanical measurements and crystallographic data.\autocite{jorgensen_opls_1988}
 While these off-the-shelf potential models are useful for their ease-of-use, it is noted that often these forcefields may require optimisation for the particular system.
 
 \subsection{Coarse-graining}
@@ -142,7 +142,7 @@ The atomistic simulation of very large systems, such as multiple surfactant mice
 While computational efficiency improvements such as the PBC or the energy cut-off distance are able to reduce the time taken to simulate these systems, it is often still not possible to produce physically meaningful simulations,\footnote{In particular for emergent properties that depend on large system sizes and long simulation times.} without including some other efficiency improvements.
 
 This has led to the use of coarse-graining of molecules in simulations.
-This is the definition of super-atoms, in the place of groups of atoms, known as ``beading'', some examples are shown for the MARTINI force field\sidecite{marrink_martini_2007} in Figure~\ref{fig:cg}.
+This is the definition of super-atoms, in the place of groups of atoms, known as ``beading'', some examples are shown for the MARTINI force field\autocite{marrink_martini_2007} in Figure~\ref{fig:cg}.
 Each of the super-atoms must correspond to the chemistry of the underlying atoms.
 For example, the MARTINI potential model introduces five different apolar, beads to represent the polarity of the carbon atoms that make up the super-atom.
 Additionally, there are thirteen other super-atom types that can be used to model polar, nonpolar, and charged atomic groups.
@@ -156,7 +156,7 @@ Additionally, there are thirteen other super-atom types that can be used to mode
 \end{figure}
 %
 
-In addition to the computational benefit of having fewer particles in the simulation,\footnote{Therefore requiring fewer integrations of the equations of motion} there is also the opportunity to increase the timestep length for the simulation.\sidecite{pluhackova_biomembranes_2015}
+In addition to the computational benefit of having fewer particles in the simulation,\footnote{Therefore requiring fewer integrations of the equations of motion} there is also the opportunity to increase the timestep length for the simulation.\autocite{pluhackova_biomembranes_2015}
 This can be achieved as the highest frequency vibrations that must be modelled in the system are integrated out.
 For example, another coarse-grained model called the united atom potential model, where the hydrogen atoms have been integrated out, the timestep may be larger than for the same all-atom system as it is no longer necessary to model the high-frequency \ce{C-H} bond.
 

@@ -1959,11 +1959,11 @@
     <bcf:citekey order="24">kratky_diffuse_1949</bcf:citekey>
     <bcf:citekey order="25">jensen_monitoring_2014</bcf:citekey>
     <bcf:citekey order="26">rondelli_reflectivity_2012</bcf:citekey>
-    <bcf:citekey order="27">hassan_small_2003</bcf:citekey>
-    <bcf:citekey order="28">campbell_structure_2018</bcf:citekey>
+    <bcf:citekey order="27">hassan_small_20032</bcf:citekey>
+    <bcf:citekey order="28">campbell_structure_20183</bcf:citekey>
     <bcf:citekey order="28">lu_analysis_1996</bcf:citekey>
     <bcf:citekey order="29">pedersen_monte_2002</bcf:citekey>
-    <bcf:citekey order="30">wormington_characterization_1999</bcf:citekey>
+    <bcf:citekey order="30">wormington_characterization_19992</bcf:citekey>
     <bcf:citekey order="31">nelson_refnx_2019</bcf:citekey>
     <bcf:citekey order="31">larsen_analysis_2018</bcf:citekey>
     <bcf:citekey order="32">scoppola_combining_2018</bcf:citekey>
@@ -2025,7 +2025,7 @@
     <bcf:citekey order="79">nelson_co-refinement_2006</bcf:citekey>
     <bcf:citekey order="79">hughes_rascal_nodate</bcf:citekey>
     <bcf:citekey order="79">gerelli_aurore_2016-1</bcf:citekey>
-    <bcf:citekey order="79">gerelli_aurore_2016</bcf:citekey>
+    <bcf:citekey order="79">gerelli_aurore_20162</bcf:citekey>
     <bcf:citekey order="80">nelson_refnx_2019</bcf:citekey>
     <bcf:citekey order="81">willis_experimental_2009</bcf:citekey>
     <bcf:citekey order="82">noauthor_isis_nodate</bcf:citekey>
@@ -2109,8 +2109,8 @@
     <bcf:citekey order="141">nose_unified_1984</bcf:citekey>
     <bcf:citekey order="141">berendsen_molecular_1984</bcf:citekey>
     <bcf:citekey order="141">hoover_canonical_1985</bcf:citekey>
-    <bcf:citekey order="142">mccluskey_pylj_2018</bcf:citekey>
-    <bcf:citekey order="142">mccluskey_arm61/pylj_2018</bcf:citekey>
+    <bcf:citekey order="142">mccluskey_pylj_20183</bcf:citekey>
+    <bcf:citekey order="142">mccluskey_arm61/pylj_20182</bcf:citekey>
     <bcf:citekey order="143">bussi_canonical_2007</bcf:citekey>
     <bcf:citekey order="144">parrinello_polymorphic_1981</bcf:citekey>
     <bcf:citekey order="145">smith_deep_2014</bcf:citekey>
@@ -2383,8 +2383,8 @@
     <bcf:citekey order="334">jones_molecular_2005</bcf:citekey>
     <bcf:citekey order="335">noauthor_democritus_nodate</bcf:citekey>
     <bcf:citekey order="335">noauthor_argonmd_nodate</bcf:citekey>
-    <bcf:citekey order="336">mccluskey_pylj_2018</bcf:citekey>
-    <bcf:citekey order="336">mccluskey_arm61/pylj_2019-2</bcf:citekey>
+    <bcf:citekey order="336">mccluskey_pylj_20183</bcf:citekey>
+    <bcf:citekey order="336">mccluskey_arm61/pylj_2019-22</bcf:citekey>
     <bcf:citekey order="337">lennard-jones_determination_1924</bcf:citekey>
     <bcf:citekey order="338">mccluskey_arm61/pylj_2018</bcf:citekey>
     <bcf:citekey order="339">buckingham_classical_1938</bcf:citekey>
@@ -2396,7 +2396,7 @@
     <bcf:citekey order="343">noauthor_numba_nodate</bcf:citekey>
     <bcf:citekey order="344">mccluskey_pylj_2018</bcf:citekey>
     <bcf:citekey order="345">mccluskey_introduction_2019</bcf:citekey>
-    <bcf:citekey order="345">mccluskey_pythoninchemistry/sim_and_scat_2019</bcf:citekey>
+    <bcf:citekey order="345">mccluskey_pythoninchemistry/sim_and_scat_20192</bcf:citekey>
     <bcf:citekey order="346">mccluskey_pythoninchemistry/sim_and_scat_2019</bcf:citekey>
     <bcf:citekey order="347">lau_jupyter/jupyter-book_2019</bcf:citekey>
     <bcf:citekey order="348">ragan-kelley_minrk/thebelab_2019</bcf:citekey>
@@ -2441,7 +2441,7 @@
     <bcf:citekey order="372">ivanovic_temperature-dependent_2018</bcf:citekey>
     <bcf:citekey order="373">hub_interpreting_2018</bcf:citekey>
     <bcf:citekey order="373">perkins_atomistic_2016</bcf:citekey>
-    <bcf:citekey order="374">mccluskey_introduction_2019</bcf:citekey>
+    <bcf:citekey order="374">mccluskey_introduction_20193</bcf:citekey>
     <bcf:citekey order="374">mccluskey_pythoninchemistry/sim_and_scat_2019</bcf:citekey>
     <bcf:citekey order="375">mccluskey_pylj_2018</bcf:citekey>
     <bcf:citekey order="375">mccluskey_arm61/pylj_2019-2</bcf:citekey>

@@ -1,9 +1,9 @@
 \section{Introduction}
-The popularity of classical simulation, both all-atom and coarse-grained, as a technique for multi-modal analysis of scattering techniques, such as reflectometry and small angle scattering,\footnote{SAS.} has grown linearly over the past two decades.\sidecite{pan_molecular_2012,boldon_review_2015,hub_interpreting_2018,koutsioubas_combined_2016,darre_molecular_2015,scoppola_combining_2018}
+The popularity of classical simulation, both all-atom and coarse-grained, as a technique for multi-modal analysis of scattering techniques, such as reflectometry and small angle scattering,\footnote{SAS.} has grown linearly over the past two decades.\autocite{pan_molecular_2012,boldon_review_2015,hub_interpreting_2018,koutsioubas_combined_2016,darre_molecular_2015,scoppola_combining_2018}
 Figure~\ref{fig:growth} shows that as of 2019, \SI{\sim20}{\percent} of all SAS publications also mention MD.
 Users of scattering techniques often have a background in experimental science and may have received little formal training in the theory or practice of computational modelling.
 This can lead to the use of MD simulations as a ``black box'' without necessarily understanding the underlying methodologies, or considering possible sources of error.
-To help support researchers use MD simulations in their analysis of scattering data while reducing the risk of modelling errors, a number of software tools, such as WAXSiS\sidecite{chen_validating_2014,knight_waxsis_2015} and SASSIE\sidecite{perkins_atomistic_2016} have been developed that present easy-to-use, graphical, web-based user interfaces.
+To help support researchers use MD simulations in their analysis of scattering data while reducing the risk of modelling errors, a number of software tools, such as WAXSiS\autocite{chen_validating_2014,knight_waxsis_2015} and SASSIE\autocite{perkins_atomistic_2016} have been developed that present easy-to-use, graphical, web-based user interfaces.
 %
 \begin{figure}[t]
     \centering
@@ -15,29 +15,29 @@ To help support researchers use MD simulations in their analysis of scattering d
 
 A complementary approach is to organise educational activities, such as lectures and workshops, tailored to introduce molecular simulation techniques to audiences of scattering users.
 One example is the annual ISIS Neutron Training Course, which includes a module titled ``An Introduction to Molecular Dynamics for Neutron Scattering''.
-This module covers the fundamentals of classical MD simulation, presents applications of these methods in neutron science, and gives students practical hands-on experience with the SASSIE software package.\sidecite{perkins_atomistic_2016}
+This module covers the fundamentals of classical MD simulation, presents applications of these methods in neutron science, and gives students practical hands-on experience with the SASSIE software package.\autocite{perkins_atomistic_2016}
 
 While lectures and workshops are an effective tool for education and training, participation can be limited due to difficulties attending in person\footnote{Due to location and cost.} or physical limits on student numbers.
 An alternative educational strategy gaining popularity within scientific and engineering communities is the publication of OERs.
 These are courses, lectures, or learning resources published online that are freely available for use by anyone.
-In addition to their broad accessibility, these resources have permissive ``open'' copyright licenses that allow their use in the ``5R activities'': retain, reuse, revise, remix, and redistribute.\sidecite{wiley_open_nodate}
+In addition to their broad accessibility, these resources have permissive ``open'' copyright licenses that allow their use in the ``5R activities'': retain, reuse, revise, remix, and redistribute.\autocite{wiley_open_nodate}
 Publishing a resource as an OER increases the reach and impact, as others may use it in their own teaching not only in its original form, but are free to modify, and redistribute, the material to better suit their aims.
-The OERs developed as a part of this work both heavily leverage the Jupyter Notebook framework\sidecite{kluyver_jupyter_2016} to enable technology-enhanced OERs.
+The OERs developed as a part of this work both heavily leverage the Jupyter Notebook framework\autocite{kluyver_jupyter_2016} to enable technology-enhanced OERs.
 
 \subsection{Using Jupyter Notebooks in Education}
-Project Jupyter\sidecite{kluyver_jupyter_2016} is a collection of standards, a community, and a set of software tools.
+Project Jupyter\autocite{kluyver_jupyter_2016} is a collection of standards, a community, and a set of software tools.
 The Jupyter Notebook is one of these software tools that is capable of creating, editing, and running a Jupyter Notebook file.
-This is a file that can contain executable code\footnote{In this work this is exclusively in the Python programming language, however, the Notebook software is compatible with many languages.} and narrative text,\footnote{Either Markdown or formatted \LaTeX.} enabling the user to ``tell an interactive, computational story''.\sidecite{barba_teaching_2019}
+This is a file that can contain executable code\footnote{In this work this is exclusively in the Python programming language, however, the Notebook software is compatible with many languages.} and narrative text,\footnote{Either Markdown or formatted \LaTeX.} enabling the user to ``tell an interactive, computational story''.\autocite{barba_teaching_2019}
 Furthermore, the interactive nature reduces the barrier of entry to computational methods that is often imposed on those learning, due often to the need to understand a command line interface.
 
-The Jupyter Notebook framework has become a popular platform for OERs that teach computational skills, because it allows authors to include instructional text, images and other media, alongside the executable, editable code, in an example of ``literate programming''.\sidecite{knuth_literate_1984}
-This format encourages students to directly interact with code examples by running, editing, and rerunning these within the source document,\sidecite{barba_cybertraining_2017} supporting exploratory experiential learning,\sidecite{papert_mindstroms_1993} and enabling the ``worked example effect''.\sidecite{tarmizi_guidance_1988}
+The Jupyter Notebook framework has become a popular platform for OERs that teach computational skills, because it allows authors to include instructional text, images and other media, alongside the executable, editable code, in an example of ``literate programming''.\autocite{knuth_literate_1984}
+This format encourages students to directly interact with code examples by running, editing, and rerunning these within the source document,\autocite{barba_cybertraining_2017} supporting exploratory experiential learning,\autocite{papert_mindstroms_1993} and enabling the ``worked example effect''.\autocite{tarmizi_guidance_1988}
 Furthermore, the modular nature of a Jupyter Notebook OER allows the resource designer to build computational tools to be used by those learning, such as Python libraries to aid understanding.
 
 \subsection{Teaching computational simulation}
-It was suggested by Aiello-Micosia and Sperandeo-Mineo\sidecite{aiello-nicosia_computer_1985} that understanding the microscopic disordered motions of particles in gases is a difficult problem for many science students.
-Pallant and Tinker\sidecite{pallant_reasoning_2004} commented that there is an educational challenge associated with helping students to rationalise the relationship between the mathematics underlying computational simulation and the behaviour of the system.
-Additionally, it has been noted that the visualisations often used in the traditional teaching of MD simulations may cause difficulties for students' understanding, these can be categorised as follows:\sidecite{jones_molecular_2005}
+It was suggested by Aiello-Micosia and Sperandeo-Mineo\autocite{aiello-nicosia_computer_1985} that understanding the microscopic disordered motions of particles in gases is a difficult problem for many science students.
+Pallant and Tinker\autocite{pallant_reasoning_2004} commented that there is an educational challenge associated with helping students to rationalise the relationship between the mathematics underlying computational simulation and the behaviour of the system.
+Additionally, it has been noted that the visualisations often used in the traditional teaching of MD simulations may cause difficulties for students' understanding, these can be categorised as follows:\autocite{jones_molecular_2005}
 \begin{itemize}
 \item visual subtlety: often simulations are presented as two-dimensional displays of three-dimensional objects, creating spatial relationships that may be difficult to interpret,
 \item complexity: high information depth in an image, perhaps of a complex chemical model, will lead to increases, often unnecessarily in cognitive load,
@@ -45,7 +45,7 @@ Additionally, it has been noted that the visualisations often used in the tradit
 \end{itemize}
 Therefore, in addition to making use of software that will enable learners to interact with the computational methods being introduced, it is important that the discussion and visualisation of these methods are as straightforward as possible.
 
-Currently, there a handful of software packages that are designed to introduce, or educate about classical simulation, these include the Democritus flash application and the ArgonMD app developed by members of the Theory and Modeling in Chemical Science Centre for Doctoral Training.\sidecite{noauthor_democritus_nodate,noauthor_argonmd_nodate}
+Currently, there a handful of software packages that are designed to introduce, or educate about classical simulation, these include the Democritus flash application and the ArgonMD app developed by members of the Theory and Modeling in Chemical Science Centre for Doctoral Training.\autocite{noauthor_democritus_nodate,noauthor_argonmd_nodate}
 Both of these tools provide an interface to interact with a two-dimensional MD simulation of a Lennard-Jonesium system.\footnote{This is the name given to arbitrary particles that interact through the Lennard-Jones potential introduced in Section~\ref{sec:potentmodels}.}
 Democritus was originally developed by Prof. Bill Smith from STFC.\footnote{Previously this software was used in the University of Bath Undergraduate Computational Chemistry laboratory.} however, development of this software has stagnated with no updates being made available since 2001.
 ArgonMD is a modern application built to work on mobile phone interfaces, in addition to computers.

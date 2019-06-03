@@ -21,7 +21,7 @@ The weak scaling relationship is shown in Figure~\ref{fig:scale}(b).
 %
 
 It can be seen that both the strong and weak parallel efficiency of \texttt{fitoog} are relatively good, with the efficiency not dropping below \SI{80}{\percent} even when spread over 128 cores.
-The speedup of \texttt{fitoog} is shown in Figure~\ref{fig:speedup},\footnote{This is generated from the strong scaling relationship.} from Amdahl's law\sidecite{amdahl_validity_1967} it is possible to find that the parallel component of a given \texttt{fitoog} run makes up \SI{99.8}{\percent} of the computation.
+The speedup of \texttt{fitoog} is shown in Figure~\ref{fig:speedup},\footnote{This is generated from the strong scaling relationship.} from Amdahl's law\autocite{amdahl_validity_1967} it is possible to find that the parallel component of a given \texttt{fitoog} run makes up \SI{99.8}{\percent} of the computation.
 This suggests that the parallelisation methodology currently implemented is successful, and it would not be advantageous to utilise a more sophisticated parallelisation method.
 %
 \begin{figure}[t]
@@ -41,7 +41,7 @@ This was chosen as it would spread the computation over exactly two nodes of the
 In order to assess the PSO implementation, a simple test system was defined.
 This consisted of a coordinate cell that contained four surfactant molecules at four corners of a \SI{20}{\angstrom} cube, each orientated in a different direction, see Figures~\ref{fig:test}(a-c).
 The scattering intensity was calculated from the cell, with the blue beads given a scattering length of \SI{100}{\femto\meter} and the grey beads a scattering length of \SI{20}{\femto\meter}, to ensure the presence of intense scattering.
-The scattering was calculated using the Debye equation\sidecite{debye_zerstreuung_1915} for values of $q$ in a range from \SIrange{0.3}{1.5}{\per\angstrom} with 100 data points, this profile is shown in Figure~\ref{fig:test}(d).
+The scattering was calculated using the Debye equation\autocite{debye_zerstreuung_1915} for values of $q$ in a range from \SIrange{0.3}{1.5}{\per\angstrom} with 100 data points, this profile is shown in Figure~\ref{fig:test}(d).
 %
 \begin{figure}[t]
     \forceversofloat
@@ -117,7 +117,7 @@ However, it may be the case that the parameter space was too large to be optimis
 
 A possible method that may enable the optimisation of such structures would be the inclusion of an energetic term.
 For example, this could involve the use of an energy optimisation to be performed alongside the structural optimisation to the scattering profile, regardless of the optimisation methodology.
-The use of energetic considerations and a Markov state model optimisation has been shown to perform well for peptide self-assembly.\sidecite{sengupta_automated_2019}
-Additionally, the Empirical Potential Structure Refinement used by Hargreaves \emph{et al.}\sidecite{hargreaves_atomistic_2011} and in a coarse-grained fashion by Soper and Edler\sidecite{soper_coarse-grained_2017} and the method used by Ivanovic \emph{et al.}\sidecite{ivanovic_temperature-dependent_2018} all involve performing an energetic optimisation that is biased on the agreement with experimental data.
+The use of energetic considerations and a Markov state model optimisation has been shown to perform well for peptide self-assembly.\autocite{sengupta_automated_2019}
+Additionally, the Empirical Potential Structure Refinement used by Hargreaves \emph{et al.}\autocite{hargreaves_atomistic_2011} and in a coarse-grained fashion by Soper and Edler\autocite{soper_coarse-grained_2017} and the method used by Ivanovic \emph{et al.}\autocite{ivanovic_temperature-dependent_2018} all involve performing an energetic optimisation that is biased on the agreement with experimental data.
 This use of an energetic consideration could be included in \texttt{fitoog} by performing an energy minimisation step following each step of the PSO.
 This would have the added benefit of creating a range of surfactant conformations allowing a more realistic structure to form.
