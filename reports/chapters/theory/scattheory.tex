@@ -391,7 +391,7 @@ This has the effect of Gaussian broadening the layers into each other, as a resu
 This method\footnote{That is given programmatically in Code Block~\protect\ref{cb:refl}.} is currently implemented in a variety of reflectometry modelling software packages, such as \texttt{refnx}, MOTOFIT, RasCAL, and Aurore \autocite{nelson_refnx_2019,nelson_co-refinement_2006,hughes_rascal_nodate,gerelli_aurore_2016-1,gerelli_aurore_2016}.
 Applying this method to the SLD profile shown in Figure~\ref{fig:kine} gives the reflectometry profile shown with the dashed green line in Figure~\ref{fig:dyna}.
 %
-\begin{listing}[t]
+\begin{listing}[b]
     \forcerectofloat
     \centering
     \caption{An example Python code block for the Abel\`{e}s method for the calculation of reflectometry, adapted from \cite{nelson_refnx_2019}. The input variables are \texttt{q\_values} which are the $q$-vectors at which the reflected intensity should be calculated, \texttt{sld} which is the array of scattering length densities for the layers, and \texttt{d} which is the array of thicknesses for the layers. This will return an array of floats that is the same size as the \texttt{q\_values} and contains the reflected intensities.}
@@ -400,7 +400,7 @@ Applying this method to the SLD profile shown in Figure~\ref{fig:kine} gives the
 \end{listing}
 %
 %
-\begin{figure}[b]
+\begin{figure}[t]
     \centering
     \includegraphics[width=\textwidth]{theory/dyna}
     \caption{A comparison of the kinematic approach (blue solid line), and the dynamical approach (green dashed line), to determine the reflected intensity from the material with the SLD profile given in Figure~\protect\ref{fig:kine}(a). It is clear that at low $q$, there is a noticable deviation between the two.}
