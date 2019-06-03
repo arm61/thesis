@@ -254,7 +254,7 @@ for i in range(sp.size):
     for j, n in enumerate(names):
         axes[j, j].set_title(n)
     axes[0, 0].text(
-        0.05, 0.73, fig_lab[lipid], transform=axes[0, 0].transAxes, size=12
+        0.04, 0.73, fig_lab[lipid], transform=axes[0, 0].transAxes, size=12
     )
     p_mag = np.array([])
     for j in range(0, axes.shape[0] - 1):
