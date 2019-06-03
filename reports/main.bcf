@@ -1931,11 +1931,11 @@
     <bcf:citekey order="3">mccluskey_assessing_2019</bcf:citekey>
     <bcf:citekey order="4">mccluskey_pylj_2018</bcf:citekey>
     <bcf:citekey order="5">mccluskey_introduction_2019</bcf:citekey>
-    <bcf:citekey order="6">hargreaves_atomistic_2011</bcf:citekey>
-    <bcf:citekey order="7">kraft_patchy_2011</bcf:citekey>
-    <bcf:citekey order="8">humphrey_vmd_1996</bcf:citekey>
-    <bcf:citekey order="9">rose_crystal_1988</bcf:citekey>
-    <bcf:citekey order="10">jones_soft_2002</bcf:citekey>
+    <bcf:citekey order="6">jones_soft_2002</bcf:citekey>
+    <bcf:citekey order="7">hargreaves_atomistic_2011</bcf:citekey>
+    <bcf:citekey order="8">kraft_patchy_2011</bcf:citekey>
+    <bcf:citekey order="9">humphrey_vmd_1996</bcf:citekey>
+    <bcf:citekey order="10">rose_crystal_1988</bcf:citekey>
     <bcf:citekey order="11">schramm_surfactants_2003</bcf:citekey>
     <bcf:citekey order="12">simons_lipid_2000</bcf:citekey>
     <bcf:citekey order="13">israelachvili_intermolecular_2011</bcf:citekey>
