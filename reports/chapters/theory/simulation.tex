@@ -142,8 +142,8 @@ Code Block~\ref{cb:part_swarm} shows a functional programmatic implementation of
 
 \subsection{Markov chain Monte-Carlo}
 \label{sec:mcmc}
-Markov chain Monte Carlo\sidenote[][-1\baselineskip]{Abbreviated to MCMC.} is a sampling methodology, derived from direct sampling Monte-Carlo.\sidecite<-1.5\baselineskip>{krauth_statistical_2006}
-The aim of an MCMC algorithm is to sample a probability distribution, when parameters are described in terms of their degree of probability.\sidecite<-0.5\baselineskip>{sivia_data_2006}
+Markov chain Monte Carlo\sidenote[][-2\baselineskip]{Abbreviated to MCMC.} is a sampling methodology, derived from direct sampling Monte-Carlo.\sidecite<-2\baselineskip>{krauth_statistical_2006}
+The aim of an MCMC algorithm is to sample a probability distribution, when parameters are described in terms of their degree of probability.\autocite{sivia_data_2006}
 Similar to molecular dynamics,\footnote{MD.} in practical terms, MCMC should not be used on a system that is not already optimised, as its purpose is probability distribution sampling rather than minimisation.
 Generally, the approach would be to optimise using, for example, one of the approaches described above, then to use MCMC or MD to sample the appropriate search-space.
 For example, in this work MCMC is used following the optimisation of a reflectometry model using a DE algorithm, to quantify the inverse uncertainties of the model.\footnote{This is the name given to the uncertainties in the parameters fitted in the modelling process.}
